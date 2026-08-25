@@ -1,0 +1,13 @@
+.video-section .pattern-overlay { 
+    padding: 0px 0 0px;
+	margin-top:-16px;
+/* Incase of overlay problems just increase the min-height*/
+}
+.video-section .buttonBar{display:none;}
+.player {font-size: 1px;}
+
+.video-section .pattern-overlay22 { 
+    padding: 0px 0 0px;
+	margin-top:-16px;
+/* Incase of overlay problems just increase the min-height*/
+}

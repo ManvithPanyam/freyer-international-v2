@@ -1,0 +1,15 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Public read-only approved media
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Secure attachments uploaded via server actions
+    match /attachments/{rfqId}/{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

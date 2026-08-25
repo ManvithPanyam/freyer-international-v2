@@ -1,0 +1,238 @@
+@-ms-viewport
+{
+	width:device-width;
+}
+@-viewport
+{
+	width:device-width;
+}
+@media only screen and (max-width:1200px)
+{
+	
+	img
+	{
+		max-width:100%;
+	}.nav
+	{
+		position: absolute;
+		right: 0;
+		left: 0;
+		z-index: 99999;
+		float: right;
+		padding: 0 0;
+		margin: 0;
+		top: 0;
+	}
+	.nav ul li
+	{
+		margin: 0;
+	}
+	.nav ul li a
+	{
+		padding: 8px 0px;
+		text-align:center;
+    	background: rgba(0,0,0,0.8);
+		color:#fff;
+	}
+	.nav-shrink .nav ul li a
+	{
+		padding: 8px 0px;
+		text-align:center;
+	}
+	.nav ul li ul li a, .nav-shrink .nav ul li ul li a
+	{
+    	background: #fff;
+		color:#000;
+		text-align:center;
+	}
+	.nav ul li a i
+	{
+		display:none;
+	}
+	.nav ul li ul
+	{
+		position: relative;
+		left:0;
+		width: auto;
+		-webkit-transform: translateX(-0%);
+		transform: translateX(-0%);
+		padding: 20px;
+	}
+	.nav ul ul li a, .nav-shrink .nav ul li ul li a
+	{
+		text-align:center;
+	} 
+	.nav ul li ul:before
+	{
+		top: -12px;
+		left: 0;
+		right:0;
+	}
+	.nav ul li a span
+	{
+		display: block;
+	}
+	.nav ul li:hover > a, .nav ul li.active > a 
+	{
+		color:#fff;
+	}
+	.nav-shrink .nav ul li a
+	{
+		color:#fff;
+	}
+	.nav ul li a::after
+	{
+		display:none;
+	}
+	.header-top h1, .contact-top
+	{
+		position: relative;
+		z-index: 9999999;
+	}
+}
+@media only screen and (max-width:1024px)
+{
+	
+}
+@media only screen and (max-width:960px)
+{
+	.header-top
+	{
+		padding: 0px 20px;
+	}
+	.section-vision-mission, .section-who-we-are, .section-csr
+	{
+		padding: 20px;
+	}
+	.section-vision-mission ul li, .section-csr aside, .section-contact, .footer, .banner-heading, .section-content
+	{
+		padding: 25px 20px;
+	}
+	.section-csr
+	{
+		margin-bottom:20px;
+	}
+	.section-map article
+	{
+		top: 20px;
+		left: 20px;
+	}
+	.footer
+	{
+		text-align:center;
+	}
+	.footer aside
+	{
+		width: auto;
+		float:none;
+	}
+	.footer-bottom p
+	{
+		float:none;
+		text-align:center;
+	}
+	.footer h3::after
+	{
+		right: 0;
+		margin: auto;
+	}
+	.banner-heading
+	{
+		height:300px;
+	}
+	.show
+	{
+		display:none;
+	}
+	.hide
+	{
+		display:block;
+	}
+}
+@media only screen and (max-width:768px)
+{
+	.contact-top
+	{
+		width:30px;
+		height:30px;
+		margin-right:70px;
+	}
+	.contact-top p
+	{
+		display:none;
+	}
+	.banner
+	{
+		height: auto;
+	}
+	.section-vision-mission ul li, .about-tab ul li, .services ul li, .locations ul li, .photo-gallery ul li
+	{
+		width: 100%;
+	}
+	.section-who-we-are h1, .section-who-we-are aside, .sidebar, .content, .contact-page aside
+	{
+		width: auto;
+		float:none;
+	}
+	.section-who-we-are h1
+	{
+		font-size: 40px;
+	}
+	.section-who-we-are aside
+	{
+		padding:0;
+	}
+	.section-who-we-are aside ul li, .awards ul li
+	{
+		width: 50%;
+	}
+	.section-who-we-are aside::before
+	{
+		display:none;
+	}
+	.section-csr
+	{
+		display:block;
+		margin-bottom:0;
+	}
+	.section-csr aside, .section-csr figure
+	{
+		width: auto;
+	}
+	.section-csr aside
+	{
+		top: 0;
+	}
+	.section-csr figure
+	{
+		height:300px;
+	}
+	.banner-heading h2
+	{
+		font-size: 30px;
+	}
+	.banner-heading nav
+	{
+		right: auto;
+		bottom: 30px;
+		left: 5px;
+	}
+}
+@media only screen and (max-width:480px)
+{
+	.section-who-we-are aside ul li
+	{
+		width: 100%;
+	}
+	.logos a
+	{
+		width:100%!important;
+	}
+}
+@media only screen and (max-width:320px)
+{
+	.awards ul li, .split-form
+	{
+		width: 100%;
+	}
+}

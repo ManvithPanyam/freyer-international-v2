@@ -1,0 +1,91 @@
+[
+  {
+    "page_url": "https://www.freyerinternational.com//careers",
+    "action": "#",
+    "method": "POST",
+    "form_id": "",
+    "form_name": "",
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "Name",
+        "id": "",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "Name",
+        "id": "",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "Phone",
+        "id": "",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "email",
+        "name": "Email",
+        "id": "",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "Current Location",
+        "id": "",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "date_of_birth",
+        "id": "demo",
+        "placeholder": "",
+        "required": true
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "",
+        "id": "uploadFile",
+        "placeholder": "Choose File",
+        "required": false
+      },
+      {
+        "tag": "input",
+        "type": "file",
+        "name": "",
+        "id": "uploadBtn",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "textarea",
+        "type": "",
+        "name": "mesg",
+        "id": "",
+        "placeholder": "",
+        "required": false
+      },
+      {
+        "tag": "input",
+        "type": "submit",
+        "name": "Submit",
+        "id": "Submit",
+        "placeholder": "",
+        "required": false
+      }
+    ]
+  }
+]

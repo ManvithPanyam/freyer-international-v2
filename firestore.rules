@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read-only reference data
+    match /services/{serviceId} {
+      allow read: if true;
+      allow write: if false; // Admin/CMS only
+    }
+    match /branches/{branchId} {
+      allow read: if true;
+      allow write: if false; // Admin/CMS only
+    }
+    match /projects/{projectId} {
+      allow read: if true;
+      allow write: if false; // Admin/CMS only
+    }
+    match /accreditations/{accreditationId} {
+      allow read: if true;
+      allow write: if false; // Admin/CMS only
+    }
+    match /careerOpenings/{jobId} {
+      allow read: if true;
+      allow write: if false; // Admin/CMS only
+    }
+
+    // Inbound submissions (RFQs & Inquiries)
+    // Server-side actions perform validated writes via Firebase Admin SDK
+    // Client SDK direct writes are restricted to prevent abuse
+    match /rfqs/{rfqId} {
+      allow read, write: if false;
+    }
+    match /inquiries/{inquiryId} {
+      allow read, write: if false;
+    }
+    match /resumes/{resumeId} {
+      allow read, write: if false;
+    }
+  }
+}

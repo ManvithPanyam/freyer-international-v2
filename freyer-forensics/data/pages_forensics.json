@@ -1,0 +1,576 @@
+[
+  {
+    "label": "Home",
+    "url": "https://www.freyerinternational.com/",
+    "filename": "index.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries",
+      "About Freyer Who we are"
+    ],
+    "h2": [
+      "Our Services",
+      "Corporate Social Responsibility",
+      "Freyer International Logistics Pvt Ltd.",
+      "Get in Touch with us Today!"
+    ],
+    "h3": [
+      "Mission",
+      "Values",
+      "Vision",
+      "Air Services",
+      "Ocean Services",
+      "Customs Services",
+      "Warehouse",
+      "Risk Management",
+      "Project Cargo",
+      "Address",
+      "We\u2019re always there to help",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 283,
+    "images_count": 11,
+    "missing_alt_images_count": 10,
+    "ctas_count": 43,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Mission To be the leading suppl"
+  },
+  {
+    "label": "About Us",
+    "url": "https://www.freyerinternational.com/about",
+    "filename": "__about.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "About Freyer",
+      "Who we are",
+      "Get in Touch with us Today!"
+    ],
+    "h3": [
+      "Our Customer",
+      "Our Partners",
+      "Our Employee",
+      "We\u2019re always there to help",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 427,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 36,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us About Freyer Home About Who we "
+  },
+  {
+    "label": "Services Index",
+    "url": "https://www.freyerinternational.com/services",
+    "filename": "__services.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Services",
+      "Get in Touch with us Today!"
+    ],
+    "h3": [
+      "Air Services",
+      "Ocean Services",
+      "Customs Services",
+      "Warehouse",
+      "Risk Management",
+      "Project Cargo",
+      "We\u2019re always there to help",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 123,
+    "images_count": 8,
+    "missing_alt_images_count": 7,
+    "ctas_count": 41,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Services Home Services Air Serv"
+  },
+  {
+    "label": "Air Freight Services",
+    "url": "https://www.freyerinternational.com/services/air-services",
+    "filename": "__services_air_services.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Air Services",
+      "We're happy to help you!",
+      "International",
+      "Charter",
+      "Speciality Services"
+    ],
+    "h3": [
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 320,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 41,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Air Services Home Services Air "
+  },
+  {
+    "label": "Ocean Freight Services",
+    "url": "https://www.freyerinternational.com/services/ocean-services",
+    "filename": "__services_ocean_services.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Ocean Services",
+      "We're happy to help you!",
+      "FCL",
+      "LCL"
+    ],
+    "h3": [
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 352,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 41,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Ocean Services Home Services Oc"
+  },
+  {
+    "label": "Customs Brokerage Services",
+    "url": "https://www.freyerinternational.com/services/customs-services",
+    "filename": "__services_customs_services.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Customs Services",
+      "We're happy to help you!",
+      "Export Compliance",
+      "Import Compliance"
+    ],
+    "h3": [
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 282,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 41,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Customs Services Home Services "
+  },
+  {
+    "label": "Warehousing Services",
+    "url": "https://www.freyerinternational.com/services/warehouse",
+    "filename": "__services_warehouse.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Warehouse",
+      "We're happy to help you!",
+      "Warehousing",
+      "Distribution & Fulfilment",
+      "Value Added Services"
+    ],
+    "h3": [
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 253,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 41,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Warehouse Home Services Warehou"
+  },
+  {
+    "label": "Risk Management Services",
+    "url": "https://www.freyerinternational.com/services/risk-management",
+    "filename": "__services_risk_management.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Risk Management",
+      "We're happy to help you!",
+      "Risk Management Consulting",
+      "A Deep Understanding",
+      "A Dedicated Focus",
+      "A Strengthened Business Resilience",
+      "Insurance"
+    ],
+    "h3": [
+      "At Freyer International. our Insurance benefits include",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 470,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 41,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Risk Management Home Services R"
+  },
+  {
+    "label": "Project Cargo Services",
+    "url": "https://www.freyerinternational.com/services/project-cargo",
+    "filename": "__services_project_cargo.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Project Cargo",
+      "We're happy to help you!"
+    ],
+    "h3": [
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 293,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 41,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Project Cargo Home Services Pro"
+  },
+  {
+    "label": "Locations",
+    "url": "https://www.freyerinternational.com/locations",
+    "filename": "__locations.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Locations"
+    ],
+    "h3": [
+      "Bengaluru",
+      "Chennai",
+      "Airport Office Chennai",
+      "Delhi",
+      "Mumbai",
+      "Hyderabad",
+      "Visakhapatnam",
+      "Coimbatore",
+      "Tuticorin",
+      "Ahmedabad",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 330,
+    "images_count": 13,
+    "missing_alt_images_count": 11,
+    "ctas_count": 33,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Locations Home Locations Chenna"
+  },
+  {
+    "label": "Awards & Recognition",
+    "url": "https://www.freyerinternational.com/awards",
+    "filename": "__awards.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Awards"
+    ],
+    "h3": [
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 85,
+    "images_count": 13,
+    "missing_alt_images_count": 12,
+    "ctas_count": 33,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Awards Home Awards Information "
+  },
+  {
+    "label": "Projects & Case Studies",
+    "url": "https://www.freyerinternational.com/project",
+    "filename": "__project.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Project",
+      "KOBE TO CHENNAI RORO MOVEMENT",
+      "MASAN TO CHENNAI BB MOVEMENT",
+      "QINGDAO TO SOHAR & DAMMAM",
+      "AL JUBAIL TO JEBEL ALI",
+      "EX NHAVA SHEVA TO MOGADISHU",
+      "EX GENOA TO SOHAR",
+      "EX GENOA TO JEBEL ALI",
+      "HAMBURG TO JEDDAH",
+      "SHANGHAI TO JEBEL ALI",
+      "VENICE TO MUNDRA",
+      "VENICE TO MUNDRA"
+    ],
+    "h3": [
+      "904 x 310 x 316 cm - WT 37100 KG (April 2023)",
+      "22 Packages / 837 cbm / WT 200 MT (May 2023)",
+      "4 x BBK unit on cntr. vessel 760 x 615 x 50 cm/ 16 MT + 1 x 20 FR and 1 X40 FRfor each POD",
+      "Door-Delivery Heaviest piece- 2 x 148 MT + Accessories",
+      "5 x 40 FR - WT 27000 KG each",
+      "8 x 40 FR \u2013 319 x 231 x 360 cm- WT 39800 KG each\n                (lots of 2 x 40 FR loaded on consecutive vessels)",
+      "360 x 263 x 400 cm- WT 68000 KG each Total 17 units moved in different lots (Door to Door )",
+      "Ex-Works\n                Break Bulk Shipment",
+      "Break Bulk Shipment 29 PKG, 796 cbm with a weight of 482 MT",
+      "Ex-Works\n                410 x 345 x 495 cm \u2013 21000 KG",
+      "Boom Crane \u2013 2700 x 400 x 455 cm - WT 37600 KG\n                Ex-Works terms including road permit loaded as BBK on cntr. vessel",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 296,
+    "images_count": 35,
+    "missing_alt_images_count": 34,
+    "ctas_count": 33,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Project Home Project KOBE TO CH"
+  },
+  {
+    "label": "Gallery",
+    "url": "https://www.freyerinternational.com/gallery",
+    "filename": "__gallery.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Gallery"
+    ],
+    "h3": [
+      "5th Year Celebration",
+      "Abroad Trip",
+      "Office",
+      "Social Events",
+      "Customer Get Together",
+      "Spirit of Independence",
+      "80 Tons Crane",
+      "26 Tons Airfreight Shipment",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 106,
+    "images_count": 10,
+    "missing_alt_images_count": 9,
+    "ctas_count": 41,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Gallery Home Gallery 5th Year C"
+  },
+  {
+    "label": "CSR",
+    "url": "https://www.freyerinternational.com/corporate-social-responsibility",
+    "filename": "__corporate_social_responsibility.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Corporate Social Responsibility",
+      "We're happy to help you!"
+    ],
+    "h3": [
+      "The strategic thrusts of our Corporate Social Responsibility (CSR) charter are characterised by the 3Es:",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 218,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 34,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Corporate Social Responsibility"
+  },
+  {
+    "label": "Careers",
+    "url": "https://www.freyerinternational.com/careers",
+    "filename": "__careers.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Careers",
+      "We're happy to help you!",
+      "Join with us"
+    ],
+    "h3": [
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 137,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 34,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Careers Home Careers We're happ"
+  },
+  {
+    "label": "Network Partners",
+    "url": "https://www.freyerinternational.com/network%20partners",
+    "filename": "__network_partners.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Network Partners",
+      "Our Network Partners"
+    ],
+    "h3": [
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 90,
+    "images_count": 6,
+    "missing_alt_images_count": 5,
+    "ctas_count": 33,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Network Partners Home Network P"
+  },
+  {
+    "label": "Contact Us",
+    "url": "https://www.freyerinternational.com/contact-us",
+    "filename": "__contact_us.html",
+    "title": "Freyer International Logistics Pvt Ltd",
+    "meta_description": "",
+    "canonical": "",
+    "og_tags": {},
+    "twitter_tags": {},
+    "h1": [
+      "Logistics\n                        Beyond Boundaries"
+    ],
+    "h2": [
+      "Contact Us",
+      "Address"
+    ],
+    "h3": [
+      "Freyer International Logistics Pvt Ltd.",
+      "Information",
+      "Our Services",
+      "Follow Us",
+      "Contact Info"
+    ],
+    "h4": [],
+    "word_count": 118,
+    "images_count": 2,
+    "missing_alt_images_count": 1,
+    "ctas_count": 33,
+    "text_sample": "Freyer International Logistics Pvt Ltd Logistics\n                        Beyond Boundaries Home About Services Air Services Ocean Services Customs Services Warehouse Risk Management Project Cargo Locations Awards Project Gallery CSR Careers Network Partners Contact Us Contact Us Home Contact Us Addr"
+  }
+]

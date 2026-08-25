@@ -1,0 +1,603 @@
+{
+  "https://www.freyerinternational.com//images/logo.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "Freyer International Logistics Pvt Ltd",
+    "src": "https://www.freyerinternational.com//images/logo.png"
+  },
+  "https://www.freyerinternational.com/images/clients/great work place jpg.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/great work place jpg.jpg"
+  },
+  "https://www.freyerinternational.com/images/clients/AEO.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/AEO.jpg"
+  },
+  "https://www.freyerinternational.com/images/clients/iso.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/iso.png"
+  },
+  "https://www.freyerinternational.com/images/clients/IATA.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/IATA.png"
+  },
+  "https://www.freyerinternational.com/images/clients/FITATa.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/FITATa.png"
+  },
+  "https://www.freyerinternational.com/images/clients/amtoi.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/amtoi.png"
+  },
+  "https://www.freyerinternational.com/images/clients/Federal.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/Federal.png"
+  },
+  "https://www.freyerinternational.com/images/clients/ffi.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/ffi.png"
+  },
+  "https://www.freyerinternational.com/images/clients/Acaai.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "images/clients/Acaai.jpg"
+  },
+  "https://www.freyerinternational.com//images/hss.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/hss.png"
+  },
+  "https://www.freyerinternational.com//js/menu.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/menu.js"
+  },
+  "https://www.freyerinternational.com//js/jquery.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/jquery.js"
+  },
+  "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+  },
+  "https://www.freyerinternational.com//js/jquery.mb.YTPlayer.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/jquery.mb.YTPlayer.js"
+  },
+  "https://www.freyerinternational.com//js/wow.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/wow.js"
+  },
+  "https://www.freyerinternational.com//js/script.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/script.js"
+  },
+  "https://www.freyerinternational.com//js/slick.min.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/slick.min.js"
+  },
+  "https://www.freyerinternational.com//js/slider.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/slider.js"
+  },
+  "https://www.freyerinternational.com//js/sticky.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/sticky.js"
+  },
+  "https://www.freyerinternational.com//js/simple-lightbox.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/simple-lightbox.js"
+  },
+  "https://www.freyerinternational.com//js/masonry.pkgd.min.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/masonry.pkgd.min.js"
+  },
+  "https://www.freyerinternational.com//js/imagesloaded.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/imagesloaded.js"
+  },
+  "https://www.freyerinternational.com//js/classie.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/classie.js"
+  },
+  "https://www.freyerinternational.com//js/AnimOnScroll.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/AnimOnScroll.js"
+  },
+  "https://www.freyerinternational.com//js/dcalendar.picker.js": {
+    "type": "script",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//js/dcalendar.picker.js"
+  },
+  "https://www.freyerinternational.com//css/style.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/style.css"
+  },
+  "https://www.freyerinternational.com//css/responsive.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/responsive.css"
+  },
+  "https://www.freyerinternational.com//css/menu.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/menu.css"
+  },
+  "https://www.freyerinternational.com//css/slick.min.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/slick.min.css"
+  },
+  "https://www.freyerinternational.com//css/slider.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/slider.css"
+  },
+  "https://www.freyerinternational.com//css/animate.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/animate.css"
+  },
+  "https://www.freyerinternational.com//css/simplelightbox.min.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/simplelightbox.min.css"
+  },
+  "https://www.freyerinternational.com//css/dcalendar.picker.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/dcalendar.picker.css"
+  },
+  "https://www.freyerinternational.com//css/jquery.mb.YTPlayer.min.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/jquery.mb.YTPlayer.min.css"
+  },
+  "https://www.freyerinternational.com//css/video-background.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.freyerinternational.com//css/video-background.css"
+  },
+  "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css": {
+    "type": "stylesheet",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  },
+  "https://www.freyerinternational.com/video/WhatsApp Video 2022-12-09 at 16.02.01.mp4": {
+    "type": "video_or_embed",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "video/WhatsApp Video 2022-12-09 at 16.02.01.mp4"
+  },
+  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.653822390444!2d80.2544392!3d13.0729626!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b0e4873ced017c9!2sFreyer%20International%20Logistics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1607868482265!5m2!1sen!2sin": {
+    "type": "video_or_embed",
+    "first_seen": "https://www.freyerinternational.com",
+    "src": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.653822390444!2d80.2544392!3d13.0729626!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b0e4873ced017c9!2sFreyer%20International%20Logistics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1607868482265!5m2!1sen!2sin"
+  },
+  "https://www.freyerinternational.com//images/Air-Services.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//services",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Air-Services.jpg"
+  },
+  "https://www.freyerinternational.com//images/Ocean-Services.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//services",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Ocean-Services.jpg"
+  },
+  "https://www.freyerinternational.com//images/Customs-Services.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//services",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Customs-Services.jpg"
+  },
+  "https://www.freyerinternational.com//images/Warehouse.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//services",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Warehouse.jpg"
+  },
+  "https://www.freyerinternational.com//images/Risk-Management.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//services",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Risk-Management.jpg"
+  },
+  "https://www.freyerinternational.com//images/Project-Cargo.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//services",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Project-Cargo.jpg"
+  },
+  "https://www.freyerinternational.com/images/india map.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//locations",
+    "alt": "map",
+    "src": "images/india map.jpg"
+  },
+  "https://www.freyerinternational.com//images/mappin.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//locations",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/mappin.png"
+  },
+  "https://www.freyerinternational.com//images/Awards/14.jpeg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/14.jpeg"
+  },
+  "https://www.freyerinternational.com//images/Awards/13.jpeg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/13.jpeg"
+  },
+  "https://www.freyerinternational.com//images/Awards/12.jpeg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/12.jpeg"
+  },
+  "https://www.freyerinternational.com//images/Awards/11.jpeg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/11.jpeg"
+  },
+  "https://www.freyerinternational.com//images/Awards/AEO.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/AEO.jpg"
+  },
+  "https://www.freyerinternational.com//images/Awards/SCN -Member_certificate.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/SCN -Member_certificate.png"
+  },
+  "https://www.freyerinternational.com//images/Awards/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/Awards/2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/2.jpg"
+  },
+  "https://www.freyerinternational.com//images/Awards/3.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/3.jpg"
+  },
+  "https://www.freyerinternational.com//images/Awards/4.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/4.jpg"
+  },
+  "https://www.freyerinternational.com//images/Awards/5.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//awards",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Awards/5.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/2.1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/2.1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/2.2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/2.2.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/2.3.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/2.3.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/2.4.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/2.4.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/2.5.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/2.5.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/2.6.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/2.6.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/3.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/3.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/4.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/4.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/5.1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/5.1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/5.2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/5.2.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/5.3.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/5.3.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/6.1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/6.1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/6.2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/6.2.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/6.3.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/6.3.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/6.4.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/6.4.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/7.1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/7.1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/7.2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/7.2.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/7.3.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/7.3.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/7.4.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/7.4.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/7.5.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/7.5.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/8.1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/8.1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/8.2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/8.2.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/8.3.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/8.3.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/8.4.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/8.4.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/9.1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/9.1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/9.2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/9.2.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/10.1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/10.1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/10.2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/10.2.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/11.1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/11.1.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/11.2.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/11.2.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/11.3.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/11.3.jpg"
+  },
+  "https://www.freyerinternational.com//images/project/11.4.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//project",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/project/11.4.jpg"
+  },
+  "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//gallery",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/Gallery/aku/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//gallery",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Gallery/aku/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/Gallery/Office/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//gallery",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Gallery/Office/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/Gallery/Social Events/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//gallery",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Gallery/Social Events/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/Gallery/Customer Get Together/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//gallery",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Gallery/Customer Get Together/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/Gallery/Spirit of Independence/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//gallery",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Gallery/Spirit of Independence/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/Gallery/80 Tons Crane/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//gallery",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Gallery/80 Tons Crane/1.jpg"
+  },
+  "https://www.freyerinternational.com//images/Gallery/26 Tons Airfreight Shipment/1.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//gallery",
+    "alt": "",
+    "src": "https://www.freyerinternational.com//images/Gallery/26 Tons Airfreight Shipment/1.jpg"
+  },
+  "https://www.freyerinternational.com/images/Our Network Partners/wca.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//network partners",
+    "alt": "",
+    "src": "images/Our Network Partners/wca.png"
+  },
+  "https://www.freyerinternational.com/images/Our Network Partners/wpa.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//network partners",
+    "alt": "",
+    "src": "images/Our Network Partners/wpa.jpg"
+  },
+  "https://www.freyerinternational.com/images/Our Network Partners/SCN.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//network partners",
+    "alt": "",
+    "src": "images/Our Network Partners/SCN.png"
+  },
+  "https://www.freyerinternational.com/images/Our Network Partners/FDX.jpg": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com//network partners",
+    "alt": "",
+    "src": "images/Our Network Partners/FDX.jpg"
+  },
+  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.653822390444!2d80.2544392!3d13.0729626!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b0e4873ced017c9!2sFreyer%20International%20Logistics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1609770885223!5m2!1sen!2sin": {
+    "type": "video_or_embed",
+    "first_seen": "https://www.freyerinternational.com//contact-us",
+    "src": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.653822390444!2d80.2544392!3d13.0729626!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b0e4873ced017c9!2sFreyer%20International%20Logistics%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1609770885223!5m2!1sen!2sin"
+  },
+  "https://www.freyerinternational.com/images/logo.png": {
+    "type": "image",
+    "first_seen": "https://www.freyerinternational.com/career-plus.php",
+    "alt": "",
+    "src": "images/logo.png"
+  }
+}

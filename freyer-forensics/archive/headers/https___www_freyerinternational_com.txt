@@ -1,0 +1,10 @@
+Date: Tue, 25 Aug 2026 17:09:08 GMT
+Server: Apache
+X-Powered-By: PHP/7.4.33
+Upgrade: h2,h2c
+Connection: Upgrade, Keep-Alive
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 11993
+Keep-Alive: timeout=5
+Content-Type: text/html; charset=UTF-8

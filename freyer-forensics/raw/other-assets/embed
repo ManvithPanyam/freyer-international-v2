@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #mapDiv {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapDiv"></div>
+      
+    <script nonce="twYX3Bm-I1CbDMssohairg">
+      function onEmbedLoad() {
+        initEmbed([null,null,null,null,null,[[[2,"spotlit",null,null,null,null,null,[null,null,null,null,null,null,null,null,null,null,11,null,[null,null,null,null,null,null,null,null,null,null,null,null,null,1]]]],null,null,[[null,null,null,null,null,null,null,null,null,null,null,null,null,[[["4202535630699076845","6561261369353574345"],"/g/11fm5yb1_g",null,[130729626,802544392],null,null,null,null,null,null,null,null,null,null,"gcid:freight_forwarding_service"],0,0,null,null,0,null,0]]]],null,["en","in"],[null,null,null,"/maps/api/js/ApplicationService.GetEntityDetails","/maps/embed/upgrade204",null,"/maps/embed/record204"],null,null,null,null,null,null,null,null,"TcyNavvSCKmXhvcPxfXvqQI",null,null,null,[[[15545.65382239044,80.25443919999999,13.0729626],null,null,13.10000038146973],null,0,[["0x3a5267e3dfbd9ced:0x5b0e4873ced017c9","Freyer International Logistics Pvt Ltd, TAGA Tower, New No. 45 Old No. 20 1st Floor, Sait Colony 2nd Street, Egmore, Chennai, Tamil Nadu 600008",[13.0729626,80.25443919999999],"6561261369353574345"],"Freyer International Logistics Pvt Ltd",["TAGA Tower, New No. 45 Old No. 20 1st Floor, Sait Colony 2nd Street","Egmore","Chennai, Tamil Nadu 600008"],4.599999904632568,"25 reviews","https://search.google.com/local/reviews?placeid=ChIJ7Zy93-NnUjoRyRfQznNIDls\u0026q=Freyer+International+Logistics+Pvt+Ltd\u0026hl=en\u0026gl=IN",null,"044 4319 1919",null,null,null,["http://www.freyerinternational.com/","freyerinternational.com",null,null,",AOvVaw0SVNCPcXqofKjYLXaREmdG,,0ahUKEwi7rZDVoryWAxWpi-EIHcX6OyUQ61gIFSgQ,"],"Freight Forwarding Agency","TAGA Tower, New No. 45 Old No. 20 1st Floor, Sait Colony 2nd Street, Egmore, Chennai, Tamil Nadu 600008",null,null,null,null,null,null,null,null,null,null,null,null,null,"ChIJ7Zy93-NnUjoRyRfQznNIDls",null,null,"0ahUKEwi7rZDVoryWAxWpi-EIHcX6OyUQ8BcIAigA","பிரேயர் இன்டர்நேஷனல் லாஜிஸ்டிக்ஸ் ப்வ்ட் லட",null,["tel:04443191919"],null,null,null,1,["0ahUKEwi7rZDVoryWAxWpi-EIHcX6OyUQqtMBCA0oCg",["7M5237F3+5Q"],["37F3+5Q Chennai, Tamil Nadu"],2],[[["Tuesday",2,[2026,8,25],[["9:30 am–6:30 pm",[[9,30],[18,30]]]],0,1],["Wednesday",3,[2026,8,26],[["9:30 am–6:30 pm",[[9,30],[18,30]]]],0,1],["Thursday",4,[2026,8,27],[["9:30 am–6:30 pm",[[9,30],[18,30]]]],0,1],["Friday",5,[2026,8,28],[["9:30 am–6:30 pm",[[9,30],[18,30]]]],0,1],["Saturday",6,[2026,8,29],[["9:30 am–1 pm",[[9,30],[13]]]],0,1],["Sunday",7,[2026,8,30],[["Closed"]],0,2],["Monday",1,[2026,8,31],[["9:30 am–6:30 pm",[[9,30],[18,30]]]],0,1]],[["Tuesday",2,[2026,8,25],[["9:30 am–6:30 pm",[[9,30],[18,30]]]],0,1],null,5,null,["Closed · Opens 9:30 am Wed",[[0,6,[null,[4292030248,4294097077]]]]],["Closed · Opens 9:30 am Wed",[[0,6,[null,[4292030248,4294097077]]]]],null,[24],["Closed",[[0,6,[null,[4292030248,4294097077]]]]]],2,null,null,null,1]]],null,null,null,0,null,null,null,null,null,null,[1]]);
+      }
+      function onApiLoad() {
+        var embed = document.createElement('script');
+        embed.src = "https://maps.gstatic.com/maps-api-v3/embed/js/66/1a/init_embed.js";
+        document.body.appendChild(embed);
+      }
+    </script>
+    <link rel="preload" href="https://maps.gstatic.com/maps-api-v3/embed/js/66/1a/init_embed.js" nonce="twYX3Bm-I1CbDMssohairg" as="script" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;paint_origin=&amp;libraries=geometry,search&amp;v=weekly&amp;loading=async&amp;language=en&amp;region=in&amp;experimentation=allowed&amp;callback=onApiLoad" nonce="twYX3Bm-I1CbDMssohairg" async defer></script>
+  </body>
+</html>

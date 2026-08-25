@@ -1,0 +1,9 @@
+Date: Tue, 25 Aug 2026 17:09:09 GMT
+Server: Apache
+X-Powered-By: PHP/7.4.33
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 2295
+Keep-Alive: timeout=5
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8

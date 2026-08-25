@@ -1,0 +1,342 @@
+{
+  "home": {
+    "loadTime": 2052,
+    "domContentLoaded": 680,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 640
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 640
+      }
+    ],
+    "nav": {
+      "transferSize": 12293,
+      "encodedBodySize": 11993,
+      "decodedBodySize": 44732,
+      "duration": 2052.2999999998137
+    }
+  },
+  "about": {
+    "loadTime": 658,
+    "domContentLoaded": 500,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 528
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 528
+      }
+    ],
+    "nav": {
+      "transferSize": 6747,
+      "encodedBodySize": 6447,
+      "decodedBodySize": 20969,
+      "duration": 657.2999999998137
+    }
+  },
+  "services": {
+    "loadTime": 645,
+    "domContentLoaded": 562,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 400
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 400
+      }
+    ],
+    "nav": {
+      "transferSize": 2691,
+      "encodedBodySize": 2391,
+      "decodedBodySize": 12575,
+      "duration": 645
+    }
+  },
+  "air-services": {
+    "loadTime": 512,
+    "domContentLoaded": 413,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 404
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 404
+      }
+    ],
+    "nav": {
+      "transferSize": 3245,
+      "encodedBodySize": 2945,
+      "decodedBodySize": 13029,
+      "duration": 511.5
+    }
+  },
+  "ocean-services": {
+    "loadTime": 412,
+    "domContentLoaded": 321,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 308
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 308
+      }
+    ],
+    "nav": {
+      "transferSize": 3295,
+      "encodedBodySize": 2995,
+      "decodedBodySize": 12937,
+      "duration": 412.59999999962747
+    }
+  },
+  "customs-services": {
+    "loadTime": 392,
+    "domContentLoaded": 314,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 300
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 300
+      }
+    ],
+    "nav": {
+      "transferSize": 3131,
+      "encodedBodySize": 2831,
+      "decodedBodySize": 12627,
+      "duration": 391.8999999994412
+    }
+  },
+  "warehouse": {
+    "loadTime": 405,
+    "domContentLoaded": 305,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 296
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 296
+      }
+    ],
+    "nav": {
+      "transferSize": 3194,
+      "encodedBodySize": 2894,
+      "decodedBodySize": 13139,
+      "duration": 405.5
+    }
+  },
+  "risk-management": {
+    "loadTime": 394,
+    "domContentLoaded": 308,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 300
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 300
+      }
+    ],
+    "nav": {
+      "transferSize": 3844,
+      "encodedBodySize": 3544,
+      "decodedBodySize": 14768,
+      "duration": 394.5
+    }
+  },
+  "project-cargo": {
+    "loadTime": 400,
+    "domContentLoaded": 292,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 288
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 288
+      }
+    ],
+    "nav": {
+      "transferSize": 3168,
+      "encodedBodySize": 2868,
+      "decodedBodySize": 12555,
+      "duration": 400.19999999925494
+    }
+  },
+  "locations": {
+    "loadTime": 426,
+    "domContentLoaded": 334,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 328
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 328
+      }
+    ],
+    "nav": {
+      "transferSize": 3751,
+      "encodedBodySize": 3451,
+      "decodedBodySize": 17041,
+      "duration": 425.30000000074506
+    }
+  },
+  "awards": {
+    "loadTime": 559,
+    "domContentLoaded": 346,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 340
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 340
+      }
+    ],
+    "nav": {
+      "transferSize": 2595,
+      "encodedBodySize": 2295,
+      "decodedBodySize": 12444,
+      "duration": 558.2999999998137
+    }
+  },
+  "project": {
+    "loadTime": 1025,
+    "domContentLoaded": 404,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 384
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 384
+      }
+    ],
+    "nav": {
+      "transferSize": 3333,
+      "encodedBodySize": 3033,
+      "decodedBodySize": 15833,
+      "duration": 1025.5999999996275
+    }
+  },
+  "gallery": {
+    "loadTime": 422,
+    "domContentLoaded": 338,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 332
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 332
+      }
+    ],
+    "nav": {
+      "transferSize": 2898,
+      "encodedBodySize": 2598,
+      "decodedBodySize": 16563,
+      "duration": 422.09999999962747
+    }
+  },
+  "csr": {
+    "loadTime": 377,
+    "domContentLoaded": 288,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 284
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 284
+      }
+    ],
+    "nav": {
+      "transferSize": 2943,
+      "encodedBodySize": 2643,
+      "decodedBodySize": 11589,
+      "duration": 377
+    }
+  },
+  "careers": {
+    "loadTime": 422,
+    "domContentLoaded": 329,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 380
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 380
+      }
+    ],
+    "nav": {
+      "transferSize": 3039,
+      "encodedBodySize": 2739,
+      "decodedBodySize": 12839,
+      "duration": 421.59999999962747
+    }
+  },
+  "network-partners": {
+    "loadTime": 433,
+    "domContentLoaded": 344,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 328
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 328
+      }
+    ],
+    "nav": {
+      "transferSize": 2526,
+      "encodedBodySize": 2226,
+      "decodedBodySize": 10743,
+      "duration": 432.3999999994412
+    }
+  },
+  "contact-us": {
+    "loadTime": 834,
+    "domContentLoaded": 312,
+    "paintEntries": [
+      {
+        "name": "first-paint",
+        "startTime": 308
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 308
+      }
+    ],
+    "nav": {
+      "transferSize": 2859,
+      "encodedBodySize": 2559,
+      "decodedBodySize": 11157,
+      "duration": 834.1999999992549
+    }
+  }
+}

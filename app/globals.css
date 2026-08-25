@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-navy: #0b2144;
+    --primary-navy-dark: #07152b;
+    --primary-red: #e1390f;
+    --primary-red-hover: #c42f0b;
+    --accent-blue: #3282e6;
+    --canvas-light: #f8f9fa;
+    --canvas-white: #ffffff;
+    --text-primary: #0b2144;
+    --text-muted: #5a6a85;
+    --border-subtle: #e2e8f0;
+  }
+
+  body {
+    background-color: var(--canvas-light);
+    color: var(--text-primary);
+    font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}

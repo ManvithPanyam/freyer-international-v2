@@ -1,0 +1,41 @@
+url,page_name,action,rationale,title,word_count,h1,images_count,ctas_count
+https://www.freyerinternational.com,Home,REDESIGN,"Core entry point. Extremely low information density (283 words), missing clear value propositions, interactive tools, or modern RFQ.",Freyer International Logistics Pvt Ltd,283,"Logistics
+                        Beyond Boundaries | About FreyerWho we are",11,4
+https://www.freyerinternational.com/,Home,REDESIGN,"Core entry point. Extremely low information density (283 words), missing clear value propositions, interactive tools, or modern RFQ.",Freyer International Logistics Pvt Ltd,283,"Logistics
+                        Beyond Boundaries | About FreyerWho we are",11,4
+https://www.freyerinternational.com//,Home,REDESIGN,"Core entry point. Extremely low information density (283 words), missing clear value propositions, interactive tools, or modern RFQ.",Freyer International Logistics Pvt Ltd,283,"Logistics
+                        Beyond Boundaries | About FreyerWho we are",11,4
+https://www.freyerinternational.com//about,About Us,REWRITE,"Valuable corporate narrative and leadership background, but poorly structured, lacks executive bios, metrics, and modern trust visual signals.",Freyer International Logistics Pvt Ltd,427,"Logistics
+                        Beyond Boundaries",2,4
+https://www.freyerinternational.com//services,Services Hub,REDESIGN,"Hub page has only 123 words with static image cards. Needs interactive service selector, industry cross-linking, and fast-quote triggers.",Freyer International Logistics Pvt Ltd,123,"Logistics
+                        Beyond Boundaries",8,9
+https://www.freyerinternational.com//services/air-services,Air Freight Services,REWRITE,"Essential core service. Content is brief and lacks carrier network details, charter options, SLA tiers, temperature-controlled cargo, and direct RFQ form.",Freyer International Logistics Pvt Ltd,320,"Logistics
+                        Beyond Boundaries",2,3
+https://www.freyerinternational.com//services/ocean-services,Ocean Freight Services,REWRITE,"High-revenue service line. Contains standard FCL/LCL text but lacks port coverage, sailing schedules, container specs, and interactive rate quoting.",Freyer International Logistics Pvt Ltd,352,"Logistics
+                        Beyond Boundaries",2,3
+https://www.freyerinternational.com//services/customs-services,Customs Brokerage,REWRITE,"Critical differentiator for Indian logistics. Needs detailed regulatory compliance, AEO tier explanation, HS code assistance, and tariff guides.",Freyer International Logistics Pvt Ltd,282,"Logistics
+                        Beyond Boundaries",2,3
+https://www.freyerinternational.com//services/warehouse,Warehousing Services,REWRITE,"Important infrastructure capability. Current text is generic; needs square footage specs, WMS integration capabilities, multi-city footprint map.",Freyer International Logistics Pvt Ltd,253,"Logistics
+                        Beyond Boundaries",2,3
+https://www.freyerinternational.com//services/risk-management,Risk Management,MERGE,Thin standalone page (cargo insurance). Should be merged into Value-Added Services / Customs & Compliance rather than top-level silo.,Freyer International Logistics Pvt Ltd,470,"Logistics
+                        Beyond Boundaries",2,3
+https://www.freyerinternational.com//services/project-cargo,Project Cargo Services,REDESIGN,"High-margin showcase. Needs rich multimodal case study format, technical specs, heavy-lift imagery, engineering diagrams, and downloadable whitepapers.",Freyer International Logistics Pvt Ltd,293,"Logistics
+                        Beyond Boundaries",2,3
+https://www.freyerinternational.com//locations,Locations,REDESIGN,"Essential for multi-branch credibility. Currently static list; needs interactive map, branch manager contacts, Google Maps API, and localized SEO schemas.",Freyer International Logistics Pvt Ltd,330,"Logistics
+                        Beyond Boundaries",13,2
+https://www.freyerinternational.com//awards,Awards,MERGE,"Only 85 words, static image scans. Should be merged into About Us / Trust Hub rather than standalone orphan-like page.",Freyer International Logistics Pvt Ltd,85,"Logistics
+                        Beyond Boundaries",13,2
+https://www.freyerinternational.com//project,Projects / Case Studies,REDESIGN,"Contains real case studies (34 images) but rendered in an unfilterable masonry gallery without case study write-ups, client names, or metrics.",Freyer International Logistics Pvt Ltd,296,"Logistics
+                        Beyond Boundaries",35,2
+https://www.freyerinternational.com//gallery,Gallery,DELETE,"Generic photo dumping ground without context or captions. Real project images should live in dedicated Project Case Studies, cultural photos in Careers.",Freyer International Logistics Pvt Ltd,106,"Logistics
+                        Beyond Boundaries",10,2
+https://www.freyerinternational.com//corporate-social-responsibility,CSR,MERGE,218 words on basic initiatives. Better suited as a rich dedicated section under Company / About Us.,Freyer International Logistics Pvt Ltd,218,"Logistics
+                        Beyond Boundaries",2,3
+https://www.freyerinternational.com//careers,Careers,REDESIGN,"Broken form (action='#', duplicate field names), no live job openings listed, no ATS integration, no employee value proposition.",Freyer International Logistics Pvt Ltd,137,"Logistics
+                        Beyond Boundaries",2,3
+https://www.freyerinternational.com//network partners,Network Partners,MERGE,"Lists 5 network logos (WCA, SCN, etc.) in 90 words. Should be a trust bar across the entire site and a dedicated section in About Us.",Freyer International Logistics Pvt Ltd,90,"Logistics
+                        Beyond Boundaries",6,2
+https://www.freyerinternational.com//contact-us,Contact Us,REDESIGN,"No interactive contact form, only static address and phone numbers. Needs multi-department routing, branch selector, and interactive map.",Freyer International Logistics Pvt Ltd,118,"Logistics
+                        Beyond Boundaries",2,2
+https://www.freyerinternational.com/career-plus.php,Career Plus (Legacy PHP),DELETE,Orphan legacy PHP script endpoint. Unsecured and redundant.,Freyer International Logistics Pvt Ltd,121,"Logistics
+                        Beyond Boundaries",3,2

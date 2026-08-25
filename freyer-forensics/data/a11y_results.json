@@ -1,0 +1,4036 @@
+{
+  "home": {
+    "violationsCount": 16,
+    "violations": [
+      {
+        "id": "aria-allowed-attr",
+        "impact": "critical",
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/aria-allowed-attr?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<a class=\"ytmVideoInfoVideoTitle\" aria-level=\"2\" href=\"https://www.youtube.com/watch?v=KEFt2quibkg\"><span class=\"ytAttributedStringHost ytmVideoInfoLink ytAttributedStringWhiteSpaceNoWrap\" style=\"\">Logistics Intro Video</span></a>",
+            "target": [
+              "#iframe_bgndVideo",
+              ".ytmVideoInfoVideoTitle"
+            ],
+            "failureSummary": "Fix all of the following:\n  ARIA attribute is not allowed: aria-level=\"2\""
+          }
+        ]
+      },
+      {
+        "id": "aria-prohibited-attr",
+        "impact": "serious",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "help": "Elements must only use permitted ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/aria-prohibited-attr?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<div class=\"html5-video-player y...\" tabindex=\"\" id=\"movie_player\" data-version=\"/s/player/b7457b7c/p...\" aria-label=\"YouTube Video Player\">",
+            "target": [
+              "#iframe_bgndVideo",
+              "#movie_player"
+            ],
+            "failureSummary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+          }
+        ]
+      },
+      {
+        "id": "button-name",
+        "impact": "critical",
+        "description": "Ensure buttons have discernible text",
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/button-name?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<button class=\"ytmVideoInfoLink ytmVideoInfoChannelAvatar\"><img class=\"ytCoreImageHost ytmVideoInfoChannelLogo ytCoreImageFillParentHeight ytCoreImageFillParentWidth ytCoreImageContentModeScaleAspectFill\" alt=\"thumbnail-image\" style=\"background-color: transparent;\"></button>",
+            "target": [
+              "#iframe_bgndVideo",
+              ".ytmVideoInfoChannelAvatar"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 2,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<small>About Freyer</small>",
+            "target": [
+              "small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.75 (foreground color: #d82e03, background color: #141517, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "frame-title",
+        "impact": "serious",
+        "description": "Ensure <iframe> and <frame> elements have an accessible name",
+        "help": "Frames must have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/frame-title?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<iframe src=\"https://www.google.c...\" width=\"100%\" height=\"650\" frameborder=\"0\" style=\"border:0;margin-top:...\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\">",
+            "target": [
+              "iframe[height=\"650\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has no title attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensure the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/heading-order?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<h3 class=\"media-item-headline\"><span class=\"ytAttributedStringHost\" role=\"text\" style=\"\">TRXX Network ICO Video</span></h3>",
+            "target": [
+              "#iframe_bgndVideo",
+              ".ytFullscreenVideoRecommendationsRecommendation:nth-child(1) > ytm-endscreen-video-renderer > ytm-video-with-context-renderer > ytm-media-item > .media-item-details > .media-item-info[no-channel-avatar=\"true\"] > .media-item-metadata > a[target=\"_blank\"] > h3"
+            ],
+            "failureSummary": "Fix any of the following:\n  Heading order invalid"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 10,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"images/clients/great work place jpg.jpg\" style=\"display: inline; visibility: visible; opacity: 1; width:150px;\">",
+            "target": [
+              "marquee > img:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"images/clients/AEO.jpg\" style=\"display: inline; visibility: visible; opacity: 1;\">",
+            "target": [
+              "img[src$=\"AEO.jpg\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"images/clients/iso.png\" style=\"display: inline; visibility: visible; opacity: 1;\">",
+            "target": [
+              "img[src$=\"iso.png\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 3,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<aside class=\"footer-nav left\">",
+            "target": [
+              ".footer-nav:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "marquee",
+        "impact": "serious",
+        "description": "Ensure <marquee> elements are not used",
+        "help": "<marquee> elements are deprecated and must not be used",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/marquee?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<marquee scrollamount=\"5\" direction=\"left\" width=\"100%\" height=\"148\" onmouseover=\"this.stop()\" onmouseout=\"this.start()\" class=\"\">",
+            "target": [
+              "marquee"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is visible"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 34,
+        "nodesSummary": [
+          {
+            "html": "<div id=\"player\" style=\"width: 100%; height: 100%;\">",
+            "target": [
+              "#iframe_bgndVideo",
+              "#player"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<div class=\"ytmVideoInfoVideoTitleContainer ytmVideoInfoLogoEnabled\">",
+            "target": [
+              "#iframe_bgndVideo",
+              ".ytmVideoInfoVideoTitleContainer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<div class=\"ytmVideoInfoOverlay\">",
+            "target": [
+              "#iframe_bgndVideo",
+              ".ytmVideoInfoOverlay"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\" class=\" desktop landscape\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 15,
+        "nodesSummary": [
+          {
+            "html": "<h2>Who we are</h2>",
+            "target": [
+              ".section-content > h2"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<p>Freyer International offers Integrated logistics, International freight forwarding and Supply chain\n            solutions. We provide highly customised solutions to customers, meeting their needs - from sourcing and\n            manufacturing to selling around the world.</p>",
+            "target": [
+              ".section-content > p:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<p>We deploy advanced, innovative supply chain models to enhance operational efficiency, reduce overall costs,\n            and improve response time to markets.</p>",
+            "target": [
+              ".section-content > p:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 7,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Air-Services.jpg\">",
+            "target": [
+              "li:nth-child(1) > a > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Ocean-Services.jpg\">",
+            "target": [
+              "li:nth-child(2) > a > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Customs-Services.jpg\">",
+            "target": [
+              "li:nth-child(3) > a > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section\">",
+            "target": [
+              ".section"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "air-services": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section-content clear\">",
+            "target": [
+              ".section-content"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "ocean-services": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section-content clear\">",
+            "target": [
+              ".section-content"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "customs-services": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section-content clear\">",
+            "target": [
+              ".section-content"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "warehouse": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section-content clear\">",
+            "target": [
+              ".section-content"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "risk-management": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section-content clear\">",
+            "target": [
+              ".section-content"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "project-cargo": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section-content clear\">",
+            "target": [
+              ".section-content"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "locations": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 11,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/mappin.png\">",
+            "target": [
+              "li:nth-child(1) > figure > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/mappin.png\">",
+            "target": [
+              "li:nth-child(2) > figure > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/mappin.png\">",
+            "target": [
+              "li:nth-child(3) > figure > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\" class=\" desktop landscape\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 2,
+        "nodesSummary": [
+          {
+            "html": "<div class=\"india-map\">",
+            "target": [
+              ".india-map"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<section class=\"section\">",
+            "target": [
+              ".section"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "awards": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 12,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Awards/14.jpeg\">",
+            "target": [
+              "li:nth-child(1) > a > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Awards/13.jpeg\">",
+            "target": [
+              "li:nth-child(2) > a > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Awards/12.jpeg\">",
+            "target": [
+              "li:nth-child(3) > a > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\" class=\" desktop landscape\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 15,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"https://www.freyerinternational.com//images/Awards/14.jpeg\"><img src=\"https://www.freyerinternational.com//images/Awards/14.jpeg\"></a>",
+            "target": [
+              "#grid > li:nth-child(1) > a"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"https://www.freyerinternational.com//images/Awards/13.jpeg\"><img src=\"https://www.freyerinternational.com//images/Awards/13.jpeg\"></a>",
+            "target": [
+              "#grid > li:nth-child(2) > a"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"https://www.freyerinternational.com//images/Awards/12.jpeg\"><img src=\"https://www.freyerinternational.com//images/Awards/12.jpeg\"></a>",
+            "target": [
+              "#grid > li:nth-child(3) > a"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section\">",
+            "target": [
+              ".section"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "project": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 34,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/project/1.jpg\">",
+            "target": [
+              "ul:nth-child(3) > li > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/project/2.1.jpg\">",
+            "target": [
+              "ul:nth-child(6) > li:nth-child(1) > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/project/2.2.jpg\">",
+            "target": [
+              "ul:nth-child(6) > li:nth-child(2) > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\" class=\" desktop landscape\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section\">",
+            "target": [
+              ".section"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 9,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Gallery/5th Year Celebration/1.jpg\">",
+            "target": [
+              "a[rel=\"7\"]:nth-child(1) > figure > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Gallery/aku/1.jpg\">",
+            "target": [
+              "li:nth-child(2) > a[rel=\"6\"]:nth-child(1) > figure > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/Gallery/Office/1.jpg\">",
+            "target": [
+              "a[rel=\"1\"]:nth-child(1) > figure > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\" class=\" desktop landscape\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 37,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"https://www.freyerinternational.com//images/Gallery/5th Year Celebration/2.jpg\" rel=\"7\"></a>",
+            "target": [
+              "a[rel=\"7\"]:nth-child(2)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"https://www.freyerinternational.com//images/Gallery/5th Year Celebration/3.jpg\" rel=\"7\"></a>",
+            "target": [
+              "a[rel=\"7\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"https://www.freyerinternational.com//images/Gallery/5th Year Celebration/4.jpg\" rel=\"7\"></a>",
+            "target": [
+              "a[rel=\"7\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section\">",
+            "target": [
+              ".section"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "csr": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\" class=\" desktop landscape\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section\">",
+            "target": [
+              ".section"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "careers": {
+    "violationsCount": 12,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "label",
+        "impact": "critical",
+        "description": "Ensure every form element has a label",
+        "help": "Form elements must have labels",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/label?application=axe-puppeteer",
+        "nodesCount": 8,
+        "nodesSummary": [
+          {
+            "html": "<input name=\"Name\" type=\"text\" required=\"\">",
+            "target": [
+              ".split-form.left:nth-child(1) > input[name=\"Name\"][type=\"text\"][required=\"\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<input name=\"Name\" type=\"text\" required=\"\">",
+            "target": [
+              ".split-form.right:nth-child(2) > input[name=\"Name\"][type=\"text\"][required=\"\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<input name=\"Phone\" type=\"number\" required=\"\">",
+            "target": [
+              "input[name=\"Phone\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\" class=\" desktop landscape\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 14,
+        "nodesSummary": [
+          {
+            "html": "<aside class=\"sidebar contactsidebar left\">\n        \t<h2>We're happy to help you!</h2>\n            <p>Logistics helps you realise your business goals with a broad range of transport and logistics services.</p>\n            <a href=\"career-plus.php\">Contact Us</a>\n        </aside>",
+            "target": [
+              ".sidebar"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<h2>Join with us</h2>",
+            "target": [
+              "fieldset > h2"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<p>We just want to have greate people working for us.</p>",
+            "target": [
+              "fieldset > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "network-partners": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 5,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"images/Our Network Partners/wca.png\">",
+            "target": [
+              "a[href=\"#\"]:nth-child(1) > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"images/Our Network Partners/wpa.jpg\">",
+            "target": [
+              "a[href=\"#\"]:nth-child(2) > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          },
+          {
+            "html": "<img src=\"images/Our Network Partners/SCN.png\">",
+            "target": [
+              "a[href=\"#\"]:nth-child(3) > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<html lang=\"en\" class=\" desktop landscape\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 8,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><img src=\"images/Our Network Partners/wca.png\"></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(1)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><img src=\"images/Our Network Partners/wpa.jpg\"></a>",
+            "target": [
+              ".logos > a[href=\"#\"]:nth-child(2)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><img src=\"images/Our Network Partners/SCN.png\"></a>",
+            "target": [
+              ".logos > a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<section class=\"section\">",
+            "target": [
+              ".section"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  },
+  "contact-us": {
+    "violationsCount": 11,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<span style=\"text-transform: uppercase; color: #e1390f;  font-size: 10px;    font-weight: 600;\">Logistics\n                        Beyond Boundaries</span>",
+            "target": [
+              "h1 > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.88 (foreground color: #e1390f, background color: #333333, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "frame-title",
+        "impact": "serious",
+        "description": "Ensure <iframe> and <frame> elements have an accessible name",
+        "help": "Frames must have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/frame-title?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<iframe src=\"https://www.google.c...\" width=\"100%\" height=\"500\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\">",
+            "target": [
+              "iframe"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has no title attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "image-alt",
+        "impact": "critical",
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/image-alt?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<img src=\"https://www.freyerinternational.com//images/hss.png\">",
+            "target": [
+              "a[target=\"_blank\"] > img"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ]
+      },
+      {
+        "id": "landmark-banner-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the banner landmark is at top level",
+        "help": "Banner landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-banner-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header-top clear\">",
+            "target": [
+              ".header-top"
+            ],
+            "failureSummary": "Fix any of the following:\n  The banner landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-contentinfo-is-top-level",
+        "impact": "moderate",
+        "description": "Ensure the contentinfo landmark is at top level",
+        "help": "Contentinfo landmark should not be contained in another landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-contentinfo-is-top-level?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer-bottom clear\">",
+            "target": [
+              ".footer-bottom"
+            ],
+            "failureSummary": "Fix any of the following:\n  The contentinfo landmark is contained in another landmark."
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-banner",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one banner landmark",
+        "help": "Document should not have more than one banner landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-banner?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one banner landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-no-duplicate-contentinfo",
+        "impact": "moderate",
+        "description": "Ensure the document has at most one contentinfo landmark",
+        "help": "Document should not have more than one contentinfo landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-no-duplicate-contentinfo?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+          }
+        ]
+      },
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-unique?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<header class=\"header\">",
+            "target": [
+              ".header"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<nav class=\"nav left\">",
+            "target": [
+              ".nav"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          },
+          {
+            "html": "<footer class=\"footer clear\">",
+            "target": [
+              ".footer"
+            ],
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/link-name?application=axe-puppeteer",
+        "nodesCount": 4,
+        "nodesSummary": [
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-facebook\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-twitter\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          },
+          {
+            "html": "<a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>",
+            "target": [
+              "a[href=\"#\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "impact": "moderate",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "help": "Zooming and scaling must not be disabled",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/meta-viewport?application=axe-puppeteer",
+        "nodesCount": 1,
+        "nodesSummary": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axe-puppeteer",
+        "nodesCount": 6,
+        "nodesSummary": [
+          {
+            "html": "<embed-place-card-element></embed-place-card-element>",
+            "target": [
+              "iframe",
+              "embed-place-card-element"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<div>",
+            "target": [
+              "iframe",
+              "div:nth-child(15)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "html": "<span style=\"\">Map data ©2026 Google</span>",
+            "target": [
+              "iframe",
+              ".gmnoprint:nth-child(2) > .gm-style-cc[draggable=\"false\"] > div:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ]
+  }
+}
