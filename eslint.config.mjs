@@ -13,6 +13,7 @@ export default tseslint.config(
       "*.config.ts",
       "generate_phase2_docs.py",
       "generate_readme.py",
+      "run_qa.js",
     ],
   },
   ...tseslint.configs.recommended,

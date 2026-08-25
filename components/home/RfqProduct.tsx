@@ -13,10 +13,10 @@ type ServiceOption = {
 };
 
 const SERVICES: ServiceOption[] = [
-  { id: "air_freight", title: "Air Freight", subtitle: "Time-critical & international air cargo", icon: Plane },
+  { id: "air_freight", title: "Air Freight", subtitle: "Time-critical international air cargo", icon: Plane },
   { id: "ocean_fcl", title: "Ocean Freight (FCL)", subtitle: "Full container load shipments", icon: Anchor },
   { id: "ocean_lcl", title: "Ocean Freight (LCL)", subtitle: "Consolidated cargo containers", icon: Anchor },
-  { id: "project_cargo", title: "Project Cargo", subtitle: "Over-dimensional & heavy-lift freight", icon: Compass },
+  { id: "project_cargo", title: "Project Cargo", subtitle: "Over-dimensional & heavy-lift cargo", icon: Compass },
   { id: "customs_brokerage", title: "Customs Brokerage", subtitle: "AEO-certified regulatory clearance", icon: FileCheck },
   { id: "warehousing", title: "Warehousing", subtitle: "Contract storage & distribution", icon: Warehouse },
 ];
@@ -82,53 +82,50 @@ export function RfqProduct() {
   return (
     <section id="quote" className="py-24 sm:py-32 bg-[#07152b] text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center max-w-xl mx-auto mb-12">
-          <span className="text-[#ff542e] text-xs font-mono tracking-widest uppercase font-semibold">
-            Guided Freight Quote Engine
+          <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
+            Guided Freight Inquiry
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-2">
-            Configure Your Shipment
+            Tell us what needs moving.
           </h2>
           <p className="text-slate-300 text-sm mt-3">
-            Structured freight parameters routed directly to our commercial pricing desk.
+            Structured freight parameters routed directly to the Freyer pricing desk.
           </p>
         </div>
 
-        {/* Product Card Container */}
+        {/* Calm Configurator Container */}
         <div className="bg-[#0b2144] rounded-2xl border border-white/10 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           {!submitted ? (
             <div>
-              {/* Progress Indicator */}
+              {/* Progress */}
               <div className="flex items-center justify-between pb-8 mb-8 border-b border-slate-700/60">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono text-slate-400">Step {step} of 4</span>
-                </div>
+                <span className="text-xs font-mono text-slate-400">Step {step} of 4</span>
                 <div className="flex items-center gap-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
                       className={`h-1.5 rounded-full transition-all duration-300 ${
-                        i <= step ? "w-8 bg-[#d63309]" : "w-4 bg-slate-700"
+                        i <= step ? "w-8 bg-[#c42f0b]" : "w-4 bg-slate-700"
                       }`}
                     />
                   ))}
                 </div>
               </div>
 
-              {/* Step Content with Motion */}
+              {/* Step Flow */}
               <AnimatePresence mode="wait">
                 {step === 1 && (
                   <motion.div
                     key="step1"
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    exit={{ opacity: 0, x: -15 }}
                     transition={{ duration: 0.25 }}
                     className="space-y-6"
                   >
                     <h3 className="text-lg font-semibold text-white">
-                      01 / What type of logistics service do you need?
+                      01 / Select your required freight modality
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                       {SERVICES.map((srv) => {
@@ -139,15 +136,15 @@ export function RfqProduct() {
                             key={srv.id}
                             type="button"
                             onClick={() => handleServiceSelect(srv.id)}
-                            className={`p-4 rounded-xl border text-left transition-all duration-200 flex items-start gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff542e] ${
+                            className={`p-4 rounded-xl border text-left transition-all duration-200 flex items-start gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b4a] ${
                               isSelected
-                                ? "bg-white/10 border-[#ff542e] shadow-sm"
+                                ? "bg-white/10 border-[#c42f0b] shadow-sm"
                                 : "bg-white/[0.02] border-white/10 hover:border-white/20"
                             }`}
                           >
                             <Icon
                               className={`w-5 h-5 shrink-0 mt-0.5 ${
-                                isSelected ? "text-[#ff542e]" : "text-slate-400"
+                                isSelected ? "text-[#ff6b4a]" : "text-slate-400"
                               }`}
                             />
                             <div>
@@ -164,14 +161,14 @@ export function RfqProduct() {
                 {step === 2 && (
                   <motion.div
                     key="step2"
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    exit={{ opacity: 0, x: -15 }}
                     transition={{ duration: 0.25 }}
                     className="space-y-6"
                   >
                     <h3 className="text-lg font-semibold text-white">
-                      02 / What are the origin and destination ports/cities?
+                      02 / Origin and destination locations
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
@@ -184,7 +181,7 @@ export function RfqProduct() {
                           placeholder="e.g. Chennai Port (INMAA)"
                           value={formData.origin || ""}
                           onChange={(e) => setFormData({ ...formData, origin: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff542e]"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         />
                         {errors.origin && <p className="text-xs text-red-400">{errors.origin}</p>}
                       </div>
@@ -199,7 +196,7 @@ export function RfqProduct() {
                           placeholder="e.g. Hamburg Port (DEHAM)"
                           value={formData.destination || ""}
                           onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff542e]"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         />
                         {errors.destination && (
                           <p className="text-xs text-red-400">{errors.destination}</p>
@@ -212,9 +209,9 @@ export function RfqProduct() {
                 {step === 3 && (
                   <motion.div
                     key="step3"
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    exit={{ opacity: 0, x: -15 }}
                     transition={{ duration: 0.25 }}
                     className="space-y-6"
                   >
@@ -234,7 +231,7 @@ export function RfqProduct() {
                           onChange={(e) =>
                             setFormData({ ...formData, weightKg: parseFloat(e.target.value) || 0 })
                           }
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff542e]"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         />
                         {errors.weightKg && <p className="text-xs text-red-400">{errors.weightKg}</p>}
                       </div>
@@ -252,12 +249,12 @@ export function RfqProduct() {
                               cargoType: e.target.value as RfqFormData["cargoType"],
                             })
                           }
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff542e]"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         >
                           <option value="general">Standard Commercial Goods</option>
                           <option value="hazardous">Hazardous / Dangerous Goods (DG)</option>
                           <option value="temperature_controlled">Temperature Sensitive / Cold-Chain</option>
-                          <option value="breakbulk_oversized">Over-Dimensional / Project Heavy Lift</option>
+                          <option value="breakbulk_oversized">Over-Dimensional / Project Cargo</option>
                         </select>
                       </div>
                     </div>
@@ -267,14 +264,14 @@ export function RfqProduct() {
                 {step === 4 && (
                   <motion.div
                     key="step4"
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    exit={{ opacity: 0, x: -15 }}
                     transition={{ duration: 0.25 }}
                     className="space-y-6"
                   >
                     <h3 className="text-lg font-semibold text-white">
-                      04 / Shipper & Company Details
+                      04 / Company & contact details
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
@@ -284,10 +281,10 @@ export function RfqProduct() {
                         <input
                           id="company"
                           type="text"
-                          placeholder="e.g. Precision Engineering Ltd"
+                          placeholder="e.g. Industrial Manufacturing Ltd"
                           value={formData.companyName || ""}
                           onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff542e]"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         />
                         {errors.companyName && (
                           <p className="text-xs text-red-400">{errors.companyName}</p>
@@ -304,7 +301,7 @@ export function RfqProduct() {
                           placeholder="e.g. Suresh Kumar"
                           value={formData.contactName || ""}
                           onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff542e]"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         />
                         {errors.contactName && (
                           <p className="text-xs text-red-400">{errors.contactName}</p>
@@ -321,7 +318,7 @@ export function RfqProduct() {
                           placeholder="e.g. suresh@company.com"
                           value={formData.corporateEmail || ""}
                           onChange={(e) => setFormData({ ...formData, corporateEmail: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff542e]"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         />
                         {errors.corporateEmail && (
                           <p className="text-xs text-red-400">{errors.corporateEmail}</p>
@@ -338,7 +335,7 @@ export function RfqProduct() {
                           placeholder="e.g. +91 98765 43210"
                           value={formData.phone || ""}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff542e]"
+                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         />
                         {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
                       </div>
@@ -347,7 +344,7 @@ export function RfqProduct() {
                 )}
               </AnimatePresence>
 
-              {/* Navigation Controls */}
+              {/* Controls */}
               <div className="flex items-center justify-between pt-8 mt-8 border-t border-slate-700/60">
                 {step > 1 ? (
                   <button
@@ -365,9 +362,9 @@ export function RfqProduct() {
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="inline-flex items-center gap-2 bg-[#d63309] hover:bg-[#b82a06] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                  <span>{step === 4 ? "Transmit RFQ" : "Continue"}</span>
+                  <span>{step === 4 ? "Submit Request" : "Continue"}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -382,10 +379,10 @@ export function RfqProduct() {
                 <CheckCircle2 className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold text-white tracking-tight">
-                Request for Quote Received
+                Inquiry Received
               </h3>
               <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                Your cargo parameters have been structured and transmitted to the Freyer commercial pricing desk. A logistics coordinator will contact you directly.
+                Your shipment parameters have been forwarded to the Freyer pricing desk. A logistics coordinator will contact you directly.
               </p>
               <div className="pt-4">
                 <button
@@ -394,9 +391,9 @@ export function RfqProduct() {
                     setStep(1);
                     setFormData({ service: "air_freight", cargoType: "general" });
                   }}
-                  className="text-xs font-mono text-[#ff542e] hover:underline"
+                  className="text-xs font-mono text-[#ff6b4a] hover:underline"
                 >
-                  Configure Another Shipment
+                  Submit Another Inquiry
                 </button>
               </div>
             </motion.div>

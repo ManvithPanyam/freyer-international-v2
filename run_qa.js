@@ -12,14 +12,14 @@ const VIEWPORTS = [
 ];
 
 (async () => {
-  console.log('Launching headless browser for QA screenshots and Axe audit...');
+  console.log('Launching headless browser for QA screenshots and Axe audit on port 3012...');
   const browser = await puppeteer.launch({
     executablePath: '/usr/bin/google-chrome',
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
   const page = await browser.newPage();
-  await page.goto('http://localhost:3008/', { waitUntil: 'domcontentloaded' });
+  await page.goto('http://localhost:3012/', { waitUntil: 'domcontentloaded' });
   await new Promise(r => setTimeout(r, 1000));
 
   // 1. Run Axe-Core Audit
