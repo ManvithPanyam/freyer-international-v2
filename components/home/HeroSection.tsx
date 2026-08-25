@@ -1,116 +1,200 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Play, X } from "lucide-react";
 
 export function HeroSection() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Respect prefers-reduced-motion — don't autoplay video
+  const prefersReducedMotion =
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      : false;
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || prefersReducedMotion) return;
+
+    const handleCanPlay = () => setVideoLoaded(true);
+    video.addEventListener("canplay", handleCanPlay);
+    return () => video.removeEventListener("canplay", handleCanPlay);
+  }, [prefersReducedMotion]);
+
+  // Close modal on Escape
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setVideoModalOpen(false);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
 
   return (
     <>
-      <section id="top" className="relative min-h-screen flex items-center justify-center bg-[#07152b] text-white overflow-hidden pt-20 pb-16">
-        {/* Background Image / Poster Frame with Subtle Dark Vignette */}
+      <section
+        id="top"
+        className="relative min-h-screen flex items-center justify-center bg-[#07152b] text-white overflow-hidden pt-20 pb-16"
+      >
+        {/* ── Cinematic Background ── */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/slide4.jpg"
-            alt="Freyer International Multimodal Logistics Operations"
-            fill
-            priority
-            className="object-cover object-center opacity-40 filter saturate-75"
-            sizes="100vw"
+          {/* Poster frame — shown immediately, fades out as video loads */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/hero-poster.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{
+              opacity: videoLoaded ? 0 : 0.55,
+              transition: "opacity 1.2s ease",
+              filter: "saturate(0.8)",
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07152b] via-[#07152b]/60 to-black/60" />
+
+          {/* Corporate video — muted autoplay, loops, no controls */}
+          {!prefersReducedMotion && (
+            <video
+              ref={videoRef}
+              src="/video/freyer-hero.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              style={{
+                opacity: videoLoaded ? 0.45 : 0,
+                transition: "opacity 1.2s ease",
+                filter: "saturate(0.75)",
+              }}
+            />
+          )}
+
+          {/* Vignette gradient — restrained, lets video breathe */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#07152b]/95 via-[#07152b]/50 to-[#07152b]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07152b]/40 via-transparent to-[#07152b]/20" />
         </div>
 
+        {/* ── Hero Content ── */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-6 inline-flex items-center gap-2 text-[11px] font-mono tracking-[0.2em] text-slate-400 uppercase"
+          >
+            <span className="w-6 h-px bg-[#c42f0b] inline-block" />
+            AEO Certified · IATA Accredited · WCA Member
+            <span className="w-6 h-px bg-[#c42f0b] inline-block" />
+          </motion.div>
+
           {/* Main Statement */}
           <motion.h1
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.08] max-w-4xl"
+            transition={{ duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white leading-[1.04] max-w-4xl"
           >
-            Complex cargo. <br className="hidden sm:inline" />
-            <span className="text-slate-300 font-light italic">Precisely moved.</span>
+            Complex cargo.
+            <br />
+            <span className="text-slate-300 font-light italic">
+              Precisely moved.
+            </span>
           </motion.h1>
 
-          {/* Concise Subtitle */}
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="mt-6 text-base sm:text-lg md:text-xl text-slate-200 max-w-2xl font-normal leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-xl font-normal leading-relaxed"
           >
-            International air & ocean freight forwarding, AEO-certified customs brokerage, and turnkey project cargo engineering across 10 strategic hubs in India.
+            International air &amp; ocean freight, AEO-certified customs
+            brokerage, and turnkey project cargo across 10 strategic hubs in
+            India.
           </motion.p>
 
-          {/* Actions: 1 Primary CTA + 1 Watch Film Trigger */}
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="mt-10 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto"
           >
             <a
               href="#quote"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white font-semibold px-8 py-4 rounded text-sm sm:text-base transition-all duration-200 shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold px-8 py-4 rounded-sm text-sm sm:text-base transition-colors duration-150 shadow-2xl shadow-[#c42f0b]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07152b]"
             >
               <span>Request a Quote</span>
               <ArrowRight className="w-4 h-4" />
             </a>
+
             <button
               type="button"
               onClick={() => setVideoModalOpen(true)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-7 py-4 rounded text-sm sm:text-base transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/8 hover:bg-white/15 active:bg-white/20 text-white border border-white/15 hover:border-white/30 font-medium px-7 py-4 rounded-sm text-sm sm:text-base transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              aria-label="Watch Freyer corporate film"
             >
-              <Play className="w-4 h-4 fill-white" />
+              <Play className="w-3.5 h-3.5 fill-white" />
               <span>Watch Film</span>
             </button>
           </motion.div>
 
-          {/* Subtle Scroll Cue */}
+          {/* Scroll cue */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="mt-20 text-[11px] font-mono tracking-widest text-slate-400 uppercase"
+            transition={{ duration: 1, delay: 0.8 }}
+            className="mt-24 text-[10px] font-mono tracking-[0.25em] text-slate-500 uppercase"
           >
-            Scroll to Explore ↓
+            Scroll to explore ↓
           </motion.div>
         </div>
       </section>
 
-      {/* Corporate Film Modal */}
+      {/* ── Corporate Film Modal ── */}
       <AnimatePresence>
         {videoModalOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 bg-black/92 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setVideoModalOpen(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Freyer corporate film"
           >
-            <div
-              className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            <motion.div
+              initial={{ scale: 0.96, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.96, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-full max-w-5xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/8"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setVideoModalOpen(false)}
-                className="absolute top-4 right-4 z-10 text-white/80 hover:text-white bg-black/60 p-2 rounded-full backdrop-blur-sm focus:outline-none"
-                aria-label="Close video"
+                className="absolute top-3 right-3 z-10 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 p-2 rounded-full backdrop-blur-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                aria-label="Close film"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
               <iframe
-                src="https://www.youtube-nocookie.com/embed/KEFt2quibkg?autoplay=1&rel=0"
-                title="Freyer Logistics Corporate Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                src="https://www.youtube-nocookie.com/embed/KEFt2quibkg?autoplay=1&rel=0&modestbranding=1"
+                title="Freyer International Logistics — Corporate Film"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="w-full h-full"
               />
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
