@@ -8,12 +8,13 @@ export interface HubCoord {
   labelPosition: "top" | "bottom" | "left" | "right";
 }
 
-// Exactly projected coordinates for 67°E-98°E, 6°N-38°N bounding box in 600x620 viewBox
+// Exactly projected coordinates for 67°E-98°E, 6°N-38°N in 600x620 viewBox
+// Simplified map labels for high-density elegance
 export const HUB_COORDS: HubCoord[] = [
   {
     id: "delhi",
     city: "Delhi / NCR",
-    shortLabel: "Delhi NCR",
+    shortLabel: "Delhi",
     state: "Haryana",
     cx: 194.13,
     cy: 184.64,
@@ -67,7 +68,7 @@ export const HUB_COORDS: HubCoord[] = [
   {
     id: "chennai_egmore",
     city: "Chennai (Egmore)",
-    shortLabel: "Chennai (Egmore)",
+    shortLabel: "Chennai",
     state: "Tamil Nadu",
     cx: 256.84,
     cy: 476.0,
@@ -76,7 +77,7 @@ export const HUB_COORDS: HubCoord[] = [
   {
     id: "chennai_airport",
     city: "Chennai (Airport)",
-    shortLabel: "Chennai (Air)",
+    shortLabel: "Airport",
     state: "Tamil Nadu",
     cx: 256.0,
     cy: 498.0,
