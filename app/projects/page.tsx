@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ProjectsExplorer } from "@/components/projects/ProjectsExplorer";
+import projectsData from "@/freyer-forensics-v2/content/projects.json";
 
 export const metadata: Metadata = {
-  title: "Project Cargo Engineering | Freyer International Logistics",
-  description: "Over-dimensional, heavy-lift, and turnkey industrial cargo engineering by Freyer International Logistics.",
+  title: "Project Cargo Case Studies | Freyer International Logistics",
+  description: "Verified case studies of heavy-lift, over-dimensional cargo (ODC), breakbulk, and turnkey multimodal engineering by Freyer International Logistics.",
 };
 
 export default function ProjectsPage() {
@@ -14,57 +15,86 @@ export default function ProjectsPage() {
     <>
       <Header />
       <main className="min-h-screen bg-[#060f1e] text-white pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-[#ff6b4a] transition-colors"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Back to Overview</span>
+        {/* ── Page Header ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-400 mb-6">
+            <Link href="/" className="hover:text-[#ff6b4a] transition-colors">
+              Home
             </Link>
+            <span>/</span>
+            <span className="text-slate-200">Project Cargo Portfolio</span>
           </div>
 
-          <div className="max-w-3xl mb-16">
-            <span className="text-[#ff6b4a] text-xs font-mono tracking-[0.22em] uppercase font-semibold block mb-3">
-              Heavy-Lift Engineering
+          <div className="max-w-3xl">
+            <span className="text-[#ff6b4a] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-3">
+              Forensic Case Studies &middot; 11 Verified Movements
             </span>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-              Moving what ordinary logistics cannot.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.06]">
+              Complex cargo.
+              <br />
+              <span className="text-slate-400 font-light italic">
+                Documented execution.
+              </span>
             </h1>
-            <p className="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed">
-              Turnkey multimodal engineering for over-dimensional cargo (ODC), breakbulk shipping, route surveys, hydraulic multi-axle transport, and port-to-foundation delivery.
+            <p className="text-slate-300 text-sm sm:text-base mt-5 leading-relaxed">
+              Every project represents real engineering calculations: tandem crane rigging, hydraulic modular trailers, maritime breakbulk stowage, and cross-border route clearance for over-dimensional cargo up to 482 MT.
             </p>
           </div>
 
-          <div className="bg-[#0b1b36] p-8 sm:p-12 rounded-xl border border-white/10 space-y-6">
-            <h2 className="text-xl font-bold text-white tracking-tight">Project Execution Capabilities</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-300">
-              <div className="space-y-2 p-4 bg-white/[0.02] border border-white/5 rounded-lg">
-                <span className="font-mono text-[#ff6b4a] font-semibold">01 / ROUTE SURVEYS & CIVIL PLANNING</span>
-                <p className="text-slate-400">Detailed route hazard assessment, bridge load capacity verification, overhead clearance mapping, and civil bypass engineering.</p>
-              </div>
-              <div className="space-y-2 p-4 bg-white/[0.02] border border-white/5 rounded-lg">
-                <span className="font-mono text-[#ff6b4a] font-semibold">02 / HEAVY LIFT & CRANE OPERATIONS</span>
-                <p className="text-slate-400">Tandem crane lifts, specialized rigging calculations, port yard flatcar handling, and direct ship-to-trailer discharge.</p>
-              </div>
-              <div className="space-y-2 p-4 bg-white/[0.02] border border-white/5 rounded-lg">
-                <span className="font-mono text-[#ff6b4a] font-semibold">03 / HYDRAULIC MULTI-AXLE TRANSPORT</span>
-                <p className="text-slate-400">Multi-axle hydraulic modular trailers (SPMT / pull trailers) for oversized industrial reactors, turbines, and structural girders.</p>
-              </div>
-              <div className="space-y-2 p-4 bg-white/[0.02] border border-white/5 rounded-lg">
-                <span className="font-mono text-[#ff6b4a] font-semibold">04 / CUSTOMS & REGULATORY APPROVALS</span>
-                <p className="text-slate-400">EXIM special cargo clearance, port authority coordination, police escort permissions, and highway transport approvals.</p>
-              </div>
+          {/* Quick Metrics Bar */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-white/10">
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold font-mono text-white">482 MT</div>
+              <div className="text-xs text-slate-400 font-mono uppercase mt-1">Single Movement Weight</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold font-mono text-white">2,700 cm</div>
+              <div className="text-xs text-slate-400 font-mono uppercase mt-1">Max Cargo Length (Boom Crane)</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold font-mono text-white">11 Ports</div>
+              <div className="text-xs text-slate-400 font-mono uppercase mt-1">Global Trade Routes</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold font-mono text-white">100%</div>
+              <div className="text-xs text-slate-400 font-mono uppercase mt-1">Verified Real Operations</div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Interactive Case Studies Explorer (Client Component) ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ProjectsExplorer initialProjects={projectsData} />
+        </div>
+
+        {/* ── Engineering Capabilities Callout ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+          <div className="bg-[#0b1b36] p-8 sm:p-12 rounded-2xl border border-white/10">
+            <div className="max-w-2xl mb-8">
+              <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
+                Turnkey Engineering Scope
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-2">
+                Have an over-dimensional shipment requiring engineered transport?
+              </h2>
+              <p className="text-slate-300 text-sm mt-3 leading-relaxed">
+                Our project cargo desk handles complete port-to-site execution, from civil bridge load assessments and police escorts to specialized vessel chartering.
+              </p>
             </div>
 
-            <div className="pt-4 flex items-center justify-between">
+            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-white/10">
               <Link
                 href="/#quote"
-                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-5 py-3 rounded transition-colors"
+                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-6 py-3.5 rounded transition-colors"
               >
                 <span>Consult Project Engineers</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white text-xs font-semibold px-6 py-3.5 rounded border border-white/10 transition-colors"
+              >
+                <span>View All Services</span>
               </Link>
             </div>
           </div>
