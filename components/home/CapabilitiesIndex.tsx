@@ -138,7 +138,7 @@ export function CapabilitiesIndex() {
 
           {/* Right: High-Resolution Photo Preview */}
           <div className="lg:col-span-5 relative">
-            <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-xl">
+            <div className="relative aspect-[3/2] sm:aspect-[16/10] rounded-lg overflow-hidden bg-slate-100 shadow-xl">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeCapability.id}
