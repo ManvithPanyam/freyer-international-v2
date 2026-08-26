@@ -72,7 +72,7 @@ export function RfqProduct() {
       return;
     }
     if (step === 3) {
-      if (!formData.weightKg || formData.weightKg <= 0) {
+      if (!formData.weightKg || formData.weightKg <= 0 || isNaN(formData.weightKg)) {
         setErrors({ weightKg: "Total weight must be greater than zero" });
         return;
       }
@@ -87,7 +87,7 @@ export function RfqProduct() {
       if (!formData.contactName || formData.contactName.trim().length < 2) {
         stepErrors.contactName = "Contact name is required";
       }
-      if (!formData.corporateEmail || !formData.corporateEmail.includes("@")) {
+      if (!formData.corporateEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.corporateEmail.trim())) {
         stepErrors.corporateEmail = "Valid corporate email is required";
       }
       if (!formData.phone || formData.phone.trim().length < 8) {
@@ -98,7 +98,7 @@ export function RfqProduct() {
         return;
       }
 
-      // Execute Server Action
+      // Execute Server Action with loading state
       startTransition(async () => {
         const res = await submitRfqAction(formData);
         if (res.success) {
@@ -119,12 +119,12 @@ export function RfqProduct() {
 
   return (
     <section id="quote" className="py-24 sm:py-36 bg-[#060f1e] text-white overflow-hidden relative border-t border-white/10">
-      {/* Background ambient lighting */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#c42f0b]/5 blur-[120px] pointer-events-none" />
+      {/* Ambient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#c42f0b]/5 blur-[140px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
           <span className="text-[#ff6b4a] text-xs font-mono tracking-[0.25em] uppercase font-semibold block mb-3">
             Freight Configurator
           </span>
@@ -132,16 +132,16 @@ export function RfqProduct() {
             Tell us what needs moving.
           </h2>
           <p className="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed">
-            Configure your shipment parameters for direct review by the Freyer operations desk.
+            Tell us what you&apos;re moving. We&apos;ll take it from there.
           </p>
         </div>
 
-        {/* Configurator Box */}
-        <div className="bg-[#0b1b36] rounded-2xl border border-white/10 p-6 sm:p-12 shadow-2xl relative">
+        {/* Configurator Container */}
+        <div className="bg-[#0b1b36] rounded-xl border border-white/10 p-5 sm:p-10 shadow-xl relative">
           {!submitted ? (
             <div>
-              {/* Quiet Accumulating Summary Bar */}
-              <div className="pb-6 mb-8 border-b border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
+              {/* Accumulating Summary Bar */}
+              <div className="pb-5 mb-7 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
                 <div className="flex flex-wrap items-center gap-2 text-slate-300">
                   <span className="text-[#ff6b4a] font-semibold">{activeService.code}</span>
                   {formData.origin && formData.destination && (
@@ -166,7 +166,7 @@ export function RfqProduct() {
                 </div>
               </div>
 
-              {/* Error Banner */}
+              {/* Server-level error banner */}
               {errors.form && (
                 <div className="mb-6 p-3 rounded bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-mono">
                   {errors.form}
@@ -179,22 +179,22 @@ export function RfqProduct() {
                 {step === 1 && (
                   <motion.div
                     key="step1"
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.2 }}
-                    className="space-y-6"
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="space-y-5"
                   >
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                         What are you shipping?
                       </h3>
                       <p className="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">
-                        Select your required logistics modality
+                        Select required logistics modality
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                       {SERVICES.map((srv) => {
                         const isSelected = formData.service === srv.id;
                         const Icon = srv.icon;
@@ -204,13 +204,13 @@ export function RfqProduct() {
                             key={srv.id}
                             type="button"
                             onClick={() => handleServiceSelect(srv.id)}
-                            className={`p-5 rounded-xl border text-left transition-all duration-150 flex items-start gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b4a] ${
+                            className={`p-4 sm:p-4.5 rounded-lg border text-left transition-all duration-150 flex items-start gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b4a] ${
                               isSelected
-                                ? "bg-white/[0.08] border-[#c42f0b] text-white shadow-sm"
+                                ? "bg-white/[0.08] border-[#c42f0b] text-white shadow-xs"
                                 : "bg-white/[0.02] border-white/10 text-slate-300 hover:border-white/20 hover:bg-white/[0.04]"
                             }`}
                           >
-                            <div className={`p-2 rounded-lg shrink-0 mt-0.5 ${isSelected ? "bg-[#c42f0b] text-white" : "bg-white/5 text-slate-400"}`}>
+                            <div className={`p-2 rounded-md shrink-0 mt-0.5 ${isSelected ? "bg-[#c42f0b] text-white" : "bg-white/5 text-slate-400"}`}>
                               <Icon className="w-4 h-4" />
                             </div>
                             <div className="flex-1 min-w-0">
@@ -220,7 +220,7 @@ export function RfqProduct() {
                                   <span className="w-2 h-2 rounded-full bg-[#ff6b4a]" />
                                 )}
                               </div>
-                              <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                              <p className="text-xs text-slate-400 mt-0.5 leading-relaxed line-clamp-1 sm:line-clamp-none">
                                 {srv.subtitle}
                               </p>
                             </div>
@@ -235,23 +235,23 @@ export function RfqProduct() {
                 {step === 2 && (
                   <motion.div
                     key="step2"
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.2 }}
-                    className="space-y-6"
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="space-y-5"
                   >
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                         Where is it going?
                       </h3>
                       <p className="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">
-                        Specify origin and destination ports or facilities
+                        Specify origin and destination ports or stations
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                      <div className="space-y-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-1">
+                      <div className="space-y-1.5">
                         <label htmlFor="origin" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Origin (City / Port / Airport) *
                         </label>
@@ -262,14 +262,14 @@ export function RfqProduct() {
                           placeholder="e.g. Chennai Port (INMAA)"
                           value={formData.origin || ""}
                           onChange={(e) => setFormData({ ...formData, origin: e.target.value })}
-                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3.5 text-sm text-white focus:outline-none transition-colors ${
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors ${
                             errors.origin ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
                           }`}
                         />
                         {errors.origin && <p className="text-xs text-red-400 font-mono">{errors.origin}</p>}
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-1.5">
                         <label htmlFor="destination" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Destination (City / Port / Airport) *
                         </label>
@@ -279,7 +279,7 @@ export function RfqProduct() {
                           placeholder="e.g. Hamburg Port (DEHAM)"
                           value={formData.destination || ""}
                           onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3.5 text-sm text-white focus:outline-none transition-colors ${
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors ${
                             errors.destination ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
                           }`}
                         />
@@ -293,11 +293,11 @@ export function RfqProduct() {
                 {step === 3 && (
                   <motion.div
                     key="step3"
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.2 }}
-                    className="space-y-6"
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="space-y-5"
                   >
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
@@ -308,8 +308,8 @@ export function RfqProduct() {
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                      <div className="space-y-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-1">
+                      <div className="space-y-1.5">
                         <label htmlFor="weight" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Total Gross Weight (KG) *
                         </label>
@@ -322,14 +322,14 @@ export function RfqProduct() {
                           onChange={(e) =>
                             setFormData({ ...formData, weightKg: parseFloat(e.target.value) || 0 })
                           }
-                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3.5 text-sm text-white focus:outline-none transition-colors ${
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors ${
                             errors.weightKg ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
                           }`}
                         />
                         {errors.weightKg && <p className="text-xs text-red-400 font-mono">{errors.weightKg}</p>}
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-1.5">
                         <label htmlFor="cargoType" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Cargo Classification
                         </label>
@@ -342,7 +342,7 @@ export function RfqProduct() {
                               cargoType: e.target.value as RfqFormData["cargoType"],
                             })
                           }
-                          className="w-full bg-[#061021] border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className="w-full bg-[#061021] border border-white/15 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         >
                           {CARGO_TYPES.map((c) => (
                             <option key={c.id} value={c.id} className="bg-[#0b1b36] text-white">
@@ -359,11 +359,11 @@ export function RfqProduct() {
                 {step === 4 && (
                   <motion.div
                     key="step4"
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.2 }}
-                    className="space-y-6"
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="space-y-5"
                   >
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
@@ -374,8 +374,8 @@ export function RfqProduct() {
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                      <div className="space-y-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                      <div className="space-y-1.5">
                         <label htmlFor="company" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Company Name *
                         </label>
@@ -393,7 +393,7 @@ export function RfqProduct() {
                         {errors.companyName && <p className="text-xs text-red-400 font-mono">{errors.companyName}</p>}
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-1.5">
                         <label htmlFor="contactName" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Contact Person *
                         </label>
@@ -410,7 +410,7 @@ export function RfqProduct() {
                         {errors.contactName && <p className="text-xs text-red-400 font-mono">{errors.contactName}</p>}
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-1.5">
                         <label htmlFor="email" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Corporate Email *
                         </label>
@@ -427,7 +427,7 @@ export function RfqProduct() {
                         {errors.corporateEmail && <p className="text-xs text-red-400 font-mono">{errors.corporateEmail}</p>}
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-1.5">
                         <label htmlFor="phone" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Phone / WhatsApp *
                         </label>
@@ -449,7 +449,7 @@ export function RfqProduct() {
               </AnimatePresence>
 
               {/* Navigation Controls */}
-              <div className="flex items-center justify-between pt-8 mt-10 border-t border-white/10">
+              <div className="flex items-center justify-between pt-6 mt-8 border-t border-white/10">
                 {step > 1 ? (
                   <button
                     type="button"
@@ -468,7 +468,7 @@ export function RfqProduct() {
                   type="button"
                   onClick={handleNext}
                   disabled={isPending}
-                  className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] disabled:opacity-50 text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded transition-all duration-150 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] disabled:opacity-50 text-white font-semibold text-xs sm:text-sm px-6 py-3 rounded transition-all duration-150 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   {isPending ? (
                     <>
@@ -489,8 +489,8 @@ export function RfqProduct() {
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-              className="text-center py-10 sm:py-16 space-y-5"
+              transition={{ duration: 0.25 }}
+              className="text-center py-10 sm:py-16 space-y-4"
             >
               <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-6 h-6" />
@@ -501,7 +501,7 @@ export function RfqProduct() {
               <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
                 Our team will follow up using the contact details provided.
               </p>
-              <div className="pt-6">
+              <div className="pt-4">
                 <button
                   type="button"
                   onClick={() => {
