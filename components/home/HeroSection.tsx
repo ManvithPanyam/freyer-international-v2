@@ -49,9 +49,9 @@ export function HeroSection() {
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={{
-              opacity: videoLoaded ? 0 : 0.55,
+              opacity: videoLoaded ? 0 : 0.72,
               transition: "opacity 1.2s ease",
-              filter: "saturate(0.8)",
+              filter: "saturate(0.9)",
             }}
           />
 
@@ -68,31 +68,31 @@ export function HeroSection() {
               aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover object-center"
               style={{
-                opacity: videoLoaded ? 0.45 : 0,
+                opacity: videoLoaded ? 0.68 : 0,
                 transition: "opacity 1.2s ease",
-                filter: "saturate(0.75)",
+                filter: "saturate(0.9)",
               }}
             />
           )}
 
-          {/* Vignette gradient — restrained, lets video breathe */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07152b]/95 via-[#07152b]/50 to-[#07152b]/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07152b]/40 via-transparent to-[#07152b]/20" />
+          {/* ── Cinematic vignette — neutral black only, NO navy wash ── */}
+
+          {/* 1. Bottom text-protection: concentrated behind headline + CTAs */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+
+          {/* 2. Top edge: barely-there darkening so logo reads */}
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 to-transparent" />
+
+          {/* 3. Edge vignette: subtle side darkening, no color tint */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 pointer-events-none"
+            style={{ boxShadow: "inset 0 0 180px 60px rgba(0,0,0,0.35)" }}
+          />
         </div>
 
         {/* ── Hero Content ── */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 text-[11px] font-mono tracking-[0.2em] text-slate-400 uppercase"
-          >
-            <span className="w-6 h-px bg-[#c42f0b] inline-block" />
-            AEO Certified · IATA Accredited · WCA Member
-            <span className="w-6 h-px bg-[#c42f0b] inline-block" />
-          </motion.div>
 
           {/* Main Statement */}
           <motion.h1
