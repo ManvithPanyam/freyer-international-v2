@@ -2,14 +2,16 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Play, X } from "lucide-react";
+import { ArrowRight, Play, Pause, X } from "lucide-react";
 
 export function HeroSection() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const watchButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Respect prefers-reduced-motion — don't autoplay video
+  // Respect prefers-reduced-motion
   const prefersReducedMotion =
     typeof window !== "undefined"
       ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -24,10 +26,26 @@ export function HeroSection() {
     return () => video.removeEventListener("canplay", handleCanPlay);
   }, [prefersReducedMotion]);
 
-  // Close modal on Escape
+  // Handle video pause / play toggle
+  const toggleBackgroundVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (isPlaying) {
+      video.pause();
+      setIsPlaying(false);
+    } else {
+      video.play();
+      setIsPlaying(true);
+    }
+  };
+
+  // Close modal on Escape and restore focus
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setVideoModalOpen(false);
+      if (e.key === "Escape") {
+        setVideoModalOpen(false);
+        watchButtonRef.current?.focus();
+      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
@@ -41,7 +59,7 @@ export function HeroSection() {
       >
         {/* ── Cinematic Background ── */}
         <div className="absolute inset-0 z-0">
-          {/* Poster frame — shown immediately, fades out as video loads */}
+          {/* Poster frame */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/hero-poster.jpg"
@@ -49,13 +67,13 @@ export function HeroSection() {
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={{
-              opacity: videoLoaded ? 0 : 0.72,
+              opacity: videoLoaded && isPlaying ? 0 : 0.72,
               transition: "opacity 1.2s ease",
               filter: "saturate(0.9)",
             }}
           />
 
-          {/* Corporate video — muted autoplay, loops, no controls */}
+          {/* Corporate video */}
           {!prefersReducedMotion && (
             <video
               ref={videoRef}
@@ -68,32 +86,37 @@ export function HeroSection() {
               aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover object-center"
               style={{
-                opacity: videoLoaded ? 0.68 : 0,
+                opacity: videoLoaded && isPlaying ? 0.68 : 0,
                 transition: "opacity 1.2s ease",
                 filter: "saturate(0.9)",
               }}
             />
           )}
 
-          {/* ── Cinematic vignette — neutral black only, NO navy wash ── */}
-
-          {/* 1. Bottom text-protection: concentrated behind headline + CTAs */}
+          {/* Neutral black vignette */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/18 to-transparent" />
-
-          {/* 2. Top edge: barely-there darkening so logo reads */}
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 to-transparent" />
-
-          {/* 3. Edge vignette: subtle side darkening, no color tint */}
           <div
             aria-hidden="true"
             className="absolute inset-0 pointer-events-none"
             style={{ boxShadow: "inset 0 0 180px 60px rgba(0,0,0,0.35)" }}
           />
+
+          {/* Background Video Pause/Play Control (WCAG 2.2.2) */}
+          {!prefersReducedMotion && (
+            <button
+              type="button"
+              onClick={toggleBackgroundVideo}
+              className="absolute bottom-6 right-6 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              aria-label={isPlaying ? "Pause background video" : "Play background video"}
+            >
+              {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+            </button>
+          )}
         </div>
 
         {/* ── Hero Content ── */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-
           {/* Main Statement */}
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
@@ -116,7 +139,7 @@ export function HeroSection() {
             className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-xl font-normal leading-relaxed"
           >
             International air &amp; ocean freight, AEO-certified customs
-            brokerage, and turnkey project cargo across 10 strategic hubs in
+            brokerage, and turnkey project cargo across 10 operational hubs in
             India.
           </motion.p>
 
@@ -136,6 +159,7 @@ export function HeroSection() {
             </a>
 
             <button
+              ref={watchButtonRef}
               type="button"
               onClick={() => setVideoModalOpen(true)}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/8 hover:bg-white/15 active:bg-white/20 text-white border border-white/15 hover:border-white/30 font-medium px-7 py-4 rounded-sm text-sm sm:text-base transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
@@ -181,8 +205,11 @@ export function HeroSection() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                onClick={() => setVideoModalOpen(false)}
-                className="absolute top-3 right-3 z-10 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 p-2 rounded-full backdrop-blur-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                onClick={() => {
+                  setVideoModalOpen(false);
+                  watchButtonRef.current?.focus();
+                }}
+                className="absolute top-3 right-3 z-10 text-white/70 hover:text-white bg-black/60 hover:bg-black/90 min-w-[44px] min-h-[44px] rounded-full backdrop-blur-sm transition-colors flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 aria-label="Close film"
               >
                 <X className="w-5 h-5" />

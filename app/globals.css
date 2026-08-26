@@ -14,7 +14,10 @@
     --border-subtle: #e2e8f0;
   }
 
+  html,
   body {
+    overflow-x: hidden;
+    max-width: 100vw;
     background-color: var(--canvas-light);
     color: var(--text-primary);
     font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
