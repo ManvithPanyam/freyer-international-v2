@@ -102,18 +102,18 @@ export function AccreditationsProof() {
                     src={a.logo}
                     alt={a.name}
                     fill
-                    className="object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                    className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-200"
                     sizes="160px"
                   />
                 </div>
               ) : (
                 /* AEO text-mark — cleaner than certificate JPEG crop */
                 <div
-                  className="flex flex-col items-center justify-center transition-all duration-300 group-hover:scale-105 opacity-50 group-hover:opacity-100"
+                  className="flex flex-col items-center justify-center transition-transform duration-200 group-hover:scale-105"
                   style={{ width: a.w, height: a.h }}
                   aria-label={a.name}
                 >
-                  <span className="text-[22px] font-black tracking-[0.08em] text-[#1a3a6b] leading-none grayscale group-hover:grayscale-0 transition-all duration-300">
+                  <span className="text-[22px] font-black tracking-[0.08em] text-[#1a3a6b] leading-none">
                     AEO
                   </span>
                   <span className="text-[8px] font-mono tracking-[0.18em] uppercase text-slate-500 mt-0.5">
