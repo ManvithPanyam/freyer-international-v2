@@ -55,7 +55,7 @@ export function ServicesExplorer() {
           <span>01 / Contract Logistics</span>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-8 border-b border-slate-200">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-6 border-b border-slate-200">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0b2144] leading-tight">
               Warehousing &amp; 3PL Distribution
@@ -75,8 +75,8 @@ export function ServicesExplorer() {
           </div>
         </div>
 
-        {/* Large Dominant Uncropped Warehouse Photography */}
-        <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-2xl overflow-hidden mt-8 bg-slate-900 border border-slate-200 shadow-sm">
+        {/* Large Dominant High-Bay Warehouse Photography */}
+        <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-2xl overflow-hidden mt-6 bg-slate-900 border border-slate-200 shadow-sm">
           <Image
             src="/images/slide4.jpg"
             alt="High-bay multi-client warehouse facility with industrial racking and WMS material handling - Freyer Logistics"
@@ -155,19 +155,19 @@ export function ServicesExplorer() {
           </div>
         </div>
 
-        {/* Asymmetric Split: Authentic Heavy-Lift Frame + Typographic Sector Ledger */}
+        {/* Asymmetric Split: High-Impact Mid-Air Heavy-Lift Hoist + Typographic Sector Ledger */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-10">
           <div className="lg:col-span-7 relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/40">
             <Image
-              src="/images/11.4.jpg"
-              alt="ITALGRU heavy-lift crane assembly secured on vessel flatracks - Freyer Project Cargo"
+              src="/images/11.3.jpg"
+              alt="Heavy-lift crane spreader hoist lifting 37.6 MT ITALGRU boom assembly mid-air at container terminal - Freyer Project Cargo"
               fill
               className="object-cover object-center"
               sizes="(min-width: 1024px) 60vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
             <span className="absolute bottom-4 left-4 text-xs font-mono text-slate-300 bg-black/60 backdrop-blur-md px-3 py-1 rounded border border-white/10">
-              Breakbulk &middot; Tandem Crane Rigging &middot; Port Stowage
+              37.6 MT Heavy-Lift Crane Hoist &middot; Maritime Terminal Rigging
             </span>
           </div>
 
@@ -233,7 +233,7 @@ export function ServicesExplorer() {
       ───────────────────────────────────────────────────────────── */}
       <section id="core-disciplines" className="pt-2">
         <div className="pb-6 border-b border-slate-200">
-          <span className="text-xs font-mono text-[#c42f0b] uppercase tracking-widest font-semibold block mb-1.5">
+          <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block mb-1.5 font-medium">
             03 / Core Multimodal &amp; Compliance Disciplines
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
