@@ -28,14 +28,14 @@ export function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Two-Line Brand Lockup (Logo + Tagline) */}
+          {/* Prominent Two-Line Brand Lockup (+40% scaled Logo + Tagline) */}
           <Link
             href="/"
             className="flex flex-col items-start group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md"
             aria-label="Freyer International Logistics — Home"
           >
             <div
-              className={`relative h-10 sm:h-12 w-36 sm:w-44 transition-all duration-300 ${
+              className={`relative h-12 sm:h-14 md:h-16 w-44 sm:w-52 md:w-60 transition-all duration-300 ${
                 scrolled ? "brightness-100 invert-0" : "brightness-0 invert"
               }`}
             >
@@ -48,7 +48,7 @@ export function Header() {
               />
             </div>
             <span
-              className={`text-[9px] sm:text-[10px] tracking-wide font-medium transition-colors duration-300 mt-0.5 ${
+              className={`text-[10px] sm:text-[11px] tracking-wide font-medium transition-colors duration-300 mt-1 ${
                 scrolled ? "text-[#c42f0b]" : "text-white/90"
               }`}
             >
@@ -125,7 +125,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[68px] z-40 bg-white/98 backdrop-blur-xl p-6 flex flex-col justify-between md:hidden border-t border-slate-200 text-[#0b2144] shadow-2xl"
+            className="fixed inset-0 top-[72px] z-40 bg-white/98 backdrop-blur-xl p-6 flex flex-col justify-between md:hidden border-t border-slate-200 text-[#0b2144] shadow-2xl"
           >
             <nav className="flex flex-col gap-6 text-xl font-semibold pt-4">
               <a

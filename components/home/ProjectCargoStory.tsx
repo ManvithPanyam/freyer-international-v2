@@ -15,14 +15,14 @@ const SPECS = [
 
 const EVIDENCE = [
   {
-    src: "/images/slide2.jpg",
-    alt: "STS cranes and container ships at deep-water port",
-    label: "Deep-water port operations",
+    src: "/images/11.3.jpg",
+    alt: "ITALGRU heavy crane girder lifted mid-air during port operations",
+    label: "Tandem heavy-lift operations",
   },
   {
-    src: "/images/11.4.jpg",
-    alt: "ITALGRU crane girder on flatcar at port yard",
-    label: "Port yard lashing & stowage",
+    src: "/images/slide2.jpg",
+    alt: "Container vessel and STS cranes at deep-water port",
+    label: "Deep-water maritime discharge",
   },
 ];
 
@@ -36,26 +36,26 @@ export function ProjectCargoStory() {
       ref={sectionRef}
       className="relative bg-[#060f1e] text-white overflow-hidden"
     >
-      {/* ── Full-bleed main image — left ~65% ── */}
-      <div className="absolute inset-0 lg:right-[38%]">
+      {/* ── Full-bleed main image — left ~60% ── */}
+      <div className="absolute inset-0 lg:right-[42%]">
         <Image
-          src="/images/11.3.jpg"
-          alt="ITALGRU heavy crane girder lifted mid-air at container port — Freyer project cargo"
+          src="/images/11.4.jpg"
+          alt="ITALGRU heavy-lift crane assembly secured on vessel flatracks — Freyer project cargo engineering"
           fill
           priority
-          className="object-cover object-center"
-          sizes="65vw"
+          className="object-cover object-left sm:object-center"
+          sizes="(min-width: 1024px) 60vw, 100vw"
         />
-        {/* Dark treatment: left gets lighter (let image breathe), right edge fades to section bg */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-[#060f1e]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e]/80 via-transparent to-transparent" />
+        {/* Natural contrast gradient: keeps subject clear on left, blends to dark navy on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/20 to-[#060f1e]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e]/85 via-transparent to-transparent" />
       </div>
 
-      {/* ── Mobile image overlay (stacked layout) ── */}
-      <div className="lg:hidden relative w-full h-[55vw] min-h-[240px] max-h-[420px]">
+      {/* ── Mobile image banner (stacked layout) ── */}
+      <div className="lg:hidden relative w-full h-[60vw] min-h-[260px] max-h-[440px]">
         <Image
-          src="/images/11.3.jpg"
-          alt="ITALGRU heavy crane girder lifted mid-air at container port"
+          src="/images/11.4.jpg"
+          alt="ITALGRU heavy-lift crane assembly on flatracks"
           fill
           priority
           className="object-cover object-center"
@@ -64,9 +64,9 @@ export function ProjectCargoStory() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e] via-[#060f1e]/40 to-transparent" />
       </div>
 
-      {/* ── Content ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36 bg-[#060f1e] lg:bg-transparent">
-        <div className="lg:ml-auto lg:w-[38%] lg:pl-12">
+      {/* ── Content & Spec Panel ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 bg-[#060f1e] lg:bg-transparent">
+        <div className="lg:ml-auto lg:w-[42%] lg:pl-10">
           {/* Label */}
           <motion.span
             initial={{ opacity: 0, y: 12 }}
@@ -90,15 +90,14 @@ export function ProjectCargoStory() {
             </span>
           </motion.h2>
 
-          {/* Single-sentence brief */}
+          {/* Brief */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.18 }}
-            className="mt-5 text-slate-300 text-sm sm:text-base leading-relaxed max-w-xs"
+            className="mt-5 text-slate-300 text-sm sm:text-base leading-relaxed"
           >
-            Turnkey multimodal engineering for over-dimensional cargo —
-            hydraulic transport, route surveys, port-to-site.
+            Turnkey multimodal engineering for over-dimensional cargo — hydraulic transport, route surveys, port-to-site.
           </motion.p>
 
           {/* Technical specs */}
@@ -106,7 +105,7 @@ export function ProjectCargoStory() {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.28 }}
-            className="mt-8 space-y-3 border-t border-white/10 pt-6"
+            className="mt-8 space-y-3.5 border-t border-white/10 pt-6"
           >
             {SPECS.map(({ label, value }) => (
               <div key={label} className="flex justify-between items-baseline gap-4">
@@ -128,7 +127,7 @@ export function ProjectCargoStory() {
             className="mt-10"
           >
             <a
-              href="#quote"
+              href="/#quote"
               className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-6 py-3.5 rounded-sm transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <span>Consult Project Engineers</span>
@@ -141,18 +140,18 @@ export function ProjectCargoStory() {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-10 grid grid-cols-2 gap-2.5"
+            className="mt-10 grid grid-cols-2 gap-3"
           >
             {EVIDENCE.map(({ src, alt, label }, i) => (
-              <div key={i} className="relative aspect-[4/3] rounded overflow-hidden border border-white/8">
+              <div key={i} className="relative aspect-[4/3] rounded overflow-hidden border border-white/10">
                 <Image
                   src={src}
                   alt={alt}
                   fill
-                  className="object-cover object-center grayscale-[20%]"
-                  sizes="20vw"
+                  className="object-cover object-center"
+                  sizes="(min-width: 1024px) 20vw, 45vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                 <span className="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-slate-300 leading-tight">
                   {label}
                 </span>
