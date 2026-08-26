@@ -55,7 +55,7 @@ export function HeroSection() {
     <>
       <section
         id="top"
-        className="relative min-h-screen flex items-center justify-center bg-[#07152b] text-white overflow-hidden pt-20 pb-16"
+        className="relative min-h-screen flex items-center justify-center bg-[#07152b] text-white overflow-hidden pt-24 pb-16"
       >
         {/* ── Cinematic Background ── */}
         <div className="absolute inset-0 z-0">
@@ -73,11 +73,10 @@ export function HeroSection() {
             }}
           />
 
-          {/* Corporate video */}
+          {/* Corporate video with responsive sources */}
           {!prefersReducedMotion && (
             <video
               ref={videoRef}
-              src="/video/freyer-hero.mp4"
               autoPlay
               muted
               loop
@@ -90,7 +89,10 @@ export function HeroSection() {
                 transition: "opacity 1.2s ease",
                 filter: "saturate(0.9)",
               }}
-            />
+            >
+              <source src="/video/freyer-hero.mp4" media="(min-width: 768px)" type="video/mp4" />
+              <source src="/video/freyer-hero-mobile.mp4" type="video/mp4" />
+            </video>
           )}
 
           {/* Neutral black vignette */}
