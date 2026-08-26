@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
-import { MapPin, ArrowRight, Box, Layers, Calendar, ShieldCheck, X } from "lucide-react";
+import { ArrowRight, X, ChevronRight, Maximize2, Shield, Calendar, Box, Layers } from "lucide-react";
 
 interface Project {
   id: number;
@@ -25,18 +25,28 @@ interface Project {
 
 export function ProjectsExplorer({ initialProjects }: { initialProjects: Project[] }) {
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
-  const [activeImageModal, setActiveImageModal] = useState<string | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeModalImageIndex, setActiveModalImageIndex] = useState<number>(0);
 
   const filters = ["All", "Break Bulk", "Flat Rack", "RORO", "Door to Door"];
 
   const filteredProjects = initialProjects.filter((p) => {
     if (selectedFilter === "All") return true;
-    if (selectedFilter === "Break Bulk") return p.transport_mode.toLowerCase().includes("break bulk") || p.transport_mode.toLowerCase().includes("bb");
-    if (selectedFilter === "Flat Rack") return p.transport_mode.toLowerCase().includes("flat rack");
-    if (selectedFilter === "RORO") return p.transport_mode.toLowerCase().includes("roro");
-    if (selectedFilter === "Door to Door") return p.transport_mode.toLowerCase().includes("door");
+    if (selectedFilter === "Break Bulk")
+      return p.transport_mode.toLowerCase().includes("break bulk") || p.transport_mode.toLowerCase().includes("bb");
+    if (selectedFilter === "Flat Rack")
+      return p.transport_mode.toLowerCase().includes("flat rack");
+    if (selectedFilter === "RORO")
+      return p.transport_mode.toLowerCase().includes("roro");
+    if (selectedFilter === "Door to Door")
+      return p.transport_mode.toLowerCase().includes("door");
     return true;
   });
+
+  const openProjectDetail = (p: Project) => {
+    setSelectedProject(p);
+    setActiveModalImageIndex(0);
+  };
 
   return (
     <div>
@@ -57,175 +67,287 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
         ))}
       </div>
 
-      {/* ── Projects Grid ── */}
+      {/* ── Editorial Asymmetric Projects Grid ── */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project) => (
-            <motion.article
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-              key={project.id}
-              className="bg-[#0b182d] rounded-xl border border-white/10 overflow-hidden flex flex-col justify-between hover:border-white/20 transition-all duration-200 group"
-            >
-              <div>
-                {/* Primary Image Thumbnail */}
-                <div
-                  onClick={() => project.local_images.length > 0 && setActiveImageModal(project.local_images[0])}
-                  className="relative aspect-[16/10] bg-black/40 cursor-pointer overflow-hidden"
-                >
-                  {project.local_images.length > 0 ? (
-                    <Image
-                      src={project.local_images[0]}
-                      alt={project.title}
-                      fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-slate-500 font-mono text-xs">
-                      Operations Archived
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b182d] via-transparent to-transparent" />
-                  
-                  {/* Transport Mode Badge */}
-                  <span className="absolute top-3 left-3 bg-black/70 backdrop-blur-md border border-white/15 text-[#ff6b4a] text-[10px] font-mono px-2.5 py-1 rounded tracking-wider uppercase font-semibold">
-                    {project.transport_mode}
-                  </span>
+          {filteredProjects.map((project, idx) => {
+            const isFeatured = idx === 0 && selectedFilter === "All";
 
-                  {/* Photo Count */}
-                  {project.local_images.length > 1 && (
-                    <span className="absolute top-3 right-3 bg-black/70 backdrop-blur-md text-slate-300 text-[10px] font-mono px-2 py-0.5 rounded border border-white/10">
-                      +{project.local_images.length} photos
+            return (
+              <motion.article
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                key={project.id}
+                onClick={() => openProjectDetail(project)}
+                className={`bg-[#0b182d] rounded-2xl border border-white/10 overflow-hidden flex flex-col justify-between hover:border-white/25 transition-all duration-200 group cursor-pointer ${
+                  isFeatured ? "md:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#0c1d38] to-[#071324]" : ""
+                }`}
+              >
+                <div>
+                  {/* Photo Container */}
+                  <div
+                    className={`relative bg-black/40 overflow-hidden ${
+                      isFeatured ? "aspect-[21/9] sm:aspect-[2/1]" : "aspect-[16/10]"
+                    }`}
+                  >
+                    {project.local_images.length > 0 ? (
+                      <Image
+                        src={project.local_images[0]}
+                        alt={project.title}
+                        fill
+                        className="object-cover object-center group-hover:scale-103 transition-transform duration-500"
+                        sizes={isFeatured ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, 50vw"}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-slate-500 font-mono text-xs">
+                        Archived Operational Movement
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b182d] via-black/20 to-transparent" />
+
+                    {/* Mode Badge */}
+                    <span className="absolute top-4 left-4 bg-black/75 backdrop-blur-md border border-white/15 text-[#ff6b4a] text-[10px] font-mono px-2.5 py-1 rounded-sm uppercase tracking-wider font-semibold">
+                      {project.transport_mode}
                     </span>
-                  )}
-                </div>
 
-                {/* Card Content */}
-                <div className="p-6">
-                  {/* Origin -> Destination Route */}
-                  <div className="flex items-center gap-2 text-xs font-mono text-slate-400 mb-2">
-                    <span className="text-white font-semibold">{project.route_origin}</span>
-                    <ArrowRight className="w-3 h-3 text-[#ff6b4a]" />
-                    <span className="text-white font-semibold">{project.route_destination}</span>
+                    {/* Multi-Photo Indicator */}
+                    {project.local_images.length > 1 && (
+                      <span className="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-slate-200 text-[10px] font-mono px-2.5 py-1 rounded-sm border border-white/10 flex items-center gap-1">
+                        <Maximize2 className="w-3 h-3" />
+                        <span>{project.local_images.length} photos</span>
+                      </span>
+                    )}
                   </div>
 
-                  <h3 className="text-lg font-bold text-white tracking-tight leading-snug group-hover:text-[#ff6b4a] transition-colors">
-                    {project.title}
-                  </h3>
-
-                  {/* Technical Spec List */}
-                  <dl className="mt-5 space-y-2 border-t border-white/10 pt-4 text-xs">
-                    {project.weight_mt && (
-                      <div className="flex justify-between">
-                        <dt className="text-slate-400 font-mono">Gross Weight</dt>
-                        <dd className="text-white font-mono font-medium">{project.weight_mt} MT</dd>
-                      </div>
-                    )}
-                    {project.weight_kg && (
-                      <div className="flex justify-between">
-                        <dt className="text-slate-400 font-mono">Gross Weight</dt>
-                        <dd className="text-white font-mono font-medium">{project.weight_kg.toLocaleString()} KG</dd>
-                      </div>
-                    )}
-                    {project.dimensions_cm && (
-                      <div className="flex justify-between">
-                        <dt className="text-slate-400 font-mono">Dimensions (L×W×H)</dt>
-                        <dd className="text-white font-mono font-medium">{project.dimensions_cm} cm</dd>
-                      </div>
-                    )}
-                    {project.packages && (
-                      <div className="flex justify-between">
-                        <dt className="text-slate-400 font-mono">Package Count</dt>
-                        <dd className="text-white font-mono font-medium">{project.packages} PKG</dd>
-                      </div>
-                    )}
-                    {project.cbm && (
-                      <div className="flex justify-between">
-                        <dt className="text-slate-400 font-mono">Volume</dt>
-                        <dd className="text-white font-mono font-medium">{project.cbm} CBM</dd>
-                      </div>
-                    )}
-                    {project.incoterm && (
-                      <div className="flex justify-between">
-                        <dt className="text-slate-400 font-mono">Incoterm</dt>
-                        <dd className="text-white font-mono font-medium">{project.incoterm}</dd>
-                      </div>
-                    )}
-                  </dl>
-
-                  {/* Special Handling / Notes */}
-                  {project.special_handling && (
-                    <div className="mt-4 p-3 bg-white/[0.03] border border-white/5 rounded text-[11px] text-slate-300 leading-relaxed">
-                      <span className="text-[#ff6b4a] font-mono font-semibold block mb-0.5">Execution Notes:</span>
-                      {project.special_handling}
+                  {/* Body Content */}
+                  <div className="p-6 sm:p-7">
+                    {/* Route Line */}
+                    <div className="flex items-center gap-2 text-sm font-semibold text-white mb-1.5">
+                      <span>{project.route_origin}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#ff6b4a]" />
+                      <span>{project.route_destination}</span>
                     </div>
-                  )}
 
-                  {/* Thumbnail gallery strip */}
-                  {project.local_images.length > 1 && (
-                    <div className="flex gap-2 mt-4 pt-4 border-t border-white/10 overflow-x-auto scrollbar-none">
-                      {project.local_images.map((imgSrc, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setActiveImageModal(imgSrc)}
-                          className="relative w-12 h-12 rounded overflow-hidden shrink-0 border border-white/10 hover:border-[#ff6b4a] transition-colors focus:outline-none"
-                        >
-                          <Image src={imgSrc} alt="" fill className="object-cover" />
-                        </button>
-                      ))}
+                    {/* Subtitle / Mode Summary */}
+                    <p className="text-xs text-slate-400 font-medium mb-4">
+                      {project.title.replace(/KOBE TO CHENNAI |MASAN TO CHENNAI |QINGDAO TO SOHAR & DAMMAM |AL JUBAIL TO JEBEL ALI |EX NHAVA SHEVA TO MOGADISHU |EX GENOA TO SOHAR |EX GENOA TO JEBEL ALI |HAMBURG TO JEDDAH |SHANGHAI TO JEBEL ALI |VENICE TO MUNDRA /i, "") || project.transport_mode}
+                    </p>
+
+                    {/* Metric Badges */}
+                    <div className="flex flex-wrap gap-2 pt-3 border-t border-white/10 text-[11px] font-mono text-slate-300">
+                      {project.weight_mt && (
+                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
+                          {project.weight_mt} MT
+                        </span>
+                      )}
+                      {project.weight_kg && (
+                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
+                          {project.weight_kg.toLocaleString()} KG
+                        </span>
+                      )}
+                      {project.dimensions_cm && (
+                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
+                          {project.dimensions_cm} cm
+                        </span>
+                      )}
+                      {project.packages && (
+                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
+                          {project.packages} PKG
+                        </span>
+                      )}
+                      {project.cbm && (
+                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
+                          {project.cbm} CBM
+                        </span>
+                      )}
                     </div>
-                  )}
+
+                    {/* Special Handling snippet */}
+                    {project.special_handling && (
+                      <p className="mt-3 text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                        {project.special_handling}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              {/* Card Footer */}
-              <div className="px-6 py-4 bg-white/[0.02] border-t border-white/10 flex items-center justify-between">
-                <span className="text-[11px] font-mono text-slate-400">
-                  {project.date || "Verified Operation"}
-                </span>
-                <a
-                  href="/#quote"
-                  className="text-xs font-semibold text-[#ff6b4a] hover:text-white flex items-center gap-1 transition-colors"
-                >
-                  <span>Inquire Similar Scope</span>
-                  <ArrowRight className="w-3 h-3" />
-                </a>
-              </div>
-            </motion.article>
-          ))}
+                {/* Footer */}
+                <div className="px-6 sm:px-7 py-4 bg-white/[0.02] border-t border-white/10 flex items-center justify-between">
+                  <span className="text-[11px] font-mono text-slate-400">
+                    {project.date || "Verified Movement"}
+                  </span>
+                  <span className="text-xs font-semibold text-[#ff6b4a] group-hover:text-white flex items-center gap-1 transition-colors">
+                    <span>View Case Study</span>
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </motion.article>
+            );
+          })}
         </AnimatePresence>
       </div>
 
-      {/* ── Image Lightbox Modal ── */}
+      {/* ── Deep Project Case Study Modal ── */}
       <AnimatePresence>
-        {activeImageModal && (
+        {selectedProject && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setActiveImageModal(null)}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            onClick={() => setSelectedProject(null)}
+            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
           >
-            <button
-              onClick={() => setActiveImageModal(null)}
-              className="absolute top-6 right-6 p-2 text-white/80 hover:text-white rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-              aria-label="Close image lightbox"
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative bg-[#0b182d] border border-white/15 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl text-white"
             >
-              <X className="w-6 h-6" />
-            </button>
-            <div className="relative max-w-5xl max-h-[85vh] w-full h-full" onClick={(e) => e.stopPropagation()}>
-              <Image
-                src={activeImageModal}
-                alt="Project Cargo Execution Photo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 z-20 p-2 text-slate-400 hover:text-white rounded-full bg-black/60 hover:bg-black/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                aria-label="Close project modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Main Photo Gallery Viewport */}
+              <div className="relative aspect-[16/9] w-full bg-black/50 overflow-hidden">
+                {selectedProject.local_images.length > 0 ? (
+                  <Image
+                    src={selectedProject.local_images[activeModalImageIndex] || selectedProject.local_images[0]}
+                    alt={selectedProject.title}
+                    fill
+                    className="object-contain object-center"
+                    priority
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-slate-500 font-mono text-xs">
+                    Operation Photo
+                  </div>
+                )}
+                <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md border border-white/15 text-[#ff6b4a] text-xs font-mono px-3 py-1 rounded font-semibold uppercase">
+                  {selectedProject.transport_mode}
+                </div>
+              </div>
+
+              {/* Thumbnails row if multiple images */}
+              {selectedProject.local_images.length > 1 && (
+                <div className="p-4 bg-black/40 border-b border-white/10 flex gap-2 overflow-x-auto scrollbar-none">
+                  {selectedProject.local_images.map((imgSrc, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveModalImageIndex(idx)}
+                      className={`relative w-16 h-12 rounded-md overflow-hidden shrink-0 border transition-all ${
+                        activeModalImageIndex === idx
+                          ? "border-[#ff6b4a] ring-2 ring-[#ff6b4a]/40"
+                          : "border-white/15 opacity-60 hover:opacity-100"
+                      }`}
+                    >
+                      <Image src={imgSrc} alt="" fill className="object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Modal Technical Body */}
+              <div className="p-6 sm:p-8 space-y-6">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#ff6b4a] mb-2 uppercase tracking-wider font-semibold">
+                    <span>{selectedProject.route_origin}</span>
+                    <ArrowRight className="w-3 h-3" />
+                    <span>{selectedProject.route_destination}</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                    {selectedProject.title}
+                  </h2>
+                  <p className="text-slate-300 text-sm mt-2 leading-relaxed">
+                    {selectedProject.details}
+                  </p>
+                </div>
+
+                {/* Technical Spec Sheet */}
+                <div className="bg-white/[0.02] border border-white/10 rounded-xl p-5 sm:p-6">
+                  <h4 className="text-xs font-mono uppercase tracking-widest text-slate-400 font-semibold mb-4">
+                    Technical Specifications
+                  </h4>
+                  <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
+                    <div className="border-b border-white/5 pb-2">
+                      <dt className="text-slate-400">Origin Port / Site</dt>
+                      <dd className="text-white font-semibold mt-0.5">{selectedProject.route_origin}</dd>
+                    </div>
+                    <div className="border-b border-white/5 pb-2">
+                      <dt className="text-slate-400">Destination Port / Site</dt>
+                      <dd className="text-white font-semibold mt-0.5">{selectedProject.route_destination}</dd>
+                    </div>
+                    <div className="border-b border-white/5 pb-2">
+                      <dt className="text-slate-400">Transport Method</dt>
+                      <dd className="text-white font-semibold mt-0.5">{selectedProject.transport_mode}</dd>
+                    </div>
+                    <div className="border-b border-white/5 pb-2">
+                      <dt className="text-slate-400">Gross Weight</dt>
+                      <dd className="text-white font-semibold mt-0.5">
+                        {selectedProject.weight_mt ? `${selectedProject.weight_mt} MT` : selectedProject.weight_kg ? `${selectedProject.weight_kg.toLocaleString()} KG` : "Special Weight Profile"}
+                      </dd>
+                    </div>
+                    {selectedProject.dimensions_cm && (
+                      <div className="border-b border-white/5 pb-2">
+                        <dt className="text-slate-400">Dimensions (L × W × H)</dt>
+                        <dd className="text-white font-semibold mt-0.5">{selectedProject.dimensions_cm} cm</dd>
+                      </div>
+                    )}
+                    {selectedProject.packages && (
+                      <div className="border-b border-white/5 pb-2">
+                        <dt className="text-slate-400">Package Quantity</dt>
+                        <dd className="text-white font-semibold mt-0.5">{selectedProject.packages} Packages</dd>
+                      </div>
+                    )}
+                    {selectedProject.cbm && (
+                      <div className="border-b border-white/5 pb-2">
+                        <dt className="text-slate-400">Volume</dt>
+                        <dd className="text-white font-semibold mt-0.5">{selectedProject.cbm} CBM</dd>
+                      </div>
+                    )}
+                    {selectedProject.incoterm && (
+                      <div className="border-b border-white/5 pb-2">
+                        <dt className="text-slate-400">Commercial Incoterm</dt>
+                        <dd className="text-white font-semibold mt-0.5">{selectedProject.incoterm}</dd>
+                      </div>
+                    )}
+                  </dl>
+                </div>
+
+                {/* Execution Notes */}
+                {selectedProject.special_handling && (
+                  <div className="p-4 bg-[#ff6b4a]/10 border border-[#ff6b4a]/20 rounded-xl text-xs text-slate-200 leading-relaxed">
+                    <span className="text-[#ff6b4a] font-mono font-semibold block mb-1">
+                      Operational Handling &amp; Engineering Scope:
+                    </span>
+                    {selectedProject.special_handling}
+                  </div>
+                )}
+
+                {/* CTA Action */}
+                <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                  <span className="text-xs font-mono text-slate-400">
+                    Operation verified from Freyer project logistics archive.
+                  </span>
+                  <a
+                    href="/#quote"
+                    className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-5 py-3 rounded transition-colors"
+                  >
+                    <span>Request Quote for Similar Cargo</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
