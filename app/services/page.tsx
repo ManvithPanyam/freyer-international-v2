@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ServicesExplorer } from "@/components/services/ServicesExplorer";
-import servicesData from "@/freyer-forensics-v2/content/services.json";
 
 export const metadata: Metadata = {
-  title: "Integrated Logistics Services | Freyer International Logistics",
-  description: "Comprehensive multimodal logistics: 1M+ sq ft warehousing, turnkey project cargo, AEO-certified customs brokerage, ocean FCL/LCL, air charter, and cargo risk management.",
+  title: "Services & Capabilities | Freyer International Logistics",
+  description: "Six integrated logistics disciplines: 1,000,000+ sq ft warehousing & 3PL, turnkey project cargo engineering, ocean FCL/LCL, air charter, AEO-certified customs brokerage, and cargo risk management.",
 };
 
 export default function ServicesPage() {
@@ -23,70 +21,72 @@ export default function ServicesPage() {
               Home
             </Link>
             <span>/</span>
-            <span className="text-slate-900 font-medium">Services &amp; Capabilities</span>
+            <span className="text-slate-900 font-medium">Services</span>
           </div>
 
           <div className="max-w-3xl">
             <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-3">
-              Multimodal Service Infrastructure
+              Capabilities Dossier
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.06]">
-              Engineered logistics.
+              One logistics system.
               <br />
               <span className="text-slate-500 font-light italic">
-                From port to foundation.
+                Six disciplines.
               </span>
             </h1>
             <p className="text-slate-600 text-sm sm:text-base mt-5 leading-relaxed">
-              Freyer International operates a fully integrated supply chain ecosystem spanning 1,000,000+ sq ft of WMS-enabled warehousing, heavy-lift project cargo engineering, AEO-certified customs brokerage, and global air and ocean freight contracts.
+              Integrated infrastructure and multimodal operations designed to realise your business goals across contract warehousing, heavy-lift project engineering, global ocean and air networks, customs compliance, and supply chain risk mitigation.
             </p>
           </div>
 
-          {/* Quick Infrastructure Facts */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 pt-8 border-t border-slate-200">
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold font-mono text-[#0b2144]">1,000,000+</div>
-              <div className="text-xs text-slate-500 font-mono uppercase mt-1">Sq Ft Warehouse Capacity</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold font-mono text-[#0b2144]">AEO Tier-2</div>
-              <div className="text-xs text-slate-500 font-mono uppercase mt-1">Certified Customs Compliance</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold font-mono text-[#0b2144]">482 MT</div>
-              <div className="text-xs text-slate-500 font-mono uppercase mt-1">Project Cargo Engineering</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold font-mono text-[#0b2144]">10 Hubs</div>
-              <div className="text-xs text-slate-500 font-mono uppercase mt-1">Direct Physical Presence</div>
-            </div>
-          </div>
+          {/* Compact Anchor Index */}
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 pt-6 border-t border-slate-200 text-xs font-mono text-slate-600">
+            <a href="#warehousing" className="hover:text-[#c42f0b] transition-colors">
+              01 &middot; Warehousing &amp; 3PL
+            </a>
+            <a href="#project-cargo" className="hover:text-[#c42f0b] transition-colors">
+              02 &middot; Project Cargo
+            </a>
+            <a href="#ocean-freight" className="hover:text-[#c42f0b] transition-colors">
+              03 &middot; Ocean Freight
+            </a>
+            <a href="#air-freight" className="hover:text-[#c42f0b] transition-colors">
+              04 &middot; Air Freight
+            </a>
+            <a href="#customs" className="hover:text-[#c42f0b] transition-colors">
+              05 &middot; Customs Brokerage
+            </a>
+            <a href="#risk-management" className="hover:text-[#c42f0b] transition-colors">
+              06 &middot; Risk Management
+            </a>
+          </nav>
         </div>
 
-        {/* ── Services Explorer with Deep Warehousing & Project Cargo Modules ── */}
+        {/* ── Editorial Longform Services Body ── */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ServicesExplorer rawServices={servicesData} />
+          <ServicesExplorer />
         </div>
 
-        {/* ── Direct RFQ Callout ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-          <div className="bg-[#0b2144] p-8 sm:p-12 rounded-2xl text-white">
-            <div className="max-w-2xl mb-8">
+        {/* ── Clean Action Block ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+          <div className="bg-[#0b2144] p-8 sm:p-12 rounded-2xl text-white flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="max-w-xl">
               <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
-                Commercial Inquiry
+                Commercial Logistics Desk
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-2">
-                Need customized contract logistics or project rate calculations?
+                Request space allocation or engineered project rate analysis.
               </h2>
-              <p className="text-slate-300 text-sm mt-3 leading-relaxed">
-                Connect directly with our corporate operations team for dedicated freight contracting, warehouse space allocation, and project route surveys.
+              <p className="text-slate-300 text-sm mt-2 leading-relaxed">
+                Connect with our branch operations teams across 10 hubs in India for tailored freight contracts and warehousing solutions.
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-white/10">
+            <div className="flex flex-wrap items-center gap-4 shrink-0">
               <Link
                 href="/#quote"
-                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-6 py-3.5 rounded transition-colors"
+                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-6 py-3.5 rounded transition-colors shadow-md shadow-[#c42f0b]/20"
               >
                 <span>Request a Quotation</span>
                 <span aria-hidden="true">&rarr;</span>
@@ -95,7 +95,7 @@ export default function ServicesPage() {
                 href="/projects"
                 className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white text-xs font-semibold px-6 py-3.5 rounded border border-white/10 transition-colors"
               >
-                <span>View Documented Projects</span>
+                <span>Documented Projects</span>
               </Link>
             </div>
           </div>
