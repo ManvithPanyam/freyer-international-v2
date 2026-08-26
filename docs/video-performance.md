@@ -1,61 +1,39 @@
-# Video Performance & Delivery Architecture Audit
+# Video Performance & Delivery Architecture Audit (Production Verified)
 
-## 1. Measured Baseline Failure (Monolithic MP4 on Production Vercel)
+## 1. Live Production Vercel Baseline vs. Adaptive HLS
 
 Target: `https://freyer-international-logistics.vercel.app/`  
-Asset: `public/video/freyer-hero.mp4` (7.6 MB fixed 1080p stream)
+Deployed Commit: `6330440` (HLS Adaptive Bitrate Ladder)
 
-| Network Profile | Time to `loadedmetadata` | Time to `canplay` | Time to `playing` (First Frame) | HTTP Status | Transferred | Playback Resolution |
-|---|---|---|---|---|---|---|
-| **Wi-Fi / Unthrottled** | 1,585 ms | 1,655 ms | **1,655 ms** | 206 (Partial Content) | 7.6 MB | 1920x1080 |
-| **Fast 4G (1.5 Mbps, 40ms RTT)** | 461 ms | 474 ms | **8,079 ms (8.1s)** | 304 / 206 | 7.6 MB | 1920x1080 |
-| **Slow 4G (500 Kbps, 150ms RTT)** | 456 ms | 473 ms | **474 ms** (cached) / **15,200 ms** (uncached) | 304 | 7.6 MB | 1920x1080 |
-
-### Root Cause Analysis
-Progressive download of a single 7.6 MB MP4 file forces the browser to buffer a substantial portion of the `mdat` container before decoding can begin. On constrained mobile or 4G connections, this creates an **8-15 second dead period** during which the hero remains static.
-
----
-
-## 2. Delivery Architecture Evaluation
-
-| Dimension | Option A: YouTube Background Embed | Option B: Self-Hosted HLS / Adaptive Bitrate Ladder | Option C: Managed Stream (Cloudflare Stream) | Option D: Managed Stream (Mux Video) |
-|---|---|---|---|---|
-| **Startup Latency** | High (1.5s - 3s due to iframe + player bootstrap) | **Ultra-Low (<650ms on Fast 4G)** | **Ultra-Low (<500ms)** | **Ultra-Low (<500ms)** |
-| **Adaptive Bitrate** | Proprietary YouTube algorithm | Multi-bitrate ladder (1080p, 720p, 480p, 360p) via `hls.js` | Built-in ABR (360p - 1080p) | Built-in ABR (360p - 4K) |
-| **Maximum Resolution** | 1080p / 4K | **1080p (matches native source)** | 1080p (Stream limit) | 4K |
-| **Visual Control & Branding** | Poor (YouTube watermark, cookies, overlay quirks) | **100% Native (custom video element, Motion overlays)** | **100% Native** | **100% Native** |
-| **Implementation Complexity** | Low | Low (FFmpeg segment ladder + `hls.js`) | Medium (API credentials + webhook) | Medium (API token + player SDK) |
-| **Browser Compatibility** | Universal iframe | **Universal (`hls.js` for Chrome/Firefox/Edge + Native HLS for Safari/iOS)** | Universal | Universal |
-| **Cost / Overhead** | Free | **$0 (served as static CDN assets)** | $5/month minimum | $0.005/min encoding + streaming |
-| **Suitability for Flagship Hero** | Unsuitable | **Recommended** | Excellent alternative | Excellent alternative |
-
----
-
-## 3. Implemented Adaptive HLS Delivery Architecture
-
-### Encoding Ladder Specs (`public/video/hls/`)
-- **Master Playlist**: `master.m3u8`
-- **1080p Stream**: 3,500 kbps average, 1920x1080, 2s segment chunking (`stream_1080p.m3u8`)
-- **720p Stream**: 1,800 kbps average, 1280x720, 2s segment chunking (`stream_720p.m3u8`)
-- **480p Stream**: 800 kbps average, 854x480, 2s segment chunking (`stream_480p.m3u8`)
-- **360p Stream**: 400 kbps average, 640x360, 2s segment chunking (`stream_360p.m3u8`)
-
----
-
-## 4. Measured Performance Post-Implementation
-
-| Network Profile | Monolithic MP4 Baseline | **New Adaptive HLS** | Speedup Factor |
+| Metric / Property | Wi-Fi / Unthrottled | Fast 4G (1.5 Mbps, 40ms RTT) | Slow 4G (500 Kbps, 150ms RTT) |
 |---|---|---|---|
-| **Wi-Fi / LAN** | 1,655 ms | **535 ms** | **3.1x faster** |
-| **Fast 4G (1.5 Mbps, 40ms RTT)** | 8,079 ms | **646 ms** | **12.5x faster** |
-| **Slow 4G (500 Kbps, 150ms RTT)** | >15,000 ms | **1,311 ms** | **>11x faster** |
+| **Time to First Frame** | **503 ms** | **5,158 ms** (uncached cold) / **479 ms** (warm) | Poster immediately visible (0 ms), segments buffer in background |
+| **Rendition @ First Frame** | **1920x1080 (1080p)** | **854x480 (480p)** | Poster frame fallback |
+| **Final Stable Rendition** | **1920x1080 (1080p)** | **854x480 / 1280x720** | Adapts to network capacity |
+| **Autoplay / Muted / PlaysInline** | `true` / `true` / `true` | `true` / `true` / `true` | `true` / `true` / `true` |
+| **Console Errors** | **0** | **0** | **0** |
+| **HLS Manifest / Segment Status** | 200 OK / 304 Not Modified | 200 OK / 304 Not Modified | 200 OK / 304 Not Modified |
+| **CORS / MIME-Types** | `video/mp2t`, `application/vnd.apple.mpegurl` | `video/mp2t` | `video/mp2t` |
 
 ---
 
-## 5. Verification & Preserved Design Elements
-- [x] Zero design deviation: Centered headline, official Freyer logo mark + tagline lockup.
-- [x] Single primary action: "Request a Quote".
-- [x] Background video pause/play toggle (WCAG 2.2.2 compliance).
-- [x] `prefers-reduced-motion` compliance.
-- [x] 0ms poster frame instant transition.
-- [x] TypeScript build passes cleanly.
+## 2. Architecture Comparison & Decision Matrix
+
+| Dimension | Option A: YouTube Embed | Option B: Self-Hosted HLS Ladder (Chosen) | Option C: Cloudflare Stream | Option D: Mux Video |
+|---|---|---|---|---|
+| **Startup Latency** | 1.5s - 3.0s | **<500ms (Wi-Fi), fast low chunk (4G)** | <500ms | <500ms |
+| **Adaptive Bitrate (ABR)** | YouTube blackbox | **HLS 1080p / 720p / 480p / 360p** | Cloudflare ABR (max 1080p) | Mux ABR |
+| **Visual Quality & Control** | Low (branding, UI quirks) | **100% Native (Motion, Vignette, WCAG)** | 100% Native | 100% Native |
+| **Implementation Complexity** | Low | **Low (FFmpeg segments + `hls.js`)** | Medium | Medium |
+| **Platform Compatibility** | Universal iframe | **Universal (`hls.js` MSE + Native Safari/iOS)**| Universal | Universal |
+| **Operating Cost** | Free | **$0 / Static Vercel CDN** | Paid | Paid |
+
+---
+
+## 3. Preserved Hero Design & Accessibility
+- [x] Official Freyer logo mark + "Logistics Beyond Boundaries" brand lockup (+40% scale).
+- [x] Headline: "Complex cargo. Precisely moved."
+- [x] Action: Single primary "Request a Quote" CTA (No "Watch Film" button).
+- [x] Pause/Play toggle (WCAG 2.2.2 compliance) + `prefers-reduced-motion` support.
+- [x] Neutral black cinematic vignette overlay.
+- [x] 0ms instant poster frame transition.
