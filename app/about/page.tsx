@@ -15,8 +15,8 @@ export default function AboutPage() {
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10">
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
             </Link>
@@ -26,39 +26,44 @@ export default function AboutPage() {
 
           <div className="max-w-3xl">
             <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
-              Corporate Dossier &amp; Governance
+              Corporate Governance &amp; Identity
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.06]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.08]">
               Engineered for global commerce.
               <br />
               <span className="text-slate-500 font-light italic">
                 Grounded in compliance.
               </span>
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-              Freyer International delivers integrated logistics, international freight forwarding, and bespoke supply chain solutions. We don&apos;t just move cargo from point A to B; we understand your business model to design cost-effective, highly reliable transport architectures from manufacturing origin to global destination.
+            <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
+              Freyer International delivers integrated logistics, international freight forwarding, and tailored supply chain solutions. We design workable, cost-effective transport architectures from manufacturing origin to global destination.
             </p>
           </div>
 
-          {/* Section Navigation Index */}
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 pt-5 border-t border-slate-200 text-xs font-mono text-slate-600">
+          {/* Simplified Section Navigation Index */}
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-5 pt-4 border-t border-slate-200 text-xs font-mono text-slate-600">
             <a href="#story" className="hover:text-[#c42f0b] transition-colors">
-              01 &middot; Company Story
+              Story
             </a>
+            <span className="text-slate-300">&middot;</span>
             <a href="#credentials" className="hover:text-[#c42f0b] transition-colors">
-              02 &middot; Institutional Evidence
+              Credentials
             </a>
+            <span className="text-slate-300">&middot;</span>
             <a href="#people" className="hover:text-[#c42f0b] transition-colors">
-              03 &middot; People &amp; Culture
+              People
             </a>
+            <span className="text-slate-300">&middot;</span>
             <a href="#footprint" className="hover:text-[#c42f0b] transition-colors">
-              04 &middot; Geographic Footprint
+              Footprint
             </a>
+            <span className="text-slate-300">&middot;</span>
             <a href="#alliances" className="hover:text-[#c42f0b] transition-colors">
-              05 &middot; Global Alliances
+              Alliances
             </a>
+            <span className="text-slate-300">&middot;</span>
             <a href="#csr" className="hover:text-[#c42f0b] transition-colors">
-              06 &middot; 3E CSR Charter
+              CSR
             </a>
           </nav>
         </div>
@@ -73,13 +78,13 @@ export default function AboutPage() {
           <div className="bg-[#0b2144] p-8 sm:p-12 rounded-2xl text-white flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-xl">
               <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
-                Corporate Governance &amp; Partnership
+                Corporate Dialogue
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-1.5">
-                Initiate a corporate dialogue with Freyer leadership.
+                Initiate a dialogue with Freyer leadership.
               </h2>
               <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
-                Connect with our corporate office or meet our branch management teams across Bengaluru, Chennai, Mumbai, Delhi, and regional hubs.
+                Connect directly with our corporate office or branch operations teams across 10 locations in India.
               </p>
             </div>
 

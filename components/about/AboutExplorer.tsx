@@ -10,10 +10,8 @@ import {
   MapPin,
   ArrowRight,
   X,
-  CheckCircle2,
   ChevronRight,
-  ShieldCheck,
-  Award,
+  CheckCircle2,
 } from "lucide-react";
 
 const FEATURED_AWARDS = [
@@ -45,11 +43,11 @@ const GLOBAL_ALLIANCES = [
 
 const REGIONAL_BRANCHES = [
   {
-    region: "South India (HQ & Port Gateways)",
+    region: "South India (HQ & Maritime Port Gateways)",
     branches: [
       { name: "Bengaluru", role: "Corporate Headquarters & Commercial Operations" },
       { name: "Chennai", role: "Corporate Branch & Sea Port Operations" },
-      { name: "Chennai Airport", role: "Air Cargo Complex Terminal Office" },
+      { name: "Chennai Airport", role: "Air Cargo Terminal Office" },
       { name: "Hyderabad", role: "Regional Operations Hub & ICD Rail Links" },
       { name: "Visakhapatnam", role: "East Coast Deepwater Port Office" },
       { name: "Coimbatore", role: "Industrial Inland Forwarding Branch" },
@@ -57,9 +55,9 @@ const REGIONAL_BRANCHES = [
     ],
   },
   {
-    region: "North & West India Hubs",
+    region: "North & West India Commercial Hubs",
     branches: [
-      { name: "Delhi (Gurugram)", role: "North India Gateway & IGI Airfreight Desk" },
+      { name: "Delhi (Gurugram)", role: "North India Gateway & Air Cargo Desk" },
       { name: "Mumbai", role: "Nhava Sheva Sea Port & West Coast Hub" },
       { name: "Ahmedabad", role: "Gujarat Commercial & Industrial Cargo Hub" },
     ],
@@ -79,7 +77,7 @@ export function AboutExplorer() {
           <span>01 / Enterprise Identity</span>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-6 border-b border-slate-200">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 pb-6 border-b border-slate-200">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0b2144] leading-tight">
               Built around the cargo.
@@ -97,31 +95,47 @@ export function AboutExplorer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-8">
-          <div className="lg:col-span-7 space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+        {/* Story Narrative with Integrated Documentary Photo */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mt-8 items-center">
+          <div className="lg:col-span-6 space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
             <p>
-              Freyer International was established with a singular operational purpose: to provide highly responsive, personalized, and technically disciplined freight forwarding and supply chain solutions.
+              Freyer International was established with a singular operational commitment: to provide responsive, personalized, and technically disciplined freight forwarding and custom supply chain solutions.
             </p>
-            <p className="text-slate-600 text-sm">
-              We do not simply move cargo from point A to point B. We analyze your commercial supply chain, inbound vendor cycles, and import/export regulatory requirements to architect workable transport solutions that reduce total landed costs and safeguard goods from origin manufacturing to final foundation placement.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              We do not just move cargo from point A to point B. We analyze your commercial requirements, vendor schedules, and regulatory checkpoints to engineer workable transport architectures that reduce total landed costs and ensure cargo integrity from origin manufacturing to final delivery.
             </p>
+
+            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200/70 text-xs">
+                <div className="font-bold text-[#0b2144] mb-0.5">01 &middot; Client Focus</div>
+                <div className="text-slate-600 text-[11px] leading-snug">
+                  Tailored solutions supported by tracking technology and experienced professionals.
+                </div>
+              </div>
+              <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200/70 text-xs">
+                <div className="font-bold text-[#0b2144] mb-0.5">02 &middot; Vendor Governance</div>
+                <div className="text-slate-600 text-[11px] leading-snug">
+                  Strict safety and legal standards ensuring cargo moves securely and timely.
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="lg:col-span-5 space-y-4">
-            <div className="p-5 bg-slate-50 rounded-xl border border-slate-200/80">
-              <div className="text-xs font-mono text-[#c42f0b] font-semibold mb-1">01 &middot; CUSTOMERS FIRST</div>
-              <h4 className="text-sm font-bold text-[#0b2144]">Tailored Solutions &amp; Seasoned Logistics Experts</h4>
-              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                Dedicated account managers supported by tracking technology and experienced freight professionals.
-              </p>
-            </div>
-
-            <div className="p-5 bg-slate-50 rounded-xl border border-slate-200/80">
-              <div className="text-xs font-mono text-[#c42f0b] font-semibold mb-1">02 &middot; COMPLIANCE &amp; SAFETY</div>
-              <h4 className="text-sm font-bold text-[#0b2144]">Vetted Carrier Alliances &amp; Legal Standards</h4>
-              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                Customer freight always moves safely, legally, and on schedule through strict vendor governance.
-              </p>
+          {/* Documentary Visual in Top Viewport */}
+          <div className="lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+            <Image
+              src="/images/About.jpg"
+              alt="Freyer International Logistics Corporate Operations and Freight Coordination"
+              fill
+              className="object-cover object-center"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 text-xs font-mono text-white">
+              <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded border border-white/10 inline-block text-[11px]">
+                Freyer International Corporate Operations
+              </span>
             </div>
           </div>
         </div>
@@ -137,10 +151,10 @@ export function AboutExplorer() {
 
         <div className="pb-6 border-b border-slate-200">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
-            Verified Compliance &amp; Sovereign Accreditations
+            Verified Accreditations &amp; Compliance Records
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-            Direct institutional proof of operational standards, sovereign customs certification, and workplace excellence.
+            Direct sovereign and international certifications governing customs processing, air cargo agency authority, and enterprise trust.
           </p>
         </div>
 
@@ -157,7 +171,7 @@ export function AboutExplorer() {
                 Authorized Economic Operator (AEO Tier-2)
               </h3>
               <p className="text-slate-600 text-xs mt-2 leading-relaxed">
-                Issued by the Central Board of Indirect Taxes &amp; Customs (CBIC), Ministry of Finance, Govt of India.
+                Certified by the Central Board of Indirect Taxes &amp; Customs (CBIC), Ministry of Finance, Government of India.
               </p>
               <div className="mt-3 p-2.5 bg-slate-50 rounded border border-slate-200/70 text-xs font-mono">
                 <span className="text-slate-500 block text-[10px]">Certificate No:</span>
@@ -211,7 +225,7 @@ export function AboutExplorer() {
                 Great Place to Work&reg; Certified
               </h3>
               <p className="text-slate-600 text-xs mt-2 leading-relaxed">
-                Nationally certified for building a high-trust, high-retention operating culture across 10 corporate branch hubs in India.
+                Nationally certified workplace culture supporting low operational turnover and experienced freight account teams across India.
               </p>
             </div>
 
@@ -229,7 +243,7 @@ export function AboutExplorer() {
               Documented Industry Awards &amp; Trophies
             </span>
             <span className="text-xs text-slate-500">
-              Honored for operational performance, breakbulk engineering, and customs excellence.
+              Recognitions awarded for freight forwarding, breakbulk operations, and customs compliance.
             </span>
           </div>
           <button
@@ -260,7 +274,7 @@ export function AboutExplorer() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 03: PEOPLE BEHIND THE MOVEMENT (DELIBERATE 3-IMAGE COMPOSITION)
+          SECTION 03: PEOPLE BEHIND THE MOVEMENT (INTENTIONAL 3-IMAGE LAYOUT)
       ───────────────────────────────────────────────────────────── */}
       <section id="people" className="bg-[#060f1e] text-white rounded-3xl p-8 sm:p-12 lg:p-14 border border-white/10">
         <div className="flex items-center gap-2 text-xs font-mono text-[#ff6b4a] uppercase tracking-widest font-semibold mb-2">
@@ -288,7 +302,7 @@ export function AboutExplorer() {
           </div>
         </div>
 
-        {/* Intentional 3-Image Composition: 1 Hero + 2 Stacked Supporting Photos */}
+        {/* Intentional 3-Image Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-8">
           {/* Main Hero Office Photo */}
           <div className="lg:col-span-7 relative aspect-[16/11] rounded-2xl overflow-hidden bg-black/40 border border-white/10">
@@ -365,7 +379,7 @@ export function AboutExplorer() {
             Direct Physical Network Across 10 Hubs
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-            Positioned at India&apos;s critical manufacturing centers, deepwater sea ports, and international air cargo complexes, connected seamlessly to 190+ countries through certified global forwarder alliances.
+            Direct offices positioned at India&apos;s critical manufacturing centers, deepwater sea ports, and international air cargo complexes, connected to 190+ countries through certified global forwarder alliances.
           </p>
         </div>
 
@@ -400,7 +414,7 @@ export function AboutExplorer() {
             05 / Forwarding Alliances
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
-            International Network Alliances
+            International Forwarding Network Alliances
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
             Active certified membership in the world&apos;s leading independent freight networks, ensuring reliable agency representation across 190+ countries.
