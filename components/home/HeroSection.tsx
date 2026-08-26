@@ -78,7 +78,7 @@ export function HeroSection() {
           {/* ── Cinematic vignette — neutral black only, NO navy wash ── */}
 
           {/* 1. Bottom text-protection: concentrated behind headline + CTAs */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/18 to-transparent" />
 
           {/* 2. Top edge: barely-there darkening so logo reads */}
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 to-transparent" />

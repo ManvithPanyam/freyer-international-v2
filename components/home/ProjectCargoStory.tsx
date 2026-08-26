@@ -1,85 +1,164 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { motion, useInView } from "motion/react";
+import { ArrowRight } from "lucide-react";
+
+const SPECS = [
+  { label: "Cargo type", value: "Over-dimensional / ODC" },
+  { label: "Gross weight", value: "Up to 1,200+ MT" },
+  { label: "Transport", value: "Hydraulic SPMT / multi-axle" },
+  { label: "Scope", value: "Port-to-site, turnkey" },
+  { label: "Documentation", value: "EXIM + customs special cargo" },
+];
+
+const EVIDENCE = [
+  {
+    src: "/images/slide2.jpg",
+    alt: "STS cranes and container ships at deep-water port",
+    label: "Deep-water port operations",
+  },
+  {
+    src: "/images/11.4.jpg",
+    alt: "ITALGRU crane girder on flatcar at port yard",
+    label: "Port yard lashing & stowage",
+  },
+];
 
 export function ProjectCargoStory() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { once: true, margin: "-10%" });
+
   return (
-    <section id="project-cargo" className="py-24 sm:py-32 bg-[#07152b] text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
+    <section
+      id="project-cargo"
+      ref={sectionRef}
+      className="relative bg-[#060f1e] text-white overflow-hidden"
+    >
+      {/* ── Full-bleed main image — left ~65% ── */}
+      <div className="absolute inset-0 lg:right-[38%]">
+        <Image
+          src="/images/11.3.jpg"
+          alt="ITALGRU heavy crane girder lifted mid-air at container port — Freyer project cargo"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="65vw"
+        />
+        {/* Dark treatment: left gets lighter (let image breathe), right edge fades to section bg */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-[#060f1e]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e]/80 via-transparent to-transparent" />
+      </div>
+
+      {/* ── Mobile image overlay (stacked layout) ── */}
+      <div className="lg:hidden relative w-full h-[55vw] min-h-[240px] max-h-[420px]">
+        <Image
+          src="/images/11.3.jpg"
+          alt="ITALGRU heavy crane girder lifted mid-air at container port"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060f1e] via-[#060f1e]/40 to-transparent" />
+      </div>
+
+      {/* ── Content ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36 bg-[#060f1e] lg:bg-transparent">
+        <div className="lg:ml-auto lg:w-[38%] lg:pl-12">
+          {/* Label */}
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-[#ff6b4a] text-[10px] font-mono tracking-[0.22em] uppercase font-semibold block mb-5"
+          >
             Project Cargo Engineering
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mt-3 leading-tight">
-            Moving what ordinary logistics cannot.
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg mt-4 leading-relaxed">
-            Turnkey multimodal engineering for heavy industrial machinery, transformers, and over-dimensional cargo requiring physical route surveys and multi-axle hydraulic transport.
-          </p>
-        </div>
+          </motion.span>
 
-        {/* Cinematic Visual Feature */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Main Full-Bleed Photo */}
-          <div className="lg:col-span-8 relative min-h-[380px] sm:min-h-[500px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-            <Image
-              src="/images/11.4.jpg"
-              alt="Heavy Lift Transformer Transport and Multimodal Project Cargo"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 65vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07152b] via-transparent to-black/30" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-              <span className="bg-[#c42f0b] text-white text-[11px] font-mono tracking-widest uppercase px-3 py-1 rounded font-semibold inline-block mb-2">
-                Operational Evidence
-              </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                Industrial Transformer Transit & Route Survey
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300 max-w-xl mt-1">
-                Engineered heavy-lift haulage across Indian industrial corridors using hydraulic multi-axle modular transporters.
-              </p>
-            </div>
-          </div>
+          {/* Headline */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.08 }}
+            className="text-3xl sm:text-4xl xl:text-5xl font-bold tracking-tight text-white leading-[1.08]"
+          >
+            Moving what ordinary{" "}
+            <span className="text-slate-400 font-light italic">
+              logistics cannot.
+            </span>
+          </motion.h2>
 
-          {/* Technical Scope Card */}
-          <div className="lg:col-span-4 bg-[#0b2144] p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <span className="text-xs font-mono text-slate-300 uppercase tracking-wider block">
-                Technical Scope
-              </span>
-              <ul className="space-y-4 text-xs sm:text-sm text-slate-200">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff6b4a] shrink-0 mt-0.5" />
-                  <span>Route feasibility surveys & civil bridge clearance</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff6b4a] shrink-0 mt-0.5" />
-                  <span>Hydraulic multi-axle modular transporters</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff6b4a] shrink-0 mt-0.5" />
-                  <span>Port hook-to-hook stevedoring & lashing</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff6b4a] shrink-0 mt-0.5" />
-                  <span>Customs special cargo documentation</span>
-                </li>
-              </ul>
-            </div>
+          {/* Single-sentence brief */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.18 }}
+            className="mt-5 text-slate-300 text-sm sm:text-base leading-relaxed max-w-xs"
+          >
+            Turnkey multimodal engineering for over-dimensional cargo —
+            hydraulic transport, route surveys, port-to-site.
+          </motion.p>
 
-            <div className="pt-6 border-t border-slate-700/60">
-              <a
-                href="#quote"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold py-3.5 rounded transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-              >
-                <span>Consult Project Engineers</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </div>
+          {/* Technical specs */}
+          <motion.dl
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.28 }}
+            className="mt-8 space-y-3 border-t border-white/10 pt-6"
+          >
+            {SPECS.map(({ label, value }) => (
+              <div key={label} className="flex justify-between items-baseline gap-4">
+                <dt className="text-[11px] font-mono text-slate-500 uppercase tracking-wider shrink-0">
+                  {label}
+                </dt>
+                <dd className="text-xs sm:text-sm text-slate-200 font-medium text-right">
+                  {value}
+                </dd>
+              </div>
+            ))}
+          </motion.dl>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-10"
+          >
+            <a
+              href="#quote"
+              className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-6 py-3.5 rounded-sm transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
+              <span>Consult Project Engineers</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </motion.div>
+
+          {/* Evidence image strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-10 grid grid-cols-2 gap-2.5"
+          >
+            {EVIDENCE.map(({ src, alt, label }, i) => (
+              <div key={i} className="relative aspect-[4/3] rounded overflow-hidden border border-white/8">
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  className="object-cover object-center grayscale-[20%]"
+                  sizes="20vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <span className="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-slate-300 leading-tight">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
