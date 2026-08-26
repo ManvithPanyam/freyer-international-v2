@@ -1,1 +1,244 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "KOBE TO CHENNAI RORO MOVEMENT",
+    "route_origin": "Kobe",
+    "route_destination": "Chennai",
+    "transport_mode": "RORO",
+    "details": "904 x 310 x 316 cm - WT 37100 KG (April 2023)",
+    "dimensions_cm": "904 x 310 x 316",
+    "weight_kg": 37100,
+    "weight_mt": null,
+    "packages": null,
+    "cbm": null,
+    "date": "April 2023",
+    "incoterm": null,
+    "special_handling": null,
+    "images": [
+      "https://www.freyerinternational.com//images/project/1.jpg"
+    ],
+    "local_images": ["/images/1.jpg"]
+  },
+  {
+    "id": 2,
+    "title": "MASAN TO CHENNAI BB MOVEMENT",
+    "route_origin": "Masan",
+    "route_destination": "Chennai",
+    "transport_mode": "Break Bulk",
+    "details": "22 Packages / 837 cbm / WT 200 MT (May 2023)",
+    "dimensions_cm": null,
+    "weight_kg": null,
+    "weight_mt": 200,
+    "packages": 22,
+    "cbm": 837,
+    "date": "May 2023",
+    "incoterm": null,
+    "special_handling": null,
+    "images": [
+      "https://www.freyerinternational.com//images/project/2.1.jpg",
+      "https://www.freyerinternational.com//images/project/2.2.jpg",
+      "https://www.freyerinternational.com//images/project/2.3.jpg",
+      "https://www.freyerinternational.com//images/project/2.4.jpg",
+      "https://www.freyerinternational.com//images/project/2.5.jpg",
+      "https://www.freyerinternational.com//images/project/2.6.jpg"
+    ],
+    "local_images": ["/images/2.1.jpg","/images/2.2.jpg","/images/2.3.jpg","/images/2.4.jpg","/images/2.5.jpg","/images/2.6.jpg"]
+  },
+  {
+    "id": 3,
+    "title": "QINGDAO TO SOHAR & DAMMAM",
+    "route_origin": "Qingdao",
+    "route_destination": "Sohar & Dammam",
+    "transport_mode": "Container Vessel / Flat Rack",
+    "details": "4 x BBK unit on cntr. vessel 760 x 615 x 50 cm/ 16 MT + 1 x 20 FR and 1 X40 FR for each POD",
+    "dimensions_cm": "760 x 615 x 50",
+    "weight_kg": null,
+    "weight_mt": 16,
+    "packages": 4,
+    "cbm": null,
+    "date": null,
+    "incoterm": null,
+    "special_handling": "BBK (Break Bulk on Container). 1 x 20FR and 1 x 40FR per port of discharge",
+    "images": [
+      "https://www.freyerinternational.com//images/project/3.jpg"
+    ],
+    "local_images": ["/images/3.jpg"]
+  },
+  {
+    "id": 4,
+    "title": "AL JUBAIL TO JEBEL ALI",
+    "route_origin": "Al Jubail",
+    "route_destination": "Jebel Ali",
+    "transport_mode": "Door Delivery",
+    "details": "Door-Delivery Heaviest piece- 2 x 148 MT + Accessories",
+    "dimensions_cm": null,
+    "weight_kg": null,
+    "weight_mt": 296,
+    "packages": null,
+    "cbm": null,
+    "date": null,
+    "incoterm": null,
+    "special_handling": "Heaviest piece 2 x 148 MT. Door-to-door delivery.",
+    "images": [
+      "https://www.freyerinternational.com//images/project/4.jpg"
+    ],
+    "local_images": ["/images/4.jpg"]
+  },
+  {
+    "id": 5,
+    "title": "EX NHAVA SHEVA TO MOGADISHU",
+    "route_origin": "Nhava Sheva",
+    "route_destination": "Mogadishu",
+    "transport_mode": "Flat Rack",
+    "details": "5 x 40 FR - WT 27000 KG each",
+    "dimensions_cm": null,
+    "weight_kg": 27000,
+    "weight_mt": null,
+    "packages": 5,
+    "cbm": null,
+    "date": null,
+    "incoterm": null,
+    "special_handling": "5 x 40 Flat Rack containers",
+    "images": [
+      "https://www.freyerinternational.com//images/project/5.1.jpg",
+      "https://www.freyerinternational.com//images/project/5.2.jpg",
+      "https://www.freyerinternational.com//images/project/5.3.jpg"
+    ],
+    "local_images": ["/images/5.1.jpg","/images/5.2.jpg","/images/5.3.jpg"]
+  },
+  {
+    "id": 6,
+    "title": "EX GENOA TO SOHAR",
+    "route_origin": "Genoa",
+    "route_destination": "Sohar",
+    "transport_mode": "Flat Rack",
+    "details": "8 x 40 FR \u2013 319 x 231 x 360 cm- WT 39800 KG each (lots of 2 x 40 FR loaded on consecutive vessels)",
+    "dimensions_cm": "319 x 231 x 360",
+    "weight_kg": 39800,
+    "weight_mt": null,
+    "packages": 8,
+    "cbm": null,
+    "date": null,
+    "incoterm": null,
+    "special_handling": "Shipped in lots of 2 x 40 FR on consecutive vessels",
+    "images": [
+      "https://www.freyerinternational.com//images/project/6.1.jpg",
+      "https://www.freyerinternational.com//images/project/6.2.jpg",
+      "https://www.freyerinternational.com//images/project/6.3.jpg",
+      "https://www.freyerinternational.com//images/project/6.4.jpg"
+    ],
+    "local_images": ["/images/6.1.jpg","/images/6.2.jpg","/images/6.3.jpg","/images/6.4.jpg"]
+  },
+  {
+    "id": 7,
+    "title": "EX GENOA TO JEBEL ALI",
+    "route_origin": "Genoa",
+    "route_destination": "Jebel Ali",
+    "transport_mode": "Door to Door",
+    "details": "360 x 263 x 400 cm- WT 68000 KG each Total 17 units moved in different lots (Door to Door)",
+    "dimensions_cm": "360 x 263 x 400",
+    "weight_kg": 68000,
+    "weight_mt": null,
+    "packages": 17,
+    "cbm": null,
+    "date": null,
+    "incoterm": null,
+    "special_handling": "17 units total, moved in different lots, door-to-door",
+    "images": [
+      "https://www.freyerinternational.com//images/project/7.1.jpg",
+      "https://www.freyerinternational.com//images/project/7.2.jpg",
+      "https://www.freyerinternational.com//images/project/7.3.jpg",
+      "https://www.freyerinternational.com//images/project/7.4.jpg",
+      "https://www.freyerinternational.com//images/project/7.5.jpg"
+    ],
+    "local_images": ["/images/7.1.jpg","/images/7.2.jpg","/images/7.3.jpg","/images/7.4.jpg","/images/7.5.jpg"]
+  },
+  {
+    "id": 8,
+    "title": "HAMBURG TO JEDDAH",
+    "route_origin": "Hamburg",
+    "route_destination": "Jeddah",
+    "transport_mode": "Break Bulk",
+    "details": "Ex-Works Break Bulk Shipment",
+    "dimensions_cm": null,
+    "weight_kg": null,
+    "weight_mt": null,
+    "packages": null,
+    "cbm": null,
+    "date": null,
+    "incoterm": "Ex-Works",
+    "special_handling": "Break Bulk",
+    "images": [
+      "https://www.freyerinternational.com//images/project/8.1.jpg",
+      "https://www.freyerinternational.com//images/project/8.2.jpg",
+      "https://www.freyerinternational.com//images/project/8.3.jpg",
+      "https://www.freyerinternational.com//images/project/8.4.jpg"
+    ],
+    "local_images": ["/images/8.1.jpg","/images/8.2.jpg","/images/8.3.jpg","/images/8.4.jpg"]
+  },
+  {
+    "id": 9,
+    "title": "SHANGHAI TO JEBEL ALI",
+    "route_origin": "Shanghai",
+    "route_destination": "Jebel Ali",
+    "transport_mode": "Break Bulk",
+    "details": "Break Bulk Shipment 29 PKG, 796 cbm with a weight of 482 MT",
+    "dimensions_cm": null,
+    "weight_kg": null,
+    "weight_mt": 482,
+    "packages": 29,
+    "cbm": 796,
+    "date": null,
+    "incoterm": null,
+    "special_handling": "Break Bulk",
+    "images": [
+      "https://www.freyerinternational.com//images/project/9.1.jpg",
+      "https://www.freyerinternational.com//images/project/9.2.jpg"
+    ],
+    "local_images": ["/images/9.1.jpg","/images/9.2.jpg"]
+  },
+  {
+    "id": 10,
+    "title": "VENICE TO MUNDRA",
+    "route_origin": "Venice",
+    "route_destination": "Mundra",
+    "transport_mode": "Ex-Works",
+    "details": "Ex-Works 410 x 345 x 495 cm \u2013 21000 KG",
+    "dimensions_cm": "410 x 345 x 495",
+    "weight_kg": 21000,
+    "weight_mt": null,
+    "packages": null,
+    "cbm": null,
+    "date": null,
+    "incoterm": "Ex-Works",
+    "special_handling": null,
+    "images": [
+      "https://www.freyerinternational.com//images/project/10.1.jpg",
+      "https://www.freyerinternational.com//images/project/10.2.jpg"
+    ],
+    "local_images": ["/images/10.1.jpg","/images/10.2.jpg"]
+  },
+  {
+    "id": 11,
+    "title": "VENICE TO MUNDRA (BOOM CRANE)",
+    "route_origin": "Venice",
+    "route_destination": "Mundra",
+    "transport_mode": "BBK on Container Vessel",
+    "details": "Boom Crane \u2013 2700 x 400 x 455 cm - WT 37600 KG Ex-Works terms including road permit loaded as BBK on cntr. vessel",
+    "dimensions_cm": "2700 x 400 x 455",
+    "weight_kg": 37600,
+    "weight_mt": null,
+    "packages": null,
+    "cbm": null,
+    "date": null,
+    "incoterm": "Ex-Works",
+    "special_handling": "Road permit required. Loaded as BBK (Break Bulk on Container) on container vessel.",
+    "images": [
+      "https://www.freyerinternational.com//images/project/11.1.jpg",
+      "https://www.freyerinternational.com//images/project/11.2.jpg",
+      "https://www.freyerinternational.com//images/project/11.3.jpg",
+      "https://www.freyerinternational.com//images/project/11.4.jpg"
+    ],
+    "local_images": ["/images/11.1.jpg","/images/11.2.jpg","/images/11.3.jpg","/images/11.4.jpg"]
+  }
+]
