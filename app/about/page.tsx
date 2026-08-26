@@ -1,71 +1,103 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowLeft, ShieldCheck, Award, Globe } from "lucide-react";
+import { AboutExplorer } from "@/components/about/AboutExplorer";
 
 export const metadata: Metadata = {
   title: "About Us | Freyer International Logistics",
-  description: "Learn about Freyer International Logistics, an integrated freight forwarder and AEO-certified customs brokerage headquartered in India.",
+  description: "Learn about Freyer International Logistics: Indian Customs AEO Tier-2 accredited, IATA cargo agent, Great Place to Work certified, with a direct 10-branch footprint across India.",
 };
 
 export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 hover:text-[#c42f0b] transition-colors"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Back to Overview</span>
+      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
+        {/* ── Page Header ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-4">
+            <Link href="/" className="hover:text-[#c42f0b] transition-colors">
+              Home
             </Link>
+            <span>/</span>
+            <span className="text-slate-900 font-medium">About Freyer</span>
           </div>
 
-          <div className="max-w-3xl mb-16">
-            <span className="text-[#c42f0b] text-xs font-mono tracking-[0.22em] uppercase font-semibold block mb-3">
-              Corporate Identity
+          <div className="max-w-3xl">
+            <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
+              Corporate Identity &amp; Governance
             </span>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#0b2144] leading-[1.1]">
-              Logistics Beyond Boundaries
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.06]">
+              Engineered for global commerce.
+              <br />
+              <span className="text-slate-500 font-light italic">
+                Grounded in compliance.
+              </span>
             </h1>
             <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-              Freyer International Logistics Pvt. Ltd. delivers end-to-end supply chain solutions, multimodal freight forwarding, AEO-certified customs clearance, and heavy-lift engineering across India and global trading corridors.
+              Freyer International delivers integrated logistics, international freight forwarding, and tailored supply chain solutions. We don&apos;t just move cargo from point A to B; we understand your business model to design cost-effective, highly reliable transport architectures from manufacturing origin to global destination.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-7 rounded-xl border border-slate-200/80 shadow-xs space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-[#c42f0b]/10 text-[#c42f0b] flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <h2 className="text-lg font-bold text-[#0b2144] tracking-tight">Regulatory Compliance</h2>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Indian Customs Authorized Economic Operator (AEO Certificate No. INAAQCA4076M0F243) and IATA accredited cargo agent.
+          {/* Section Navigation Index */}
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 pt-5 border-t border-slate-200 text-xs font-mono text-slate-600">
+            <a href="#credentials" className="hover:text-[#c42f0b] transition-colors">
+              01 &middot; Credentials &amp; Accreditations
+            </a>
+            <a href="#pillars" className="hover:text-[#c42f0b] transition-colors">
+              02 &middot; Operating Philosophy
+            </a>
+            <a href="#people" className="hover:text-[#c42f0b] transition-colors">
+              03 &middot; People &amp; Culture
+            </a>
+            <a href="#footprint" className="hover:text-[#c42f0b] transition-colors">
+              04 &middot; 10-Branch Footprint
+            </a>
+            <a href="#alliances" className="hover:text-[#c42f0b] transition-colors">
+              05 &middot; Global Alliances
+            </a>
+            <a href="#csr" className="hover:text-[#c42f0b] transition-colors">
+              06 &middot; 3E CSR Charter
+            </a>
+          </nav>
+        </div>
+
+        {/* ── About Explorer Body ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AboutExplorer />
+        </div>
+
+        {/* ── Closing Institutional Dialogue CTA ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+          <div className="bg-[#0b2144] p-8 sm:p-12 rounded-2xl text-white flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="max-w-xl">
+              <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
+                Corporate Governance &amp; Partnership
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-1.5">
+                Initiate a corporate dialogue with Freyer leadership.
+              </h2>
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                Connect with our corporate office or meet our branch management teams across Bengaluru, Chennai, Mumbai, Delhi, and regional hubs.
               </p>
             </div>
 
-            <div className="bg-white p-7 rounded-xl border border-slate-200/80 shadow-xs space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-[#0b2144]/10 text-[#0b2144] flex items-center justify-center">
-                <Globe className="w-5 h-5" />
-              </div>
-              <h2 className="text-lg font-bold text-[#0b2144] tracking-tight">Global Alliances</h2>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Active member of WCA World, Security Cargo Network (SCN), AMTOI, and ACAAI with agent coverage in 120+ countries.
-              </p>
-            </div>
-
-            <div className="bg-white p-7 rounded-xl border border-slate-200/80 shadow-xs space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
-                <Award className="w-5 h-5" />
-              </div>
-              <h2 className="text-lg font-bold text-[#0b2144] tracking-tight">Certified Excellence</h2>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Great Place to Work certified organization committed to operational rigor, safety standards, and team excellence.
-              </p>
+            <div className="flex flex-wrap items-center gap-4 shrink-0">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-6 py-3.5 rounded transition-colors shadow-md shadow-[#c42f0b]/20"
+              >
+                <span>Contact Corporate Office</span>
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link
+                href="/locations"
+                className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white text-xs font-semibold px-6 py-3.5 rounded border border-white/10 transition-colors"
+              >
+                <span>View Branch Network</span>
+              </Link>
             </div>
           </div>
         </div>
