@@ -37,11 +37,11 @@ export default function ProjectsPage() {
               </span>
             </h1>
             <p className="text-slate-300 text-sm sm:text-base mt-5 leading-relaxed">
-              Explore 11 verified operations across maritime breakbulk, RORO, flat rack container vessels, and specialized hydraulic road transport.
+              Explore 11 documented movements across breakbulk, RORO, flat rack and specialized road transport.
             </p>
           </div>
 
-          {/* Factual Metrics Bar Directly Derived from Recovered Operations */}
+          {/* Factual Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 pt-8 border-t border-white/10">
             <div>
               <div className="text-2xl sm:text-3xl font-bold font-mono text-white">11</div>
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        {/* ── Interactive Case Studies Explorer (Client Component) ── */}
+        {/* ── Interactive Case Studies Explorer ── */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ProjectsExplorer initialProjects={projectsData} />
         </div>
