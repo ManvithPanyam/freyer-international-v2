@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Play, Pause } from "lucide-react";
+import Hls from "hls.js";
 
 export function HeroSection() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -19,11 +20,48 @@ export function HeroSection() {
     const video = videoRef.current;
     if (!video || prefersReducedMotion) return;
 
+    let hlsInstance: Hls | null = null;
+    const hlsSrc = "/video/hls/master.m3u8";
+
     const handleCanPlay = () => setVideoLoaded(true);
     video.addEventListener("canplay", handleCanPlay);
-    return () => video.removeEventListener("canplay", handleCanPlay);
+
+    if (Hls.isSupported()) {
+      hlsInstance = new Hls({
+        autoStartLoad: true,
+        startLevel: -1, // Auto level selection (starts with fast low segment then ramps up)
+        capLevelToPlayerSize: true,
+        maxBufferLength: 10,
+        maxMaxBufferLength: 20,
+      });
+
+      hlsInstance.loadSource(hlsSrc);
+      hlsInstance.attachMedia(video);
+
+      hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play().catch(() => {
+          // Autoplay policy fallback
+        });
+      });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      // Native HLS for Safari / iOS
+      video.src = hlsSrc;
+      video.play().catch(() => {});
+    } else {
+      // Fallback MP4
+      video.src = "/video/freyer-hero.mp4";
+      video.play().catch(() => {});
+    }
+
+    return () => {
+      video.removeEventListener("canplay", handleCanPlay);
+      if (hlsInstance) {
+        hlsInstance.destroy();
+      }
+    };
   }, [prefersReducedMotion]);
 
+  // Handle video pause / play toggle (WCAG 2.2.2)
   const toggleBackgroundVideo = () => {
     const video = videoRef.current;
     if (!video) return;
@@ -43,7 +81,7 @@ export function HeroSection() {
     >
       {/* ── Cinematic Background ── */}
       <div className="absolute inset-0 z-0">
-        {/* Poster frame */}
+        {/* 0ms Poster Frame (Seamless instant first frame) */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/hero-poster.jpg"
@@ -52,12 +90,12 @@ export function HeroSection() {
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{
             opacity: videoLoaded && isPlaying ? 0 : 0.75,
-            transition: "opacity 1.2s ease",
+            transition: "opacity 0.8s ease",
             filter: "saturate(0.95)",
           }}
         />
 
-        {/* 1080p Corporate Video */}
+        {/* Adaptive HLS Video Stream */}
         {!prefersReducedMotion && (
           <video
             ref={videoRef}
@@ -65,21 +103,18 @@ export function HeroSection() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={{
               opacity: videoLoaded && isPlaying ? 0.72 : 0,
-              transition: "opacity 1.2s ease",
+              transition: "opacity 0.8s ease",
               filter: "saturate(0.95)",
             }}
-          >
-            <source src="/video/freyer-hero.mp4" media="(min-width: 768px)" type="video/mp4" />
-            <source src="/video/freyer-hero-mobile.mp4" type="video/mp4" />
-          </video>
+          />
         )}
 
-        {/* Neutral black vignette */}
+        {/* Neutral cinematic black vignette */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 to-transparent" />
         <div
@@ -101,7 +136,7 @@ export function HeroSection() {
         )}
       </div>
 
-      {/* ── Hero Content — centered, cinematic ── */}
+      {/* ── Hero Content ── */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Main Statement */}
         <motion.h1
@@ -124,10 +159,12 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-xl font-normal leading-relaxed"
         >
-          Air, ocean, customs and project cargo — across India and beyond.
+          International air &amp; ocean freight, AEO-certified customs
+          brokerage, and turnkey project cargo across 10 operational hubs in
+          India.
         </motion.p>
 
-        {/* Primary CTA */}
+        {/* Single Primary Action: Request a Quote */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -141,6 +178,16 @@ export function HeroSection() {
             <span>Request a Quote</span>
             <ArrowRight className="w-4 h-4" />
           </a>
+        </motion.div>
+
+        {/* Scroll cue */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mt-24 text-[10px] font-mono tracking-[0.25em] text-slate-500 uppercase"
+        >
+          Scroll to explore ↓
         </motion.div>
       </div>
     </section>
