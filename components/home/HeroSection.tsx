@@ -39,7 +39,7 @@ export function HeroSection() {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-center bg-[#07152b] text-white overflow-hidden pt-24 pb-16"
+      className="relative min-h-screen flex items-center justify-center bg-[#07152b] text-white overflow-hidden pt-24 pb-16"
     >
       {/* ── Cinematic Background ── */}
       <div className="absolute inset-0 z-0">
@@ -79,14 +79,13 @@ export function HeroSection() {
           </video>
         )}
 
-        {/* Vignette — left-side text zone slightly lifted */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+        {/* Neutral black vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 to-transparent" />
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
-          style={{ boxShadow: "inset 0 0 180px 60px rgba(0,0,0,0.28)" }}
+          style={{ boxShadow: "inset 0 0 180px 60px rgba(0,0,0,0.35)" }}
         />
 
         {/* Background Video Pause/Play Control (WCAG 2.2.2) */}
@@ -102,49 +101,47 @@ export function HeroSection() {
         )}
       </div>
 
-      {/* ── Hero Content — left-aligned into negative space ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="max-w-xl lg:max-w-[44%]">
-          {/* Main Statement */}
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-[1.04]"
-          >
-            Complex cargo.
-            <br />
-            <span className="text-slate-300 font-light italic">
-              Precisely moved.
-            </span>
-          </motion.h1>
+      {/* ── Hero Content — centered, cinematic ── */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+        {/* Main Statement */}
+        <motion.h1
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white leading-[1.04] max-w-4xl"
+        >
+          Complex cargo.
+          <br />
+          <span className="text-slate-300 font-light italic">
+            Precisely moved.
+          </span>
+        </motion.h1>
 
-          {/* Subtitle — reduced ~45% */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-7 text-base sm:text-lg text-slate-300/90 font-normal leading-relaxed"
-          >
-            Air, ocean, customs and project cargo — across India and beyond.
-          </motion.p>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-xl font-normal leading-relaxed"
+        >
+          Air, ocean, customs and project cargo — across India and beyond.
+        </motion.p>
 
-          {/* Primary CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35 }}
-            className="mt-10"
+        {/* Primary CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="mt-10 flex items-center justify-center w-full sm:w-auto"
+        >
+          <a
+            href="/#quote"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold px-9 py-4 rounded-sm text-sm sm:text-base transition-colors duration-150 shadow-2xl shadow-[#c42f0b]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07152b]"
           >
-            <a
-              href="/#quote"
-              className="inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold px-9 py-4 rounded-sm text-sm sm:text-base transition-colors duration-150 shadow-2xl shadow-[#c42f0b]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07152b]"
-            >
-              <span>Request a Quote</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </motion.div>
-        </div>
+            <span>Request a Quote</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,0 +1,1 @@
+# Content Gap Report\n\nMissing pages: /projects, /gallery, /csr
