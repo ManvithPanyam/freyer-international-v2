@@ -29,8 +29,8 @@ export function HeroSection() {
     if (Hls.isSupported()) {
       hlsInstance = new Hls({
         autoStartLoad: true,
-        startLevel: -1, // Auto level selection (starts with fast low segment then ramps up)
-        capLevelToPlayerSize: true,
+        startLevel: 0, // Instant start with lightweight 360p fragment (~90 KB)
+        capLevelToPlayerSize: false,
         maxBufferLength: 10,
         maxMaxBufferLength: 20,
       });
@@ -43,8 +43,15 @@ export function HeroSection() {
           // Autoplay policy fallback
         });
       });
+
+      hlsInstance.on(Hls.Events.LEVEL_SWITCHED, (_event, data) => {
+        const level = hlsInstance?.levels[data.level];
+        if (level) {
+          console.log(`[HLS] Switched to rendition: ${level.width}x${level.height} @ ${Math.round(level.bitrate / 1000)} kbps`);
+        }
+      });
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // Native HLS for Safari / iOS
+      // Native HLS for Safari / iOS WebKit
       video.src = hlsSrc;
       video.play().catch(() => {});
     } else {
