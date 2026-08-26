@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { Phone, Mail, MapPin, Building2, ExternalLink } from "lucide-react";
+import { INDIA_SVG_PATH, HUB_COORDS } from "./indiaMapData";
 
 interface Branch {
   id: string;
@@ -107,87 +109,272 @@ const HUBS: Branch[] = [
 ];
 
 export function NetworkInteractive() {
-  const [selectedHub, setSelectedHub] = useState<Branch>(HUBS[0]);
+  const [selectedId, setSelectedId] = useState<string>("chennai_egmore");
+  const selectedHub = HUBS.find((h) => h.id === selectedId) || HUBS[0];
 
   return (
-    <section id="network" className="py-24 sm:py-32 bg-white text-[#0b2144]">
+    <section id="network" className="py-20 sm:py-28 bg-[#fbfcfd] border-t border-slate-200/80 text-[#0b2144] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mb-16">
-          <span className="text-[#c42f0b] text-xs font-mono tracking-widest uppercase font-semibold">
-            Pan-India Network
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <span className="text-[#c42f0b] text-xs font-mono tracking-[0.22em] uppercase font-semibold block mb-3">
+            National Operational Footprint
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0b2144] mt-2">
-            10 Strategic Locations
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0b2144] leading-[1.1]">
+            <span className="text-[#c42f0b] font-mono mr-3">10</span>
+            Operational Hubs Across India
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
-            Direct operational presence across India&apos;s manufacturing corridors, international seaports, and air cargo stations.
+          <p className="text-slate-600 text-sm sm:text-base mt-4 max-w-2xl leading-relaxed">
+            Direct physical presence with dedicated branch teams, customs clearance infrastructure, and multimodal handling facilities.
           </p>
         </div>
 
-        {/* Minimal Interactive Hub Experience */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* City Selector List */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {HUBS.map((hub) => {
-              const isSelected = hub.id === selectedHub.id;
-              return (
-                <button
-                  key={hub.id}
-                  onClick={() => setSelectedHub(hub)}
-                  className={`text-left p-4 rounded-xl border transition-all duration-200 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] ${
-                    isSelected
-                      ? "bg-[#0b2144] text-white border-[#0b2144] shadow-md"
-                      : "bg-[#f8f9fa] text-slate-800 border-slate-200 hover:border-slate-300"
-                  }`}
-                >
-                  <div>
-                    <div className="font-bold text-sm">{hub.city}</div>
-                    <div className={`text-xs ${isSelected ? "text-slate-300" : "text-slate-500"}`}>
-                      {hub.state}
-                    </div>
-                  </div>
-                  <ArrowUpRight
-                    className={`w-4 h-4 ${isSelected ? "text-[#ff6b4a]" : "text-slate-400"}`}
-                  />
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active Location Detail Display */}
-          <div className="lg:col-span-6 bg-[#f8f9fa] p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
-            <div className="space-y-2">
-              <span className="text-xs font-mono text-[#c42f0b] uppercase tracking-wider font-semibold">
-                {selectedHub.hubRole}
+        {/* Main Grid: Map & Controls on Left, Detail Card on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Left Column: Interactive Map Card */}
+          <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-8 shadow-xs flex flex-col items-center">
+            {/* Map Header Indicator */}
+            <div className="w-full flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100 mb-2">
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c42f0b] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#c42f0b]"></span>
+                </span>
+                <span className="text-xs font-mono font-semibold text-slate-700 uppercase tracking-wider">
+                  Interactive Network Map
+                </span>
+              </div>
+              <span className="text-xs font-mono text-slate-500">
+                10 Verified Locations
               </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#0b2144] tracking-tight">
-                {selectedHub.city}
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed pt-2">
-                {selectedHub.address}
-              </p>
             </div>
 
-            <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              {selectedHub.phone ? (
-                <a
-                  href={`tel:${selectedHub.phone.replace(/[^0-9+]/g, "")}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#0b2144] hover:text-[#c42f0b] transition-colors"
-                >
-                  <Phone className="w-4 h-4 text-[#c42f0b]" />
-                  <span>{selectedHub.phone}</span>
-                </a>
-              ) : (
-                <span className="text-xs text-slate-500">Direct Routing</span>
-              )}
-
-              <a
-                href={`mailto:${selectedHub.email}`}
-                className="inline-flex items-center gap-2 bg-[#0b2144] hover:bg-[#07152b] text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors"
+            {/* SVG Map Container */}
+            <div className="relative w-full max-w-[490px] aspect-[600/680] my-2">
+              <svg
+                viewBox="0 30 600 660"
+                className="w-full h-full select-none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <Mail className="w-3.5 h-3.5" />
-                <span>Email Branch Desk</span>
-              </a>
+                <defs>
+                  {/* Subtle map gradient */}
+                  <linearGradient id="indiaMapFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f1f5f9" />
+                    <stop offset="100%" stopColor="#e2e8f0" />
+                  </linearGradient>
+                  {/* Pulse filter for selected hub */}
+                  <filter id="hubGlowEffect" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow dx="0" dy="1" stdDeviation="3" floodColor="#c42f0b" floodOpacity="0.4" />
+                  </filter>
+                </defs>
+
+                {/* India Map Outline */}
+                <path
+                  d={INDIA_SVG_PATH}
+                  fill="url(#indiaMapFill)"
+                  stroke="#cbd5e1"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                />
+
+                {/* Hub Dots */}
+                {HUB_COORDS.map((hub) => {
+                  const isSelected = hub.id === selectedId;
+
+                  return (
+                    <g
+                      key={hub.id}
+                      onClick={() => setSelectedId(hub.id)}
+                      className="cursor-pointer group"
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`Select ${hub.city}`}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          setSelectedId(hub.id);
+                        }
+                      }}
+                    >
+                      {/* Active Outer Pulse Ring */}
+                      {isSelected && (
+                        <circle
+                          cx={hub.cx}
+                          cy={hub.cy}
+                          r="15"
+                          fill="none"
+                          stroke="#c42f0b"
+                          strokeWidth="1.5"
+                          className="animate-ping opacity-60 origin-center"
+                        />
+                      )}
+
+                      {/* Hover Target Circle (Enlarged hit area) */}
+                      <circle
+                        cx={hub.cx}
+                        cy={hub.cy}
+                        r="18"
+                        fill="transparent"
+                      />
+
+                      {/* Outer Ring */}
+                      <circle
+                        cx={hub.cx}
+                        cy={hub.cy}
+                        r={isSelected ? "8.5" : "6"}
+                        fill={isSelected ? "#c42f0b" : "#ffffff"}
+                        stroke={isSelected ? "#ffffff" : "#0b2144"}
+                        strokeWidth={isSelected ? "2" : "1.5"}
+                        filter={isSelected ? "url(#hubGlowEffect)" : undefined}
+                        className="transition-all duration-200 group-hover:scale-125 origin-center"
+                      />
+
+                      {/* Inner Dot */}
+                      <circle
+                        cx={hub.cx}
+                        cy={hub.cy}
+                        r={isSelected ? "4" : "3"}
+                        fill={isSelected ? "#ffffff" : "#c42f0b"}
+                        className="transition-all duration-200"
+                      />
+
+                      {/* Text Label with clean halo */}
+                      <text
+                        x={
+                          hub.labelPosition === "left"
+                            ? hub.cx - 12
+                            : hub.labelPosition === "right"
+                            ? hub.cx + 12
+                            : hub.cx
+                        }
+                        y={
+                          hub.labelPosition === "top"
+                            ? hub.cy - 10
+                            : hub.labelPosition === "bottom"
+                            ? hub.cy + 16
+                            : hub.cy + 4
+                        }
+                        textAnchor={
+                          hub.labelPosition === "left"
+                            ? "end"
+                            : hub.labelPosition === "right"
+                            ? "start"
+                            : "middle"
+                        }
+                        style={{
+                          paintOrder: "stroke fill",
+                          stroke: "#ffffff",
+                          strokeWidth: "3px",
+                          strokeLinejoin: "round",
+                        }}
+                        className={`text-[12px] font-sans transition-all duration-200 pointer-events-none select-none ${
+                          isSelected
+                            ? "font-bold fill-[#0b2144]"
+                            : "font-medium fill-slate-700 group-hover:fill-[#0b2144]"
+                        }`}
+                      >
+                        {hub.shortLabel}
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
+            </div>
+
+            {/* Quick Pill Selector */}
+            <div className="w-full mt-4 pt-4 border-t border-slate-100">
+              <div className="flex flex-wrap gap-1.5 justify-center">
+                {HUBS.map((h) => {
+                  const isSelected = h.id === selectedId;
+                  return (
+                    <button
+                      key={h.id}
+                      onClick={() => setSelectedId(h.id)}
+                      className={`text-xs px-2.5 py-1 rounded-md font-medium transition-all duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] ${
+                        isSelected
+                          ? "bg-[#0b2144] text-white shadow-xs"
+                          : "bg-slate-100/90 text-slate-700 hover:bg-slate-200"
+                      }`}
+                    >
+                      {h.city}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Selected Hub Details */}
+          <div className="lg:col-span-5">
+            <div className="sticky top-28">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedHub.id}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2 }}
+                  className="bg-white p-7 sm:p-9 rounded-2xl border border-slate-200/80 shadow-xs space-y-7"
+                >
+                  {/* Hub Role & Title */}
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#c42f0b]/10 text-[#c42f0b] text-[11px] font-mono uppercase tracking-wider font-semibold mb-3">
+                      <Building2 className="w-3.5 h-3.5" />
+                      <span>{selectedHub.hubRole}</span>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#0b2144] tracking-tight">
+                      {selectedHub.city}
+                    </h3>
+                    <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-1">
+                      {selectedHub.state} · India
+                    </p>
+                  </div>
+
+                  {/* Address Section */}
+                  <div className="border-t border-slate-100 pt-5 space-y-2">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-1" />
+                      <p className="text-sm text-slate-700 leading-relaxed">
+                        {selectedHub.address}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Direct Contact Actions */}
+                  <div className="border-t border-slate-100 pt-6 space-y-3">
+                    {selectedHub.phone && (
+                      <div className="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded-lg border border-slate-200/60">
+                        <div className="flex items-center gap-2.5 text-xs text-slate-600">
+                          <Phone className="w-3.5 h-3.5 text-[#c42f0b]" />
+                          <span className="font-mono">{selectedHub.phone}</span>
+                        </div>
+                        <a
+                          href={`tel:${selectedHub.phone.replace(/[^0-9+]/g, "")}`}
+                          className="text-xs font-semibold text-[#0b2144] hover:text-[#c42f0b] flex items-center gap-1 transition-colors"
+                        >
+                          <span>Call</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    )}
+
+                    <a
+                      href={`mailto:${selectedHub.email}`}
+                      className="w-full flex items-center justify-center gap-2 bg-[#0b2144] hover:bg-[#07152b] text-white text-xs font-semibold px-5 py-3.5 rounded-lg transition-colors shadow-xs"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Email Branch Desk</span>
+                    </a>
+                  </div>
+
+                  {/* Verification Note */}
+                  <div className="pt-1 text-center">
+                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                      Verified Freyer Corporate Branch
+                    </span>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>
