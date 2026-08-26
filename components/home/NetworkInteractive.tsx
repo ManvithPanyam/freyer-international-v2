@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { Phone, Mail, MapPin, Building2, ExternalLink } from "lucide-react";
-import { INDIA_SVG_PATH, HUB_COORDS } from "./indiaMapData";
+import { HUB_COORDS } from "./indiaMapData";
 
 interface Branch {
   id: string;
@@ -129,56 +130,39 @@ export function NetworkInteractive() {
           </p>
         </div>
 
-        {/* Main Grid: Map & Controls on Left, Detail Card on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Left Column: Interactive Map Card */}
-          <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-8 shadow-xs flex flex-col items-center">
-            {/* Map Header Indicator */}
-            <div className="w-full flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-100 mb-2">
-              <div className="flex items-center gap-2">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c42f0b] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#c42f0b]"></span>
-                </span>
-                <span className="text-xs font-mono font-semibold text-slate-700 uppercase tracking-wider">
-                  Interactive Network Map
-                </span>
-              </div>
-              <span className="text-xs font-mono text-slate-500">
-                10 Verified Locations
-              </span>
-            </div>
+        {/* Main Grid: Floating Satellite Artwork on Left, Detail Panel on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          {/* Left Column: Floating Satellite Artwork (No surrounding card) */}
+          <div className="lg:col-span-7 flex flex-col items-center">
+            {/* Satellite Artwork Container with custom SVG overlay */}
+            <div className="relative w-full max-w-[520px] aspect-[600/620] rounded-2xl overflow-hidden shadow-lg border border-slate-200/50 bg-[#0a192f]">
+              {/* NASA Blue Marble Satellite Base Imagery */}
+              <Image
+                src="/images/india-satellite.webp"
+                alt="Satellite visualization of the Indian subcontinent showing Freyer operational network"
+                fill
+                sizes="(max-width: 1024px) 100vw, 520px"
+                className="object-cover object-center select-none"
+                priority
+              />
 
-            {/* SVG Map Container */}
-            <div className="relative w-full max-w-[490px] aspect-[600/680] my-2">
+              {/* Subtle oceanic vignette overlay to soften outer borders */}
+              <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/25 pointer-events-none" />
+
+              {/* Interactive SVG Overlay */}
               <svg
-                viewBox="0 30 600 660"
-                className="w-full h-full select-none"
+                viewBox="0 0 600 620"
+                className="absolute inset-0 w-full h-full select-none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
-                  {/* Subtle map gradient */}
-                  <linearGradient id="indiaMapFill" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f1f5f9" />
-                    <stop offset="100%" stopColor="#e2e8f0" />
-                  </linearGradient>
-                  {/* Pulse filter for selected hub */}
-                  <filter id="hubGlowEffect" x="-50%" y="-50%" width="200%" height="200%">
-                    <feDropShadow dx="0" dy="1" stdDeviation="3" floodColor="#c42f0b" floodOpacity="0.4" />
+                  {/* Glowing shadow filter for selected hub */}
+                  <filter id="satHubGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow dx="0" dy="1" stdDeviation="4" floodColor="#c42f0b" floodOpacity="0.8" />
                   </filter>
                 </defs>
 
-                {/* India Map Outline */}
-                <path
-                  d={INDIA_SVG_PATH}
-                  fill="url(#indiaMapFill)"
-                  stroke="#cbd5e1"
-                  strokeWidth="1.5"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                />
-
-                {/* Hub Dots */}
+                {/* Hub Markers */}
                 {HUB_COORDS.map((hub) => {
                   const isSelected = hub.id === selectedId;
 
@@ -196,16 +180,16 @@ export function NetworkInteractive() {
                         }
                       }}
                     >
-                      {/* Active Outer Pulse Ring */}
+                      {/* Active Outer Pulse Ping */}
                       {isSelected && (
                         <circle
                           cx={hub.cx}
                           cy={hub.cy}
-                          r="15"
+                          r="16"
                           fill="none"
-                          stroke="#c42f0b"
-                          strokeWidth="1.5"
-                          className="animate-ping opacity-60 origin-center"
+                          stroke="#ff6b4a"
+                          strokeWidth="2"
+                          className="animate-ping opacity-75 origin-center"
                         />
                       )}
 
@@ -213,7 +197,7 @@ export function NetworkInteractive() {
                       <circle
                         cx={hub.cx}
                         cy={hub.cy}
-                        r="18"
+                        r="20"
                         fill="transparent"
                       />
 
@@ -221,15 +205,15 @@ export function NetworkInteractive() {
                       <circle
                         cx={hub.cx}
                         cy={hub.cy}
-                        r={isSelected ? "8.5" : "6"}
+                        r={isSelected ? "9" : "6"}
                         fill={isSelected ? "#c42f0b" : "#ffffff"}
                         stroke={isSelected ? "#ffffff" : "#0b2144"}
-                        strokeWidth={isSelected ? "2" : "1.5"}
-                        filter={isSelected ? "url(#hubGlowEffect)" : undefined}
+                        strokeWidth={isSelected ? "2.5" : "1.5"}
+                        filter={isSelected ? "url(#satHubGlow)" : undefined}
                         className="transition-all duration-200 group-hover:scale-125 origin-center"
                       />
 
-                      {/* Inner Dot */}
+                      {/* Inner Core Dot */}
                       <circle
                         cx={hub.cx}
                         cy={hub.cy}
@@ -238,7 +222,7 @@ export function NetworkInteractive() {
                         className="transition-all duration-200"
                       />
 
-                      {/* Text Label with clean halo */}
+                      {/* Text Label with crisp white halo */}
                       <text
                         x={
                           hub.labelPosition === "left"
@@ -263,14 +247,14 @@ export function NetworkInteractive() {
                         }
                         style={{
                           paintOrder: "stroke fill",
-                          stroke: "#ffffff",
-                          strokeWidth: "3px",
+                          stroke: "#060f1e",
+                          strokeWidth: "3.5px",
                           strokeLinejoin: "round",
                         }}
                         className={`text-[12px] font-sans transition-all duration-200 pointer-events-none select-none ${
                           isSelected
-                            ? "font-bold fill-[#0b2144]"
-                            : "font-medium fill-slate-700 group-hover:fill-[#0b2144]"
+                            ? "font-bold fill-[#ffffff]"
+                            : "font-medium fill-slate-100 group-hover:fill-[#ffffff]"
                         }`}
                       >
                         {hub.shortLabel}
@@ -281,8 +265,8 @@ export function NetworkInteractive() {
               </svg>
             </div>
 
-            {/* Quick Pill Selector */}
-            <div className="w-full mt-4 pt-4 border-t border-slate-100">
+            {/* Quick Pill Selector underneath satellite map */}
+            <div className="w-full max-w-[520px] mt-5">
               <div className="flex flex-wrap gap-1.5 justify-center">
                 {HUBS.map((h) => {
                   const isSelected = h.id === selectedId;
@@ -293,7 +277,7 @@ export function NetworkInteractive() {
                       className={`text-xs px-2.5 py-1 rounded-md font-medium transition-all duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] ${
                         isSelected
                           ? "bg-[#0b2144] text-white shadow-xs"
-                          : "bg-slate-100/90 text-slate-700 hover:bg-slate-200"
+                          : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/70"
                       }`}
                     >
                       {h.city}
@@ -304,7 +288,7 @@ export function NetworkInteractive() {
             </div>
           </div>
 
-          {/* Right Column: Selected Hub Details */}
+          {/* Right Column: Selected Hub Details Panel */}
           <div className="lg:col-span-5">
             <div className="sticky top-28">
               <AnimatePresence mode="wait">
@@ -314,7 +298,7 @@ export function NetworkInteractive() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.2 }}
-                  className="bg-white p-7 sm:p-9 rounded-2xl border border-slate-200/80 shadow-xs space-y-7"
+                  className="bg-white p-7 sm:p-9 rounded-2xl border border-slate-200/80 shadow-sm space-y-7"
                 >
                   {/* Hub Role & Title */}
                   <div>
