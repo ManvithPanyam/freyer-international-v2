@@ -30,7 +30,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Official Freyer Logo */}
           <Link href="/" className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md">
-            <div className={`relative h-9 w-24 sm:w-28 transition-opacity ${scrolled ? "brightness-90" : "brightness-0 invert"}`}>
+            <div className={`relative h-10 sm:h-11 w-28 sm:w-32 transition-opacity ${scrolled ? "brightness-90" : "brightness-0 invert"}`}>
               <Image
                 src="/images/logo.png"
                 alt="Freyer International Logistics"

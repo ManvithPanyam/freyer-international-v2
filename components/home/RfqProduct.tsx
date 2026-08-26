@@ -1,24 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { type RfqFormData } from "@/lib/validations/rfq";
-import { ArrowRight, ArrowLeft, CheckCircle2, Plane, Anchor, Compass, FileCheck, Warehouse } from "lucide-react";
+import { submitRfqAction } from "@/app/actions/submitRfq";
+import { ArrowRight, ArrowLeft, CheckCircle2, Plane, Anchor, Compass, FileCheck, Warehouse, Loader2 } from "lucide-react";
 
 type ServiceOption = {
   id: RfqFormData["service"];
   title: string;
+  code: string;
   subtitle: string;
   icon: React.ElementType;
 };
 
 const SERVICES: ServiceOption[] = [
-  { id: "air_freight", title: "Air Freight", subtitle: "Time-critical international air cargo", icon: Plane },
-  { id: "ocean_fcl", title: "Ocean Freight (FCL)", subtitle: "Full container load shipments", icon: Anchor },
-  { id: "ocean_lcl", title: "Ocean Freight (LCL)", subtitle: "Consolidated cargo containers", icon: Anchor },
-  { id: "project_cargo", title: "Project Cargo", subtitle: "Over-dimensional & heavy-lift cargo", icon: Compass },
-  { id: "customs_brokerage", title: "Customs Brokerage", subtitle: "AEO-certified regulatory clearance", icon: FileCheck },
-  { id: "warehousing", title: "Warehousing", subtitle: "Contract storage & distribution", icon: Warehouse },
+  { id: "air_freight", code: "AIR", title: "Air Freight", subtitle: "Time-critical international air cargo", icon: Plane },
+  { id: "ocean_fcl", code: "OCEAN FCL", title: "Ocean Freight (FCL)", subtitle: "Full container load shipments", icon: Anchor },
+  { id: "ocean_lcl", code: "OCEAN LCL", title: "Ocean Freight (LCL)", subtitle: "Consolidated cargo containers", icon: Anchor },
+  { id: "project_cargo", code: "PROJECT", title: "Project Cargo", subtitle: "Over-dimensional & heavy-lift engineering", icon: Compass },
+  { id: "customs_brokerage", code: "CUSTOMS", title: "Customs Brokerage", subtitle: "AEO-certified regulatory clearance", icon: FileCheck },
+  { id: "warehousing", code: "STORAGE", title: "Warehousing", subtitle: "Contract storage & distribution", icon: Warehouse },
+];
+
+const CARGO_TYPES = [
+  { id: "general", label: "Standard Commercial Goods" },
+  { id: "hazardous", label: "Hazardous / Dangerous Goods (DG)" },
+  { id: "temperature_controlled", label: "Temperature Sensitive / Cold-Chain" },
+  { id: "breakbulk_oversized", label: "Over-Dimensional / Project Cargo" },
 ];
 
 export function RfqProduct() {
@@ -29,6 +38,9 @@ export function RfqProduct() {
   });
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isPending, startTransition] = useTransition();
+
+  const activeService = SERVICES.find((s) => s.id === formData.service) || SERVICES[0];
 
   const handleServiceSelect = (serviceId: RfqFormData["service"]) => {
     setFormData((prev) => ({ ...prev, service: serviceId }));
@@ -36,120 +48,181 @@ export function RfqProduct() {
 
   const handleNext = () => {
     setErrors({});
+    if (step === 1) {
+      if (!formData.service) {
+        setErrors({ service: "Please select a service modality" });
+        return;
+      }
+      setStep(2);
+      return;
+    }
     if (step === 2) {
-      if (!formData.origin || formData.origin.length < 2) {
-        setErrors((prev) => ({ ...prev, origin: "Origin location is required" }));
+      const stepErrors: Record<string, string> = {};
+      if (!formData.origin || formData.origin.trim().length < 2) {
+        stepErrors.origin = "Origin location is required";
+      }
+      if (!formData.destination || formData.destination.trim().length < 2) {
+        stepErrors.destination = "Destination location is required";
+      }
+      if (Object.keys(stepErrors).length > 0) {
+        setErrors(stepErrors);
         return;
       }
-      if (!formData.destination || formData.destination.length < 2) {
-        setErrors((prev) => ({ ...prev, destination: "Destination location is required" }));
-        return;
-      }
+      setStep(3);
+      return;
     }
     if (step === 3) {
       if (!formData.weightKg || formData.weightKg <= 0) {
-        setErrors((prev) => ({ ...prev, weightKg: "Weight must be greater than zero" }));
+        setErrors({ weightKg: "Total weight must be greater than zero" });
         return;
       }
-    }
-    if (step === 4) {
-      if (!formData.companyName || formData.companyName.length < 2) {
-        setErrors((prev) => ({ ...prev, companyName: "Company name is required" }));
-        return;
-      }
-      if (!formData.contactName || formData.contactName.length < 2) {
-        setErrors((prev) => ({ ...prev, contactName: "Contact name is required" }));
-        return;
-      }
-      if (!formData.corporateEmail || !formData.corporateEmail.includes("@")) {
-        setErrors((prev) => ({ ...prev, corporateEmail: "Valid corporate email is required" }));
-        return;
-      }
-      if (!formData.phone || formData.phone.length < 8) {
-        setErrors((prev) => ({ ...prev, phone: "Valid phone number is required" }));
-        return;
-      }
-      setSubmitted(true);
+      setStep(4);
       return;
     }
-    setStep((prev) => Math.min(prev + 1, 4));
+    if (step === 4) {
+      const stepErrors: Record<string, string> = {};
+      if (!formData.companyName || formData.companyName.trim().length < 2) {
+        stepErrors.companyName = "Company name is required";
+      }
+      if (!formData.contactName || formData.contactName.trim().length < 2) {
+        stepErrors.contactName = "Contact name is required";
+      }
+      if (!formData.corporateEmail || !formData.corporateEmail.includes("@")) {
+        stepErrors.corporateEmail = "Valid corporate email is required";
+      }
+      if (!formData.phone || formData.phone.trim().length < 8) {
+        stepErrors.phone = "Valid phone number is required";
+      }
+      if (Object.keys(stepErrors).length > 0) {
+        setErrors(stepErrors);
+        return;
+      }
+
+      // Execute Server Action
+      startTransition(async () => {
+        const res = await submitRfqAction(formData);
+        if (res.success) {
+          setSubmitted(true);
+        } else if (res.errors) {
+          setErrors(res.errors);
+        } else {
+          setErrors({ form: res.message || "Failed to submit request" });
+        }
+      });
+    }
   };
 
   const handlePrev = () => {
+    setErrors({});
     setStep((prev) => Math.max(prev - 1, 1));
   };
 
   return (
-    <section id="quote" className="py-24 sm:py-32 bg-[#07152b] text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-xl mx-auto mb-12">
-          <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
-            Guided Freight Inquiry
+    <section id="quote" className="py-24 sm:py-36 bg-[#060f1e] text-white overflow-hidden relative border-t border-white/10">
+      {/* Background ambient lighting */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#c42f0b]/5 blur-[120px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="text-[#ff6b4a] text-xs font-mono tracking-[0.25em] uppercase font-semibold block mb-3">
+            Freight Configurator
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-2">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
             Tell us what needs moving.
           </h2>
-          <p className="text-slate-300 text-sm mt-3">
-            Structured freight parameters routed directly to the Freyer pricing desk.
+          <p className="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed">
+            Configure your shipment parameters for direct review by the Freyer operations desk.
           </p>
         </div>
 
-        {/* Calm Configurator Container */}
-        <div className="bg-[#0b2144] rounded-2xl border border-white/10 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        {/* Configurator Box */}
+        <div className="bg-[#0b1b36] rounded-2xl border border-white/10 p-6 sm:p-12 shadow-2xl relative">
           {!submitted ? (
             <div>
-              {/* Progress */}
-              <div className="flex items-center justify-between pb-8 mb-8 border-b border-slate-700/60">
-                <span className="text-xs font-mono text-slate-400">Step {step} of 4</span>
-                <div className="flex items-center gap-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        i <= step ? "w-8 bg-[#c42f0b]" : "w-4 bg-slate-700"
-                      }`}
-                    />
-                  ))}
+              {/* Quiet Accumulating Summary Bar */}
+              <div className="pb-6 mb-8 border-b border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
+                <div className="flex flex-wrap items-center gap-2 text-slate-300">
+                  <span className="text-[#ff6b4a] font-semibold">{activeService.code}</span>
+                  {formData.origin && formData.destination && (
+                    <>
+                      <span className="text-slate-600">·</span>
+                      <span className="text-white uppercase">
+                        {formData.origin} → {formData.destination}
+                      </span>
+                    </>
+                  )}
+                  {formData.weightKg ? (
+                    <>
+                      <span className="text-slate-600">·</span>
+                      <span className="text-slate-400">{formData.weightKg.toLocaleString()} KG</span>
+                    </>
+                  ) : null}
+                </div>
+
+                {/* Step Counter */}
+                <div className="text-slate-500 font-mono text-[11px] tracking-wider">
+                  STEP 0{step} / 04
                 </div>
               </div>
 
+              {/* Error Banner */}
+              {errors.form && (
+                <div className="mb-6 p-3 rounded bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-mono">
+                  {errors.form}
+                </div>
+              )}
+
               {/* Step Flow */}
               <AnimatePresence mode="wait">
+                {/* STEP 1: SERVICE SELECTION */}
                 {step === 1 && (
                   <motion.div
                     key="step1"
-                    initial={{ opacity: 0, x: 15 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -15 }}
-                    transition={{ duration: 0.25 }}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2 }}
                     className="space-y-6"
                   >
-                    <h3 className="text-lg font-semibold text-white">
-                      01 / Select your required freight modality
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                        What are you shipping?
+                      </h3>
+                      <p className="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">
+                        Select your required logistics modality
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
                       {SERVICES.map((srv) => {
                         const isSelected = formData.service === srv.id;
                         const Icon = srv.icon;
+
                         return (
                           <button
                             key={srv.id}
                             type="button"
                             onClick={() => handleServiceSelect(srv.id)}
-                            className={`p-4 rounded-xl border text-left transition-all duration-200 flex items-start gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b4a] ${
+                            className={`p-5 rounded-xl border text-left transition-all duration-150 flex items-start gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b4a] ${
                               isSelected
-                                ? "bg-white/10 border-[#c42f0b] shadow-sm"
-                                : "bg-white/[0.02] border-white/10 hover:border-white/20"
+                                ? "bg-white/[0.08] border-[#c42f0b] text-white shadow-sm"
+                                : "bg-white/[0.02] border-white/10 text-slate-300 hover:border-white/20 hover:bg-white/[0.04]"
                             }`}
                           >
-                            <Icon
-                              className={`w-5 h-5 shrink-0 mt-0.5 ${
-                                isSelected ? "text-[#ff6b4a]" : "text-slate-400"
-                              }`}
-                            />
-                            <div>
-                              <div className="font-medium text-white text-sm">{srv.title}</div>
-                              <div className="text-xs text-slate-400 mt-0.5">{srv.subtitle}</div>
+                            <div className={`p-2 rounded-lg shrink-0 mt-0.5 ${isSelected ? "bg-[#c42f0b] text-white" : "bg-white/5 text-slate-400"}`}>
+                              <Icon className="w-4 h-4" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="font-semibold text-sm sm:text-base text-white tracking-tight flex items-center justify-between">
+                                <span>{srv.title}</span>
+                                {isSelected && (
+                                  <span className="w-2 h-2 rounded-full bg-[#ff6b4a]" />
+                                )}
+                              </div>
+                              <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                                {srv.subtitle}
+                              </p>
                             </div>
                           </button>
                         );
@@ -158,36 +231,46 @@ export function RfqProduct() {
                   </motion.div>
                 )}
 
+                {/* STEP 2: ROUTING */}
                 {step === 2 && (
                   <motion.div
                     key="step2"
-                    initial={{ opacity: 0, x: 15 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -15 }}
-                    transition={{ duration: 0.25 }}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2 }}
                     className="space-y-6"
                   >
-                    <h3 className="text-lg font-semibold text-white">
-                      02 / Origin and destination locations
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                        Where is it going?
+                      </h3>
+                      <p className="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">
+                        Specify origin and destination ports or facilities
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
                       <div className="space-y-2">
-                        <label htmlFor="origin" className="block text-xs font-mono text-slate-300 uppercase">
+                        <label htmlFor="origin" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Origin (City / Port / Airport) *
                         </label>
                         <input
                           id="origin"
                           type="text"
+                          autoFocus
                           placeholder="e.g. Chennai Port (INMAA)"
                           value={formData.origin || ""}
                           onChange={(e) => setFormData({ ...formData, origin: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3.5 text-sm text-white focus:outline-none transition-colors ${
+                            errors.origin ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
+                          }`}
                         />
-                        {errors.origin && <p className="text-xs text-red-400">{errors.origin}</p>}
+                        {errors.origin && <p className="text-xs text-red-400 font-mono">{errors.origin}</p>}
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="destination" className="block text-xs font-mono text-slate-300 uppercase">
+                        <label htmlFor="destination" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Destination (City / Port / Airport) *
                         </label>
                         <input
@@ -196,48 +279,58 @@ export function RfqProduct() {
                           placeholder="e.g. Hamburg Port (DEHAM)"
                           value={formData.destination || ""}
                           onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3.5 text-sm text-white focus:outline-none transition-colors ${
+                            errors.destination ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
+                          }`}
                         />
-                        {errors.destination && (
-                          <p className="text-xs text-red-400">{errors.destination}</p>
-                        )}
+                        {errors.destination && <p className="text-xs text-red-400 font-mono">{errors.destination}</p>}
                       </div>
                     </div>
                   </motion.div>
                 )}
 
+                {/* STEP 3: CARGO SPECIFICATIONS */}
                 {step === 3 && (
                   <motion.div
                     key="step3"
-                    initial={{ opacity: 0, x: 15 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -15 }}
-                    transition={{ duration: 0.25 }}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2 }}
                     className="space-y-6"
                   >
-                    <h3 className="text-lg font-semibold text-white">
-                      03 / Cargo weight & specifications
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                        Tell us about the cargo.
+                      </h3>
+                      <p className="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">
+                        Weight and handling classification
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
                       <div className="space-y-2">
-                        <label htmlFor="weight" className="block text-xs font-mono text-slate-300 uppercase">
-                          Total Gross Weight (KG / MT) *
+                        <label htmlFor="weight" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
+                          Total Gross Weight (KG) *
                         </label>
                         <input
                           id="weight"
                           type="number"
+                          autoFocus
                           placeholder="e.g. 2500"
                           value={formData.weightKg || ""}
                           onChange={(e) =>
                             setFormData({ ...formData, weightKg: parseFloat(e.target.value) || 0 })
                           }
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3.5 text-sm text-white focus:outline-none transition-colors ${
+                            errors.weightKg ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
+                          }`}
                         />
-                        {errors.weightKg && <p className="text-xs text-red-400">{errors.weightKg}</p>}
+                        {errors.weightKg && <p className="text-xs text-red-400 font-mono">{errors.weightKg}</p>}
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="cargoType" className="block text-xs font-mono text-slate-300 uppercase">
+                        <label htmlFor="cargoType" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Cargo Classification
                         </label>
                         <select
@@ -249,50 +342,59 @@ export function RfqProduct() {
                               cargoType: e.target.value as RfqFormData["cargoType"],
                             })
                           }
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className="w-full bg-[#061021] border border-white/15 rounded-lg px-4 py-3.5 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
                         >
-                          <option value="general">Standard Commercial Goods</option>
-                          <option value="hazardous">Hazardous / Dangerous Goods (DG)</option>
-                          <option value="temperature_controlled">Temperature Sensitive / Cold-Chain</option>
-                          <option value="breakbulk_oversized">Over-Dimensional / Project Cargo</option>
+                          {CARGO_TYPES.map((c) => (
+                            <option key={c.id} value={c.id} className="bg-[#0b1b36] text-white">
+                              {c.label}
+                            </option>
+                          ))}
                         </select>
                       </div>
                     </div>
                   </motion.div>
                 )}
 
+                {/* STEP 4: CONTACT */}
                 {step === 4 && (
                   <motion.div
                     key="step4"
-                    initial={{ opacity: 0, x: 15 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -15 }}
-                    transition={{ duration: 0.25 }}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2 }}
                     className="space-y-6"
                   >
-                    <h3 className="text-lg font-semibold text-white">
-                      04 / Company & contact details
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                        How should we reach you?
+                      </h3>
+                      <p className="text-xs font-mono text-slate-400 mt-1 uppercase tracking-wider">
+                        Authorized commercial contact details
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                       <div className="space-y-2">
-                        <label htmlFor="company" className="block text-xs font-mono text-slate-300 uppercase">
+                        <label htmlFor="company" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Company Name *
                         </label>
                         <input
                           id="company"
                           type="text"
-                          placeholder="e.g. Industrial Manufacturing Ltd"
+                          autoFocus
+                          placeholder="e.g. Acme Industrial Corp"
                           value={formData.companyName || ""}
                           onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors ${
+                            errors.companyName ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
+                          }`}
                         />
-                        {errors.companyName && (
-                          <p className="text-xs text-red-400">{errors.companyName}</p>
-                        )}
+                        {errors.companyName && <p className="text-xs text-red-400 font-mono">{errors.companyName}</p>}
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="contactName" className="block text-xs font-mono text-slate-300 uppercase">
+                        <label htmlFor="contactName" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Contact Person *
                         </label>
                         <input
@@ -301,15 +403,15 @@ export function RfqProduct() {
                           placeholder="e.g. Suresh Kumar"
                           value={formData.contactName || ""}
                           onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors ${
+                            errors.contactName ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
+                          }`}
                         />
-                        {errors.contactName && (
-                          <p className="text-xs text-red-400">{errors.contactName}</p>
-                        )}
+                        {errors.contactName && <p className="text-xs text-red-400 font-mono">{errors.contactName}</p>}
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="email" className="block text-xs font-mono text-slate-300 uppercase">
+                        <label htmlFor="email" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Corporate Email *
                         </label>
                         <input
@@ -318,15 +420,15 @@ export function RfqProduct() {
                           placeholder="e.g. suresh@company.com"
                           value={formData.corporateEmail || ""}
                           onChange={(e) => setFormData({ ...formData, corporateEmail: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors ${
+                            errors.corporateEmail ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
+                          }`}
                         />
-                        {errors.corporateEmail && (
-                          <p className="text-xs text-red-400">{errors.corporateEmail}</p>
-                        )}
+                        {errors.corporateEmail && <p className="text-xs text-red-400 font-mono">{errors.corporateEmail}</p>}
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="phone" className="block text-xs font-mono text-slate-300 uppercase">
+                        <label htmlFor="phone" className="block text-xs font-mono text-slate-300 uppercase tracking-wider">
                           Phone / WhatsApp *
                         </label>
                         <input
@@ -335,25 +437,28 @@ export function RfqProduct() {
                           placeholder="e.g. +91 98765 43210"
                           value={formData.phone || ""}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ff6b4a]"
+                          className={`w-full bg-[#061021] border rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors ${
+                            errors.phone ? "border-red-500" : "border-white/15 focus:border-[#ff6b4a]"
+                          }`}
                         />
-                        {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
+                        {errors.phone && <p className="text-xs text-red-400 font-mono">{errors.phone}</p>}
                       </div>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              {/* Controls */}
-              <div className="flex items-center justify-between pt-8 mt-8 border-t border-slate-700/60">
+              {/* Navigation Controls */}
+              <div className="flex items-center justify-between pt-8 mt-10 border-t border-white/10">
                 {step > 1 ? (
                   <button
                     type="button"
                     onClick={handlePrev}
-                    className="inline-flex items-center gap-2 text-xs font-medium text-slate-300 hover:text-white px-4 py-2.5 rounded focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
+                    disabled={isPending}
+                    className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white px-3 py-2 rounded focus:outline-none focus-visible:ring-1 focus-visible:ring-white transition-colors"
                   >
-                    <ArrowLeft className="w-4 h-4" />
-                    <span>Previous</span>
+                    <ArrowLeft className="w-3.5 h-3.5" />
+                    <span>PREVIOUS</span>
                   </button>
                 ) : (
                   <div />
@@ -362,38 +467,51 @@ export function RfqProduct() {
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white font-semibold text-sm px-6 py-3 rounded transition-all duration-200 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  disabled={isPending}
+                  className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] disabled:opacity-50 text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded transition-all duration-150 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                  <span>{step === 4 ? "Submit Request" : "Continue"}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  {isPending ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>{step === 4 ? "Request Quote" : "Continue"}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </div>
             </div>
           ) : (
+            /* Success State */
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-10 space-y-4"
+              transition={{ duration: 0.3 }}
+              className="text-center py-10 sm:py-16 space-y-5"
             >
-              <div className="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white tracking-tight">
-                Inquiry Received
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                Request received.
               </h3>
               <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                Your shipment parameters have been forwarded to the Freyer pricing desk. A logistics coordinator will contact you directly.
+                Our team will follow up using the contact details provided.
               </p>
-              <div className="pt-4">
+              <div className="pt-6">
                 <button
+                  type="button"
                   onClick={() => {
                     setSubmitted(false);
                     setStep(1);
                     setFormData({ service: "air_freight", cargoType: "general" });
                   }}
-                  className="text-xs font-mono text-[#ff6b4a] hover:underline"
+                  className="text-xs font-mono text-[#ff6b4a] hover:underline uppercase tracking-wider"
                 >
-                  Submit Another Inquiry
+                  Configure Another Shipment →
                 </button>
               </div>
             </motion.div>
