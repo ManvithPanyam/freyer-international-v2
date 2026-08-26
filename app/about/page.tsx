@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AboutExplorer } from "@/components/about/AboutExplorer";
 
 export const metadata: Metadata = {
   title: "About Us | Freyer International Logistics",
-  description: "Learn about Freyer International Logistics: Indian Customs AEO Tier-2 accredited, IATA cargo agent, Great Place to Work certified, with a direct 10-branch footprint across India.",
+  description: "Indian Customs AEO Tier-2 accredited, IATA cargo agent, Great Place to Work certified logistics enterprise with 10 corporate branches across India.",
 };
 
 export default function AboutPage() {
@@ -16,7 +15,7 @@ export default function AboutPage() {
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-4">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -27,7 +26,7 @@ export default function AboutPage() {
 
           <div className="max-w-3xl">
             <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
-              Corporate Identity &amp; Governance
+              Corporate Dossier &amp; Governance
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.06]">
               Engineered for global commerce.
@@ -37,23 +36,23 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-              Freyer International delivers integrated logistics, international freight forwarding, and tailored supply chain solutions. We don&apos;t just move cargo from point A to B; we understand your business model to design cost-effective, highly reliable transport architectures from manufacturing origin to global destination.
+              Freyer International delivers integrated logistics, international freight forwarding, and bespoke supply chain solutions. We don&apos;t just move cargo from point A to B; we understand your business model to design cost-effective, highly reliable transport architectures from manufacturing origin to global destination.
             </p>
           </div>
 
           {/* Section Navigation Index */}
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 pt-5 border-t border-slate-200 text-xs font-mono text-slate-600">
-            <a href="#credentials" className="hover:text-[#c42f0b] transition-colors">
-              01 &middot; Credentials &amp; Accreditations
+            <a href="#story" className="hover:text-[#c42f0b] transition-colors">
+              01 &middot; Company Story
             </a>
-            <a href="#pillars" className="hover:text-[#c42f0b] transition-colors">
-              02 &middot; Operating Philosophy
+            <a href="#credentials" className="hover:text-[#c42f0b] transition-colors">
+              02 &middot; Institutional Evidence
             </a>
             <a href="#people" className="hover:text-[#c42f0b] transition-colors">
               03 &middot; People &amp; Culture
             </a>
             <a href="#footprint" className="hover:text-[#c42f0b] transition-colors">
-              04 &middot; 10-Branch Footprint
+              04 &middot; Geographic Footprint
             </a>
             <a href="#alliances" className="hover:text-[#c42f0b] transition-colors">
               05 &middot; Global Alliances
