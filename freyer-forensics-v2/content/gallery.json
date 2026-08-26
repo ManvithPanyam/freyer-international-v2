@@ -1,0 +1,115 @@
+{
+  "page_title": "Gallery",
+  "source_url": "https://www.freyerinternational.com/gallery",
+  "total_albums": 8,
+  "total_images_referenced": 44,
+  "albums": [
+    {
+      "name": "5th Year Celebration",
+      "rel": "7",
+      "cover_image": "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/1.jpg",
+      "images": [
+        "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/1.jpg",
+        "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/2.jpg",
+        "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/3.jpg",
+        "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/4.jpg",
+        "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/5.jpg",
+        "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/6.jpg",
+        "https://www.freyerinternational.com//images/Gallery/5th Year Celebration/7.jpg"
+      ],
+      "count": 7
+    },
+    {
+      "name": "Abroad Trip",
+      "rel": "6",
+      "cover_image": "https://www.freyerinternational.com//images/Gallery/aku/1.jpg",
+      "images": [
+        "https://www.freyerinternational.com//images/Gallery/aku/1.jpg",
+        "https://www.freyerinternational.com//images/Gallery/aku/2.jpg",
+        "https://www.freyerinternational.com//images/Gallery/aku/3.jpg",
+        "https://www.freyerinternational.com//images/Gallery/aku/4.jpg",
+        "https://www.freyerinternational.com//images/Gallery/aku/5.jpg",
+        "https://www.freyerinternational.com//images/Gallery/aku/6.jpg",
+        "https://www.freyerinternational.com//images/Gallery/aku/7.jpg",
+        "https://www.freyerinternational.com//images/Gallery/aku/8.jpg",
+        "https://www.freyerinternational.com//images/Gallery/aku/9.png"
+      ],
+      "count": 9
+    },
+    {
+      "name": "Office",
+      "rel": "1",
+      "cover_image": "https://www.freyerinternational.com//images/Gallery/Office/1.jpg",
+      "images": [
+        "https://www.freyerinternational.com//images/Gallery/Office/1.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Office/2.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Office/3.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Office/4.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Office/5.jpg"
+      ],
+      "count": 5
+    },
+    {
+      "name": "Social Events",
+      "rel": "2",
+      "cover_image": "https://www.freyerinternational.com//images/Gallery/Social Events/1.jpg",
+      "images": [
+        "https://www.freyerinternational.com//images/Gallery/Social Events/1.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Social Events/2.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Social Events/3.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Social Events/4.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Social Events/5.jpg"
+      ],
+      "count": 5
+    },
+    {
+      "name": "Customer Get Together",
+      "rel": "3",
+      "cover_image": "https://www.freyerinternational.com//images/Gallery/Customer Get Together/1.jpg",
+      "images": [
+        "https://www.freyerinternational.com//images/Gallery/Customer Get Together/1.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Customer Get Together/2.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Customer Get Together/3.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Customer Get Together/4.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Customer Get Together/5.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Customer Get Together/6.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Customer Get Together/7.jpg"
+      ],
+      "count": 7
+    },
+    {
+      "name": "Spirit of Independence",
+      "rel": "4",
+      "cover_image": "https://www.freyerinternational.com//images/Gallery/Spirit of Independence/1.jpg",
+      "images": [
+        "https://www.freyerinternational.com//images/Gallery/Spirit of Independence/1.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Spirit of Independence/2.jpg",
+        "https://www.freyerinternational.com//images/Gallery/Spirit of Independence/3.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "name": "80 Tons Crane",
+      "rel": "5",
+      "cover_image": "https://www.freyerinternational.com//images/Gallery/80 Tons Crane/1.jpg",
+      "images": [
+        "https://www.freyerinternational.com//images/Gallery/80 Tons Crane/1.jpg",
+        "https://www.freyerinternational.com//images/Gallery/80 Tons Crane/2.jpg",
+        "https://www.freyerinternational.com//images/Gallery/80 Tons Crane/3.jpg",
+        "https://www.freyerinternational.com//images/Gallery/80 Tons Crane/4.jpg"
+      ],
+      "count": 4
+    },
+    {
+      "name": "26 Tons Airfreight Shipment",
+      "rel": "6",
+      "cover_image": "https://www.freyerinternational.com//images/Gallery/26 Tons Airfreight Shipment/1.jpg",
+      "images": [
+        "https://www.freyerinternational.com//images/Gallery/26 Tons Airfreight Shipment/1.jpg"
+      ],
+      "count": 1,
+      "extraction_note": "HTML closes the lightbox anchor prematurely — only 1 image was captured. Additional images may exist on live site."
+    }
+  ],
+  "v2_notes": "The '80 Tons Crane' and '26 Tons Airfreight Shipment' albums are operationally relevant — they show real cargo handling. These should be prioritized for the Projects or Services pages over the social/cultural albums. All images need to be downloaded."
+}

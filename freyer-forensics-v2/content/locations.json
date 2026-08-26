@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Bengaluru",
+    "display_name": "Bengaluru",
+    "address": "No.19, KMJ AVEN, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru-560037. India",
+    "phone": "080 4120 0300",
+    "mobile": "+91 9740220069",
+    "email": "Vijay.Palagiri@freyerinternational.com",
+    "map_pin_label": "Bangalore",
+    "region": "South India"
+  },
+  {
+    "id": 2,
+    "name": "Chennai",
+    "display_name": "Chennai",
+    "address": "TAGA Tower New No: 45 Old No 20, 1st Floor, 2nd Street, Sait Colony, Egmore, Chennai-600008.",
+    "phone": "+91 44 43191919",
+    "mobile": "+91 95000 67831",
+    "email": "Selvakumar@freyerinternational.com",
+    "map_pin_label": "Chennai",
+    "region": "South India"
+  },
+  {
+    "id": 3,
+    "name": "Chennai Airport Office",
+    "display_name": "Airport Office Chennai",
+    "address": "No.2 Ambedkar Street, G.S.T. Road, Meenambakkam, Chennai -600017.",
+    "phone": null,
+    "mobile": "+91 96000 41033",
+    "email": ["selvakumar@freyerinternational.com", "prabhu@freyerinternational.com"],
+    "map_pin_label": "Chennai",
+    "region": "South India"
+  },
+  {
+    "id": 4,
+    "name": "Delhi",
+    "display_name": "Delhi",
+    "address": "Plot No. 524, First Floor, Udyog Vihar Phase 5, Gurugram - 122016, Haryana.",
+    "phone": "0124-4068388",
+    "mobile": "+91 98846 60410",
+    "email": ["info@freyerinternational.com", "vk@freyerinternational.com"],
+    "map_pin_label": "Delhi",
+    "region": "North India"
+  },
+  {
+    "id": 5,
+    "name": "Mumbai",
+    "display_name": "Mumbai",
+    "address": "A - 401, POLARIS BUILDING, OFF MAKWANA ROAD, MAROL, ANDHERI (EAST), MUMBAI - 400 059, Maharashtra India.",
+    "phone": "022-46191301",
+    "mobile": null,
+    "email": "raju.jamdar@freyerinternational.com",
+    "map_pin_label": "Mumbai",
+    "region": "West India"
+  },
+  {
+    "id": 6,
+    "name": "Hyderabad",
+    "display_name": "Hyderabad",
+    "address": "#109, 1st Floor, Ashoka Bhoopal Chambers, S.P. Road, Secunderbad-500 003, Telangana",
+    "phone": "040-48561797/98/99",
+    "mobile": "+91 97402 20069",
+    "email": "Vijay.Palagiri@freyerinternational.com",
+    "map_pin_label": "Hyderabad",
+    "region": "South India"
+  },
+  {
+    "id": 7,
+    "name": "Visakhapatnam",
+    "display_name": "Visakhapatnam",
+    "address": "YCN Complex, D.No.58-1-256, NAD X Road, Visakhapatnam, Andhra Pradesh - 530009.",
+    "phone": "+91 97402 20069",
+    "mobile": null,
+    "email": "Vijay.Palagiri@freyerinternational.com",
+    "map_pin_label": "Visakhapatnam",
+    "region": "South India"
+  },
+  {
+    "id": 8,
+    "name": "Coimbatore",
+    "display_name": "Coimbatore",
+    "address": "3A, 1264, Mayflower Valencia, 5th Floor, Krisan Workspaces, Avinashi Road, Nava India, Coimbatore, TN - 641004, India.",
+    "phone": null,
+    "mobile": "+91 9962541554",
+    "email": "shivakumar.ps@freyerinternational.com",
+    "map_pin_label": "Coimbatore",
+    "region": "South India"
+  },
+  {
+    "id": 9,
+    "name": "Tuticorin",
+    "display_name": "Tuticorin",
+    "address": "J GARDEN 4A/C, 278, Housing Board RTC Nagar, Tuticorin -628001. Landmark: Near old water tank",
+    "phone": null,
+    "mobile": "+91 87544 46077",
+    "email": "donald@freyerinternational.com",
+    "map_pin_label": "Tuticorin",
+    "region": "South India"
+  },
+  {
+    "id": 10,
+    "name": "Ahmedabad",
+    "display_name": "Ahmedabad",
+    "address": "Office No. 220, Flexi Business HUB, 2nd Floor, Madhur Complex, Opp. Gwalia Sweets, Near Stadium Cross Road, Navrangpur, Ahmedabad - 380009.",
+    "phone": null,
+    "mobile": "+91 98214 65939",
+    "email": "raju.jamdar@freyerinternational.com",
+    "map_pin_label": "Ahmedabad",
+    "region": "West India"
+  }
+]

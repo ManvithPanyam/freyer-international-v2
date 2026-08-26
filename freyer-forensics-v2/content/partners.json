@@ -1,1 +1,41 @@
-[]
+{
+  "page_title": "Network Partners",
+  "heading": "Our Network Partners",
+  "note": "All partner logo links use href='#' — no external partner URLs are linked on the live site.",
+  "partners": [
+    {
+      "name": "WCA",
+      "logo_source_url": "https://www.freyerinternational.com/images/Our Network Partners/wca.png",
+      "local_asset": "/images/wca.png",
+      "external_url": null,
+      "url_status": "href='#' — not linked",
+      "context": "Displayed in network partners logo grid"
+    },
+    {
+      "name": "WPA",
+      "logo_source_url": "https://www.freyerinternational.com/images/Our Network Partners/wpa.jpg",
+      "local_asset": "/images/wpa.jpg",
+      "external_url": null,
+      "url_status": "href='#' — not linked",
+      "context": "Displayed in network partners logo grid"
+    },
+    {
+      "name": "SCN",
+      "logo_source_url": "https://www.freyerinternational.com/images/Our Network Partners/SCN.png",
+      "local_asset": "/images/SCN.png",
+      "external_url": null,
+      "url_status": "href='#' — not linked",
+      "context": "Displayed in network partners logo grid"
+    },
+    {
+      "name": "FDX",
+      "logo_source_url": "https://www.freyerinternational.com/images/Our Network Partners/FDX.jpg",
+      "local_asset": "/images/FDX.jpg",
+      "external_url": null,
+      "url_status": "href='#' — not linked",
+      "context": "Displayed in network partners logo grid"
+    }
+  ],
+  "source_url": "https://www.freyerinternational.com/network partners",
+  "extraction_note": "Only 4 partner logos found in the HTML. No partner names, descriptions, or external links are present in the source — logos only."
+}

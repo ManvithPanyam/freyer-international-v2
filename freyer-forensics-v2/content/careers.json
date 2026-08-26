@@ -1,0 +1,27 @@
+{
+  "page_title": "Careers",
+  "source_url": "https://www.freyerinternational.com/careers",
+  "banner_image": "images/Careers.jpg",
+  "heading": "Join with us",
+  "tagline": "We just want to have greate people working for us.",
+  "note": "Exact spelling from source: 'greate' — preserved verbatim.",
+  "alternate_page": "https://www.freyerinternational.com/career-plus.php",
+  "form": {
+    "method": "POST",
+    "action": "#",
+    "onsubmit": "return validate();",
+    "fields": [
+      { "label": "First Name", "name": "Name", "type": "text", "required": true },
+      { "label": "Last Name", "name": "Name", "type": "text", "required": true },
+      { "label": "Phone No", "name": "Phone", "type": "number", "required": true },
+      { "label": "Email", "name": "Email", "type": "email", "required": true },
+      { "label": "Current Location", "name": "Current Location", "type": "text", "required": true },
+      { "label": "Date Of Birth", "name": "date_of_birth", "type": "text", "id": "demo", "required": true, "widget": "dcalendarpicker" },
+      { "label": "Upload Resume", "type": "file", "id": "uploadBtn", "note": "Custom styled file input" },
+      { "label": "Message", "name": "mesg", "type": "textarea", "rows": 4 },
+      { "label": "Submit", "name": "Submit", "type": "submit", "value": "Submit", "id": "Submit" }
+    ]
+  },
+  "openings": [],
+  "extraction_note": "No specific job openings listed on this page. The form action is '#' — submission target is not observable from static HTML. A separate career-plus.php page exists but was captured as HTML-wrapped redirect."
+}
