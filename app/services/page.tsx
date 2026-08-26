@@ -13,19 +13,19 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
+      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-4">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
             </Link>
             <span>/</span>
-            <span className="text-slate-900 font-medium">Services</span>
+            <span className="text-slate-900 font-medium">Services &amp; Capabilities</span>
           </div>
 
           <div className="max-w-3xl">
-            <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-3">
+            <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
               Capabilities Dossier
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.06]">
@@ -35,13 +35,13 @@ export default function ServicesPage() {
                 Six disciplines.
               </span>
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base mt-5 leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
               Integrated infrastructure and multimodal operations designed to realise your business goals across contract warehousing, heavy-lift project engineering, global ocean and air networks, customs compliance, and supply chain risk mitigation.
             </p>
           </div>
 
           {/* Compact Anchor Index */}
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 pt-6 border-t border-slate-200 text-xs font-mono text-slate-600">
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 pt-5 border-t border-slate-200 text-xs font-mono text-slate-600">
             <a href="#warehousing" className="hover:text-[#c42f0b] transition-colors">
               01 &middot; Warehousing &amp; 3PL
             </a>
@@ -68,18 +68,18 @@ export default function ServicesPage() {
           <ServicesExplorer />
         </div>
 
-        {/* ── Clean Action Block ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-          <div className="bg-[#0b2144] p-8 sm:p-12 rounded-2xl text-white flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        {/* ── Clean Simplified Action Block ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+          <div className="bg-[#0b2144] p-8 sm:p-12 rounded-2xl text-white flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-xl">
               <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
-                Commercial Logistics Desk
+                Commercial Inquiry
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-2">
-                Request space allocation or engineered project rate analysis.
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-1.5">
+                Need a logistics solution built around the cargo?
               </h2>
-              <p className="text-slate-300 text-sm mt-2 leading-relaxed">
-                Connect with our branch operations teams across 10 hubs in India for tailored freight contracts and warehousing solutions.
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                Connect directly with our operations teams across 10 corporate branches in India for freight rates, warehouse allocation, and project route planning.
               </p>
             </div>
 
@@ -95,7 +95,7 @@ export default function ServicesPage() {
                 href="/projects"
                 className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white text-xs font-semibold px-6 py-3.5 rounded border border-white/10 transition-colors"
               >
-                <span>Documented Projects</span>
+                <span>View Documented Projects</span>
               </Link>
             </div>
           </div>
