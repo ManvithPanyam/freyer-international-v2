@@ -62,7 +62,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-10 text-base font-medium">
+          <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-10 text-base font-medium">
             <Link
               href="/services"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${

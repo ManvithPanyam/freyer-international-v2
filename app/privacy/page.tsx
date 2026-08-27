@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
             <p className="text-slate-600 text-base sm:text-lg mt-4 leading-relaxed max-w-3xl">
               Freyer International Logistics Pvt. Ltd. (&ldquo;Freyer&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to responsible data stewardship, commercial confidentiality, and transparent data processing in compliance with the Digital Personal Data Protection Act, 2023 (DPDP Act), the DPDP Rules 2025, and applicable global freight forwarding regulations.
             </p>
-            <p className="text-xs font-mono text-slate-400 mt-3">
+            <p className="text-xs font-mono text-slate-600 mt-3">
               Effective Date: January 1, 2026 &middot; Last Revised: August 2026 &middot; Applicable Entity: Freyer International Logistics Pvt. Ltd.
             </p>
           </div>

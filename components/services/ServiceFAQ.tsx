@@ -46,7 +46,7 @@ export function ServiceFAQ() {
             Frequently Asked Questions
           </h2>
         </div>
-        <span className="text-xs sm:text-sm font-mono text-slate-400">
+        <span className="text-xs sm:text-sm font-mono text-slate-600">
           Commercial Governance
         </span>
       </div>

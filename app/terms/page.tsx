@@ -36,7 +36,7 @@ export default function TermsPage() {
             <p className="text-slate-600 text-base sm:text-lg mt-4 leading-relaxed max-w-3xl">
               These Standard Trading Conditions govern all quotation estimates, multimodal freight carriage, customs brokerage, contract warehousing, and project engineering services rendered by Freyer International Logistics Pvt. Ltd.
             </p>
-            <p className="text-xs font-mono text-slate-400 mt-3">
+            <p className="text-xs font-mono text-slate-600 mt-3">
               Effective Date: January 1, 2026 &middot; Applicable Entity: Freyer International Logistics Pvt. Ltd.
             </p>
           </div>

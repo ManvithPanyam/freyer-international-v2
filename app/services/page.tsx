@@ -46,7 +46,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Compact Anchor Index */}
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 pt-5 border-t border-slate-200 text-xs sm:text-sm font-mono text-slate-600">
+          <nav aria-label="Capabilities Index" className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 pt-5 border-t border-slate-200 text-xs sm:text-sm font-mono text-slate-600">
             <a href="#warehousing" className="hover:text-[#c42f0b] transition-colors">
               01 &middot; Warehousing &amp; 3PL
             </a>

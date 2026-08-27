@@ -102,7 +102,7 @@ export function ServicesExplorer() {
             <h3 className="text-xs font-mono uppercase tracking-widest text-[#0b2144] font-bold">
               19 Value-Added Fulfillment &amp; Processing Services
             </h3>
-            <span className="text-xs font-mono text-slate-400 mt-1 sm:mt-0">
+            <span className="text-xs font-mono text-slate-600 mt-1 sm:mt-0">
               WMS Managed Operations
             </span>
           </div>
@@ -233,7 +233,7 @@ export function ServicesExplorer() {
       ───────────────────────────────────────────────────────────── */}
       <section id="core-disciplines" className="pt-2">
         <div className="pb-6 border-b border-slate-200">
-          <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block mb-1.5 font-medium">
+          <span className="text-xs font-mono text-slate-600 uppercase tracking-widest block mb-1.5 font-medium">
             03 / Core Multimodal &amp; Compliance Disciplines
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
@@ -244,7 +244,7 @@ export function ServicesExplorer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 pt-10">
           {/* 03: Ocean Freight */}
           <div id="ocean-freight" className="space-y-3">
-            <div className="flex items-center justify-between text-xs font-mono text-slate-400 pb-2 border-b border-slate-200">
+            <div className="flex items-center justify-between text-xs font-mono text-slate-600 pb-2 border-b border-slate-200">
               <span className="text-[#0b2144] font-bold uppercase">03 &middot; Ocean Freight (FCL &amp; LCL)</span>
               <span>Maritime Services</span>
             </div>
@@ -268,7 +268,7 @@ export function ServicesExplorer() {
 
           {/* 04: Air Freight */}
           <div id="air-freight" className="space-y-3">
-            <div className="flex items-center justify-between text-xs font-mono text-slate-400 pb-2 border-b border-slate-200">
+            <div className="flex items-center justify-between text-xs font-mono text-slate-600 pb-2 border-b border-slate-200">
               <span className="text-[#0b2144] font-bold uppercase">04 &middot; Air Freight &amp; Charter</span>
               <span>Expedited &amp; Scheduled</span>
             </div>
@@ -289,7 +289,7 @@ export function ServicesExplorer() {
 
           {/* 05: Customs Brokerage */}
           <div id="customs" className="space-y-3">
-            <div className="flex items-center justify-between text-xs font-mono text-slate-400 pb-2 border-b border-slate-200">
+            <div className="flex items-center justify-between text-xs font-mono text-slate-600 pb-2 border-b border-slate-200">
               <span className="text-[#0b2144] font-bold uppercase">05 &middot; Customs Brokerage</span>
               <span>AEO Tier-2 Certified</span>
             </div>
@@ -313,7 +313,7 @@ export function ServicesExplorer() {
 
           {/* 06: Risk Management */}
           <div id="risk-management" className="space-y-3">
-            <div className="flex items-center justify-between text-xs font-mono text-slate-400 pb-2 border-b border-slate-200">
+            <div className="flex items-center justify-between text-xs font-mono text-slate-600 pb-2 border-b border-slate-200">
               <span className="text-[#0b2144] font-bold uppercase">06 &middot; Cargo Risk Management</span>
               <span>Marine Insurance</span>
             </div>

@@ -45,7 +45,7 @@ export function Footer() {
               Integrated multimodal freight forwarding, AEO Tier-2 licensed customs brokerage, high-bay warehousing, and heavy-lift project engineering across India and global trading corridors.
             </p>
 
-            <div className="pt-2 text-xs font-mono text-slate-500 space-y-1">
+            <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
               <div>AEO Tier-2: INAAQCA4076M0F243</div>
               <div>IATA Regulated Cargo Agent</div>
               <div>Great Place to Work&reg; Certified</div>
@@ -146,14 +146,14 @@ export function Footer() {
                   <span>080 4120 0300 &middot; Bengaluru</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-slate-500" />
+                  <Mail className="w-4 h-4 text-slate-400" />
                   <span>info@freyerinternational.com</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2.5">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2.5">
                 Official Channels
               </h4>
               <div className="flex items-center gap-3">
@@ -181,26 +181,26 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© {currentYear} Freyer International Logistics Pvt. Ltd. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/privacy" className="hover:text-slate-300 transition-colors">
+            <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
             <span>&middot;</span>
-            <Link href="/terms" className="hover:text-slate-300 transition-colors">
+            <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
             <span>&middot;</span>
-            <Link href="/locations" className="hover:text-slate-400 transition-colors">
+            <Link href="/locations" className="hover:text-white transition-colors">
               Pan-India Network
             </Link>
             <span>&middot;</span>
-            <Link href="/contact" className="hover:text-slate-400 transition-colors">
+            <Link href="/contact" className="hover:text-white transition-colors">
               Contact Desks
             </Link>
             <span>&middot;</span>
-            <Link href="/#quote" className="hover:text-slate-400 transition-colors flex items-center gap-1">
+            <Link href="/#quote" className="hover:text-white transition-colors flex items-center gap-1">
               <span>Freight Configurator</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
