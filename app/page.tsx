@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { HomeHero } from "@/components/home/editorial/HomeHero";
+import { HeroSection } from "@/components/home/HeroSection";
 import { HomeScale } from "@/components/home/editorial/HomeScale";
 import { HomeProofMovement } from "@/components/home/editorial/HomeProofMovement";
 import { HomeSupplyChainJourney } from "@/components/home/editorial/HomeSupplyChainJourney";
@@ -14,8 +14,8 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#03060f] text-white selection:bg-[#ff6b4a] selection:text-white font-sans antialiased">
       <Header />
       <main className="relative">
-        {/* Section 01 — Hook: Full-Screen Hero */}
-        <HomeHero />
+        {/* Section 01 — Restored Baseline Hero */}
+        <HeroSection />
 
         {/* Section 02 — Scale: Enormous Fact (190+) */}
         <HomeScale />

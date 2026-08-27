@@ -21,18 +21,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isDarkPage = pathname === "/";
-  const isLightSolid = !isDarkPage;
-  const isDarkScrolled = isDarkPage && scrolled;
+  const isSolid = !isHome || scrolled;
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-          isLightSolid
+          isSolid
             ? "bg-white/98 backdrop-blur-md border-b border-slate-200/80 py-4 shadow-2xs text-[#0b2144]"
-            : isDarkScrolled
-            ? "bg-[#03060f]/95 backdrop-blur-md border-b border-white/10 py-4 shadow-lg text-white"
             : "bg-transparent py-5 text-white"
         }`}
       >
@@ -45,7 +41,7 @@ export function Header() {
           >
             <div
               className={`relative h-13 sm:h-15 md:h-17 w-48 sm:w-56 md:w-64 transition-all duration-200 ${
-                isLightSolid ? "brightness-100 invert-0" : "brightness-0 invert"
+                isSolid ? "brightness-100 invert-0" : "brightness-0 invert"
               }`}
             >
               <Image
@@ -58,7 +54,7 @@ export function Header() {
             </div>
             <span
               className={`text-xs sm:text-sm tracking-wide font-medium transition-colors duration-200 mt-1 ${
-                isLightSolid ? "text-[#c42f0b]" : "text-[#ff6b4a]"
+                isSolid ? "text-[#c42f0b]" : "text-white/90"
               }`}
             >
               Logistics Beyond Boundaries
@@ -70,7 +66,7 @@ export function Header() {
             <Link
               href="/services"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                isLightSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
               Capabilities
@@ -78,7 +74,7 @@ export function Header() {
             <Link
               href="/projects"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                isLightSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
               Projects
@@ -86,7 +82,7 @@ export function Header() {
             <Link
               href="/about"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                isLightSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
               About
@@ -94,7 +90,7 @@ export function Header() {
             <Link
               href="/locations"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                isLightSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
               Locations
@@ -102,7 +98,7 @@ export function Header() {
             <Link
               href="/contact"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                isLightSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
               Contact
@@ -124,7 +120,7 @@ export function Header() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`md:hidden p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] ${
-              isLightSolid ? "text-slate-800" : "text-white"
+              isSolid ? "text-slate-800" : "text-white"
             }`}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}

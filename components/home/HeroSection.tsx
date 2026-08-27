@@ -92,10 +92,12 @@ export function HeroSection() {
         {/* 0ms Poster Frame (Seamless instant first frame) */}
         <Image
           src="/images/hero-poster.jpg"
-          alt="Freyer International logistics cargo transit operations"
+          alt=""
+          aria-hidden="true"
           fill
           priority
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          sizes="100vw"
+          className="object-cover object-center"
           style={{
             opacity: videoLoaded && isPlaying ? 0 : 0.75,
             transition: "opacity 0.8s ease",
