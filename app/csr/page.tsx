@@ -6,7 +6,11 @@ import { ArrowLeft, HeartHandshake } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Corporate Social Responsibility (CSR) | Freyer International Logistics",
-  description: "Freyer International Logistics Corporate Social Responsibility initiatives and community engagement.",
+  description:
+    "Freyer International Logistics Corporate Social Responsibility initiatives and community engagement across healthcare, environment, and educational empowerment.",
+  alternates: {
+    canonical: "/csr",
+  },
 };
 
 export default function CsrPage() {

@@ -7,7 +7,11 @@ import projectsData from "@/freyer-forensics-v2/content/projects.json";
 
 export const metadata: Metadata = {
   title: "Documented Project Movements | Freyer International Logistics",
-  description: "Operational case studies of heavy-lift, over-dimensional cargo (ODC), breakbulk, and turnkey multimodal engineering by Freyer International Logistics.",
+  description:
+    "Operational case studies of heavy-lift, over-dimensional cargo (ODC), breakbulk, and turnkey multimodal engineering by Freyer International Logistics.",
+  alternates: {
+    canonical: "/projects",
+  },
 };
 
 export default function ProjectsPage() {

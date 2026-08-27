@@ -7,6 +7,9 @@ import { ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Desk & Corporate Offices | Freyer International Logistics",
   description: "Connect with Freyer International Logistics corporate headquarters in Bengaluru, primary operational hub in Chennai, or branch desks across India.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 const CONTACTS = [

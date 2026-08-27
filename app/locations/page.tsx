@@ -7,6 +7,9 @@ import { MinimalLocations } from "@/components/locations/MinimalLocations";
 export const metadata: Metadata = {
   title: "Locations & Global Network | Freyer International Logistics",
   description: "A physical Indian network across 10 branch locations, connected globally through established forwarding alliances.",
+  alternates: {
+    canonical: "/locations",
+  },
 };
 
 export default function LocationsPage() {

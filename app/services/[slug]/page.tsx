@@ -207,9 +207,25 @@ export async function generateMetadata({
   const service = SERVICES_DATA[slug];
   if (!service) return { title: "Service Not Found" };
 
+  const canonicalUrl = `https://freyer-international-logistics.vercel.app/services/${slug}`;
+
   return {
     title: `${service.title} | Freyer International Logistics`,
-    description: service.tagline,
+    description: `${service.title}: ${service.tagline} ${service.overview[0]}`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${service.title} | Freyer International Logistics`,
+      description: service.tagline,
+      url: canonicalUrl,
+      images: [
+        {
+          url: service.heroImage,
+          alt: service.imageAlt,
+        },
+      ],
+    },
   };
 }
 

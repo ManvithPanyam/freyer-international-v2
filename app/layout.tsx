@@ -12,24 +12,48 @@ const poppins = Poppins({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5, // Accessible zoom enabled
+  maximumScale: 5,
   themeColor: "#0b2144",
 };
 
 export const metadata: Metadata = {
-  title: "Freyer International Logistics | Freight Forwarding & Project Cargo",
+  title: {
+    default: "Freyer International Logistics | Freight Forwarding & Project Cargo",
+    template: "%s | Freyer International Logistics",
+  },
   description:
-    "Integrated logistics, international air and ocean freight forwarding, AEO-certified customs brokerage, and heavy-lift project cargo engineering across India.",
-  metadataBase: new URL("https://www.freyerinternational.com"),
+    "Integrated logistics, international air and ocean freight forwarding, AEO Tier-2 certified customs brokerage, and heavy-lift project cargo engineering across India and global trading corridors.",
+  metadataBase: new URL("https://freyer-international-logistics.vercel.app"),
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/images/logo.png",
+  },
   openGraph: {
-    title: "Freyer International Logistics",
-    description: "Precision Freight Forwarding & Heavy-Lift Project Cargo Engineering.",
-    url: "https://www.freyerinternational.com",
+    title: "Freyer International Logistics | Precision Freight Forwarding",
+    description:
+      "Integrated logistics, AEO Tier-2 customs clearance, high-bay warehousing, and heavy-lift project cargo engineering across 10 Indian hubs and 190+ countries.",
+    url: "https://freyer-international-logistics.vercel.app",
     siteName: "Freyer International Logistics",
+    images: [
+      {
+        url: "/images/hero-poster.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Freyer International Logistics Corporate & Industrial Operations",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freyer International Logistics",
+    description:
+      "Precision freight forwarding, AEO Tier-2 customs clearance, and heavy-lift engineering across India.",
+    images: ["/images/hero-poster.jpg"],
   },
 };
 
@@ -40,7 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable}>
-      <body className="min-h-screen antialiased bg-[#f8f9fa] text-[#0b2144]">{children}</body>
+      <body className="min-h-screen antialiased bg-[#fbfcfd] text-[#0b2144]">{children}</body>
     </html>
   );
 }

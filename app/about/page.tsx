@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "About Freyer International Logistics | Credentials, Story & Governance",
   description:
     "Explore the corporate history, Indian Customs AEO Tier-2 certification, IATA accreditation, Great Place to Work certification, and leadership of Freyer International Logistics.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

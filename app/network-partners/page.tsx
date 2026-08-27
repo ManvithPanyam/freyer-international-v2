@@ -6,7 +6,10 @@ import { NetworkAlliances } from "@/components/network/NetworkAlliances";
 
 export const metadata: Metadata = {
   title: "Global Alliances & Network Partners | Freyer International Logistics",
-  description: "Freyer International combines physical operations across India with established international forwarding relationships across 190+ countries.",
+  description: "Explore Freyer International's accredited global freight forwarder alliances including WCA World, SCN, WPA, FDX, AMTOI, and ACAAI across 190+ countries.",
+  alternates: {
+    canonical: "/network-partners",
+  },
 };
 
 export default function NetworkPartnersPage() {

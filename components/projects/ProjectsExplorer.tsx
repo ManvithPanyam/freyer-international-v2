@@ -327,7 +327,12 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                       }`}
                       aria-label={`View photo ${idx + 1}`}
                     >
-                      <Image src={imgSrc} alt="" fill className="object-cover" />
+                      <Image
+                        src={imgSrc}
+                        alt={`Photo ${idx + 1} of ${selectedProject.title}`}
+                        fill
+                        className="object-cover"
+                      />
                     </button>
                   ))}
                 </div>
