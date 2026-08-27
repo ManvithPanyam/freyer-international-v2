@@ -5,8 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { LocationsExplorer } from "@/components/locations/LocationsExplorer";
 
 export const metadata: Metadata = {
-  title: "Pan-India Locations & Hubs | Freyer International Logistics",
-  description: "Direct operational footprint across 10 verified Freyer branch locations in India, connected to 190+ countries through global forwarding alliances.",
+  title: "Locations & Global Network | Freyer International Logistics",
+  description: "A physical Indian network across 10 branch locations, connected globally through established forwarding alliances.",
 };
 
 export default function LocationsPage() {
@@ -21,13 +21,10 @@ export default function LocationsPage() {
               Home
             </Link>
             <span>/</span>
-            <span className="text-slate-900 font-medium">Our Network</span>
+            <span className="text-slate-900 font-medium">Locations</span>
           </div>
 
           <div className="max-w-3xl">
-            <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
-              Pan-India Physical Reach
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.08]">
               10 operating hubs across India.
               <br />
@@ -35,8 +32,8 @@ export default function LocationsPage() {
                 190+ countries through global alliances.
               </span>
             </h1>
-            <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
-              Direct physical infrastructure positioned across India&apos;s primary maritime container gateways, international airport complexes, and inland manufacturing corridors.
+            <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+              A physical Indian network, connected globally through established forwarding alliances.
             </p>
           </div>
         </div>
