@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Globe, ShieldCheck, CheckCircle2, ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Global Alliances & Network Partners | Freyer International Logistics",
@@ -14,7 +14,7 @@ const OPERATIONAL_OUTCOMES = [
   {
     step: "01",
     title: "Origin Handling",
-    desc: "Local pickup, export packing verification, and factory drayage coordinated through audited network partner stations.",
+    desc: "Local cargo pickup, export packing verification, and factory drayage coordinated through audited network partner stations.",
   },
   {
     step: "02",
@@ -93,9 +93,9 @@ export default function NetworkPartnersPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
+      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -121,29 +121,32 @@ export default function NetworkPartnersPage() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
-          {/* ── What This Network Enables: 5-Step Operational Outcome Bridge ── */}
-          <div className="bg-white p-8 sm:p-10 lg:p-12 rounded-2xl border border-slate-200/90 shadow-sm space-y-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
+          {/* ── What This Network Enables: 5-Step Operational Outcome Bridge (Scaled Typography & Boxes) ── */}
+          <div className="bg-white p-8 sm:p-10 lg:p-12 rounded-3xl border border-slate-200/90 shadow-sm space-y-8">
             <div className="pb-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0b2144]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
                 What Our Global Network Enables
               </h2>
-              <span className="text-xs font-mono text-slate-400">
+              <span className="text-sm font-mono text-slate-400">
                 End-to-End Execution Flow
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 pt-2">
               {OPERATIONAL_OUTCOMES.map((item) => (
-                <div key={item.step} className="p-5 sm:p-6 rounded-xl bg-slate-50 border border-slate-200/60 space-y-2.5 flex flex-col justify-between">
+                <div
+                  key={item.step}
+                  className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 flex flex-col justify-between"
+                >
                   <div>
-                    <span className="text-xs font-mono font-bold text-[#c42f0b]">
+                    <span className="text-sm font-mono font-bold text-[#c42f0b] block">
                       {item.step}
                     </span>
-                    <h3 className="text-base font-bold text-[#0b2144] mt-1">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#0b2144] mt-1.5 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1.5">
+                    <p className="text-sm sm:text-[15px] text-slate-700 leading-relaxed mt-2">
                       {item.desc}
                     </p>
                   </div>
@@ -152,13 +155,13 @@ export default function NetworkPartnersPage() {
             </div>
           </div>
 
-          {/* ── Certified Alliances Grid ── */}
+          {/* ── Certified Alliances Grid (Scaled Typography & Dimensions) ── */}
           <div>
             <div className="pb-4 border-b border-slate-200 flex items-baseline justify-between">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0b2144]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
                 Accredited Global Consortiums &amp; Associations
               </h2>
-              <span className="text-xs font-mono text-slate-400">
+              <span className="text-sm font-mono text-slate-400">
                 6 Verified Memberships
               </span>
             </div>
@@ -167,39 +170,39 @@ export default function NetworkPartnersPage() {
               {ALLIANCES_DETAILED.map((alliance) => (
                 <div
                   key={alliance.name}
-                  className="bg-white p-8 sm:p-9 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-6"
+                  className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-6"
                 >
                   <div>
                     <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                      <div className="relative w-18 h-14 bg-slate-50 rounded-lg p-1.5 border border-slate-100 flex items-center justify-center">
+                      <div className="relative w-20 h-15 bg-slate-50 rounded-xl p-1.5 border border-slate-100 flex items-center justify-center">
                         <Image
                           src={alliance.logo}
                           alt={alliance.name}
                           fill
-                          className="object-contain p-1"
+                          className="object-contain p-1.5"
                         />
                       </div>
-                      <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-medium text-right max-w-[160px] truncate">
+                      <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-medium text-right max-w-[170px] truncate">
                         {alliance.category}
                       </span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] tracking-tight mt-4">
+                    <h3 className="text-2xl font-bold text-[#0b2144] tracking-tight mt-4">
                       {alliance.name}
                     </h3>
                     <div
-                      className="text-xs font-mono text-[#c42f0b] font-semibold mt-1"
+                      className="text-sm font-mono text-[#c42f0b] font-semibold mt-1"
                       dangerouslySetInnerHTML={{ __html: alliance.coverage }}
                     />
 
-                    <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
+                    <p className="text-base text-slate-700 mt-3.5 leading-relaxed">
                       {alliance.description}
                     </p>
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400">
                     <span>Accreditation Status</span>
-                    <span className="text-[#0b2144] font-semibold">Active Member</span>
+                    <span className="text-[#0b2144] font-semibold text-sm">Active Member</span>
                   </div>
                 </div>
               ))}
@@ -207,7 +210,7 @@ export default function NetworkPartnersPage() {
           </div>
 
           {/* ── International Agency Collaboration Desk ── */}
-          <div className="bg-[#0b2144] text-white rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="bg-[#0b2144] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-2xl">
               <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
                 Bilateral Forwarder Partnership
@@ -215,7 +218,7 @@ export default function NetworkPartnersPage() {
               <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1.5">
                 Seeking a reliable handling partner in India?
               </h2>
-              <p className="text-slate-300 text-sm sm:text-base mt-2 leading-relaxed">
+              <p className="text-slate-300 text-base sm:text-lg mt-2 leading-relaxed">
                 Connect with our Global Alliances desk for reciprocal agency representation, DDP/DAP clearance handling, and breakbulk project coordination across India.
               </p>
             </div>
@@ -223,14 +226,14 @@ export default function NetworkPartnersPage() {
             <div className="shrink-0 flex flex-wrap items-center gap-4">
               <a
                 href="mailto:info@freyerinternational.com?subject=International%20Agency%20Inquiry%20-%20Freyer%20Logistics"
-                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-6 py-3.5 rounded-lg transition-colors shadow-md shadow-[#c42f0b]/20"
+                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-base font-semibold px-7 py-4 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
               >
                 <Mail className="w-4 h-4" />
                 <span>Contact Alliances Desk</span>
               </a>
               <Link
                 href="/locations"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-sm font-semibold px-6 py-3.5 rounded-lg border border-white/15 transition-colors"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-base font-semibold px-7 py-4 rounded-xl border border-white/15 transition-colors"
               >
                 <span>View Indian Hubs</span>
               </Link>

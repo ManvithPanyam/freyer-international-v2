@@ -29,19 +29,19 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
           isSolid
-            ? "bg-white/98 backdrop-blur-md border-b border-slate-200/80 py-3.5 shadow-2xs text-[#0b2144]"
-            : "bg-transparent py-4 text-white"
+            ? "bg-white/98 backdrop-blur-md border-b border-slate-200/80 py-4 shadow-2xs text-[#0b2144]"
+            : "bg-transparent py-5 text-white"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Lockup */}
+          {/* Brand Lockup (+20% visual scale for desktop authority) */}
           <Link
             href="/"
             className="flex flex-col items-start group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md"
             aria-label="Freyer International Logistics — Home"
           >
             <div
-              className={`relative h-12 sm:h-14 md:h-15 w-44 sm:w-52 md:w-56 transition-all duration-200 ${
+              className={`relative h-13 sm:h-15 md:h-17 w-48 sm:w-56 md:w-64 transition-all duration-200 ${
                 isSolid ? "brightness-100 invert-0" : "brightness-0 invert"
               }`}
             >
@@ -54,7 +54,7 @@ export function Header() {
               />
             </div>
             <span
-              className={`text-xs sm:text-[13px] tracking-wide font-medium transition-colors duration-200 mt-0.5 ${
+              className={`text-xs sm:text-sm tracking-wide font-medium transition-colors duration-200 mt-1 ${
                 isSolid ? "text-[#c42f0b]" : "text-white/90"
               }`}
             >
@@ -62,8 +62,8 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Desktop Navigation Links (15-16px) */}
-          <nav className="hidden md:flex items-center gap-9 text-[15px] lg:text-base font-medium">
+          {/* Desktop Navigation Links (16px font scale) */}
+          <nav className="hidden md:flex items-center gap-10 text-base font-medium">
             <Link
               href="/services"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
@@ -110,7 +110,7 @@ export function Header() {
           <div className="hidden sm:flex items-center gap-4">
             <Link
               href="/#quote"
-              className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-5 py-2.5 rounded transition-all duration-150 shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2144]"
+              className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-5 py-3 rounded-lg transition-all duration-150 shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2144]"
             >
               <span>Request a Quote</span>
               <ArrowRight className="w-4 h-4" />
@@ -139,7 +139,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 top-[68px] z-40 bg-white/98 backdrop-blur-xl p-6 flex flex-col justify-between md:hidden border-t border-slate-200 text-[#0b2144] shadow-2xl"
+            className="fixed inset-0 top-[72px] z-40 bg-white/98 backdrop-blur-xl p-6 flex flex-col justify-between md:hidden border-t border-slate-200 text-[#0b2144] shadow-2xl"
           >
             <nav className="flex flex-col gap-5 text-xl font-semibold pt-3">
               <Link
