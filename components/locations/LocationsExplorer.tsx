@@ -149,13 +149,13 @@ export function LocationsExplorer() {
   const selectedBranch = BRANCHES.find((b) => b.id === selectedBranchId) || BRANCHES[0];
 
   return (
-    <div className="space-y-14 sm:space-y-20">
+    <div className="space-y-16 sm:space-y-24">
       {/* ─────────────────────────────────────────────────────────────
           SECTION 01: SATELLITE MAP HERO & EDITORIAL BRANCH EXPERIENCE
       ───────────────────────────────────────────────────────────── */}
-      <section className="bg-[#060f1e] text-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-white/10 shadow-xl">
+      <section className="bg-[#060f1e] text-white rounded-3xl p-8 sm:p-10 lg:p-12 border border-white/10 shadow-xl">
         <div className="pb-5 border-b border-white/10 flex items-baseline justify-between">
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
             Our Indian Network
           </h2>
           <span className="text-xs font-mono text-slate-400">
@@ -164,15 +164,15 @@ export function LocationsExplorer() {
         </div>
 
         {/* Desktop 60/40 Asymmetric Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-8 items-center">
           {/* Map Hero (Dominant 7-Column Span on Desktop) */}
           <div className="lg:col-span-7 flex flex-col items-center">
-            <div className="relative w-full max-w-[560px] aspect-[600/620] rounded-2xl overflow-hidden border border-white/10 bg-[#0a192f] shadow-2xl">
+            <div className="relative w-full max-w-[580px] aspect-[600/620] rounded-2xl overflow-hidden border border-white/10 bg-[#0a192f] shadow-2xl">
               <Image
                 src="/images/india-satellite.webp"
                 alt="Satellite map of India showing Freyer branch network"
                 fill
-                sizes="(max-width: 1024px) 100vw, 560px"
+                sizes="(max-width: 1024px) 100vw, 580px"
                 className="object-cover object-center select-none"
                 priority
               />
@@ -282,10 +282,10 @@ export function LocationsExplorer() {
           <div className="lg:col-span-5 space-y-6">
             {/* Subtle Typographic Hub Switcher */}
             <div>
-              <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block mb-2 font-medium">
+              <span className="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-2 font-medium">
                 Select a Hub
               </span>
-              <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-xs font-mono">
+              <div className="flex flex-wrap gap-x-3.5 gap-y-2 text-sm font-mono">
                 {BRANCHES.map((b) => {
                   const isSelected = b.id === selectedBranchId;
                   return (
@@ -306,55 +306,55 @@ export function LocationsExplorer() {
             </div>
 
             {/* Flattened Hub Typography Spread */}
-            <div className="pt-5 border-t border-white/10 space-y-4">
+            <div className="pt-6 border-t border-white/10 space-y-5">
               <div>
                 <span className="text-xs font-mono text-[#ff6b4a] uppercase tracking-wider">
                   {selectedBranch.region}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-0.5">
+                <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">
                   {selectedBranch.name}
                 </h3>
-                <p className="text-slate-300 text-xs sm:text-sm mt-1">{selectedBranch.role}</p>
+                <p className="text-slate-300 text-sm sm:text-base mt-1">{selectedBranch.role}</p>
               </div>
 
-              <div className="pt-4 border-t border-white/10 space-y-3 text-xs">
+              <div className="pt-5 border-t border-white/10 space-y-4">
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
                     Address
                   </span>
-                  <p className="text-slate-200 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                  <p className="text-slate-200 text-sm sm:text-base mt-1 leading-relaxed">
                     {selectedBranch.address}
                   </p>
                 </div>
 
-                <div className="pt-2 flex flex-wrap items-center gap-4 font-mono text-slate-300">
+                <div className="pt-2 flex flex-wrap items-center gap-5 font-mono text-slate-200 text-sm">
                   {selectedBranch.phone && (
-                    <div className="flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-[#ff6b4a]" />
+                    <div className="flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-[#ff6b4a]" />
                       <span>{selectedBranch.phone}</span>
                     </div>
                   )}
                   {selectedBranch.mobile && (
-                    <div className="flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-[#ff6b4a]" />
+                    <div className="flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-[#ff6b4a]" />
                       <span>{selectedBranch.mobile}</span>
                     </div>
                   )}
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-white/10">
+              <div className="pt-5 border-t border-white/10">
                 <a
                   href={
                     Array.isArray(selectedBranch.email)
                       ? `mailto:${selectedBranch.email[0]}`
                       : `mailto:${selectedBranch.email}`
                   }
-                  className="inline-flex items-center gap-1.5 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-4 py-2.5 rounded transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors"
                 >
-                  <Mail className="w-3.5 h-3.5" />
+                  <Mail className="w-4 h-4" />
                   <span>Email Station</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -367,7 +367,7 @@ export function LocationsExplorer() {
       ───────────────────────────────────────────────────────────── */}
       <section className="pt-2">
         <div className="pb-4 border-b border-slate-200 flex items-baseline justify-between">
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#0b2144]">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0b2144]">
             Complete Pan-India Directory
           </h2>
           <span className="text-xs font-mono text-slate-400">
@@ -375,40 +375,40 @@ export function LocationsExplorer() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8">
           {BRANCHES.map((b) => (
             <div
               key={b.id}
-              className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-2xs flex flex-col justify-between space-y-3 hover:border-slate-300 transition-colors"
+              className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/80 shadow-2xs flex flex-col justify-between space-y-4 hover:border-slate-300 transition-colors"
             >
               <div>
-                <div className="flex items-center justify-between pb-1.5 border-b border-slate-100 text-xs">
-                  <span className="text-[10px] font-mono uppercase tracking-wider font-semibold text-[#c42f0b]">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-xs">
+                  <span className="text-xs font-mono uppercase tracking-wider font-semibold text-[#c42f0b]">
                     {b.region}
                   </span>
-                  <span className="font-mono text-slate-400 text-[11px]">{b.role}</span>
+                  <span className="font-mono text-slate-400 text-xs">{b.role}</span>
                 </div>
 
-                <h3 className="text-base font-bold text-[#0b2144] tracking-tight mt-2">
+                <h3 className="text-xl font-bold text-[#0b2144] tracking-tight mt-2.5">
                   {b.displayName}
                 </h3>
 
-                <div className="mt-1.5 flex items-start gap-2 text-xs text-slate-600 leading-relaxed">
-                  <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
+                <div className="mt-2 flex items-start gap-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                  <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
                   <span>{b.address}</span>
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-                <div className="text-slate-600 text-[11px]">
+              <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-sm font-mono">
+                <div className="text-slate-700 font-medium">
                   {b.phone || b.mobile}
                 </div>
 
                 <a
                   href={Array.isArray(b.email) ? `mailto:${b.email[0]}` : `mailto:${b.email}`}
-                  className="font-semibold text-[#0b2144] hover:text-[#c42f0b] inline-flex items-center gap-1 transition-colors text-[11px]"
+                  className="font-semibold text-[#0b2144] hover:text-[#c42f0b] inline-flex items-center gap-1.5 transition-colors text-sm"
                 >
-                  <Mail className="w-3 h-3 text-slate-400" />
+                  <Mail className="w-3.5 h-3.5 text-slate-400" />
                   <span>Email Branch</span>
                 </a>
               </div>
@@ -422,7 +422,7 @@ export function LocationsExplorer() {
       ───────────────────────────────────────────────────────────── */}
       <section className="pt-2">
         <div className="pb-4 border-b border-slate-200 flex items-baseline justify-between">
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#0b2144]">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0b2144]">
             Global Forwarding Alliances
           </h2>
           <span className="text-xs font-mono text-slate-400">
@@ -430,18 +430,18 @@ export function LocationsExplorer() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
           {GLOBAL_ALLIANCES.map((alliance, idx) => (
             <div
               key={idx}
-              className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-2xs flex items-center gap-3.5 group hover:border-[#c42f0b]/30 transition-colors"
+              className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs flex items-center gap-4 group hover:border-[#c42f0b]/30 transition-colors"
             >
-              <div className="relative w-12 h-10 shrink-0 bg-slate-50 rounded p-1 border border-slate-100 flex items-center justify-center">
-                <Image src={alliance.logo} alt={alliance.name} fill className="object-contain p-0.5" />
+              <div className="relative w-16 h-12 shrink-0 bg-slate-50 rounded-lg p-1.5 border border-slate-100 flex items-center justify-center">
+                <Image src={alliance.logo} alt={alliance.name} fill className="object-contain p-1" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-[#0b2144]">{alliance.name}</h4>
-                <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">{alliance.desc}</p>
+                <h4 className="text-base font-bold text-[#0b2144]">{alliance.name}</h4>
+                <p className="text-xs sm:text-sm text-slate-500 mt-0.5 leading-snug">{alliance.desc}</p>
               </div>
             </div>
           ))}

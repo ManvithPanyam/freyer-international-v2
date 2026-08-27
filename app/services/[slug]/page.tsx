@@ -10,12 +10,6 @@ import {
   ArrowRight,
   CheckCircle2,
   ShieldCheck,
-  Plane,
-  Ship,
-  Warehouse,
-  ShieldAlert,
-  HardHat,
-  FileCheck,
 } from "lucide-react";
 
 interface ServiceData {
@@ -236,7 +230,7 @@ export default async function ServiceDetailPage({
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
         {/* ── Breadcrumb & Service Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -249,14 +243,14 @@ export default async function ServiceDetailPage({
             <span className="text-slate-900 font-medium">{service.title}</span>
           </div>
 
-          <div className="max-w-3xl">
-            <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
+          <div className="max-w-4xl">
+            <span className="text-[#c42f0b] text-xs font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
               {service.category}
             </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.08]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
               {service.title}
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+            <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-3 sm:mt-4 leading-relaxed max-w-3xl">
               {service.tagline}
             </p>
           </div>
@@ -275,37 +269,37 @@ export default async function ServiceDetailPage({
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <span className="absolute bottom-4 left-4 text-xs font-mono text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded border border-white/10">
+              <span className="absolute bottom-5 left-5 text-xs sm:text-sm font-mono text-white bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/10">
                 Freyer {service.title}
               </span>
             </div>
 
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-5 space-y-5">
               <div className="text-xs font-mono text-[#c42f0b] font-semibold uppercase tracking-wider">
                 Operational Overview
               </div>
               {service.overview.map((para, idx) => (
-                <p key={idx} className="text-slate-700 text-xs sm:text-sm leading-relaxed">
+                <p key={idx} className="text-slate-700 text-sm sm:text-base lg:text-[17px] leading-relaxed">
                   {para}
                 </p>
               ))}
 
-              <div className="pt-2">
+              <div className="pt-3">
                 <Link
                   href="/#quote"
-                  className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-5 py-3 rounded transition-colors shadow-md shadow-[#c42f0b]/20"
+                  className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-6 py-3.5 rounded-lg transition-colors shadow-md shadow-[#c42f0b]/20"
                 >
                   <span>{service.ctaText}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
           </div>
 
           {/* ── Detailed Capabilities Ledger ── */}
-          <div className="bg-white p-7 sm:p-10 rounded-2xl border border-slate-200/90 shadow-xs space-y-6">
+          <div className="bg-white p-8 sm:p-10 lg:p-12 rounded-2xl border border-slate-200/90 shadow-sm space-y-8">
             <div className="pb-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-              <h2 className="text-xl sm:text-2xl font-bold text-[#0b2144] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0b2144] tracking-tight">
                 {service.capabilitiesTitle}
               </h2>
               <span className="text-xs font-mono text-slate-400">
@@ -313,10 +307,10 @@ export default async function ServiceDetailPage({
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4">
               {service.capabilities.map((cap, idx) => (
-                <div key={idx} className="flex items-start gap-3 text-xs text-slate-700 py-2 border-b border-slate-50">
-                  <CheckCircle2 className="w-4 h-4 text-[#c42f0b] shrink-0 mt-0.5" />
+                <div key={idx} className="flex items-start gap-3.5 text-sm sm:text-base text-slate-700 py-2.5 border-b border-slate-100">
+                  <CheckCircle2 className="w-5 h-5 text-[#c42f0b] shrink-0 mt-0.5" />
                   <span className="font-medium leading-relaxed">{cap}</span>
                 </div>
               ))}
@@ -325,32 +319,32 @@ export default async function ServiceDetailPage({
 
           {/* ── Institutional Proof Block ── */}
           <div className="bg-[#060f1e] text-white p-8 sm:p-12 rounded-2xl border border-white/10 shadow-lg flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div className="max-w-2xl space-y-2">
+            <div className="max-w-2xl space-y-2.5">
               <div className="flex items-center gap-2 text-xs font-mono text-[#ff6b4a] uppercase tracking-wider font-semibold">
                 <ShieldCheck className="w-4 h-4" />
                 <span>{service.evidenceBadge}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <h3 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
                 {service.evidenceHeadline}
               </h3>
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
                 {service.evidenceText}
               </p>
             </div>
 
-            <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               {service.relatedLink && (
                 <Link
                   href={service.relatedLink.href}
-                  className="inline-flex items-center justify-center gap-1.5 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-5 py-3 rounded border border-white/15 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold px-6 py-3.5 rounded-lg border border-white/15 transition-colors"
                 >
                   <span>{service.relatedLink.label}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               )}
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-1.5 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-5 py-3 rounded transition-colors shadow-md shadow-[#c42f0b]/20"
+                className="inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-6 py-3.5 rounded-lg transition-colors shadow-md shadow-[#c42f0b]/20"
               >
                 <span>Contact Specialists</span>
               </Link>
