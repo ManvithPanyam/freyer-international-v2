@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowRight, Play, Pause } from "lucide-react";
 import Hls from "hls.js";
@@ -89,11 +90,11 @@ export function HeroSection() {
       {/* ── Cinematic Background ── */}
       <div className="absolute inset-0 z-0">
         {/* 0ms Poster Frame (Seamless instant first frame) */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/images/hero-poster.jpg"
-          alt=""
-          aria-hidden="true"
+          alt="Freyer International logistics cargo transit operations"
+          fill
+          priority
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{
             opacity: videoLoaded && isPlaying ? 0 : 0.75,
