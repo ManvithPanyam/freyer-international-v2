@@ -3,40 +3,46 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // On interior pages, header is always solid clean white with full-color logo
+  const isSolid = !isHome || scrolled;
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3 shadow-xs text-[#0b2144]"
-            : "bg-gradient-to-b from-black/85 via-black/40 to-transparent py-4 text-white"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+          isSolid
+            ? "bg-white/98 backdrop-blur-md border-b border-slate-200/80 py-3 shadow-2xs text-[#0b2144]"
+            : "bg-transparent py-4 text-white"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Prominent Two-Line Brand Lockup (+40% scaled Logo + Tagline) */}
+          {/* Brand Lockup */}
           <Link
             href="/"
             className="flex flex-col items-start group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md"
             aria-label="Freyer International Logistics — Home"
           >
             <div
-              className={`relative h-12 sm:h-14 md:h-16 w-44 sm:w-52 md:w-60 transition-all duration-300 ${
-                scrolled ? "brightness-100 invert-0" : "brightness-0 invert"
+              className={`relative h-11 sm:h-13 md:h-14 w-40 sm:w-48 md:w-52 transition-all duration-200 ${
+                isSolid ? "brightness-100 invert-0" : "brightness-0 invert"
               }`}
             >
               <Image
@@ -48,8 +54,8 @@ export function Header() {
               />
             </div>
             <span
-              className={`text-[10px] sm:text-[11px] tracking-wide font-medium transition-colors duration-300 mt-1 ${
-                scrolled ? "text-[#c42f0b]" : "text-white/90"
+              className={`text-[10px] sm:text-[11px] tracking-wide font-medium transition-colors duration-200 mt-0.5 ${
+                isSolid ? "text-[#c42f0b]" : "text-white/90"
               }`}
             >
               Logistics Beyond Boundaries
@@ -57,57 +63,65 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-9 text-base font-medium">
-            <a
-              href="/#capabilities"
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <Link
+              href="/services"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                scrolled ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
               Capabilities
-            </a>
-            <a
-              href="/#project-cargo"
+            </Link>
+            <Link
+              href="/projects"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                scrolled ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
-              Project Cargo
-            </a>
-            <a
-              href="/#network"
+              Projects
+            </Link>
+            <Link
+              href="/about"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                scrolled ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
-              Network
-            </a>
-            <a
-              href="/#quote"
+              About
+            </Link>
+            <Link
+              href="/locations"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
-                scrolled ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
               }`}
             >
-              Quote
-            </a>
+              Locations
+            </Link>
+            <Link
+              href="/contact"
+              className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${
+                isSolid ? "text-slate-700 hover:text-[#0b2144]" : "text-slate-200 hover:text-white"
+              }`}
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Single Restrained Action */}
           <div className="hidden sm:flex items-center gap-4">
-            <a
+            <Link
               href="/#quote"
-              className="inline-flex items-center gap-1.5 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-4 py-2.5 rounded transition-all duration-200 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2144]"
+              className="inline-flex items-center gap-1.5 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-4 py-2.5 rounded transition-all duration-150 shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0b2144]"
             >
               <span>Request a Quote</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`md:hidden p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] ${
-              scrolled ? "text-slate-800" : "text-white"
+              isSolid ? "text-slate-800" : "text-white"
             }`}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -121,51 +135,72 @@ export function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[72px] z-40 bg-white/98 backdrop-blur-xl p-6 flex flex-col justify-between md:hidden border-t border-slate-200 text-[#0b2144] shadow-2xl"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 top-[64px] z-40 bg-white/98 backdrop-blur-xl p-6 flex flex-col justify-between md:hidden border-t border-slate-200 text-[#0b2144] shadow-2xl"
           >
-            <nav className="flex flex-col gap-6 text-xl font-semibold pt-4">
-              <a
-                href="/#capabilities"
+            <nav className="flex flex-col gap-5 text-lg font-semibold pt-2">
+              <Link
+                href="/services"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-[#c42f0b] transition-colors py-1"
               >
-                Capabilities
-              </a>
-              <a
-                href="/#project-cargo"
+                Capabilities &amp; Services
+              </Link>
+              <Link
+                href="/projects"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-[#c42f0b] transition-colors py-1"
               >
-                Project Cargo
-              </a>
-              <a
-                href="/#network"
+                Documented Projects
+              </Link>
+              <Link
+                href="/about"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-[#c42f0b] transition-colors py-1"
               >
-                10 Hub Network
-              </a>
-              <a
-                href="/#quote"
+                About &amp; Credentials
+              </Link>
+              <Link
+                href="/locations"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-[#c42f0b] transition-colors py-1"
               >
-                Request a Quote
-              </a>
+                10 Operating Hubs
+              </Link>
+              <Link
+                href="/network-partners"
+                onClick={() => setMobileMenuOpen(false)}
+                className="hover:text-[#c42f0b] transition-colors py-1"
+              >
+                Global Alliances
+              </Link>
+              <Link
+                href="/careers"
+                onClick={() => setMobileMenuOpen(false)}
+                className="hover:text-[#c42f0b] transition-colors py-1"
+              >
+                Careers &amp; Culture
+              </Link>
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="hover:text-[#c42f0b] transition-colors py-1"
+              >
+                Contact Commercial Desks
+              </Link>
             </nav>
 
-            <div className="space-y-4 pt-6 border-t border-slate-200">
-              <a
+            <div className="pt-6 border-t border-slate-200">
+              <Link
                 href="/#quote"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center bg-[#c42f0b] text-white font-semibold py-3.5 rounded block text-sm"
+                className="w-full text-center bg-[#c42f0b] text-white font-semibold py-3 rounded block text-sm"
               >
                 Request a Quote
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

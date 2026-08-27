@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Phone, Mail, MapPin, ArrowRight, ArrowLeft, Clock, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Desk & Corporate Offices | Freyer International Logistics",
@@ -13,10 +13,10 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
+      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-24 pb-16">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-2">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
             </Link>
@@ -25,25 +25,54 @@ export default function ContactPage() {
           </div>
 
           <div className="max-w-3xl">
-            <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
-              Commercial Desk &amp; Inquiries
+            <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-1.5">
+              Commercial Desks &amp; Inquiries
             </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.08]">
-              Connect with Freyer leadership.
+              Talk to the team moving your cargo.
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base mt-2 sm:mt-3 leading-relaxed">
               Direct communication channels to our corporate office in Bengaluru, primary seaport operations in Chennai, and dedicated station desks across 10 commercial centers in India.
             </p>
           </div>
+
+          {/* Concise Decision Row */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-4 text-xs font-mono">
+            <Link
+              href="/#quote"
+              className="px-3.5 py-1.5 bg-[#0b2144] hover:bg-[#07152b] text-white rounded font-medium transition-colors inline-flex items-center gap-1"
+            >
+              <span>Request a Quote</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+            <Link
+              href="/locations"
+              className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded transition-colors"
+            >
+              Find a Branch (10 Hubs)
+            </Link>
+            <a
+              href="mailto:info@freyerinternational.com"
+              className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded transition-colors"
+            >
+              Corporate Desk
+            </a>
+            <Link
+              href="/careers"
+              className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded transition-colors"
+            >
+              Careers
+            </Link>
+          </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
           {/* ── Primary Engagement Grid ── */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left: Two Primary Operational Hubs (Chennai & Bengaluru) */}
             <div className="lg:col-span-7 space-y-6">
               {/* Chennai Primary Operational Hub */}
-              <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-2xs space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                   <span className="text-[10px] font-mono uppercase tracking-wider font-semibold text-[#c42f0b]">
                     Primary Operational Hub &middot; Tamil Nadu
@@ -84,7 +113,7 @@ export default function ContactPage() {
               </div>
 
               {/* Bengaluru Corporate Registered Office */}
-              <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-2xs space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                   <span className="text-[10px] font-mono uppercase tracking-wider font-semibold text-[#c42f0b]">
                     Corporate Registered Office &middot; Karnataka
@@ -125,10 +154,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: Commercial Enquiries & Structured RFQ Pathway */}
+            {/* Right: Flattened Editorial Routing Panel */}
             <div className="lg:col-span-5 space-y-6">
-              {/* General Enquiries Card */}
-              <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
+              {/* Flattened Email Routing */}
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-2xs space-y-5">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-wider font-semibold text-slate-400 block mb-1">
                     Central Commercial Routing
@@ -138,8 +167,8 @@ export default function ContactPage() {
                   </h3>
                 </div>
 
-                <div className="space-y-3 text-xs">
-                  <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200/70 flex items-center justify-between">
+                <div className="space-y-3 pt-2 text-xs">
+                  <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
                     <div>
                       <span className="font-semibold text-[#0b2144] block">General &amp; Commercial</span>
                       <span className="font-mono text-slate-500 text-[11px]">info@freyerinternational.com</span>
@@ -152,7 +181,7 @@ export default function ContactPage() {
                     </a>
                   </div>
 
-                  <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200/70 flex items-center justify-between">
+                  <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
                     <div>
                       <span className="font-semibold text-[#0b2144] block">Human Resources &amp; Careers</span>
                       <span className="font-mono text-slate-500 text-[11px]">careers@freyerinternational.com</span>
@@ -166,26 +195,24 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100">
-                  <span className="text-xs text-slate-500">
-                    Indian Customs AEO Tier-2 Certificate No: <strong className="text-slate-800 font-mono">INAAQCA4076M0F243</strong>
-                  </span>
+                <div className="pt-2 text-xs text-slate-500 leading-relaxed">
+                  Indian Customs AEO Tier-2 Certificate No: <strong className="text-slate-800 font-mono">INAAQCA4076M0F243</strong>
                 </div>
               </div>
 
               {/* Instant Freight Quotation CTA */}
-              <div className="bg-[#060f1e] text-white p-7 sm:p-8 rounded-2xl border border-white/10 shadow-lg space-y-4">
+              <div className="bg-[#060f1e] text-white p-6 sm:p-8 rounded-2xl border border-white/10 shadow-lg space-y-4">
                 <span className="text-xs font-mono text-[#ff6b4a] uppercase font-semibold">
                   Commercial Pricing
                 </span>
                 <h3 className="text-xl font-bold text-white tracking-tight">
-                  Need a direct shipment quotation?
+                  Need an immediate freight quote?
                 </h3>
                 <p className="text-slate-300 text-xs leading-relaxed">
-                  Configure origin, destination, cargo mode (Air, Ocean, Project Cargo, Warehousing), and load specifications.
+                  Use our structured digital Freight Configurator to calculate routing options across Air, Ocean, Project Cargo, and Warehousing.
                 </p>
 
-                <div className="pt-2">
+                <div className="pt-1">
                   <Link
                     href="/#quote"
                     className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-5 py-3 rounded transition-colors shadow-md shadow-[#c42f0b]/20"
@@ -199,7 +226,7 @@ export default function ContactPage() {
           </div>
 
           {/* ── Pan-India 10 Locations Router Banner ── */}
-          <div className="p-6 sm:p-8 bg-white rounded-2xl border border-slate-200/90 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="p-6 sm:p-8 bg-white rounded-2xl border border-slate-200/90 shadow-2xs flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <span className="text-[10px] font-mono uppercase tracking-widest text-[#c42f0b] font-bold block mb-1">
                 Regional Hub Network
