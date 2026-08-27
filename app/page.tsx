@@ -2,38 +2,25 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
-import { HomeScale } from "@/components/home/editorial/HomeScale";
-import { HomeProofMovement } from "@/components/home/editorial/HomeProofMovement";
-import { HomeSupplyChainJourney } from "@/components/home/editorial/HomeSupplyChainJourney";
-import { HomeDisciplinesSplit } from "@/components/home/editorial/HomeDisciplinesSplit";
-import { HomeTrustWall } from "@/components/home/editorial/HomeTrustWall";
-import { HomeCommercialCTA } from "@/components/home/editorial/HomeCommercialCTA";
+import { IntroStatement } from "@/components/home/IntroStatement";
+import { CapabilitiesIndex } from "@/components/home/CapabilitiesIndex";
+import { ProjectCargoStory } from "@/components/home/ProjectCargoStory";
+import { AccreditationsProof } from "@/components/home/AccreditationsProof";
+import { NetworkInteractive } from "@/components/home/NetworkInteractive";
+import { RfqProduct } from "@/components/home/RfqProduct";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#03060f] text-white selection:bg-[#ff6b4a] selection:text-white font-sans antialiased">
+    <div className="min-h-screen bg-white text-[#0b2144] selection:bg-[#e1390f] selection:text-white font-sans antialiased">
       <Header />
-      <main className="relative">
-        {/* Section 01 — Restored Baseline Hero */}
+      <main>
         <HeroSection />
-
-        {/* Section 02 — Scale: Enormous Fact (190+) */}
-        <HomeScale />
-
-        {/* Section 03 — Proof: Documented Real Movement */}
-        <HomeProofMovement />
-
-        {/* Section 04 — Intelligence: Supply Chain Sticky Journey */}
-        <HomeSupplyChainJourney />
-
-        {/* Section 05 — Capabilities: Six Disciplines Split-Screen */}
-        <HomeDisciplinesSplit />
-
-        {/* Section 06 — Trust: Institutional Identity Wall */}
-        <HomeTrustWall />
-
-        {/* Section 07 — CTA: Commercial Conversion */}
-        <HomeCommercialCTA />
+        <IntroStatement />
+        <CapabilitiesIndex />
+        <ProjectCargoStory />
+        <AccreditationsProof />
+        <NetworkInteractive />
+        <RfqProduct />
       </main>
       <Footer />
     </div>

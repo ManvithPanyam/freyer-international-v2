@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowRight, Play, Pause } from "lucide-react";
 import Hls from "hls.js";
@@ -90,14 +89,12 @@ export function HeroSection() {
       {/* ── Cinematic Background ── */}
       <div className="absolute inset-0 z-0">
         {/* 0ms Poster Frame (Seamless instant first frame) */}
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/images/hero-poster.jpg"
           alt=""
           aria-hidden="true"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           style={{
             opacity: videoLoaded && isPlaying ? 0 : 0.75,
             transition: "opacity 0.8s ease",
