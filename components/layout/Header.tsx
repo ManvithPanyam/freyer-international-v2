@@ -32,7 +32,7 @@ export function Header() {
             : "bg-transparent py-5 text-white"
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
+        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
           {/* Brand Lockup */}
           <Link
             href="/"
@@ -61,7 +61,7 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Desktop Navigation Links (16px font scale) */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-10 text-base font-medium">
             <Link
               href="/services"

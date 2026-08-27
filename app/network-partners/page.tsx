@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Mail, ArrowRight, ShieldCheck } from "lucide-react";
+import { Mail, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Global Alliances & Network Partners | Freyer International Logistics",
@@ -94,8 +94,8 @@ export default function NetworkPartnersPage() {
     <>
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
-        {/* ── Page Header ── */}
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-12 sm:mb-16">
+        {/* ── Page Header: Asymmetric Two-Column Composition on 1560px Canvas ── */}
+        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 mb-12 sm:mb-16">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -104,25 +104,59 @@ export default function NetworkPartnersPage() {
             <span className="text-slate-900 font-medium">Network Partners</span>
           </div>
 
-          <div className="max-w-4xl">
-            <span className="text-[#c42f0b] text-xs font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
-              International Forwarding Alliances
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-              India on the ground.
-              <br />
-              <span className="text-slate-500 font-light italic">
-                Global through trusted networks.
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+            {/* Left: Broad, Commanding Headline & Lead (8 cols) */}
+            <div className="lg:col-span-8">
+              <span className="text-[#c42f0b] text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold block mb-3">
+                International Forwarding Alliances
               </span>
-            </h1>
-            <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-3 sm:mt-4 leading-relaxed max-w-3xl">
-              Freyer combines deep, on-the-ground physical infrastructure across 10 Indian hubs with certified memberships in the world&apos;s most rigorous independent freight networks—granting our clients unbroken door-to-door accountability across 190+ nations.
-            </p>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
+                India on the ground.
+                <br />
+                <span className="text-slate-500 font-light italic">
+                  Global through trusted networks.
+                </span>
+              </h1>
+              <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-4 sm:mt-5 leading-relaxed max-w-3xl">
+                Freyer combines deep, on-the-ground physical infrastructure across 10 Indian hubs with certified memberships in the world&apos;s most rigorous independent freight networks—granting our clients unbroken door-to-door accountability across 190+ nations.
+              </p>
+            </div>
+
+            {/* Right: Authoritative Factual Metric Stack (4 cols) */}
+            <div className="lg:col-span-4 bg-white p-7 sm:p-8 rounded-3xl border border-slate-200/90 shadow-2xs space-y-5">
+              <div className="flex items-baseline justify-between pb-3 border-b border-slate-100">
+                <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-medium">
+                  Global Reach &amp; Alliances
+                </span>
+                <span className="text-xs font-mono text-[#c42f0b] font-bold">VERIFIED</span>
+              </div>
+
+              <div className="grid grid-cols-3 lg:grid-cols-1 gap-4 text-left">
+                <div>
+                  <span className="text-3xl sm:text-4xl font-bold text-[#0b2144] font-mono block">10</span>
+                  <span className="text-xs sm:text-sm font-mono text-slate-500 uppercase tracking-wider mt-0.5 block">
+                    Operating Hubs in India
+                  </span>
+                </div>
+                <div>
+                  <span className="text-3xl sm:text-4xl font-bold text-[#0b2144] font-mono block">190+</span>
+                  <span className="text-xs sm:text-sm font-mono text-slate-500 uppercase tracking-wider mt-0.5 block">
+                    Network Countries Reached
+                  </span>
+                </div>
+                <div>
+                  <span className="text-3xl sm:text-4xl font-bold text-[#0b2144] font-mono block">6</span>
+                  <span className="text-xs sm:text-sm font-mono text-slate-500 uppercase tracking-wider mt-0.5 block">
+                    Accredited Forwarder Alliances
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-24">
-          {/* ── What This Network Enables: Full 1440px 3x2 Matrix ── */}
+        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 space-y-16 sm:space-y-24">
+          {/* ── What This Network Enables: Full 1560px 3x2 Matrix ── */}
           <div className="bg-white p-8 sm:p-12 lg:p-14 rounded-3xl border border-slate-200/90 shadow-sm space-y-10">
             <div className="pb-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
@@ -133,7 +167,7 @@ export default function NetworkPartnersPage() {
               </span>
             </div>
 
-            {/* Spacious 3x2 Matrix spanning 1440px canvas (~440px per card) */}
+            {/* Spacious 3x2 Matrix spanning 1560px canvas */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
               {OPERATIONAL_OUTCOMES.map((item) => (
                 <div
@@ -173,7 +207,7 @@ export default function NetworkPartnersPage() {
             </div>
           </div>
 
-          {/* ── Certified Alliances Grid (Full 1440px 3-Column Spread) ── */}
+          {/* ── Certified Alliances Grid (Full 1560px 3-Column Spread) ── */}
           <div>
             <div className="pb-5 border-b border-slate-200 flex items-baseline justify-between">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">

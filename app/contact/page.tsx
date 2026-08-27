@@ -14,8 +14,8 @@ export default function ContactPage() {
     <>
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
-        {/* ── Page Header ── */}
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-12">
+        {/* ── Page Header: Asymmetric Two-Column Composition on 1560px Canvas ── */}
+        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 mb-10 sm:mb-14">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -24,49 +24,83 @@ export default function ContactPage() {
             <span className="text-slate-900 font-medium">Contact</span>
           </div>
 
-          <div className="max-w-4xl">
-            <span className="text-[#c42f0b] text-xs font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
-              Commercial Desks &amp; Inquiries
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-              Talk to the team moving your cargo.
-            </h1>
-            <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-3 sm:mt-4 leading-relaxed max-w-3xl">
-              Direct communication channels to our corporate office in Bengaluru, primary seaport operations in Chennai, and dedicated station desks across 10 commercial centers in India.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+            {/* Left: Broad Headline, Lead Copy & Decision Row (8 cols) */}
+            <div className="lg:col-span-8">
+              <span className="text-[#c42f0b] text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold block mb-2">
+                Commercial Desks &amp; Inquiries
+              </span>
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
+                Talk to the team moving your cargo.
+              </h1>
+              <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-3 sm:mt-4 leading-relaxed max-w-3xl">
+                Direct communication channels to our corporate office in Bengaluru, primary seaport operations in Chennai, and dedicated station desks across 10 commercial centers in India.
+              </p>
 
-          {/* Concise Decision Row */}
-          <div className="flex flex-wrap items-center gap-3 pt-6 text-sm font-mono">
-            <Link
-              href="/#quote"
-              className="px-4 py-2 bg-[#0b2144] hover:bg-[#07152b] text-white rounded-lg font-medium transition-colors inline-flex items-center gap-1.5 shadow-2xs"
-            >
-              <span>Request a Quote</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-            <Link
-              href="/locations"
-              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
-            >
-              Find a Branch (10 Hubs)
-            </Link>
-            <a
-              href="mailto:info@freyerinternational.com"
-              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
-            >
-              Corporate Desk
-            </a>
-            <Link
-              href="/careers"
-              className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
-            >
-              Careers
-            </Link>
+              {/* Decision Row */}
+              <div className="flex flex-wrap items-center gap-3 pt-6 text-sm font-mono">
+                <Link
+                  href="/#quote"
+                  className="px-4 py-2 bg-[#0b2144] hover:bg-[#07152b] text-white rounded-lg font-medium transition-colors inline-flex items-center gap-1.5 shadow-2xs"
+                >
+                  <span>Request a Quote</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  href="/locations"
+                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
+                >
+                  Find a Branch (10 Hubs)
+                </Link>
+                <a
+                  href="mailto:info@freyerinternational.com"
+                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
+                >
+                  Corporate Desk
+                </a>
+                <Link
+                  href="/careers"
+                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
+                >
+                  Careers
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: Authoritative Commercial Desk Snapshot (4 cols) */}
+            <div className="lg:col-span-4 bg-white p-7 sm:p-8 rounded-3xl border border-slate-200/90 shadow-2xs space-y-4">
+              <div className="flex items-baseline justify-between pb-3 border-b border-slate-100">
+                <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-medium">
+                  Direct Response Routing
+                </span>
+                <span className="text-xs font-mono text-[#c42f0b] font-bold">LIVE DESKS</span>
+              </div>
+
+              <div className="space-y-3.5 text-sm">
+                <div>
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">Central Inquiries</span>
+                  <a href="mailto:info@freyerinternational.com" className="text-base font-bold text-[#0b2144] font-mono hover:text-[#c42f0b] transition-colors">
+                    info@freyerinternational.com
+                  </a>
+                </div>
+                <div>
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">Primary Port Operations</span>
+                  <span className="text-base font-bold text-[#0b2144] font-mono block">
+                    +91 44 4319 1919 &middot; Chennai
+                  </span>
+                </div>
+                <div>
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">Corporate Registered Office</span>
+                  <span className="text-base font-bold text-[#0b2144] font-mono block">
+                    080 4120 0300 &middot; Bengaluru
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 space-y-12 sm:space-y-16">
+        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 space-y-12 sm:space-y-16">
           {/* ── Primary Engagement Grid ── */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* Left: Two Primary Operational Hubs (Chennai & Bengaluru) */}
