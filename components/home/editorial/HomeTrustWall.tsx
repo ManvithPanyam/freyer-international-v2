@@ -5,99 +5,93 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-const TRUST_MARKS = [
+const INSTITUTIONS = [
   {
     name: "AEO Tier-2",
-    issuer: "CBIC · Ministry of Finance",
-    type: "Sovereign Customs Authority",
+    issuer: "CBIC · Sovereign Customs Authority",
     image: "/images/aeo-logo.jpg",
   },
   {
     name: "IATA Cargo Agent",
-    issuer: "International Air Transport Assoc.",
-    type: "Regulated Air Cargo",
+    issuer: "Regulated Global Aviation Forwarder",
     image: "/images/IATA.png",
   },
   {
     name: "WCA World",
-    issuer: "ID: 110488",
-    type: "190+ Country Forwarding Alliance",
+    issuer: "190+ Country Forwarding Alliance",
     image: "/images/wca.png",
   },
   {
     name: "Security Cargo Network",
-    issuer: "SCN Member",
-    type: "Vetted International Logistics",
+    issuer: "Vetted International Logistics Alliance",
     image: "/images/SCN.png",
   },
   {
     name: "Worldwide Partners Alliance",
-    issuer: "WPA Certified",
-    type: "Global Freight Network",
+    issuer: "Global Freight Forwarding Network",
     image: "/images/wpa.jpg",
   },
   {
     name: "AMTOI & ACAAI",
-    issuer: "Multimodal & Air Cargo",
-    type: "National Industry Governance",
+    issuer: "Multimodal & Air Cargo Governance",
     image: "/images/amtoi.png",
   },
 ];
 
 export function HomeTrustWall() {
   return (
-    <section className="relative w-full bg-[#050b18] text-white py-24 sm:py-32 px-6 sm:px-12 lg:px-20 border-t border-white/10">
-      <div className="max-w-[1560px] mx-auto space-y-16">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <span className="text-[#ff6b4a] text-xs font-mono tracking-[0.35em] uppercase font-bold block mb-3">
-              Institutional Trust &amp; Governance
+    <section className="relative w-full bg-[#02050c] text-white py-28 sm:py-36 px-6 sm:px-12 lg:px-20 border-t border-white/10">
+      <div className="max-w-[1600px] mx-auto space-y-16">
+        {/* Monumental Institutional Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div className="max-w-3xl space-y-3">
+            <span className="text-[#ff6b4a] text-xs font-mono tracking-[0.4em] uppercase font-bold block">
+              Governance &amp; Accreditation
             </span>
             <h2
               className="font-black tracking-tight text-white leading-tight"
-              style={{ fontSize: "clamp(2.25rem, 5vw, 4.25rem)" }}
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)" }}
             >
-              Trusted to move
+              TRUSTED AT
               <br />
               <span className="text-slate-400 font-light italic">
-                what matters.
+                EVERY BORDER.
               </span>
             </h2>
           </div>
 
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-white hover:text-[#ff6b4a] transition-colors self-start md:self-auto"
+            className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-white hover:text-[#ff6b4a] transition-colors self-start lg:self-auto"
           >
-            <span>View Verified Credentials</span>
+            <span>View Verified Certificates</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Institutional Mark Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center pt-6">
-          {TRUST_MARKS.map((mark) => (
+        {/* Monumental Institutional Marks Wall (Zero Cards, Pure Space) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-12 items-center pt-8 border-t border-white/10">
+          {INSTITUTIONS.map((inst) => (
             <div
-              key={mark.name}
-              className="group p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#ff6b4a]/40 hover:bg-white/[0.05] transition-all duration-300 flex flex-col items-center text-center justify-between min-h-[190px]"
+              key={inst.name}
+              className="group flex flex-col items-center text-center space-y-4 py-4 transition-all duration-300"
             >
-              <div className="relative h-16 w-32 flex items-center justify-center filter grayscale group-hover:grayscale-0 transition-all duration-300">
+              <div className="relative h-16 w-32 flex items-center justify-center filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300">
                 <Image
-                  src={mark.image}
-                  alt={mark.name}
+                  src={inst.image}
+                  alt={inst.name}
                   fill
                   className="object-contain"
                   sizes="128px"
                 />
               </div>
 
-              <div className="pt-4 border-t border-white/10 w-full space-y-0.5">
-                <div className="text-xs font-bold text-white tracking-tight">
-                  {mark.name}
+              <div className="space-y-0.5">
+                <div className="text-sm font-bold text-white tracking-tight">
+                  {inst.name}
                 </div>
-                <div className="text-[10px] font-mono text-slate-400">
-                  {mark.type}
+                <div className="text-[11px] font-mono text-slate-500">
+                  {inst.issuer}
                 </div>
               </div>
             </div>

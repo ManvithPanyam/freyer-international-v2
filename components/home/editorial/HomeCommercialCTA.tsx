@@ -7,24 +7,24 @@ import { RfqProduct } from "@/components/home/RfqProduct";
 
 export function HomeCommercialCTA() {
   return (
-    <section id="quote" className="relative w-full bg-[#02050c] text-white py-24 sm:py-32 px-6 sm:px-12 lg:px-20 border-t border-white/10">
-      <div className="max-w-[1560px] mx-auto space-y-16">
-        {/* Narrative Header */}
+    <section id="quote" className="relative w-full bg-[#02050c] text-white py-28 sm:py-36 px-6 sm:px-12 lg:px-20 border-t border-white/10">
+      <div className="max-w-[1600px] mx-auto space-y-16">
+        {/* Narrative Culmination Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-3xl space-y-4">
-            <span className="text-[#ff6b4a] text-xs font-mono tracking-[0.35em] uppercase font-bold block">
-              Commercial Conversion &amp; Quotation
+            <span className="text-[#ff6b4a] text-xs font-mono tracking-[0.4em] uppercase font-bold block">
+              Initiate Movement · Instant Feasibility &amp; Rates
             </span>
             <h2
               className="font-black tracking-tight text-white leading-tight"
-              style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)" }}
+              style={{ fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)" }}
             >
-              Tell us what
+              TELL US WHAT
               <br />
-              <span className="text-[#ff6b4a]">needs moving.</span>
+              <span className="text-[#ff6b4a]">NEEDS MOVING.</span>
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg font-light leading-relaxed max-w-2xl">
-              Direct multimodal rate computation and feasibility review from Freyer operations desks in Chennai, Bengaluru, Mumbai, and New Delhi.
+            <p className="text-slate-300 text-base sm:text-xl font-light leading-relaxed max-w-2xl">
+              Direct multimodal rate computation and route clearance review from Freyer operational desks in Chennai, Bengaluru, Mumbai, and New Delhi.
             </p>
           </div>
 
@@ -33,18 +33,18 @@ export function HomeCommercialCTA() {
               href="/services"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3.5 rounded-full transition-all"
             >
-              <span>Explore All 6 Capabilities</span>
+              <span>Explore All 6 Disciplines</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
 
-        {/* The Interactive Freight Configurator */}
-        <div className="pt-4">
+        {/* Natural Culmination Configurator */}
+        <div className="pt-2">
           <RfqProduct />
         </div>
 
-        {/* Direct Channel Strip */}
+        {/* Institutional Contact Desks */}
         <div className="pt-12 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-mono text-slate-400">
           <div className="flex items-center gap-3">
             <MapPin className="w-4 h-4 text-[#ff6b4a]" />
