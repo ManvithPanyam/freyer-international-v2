@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail, ArrowRight, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Global Alliances & Network Partners | Freyer International Logistics",
@@ -14,27 +14,27 @@ const OPERATIONAL_OUTCOMES = [
   {
     step: "01",
     title: "Origin Handling",
-    desc: "Local cargo pickup, export packing verification, and factory drayage coordinated through audited network partner stations.",
+    desc: "Local cargo pickup, export packaging verification, and factory-to-port drayage coordinated through audited partner stations worldwide.",
   },
   {
     step: "02",
     title: "Documentation & Compliance",
-    desc: "Export customs filing, electronic Bill of Lading / e-AWB generation, and consular authentication before dispatch.",
+    desc: "Export customs filing, electronic Bill of Lading & e-AWB generation, and consular authentication before cargo dispatch.",
   },
   {
     step: "03",
     title: "Main Carriage Air / Ocean",
-    desc: "Direct carrier contract allocations with global shipping lines and airlines for guaranteed vessel and freighter space.",
+    desc: "Direct carrier contract allocations with global shipping lines and scheduled airlines for guaranteed vessel and freighter space.",
   },
   {
     step: "04",
     title: "Destination Representation",
-    desc: "Seamless overseas customs clearance, DDP/DAP tax handling, and port yard devanning with reciprocal partners.",
+    desc: "Seamless overseas customs clearance, DDP/DAP tax handling, and port yard devanning with reciprocal network partners.",
   },
   {
     step: "05",
     title: "Final-Mile Coordination",
-    desc: "On-site industrial delivery, tail-lift / mobile crane unloading, and proof of delivery (POD) confirmation back to India.",
+    desc: "On-site industrial delivery, tail-lift or mobile crane unloading, and instant proof of delivery (POD) confirmation back to India.",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function NetworkPartnersPage() {
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -122,87 +122,107 @@ export default function NetworkPartnersPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
-          {/* ── What This Network Enables: 5-Step Operational Outcome Bridge (Scaled Typography & Boxes) ── */}
-          <div className="bg-white p-8 sm:p-10 lg:p-12 rounded-3xl border border-slate-200/90 shadow-sm space-y-8">
-            <div className="pb-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+          {/* ── What This Network Enables: Spacious 5-Step Process Grid ── */}
+          <div className="bg-white p-8 sm:p-12 lg:p-14 rounded-3xl border border-slate-200/90 shadow-sm space-y-10">
+            <div className="pb-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
                 What Our Global Network Enables
               </h2>
-              <span className="text-sm font-mono text-slate-400">
+              <span className="text-sm sm:text-base font-mono font-medium text-slate-500">
                 End-to-End Execution Flow
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6 pt-2">
+            {/* Spacious 3 + 2 Grid so each card is 360-400px wide with room for 24px headings and 18px text */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {OPERATIONAL_OUTCOMES.map((item) => (
                 <div
                   key={item.step}
-                  className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 flex flex-col justify-between"
+                  className="p-8 sm:p-9 rounded-2xl bg-slate-50/90 border border-slate-200 shadow-2xs space-y-4 flex flex-col justify-between hover:border-slate-300 transition-colors"
                 >
                   <div>
-                    <span className="text-sm font-mono font-bold text-[#c42f0b] block">
-                      {item.step}
-                    </span>
-                    <h3 className="text-lg sm:text-xl font-bold text-[#0b2144] mt-1.5 leading-snug">
+                    <div className="flex items-center justify-between">
+                      <span className="text-base font-mono font-bold text-[#c42f0b]">
+                        STEP {item.step}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#0b2144] mt-2 tracking-tight">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-[15px] text-slate-700 leading-relaxed mt-2">
-                      {item.desc}
-                    </p>
                   </div>
+
+                  <p className="text-base sm:text-lg text-slate-700 leading-[1.6]">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
+
+              {/* End-to-End Guarantee Card filling the 6th slot */}
+              <div className="p-8 sm:p-9 rounded-2xl bg-[#060f1e] text-white border border-white/10 shadow-md space-y-4 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-[#ff6b4a] font-bold">
+                    <span>SECURITY &amp; COMPLIANCE</span>
+                    <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mt-2 tracking-tight">
+                    Reciprocal Protection
+                  </h3>
+                </div>
+                <p className="text-base sm:text-lg text-slate-300 leading-[1.6]">
+                  Every shipment is governed by vetted international forwarder bilateral agreements, reciprocal financial indemnity, and AEO Tier-2 customs standards.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* ── Certified Alliances Grid (Scaled Typography & Dimensions) ── */}
+          {/* ── Certified Alliances Grid (Substantial Modules) ── */}
           <div>
-            <div className="pb-4 border-b border-slate-200 flex items-baseline justify-between">
+            <div className="pb-5 border-b border-slate-200 flex items-baseline justify-between">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
                 Accredited Global Consortiums &amp; Associations
               </h2>
-              <span className="text-sm font-mono text-slate-400">
+              <span className="text-sm sm:text-base font-mono text-slate-400">
                 6 Verified Memberships
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 pt-10">
               {ALLIANCES_DETAILED.map((alliance) => (
                 <div
                   key={alliance.name}
-                  className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-6"
+                  className="bg-white p-9 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-6 hover:border-slate-300 transition-colors"
                 >
                   <div>
-                    <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                      <div className="relative w-20 h-15 bg-slate-50 rounded-xl p-1.5 border border-slate-100 flex items-center justify-center">
+                    <div className="flex items-center justify-between pb-5 border-b border-slate-100">
+                      <div className="relative w-22 h-16 bg-slate-50 rounded-xl p-2 border border-slate-100 flex items-center justify-center">
                         <Image
                           src={alliance.logo}
                           alt={alliance.name}
                           fill
-                          className="object-contain p-1.5"
+                          className="object-contain p-1"
                         />
                       </div>
-                      <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-medium text-right max-w-[170px] truncate">
+                      <span className="text-xs sm:text-sm font-mono uppercase tracking-wider text-slate-400 font-medium text-right max-w-[180px] truncate">
                         {alliance.category}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-[#0b2144] tracking-tight mt-4">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#0b2144] tracking-tight mt-5">
                       {alliance.name}
                     </h3>
                     <div
-                      className="text-sm font-mono text-[#c42f0b] font-semibold mt-1"
+                      className="text-sm sm:text-base font-mono text-[#c42f0b] font-semibold mt-1.5"
                       dangerouslySetInnerHTML={{ __html: alliance.coverage }}
                     />
 
-                    <p className="text-base text-slate-700 mt-3.5 leading-relaxed">
+                    <p className="text-base sm:text-lg text-slate-700 mt-4 leading-[1.6]">
                       {alliance.description}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <div className="pt-5 border-t border-slate-100 flex items-center justify-between text-sm font-mono text-slate-400">
                     <span>Accreditation Status</span>
-                    <span className="text-[#0b2144] font-semibold text-sm">Active Member</span>
+                    <span className="text-[#0b2144] font-bold text-sm sm:text-base">Active Member</span>
                   </div>
                 </div>
               ))}
@@ -210,15 +230,15 @@ export default function NetworkPartnersPage() {
           </div>
 
           {/* ── International Agency Collaboration Desk ── */}
-          <div className="bg-[#0b2144] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="bg-[#0b2144] text-white rounded-3xl p-9 sm:p-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
+              <span className="text-[#ff6b4a] text-xs sm:text-sm font-mono tracking-widest uppercase font-semibold">
                 Bilateral Forwarder Partnership
               </span>
-              <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1.5">
+              <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-2">
                 Seeking a reliable handling partner in India?
               </h2>
-              <p className="text-slate-300 text-base sm:text-lg mt-2 leading-relaxed">
+              <p className="text-slate-300 text-base sm:text-lg mt-3 leading-relaxed">
                 Connect with our Global Alliances desk for reciprocal agency representation, DDP/DAP clearance handling, and breakbulk project coordination across India.
               </p>
             </div>
@@ -226,14 +246,14 @@ export default function NetworkPartnersPage() {
             <div className="shrink-0 flex flex-wrap items-center gap-4">
               <a
                 href="mailto:info@freyerinternational.com?subject=International%20Agency%20Inquiry%20-%20Freyer%20Logistics"
-                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-base font-semibold px-7 py-4 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
+                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-base font-semibold px-8 py-4 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-5 h-5" />
                 <span>Contact Alliances Desk</span>
               </a>
               <Link
                 href="/locations"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-base font-semibold px-7 py-4 rounded-xl border border-white/15 transition-colors"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-base font-semibold px-8 py-4 rounded-xl border border-white/15 transition-colors"
               >
                 <span>View Indian Hubs</span>
               </Link>
