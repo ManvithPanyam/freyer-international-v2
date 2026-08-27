@@ -1,15 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import {
   MapPin,
   Phone,
   Mail,
-  Building2,
-  Globe2,
   Navigation,
   CheckCircle2,
   ArrowRight,
@@ -35,7 +32,7 @@ const BRANCHES: BranchDetails[] = [
   {
     id: "bengaluru",
     name: "Bengaluru",
-    displayName: "Bengaluru (Corporate HQ)",
+    displayName: "Bengaluru (HQ)",
     role: "Corporate Headquarters & Commercial Operations",
     region: "South India",
     address: "No.19, KMJ AVEN, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru - 560037, Karnataka, India",
@@ -48,7 +45,7 @@ const BRANCHES: BranchDetails[] = [
   {
     id: "chennai_egmore",
     name: "Chennai",
-    displayName: "Chennai (Corporate Branch)",
+    displayName: "Chennai",
     role: "Primary Corporate Branch & Port Operations",
     region: "South India",
     address: "TAGA Tower, New No: 45 Old No 20, 1st Floor, 2nd Street, Sait Colony, Egmore, Chennai - 600008, Tamil Nadu",
@@ -61,7 +58,7 @@ const BRANCHES: BranchDetails[] = [
   {
     id: "chennai_airport",
     name: "Chennai Airport",
-    displayName: "Chennai Airport Complex",
+    displayName: "Chennai Airport",
     role: "Air Cargo Terminal Station",
     region: "South India",
     address: "No.2 Ambedkar Street, G.S.T. Road, Meenambakkam, Chennai - 600017, Tamil Nadu",
@@ -73,7 +70,7 @@ const BRANCHES: BranchDetails[] = [
   },
   {
     id: "delhi",
-    name: "Delhi",
+    name: "Delhi / NCR",
     displayName: "Delhi / NCR",
     role: "North India Gateway & Air Cargo Hub",
     region: "North India",
@@ -165,7 +162,7 @@ const BRANCHES: BranchDetails[] = [
 ];
 
 const GLOBAL_ALLIANCES = [
-  { name: "WCA World", logo: "/images/wca.png", desc: "Leading independent freight forwarder network across 190+ countries" },
+  { name: "WCA World", logo: "/images/wca.png", desc: "Independent freight forwarder network across 190+ countries" },
   { name: "Security Cargo Network (SCN)", logo: "/images/SCN.png", desc: "Global alliance of vetted international logistics specialists" },
   { name: "WPA Network", logo: "/images/wpa.jpg", desc: "Worldwide Partners Alliance of certified freight agents" },
   { name: "FDX Network", logo: "/images/FDX.jpg", desc: "International express and freight forwarding partnership" },
@@ -180,73 +177,164 @@ export function LocationsExplorer() {
   return (
     <div className="space-y-16 sm:space-y-24">
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 01: INTERACTIVE GEOGRAPHIC NETWORK COMMAND
+          SECTION 01: SATELLITE MAP HERO & ACTIVE HUB EXPLORER
       ───────────────────────────────────────────────────────────── */}
       <section className="bg-[#060f1e] text-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-white/10 shadow-xl">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 pb-6 border-b border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-6 border-b border-white/10">
           <div>
             <div className="text-xs font-mono text-[#ff6b4a] uppercase tracking-widest font-semibold mb-1">
-              01 / Pan-India Physical Network
+              01 / Geographic Network
             </div>
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
-              Sovereign Branch Infrastructure
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+              Our Indian Network
             </h2>
           </div>
           <div className="text-xs font-mono text-slate-400">
-            10 Dedicated Operating Hubs &middot; Port &amp; Airside Stations
+            10 Dedicated Operating Hubs Across Major Sea, Air &amp; Inland Corridors
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8 items-start">
-          {/* Branch Selector List */}
-          <div className="lg:col-span-5 space-y-2">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block mb-2 font-semibold">
-              Select Operating Station
-            </span>
-            <div className="space-y-1.5 max-h-[480px] overflow-y-auto pr-1">
-              {BRANCHES.map((branch) => {
-                const isSelected = branch.id === selectedBranchId;
-                return (
-                  <button
-                    key={branch.id}
-                    onClick={() => setSelectedBranchId(branch.id)}
-                    className={`w-full text-left p-3.5 rounded-xl border transition-all flex items-center justify-between group ${
-                      isSelected
-                        ? "bg-[#c42f0b] border-[#c42f0b] text-white shadow-md shadow-[#c42f0b]/30"
-                        : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    <div>
-                      <div className="text-xs font-bold font-mono tracking-tight flex items-center gap-2">
-                        <span>{branch.displayName}</span>
-                        {branch.id === "bengaluru" && (
-                          <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/20 uppercase font-mono">
-                            HQ
-                          </span>
-                        )}
-                      </div>
-                      <div
-                        className={`text-[11px] mt-0.5 line-clamp-1 ${
-                          isSelected ? "text-white/85" : "text-slate-400"
+        {/* Clean Horizontal Hub Switcher Pills */}
+        <div className="mt-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          {BRANCHES.map((b) => {
+            const isSelected = b.id === selectedBranchId;
+            return (
+              <button
+                key={b.id}
+                onClick={() => setSelectedBranchId(b.id)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-mono whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                  isSelected
+                    ? "bg-[#c42f0b] text-white font-semibold shadow-md shadow-[#c42f0b]/30"
+                    : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10"
+                }`}
+              >
+                <span>{b.displayName}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Asymmetric Grid: Satellite Map of India + Active Branch Detail */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8 items-center">
+          {/* Left Column: Satellite Map Artwork */}
+          <div className="lg:col-span-6 flex flex-col items-center">
+            <div className="relative w-full max-w-[460px] aspect-[600/620] rounded-2xl overflow-hidden border border-white/10 bg-[#0a192f] shadow-2xl">
+              <Image
+                src="/images/india-satellite.webp"
+                alt="Satellite visualization of India showing Freyer branch hub network"
+                fill
+                sizes="(max-width: 1024px) 100vw, 460px"
+                className="object-cover object-center select-none"
+                priority
+              />
+              <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/20 pointer-events-none" />
+
+              {/* Interactive SVG Overlay */}
+              <svg
+                viewBox="0 0 600 620"
+                className="absolute inset-0 w-full h-full select-none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {HUB_COORDS.map((hub) => {
+                  const isSelected = hub.id === selectedBranchId;
+                  return (
+                    <g
+                      key={hub.id}
+                      onClick={() => setSelectedBranchId(hub.id)}
+                      className="cursor-pointer group"
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`Select ${hub.city}`}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          setSelectedBranchId(hub.id);
+                        }
+                      }}
+                    >
+                      {/* Active Ripple */}
+                      {isSelected && (
+                        <circle
+                          cx={hub.cx}
+                          cy={hub.cy}
+                          r="12"
+                          fill="none"
+                          stroke="#ff6b4a"
+                          strokeWidth="1.5"
+                          className="animate-ping opacity-60 origin-center"
+                        />
+                      )}
+
+                      {/* Touch target hit area */}
+                      <circle cx={hub.cx} cy={hub.cy} r="18" fill="transparent" />
+
+                      {/* Outer Ring */}
+                      <circle
+                        cx={hub.cx}
+                        cy={hub.cy}
+                        r={isSelected ? "6.5" : "4"}
+                        fill={isSelected ? "#c42f0b" : "#ffffff"}
+                        stroke={isSelected ? "#ffffff" : "#0b2144"}
+                        strokeWidth={isSelected ? "1.75" : "1"}
+                        className="transition-all duration-150 group-hover:scale-125 origin-center"
+                      />
+
+                      {/* Inner Dot */}
+                      <circle
+                        cx={hub.cx}
+                        cy={hub.cy}
+                        r={isSelected ? "3" : "2"}
+                        fill={isSelected ? "#ffffff" : "#c42f0b"}
+                        className="transition-all duration-150"
+                      />
+
+                      {/* Pin Label */}
+                      <text
+                        x={
+                          hub.labelPosition === "left"
+                            ? hub.cx - 10
+                            : hub.labelPosition === "right"
+                            ? hub.cx + 10
+                            : hub.cx
+                        }
+                        y={
+                          hub.labelPosition === "top"
+                            ? hub.cy - 8
+                            : hub.labelPosition === "bottom"
+                            ? hub.cy + 14
+                            : hub.cy + 4
+                        }
+                        textAnchor={
+                          hub.labelPosition === "left"
+                            ? "end"
+                            : hub.labelPosition === "right"
+                            ? "start"
+                            : "middle"
+                        }
+                        style={{
+                          paintOrder: "stroke fill",
+                          stroke: "#060f1e",
+                          strokeWidth: "3px",
+                          strokeLinejoin: "round",
+                        }}
+                        className={`text-[11px] font-mono select-none font-bold transition-all duration-150 ${
+                          isSelected ? "fill-[#ff6b4a]" : "fill-white/80 group-hover:fill-white"
                         }`}
                       >
-                        {branch.role}
-                      </div>
-                    </div>
-                    <ArrowRight
-                      className={`w-4 h-4 shrink-0 transition-transform ${
-                        isSelected ? "translate-x-0 text-white" : "-translate-x-1 text-slate-500 group-hover:translate-x-0"
-                      }`}
-                    />
-                  </button>
-                );
-              })}
+                        {hub.city}
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
+            </div>
+            <div className="text-[11px] font-mono text-slate-400 mt-3 text-center">
+              Click any station on the map or select from the pill menu above.
             </div>
           </div>
 
-          {/* Active Branch Deep Dossier Panel */}
-          <div className="lg:col-span-7 bg-white/5 rounded-2xl border border-white/10 p-6 sm:p-8 space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 pb-5 border-b border-white/10">
+          {/* Right Column: Active Branch Details Dossier */}
+          <div className="lg:col-span-6 bg-white/5 rounded-2xl border border-white/10 p-6 sm:p-8 space-y-6">
+            <div className="flex items-start justify-between gap-4 pb-4 border-b border-white/10">
               <div>
                 <span className="text-xs font-mono text-[#ff6b4a] uppercase font-semibold">
                   {selectedBranch.region} &middot; Operating Station
@@ -260,12 +348,12 @@ export function LocationsExplorer() {
               <div className="shrink-0 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="text-[11px] font-mono text-emerald-300 uppercase">
-                  Active Station
+                  Active
                 </span>
               </div>
             </div>
 
-            {/* Address & Scope */}
+            {/* Address & Operational Scope */}
             <div className="space-y-4 text-xs">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#ff6b4a] shrink-0 mt-0.5" />
@@ -279,26 +367,24 @@ export function LocationsExplorer() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-3.5 bg-black/30 rounded-xl border border-white/5 space-y-1">
-                  <span className="text-[10px] font-mono text-[#ff6b4a] uppercase font-semibold block">
-                    Operational Scope
-                  </span>
-                  <p className="text-slate-300 text-xs leading-relaxed">{selectedBranch.scope}</p>
-                </div>
+              <div className="p-3.5 bg-black/30 rounded-xl border border-white/5 space-y-1">
+                <span className="text-[10px] font-mono text-[#ff6b4a] uppercase font-semibold block">
+                  Operational Scope
+                </span>
+                <p className="text-slate-300 text-xs leading-relaxed">{selectedBranch.scope}</p>
+              </div>
 
-                <div className="p-3.5 bg-black/30 rounded-xl border border-white/5 space-y-1">
-                  <span className="text-[10px] font-mono text-[#ff6b4a] uppercase font-semibold block">
-                    Port &amp; Rail Connectivity
-                  </span>
-                  <p className="text-slate-300 text-xs leading-relaxed">{selectedBranch.connectivity}</p>
-                </div>
+              <div className="p-3.5 bg-black/30 rounded-xl border border-white/5 space-y-1">
+                <span className="text-[10px] font-mono text-[#ff6b4a] uppercase font-semibold block">
+                  Port &amp; Rail Connectivity
+                </span>
+                <p className="text-slate-300 text-xs leading-relaxed">{selectedBranch.connectivity}</p>
               </div>
             </div>
 
-            {/* Direct Contact Links */}
+            {/* Direct Branch Contact Buttons */}
             <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs">
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-3">
                 {selectedBranch.phone && (
                   <div className="flex items-center gap-1.5 text-slate-300 font-mono">
                     <Phone className="w-3.5 h-3.5 text-[#ff6b4a]" />
@@ -319,10 +405,10 @@ export function LocationsExplorer() {
                     ? `mailto:${selectedBranch.email[0]}`
                     : `mailto:${selectedBranch.email}`
                 }
-                className="inline-flex items-center gap-1.5 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-4 py-2.5 rounded transition-colors"
+                className="inline-flex items-center gap-1.5 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-4 py-2 rounded transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
-                <span>Contact Station Lead</span>
+                <span>Email Station</span>
               </a>
             </div>
           </div>
@@ -330,7 +416,7 @@ export function LocationsExplorer() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 02: 10 HUBS REGIONAL MATRIX (FULL DIRECTORY)
+          SECTION 02: NATIONAL DIRECTORY (QUIET 2-COLUMN GRID)
       ───────────────────────────────────────────────────────────── */}
       <section className="pt-2">
         <div className="pb-6 border-b border-slate-200">
@@ -405,7 +491,7 @@ export function LocationsExplorer() {
       <section className="pt-2">
         <div className="pb-6 border-b border-slate-200">
           <div className="text-xs font-mono text-[#c42f0b] uppercase tracking-widest font-semibold mb-1">
-            03 / Global Connectivity
+            03 / Global Forwarding Alliances
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
             190+ Countries Through Accredited Networks

@@ -21,18 +21,18 @@ export default function LocationsPage() {
               Home
             </Link>
             <span>/</span>
-            <span className="text-slate-900 font-medium">Locations &amp; Hubs</span>
+            <span className="text-slate-900 font-medium">Our Network</span>
           </div>
 
           <div className="max-w-3xl">
             <span className="text-[#c42f0b] text-[11px] font-mono tracking-[0.22em] uppercase font-semibold block mb-2">
-              Pan-India Physical Infrastructure
+              Pan-India Physical Reach
             </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b2144] leading-[1.08]">
-              10 sovereign hubs in India.
+              10 operating hubs across India.
               <br />
               <span className="text-slate-500 font-light italic">
-                190+ countries across the globe.
+                190+ countries through global alliances.
               </span>
             </h1>
             <p className="text-slate-600 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
@@ -41,7 +41,7 @@ export default function LocationsPage() {
           </div>
         </div>
 
-        {/* ── Locations Explorer ── */}
+        {/* ── Locations Explorer Body ── */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <LocationsExplorer />
         </div>
