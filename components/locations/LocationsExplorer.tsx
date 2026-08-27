@@ -149,30 +149,30 @@ export function LocationsExplorer() {
   const selectedBranch = BRANCHES.find((b) => b.id === selectedBranchId) || BRANCHES[0];
 
   return (
-    <div className="space-y-16 sm:space-y-24">
+    <div className="space-y-14 sm:space-y-20">
       {/* ─────────────────────────────────────────────────────────────
           SECTION 01: SATELLITE MAP HERO & EDITORIAL BRANCH EXPERIENCE
       ───────────────────────────────────────────────────────────── */}
       <section className="bg-[#060f1e] text-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-white/10 shadow-xl">
-        <div className="pb-6 border-b border-white/10 flex items-baseline justify-between">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+        <div className="pb-5 border-b border-white/10 flex items-baseline justify-between">
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
             Our Indian Network
           </h2>
-          <span className="text-xs font-mono text-slate-400 hidden sm:inline-block">
+          <span className="text-xs font-mono text-slate-400">
             10 Dedicated Hubs
           </span>
         </div>
 
-        {/* Desktop Layout: Asymmetric Split (Dominant Satellite Map on Left + Typographic Detail on Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mt-8 items-center">
+        {/* Desktop 60/40 Asymmetric Split */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-6 items-center">
           {/* Map Hero (Dominant 7-Column Span on Desktop) */}
           <div className="lg:col-span-7 flex flex-col items-center">
-            <div className="relative w-full max-w-[540px] aspect-[600/620] rounded-2xl overflow-hidden border border-white/10 bg-[#0a192f] shadow-2xl">
+            <div className="relative w-full max-w-[560px] aspect-[600/620] rounded-2xl overflow-hidden border border-white/10 bg-[#0a192f] shadow-2xl">
               <Image
                 src="/images/india-satellite.webp"
                 alt="Satellite map of India showing Freyer branch network"
                 fill
-                sizes="(max-width: 1024px) 100vw, 540px"
+                sizes="(max-width: 1024px) 100vw, 560px"
                 className="object-cover object-center select-none"
                 priority
               />
@@ -278,24 +278,24 @@ export function LocationsExplorer() {
             </div>
           </div>
 
-          {/* Right Column: Flattened Editorial Hub Details (No Nested Boxes) */}
+          {/* Right Column: Refined Editorial Hub Details */}
           <div className="lg:col-span-5 space-y-6">
-            {/* Hub Selector Pills */}
+            {/* Subtle Typographic Hub Switcher */}
             <div>
               <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block mb-2 font-medium">
                 Select a Hub
               </span>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-xs font-mono">
                 {BRANCHES.map((b) => {
                   const isSelected = b.id === selectedBranchId;
                   return (
                     <button
                       key={b.id}
                       onClick={() => setSelectedBranchId(b.id)}
-                      className={`px-3 py-1 rounded-full text-xs font-mono transition-all ${
+                      className={`py-1 transition-colors border-b-2 text-left ${
                         isSelected
-                          ? "bg-[#c42f0b] text-white font-semibold shadow-xs"
-                          : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10"
+                          ? "border-[#c42f0b] text-white font-semibold"
+                          : "border-transparent text-slate-400 hover:text-slate-200"
                       }`}
                     >
                       {b.displayName}
@@ -306,7 +306,7 @@ export function LocationsExplorer() {
             </div>
 
             {/* Flattened Hub Typography Spread */}
-            <div className="pt-6 border-t border-white/10 space-y-4">
+            <div className="pt-5 border-t border-white/10 space-y-4">
               <div>
                 <span className="text-xs font-mono text-[#ff6b4a] uppercase tracking-wider">
                   {selectedBranch.region}

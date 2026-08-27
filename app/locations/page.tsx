@@ -13,10 +13,10 @@ export default function LocationsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
+      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-16">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-2">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
             </Link>
@@ -32,7 +32,7 @@ export default function LocationsPage() {
                 190+ countries through global alliances.
               </span>
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base mt-2 sm:mt-3 leading-relaxed">
               A physical Indian network, connected globally through established forwarding alliances.
             </p>
           </div>
