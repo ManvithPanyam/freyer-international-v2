@@ -1,12 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, ShieldCheck, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Phone, Mail } from "lucide-react";
 
-// Clean inline SVGs for verified official corporate social links
 function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" {...props}>
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" {...props}>
       <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.67a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z" />
     </svg>
   );
@@ -14,7 +13,7 @@ function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
 
 function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" {...props}>
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" {...props}>
       <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12Z" />
     </svg>
   );
@@ -25,11 +24,11 @@ export function Footer() {
 
   return (
     <footer className="bg-[#040a14] text-slate-400 border-t border-white/10 pt-16 pb-12 text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           {/* Col 1: Identity & Credentials (4 cols) */}
           <div className="md:col-span-4 space-y-4">
-            <div className="relative h-10 w-32 brightness-0 invert">
+            <div className="relative h-11 w-36 brightness-0 invert">
               <Image
                 src="/images/logo.png"
                 alt="Freyer International Logistics"
@@ -42,7 +41,7 @@ export function Footer() {
               Logistics Beyond Boundaries
             </p>
 
-            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-sm text-slate-400 max-w-md leading-relaxed">
               Integrated multimodal freight forwarding, AEO Tier-2 licensed customs brokerage, high-bay warehousing, and heavy-lift project engineering across India and global trading corridors.
             </p>
 
@@ -58,7 +57,7 @@ export function Footer() {
             <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-4">
               Disciplines
             </h3>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-sm text-slate-400">
               <li>
                 <Link href="/services/project-cargo" className="hover:text-white transition-colors">
                   Project Cargo Engineering
@@ -97,7 +96,7 @@ export function Footer() {
             <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-4">
               Enterprise
             </h3>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-sm text-slate-400">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
                   About Freyer
@@ -132,29 +131,29 @@ export function Footer() {
           </div>
 
           {/* Col 4: Corporate Desks & Verified Social (3 cols) */}
-          <div className="md:col-span-3 space-y-5">
+          <div className="md:col-span-3 space-y-6">
             <div>
               <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-white font-semibold mb-3">
                 Corporate Desks
               </h3>
-              <div className="space-y-2 text-xs text-slate-400">
+              <div className="space-y-2 text-sm text-slate-400">
                 <div className="flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 text-[#ff6b4a]" />
+                  <Phone className="w-4 h-4 text-[#ff6b4a]" />
                   <span>+91 44 4319 1919 &middot; Chennai</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 text-[#ff6b4a]" />
+                  <Phone className="w-4 h-4 text-[#ff6b4a]" />
                   <span>080 4120 0300 &middot; Bengaluru</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5 text-slate-500" />
+                  <Mail className="w-4 h-4 text-slate-500" />
                   <span>info@freyerinternational.com</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-[11px] font-mono uppercase tracking-wider text-slate-500 mb-2">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2.5">
                 Official Channels
               </h4>
               <div className="flex items-center gap-3">
@@ -163,7 +162,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Freyer International Logistics on LinkedIn"
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+                  className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <LinkedInIcon />
                 </a>
@@ -172,7 +171,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Freyer International Logistics on Facebook"
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+                  className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <FacebookIcon />
                 </a>
@@ -195,7 +194,7 @@ export function Footer() {
             <span>&middot;</span>
             <Link href="/#quote" className="hover:text-slate-400 transition-colors flex items-center gap-1">
               <span>Freight Configurator</span>
-              <ArrowUpRight className="w-3 h-3" />
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>

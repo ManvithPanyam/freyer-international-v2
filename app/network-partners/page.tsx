@@ -95,7 +95,7 @@ export default function NetworkPartnersPage() {
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-12 sm:mb-16">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -121,8 +121,8 @@ export default function NetworkPartnersPage() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
-          {/* ── What This Network Enables: Spacious 5-Step Process Grid ── */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-24">
+          {/* ── What This Network Enables: Full 1440px 3x2 Matrix ── */}
           <div className="bg-white p-8 sm:p-12 lg:p-14 rounded-3xl border border-slate-200/90 shadow-sm space-y-10">
             <div className="pb-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
@@ -133,20 +133,18 @@ export default function NetworkPartnersPage() {
               </span>
             </div>
 
-            {/* Spacious 3 + 2 Grid so each card is 360-400px wide with room for 24px headings and 18px text */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Spacious 3x2 Matrix spanning 1440px canvas (~440px per card) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
               {OPERATIONAL_OUTCOMES.map((item) => (
                 <div
                   key={item.step}
-                  className="p-8 sm:p-9 rounded-2xl bg-slate-50/90 border border-slate-200 shadow-2xs space-y-4 flex flex-col justify-between hover:border-slate-300 transition-colors"
+                  className="p-8 sm:p-10 rounded-2xl bg-slate-50/90 border border-slate-200 shadow-2xs space-y-4 flex flex-col justify-between hover:border-slate-300 transition-colors"
                 >
                   <div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-base font-mono font-bold text-[#c42f0b]">
-                        STEP {item.step}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-[#0b2144] mt-2 tracking-tight">
+                    <span className="text-base font-mono font-bold text-[#c42f0b] block">
+                      STEP {item.step}
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-[#0b2144] mt-2 tracking-tight">
                       {item.title}
                     </h3>
                   </div>
@@ -157,14 +155,14 @@ export default function NetworkPartnersPage() {
                 </div>
               ))}
 
-              {/* End-to-End Guarantee Card filling the 6th slot */}
-              <div className="p-8 sm:p-9 rounded-2xl bg-[#060f1e] text-white border border-white/10 shadow-md space-y-4 flex flex-col justify-between">
+              {/* End-to-End Guarantee Card filling 6th slot */}
+              <div className="p-8 sm:p-10 rounded-2xl bg-[#060f1e] text-white border border-white/10 shadow-md space-y-4 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-[#ff6b4a] font-bold">
                     <span>SECURITY &amp; COMPLIANCE</span>
                     <ShieldCheck className="w-5 h-5 text-emerald-400" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mt-2 tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mt-2 tracking-tight">
                     Reciprocal Protection
                   </h3>
                 </div>
@@ -175,7 +173,7 @@ export default function NetworkPartnersPage() {
             </div>
           </div>
 
-          {/* ── Certified Alliances Grid (Substantial Modules) ── */}
+          {/* ── Certified Alliances Grid (Full 1440px 3-Column Spread) ── */}
           <div>
             <div className="pb-5 border-b border-slate-200 flex items-baseline justify-between">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">

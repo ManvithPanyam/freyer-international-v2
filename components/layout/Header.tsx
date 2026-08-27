@@ -21,7 +21,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // On interior pages, header is always solid clean white with full-color logo
   const isSolid = !isHome || scrolled;
 
   return (
@@ -33,8 +32,8 @@ export function Header() {
             : "bg-transparent py-5 text-white"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Lockup (+20% visual scale for desktop authority) */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between">
+          {/* Brand Lockup */}
           <Link
             href="/"
             className="flex flex-col items-start group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md"

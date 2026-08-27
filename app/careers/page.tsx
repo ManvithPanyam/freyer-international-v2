@@ -44,7 +44,7 @@ export default function CareersPage() {
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
         {/* ── Page Header ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-8 sm:mb-12">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -66,10 +66,10 @@ export default function CareersPage() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-20">
           {/* ── Authentic Office Culture Photography Spread ── */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-7 relative aspect-[16/10] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+            <div className="md:col-span-7 relative aspect-[16/10] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
               <Image
                 src="/images/gallery/office/1.jpg"
                 alt="Freyer Logistics Operations Floor Bengaluru"
@@ -79,13 +79,13 @@ export default function CareersPage() {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-              <span className="absolute bottom-5 left-5 text-xs sm:text-sm font-mono text-white bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/10">
+              <span className="absolute bottom-5 left-5 text-sm sm:text-base font-mono text-white bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
                 Corporate Operations Floor &middot; Bengaluru Headquarters
               </span>
             </div>
 
             <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6">
-              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
                 <Image
                   src="/images/gallery/office/2.jpg"
                   alt="Customs Documentation Coordination Desk"
@@ -94,12 +94,12 @@ export default function CareersPage() {
                   sizes="(min-width: 1024px) 40vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 text-xs font-mono text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10">
+                <span className="absolute bottom-4 left-4 text-xs sm:text-sm font-mono text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
                   Customs &amp; Compliance Team
                 </span>
               </div>
 
-              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
                 <Image
                   src="/images/gallery/office/3.jpg"
                   alt="Freight Desk & Commercial Operations Floor"
@@ -108,7 +108,7 @@ export default function CareersPage() {
                   sizes="(min-width: 1024px) 40vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 text-xs font-mono text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10">
+                <span className="absolute bottom-4 left-4 text-xs sm:text-sm font-mono text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
                   Commercial Freight Coordination
                 </span>
               </div>
@@ -121,7 +121,7 @@ export default function CareersPage() {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
                 Five disciplines. One operating culture.
               </h2>
-              <span className="text-xs font-mono text-slate-400 hidden sm:inline-block">
+              <span className="text-sm font-mono text-slate-400 hidden sm:inline-block">
                 Active Operating Roles
               </span>
             </div>
@@ -130,21 +130,21 @@ export default function CareersPage() {
               {PRACTICE_AREAS.map((practice) => (
                 <div
                   key={practice.num}
-                  className="p-8 sm:p-9 bg-white rounded-2xl border border-slate-200/90 shadow-sm space-y-4 flex flex-col justify-between"
+                  className="p-8 sm:p-10 bg-white rounded-3xl border border-slate-200/90 shadow-sm space-y-4 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-xs font-mono text-[#c42f0b] font-bold">
+                    <div className="text-sm font-mono text-[#c42f0b] font-bold">
                       {practice.num}
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-[#0b2144] mt-1.5">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] mt-1.5">
                       {practice.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 mt-2.5 leading-relaxed">
+                    <p className="text-base sm:text-lg text-slate-600 mt-2.5 leading-relaxed">
                       {practice.desc}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-sm font-mono text-slate-400">
                     <span>10 Indian Hubs</span>
                     <span className="text-[#0b2144] font-semibold">Active Practice</span>
                   </div>
@@ -152,21 +152,21 @@ export default function CareersPage() {
               ))}
 
               {/* GPTW Trust Highlight Card */}
-              <div className="p-8 sm:p-9 bg-[#060f1e] text-white rounded-2xl border border-white/10 shadow-md space-y-4 flex flex-col justify-between">
+              <div className="p-8 sm:p-10 bg-[#060f1e] text-white rounded-3xl border border-white/10 shadow-md space-y-4 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between text-xs font-mono text-emerald-400 font-bold">
+                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-emerald-400 font-bold">
                     <span>NATIONAL STANDARD</span>
-                    <Award className="w-4 h-4" />
+                    <Award className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mt-1.5">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mt-1.5">
                     Great Place to Work&reg; Certified
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-300 mt-2.5 leading-relaxed">
+                  <p className="text-base sm:text-lg text-slate-300 mt-2.5 leading-relaxed">
                     Nationally certified for fostering high workplace trust, long-term talent retention, and professional development across all Indian branch offices.
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/10 text-xs font-mono text-slate-400">
+                <div className="pt-4 border-t border-white/10 text-sm font-mono text-slate-400">
                   Trust Index Assessment
                 </div>
               </div>
@@ -174,15 +174,15 @@ export default function CareersPage() {
           </div>
 
           {/* ── Direct Application Mechanism ── */}
-          <div className="bg-[#0b2144] text-white rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="bg-[#0b2144] text-white rounded-3xl p-9 sm:p-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold">
+              <span className="text-[#ff6b4a] text-xs sm:text-sm font-mono tracking-widest uppercase font-semibold">
                 Direct Human Resources Desk
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1.5">
                 Submit your profile for consideration.
               </h2>
-              <p className="text-slate-300 text-sm sm:text-base mt-2 leading-relaxed">
+              <p className="text-slate-300 text-base sm:text-lg mt-2 leading-relaxed">
                 We are always interested in meeting experienced freight professionals, licensed customs brokers, and project logistics specialists. Send your CV and preferred operating location.
               </p>
             </div>
@@ -190,9 +190,9 @@ export default function CareersPage() {
             <div className="shrink-0">
               <a
                 href="mailto:careers@freyerinternational.com?subject=Career%20Application%20-%20Freyer%20International"
-                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-7 py-4 rounded-lg transition-colors shadow-md shadow-[#c42f0b]/20"
+                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-base font-semibold px-8 py-4 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-5 h-5" />
                 <span>Email CV to careers@freyerinternational.com</span>
               </a>
             </div>
