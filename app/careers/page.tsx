@@ -42,9 +42,9 @@ export default function CareersPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
-        {/* ── Page Header: Asymmetric Two-Column Composition on 1560px Canvas ── */}
-        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 mb-10 sm:mb-14">
+      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
+        {/* ── Page Header: Quiet, Confident Hero ── */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-12 sm:mb-16">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -53,57 +53,23 @@ export default function CareersPage() {
             <span className="text-slate-900 font-medium">Careers</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-            {/* Left: Broad Headline & Lead (8 cols) */}
-            <div className="lg:col-span-8">
-              <span className="text-[#c42f0b] text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold block mb-2">
-                Human Capital &amp; Operational Culture
-              </span>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-                People who move the movement.
-              </h1>
-              <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-3 sm:mt-4 leading-relaxed max-w-3xl">
-                Freyer International is certified as a Great Place to Work&reg;. We invest continuously in talented logistics practitioners, licensed customs specialists, and supply chain architects operating across 10 strategic hubs in India.
-              </p>
-            </div>
-
-            {/* Right: Authoritative Culture Snapshot (4 cols) */}
-            <div className="lg:col-span-4 bg-white p-7 sm:p-8 rounded-3xl border border-slate-200/90 shadow-2xs space-y-4">
-              <div className="flex items-baseline justify-between pb-3 border-b border-slate-100">
-                <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-medium">
-                  Culture &amp; Standards
-                </span>
-                <span className="text-xs font-mono text-emerald-600 font-bold">CERTIFIED</span>
-              </div>
-
-              <div className="grid grid-cols-3 lg:grid-cols-1 gap-4 text-left">
-                <div>
-                  <span className="text-2xl sm:text-3xl font-bold text-[#0b2144] font-mono block">GPTW&reg;</span>
-                  <span className="text-xs sm:text-sm font-mono text-slate-500 uppercase tracking-wider mt-0.5 block">
-                    Great Place to Work Certified
-                  </span>
-                </div>
-                <div>
-                  <span className="text-2xl sm:text-3xl font-bold text-[#0b2144] font-mono block">5 Core</span>
-                  <span className="text-xs sm:text-sm font-mono text-slate-500 uppercase tracking-wider mt-0.5 block">
-                    Operational Disciplines
-                  </span>
-                </div>
-                <div>
-                  <span className="text-2xl sm:text-3xl font-bold text-[#0b2144] font-mono block">10 Hubs</span>
-                  <span className="text-xs sm:text-sm font-mono text-slate-500 uppercase tracking-wider mt-0.5 block">
-                    Pan-India Team Network
-                  </span>
-                </div>
-              </div>
-            </div>
+          <div className="max-w-4xl">
+            <span className="text-[#c42f0b] text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold block mb-3">
+              Human Capital &amp; Operational Culture
+            </span>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
+              People who move the movement.
+            </h1>
+            <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-4 sm:mt-5 leading-relaxed max-w-3xl">
+              Freyer International is certified as a Great Place to Work&reg;. We invest continuously in talented logistics practitioners, licensed customs specialists, and supply chain architects operating across 10 strategic hubs in India.
+            </p>
           </div>
         </div>
 
-        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 space-y-16 sm:space-y-20">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-24">
           {/* ── Authentic Office Culture Photography Spread ── */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-7 relative aspect-[16/10] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+            <div className="md:col-span-7 relative aspect-[16/10] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-2xs">
               <Image
                 src="/images/gallery/office/1.jpg"
                 alt="Freyer Logistics Operations Floor Bengaluru"
@@ -119,7 +85,7 @@ export default function CareersPage() {
             </div>
 
             <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6">
-              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-2xs">
                 <Image
                   src="/images/gallery/office/2.jpg"
                   alt="Customs Documentation Coordination Desk"
@@ -133,7 +99,7 @@ export default function CareersPage() {
                 </span>
               </div>
 
-              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-2xs">
                 <Image
                   src="/images/gallery/office/3.jpg"
                   alt="Freight Desk & Commercial Operations Floor"
@@ -164,7 +130,7 @@ export default function CareersPage() {
               {PRACTICE_AREAS.map((practice) => (
                 <div
                   key={practice.num}
-                  className="p-8 sm:p-10 bg-white rounded-3xl border border-slate-200/90 shadow-sm space-y-4 flex flex-col justify-between"
+                  className="p-8 sm:p-10 bg-white rounded-3xl border border-slate-200/90 shadow-2xs space-y-4 flex flex-col justify-between"
                 >
                   <div>
                     <div className="text-sm font-mono text-[#c42f0b] font-bold">
@@ -173,7 +139,7 @@ export default function CareersPage() {
                     <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] mt-1.5">
                       {practice.title}
                     </h3>
-                    <p className="text-base sm:text-lg text-slate-600 mt-2.5 leading-relaxed">
+                    <p className="text-base text-slate-600 mt-2.5 leading-relaxed">
                       {practice.desc}
                     </p>
                   </div>
@@ -195,7 +161,7 @@ export default function CareersPage() {
                   <h3 className="text-xl sm:text-2xl font-bold text-white mt-1.5">
                     Great Place to Work&reg; Certified
                   </h3>
-                  <p className="text-base sm:text-lg text-slate-300 mt-2.5 leading-relaxed">
+                  <p className="text-base text-slate-300 mt-2.5 leading-relaxed">
                     Nationally certified for fostering high workplace trust, long-term talent retention, and professional development across all Indian branch offices.
                   </p>
                 </div>
@@ -208,7 +174,7 @@ export default function CareersPage() {
           </div>
 
           {/* ── Direct Application Mechanism ── */}
-          <div className="bg-[#0b2144] text-white rounded-3xl p-9 sm:p-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="bg-[#0b2144] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-2xl">
               <span className="text-[#ff6b4a] text-xs sm:text-sm font-mono tracking-widest uppercase font-semibold">
                 Direct Human Resources Desk
@@ -224,7 +190,7 @@ export default function CareersPage() {
             <div className="shrink-0">
               <a
                 href="mailto:careers@freyerinternational.com?subject=Career%20Application%20-%20Freyer%20International"
-                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-base font-semibold px-8 py-4 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
+                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-base font-semibold px-7 py-3.5 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
               >
                 <Mail className="w-5 h-5" />
                 <span>Email CV to careers@freyerinternational.com</span>

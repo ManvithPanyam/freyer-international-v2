@@ -13,9 +13,9 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-20">
-        {/* ── Page Header: Asymmetric Two-Column Composition on 1560px Canvas ── */}
-        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 mb-10 sm:mb-14">
+      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
+        {/* ── Page Header: Quiet, Confident Hero ── */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-12 sm:mb-16">
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
             <Link href="/" className="hover:text-[#c42f0b] transition-colors">
               Home
@@ -24,89 +24,55 @@ export default function ContactPage() {
             <span className="text-slate-900 font-medium">Contact</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-            {/* Left: Broad Headline, Lead Copy & Decision Row (8 cols) */}
-            <div className="lg:col-span-8">
-              <span className="text-[#c42f0b] text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold block mb-2">
-                Commercial Desks &amp; Inquiries
-              </span>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-                Talk to the team moving your cargo.
-              </h1>
-              <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-3 sm:mt-4 leading-relaxed max-w-3xl">
-                Direct communication channels to our corporate office in Bengaluru, primary seaport operations in Chennai, and dedicated station desks across 10 commercial centers in India.
-              </p>
+          <div className="max-w-4xl">
+            <span className="text-[#c42f0b] text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold block mb-3">
+              Commercial Desks &amp; Inquiries
+            </span>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
+              Talk to the team moving your cargo.
+            </h1>
+            <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-4 sm:mt-5 leading-relaxed max-w-3xl">
+              Direct communication channels to our corporate office in Bengaluru, primary seaport operations in Chennai, and dedicated station desks across 10 commercial centers in India.
+            </p>
 
-              {/* Decision Row */}
-              <div className="flex flex-wrap items-center gap-3 pt-6 text-sm font-mono">
-                <Link
-                  href="/#quote"
-                  className="px-4 py-2 bg-[#0b2144] hover:bg-[#07152b] text-white rounded-lg font-medium transition-colors inline-flex items-center gap-1.5 shadow-2xs"
-                >
-                  <span>Request a Quote</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-                <Link
-                  href="/locations"
-                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
-                >
-                  Find a Branch (10 Hubs)
-                </Link>
-                <a
-                  href="mailto:info@freyerinternational.com"
-                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
-                >
-                  Corporate Desk
-                </a>
-                <Link
-                  href="/careers"
-                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
-                >
-                  Careers
-                </Link>
-              </div>
-            </div>
-
-            {/* Right: Authoritative Commercial Desk Snapshot (4 cols) */}
-            <div className="lg:col-span-4 bg-white p-7 sm:p-8 rounded-3xl border border-slate-200/90 shadow-2xs space-y-4">
-              <div className="flex items-baseline justify-between pb-3 border-b border-slate-100">
-                <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-medium">
-                  Direct Response Routing
-                </span>
-                <span className="text-xs font-mono text-[#c42f0b] font-bold">LIVE DESKS</span>
-              </div>
-
-              <div className="space-y-3.5 text-sm">
-                <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">Central Inquiries</span>
-                  <a href="mailto:info@freyerinternational.com" className="text-base font-bold text-[#0b2144] font-mono hover:text-[#c42f0b] transition-colors">
-                    info@freyerinternational.com
-                  </a>
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">Primary Port Operations</span>
-                  <span className="text-base font-bold text-[#0b2144] font-mono block">
-                    +91 44 4319 1919 &middot; Chennai
-                  </span>
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">Corporate Registered Office</span>
-                  <span className="text-base font-bold text-[#0b2144] font-mono block">
-                    080 4120 0300 &middot; Bengaluru
-                  </span>
-                </div>
-              </div>
+            {/* Clean Decision Row */}
+            <div className="flex flex-wrap items-center gap-3 pt-6 text-sm font-mono">
+              <Link
+                href="/#quote"
+                className="px-4 py-2 bg-[#0b2144] hover:bg-[#07152b] text-white rounded-lg font-medium transition-colors inline-flex items-center gap-1.5 shadow-2xs"
+              >
+                <span>Request a Quote</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                href="/locations"
+                className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
+              >
+                Find a Branch (10 Hubs)
+              </Link>
+              <a
+                href="mailto:info@freyerinternational.com"
+                className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
+              >
+                Corporate Desk
+              </a>
+              <Link
+                href="/careers"
+                className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg transition-colors font-medium"
+              >
+                Careers
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 space-y-12 sm:space-y-16">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 space-y-12 sm:space-y-16">
           {/* ── Primary Engagement Grid ── */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* Left: Two Primary Operational Hubs (Chennai & Bengaluru) */}
             <div className="lg:col-span-7 space-y-8">
               {/* Chennai Primary Operational Hub */}
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-sm space-y-5">
+              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-2xs space-y-5">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold text-[#c42f0b]">
                     Primary Operational Hub &middot; Tamil Nadu
@@ -119,12 +85,12 @@ export default function ContactPage() {
                   <p className="text-sm sm:text-base font-mono text-slate-500 mt-1">Maritime Operations &amp; Licensed Customs Clearance</p>
                 </div>
 
-                <div className="flex items-start gap-3 text-base sm:text-lg text-slate-600 leading-relaxed pt-1">
+                <div className="flex items-start gap-3 text-base text-slate-600 leading-relaxed pt-1">
                   <MapPin className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
                   <p>TAGA Tower, New No: 45 Old No 20, 1st Floor, 2nd Street, Sait Colony, Egmore, Chennai - 600008, Tamil Nadu, India</p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-base font-mono">
+                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-sm sm:text-base font-mono">
                   <div className="flex flex-wrap items-center gap-5 text-slate-800 font-medium">
                     <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-[#c42f0b]" />
@@ -138,7 +104,7 @@ export default function ContactPage() {
 
                   <a
                     href="mailto:Selvakumar@freyerinternational.com"
-                    className="inline-flex items-center gap-1.5 font-semibold text-[#0b2144] hover:text-[#c42f0b] transition-colors text-sm sm:text-base"
+                    className="inline-flex items-center gap-1.5 font-semibold text-[#0b2144] hover:text-[#c42f0b] transition-colors"
                   >
                     <Mail className="w-4 h-4 text-slate-400" />
                     <span>Email Chennai Desk</span>
@@ -147,7 +113,7 @@ export default function ContactPage() {
               </div>
 
               {/* Bengaluru Corporate Registered Office */}
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-sm space-y-5">
+              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-2xs space-y-5">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold text-[#c42f0b]">
                     Corporate Registered Office &middot; Karnataka
@@ -160,12 +126,12 @@ export default function ContactPage() {
                   <p className="text-sm sm:text-base font-mono text-slate-500 mt-1">Corporate Governance &amp; Contract 3PL Logistics</p>
                 </div>
 
-                <div className="flex items-start gap-3 text-base sm:text-lg text-slate-600 leading-relaxed pt-1">
+                <div className="flex items-start gap-3 text-base text-slate-600 leading-relaxed pt-1">
                   <MapPin className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
                   <p>No.19, KMJ AVEN, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru - 560037, Karnataka, India</p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-base font-mono">
+                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-sm sm:text-base font-mono">
                   <div className="flex flex-wrap items-center gap-5 text-slate-800 font-medium">
                     <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-[#c42f0b]" />
@@ -179,7 +145,7 @@ export default function ContactPage() {
 
                   <a
                     href="mailto:Vijay.Palagiri@freyerinternational.com"
-                    className="inline-flex items-center gap-1.5 font-semibold text-[#0b2144] hover:text-[#c42f0b] transition-colors text-sm sm:text-base"
+                    className="inline-flex items-center gap-1.5 font-semibold text-[#0b2144] hover:text-[#c42f0b] transition-colors"
                   >
                     <Mail className="w-4 h-4 text-slate-400" />
                     <span>Email Bengaluru HQ</span>
@@ -191,7 +157,7 @@ export default function ContactPage() {
             {/* Right: Flattened Editorial Routing Panel */}
             <div className="lg:col-span-5 space-y-8">
               {/* Flattened Email Routing */}
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-sm space-y-6">
+              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/90 shadow-2xs space-y-6">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold text-slate-400 block mb-1">
                     Central Commercial Routing
@@ -204,12 +170,12 @@ export default function ContactPage() {
                 <div className="space-y-4 pt-2">
                   <div className="pb-4 border-b border-slate-100 flex items-center justify-between">
                     <div>
-                      <span className="font-semibold text-base sm:text-lg text-[#0b2144] block">General &amp; Commercial</span>
-                      <span className="font-mono text-slate-500 text-sm sm:text-base">info@freyerinternational.com</span>
+                      <span className="font-semibold text-base text-[#0b2144] block">General &amp; Commercial</span>
+                      <span className="font-mono text-slate-500 text-sm">info@freyerinternational.com</span>
                     </div>
                     <a
                       href="mailto:info@freyerinternational.com"
-                      className="text-[#c42f0b] font-semibold text-sm sm:text-base hover:underline"
+                      className="text-[#c42f0b] font-semibold text-sm hover:underline"
                     >
                       Email &rarr;
                     </a>
@@ -217,12 +183,12 @@ export default function ContactPage() {
 
                   <div className="pb-4 border-b border-slate-100 flex items-center justify-between">
                     <div>
-                      <span className="font-semibold text-base sm:text-lg text-[#0b2144] block">Human Resources &amp; Careers</span>
-                      <span className="font-mono text-slate-500 text-sm sm:text-base">careers@freyerinternational.com</span>
+                      <span className="font-semibold text-base text-[#0b2144] block">Human Resources &amp; Careers</span>
+                      <span className="font-mono text-slate-500 text-sm">careers@freyerinternational.com</span>
                     </div>
                     <a
                       href="mailto:careers@freyerinternational.com"
-                      className="text-[#c42f0b] font-semibold text-sm sm:text-base hover:underline"
+                      className="text-[#c42f0b] font-semibold text-sm hover:underline"
                     >
                       Email &rarr;
                     </a>
@@ -242,14 +208,14 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-bold text-white tracking-tight">
                   Need an immediate freight quote?
                 </h3>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-300 text-sm leading-relaxed">
                   Use our structured digital Freight Configurator to calculate routing options across Air, Ocean, Project Cargo, and Warehousing.
                 </p>
 
                 <div className="pt-2">
                   <Link
                     href="/#quote"
-                    className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm sm:text-base font-semibold px-7 py-4 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
+                    className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-6 py-3.5 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
                   >
                     <span>Open Freight Configurator</span>
                     <ArrowRight className="w-4 h-4" />
@@ -260,7 +226,7 @@ export default function ContactPage() {
           </div>
 
           {/* ── Pan-India 10 Locations Router Banner ── */}
-          <div className="p-8 sm:p-10 bg-white rounded-3xl border border-slate-200/90 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div className="p-8 sm:p-10 bg-white rounded-3xl border border-slate-200/90 shadow-2xs flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-[#c42f0b] font-bold block mb-1">
                 Regional Hub Network
@@ -268,14 +234,14 @@ export default function ContactPage() {
               <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144]">
                 Looking for branch operations outside Chennai and Bengaluru?
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 mt-1">
+              <p className="text-sm text-slate-600 mt-1">
                 Direct stations in Delhi/NCR, Mumbai, Hyderabad, Visakhapatnam, Coimbatore, Tuticorin, and Ahmedabad.
               </p>
             </div>
 
             <Link
               href="/locations"
-              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-sm sm:text-base font-semibold px-6 py-3.5 rounded-xl transition-colors shrink-0 self-start sm:self-auto"
+              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-6 py-3.5 rounded-xl transition-colors shrink-0 self-start sm:self-auto"
             >
               <span>Explore All 10 Stations</span>
               <ArrowRight className="w-4 h-4" />

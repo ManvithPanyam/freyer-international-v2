@@ -151,39 +151,67 @@ export function LocationsExplorer() {
   return (
     <div className="space-y-16 sm:space-y-24">
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 01: SATELLITE MAP HERO & EDITORIAL BRANCH EXPERIENCE
+          SECTION 01: MINIMALIST VECTOR GEOGRAPHIC NETWORK VISUAL
       ───────────────────────────────────────────────────────────── */}
-      <section className="bg-[#060f1e] text-white rounded-3xl p-8 sm:p-10 lg:p-12 border border-white/10 shadow-xl">
-        <div className="pb-5 border-b border-white/10 flex items-baseline justify-between">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-            Our Indian Network
-          </h2>
-          <span className="text-xs font-mono text-slate-400">
+      <section className="bg-[#060f1e] text-white rounded-3xl p-8 sm:p-12 lg:p-14 border border-white/10 shadow-xl">
+        <div className="pb-6 border-b border-white/10 flex items-baseline justify-between">
+          <div>
+            <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b4a] font-bold block mb-1">
+              National Infrastructure
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+              Pan-India Operating Network
+            </h2>
+          </div>
+          <span className="text-xs sm:text-sm font-mono text-slate-400">
             10 Dedicated Hubs
           </span>
         </div>
 
-        {/* Desktop 60/40 Asymmetric Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-8 items-center">
-          {/* Map Hero (Dominant 7-Column Span on Desktop) */}
+        {/* Clean 60/40 Asymmetric Visualization */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mt-10 items-center">
+          {/* Vector Map Canvas (Delicate India Silhouette + Node Network) */}
           <div className="lg:col-span-7 flex flex-col items-center">
-            <div className="relative w-full max-w-[580px] aspect-[600/620] rounded-2xl overflow-hidden border border-white/10 bg-[#0a192f] shadow-2xl">
-              <Image
-                src="/images/india-satellite.webp"
-                alt="Satellite map of India showing Freyer branch network"
-                fill
-                sizes="(max-width: 1024px) 100vw, 580px"
-                className="object-cover object-center select-none"
-                priority
-              />
-              <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/25 pointer-events-none" />
+            <div className="relative w-full max-w-[560px] aspect-[600/620] rounded-2xl overflow-hidden bg-[#040a14] border border-white/10 shadow-inner flex items-center justify-center p-4">
+              {/* Subtle Grid Lat/Long Lines */}
+              <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none opacity-40" />
 
-              {/* Interactive SVG Overlay */}
+              {/* Vector Geographic India Visual */}
               <svg
                 viewBox="0 0 600 620"
-                className="absolute inset-0 w-full h-full select-none"
+                className="w-full h-full select-none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                {/* Subtle Geometric India Simplified Outline */}
+                <path
+                  d="M 270 40 L 310 70 L 325 110 L 360 130 L 400 160 L 450 170 L 520 180 L 550 210 L 530 240 L 460 250 L 420 280 L 380 340 L 360 410 L 330 480 L 300 560 L 270 540 L 250 470 L 220 400 L 190 350 L 170 300 L 140 260 L 160 210 L 210 170 L 240 120 Z"
+                  fill="#0a192f"
+                  stroke="#1e3a5f"
+                  strokeWidth="1.5"
+                  strokeDasharray="4 4"
+                  className="opacity-50"
+                />
+
+                {/* Connecting Freight Corridor Arcs from Bengaluru HQ */}
+                {HUB_COORDS.map((hub) => {
+                  const isSelected = hub.id === selectedBranchId;
+                  const hq = HUB_COORDS.find((h) => h.id === "bengaluru") || HUB_COORDS[0];
+                  return (
+                    <line
+                      key={`line-${hub.id}`}
+                      x1={hq.cx}
+                      y1={hq.cy}
+                      x2={hub.cx}
+                      y2={hub.cy}
+                      stroke={isSelected ? "#ff6b4a" : "#1e3a5f"}
+                      strokeWidth={isSelected ? "1.5" : "0.75"}
+                      strokeDasharray={isSelected ? "none" : "3 3"}
+                      className="transition-colors duration-200"
+                    />
+                  );
+                })}
+
+                {/* Hub Interactive Nodes */}
                 {HUB_COORDS.map((hub) => {
                   const isSelected = hub.id === selectedBranchId;
                   return (
@@ -200,12 +228,12 @@ export function LocationsExplorer() {
                         }
                       }}
                     >
-                      {/* Active Ripple */}
+                      {/* Active Ripple Animation */}
                       {isSelected && (
                         <circle
                           cx={hub.cx}
                           cy={hub.cy}
-                          r="12"
+                          r="14"
                           fill="none"
                           stroke="#ff6b4a"
                           strokeWidth="1.5"
@@ -213,17 +241,17 @@ export function LocationsExplorer() {
                         />
                       )}
 
-                      {/* Touch Target Area */}
+                      {/* Touch Target */}
                       <circle cx={hub.cx} cy={hub.cy} r="18" fill="transparent" />
 
                       {/* Outer Ring */}
                       <circle
                         cx={hub.cx}
                         cy={hub.cy}
-                        r={isSelected ? "6.5" : "4"}
-                        fill={isSelected ? "#c42f0b" : "#ffffff"}
-                        stroke={isSelected ? "#ffffff" : "#0b2144"}
-                        strokeWidth={isSelected ? "1.75" : "1"}
+                        r={isSelected ? "7" : "4.5"}
+                        fill={isSelected ? "#c42f0b" : "#0a192f"}
+                        stroke={isSelected ? "#ffffff" : "#64748b"}
+                        strokeWidth={isSelected ? "2" : "1.25"}
                         className="transition-all duration-150 group-hover:scale-125 origin-center"
                       />
 
@@ -231,7 +259,7 @@ export function LocationsExplorer() {
                       <circle
                         cx={hub.cx}
                         cy={hub.cy}
-                        r={isSelected ? "3" : "2"}
+                        r={isSelected ? "3.5" : "2"}
                         fill={isSelected ? "#ffffff" : "#c42f0b"}
                         className="transition-all duration-150"
                       />
@@ -261,12 +289,12 @@ export function LocationsExplorer() {
                         }
                         style={{
                           paintOrder: "stroke fill",
-                          stroke: "#060f1e",
+                          stroke: "#040a14",
                           strokeWidth: "3px",
                           strokeLinejoin: "round",
                         }}
                         className={`text-[11px] font-mono select-none font-bold transition-all duration-150 ${
-                          isSelected ? "fill-[#ff6b4a]" : "fill-white/80 group-hover:fill-white"
+                          isSelected ? "fill-[#ff6b4a]" : "fill-slate-300 group-hover:fill-white"
                         }`}
                       >
                         {hub.city}
@@ -278,14 +306,14 @@ export function LocationsExplorer() {
             </div>
           </div>
 
-          {/* Right Column: Refined Editorial Hub Details */}
+          {/* Right Column: Quiet Editorial Hub Details */}
           <div className="lg:col-span-5 space-y-6">
-            {/* Subtle Typographic Hub Switcher */}
+            {/* Clean Typographic Switcher */}
             <div>
               <span className="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-2 font-medium">
-                Select a Hub
+                Select Station
               </span>
-              <div className="flex flex-wrap gap-x-3.5 gap-y-2 text-sm font-mono">
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-mono">
                 {BRANCHES.map((b) => {
                   const isSelected = b.id === selectedBranchId;
                   return (
@@ -305,7 +333,7 @@ export function LocationsExplorer() {
               </div>
             </div>
 
-            {/* Flattened Hub Typography Spread */}
+            {/* Station Details */}
             <div className="pt-6 border-t border-white/10 space-y-5">
               <div>
                 <span className="text-xs font-mono text-[#ff6b4a] uppercase tracking-wider">
@@ -317,7 +345,7 @@ export function LocationsExplorer() {
                 <p className="text-slate-300 text-sm sm:text-base mt-1">{selectedBranch.role}</p>
               </div>
 
-              <div className="pt-5 border-t border-white/10 space-y-4">
+              <div className="pt-4 border-t border-white/10 space-y-4">
                 <div>
                   <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block">
                     Address
@@ -327,7 +355,7 @@ export function LocationsExplorer() {
                   </p>
                 </div>
 
-                <div className="pt-2 flex flex-wrap items-center gap-5 font-mono text-slate-200 text-sm">
+                <div className="pt-1 flex flex-wrap items-center gap-5 font-mono text-slate-200 text-sm">
                   {selectedBranch.phone && (
                     <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-[#ff6b4a]" />
@@ -343,7 +371,7 @@ export function LocationsExplorer() {
                 </div>
               </div>
 
-              <div className="pt-5 border-t border-white/10">
+              <div className="pt-4 border-t border-white/10">
                 <a
                   href={
                     Array.isArray(selectedBranch.email)
