@@ -33,14 +33,14 @@ export function Header() {
         }`}
       >
         <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
-          {/* Brand Lockup: Logo + Integrated Tagline */}
+          {/* Brand Lockup: [FREYER LOGO] | LOGISTICS BEYOND BOUNDARIES */}
           <Link
             href="/"
-            className="flex items-center gap-3 sm:gap-4 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md py-1"
+            className="inline-flex items-center gap-2 sm:gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md py-0.5 shrink-0"
             aria-label="Freyer International Logistics — Home"
           >
             <div
-              className={`relative h-10 sm:h-11 md:h-12 w-36 sm:w-44 md:w-48 transition-all duration-200 ${
+              className={`relative h-10 sm:h-11 md:h-12 w-[65px] sm:w-[72px] md:w-[78px] transition-all duration-200 ${
                 isSolid ? "brightness-100 invert-0" : "brightness-0 invert"
               }`}
             >
@@ -48,27 +48,30 @@ export function Header() {
                 src="/images/logo.png"
                 alt="Freyer International Logistics"
                 fill
-                sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 192px"
+                sizes="(max-width: 640px) 65px, (max-width: 768px) 72px, 78px"
                 className="object-contain object-left"
                 priority
               />
             </div>
-            <div className={`hidden lg:flex flex-col border-l pl-3.5 py-0.5 ${isSolid ? "border-slate-300" : "border-white/30"}`}>
-              <span
-                className={`text-[11px] font-mono tracking-widest uppercase font-semibold leading-tight ${
-                  isSolid ? "text-[#c42f0b]" : "text-white/95"
-                }`}
-              >
-                Logistics Beyond Boundaries
-              </span>
-              <span className={`text-[10px] font-mono leading-tight mt-0.5 ${isSolid ? "text-slate-500" : "text-slate-300"}`}>
-                Pan-India &middot; Global Freight
-              </span>
-            </div>
+            <span
+              className={`hidden lg:inline-block font-mono text-xs select-none transition-colors px-0.5 ${
+                isSolid ? "text-slate-300" : "text-white/40"
+              }`}
+              aria-hidden="true"
+            >
+              |
+            </span>
+            <span
+              className={`hidden lg:inline-block text-[11px] xl:text-[12px] font-mono uppercase tracking-[0.14em] font-bold transition-colors whitespace-nowrap ${
+                isSolid ? "text-[#c42f0b]" : "text-white/95"
+              }`}
+            >
+              Logistics Beyond Boundaries
+            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-10 text-base font-medium">
+          <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-10 text-base font-medium">
             <Link
               href="/services"
               className={`transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c42f0b] px-1 py-0.5 ${

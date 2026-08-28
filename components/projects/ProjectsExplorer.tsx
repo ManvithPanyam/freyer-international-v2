@@ -94,25 +94,28 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
 
   return (
     <div>
-      {/* ── Mode Filter Tabs ── */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
+      {/* ── Industrial Filter Navigation ── */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 border-b border-slate-200 scrollbar-none">
+        <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-slate-500 mr-2 shrink-0">
+          Filter Manifest:
+        </span>
         {filters.map((filter) => (
           <button
             key={filter}
             onClick={() => setSelectedFilter(filter)}
-            className={`px-4 py-2 text-xs font-mono rounded-full whitespace-nowrap transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6b4a] ${
+            className={`px-3.5 py-1.5 text-xs font-mono rounded-md transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] shrink-0 ${
               selectedFilter === filter
-                ? "bg-[#c42f0b] text-white font-semibold shadow-md shadow-[#c42f0b]/20"
-                : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/8"
+                ? "bg-[#0b2144] text-white font-bold shadow-xs"
+                : "bg-white text-slate-600 hover:text-[#0b2144] hover:bg-slate-100/80 border border-slate-200"
             }`}
           >
-            {filter} {filter === "All" && `(${initialProjects.length})`}
+            {filter} {filter === "All" && `[${initialProjects.length}]`}
           </button>
         ))}
       </div>
 
-      {/* ── Curated Projects Grid ── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {/* ── Industrial Cargo Manifest Archive (Clean Light Editorial Ledger) ── */}
+      <div className="space-y-8">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, idx) => {
             const isFeatured = idx === 0 && selectedFilter === "All";
@@ -120,113 +123,141 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
             return (
               <motion.article
                 layout
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.25 }}
                 key={project.id}
                 onClick={() => openProjectDetail(project)}
-                className={`bg-[#0b182d] rounded-2xl border border-white/10 overflow-hidden flex flex-col justify-between hover:border-white/25 transition-all duration-200 group cursor-pointer ${
-                  isFeatured ? "md:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#0c1d38] to-[#071324]" : ""
+                className={`bg-white border border-slate-200/90 rounded-xl overflow-hidden hover:border-[#0b2144]/40 hover:shadow-md transition-all duration-200 group cursor-pointer shadow-2xs ${
+                  isFeatured ? "ring-1 ring-[#c42f0b]/30" : ""
                 }`}
               >
-                <div>
-                  {/* Photo Container */}
-                  <div
-                    className={`relative bg-black/40 overflow-hidden ${
-                      isFeatured ? "aspect-[21/9] sm:aspect-[2/1]" : "aspect-[16/10]"
-                    }`}
-                  >
+                {/* Manifest Header Strip */}
+                <div className="bg-slate-50/80 border-b border-slate-200/80 px-5 sm:px-7 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono">
+                  <div className="flex items-center gap-3">
+                    <span className="text-[#c42f0b] font-bold">
+                      RECORD #{project.id.toString().padStart(2, "0")}
+                    </span>
+                    <span className="text-slate-300">|</span>
+                    <span className="text-slate-700 uppercase tracking-wider font-semibold">
+                      {project.transport_mode}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-4 text-slate-500">
+                    {project.date && <span>{project.date}</span>}
+                    {project.local_images.length > 1 && (
+                      <span className="flex items-center gap-1 text-slate-600 font-medium">
+                        <Maximize2 className="w-3 h-3 text-[#c42f0b]" />
+                        <span>{project.local_images.length} ARCHIVED PHOTOS</span>
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Manifest Body: Split Documentary Image + Engineering Ledger */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                  {/* Left: Documentary Photographic Frame */}
+                  <div className="lg:col-span-5 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto bg-slate-900 overflow-hidden min-h-[220px]">
                     {project.local_images.length > 0 ? (
                       <Image
                         src={project.local_images[0]}
                         alt={`${project.title} - Freyer project cargo movement`}
                         fill
-                        className="object-cover object-center group-hover:scale-103 transition-transform duration-500"
-                        sizes={isFeatured ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, 50vw"}
+                        className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
+                        sizes="(min-width: 1024px) 40vw, 100vw"
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center text-slate-500 font-mono text-xs">
-                        Documented Operational Movement
+                      <div className="w-full h-full flex items-center justify-center text-slate-400 font-mono text-xs">
+                        Archived Operational File
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b182d] via-black/20 to-transparent" />
-
-                    {/* Mode Badge */}
-                    <span className="absolute top-4 left-4 bg-black/75 backdrop-blur-md border border-white/15 text-[#ff6b4a] text-[10px] font-mono px-2.5 py-1 rounded-sm uppercase tracking-wider font-semibold">
-                      {project.transport_mode}
-                    </span>
-
-                    {/* Multi-Photo Indicator */}
-                    {project.local_images.length > 1 && (
-                      <span className="absolute top-4 right-4 bg-black/75 backdrop-blur-md text-slate-200 text-[10px] font-mono px-2.5 py-1 rounded-sm border border-white/10 flex items-center gap-1">
-                        <Maximize2 className="w-3 h-3" />
-                        <span>{project.local_images.length} photos</span>
-                      </span>
-                    )}
                   </div>
 
-                  {/* Body Content */}
-                  <div className="p-6 sm:p-7">
-                    {/* Route Line */}
-                    <div className="flex items-center gap-2 text-base font-semibold text-white mb-1">
-                      <span>{project.route_origin}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#ff6b4a]" />
-                      <span>{project.route_destination}</span>
+                  {/* Right: Technical Spec Manifest & Spatial Route */}
+                  <div className="lg:col-span-7 p-5 sm:p-7 flex flex-col justify-between space-y-6 bg-white">
+                    <div>
+                      {/* Spatial Route Corridor */}
+                      <div className="flex items-center gap-3 text-lg sm:text-2xl font-bold tracking-tight text-[#0b2144]">
+                        <span>{project.route_origin}</span>
+                        <div className="flex items-center gap-1 text-[#c42f0b]">
+                          <span className="w-4 sm:w-8 h-[1.5px] bg-[#c42f0b]" />
+                          <ArrowRight className="w-4 h-4 shrink-0" />
+                        </div>
+                        <span className="text-slate-600 font-light italic">
+                          {project.route_destination}
+                        </span>
+                      </div>
+
+                      {/* Cargo Description / Equipment */}
+                      <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed max-w-2xl font-normal">
+                        {project.details}
+                      </p>
                     </div>
 
-                    {/* Subtitle / Mode Summary */}
-                    <p className="text-xs text-slate-400 font-medium mb-4">
-                      {project.title.replace(/KOBE TO CHENNAI |MASAN TO CHENNAI |QINGDAO TO SOHAR & DAMMAM |AL JUBAIL TO JEBEL ALI |EX NHAVA SHEVA TO MOGADISHU |EX GENOA TO SOHAR |EX GENOA TO JEBEL ALI |HAMBURG TO JEDDAH |SHANGHAI TO JEBEL ALI |VENICE TO MUNDRA /i, "") || project.transport_mode}
-                    </p>
-
-                    {/* Metric Badges */}
-                    <div className="flex flex-wrap gap-2 pt-3 border-t border-white/10 text-[11px] font-mono text-slate-300">
+                    {/* Verified Technical Telemetry Ledger (tnum) */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-4 border-t border-slate-100 font-mono">
                       {project.weight_mt && (
-                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
-                          {project.weight_mt} MT
-                        </span>
+                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded">
+                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Total Mass</span>
+                          <span className="text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block">
+                            {project.weight_mt} MT
+                          </span>
+                        </div>
                       )}
-                      {project.weight_kg && (
-                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
-                          {project.weight_kg.toLocaleString()} KG
-                        </span>
+                      {project.weight_kg && !project.weight_mt && (
+                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded">
+                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Total Mass</span>
+                          <span className="text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block">
+                            {project.weight_kg.toLocaleString()} KG
+                          </span>
+                        </div>
                       )}
                       {project.dimensions_cm && (
-                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
-                          {project.dimensions_cm} cm
-                        </span>
-                      )}
-                      {project.packages && (
-                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
-                          {project.packages} PKG
-                        </span>
+                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded sm:col-span-2">
+                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Dimensions</span>
+                          <span className="text-xs sm:text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block truncate">
+                            {project.dimensions_cm} cm
+                          </span>
+                        </div>
                       )}
                       {project.cbm && (
-                        <span className="px-2.5 py-1 bg-white/[0.04] border border-white/8 rounded">
-                          {project.cbm} CBM
-                        </span>
+                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded">
+                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Volume</span>
+                          <span className="text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block">
+                            {project.cbm} CBM
+                          </span>
+                        </div>
+                      )}
+                      {project.packages && (
+                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded">
+                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Packaging</span>
+                          <span className="text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block">
+                            {project.packages} PKG
+                          </span>
+                        </div>
                       )}
                     </div>
 
-                    {/* Special Handling snippet */}
-                    {project.special_handling && (
-                      <p className="mt-3 text-xs text-slate-400 line-clamp-2 leading-relaxed">
-                        {project.special_handling}
-                      </p>
-                    )}
-                  </div>
-                </div>
+                    {/* Action Bar */}
+                    <div className="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
+                      {project.special_handling ? (
+                        <span className="text-slate-500 font-mono text-[11px] truncate max-w-[280px] sm:max-w-md">
+                          Scope: {project.special_handling}
+                        </span>
+                      ) : (
+                        <span className="text-slate-400 font-mono text-[11px]">
+                          Verified Port-to-Foundation Movement
+                        </span>
+                      )}
 
-                {/* Footer */}
-                <div className="px-6 sm:px-7 py-4 bg-white/[0.02] border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-slate-400">
-                    {project.date || "Documented Movement"}
-                  </span>
-                  <span className="text-xs font-semibold text-[#ff6b4a] group-hover:text-white flex items-center gap-1 transition-colors">
-                    <span>View Case Study</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </span>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#0b2144] group-hover:text-[#c42f0b] transition-colors shrink-0 ml-4">
+                        <span>INSPECT CASE FILE</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </motion.article>
             );

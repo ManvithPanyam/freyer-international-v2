@@ -1,32 +1,113 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, MapPin, ShieldCheck, Compass } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function ProjectCargoStory() {
   const containerRef = useRef<HTMLElement>(null);
+  const routeLineRef = useRef<HTMLDivElement>(null);
+  const routeDotRef = useRef<HTMLDivElement>(null);
+  const metricCardRef = useRef<HTMLDivElement>(null);
+  const specTagsRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
-  // Measure scroll progress through this section
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
-  // Respect prefers-reduced-motion
-  const prefersReducedMotion =
-    typeof window !== "undefined"
-      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      : false;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion || !containerRef.current) return;
 
-  // Restrained scroll transformations
-  const imageScale = useTransform(scrollYProgress, [0.1, 0.9], [1.0, 1.05]);
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "4%"]);
-  const routeLineWidth = useTransform(scrollYProgress, [0.25, 0.65], ["0%", "100%"]);
-  const metricOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.85, 0.95], [0, 1, 1, 0.7]);
-  const metricY = useTransform(scrollYProgress, [0.3, 0.5], [24, 0]);
+    const ctx = gsap.context(() => {
+      // 1. Coordinated Background Zoom & Drift
+      if (imageRef.current) {
+        gsap.fromTo(
+          imageRef.current,
+          { scale: 1, yPercent: 0 },
+          {
+            scale: 1.06,
+            yPercent: 4,
+            ease: "none",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      }
+
+      // 2. Continuous Scroll-Linked Route Corridor Draw (MUNDRA -> SITE)
+      if (routeLineRef.current && routeDotRef.current) {
+        const routeTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 70%",
+            end: "center 40%",
+            scrub: 0.5,
+          },
+        });
+
+        routeTl
+          .fromTo(
+            routeLineRef.current,
+            { width: "0%" },
+            { width: "100%", ease: "power1.inOut" }
+          )
+          .fromTo(
+            routeDotRef.current,
+            { scale: 0, opacity: 0 },
+            { scale: 1, opacity: 1, ease: "back.out(2)" },
+            "-=0.2"
+          );
+      }
+
+      // 3. Staged Engineering Spec Tags Reveal
+      if (specTagsRef.current?.children) {
+        gsap.fromTo(
+          specTagsRef.current.children,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: specTagsRef.current,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+
+      // 4. Metric Telemetry Dossier Card Entrance
+      if (metricCardRef.current) {
+        gsap.fromTo(
+          metricCardRef.current,
+          { opacity: 0, y: 30, scale: 0.96 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: metricCardRef.current,
+              start: "top 75%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
@@ -36,10 +117,7 @@ export function ProjectCargoStory() {
     >
       {/* ── Background Photography Layer with Cinematic Depth ── */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="relative w-full h-full"
-          style={!prefersReducedMotion ? { scale: imageScale, y: imageY } : {}}
-        >
+        <div ref={imageRef} className="relative w-full h-full">
           <Image
             src="/images/11.4.jpg"
             alt="ITALGRU heavy-lift crane boom structure on vessel flatracks — Freyer project cargo engineering"
@@ -54,7 +132,7 @@ export function ProjectCargoStory() {
           {/* Subtle directional gradients for high-contrast typography */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#040914]/95 via-[#040914]/75 to-[#040914]/85" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#040914] via-transparent to-[#040914]/80" />
-        </motion.div>
+        </div>
       </div>
 
       {/* ── Editorial Content Grid ── */}
@@ -95,11 +173,14 @@ export function ProjectCargoStory() {
                 <div className="flex items-center gap-4 text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white">
                   <span>MUNDRA</span>
                   <div className="relative flex-1 min-w-[60px] sm:min-w-[120px] max-w-[200px] h-[2px] bg-white/20">
-                    <motion.div
+                    <div
+                      ref={routeLineRef}
                       className="absolute top-0 left-0 bottom-0 bg-[#ff6b4a] shadow-[0_0_10px_#ff6b4a]"
-                      style={!prefersReducedMotion ? { width: routeLineWidth } : { width: "100%" }}
                     />
-                    <div className="absolute -right-1.5 -top-1 w-2.5 h-2.5 rounded-full bg-[#ff6b4a]" />
+                    <div
+                      ref={routeDotRef}
+                      className="absolute -right-1.5 -top-1 w-2.5 h-2.5 rounded-full bg-[#ff6b4a]"
+                    />
                   </div>
                   <span className="text-slate-300 font-light italic">SITE</span>
                 </div>
@@ -110,7 +191,7 @@ export function ProjectCargoStory() {
               </div>
 
               {/* Verified Technical Tags */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+              <div ref={specTagsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
                 <div className="bg-white/5 border border-white/10 p-4 rounded-sm backdrop-blur-sm">
                   <div className="text-[10px] font-mono tracking-widest text-slate-400 uppercase">Configuration</div>
                   <div className="text-sm font-bold text-white mt-1">12-Axle Hydraulic SPMT</div>
@@ -139,9 +220,9 @@ export function ProjectCargoStory() {
 
             {/* Right: The Monumental Metric (One Dominant Engineering Fact) */}
             <div className="lg:col-span-5 flex flex-col items-start lg:items-end">
-              <motion.div
+              <div
+                ref={metricCardRef}
                 className="relative bg-[#071224]/85 border border-white/15 p-8 sm:p-10 rounded-sm backdrop-blur-md w-full max-w-md shadow-2xl"
-                style={!prefersReducedMotion ? { opacity: metricOpacity, y: metricY } : {}}
               >
                 {/* Metric Header */}
                 <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
@@ -168,7 +249,7 @@ export function ProjectCargoStory() {
                 <p className="mt-6 pt-6 border-t border-white/10 text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Lashed on heavy-duty vessel flatracks with certified marine lashing calculations, transferred to hydraulic multi-axle trailers without intermediate laydown.
                 </p>
-              </motion.div>
+              </div>
             </div>
 
           </div>

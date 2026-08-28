@@ -76,12 +76,12 @@ export function ServicesExplorer() {
         </div>
 
         {/* Large Dominant High-Bay Warehouse Photography */}
-        <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-2xl overflow-hidden mt-6 bg-slate-900 border border-slate-200 shadow-sm">
+        <div className="relative aspect-[16/10] sm:aspect-[16/8] lg:aspect-[2.2/1] w-full rounded-2xl overflow-hidden mt-6 bg-slate-900 border border-slate-200 shadow-sm">
           <Image
             src="/images/slide4.jpg"
             alt="High-bay multi-client warehouse facility with industrial racking and WMS material handling - Freyer Logistics"
             fill
-            className="object-cover object-center"
+            className="object-cover object-[center_38%]"
             sizes="(min-width: 1280px) 1200px, 100vw"
             priority
           />
