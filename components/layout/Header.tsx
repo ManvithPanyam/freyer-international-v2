@@ -28,19 +28,19 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
           isSolid
-            ? "bg-white/98 backdrop-blur-md border-b border-slate-200/80 py-4 shadow-2xs text-[#0b2144]"
-            : "bg-transparent py-5 text-white"
+            ? "bg-white/98 backdrop-blur-md border-b border-slate-200/80 py-2.5 sm:py-3 shadow-2xs text-[#0b2144]"
+            : "bg-transparent py-3 sm:py-4 text-white"
         }`}
       >
         <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
-          {/* Brand Lockup */}
+          {/* Brand Lockup: Logo + Integrated Tagline */}
           <Link
             href="/"
-            className="flex flex-col items-start group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md"
+            className="flex items-center gap-3 sm:gap-4 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-md py-1"
             aria-label="Freyer International Logistics — Home"
           >
             <div
-              className={`relative h-13 sm:h-15 md:h-17 w-48 sm:w-56 md:w-64 transition-all duration-200 ${
+              className={`relative h-10 sm:h-11 md:h-12 w-36 sm:w-44 md:w-48 transition-all duration-200 ${
                 isSolid ? "brightness-100 invert-0" : "brightness-0 invert"
               }`}
             >
@@ -48,18 +48,23 @@ export function Header() {
                 src="/images/logo.png"
                 alt="Freyer International Logistics"
                 fill
-                sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px"
+                sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 192px"
                 className="object-contain object-left"
                 priority
               />
             </div>
-            <span
-              className={`text-xs sm:text-sm tracking-wide font-medium transition-colors duration-200 mt-1 ${
-                isSolid ? "text-[#c42f0b]" : "text-white/90"
-              }`}
-            >
-              Logistics Beyond Boundaries
-            </span>
+            <div className={`hidden lg:flex flex-col border-l pl-3.5 py-0.5 ${isSolid ? "border-slate-300" : "border-white/30"}`}>
+              <span
+                className={`text-[11px] font-mono tracking-widest uppercase font-semibold leading-tight ${
+                  isSolid ? "text-[#c42f0b]" : "text-white/95"
+                }`}
+              >
+                Logistics Beyond Boundaries
+              </span>
+              <span className={`text-[10px] font-mono leading-tight mt-0.5 ${isSolid ? "text-slate-500" : "text-slate-300"}`}>
+                Pan-India &middot; Global Freight
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}

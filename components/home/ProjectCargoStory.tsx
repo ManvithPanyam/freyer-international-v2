@@ -62,8 +62,8 @@ export function ProjectCargoStory() {
         {/* Top Technical Metadata Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-10 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono tracking-[0.25em] text-[#ff6b4a] uppercase font-bold">
-              CASE RECORD // FRE-OOG-011
+            <span className="text-xs font-mono tracking-[0.22em] text-[#ff6b4a] uppercase font-bold">
+              PROJECT CARGO // 37.6 MT
             </span>
             <span className="text-slate-600 font-mono text-xs">|</span>
             <span className="text-xs font-mono tracking-wider text-slate-300 uppercase">

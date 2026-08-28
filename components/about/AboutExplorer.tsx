@@ -98,11 +98,14 @@ export function AboutExplorer() {
         {/* Story Narrative with Integrated Documentary Photo */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mt-8 items-center">
           <div className="lg:col-span-6 space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+            <p className="font-semibold text-[#0b2144] text-base sm:text-lg italic border-l-2 border-[#c42f0b] pl-3.5">
+              &ldquo;We don&apos;t just want to move your goods from point A to point B, we want to understand your business and design a solution to fit your requirements.&rdquo;
+            </p>
             <p>
-              Freyer International was established with a singular operational commitment: to provide responsive, personalized, and technically disciplined freight forwarding and custom supply chain solutions.
+              Freyer International was established with a singular operational commitment: to provide responsive, personalized, and technically disciplined freight forwarding, customs compliance, and supply chain management.
             </p>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              We do not just move cargo from point A to point B. We analyze your commercial requirements, vendor schedules, and regulatory checkpoints to engineer workable transport architectures that reduce total landed costs and ensure cargo integrity from origin manufacturing to final delivery.
+              Our customers trust us with their cargo because we listen, react quickly, protect freight completely, and deliver reliably across India and international gateways.
             </p>
 
             <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
