@@ -59,12 +59,15 @@ export function ProjectCargoStory() {
 
       {/* ── Editorial Content Grid ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Eyebrow & Category Label */}
+        {/* Top Technical Metadata Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-10 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-[#ff6b4a] shadow-[0_0_8px_#ff6b4a]" />
             <span className="text-xs font-mono tracking-[0.25em] text-[#ff6b4a] uppercase font-bold">
-              Documented Movement · Case Study
+              CASE RECORD // FRE-OOG-011
+            </span>
+            <span className="text-slate-600 font-mono text-xs">|</span>
+            <span className="text-xs font-mono tracking-wider text-slate-300 uppercase">
+              HEAVY-LIFT BREAKBULK MOVEMENT
             </span>
           </div>
 

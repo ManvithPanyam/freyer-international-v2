@@ -148,11 +148,24 @@ export function HeroSection() {
 
       {/* ── Hero Content ── */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+        {/* Brand Tagline Eyebrow */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mb-5 inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-sm bg-white/5 border border-white/10 backdrop-blur-xs"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-[#ff6b4a]" />
+          <span className="text-[11px] sm:text-xs font-mono tracking-[0.25em] text-slate-200 uppercase font-semibold">
+            Logistics Beyond Boundaries
+          </span>
+        </motion.div>
+
         {/* Main Statement */}
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.85, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white leading-[1.04] max-w-4xl"
         >
           Complex cargo.
@@ -166,7 +179,7 @@ export function HeroSection() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.25 }}
           className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-xl font-normal leading-relaxed"
         >
           International air &amp; ocean freight, AEO-certified customs

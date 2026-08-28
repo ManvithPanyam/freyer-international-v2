@@ -48,6 +48,7 @@ export function Header() {
                 src="/images/logo.png"
                 alt="Freyer International Logistics"
                 fill
+                sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px"
                 className="object-contain object-left"
                 priority
               />

@@ -33,6 +33,7 @@ export function Footer() {
                 src="/images/logo.png"
                 alt="Freyer International Logistics"
                 fill
+                sizes="144px"
                 className="object-contain object-left"
               />
             </div>
