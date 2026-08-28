@@ -105,23 +105,8 @@ export function AboutExplorer() {
               Freyer International was established with a singular operational commitment: to provide responsive, personalized, and technically disciplined freight forwarding, customs compliance, and supply chain management.
             </p>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Our customers trust us with their cargo because we listen, react quickly, protect freight completely, and deliver reliably across India and international gateways.
+              Our customers trust us with their cargo because we listen to their needs, react quickly, protect freight completely, and deliver reliably across India and international trading gateways.
             </p>
-
-            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200/70 text-xs">
-                <div className="font-bold text-[#0b2144] mb-0.5">01 &middot; Client Focus</div>
-                <div className="text-slate-600 text-[11px] leading-snug">
-                  Tailored solutions supported by tracking technology and experienced professionals.
-                </div>
-              </div>
-              <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200/70 text-xs">
-                <div className="font-bold text-[#0b2144] mb-0.5">02 &middot; Vendor Governance</div>
-                <div className="text-slate-600 text-[11px] leading-snug">
-                  Strict safety and legal standards ensuring cargo moves securely and timely.
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Documentary Visual in Top Viewport */}
@@ -139,6 +124,133 @@ export function AboutExplorer() {
               <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded border border-white/10 inline-block text-[11px]">
                 Freyer International Corporate Operations
               </span>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Institutional Mission, Vision & Core Values Architecture ── */}
+        <div className="mt-12 pt-10 border-t border-slate-200 space-y-8">
+          {/* Mission & Vision Dual Anchor */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Mission */}
+            <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-2xs flex flex-col justify-between space-y-4">
+              <div>
+                <span className="text-[11px] font-mono tracking-[0.2em] text-[#c42f0b] uppercase font-bold block mb-2">
+                  Corporate Mission
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] tracking-tight leading-snug">
+                  To be the leading supply chain solutions provider of choice by leveraging our People, Process &amp; Network.
+                </h3>
+              </div>
+              <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs font-mono text-slate-500">
+                <span className="font-semibold text-slate-800">People</span>
+                <span>&middot;</span>
+                <span className="font-semibold text-slate-800">Process</span>
+                <span>&middot;</span>
+                <span className="font-semibold text-slate-800">Network</span>
+              </div>
+            </div>
+
+            {/* Vision */}
+            <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-2xs flex flex-col justify-between space-y-4">
+              <div>
+                <span className="text-[11px] font-mono tracking-[0.2em] text-[#0b2144] uppercase font-bold block mb-2">
+                  Corporate Vision
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] tracking-tight leading-snug">
+                  We want to be recognized as the most flexible and reliable partner of logistics services.
+                </h3>
+              </div>
+              <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs font-mono text-slate-500">
+                <span className="font-semibold text-[#c42f0b]">Operational Flexibility</span>
+                <span>&middot;</span>
+                <span className="font-semibold text-slate-800">Global Reliability</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Tri-Value Charter: Reliability, Integrity, Sincerity */}
+          <div className="bg-slate-50/80 p-7 sm:p-9 rounded-2xl border border-slate-200/90 space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b border-slate-200/80 pb-4">
+              <div>
+                <span className="text-[11px] font-mono tracking-[0.2em] text-[#c42f0b] uppercase font-bold block mb-1">
+                  Core Values
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] tracking-tight">
+                  Guiding Principles of Professional Governance
+                </h3>
+              </div>
+              <span className="text-xs font-mono text-slate-500">
+                Institutional Charter
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Reliability */}
+              <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-2.5">
+                <div className="flex items-center justify-between text-xs font-mono pb-2 border-b border-slate-100">
+                  <span className="font-bold text-[#0b2144] tracking-wider uppercase">01 / Reliability</span>
+                  <span className="text-slate-400">Execution</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                  Freyer International&apos;s proven <strong className="text-[#0b2144] font-semibold">RELIABILITY</strong> to perform its best is the company&apos;s assurance of professionalism in every freight movement.
+                </p>
+              </div>
+
+              {/* Integrity */}
+              <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-2.5">
+                <div className="flex items-center justify-between text-xs font-mono pb-2 border-b border-slate-100">
+                  <span className="font-bold text-[#0b2144] tracking-wider uppercase">02 / Integrity</span>
+                  <span className="text-slate-400">Compliance</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                  We foster an uncompromising commitment to <strong className="text-[#0b2144] font-semibold">INTEGRITY</strong> in all our business activities, statutory customs dealings, and fiscal reporting.
+                </p>
+              </div>
+
+              {/* Sincerity */}
+              <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-2.5">
+                <div className="flex items-center justify-between text-xs font-mono pb-2 border-b border-slate-100">
+                  <span className="font-bold text-[#0b2144] tracking-wider uppercase">03 / Sincerity</span>
+                  <span className="text-slate-400">Welfare</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                  <strong className="text-[#0b2144] font-semibold">SINCERITY</strong> is demonstrated by the genuine care and interest in the welfare of our Customers and Employees alike.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Three Stakeholder Governance Charter: Customers, Partners, Employees */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+            <div className="p-5 bg-white rounded-xl border border-slate-200/80 shadow-2xs space-y-2">
+              <span className="text-[10px] font-mono tracking-widest text-[#c42f0b] uppercase font-bold block">
+                Stakeholder Commitment 01
+              </span>
+              <h4 className="text-base font-bold text-[#0b2144]">Our Customers</h4>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Custom solutions tailored to specific commercial needs, supported by responsive communication, milestone tracking, and seasoned logistics account leaders.
+              </p>
+            </div>
+
+            <div className="p-5 bg-white rounded-xl border border-slate-200/80 shadow-2xs space-y-2">
+              <span className="text-[10px] font-mono tracking-widest text-[#0b2144] uppercase font-bold block">
+                Stakeholder Commitment 02
+              </span>
+              <h4 className="text-base font-bold text-[#0b2144]">Our Partners &amp; Carriers</h4>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Strict safety, legal, and regulatory compliance across all vendor management. Our customer&apos;s freight must move safely, legally, and timely with vetted transport operators.
+              </p>
+            </div>
+
+            <div className="p-5 bg-white rounded-xl border border-slate-200/80 shadow-2xs space-y-2">
+              <span className="text-[10px] font-mono tracking-widest text-emerald-700 uppercase font-bold block">
+                Stakeholder Commitment 03
+              </span>
+              <h4 className="text-base font-bold text-[#0b2144]">Our Employees</h4>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                A culture built on shared values and continuous professional development across all Indian hubs, certified as a Great Place to Work&reg;.
+              </p>
             </div>
           </div>
         </div>
