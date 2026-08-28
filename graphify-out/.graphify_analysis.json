@@ -1,0 +1,863 @@
+{
+  "communities": {
+    "0": [
+      "docref_rfc_2616",
+      "freyer_forensics_raw_js_jquery",
+      "freyer_forensics_raw_js_jquery_addgethookif",
+      "freyer_forensics_raw_js_jquery_addhandle",
+      "freyer_forensics_raw_js_jquery_addtoprefiltersortransports",
+      "freyer_forensics_raw_js_jquery_adjustcss",
+      "freyer_forensics_raw_js_jquery_ajaxextend",
+      "freyer_forensics_raw_js_jquery_assert",
+      "freyer_forensics_raw_js_jquery_augmentwidthorheight",
+      "freyer_forensics_raw_js_jquery_buildparams",
+      "freyer_forensics_raw_js_jquery_clonecopyevent",
+      "freyer_forensics_raw_js_jquery_computestyletests",
+      "freyer_forensics_raw_js_jquery_createactivexhr",
+      "freyer_forensics_raw_js_jquery_createbuttonpseudo",
+      "freyer_forensics_raw_js_jquery_createinputpseudo",
+      "freyer_forensics_raw_js_jquery_createoptions",
+      "freyer_forensics_raw_js_jquery_createstandardxhr",
+      "freyer_forensics_raw_js_jquery_dataattr",
+      "freyer_forensics_raw_js_jquery_filterhidden",
+      "freyer_forensics_raw_js_jquery_genfx",
+      "freyer_forensics_raw_js_jquery_getclass",
+      "freyer_forensics_raw_js_jquery_getdisplay",
+      "freyer_forensics_raw_js_jquery_getwidthorheight",
+      "freyer_forensics_raw_js_jquery_getwindow",
+      "freyer_forensics_raw_js_jquery_internaldata",
+      "freyer_forensics_raw_js_jquery_internalremovedata",
+      "freyer_forensics_raw_js_jquery_isarraylike",
+      "freyer_forensics_raw_js_jquery_isemptydataobject",
+      "freyer_forensics_raw_js_jquery_manipulationtarget",
+      "freyer_forensics_raw_js_jquery_on",
+      "freyer_forensics_raw_js_jquery_rationale_2487",
+      "freyer_forensics_raw_js_jquery_rationale_810",
+      "freyer_forensics_raw_js_jquery_returnfalse",
+      "freyer_forensics_raw_js_jquery_returntrue",
+      "freyer_forensics_raw_js_jquery_safeactiveelement",
+      "freyer_forensics_raw_js_jquery_setfilters",
+      "freyer_forensics_raw_js_jquery_setpositivenumber",
+      "freyer_forensics_raw_js_jquery_sibling",
+      "freyer_forensics_raw_js_jquery_siblingcheck",
+      "freyer_forensics_raw_js_jquery_vendorpropname",
+      "freyer_forensics_raw_js_jquery_winnow"
+    ],
+    "1": [
+      "freyer_forensics_raw_js_wow",
+      "freyer_forensics_raw_js_wow_mutationobserver",
+      "freyer_forensics_raw_js_wow_mutationobserver_observe",
+      "freyer_forensics_raw_js_wow_util",
+      "freyer_forensics_raw_js_wow_util_addevent",
+      "freyer_forensics_raw_js_wow_util_createevent",
+      "freyer_forensics_raw_js_wow_util_emitevent",
+      "freyer_forensics_raw_js_wow_util_extend",
+      "freyer_forensics_raw_js_wow_util_innerheight",
+      "freyer_forensics_raw_js_wow_util_ismobile",
+      "freyer_forensics_raw_js_wow_util_removeevent",
+      "freyer_forensics_raw_js_wow_weakmap",
+      "freyer_forensics_raw_js_wow_weakmap_get",
+      "freyer_forensics_raw_js_wow_weakmap_set",
+      "freyer_forensics_raw_js_wow_wow",
+      "freyer_forensics_raw_js_wow_wow_animationname",
+      "freyer_forensics_raw_js_wow_wow_applystyle",
+      "freyer_forensics_raw_js_wow_wow_cacheanimationname",
+      "freyer_forensics_raw_js_wow_wow_cachedanimationname",
+      "freyer_forensics_raw_js_wow_wow_customstyle",
+      "freyer_forensics_raw_js_wow_wow_disabled",
+      "freyer_forensics_raw_js_wow_wow_dosync",
+      "freyer_forensics_raw_js_wow_wow_init",
+      "freyer_forensics_raw_js_wow_wow_isvisible",
+      "freyer_forensics_raw_js_wow_wow_offsettop",
+      "freyer_forensics_raw_js_wow_wow_resetanimation",
+      "freyer_forensics_raw_js_wow_wow_resetstyle",
+      "freyer_forensics_raw_js_wow_wow_scrollcallback",
+      "freyer_forensics_raw_js_wow_wow_scrollhandler",
+      "freyer_forensics_raw_js_wow_wow_show",
+      "freyer_forensics_raw_js_wow_wow_start",
+      "freyer_forensics_raw_js_wow_wow_stop",
+      "freyer_forensics_raw_js_wow_wow_sync",
+      "freyer_forensics_raw_js_wow_wow_util",
+      "freyer_forensics_raw_js_wow_wow_vendorcss",
+      "freyer_forensics_raw_js_wow_wow_vendorset"
+    ],
+    "2": [
+      "app_page",
+      "app_page_homepage",
+      "components_home_accreditationsproof",
+      "components_home_accreditationsproof_accreditations",
+      "components_home_accreditationsproof_accreditationsproof",
+      "components_home_capabilitiesindex",
+      "components_home_capabilitiesindex_capabilities",
+      "components_home_capabilitiesindex_capabilitiesindex",
+      "components_home_capabilitiesindex_capabilityitem",
+      "components_home_herosection",
+      "components_home_herosection_herosection",
+      "components_home_indiamapdata",
+      "components_home_indiamapdata_hub_coords",
+      "components_home_indiamapdata_hubcoord",
+      "components_home_introstatement",
+      "components_home_introstatement_introstatement",
+      "components_home_networkinteractive",
+      "components_home_networkinteractive_branch",
+      "components_home_networkinteractive_hubs",
+      "components_home_networkinteractive_networkinteractive",
+      "components_home_projectcargostory",
+      "components_home_projectcargostory_projectcargostory",
+      "components_locations_locationsexplorer",
+      "components_locations_locationsexplorer_branchdetails",
+      "components_locations_locationsexplorer_branches",
+      "components_locations_locationsexplorer_global_alliances",
+      "components_locations_locationsexplorer_locationsexplorer",
+      "components_locations_minimallocations",
+      "components_locations_minimallocations_stations"
+    ],
+    "3": [
+      "axe_core_puppeteer",
+      "eslint",
+      "lighthouse",
+      "package_devdependencies",
+      "package_devdependencies_axe_core_puppeteer",
+      "package_devdependencies_eslint",
+      "package_devdependencies_lighthouse",
+      "package_devdependencies_postcss",
+      "package_devdependencies_puppeteer",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_postcss",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "package_devdependencies_typescript_eslint",
+      "package_devdependencies_vitest",
+      "postcss",
+      "puppeteer",
+      "tailwindcss",
+      "tailwindcss_postcss",
+      "types_node",
+      "types_react",
+      "types_react_dom",
+      "typescript",
+      "typescript_eslint",
+      "vitest"
+    ],
+    "4": [
+      "clsx",
+      "firebase",
+      "firebase_admin",
+      "gsap",
+      "hls_js",
+      "lucide_react",
+      "motion",
+      "next",
+      "package_dependencies",
+      "package_dependencies_clsx",
+      "package_dependencies_firebase",
+      "package_dependencies_firebase_admin",
+      "package_dependencies_gsap",
+      "package_dependencies_hls_js",
+      "package_dependencies_lucide_react",
+      "package_dependencies_motion",
+      "package_dependencies_next",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_tailwind_merge",
+      "package_dependencies_zod",
+      "react",
+      "react_dom",
+      "tailwind_merge",
+      "zod"
+    ],
+    "5": [
+      "ref_app_ts",
+      "ref_app_tsx",
+      "ref_components_ts",
+      "ref_components_tsx",
+      "ref_freyer_forensics",
+      "ref_freyer_forensics_v2",
+      "ref_lib_ts",
+      "ref_lib_tsx",
+      "ref_next_config_ts",
+      "ref_next_dev_types_ts",
+      "ref_next_env_d_ts",
+      "ref_next_types_ts",
+      "ref_node_modules",
+      "ref_public",
+      "ref_types_ts",
+      "ref_types_tsx",
+      "tsconfig",
+      "tsconfig_exclude",
+      "tsconfig_include"
+    ],
+    "6": [
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_esnext",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowjs",
+      "tsconfig_compileroptions_esmoduleinterop",
+      "tsconfig_compileroptions_incremental",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_jsx",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_paths",
+      "tsconfig_compileroptions_plugins",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target"
+    ],
+    "7": [
+      "package",
+      "package_allowscripts",
+      "package_allowscripts_esbuild_0_28_2",
+      "package_allowscripts_firebase_util_1_15_3",
+      "package_allowscripts_protobufjs_7_6_5",
+      "package_allowscripts_puppeteer_25_9_0",
+      "package_name",
+      "package_overrides",
+      "package_overrides_uuid",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_scripts_typecheck",
+      "package_version"
+    ],
+    "8": [
+      "app_actions_submitrfq",
+      "app_actions_submitrfq_submitrfqaction",
+      "app_actions_submitrfq_submitrfqresult",
+      "components_home_rfqproduct",
+      "components_home_rfqproduct_cargo_types",
+      "components_home_rfqproduct_rfqproduct",
+      "components_home_rfqproduct_serviceoption",
+      "components_home_rfqproduct_services",
+      "lib_firebase_admin",
+      "lib_firebase_admin_admindb",
+      "lib_firebase_admin_adminstorage",
+      "lib_validations_rfq",
+      "lib_validations_rfq_incotermsenum",
+      "lib_validations_rfq_rfqformdata",
+      "lib_validations_rfq_rfqschema",
+      "lib_validations_rfq_rfqservicetypeenum",
+      "tests_setup_test"
+    ],
+    "9": [
+      "freyer_forensics_raw_js_jquery_mb_ytplayer",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_cancelfullscreen",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_createvideosarray",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_getvideolistfromyoutube",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_hidemouse",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_isiframe",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_istouchsupported",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_launchfullscreen",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_n",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_onyoutubeiframeapiready",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_parseytplayer_data",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_runprefixmethod",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_setfilter",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_setunit",
+      "freyer_forensics_raw_js_jquery_mb_ytplayer_uncamel"
+    ],
+    "10": [
+      "app_services_page",
+      "app_services_page_metadata",
+      "app_services_page_servicespage",
+      "components_services_servicefaq",
+      "components_services_servicefaq_faqitem",
+      "components_services_servicefaq_faqs",
+      "components_services_servicefaq_servicefaq",
+      "components_services_servicesexplorer",
+      "components_services_servicesexplorer_project_execution_stages",
+      "components_services_servicesexplorer_project_sectors",
+      "components_services_servicesexplorer_servicesexplorer",
+      "components_services_servicesexplorer_warehouse_19_capabilities"
+    ],
+    "11": [
+      "freyer_forensics_raw_js_jquery_addcombinator",
+      "freyer_forensics_raw_js_jquery_condense",
+      "freyer_forensics_raw_js_jquery_createpositionalpseudo",
+      "freyer_forensics_raw_js_jquery_elementmatcher",
+      "freyer_forensics_raw_js_jquery_markfunction",
+      "freyer_forensics_raw_js_jquery_matcherfromgroupmatchers",
+      "freyer_forensics_raw_js_jquery_matcherfromtokens",
+      "freyer_forensics_raw_js_jquery_multiplecontexts",
+      "freyer_forensics_raw_js_jquery_setmatcher",
+      "freyer_forensics_raw_js_jquery_sizzle",
+      "freyer_forensics_raw_js_jquery_testcontext",
+      "freyer_forensics_raw_js_jquery_toselector"
+    ],
+    "12": [
+      "app_careers_page",
+      "app_careers_page_careerspage",
+      "app_careers_page_metadata",
+      "app_careers_page_practice_areas",
+      "app_privacy_page",
+      "app_privacy_page_metadata",
+      "app_privacy_page_privacypolicypage",
+      "components_layout_footer",
+      "components_layout_footer_facebookicon",
+      "components_layout_footer_footer",
+      "components_layout_footer_linkedinicon"
+    ],
+    "13": [
+      "freyer_forensics_raw_js_masonry_pkgd_min",
+      "freyer_forensics_raw_js_masonry_pkgd_min_e",
+      "freyer_forensics_raw_js_masonry_pkgd_min_i",
+      "freyer_forensics_raw_js_masonry_pkgd_min_i_i",
+      "freyer_forensics_raw_js_masonry_pkgd_min_i_o",
+      "freyer_forensics_raw_js_masonry_pkgd_min_n",
+      "freyer_forensics_raw_js_masonry_pkgd_min_n_n",
+      "freyer_forensics_raw_js_masonry_pkgd_min_o",
+      "freyer_forensics_raw_js_masonry_pkgd_min_r",
+      "freyer_forensics_raw_js_masonry_pkgd_min_s",
+      "freyer_forensics_raw_js_masonry_pkgd_min_t"
+    ],
+    "14": [
+      "verified_qa",
+      "verified_qa_checkurl",
+      "verified_qa_execsync",
+      "verified_qa_fs",
+      "verified_qa_http",
+      "verified_qa_out_dir",
+      "verified_qa_path",
+      "verified_qa_puppeteer",
+      "verified_qa_report_path",
+      "verified_qa_run",
+      "verified_qa_viewports"
+    ],
+    "15": [
+      "app_csr_page",
+      "app_csr_page_csrpage",
+      "app_csr_page_metadata",
+      "app_not_found",
+      "app_not_found_notfound",
+      "app_terms_page",
+      "app_terms_page_metadata",
+      "app_terms_page_termspage",
+      "components_layout_header",
+      "components_layout_header_header"
+    ],
+    "16": [
+      "freyer_forensics_raw_js_jquery_buildfragment",
+      "freyer_forensics_raw_js_jquery_createsafefragment",
+      "freyer_forensics_raw_js_jquery_disablescript",
+      "freyer_forensics_raw_js_jquery_dommanip",
+      "freyer_forensics_raw_js_jquery_fixclonenodeissues",
+      "freyer_forensics_raw_js_jquery_fixdefaultchecked",
+      "freyer_forensics_raw_js_jquery_getall",
+      "freyer_forensics_raw_js_jquery_remove",
+      "freyer_forensics_raw_js_jquery_restorescript",
+      "freyer_forensics_raw_js_jquery_setglobaleval"
+    ],
+    "17": [
+      "app_about_page",
+      "app_about_page_aboutpage",
+      "app_about_page_metadata",
+      "components_about_aboutexplorer",
+      "components_about_aboutexplorer_aboutexplorer",
+      "components_about_aboutexplorer_all_awards",
+      "components_about_aboutexplorer_featured_awards",
+      "components_about_aboutexplorer_global_alliances",
+      "components_about_aboutexplorer_regional_branches"
+    ],
+    "18": [
+      "freyer_forensics_raw_js_jquery_ajaxconvert",
+      "freyer_forensics_raw_js_jquery_ajaxhandleresponses",
+      "freyer_forensics_raw_js_jquery_animation",
+      "freyer_forensics_raw_js_jquery_createfxnow",
+      "freyer_forensics_raw_js_jquery_createtween",
+      "freyer_forensics_raw_js_jquery_defaultprefilter",
+      "freyer_forensics_raw_js_jquery_done",
+      "freyer_forensics_raw_js_jquery_propfilter",
+      "freyer_forensics_raw_js_jquery_tween"
+    ],
+    "19": [
+      "freyer_forensics_raw_js_simple_lightbox",
+      "freyer_forensics_raw_js_simple_lightbox_arrayliketoarray",
+      "freyer_forensics_raw_js_simple_lightbox_classcallcheck",
+      "freyer_forensics_raw_js_simple_lightbox_createclass",
+      "freyer_forensics_raw_js_simple_lightbox_createforofiteratorhelper",
+      "freyer_forensics_raw_js_simple_lightbox_defineproperties",
+      "freyer_forensics_raw_js_simple_lightbox_defineproperty",
+      "freyer_forensics_raw_js_simple_lightbox_simplelightbox",
+      "freyer_forensics_raw_js_simple_lightbox_unsupportediterabletoarray"
+    ],
+    "20": [
+      "tests_v1_1_final_qa",
+      "tests_v1_1_final_qa_http",
+      "tests_v1_1_final_qa_path",
+      "tests_v1_1_final_qa_puppeteer",
+      "tests_v1_1_final_qa_routes",
+      "tests_v1_1_final_qa_runfinalv11qa",
+      "tests_v1_1_final_qa_spawn",
+      "tests_v1_1_final_qa_viewports",
+      "tests_v1_1_final_qa_waitforserver"
+    ],
+    "21": [
+      "freyer_forensics_raw_js_animonscroll",
+      "freyer_forensics_raw_js_animonscroll_animonscroll",
+      "freyer_forensics_raw_js_animonscroll_delayed",
+      "freyer_forensics_raw_js_animonscroll_extend",
+      "freyer_forensics_raw_js_animonscroll_getoffset",
+      "freyer_forensics_raw_js_animonscroll_getviewporth",
+      "freyer_forensics_raw_js_animonscroll_inviewport",
+      "freyer_forensics_raw_js_animonscroll_scrolly"
+    ],
+    "22": [
+      "freyer_forensics_raw_js_bootstrap_min",
+      "freyer_forensics_raw_js_bootstrap_min_e",
+      "freyer_forensics_raw_js_bootstrap_min_i",
+      "freyer_forensics_raw_js_bootstrap_min_l",
+      "freyer_forensics_raw_js_bootstrap_min_n",
+      "freyer_forensics_raw_js_bootstrap_min_r",
+      "freyer_forensics_raw_js_bootstrap_min_s",
+      "freyer_forensics_raw_js_bootstrap_min_u"
+    ],
+    "23": [
+      "freyer_forensics_raw_js_imagesloaded",
+      "freyer_forensics_raw_js_imagesloaded_defineimagesloaded",
+      "freyer_forensics_raw_js_imagesloaded_defineimagesloaded_imagesloaded",
+      "freyer_forensics_raw_js_imagesloaded_defineimagesloaded_loadingimage",
+      "freyer_forensics_raw_js_imagesloaded_defineimagesloaded_onconfirm",
+      "freyer_forensics_raw_js_imagesloaded_extend",
+      "freyer_forensics_raw_js_imagesloaded_isarray",
+      "freyer_forensics_raw_js_imagesloaded_makearray"
+    ],
+    "24": [
+      "app_network_partners_page",
+      "app_network_partners_page_metadata",
+      "app_network_partners_page_networkpartnerspage",
+      "components_network_networkalliances",
+      "components_network_networkalliances_alliances",
+      "components_network_networkalliances_networkalliances",
+      "components_network_networkalliances_steps"
+    ],
+    "25": [
+      "capture_audit_screenshots",
+      "capture_audit_screenshots_fs",
+      "capture_audit_screenshots_out_dir",
+      "capture_audit_screenshots_path",
+      "capture_audit_screenshots_puppeteer",
+      "capture_audit_screenshots_routes",
+      "capture_audit_screenshots_viewports"
+    ],
+    "26": [
+      "freyer_forensics_take_screenshots_and_a11y",
+      "freyer_forensics_take_screenshots_and_a11y_axepuppeteer",
+      "freyer_forensics_take_screenshots_and_a11y_fs",
+      "freyer_forensics_take_screenshots_and_a11y_pages",
+      "freyer_forensics_take_screenshots_and_a11y_path",
+      "freyer_forensics_take_screenshots_and_a11y_puppeteer",
+      "freyer_forensics_take_screenshots_and_a11y_viewports"
+    ],
+    "27": [
+      "app_projects_page",
+      "app_projects_page_metadata",
+      "app_projects_page_projectspage",
+      "components_projects_projectsexplorer",
+      "components_projects_projectsexplorer_project",
+      "components_projects_projectsexplorer_projectsexplorer"
+    ],
+    "28": [
+      "app_services_slug_page",
+      "app_services_slug_page_generatemetadata",
+      "app_services_slug_page_generatestaticparams",
+      "app_services_slug_page_servicedata",
+      "app_services_slug_page_servicedetailpage",
+      "app_services_slug_page_services_data"
+    ],
+    "29": [
+      "tests_capture_hero_restoration",
+      "tests_capture_hero_restoration_fs",
+      "tests_capture_hero_restoration_out_dir",
+      "tests_capture_hero_restoration_path",
+      "tests_capture_hero_restoration_puppeteer",
+      "tests_capture_hero_restoration_viewports"
+    ],
+    "30": [
+      "tests_live_prod_verification",
+      "tests_live_prod_verification_fs",
+      "tests_live_prod_verification_path",
+      "tests_live_prod_verification_puppeteer",
+      "tests_live_prod_verification_routes",
+      "tests_live_prod_verification_viewports"
+    ],
+    "31": [
+      "tests_measure_home_geometry",
+      "tests_measure_home_geometry_fs",
+      "tests_measure_home_geometry_out_dir",
+      "tests_measure_home_geometry_path",
+      "tests_measure_home_geometry_puppeteer",
+      "tests_measure_home_geometry_viewports"
+    ],
+    "32": [
+      "tests_qa_home_editorial",
+      "tests_qa_home_editorial_fs",
+      "tests_qa_home_editorial_out_dir",
+      "tests_qa_home_editorial_path",
+      "tests_qa_home_editorial_puppeteer",
+      "tests_qa_home_editorial_viewports"
+    ],
+    "33": [
+      "app_layout",
+      "app_layout_metadata",
+      "app_layout_poppins",
+      "app_layout_rootlayout",
+      "app_layout_viewport"
+    ],
+    "34": [
+      "freyer_forensics_raw_js_jquery_actualdisplay",
+      "freyer_forensics_raw_js_jquery_completed",
+      "freyer_forensics_raw_js_jquery_defaultdisplay",
+      "freyer_forensics_raw_js_jquery_detach",
+      "freyer_forensics_raw_js_jquery_showhide"
+    ],
+    "35": [
+      "lib_firebase_client",
+      "lib_firebase_client_app",
+      "lib_firebase_client_db",
+      "lib_firebase_client_firebaseconfig",
+      "lib_firebase_client_storage"
+    ],
+    "36": [
+      "run_qa",
+      "run_qa_axepuppeteer",
+      "run_qa_fs",
+      "run_qa_puppeteer",
+      "run_qa_viewports"
+    ],
+    "37": [
+      "types_index",
+      "types_index_accreditationbadge",
+      "types_index_branchlocation",
+      "types_index_projectcasestudy",
+      "types_index_servicetype"
+    ],
+    "38": [
+      "app_contact_page",
+      "app_contact_page_contactpage",
+      "app_contact_page_contacts",
+      "app_contact_page_metadata"
+    ],
+    "39": [
+      "app_locations_page",
+      "app_locations_page_locationspage",
+      "app_locations_page_metadata",
+      "components_locations_minimallocations_minimallocations"
+    ],
+    "40": [
+      "components_home_networkgrid",
+      "components_home_networkgrid_branch",
+      "components_home_networkgrid_networkgrid",
+      "components_home_networkgrid_verified_branches"
+    ],
+    "41": [
+      "freyer_forensics_v2_scrape",
+      "freyer_forensics_v2_scrape_get_page",
+      "freyer_forensics_v2_scrape_normalize_url",
+      "freyer_forensics_v2_scrape_write_json"
+    ],
+    "42": [
+      "tests_rfq_failure_suite",
+      "tests_rfq_failure_suite_puppeteer",
+      "tests_rfq_failure_suite_runrfqtestsuite",
+      "tests_rfq_failure_suite_spawn"
+    ],
+    "43": [
+      "app_sitemap",
+      "app_sitemap_services",
+      "app_sitemap_sitemap"
+    ],
+    "44": [
+      "freyer_forensics_raw_js_classie",
+      "freyer_forensics_raw_js_classie_classreg",
+      "freyer_forensics_raw_js_classie_toggleclass"
+    ],
+    "45": [
+      "freyer_forensics_raw_js_slick_min",
+      "freyer_forensics_raw_js_slick_min_c",
+      "freyer_forensics_raw_js_slick_min_g"
+    ],
+    "46": [
+      "freyer_forensics_raw_js_sticky",
+      "freyer_forensics_raw_js_sticky_jumpsprevent",
+      "freyer_forensics_raw_js_sticky_stickerfn"
+    ],
+    "47": [
+      "freyer_forensics_v2_fix",
+      "freyer_forensics_v2_fix_download_file",
+      "freyer_forensics_v2_fix_extract_page"
+    ],
+    "48": [
+      "app_robots",
+      "app_robots_robots"
+    ],
+    "49": [
+      "freyer_forensics_crawler",
+      "freyer_forensics_crawler_normalize_url"
+    ],
+    "50": [
+      "freyer_forensics_finalize_site_dna_v2_1",
+      "freyer_forensics_finalize_site_dna_v2_1_write_report"
+    ],
+    "51": [
+      "freyer_forensics_generate_reports",
+      "freyer_forensics_generate_reports_write_report"
+    ],
+    "52": [
+      "freyer_forensics_raw_js_jquery_createcache",
+      "freyer_forensics_raw_js_jquery_createcache_cache"
+    ],
+    "53": [
+      "freyer_forensics_raw_js_jquery_inspectprefiltersortransports",
+      "freyer_forensics_raw_js_jquery_inspectprefiltersortransports_inspect"
+    ],
+    "54": [
+      "freyer_forensics_raw_js_menu",
+      "freyer_forensics_raw_js_menu_responsivemenu"
+    ],
+    "55": [
+      "freyer_forensics_raw_js_script",
+      "freyer_forensics_raw_js_script_include"
+    ],
+    "56": [
+      "freyer_forensics_update_validated_reports",
+      "freyer_forensics_update_validated_reports_write_report"
+    ],
+    "57": [
+      "lib_utils_cn",
+      "lib_utils_cn_cn"
+    ],
+    "58": [
+      "next_config",
+      "next_config_nextconfig"
+    ],
+    "59": [
+      "eslint_config"
+    ],
+    "60": [
+      "freyer_forensics_analyze_content_and_brand"
+    ],
+    "61": [
+      "freyer_forensics_check_fonts_and_icons"
+    ],
+    "62": [
+      "freyer_forensics_check_versions"
+    ],
+    "63": [
+      "freyer_forensics_download_and_analyze_assets"
+    ],
+    "64": [
+      "freyer_forensics_extract_deep_forensics"
+    ],
+    "65": [
+      "freyer_forensics_generate_data_csvs"
+    ],
+    "66": [
+      "freyer_forensics_inspect_crawl"
+    ],
+    "67": [
+      "freyer_forensics_raw_js_dcalendar_picker"
+    ],
+    "68": [
+      "freyer_forensics_raw_js_dcalendar_picker_date_getdays"
+    ],
+    "69": [
+      "freyer_forensics_raw_js_slider"
+    ],
+    "70": [
+      "freyer_forensics_search_clues"
+    ],
+    "71": [
+      "freyer_forensics_verify_raw_html_content"
+    ],
+    "72": [
+      "postcss_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.0524390243902439,
+    "1": 0.11587301587301588,
+    "2": 0.09113300492610837,
+    "3": 0.07407407407407407,
+    "4": 0.08,
+    "5": 0.10526315789473684,
+    "6": 0.10526315789473684,
+    "7": 0.1111111111111111,
+    "8": 0.16911764705882354,
+    "9": 0.18095238095238095,
+    "10": 0.19696969696969696,
+    "11": 0.19696969696969696,
+    "12": 0.21818181818181817,
+    "13": 0.5454545454545454,
+    "14": 0.2,
+    "15": 0.26666666666666666,
+    "16": 0.26666666666666666,
+    "17": 0.25,
+    "18": 0.25,
+    "19": 0.3611111111111111,
+    "20": 0.25,
+    "21": 0.39285714285714285,
+    "22": 0.75,
+    "23": 0.35714285714285715,
+    "24": 0.3333333333333333,
+    "25": 0.2857142857142857,
+    "26": 0.2857142857142857,
+    "27": 0.4,
+    "28": 0.3333333333333333,
+    "29": 0.3333333333333333,
+    "30": 0.3333333333333333,
+    "31": 0.3333333333333333,
+    "32": 0.3333333333333333,
+    "33": 0.4,
+    "34": 0.5,
+    "35": 0.4,
+    "36": 0.4,
+    "37": 0.4,
+    "38": 0.5,
+    "39": 0.5,
+    "40": 0.5,
+    "41": 0.5,
+    "42": 0.5,
+    "43": 0.6666666666666666,
+    "44": 0.6666666666666666,
+    "45": 0.6666666666666666,
+    "46": 0.6666666666666666,
+    "47": 0.6666666666666666,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0
+  },
+  "gods": [
+    {
+      "id": "freyer_forensics_raw_js_wow_wow",
+      "label": "WOW()",
+      "degree": 24
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "components_layout_footer_footer",
+      "label": "Footer()",
+      "degree": 14
+    },
+    {
+      "id": "components_layout_header_header",
+      "label": "Header()",
+      "degree": 14
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "degree": 13
+    },
+    {
+      "id": "freyer_forensics_raw_js_wow_util",
+      "label": "Util()",
+      "degree": 9
+    },
+    {
+      "id": "freyer_forensics_raw_js_masonry_pkgd_min_e",
+      "label": "e()",
+      "degree": 9
+    },
+    {
+      "id": "freyer_forensics_raw_js_masonry_pkgd_min_n",
+      "label": "n()",
+      "degree": 8
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 7
+    },
+    {
+      "id": "freyer_forensics_raw_js_masonry_pkgd_min_i_i",
+      "label": "i()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "RfqProduct()",
+      "target": "submitRfqAction()",
+      "source_files": [
+        "components/home/RfqProduct.tsx",
+        "app/actions/submitRfq.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `devDependencies` connect `devDependencies` to `package.json`?",
+      "why": "High betweenness centrality (0.010) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `dependencies` to `package.json`?",
+      "why": "High betweenness centrality (0.009) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Footer()` connect `Footer.tsx` to `app/page.tsx`, `contact/page.tsx`, `locations/page.tsx`, `services/page.tsx`, `Header.tsx`, `about/page.tsx`, `network-partners/page.tsx`, `projects/page.tsx`, `[slug]/page.tsx`?",
+      "why": "High betweenness centrality (0.008) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `FAQItem`, `CapabilityItem`, `HubCoord` to the rest of the system?",
+      "why": "184 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `jquery.js` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.0524390243902439 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `WOW` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11587301587301588 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `app/page.tsx` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09113300492610837 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

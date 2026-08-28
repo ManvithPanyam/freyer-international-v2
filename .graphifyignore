@@ -1,0 +1,7 @@
+# Ignore video stream chunks and non-source files from AST extraction
+public/video/hls/*.ts
+*.tsbuildinfo
+node_modules/
+.next/
+out/
+build/
