@@ -23,14 +23,18 @@ export default function LocationsPage() {
             <span>/</span>
             <span className="text-slate-700">Locations</span>
           </div>
-          <div className="max-w-6xl pt-4 sm:pt-8">
-            <span className="block font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#c42f0b] sm:text-sm">Physical domestic footprint</span>
-            <h1 className="mt-4 max-w-6xl text-[clamp(3.6rem,7.6vw,7.8rem)] font-bold leading-[0.91] tracking-[-0.055em] text-[#0b2144]">
+          <div className="max-w-4xl pt-2 sm:pt-4">
+            <span className="block font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#c42f0b] sm:text-sm mb-3">
+              Physical domestic footprint
+            </span>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
               10 operating hubs across India.
               <br />
-              <span className="font-light italic text-slate-500">190+ countries through global alliances.</span>
+              <span className="font-light italic text-slate-500">
+                190+ countries through global alliances.
+              </span>
             </h1>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+            <p className="mt-4 sm:mt-5 max-w-3xl text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600">
               A physical Indian network with dedicated infrastructure in major manufacturing, port, and gateway corridors, connected globally through established forwarding alliances.
             </p>
           </div>

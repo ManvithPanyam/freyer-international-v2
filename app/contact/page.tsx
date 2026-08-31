@@ -29,19 +29,27 @@ export default function ContactPage() {
             <span className="text-slate-700">Contact</span>
           </div>
 
-          <div className="max-w-6xl pt-4 sm:pt-8">
-            <span className="block font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#c42f0b] sm:text-sm">Commercial desks & inquiries</span>
-            <h1 className="mt-4 max-w-6xl text-[clamp(3.6rem,7.6vw,7.8rem)] font-bold leading-[0.91] tracking-[-0.055em] text-[#0b2144]">
+          <div className="max-w-4xl pt-2 sm:pt-4">
+            <span className="block font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#c42f0b] sm:text-sm mb-3">
+              Commercial desks &amp; inquiries
+            </span>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
               Talk to the team
               <br />
-              <span className="font-light italic text-slate-500">moving your cargo.</span>
+              <span className="font-light italic text-slate-500">
+                moving your cargo.
+              </span>
             </h1>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+            <p className="mt-4 sm:mt-5 max-w-3xl text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600">
               Direct communication with our corporate office in Bengaluru, primary seaport operations in Chennai, and station desks across India.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/#quote" className="inline-flex items-center gap-2 rounded-full bg-[#0b2144] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5">Request a quote <ArrowUpRight className="h-4 w-4" /></Link>
-              <Link href="/locations" className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-[#0b2144] transition-colors hover:border-[#0b2144]">Find a branch</Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/#quote" className="inline-flex items-center gap-2 rounded-full bg-[#0b2144] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 shadow-sm">
+                Request a quote <ArrowUpRight className="h-4 w-4" />
+              </Link>
+              <Link href="/locations" className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-[#0b2144] transition-colors hover:border-[#0b2144]">
+                Find a branch
+              </Link>
             </div>
           </div>
         </section>

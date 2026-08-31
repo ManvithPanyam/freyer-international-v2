@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://freyer-international-logistics.vercel.app";
+const BASE_URL = "https://freyer-international-v2.vercel.app";
 
 const SERVICES = [
   "project-cargo",

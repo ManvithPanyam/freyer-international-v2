@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/"],
     },
-    sitemap: "https://freyer-international-logistics.vercel.app/sitemap.xml",
+    sitemap: "https://freyer-international-v2.vercel.app/sitemap.xml",
   };
 }

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     "Integrated logistics, international air and ocean freight forwarding, AEO Tier-2 certified customs brokerage, and heavy-lift project cargo engineering across India and global trading corridors.",
-  metadataBase: new URL("https://freyer-international-logistics.vercel.app"),
+  metadataBase: new URL("https://freyer-international-v2.vercel.app"),
   alternates: {
     canonical: "/",
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Freyer International Logistics | Precision Freight Forwarding",
     description:
       "Integrated logistics, AEO Tier-2 customs clearance, high-bay warehousing, and heavy-lift project cargo engineering across 10 Indian hubs and 190+ countries.",
-    url: "https://freyer-international-logistics.vercel.app",
+    url: "https://freyer-international-v2.vercel.app",
     siteName: "Freyer International Logistics",
     images: [
       {
@@ -57,6 +57,89 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://freyer-international-v2.vercel.app/#organization",
+      "name": "Freyer International Logistics",
+      "legalName": "Freyer International Logistics Private Limited",
+      "url": "https://freyer-international-v2.vercel.app",
+      "logo": "https://freyer-international-v2.vercel.app/images/logo.png",
+      "description": "Integrated logistics, international freight forwarding, AEO Tier-2 certified customs brokerage, and project cargo engineering.",
+      "telephone": "+91-44-43191919",
+      "email": "Selvakumar@freyerinternational.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "TAGA Tower, New No: 45 Old No 20, 1st Floor, Sait Colony, Egmore",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600008",
+        "addressCountry": "IN"
+      },
+      "award": [
+        "AEO Tier-2 Authorized Economic Operator (CBIC License INAAQCA4076M0F243)",
+        "IATA Regulated Cargo Agent Accreditation",
+        "Great Place to Work Certified"
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "WCA World"
+        },
+        {
+          "@type": "Organization",
+          "name": "Security Cargo Network (SCN)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Association of Multimodal Transport Operators of India (AMTOI)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Air Cargo Agents Association of India (ACAAI)"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://freyer-international-v2.vercel.app/#website",
+      "url": "https://freyer-international-v2.vercel.app",
+      "name": "Freyer International Logistics",
+      "publisher": {
+        "@id": "https://freyer-international-v2.vercel.app/#organization"
+      }
+    },
+    {
+      "@type": "LogisticsService",
+      "@id": "https://freyer-international-v2.vercel.app/#service",
+      "name": "Multimodal Freight Forwarding & Project Cargo Engineering",
+      "provider": {
+        "@id": "https://freyer-international-v2.vercel.app/#organization"
+      },
+      "serviceType": [
+        "Ocean Freight Forwarding (FCL/LCL)",
+        "International Air Cargo Handling",
+        "AEO Tier-2 Customs Clearance",
+        "Heavy-Lift Project Cargo Logistics",
+        "Contract Warehousing & 3PL Distribution",
+        "Marine Cargo Risk Underwriting & Survey"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "India"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Worldwide via 190+ Country Forwarding Alliances"
+        }
+      ]
+    }
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,6 +147,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen antialiased bg-[#fbfcfd] text-[#0b2144]">{children}</body>
     </html>
   );
