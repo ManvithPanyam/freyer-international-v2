@@ -94,167 +94,195 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
 
   return (
     <div>
-      {/* ── Industrial Filter Navigation ── */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 border-b border-slate-200 scrollbar-none">
-        <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-slate-500 mr-2 shrink-0">
-          Filter Manifest:
+      {/* ── Editorial Filter Navigation ── */}
+      <div className="flex items-center justify-between gap-4 pb-6 mb-12 sm:mb-16 border-b border-slate-200">
+        <div className="flex items-center gap-2 overflow-x-auto scrollbar-none py-1">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setSelectedFilter(filter)}
+              className={`px-4 py-2 text-xs font-mono tracking-wider uppercase transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] rounded-full shrink-0 ${
+                selectedFilter === filter
+                  ? "bg-[#0b2144] text-white font-bold shadow-xs"
+                  : "bg-slate-100/80 hover:bg-slate-200/70 text-slate-600 hover:text-[#0b2144]"
+              }`}
+            >
+              {filter} {filter === "All" && `(${initialProjects.length})`}
+            </button>
+          ))}
+        </div>
+        <span className="hidden md:inline-block text-xs font-mono text-slate-400">
+          Showing {filteredProjects.length} Verified Records
         </span>
-        {filters.map((filter) => (
-          <button
-            key={filter}
-            onClick={() => setSelectedFilter(filter)}
-            className={`px-3.5 py-1.5 text-xs font-mono rounded-md transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] shrink-0 ${
-              selectedFilter === filter
-                ? "bg-[#0b2144] text-white font-bold shadow-xs"
-                : "bg-white text-slate-600 hover:text-[#0b2144] hover:bg-slate-100/80 border border-slate-200"
-            }`}
-          >
-            {filter} {filter === "All" && `[${initialProjects.length}]`}
-          </button>
-        ))}
       </div>
 
-      {/* ── Industrial Cargo Manifest Archive (Clean Light Editorial Ledger) ── */}
-      <div className="space-y-8">
+      {/* ── Premium Industrial Editorial Case Study Archive ── */}
+      <div className="space-y-16 sm:space-y-24">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, idx) => {
-            const isFeatured = idx === 0 && selectedFilter === "All";
+            const isAlternate = idx % 2 === 1;
 
             return (
               <motion.article
                 layout
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.3 }}
                 key={project.id}
                 onClick={() => openProjectDetail(project)}
-                className={`bg-white border border-slate-200/90 rounded-xl overflow-hidden hover:border-[#0b2144]/40 hover:shadow-md transition-all duration-200 group cursor-pointer shadow-2xs ${
-                  isFeatured ? "ring-1 ring-[#c42f0b]/30" : ""
-                }`}
+                className="group cursor-pointer pb-16 sm:pb-24 border-b border-slate-200 last:border-b-0"
               >
-                {/* Manifest Header Strip */}
-                <div className="bg-slate-50/80 border-b border-slate-200/80 px-5 sm:px-7 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono">
+                {/* ── Top Architectural Header Line ── */}
+                <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-500 mb-6">
                   <div className="flex items-center gap-3">
-                    <span className="text-[#c42f0b] font-bold">
-                      RECORD #{project.id.toString().padStart(2, "0")}
+                    <span className="text-[#c42f0b] font-bold tracking-widest uppercase">
+                      CASE FILE #{project.id.toString().padStart(2, "0")}
                     </span>
-                    <span className="text-slate-300">|</span>
-                    <span className="text-slate-700 uppercase tracking-wider font-semibold">
+                    <span className="text-slate-300">/</span>
+                    <span className="uppercase tracking-wider text-slate-700 font-semibold">
                       {project.transport_mode}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-4 text-slate-500">
-                    {project.date && <span>{project.date}</span>}
+                  <div className="flex items-center gap-6">
+                    {project.date && <span className="text-slate-400">{project.date}</span>}
                     {project.local_images.length > 1 && (
-                      <span className="flex items-center gap-1 text-slate-600 font-medium">
-                        <Maximize2 className="w-3 h-3 text-[#c42f0b]" />
-                        <span>{project.local_images.length} ARCHIVED PHOTOS</span>
+                      <span className="flex items-center gap-1.5 text-slate-600 font-medium">
+                        <Maximize2 className="w-3.5 h-3.5 text-[#c42f0b]" />
+                        <span>{project.local_images.length} ARCHIVAL PHOTOGRAPHS</span>
                       </span>
                     )}
                   </div>
                 </div>
 
-                {/* Manifest Body: Split Documentary Image + Engineering Ledger */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                  {/* Left: Documentary Photographic Frame */}
-                  <div className="lg:col-span-5 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto bg-slate-900 overflow-hidden min-h-[220px]">
+                {/* ── Editorial Asymmetric Spread ── */}
+                <div
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center ${
+                    isAlternate ? "lg:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* Documentary Photograph Frame */}
+                  <div
+                    className={`relative w-full rounded-2xl overflow-hidden bg-slate-900 shadow-sm border border-slate-200/80 group-hover:border-slate-400/80 transition-all duration-300 ${
+                      isAlternate
+                        ? "lg:col-span-6 lg:order-2 aspect-[16/10]"
+                        : "lg:col-span-7 lg:order-1 aspect-[16/10]"
+                    }`}
+                  >
                     {project.local_images.length > 0 ? (
                       <Image
                         src={project.local_images[0]}
-                        alt={`${project.title} - Freyer project cargo movement`}
+                        alt={`${project.title} - Freyer project cargo engineering`}
                         fill
-                        className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
-                        sizes="(min-width: 1024px) 40vw, 100vw"
+                        className="object-cover object-center group-hover:scale-102 transition-transform duration-700 ease-out"
+                        sizes="(min-width: 1024px) 60vw, 100vw"
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-slate-400 font-mono text-xs">
-                        Archived Operational File
+                        Archived Operational Record
                       </div>
                     )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
-                  {/* Right: Technical Spec Manifest & Spatial Route */}
-                  <div className="lg:col-span-7 p-5 sm:p-7 flex flex-col justify-between space-y-6 bg-white">
+                  {/* Editorial Narrative & Engineering Specifications */}
+                  <div
+                    className={`space-y-6 ${
+                      isAlternate
+                        ? "lg:col-span-6 lg:order-1"
+                        : "lg:col-span-5 lg:order-2"
+                    }`}
+                  >
+                    {/* Monumental Route Typography */}
                     <div>
-                      {/* Spatial Route Corridor */}
-                      <div className="flex items-center gap-3 text-lg sm:text-2xl font-bold tracking-tight text-[#0b2144]">
+                      <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#c42f0b] font-bold block mb-2">
+                        Transit Corridor
+                      </span>
+                      <div className="flex flex-wrap items-center gap-3 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
                         <span>{project.route_origin}</span>
-                        <div className="flex items-center gap-1 text-[#c42f0b]">
-                          <span className="w-4 sm:w-8 h-[1.5px] bg-[#c42f0b]" />
+                        <div className="flex items-center gap-1.5 text-[#c42f0b]">
+                          <span className="w-5 sm:w-7 h-[2px] bg-[#c42f0b]" />
                           <ArrowRight className="w-4 h-4 shrink-0" />
                         </div>
-                        <span className="text-slate-600 font-light italic">
+                        <span className="text-slate-500 font-light italic">
                           {project.route_destination}
                         </span>
                       </div>
-
-                      {/* Cargo Description / Equipment */}
-                      <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed max-w-2xl font-normal">
-                        {project.details}
-                      </p>
                     </div>
 
-                    {/* Verified Technical Telemetry Ledger (tnum) */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-4 border-t border-slate-100 font-mono">
-                      {project.weight_mt && (
-                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded">
-                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Total Mass</span>
-                          <span className="text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block">
-                            {project.weight_mt} MT
-                          </span>
-                        </div>
-                      )}
-                      {project.weight_kg && !project.weight_mt && (
-                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded">
-                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Total Mass</span>
-                          <span className="text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block">
-                            {project.weight_kg.toLocaleString()} KG
-                          </span>
-                        </div>
-                      )}
-                      {project.dimensions_cm && (
-                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded sm:col-span-2">
-                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Dimensions</span>
-                          <span className="text-xs sm:text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block truncate">
-                            {project.dimensions_cm} cm
-                          </span>
-                        </div>
-                      )}
-                      {project.cbm && (
-                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded">
-                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Volume</span>
-                          <span className="text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block">
-                            {project.cbm} CBM
-                          </span>
-                        </div>
-                      )}
-                      {project.packages && (
-                        <div className="bg-slate-50/80 border border-slate-200/80 p-2.5 rounded">
-                          <span className="text-[9px] uppercase tracking-wider text-slate-500 block">Packaging</span>
-                          <span className="text-sm font-bold text-[#0b2144] tabular-nums mt-0.5 block">
-                            {project.packages} PKG
-                          </span>
-                        </div>
+                    {/* Operational Scope Narrative */}
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl font-normal">
+                      {project.details}
+                    </p>
+
+                    {/* Inline Technical Specifications (tnum) */}
+                    <div className="pt-5 border-t border-slate-200/80">
+                      <div className="flex flex-wrap items-baseline gap-x-6 gap-y-3 text-xs font-mono">
+                        {project.weight_mt && (
+                          <div>
+                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                              Total Mass
+                            </span>
+                            <span className="text-base font-bold text-[#0b2144] tabular-nums">
+                              {project.weight_mt} MT
+                            </span>
+                          </div>
+                        )}
+                        {project.weight_kg && !project.weight_mt && (
+                          <div>
+                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                              Total Mass
+                            </span>
+                            <span className="text-base font-bold text-[#0b2144] tabular-nums">
+                              {project.weight_kg.toLocaleString()} KG
+                            </span>
+                          </div>
+                        )}
+                        {project.dimensions_cm && (
+                          <div>
+                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                              Dimensions
+                            </span>
+                            <span className="text-sm font-semibold text-slate-800 tabular-nums">
+                              {project.dimensions_cm} cm
+                            </span>
+                          </div>
+                        )}
+                        {project.cbm && (
+                          <div>
+                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                              Volume
+                            </span>
+                            <span className="text-sm font-semibold text-slate-800 tabular-nums">
+                              {project.cbm} CBM
+                            </span>
+                          </div>
+                        )}
+                        {project.packages && (
+                          <div>
+                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                              Units
+                            </span>
+                            <span className="text-sm font-semibold text-slate-800 tabular-nums">
+                              {project.packages} PKG
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      {project.special_handling && (
+                        <p className="text-xs text-slate-500 font-mono mt-3 line-clamp-2">
+                          Special Scope: {project.special_handling}
+                        </p>
                       )}
                     </div>
 
-                    {/* Action Bar */}
-                    <div className="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
-                      {project.special_handling ? (
-                        <span className="text-slate-500 font-mono text-[11px] truncate max-w-[280px] sm:max-w-md">
-                          Scope: {project.special_handling}
-                        </span>
-                      ) : (
-                        <span className="text-slate-400 font-mono text-[11px]">
-                          Verified Port-to-Foundation Movement
-                        </span>
-                      )}
-
-                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#0b2144] group-hover:text-[#c42f0b] transition-colors shrink-0 ml-4">
-                        <span>INSPECT CASE FILE</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
+                    {/* Direct Case File Exploration Link */}
+                    <div className="pt-2">
+                      <span className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-[#0b2144] group-hover:text-[#c42f0b] transition-colors uppercase">
+                        <span>Inspect Complete Case File</span>
+                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </div>
