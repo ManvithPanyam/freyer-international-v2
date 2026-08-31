@@ -293,7 +293,7 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
         </AnimatePresence>
       </div>
 
-      {/* ── Deep Project Case Study Modal ── */}
+      {/* ── Deep Project Case Study Modal (Editorial Engineering Dossier) ── */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -301,45 +301,47 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeProjectDetail}
-            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[#071325]/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-project-title"
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              initial={{ scale: 0.96, opacity: 0, y: 15 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              transition={{ duration: 0.2 }}
+              exit={{ scale: 0.96, opacity: 0, y: 15 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-[#0b182d] border border-white/15 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl text-white"
+              className="relative bg-[#fbfcfd] border border-slate-200/90 rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl text-[#0b2144]"
             >
-              {/* Close Button with 44x44 tap target */}
+              {/* Floating Close Button with 44x44 tap target */}
               <button
                 ref={closeButtonRef}
                 onClick={closeProjectDetail}
-                className="absolute top-4 right-4 z-20 min-w-[44px] min-h-[44px] p-2.5 text-slate-400 hover:text-white rounded-full bg-black/70 hover:bg-black/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white flex items-center justify-center"
+                className="absolute top-4 right-4 z-30 min-w-[44px] min-h-[44px] p-2.5 text-slate-600 hover:text-[#0b2144] rounded-full bg-white/90 hover:bg-white border border-slate-200 shadow-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] flex items-center justify-center"
                 aria-label="Close project details"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Main Photo Gallery Viewport */}
-              <div className="relative aspect-[16/9] w-full bg-black/50 overflow-hidden">
+              {/* Lead Archival Photographic Viewport */}
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-900 overflow-hidden">
                 {selectedProject.local_images.length > 0 ? (
                   <Image
                     src={selectedProject.local_images[activeModalImageIndex] || selectedProject.local_images[0]}
                     alt={`${selectedProject.title} - Operational photo`}
                     fill
-                    className="object-contain object-center"
+                    className="object-cover object-center"
                     priority
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-slate-500 font-mono text-xs">
-                    Operation Photo
+                  <div className="w-full h-full flex items-center justify-center text-slate-400 font-mono text-xs">
+                    Archived Operational Record
                   </div>
                 )}
-                <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md border border-white/15 text-[#ff6b4a] text-xs font-mono px-3 py-1 rounded font-semibold uppercase">
+
+                {/* Mode Identifier Badge */}
+                <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md border border-white/20 text-[#ff6b4a] text-xs font-mono px-3 py-1 rounded-full font-bold uppercase">
                   {selectedProject.transport_mode}
                 </div>
 
@@ -352,7 +354,7 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                           prev > 0 ? prev - 1 : selectedProject.local_images.length - 1
                         )
                       }
-                      className="absolute left-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] rounded-full bg-black/60 hover:bg-black/85 text-white flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors"
                       aria-label="Previous photo"
                     >
                       <ChevronLeft className="w-5 h-5" />
@@ -363,32 +365,39 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                           prev < selectedProject.local_images.length - 1 ? prev + 1 : 0
                         )
                       }
-                      className="absolute right-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] rounded-full bg-black/60 hover:bg-black/85 text-white flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors"
                       aria-label="Next photo"
                     >
                       <ChevronRight className="w-5 h-5" />
                     </button>
                   </>
                 )}
+
+                {/* Photo Counter Overlay */}
+                {selectedProject.local_images.length > 1 && (
+                  <div className="absolute bottom-3 right-4 bg-black/70 backdrop-blur-sm text-white font-mono text-[11px] px-2.5 py-1 rounded-md">
+                    {activeModalImageIndex + 1} / {selectedProject.local_images.length}
+                  </div>
+                )}
               </div>
 
-              {/* Thumbnails row */}
+              {/* Thumbnails Row */}
               {selectedProject.local_images.length > 1 && (
-                <div className="p-4 bg-black/40 border-b border-white/10 flex gap-2 overflow-x-auto scrollbar-none">
+                <div className="p-3.5 bg-slate-100/80 border-b border-slate-200 flex gap-2.5 overflow-x-auto scrollbar-none">
                   {selectedProject.local_images.map((imgSrc, idx) => (
                     <button
                       key={idx}
                       onClick={() => setActiveModalImageIndex(idx)}
-                      className={`relative min-w-[56px] min-h-[44px] w-16 h-12 rounded-md overflow-hidden shrink-0 border transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+                      className={`relative min-w-[60px] min-h-[44px] w-16 h-12 rounded-lg overflow-hidden shrink-0 border transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] ${
                         activeModalImageIndex === idx
-                          ? "border-[#ff6b4a] ring-2 ring-[#ff6b4a]/40"
-                          : "border-white/15 opacity-60 hover:opacity-100"
+                          ? "border-[#c42f0b] ring-2 ring-[#c42f0b]/40 shadow-xs"
+                          : "border-slate-300 opacity-60 hover:opacity-100"
                       }`}
                       aria-label={`View photo ${idx + 1}`}
                     >
                       <Image
                         src={imgSrc}
-                        alt={`Photo ${idx + 1} of ${selectedProject.title}`}
+                        alt={`Thumbnail photo ${idx + 1} of ${selectedProject.title}`}
                         fill
                         className="object-cover"
                       />
@@ -397,93 +406,110 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                 </div>
               )}
 
-              {/* Modal Technical Body */}
-              <div className="p-6 sm:p-8 space-y-6">
+              {/* Case Study Dossier Body */}
+              <div className="p-6 sm:p-10 space-y-8">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#ff6b4a] mb-2 uppercase tracking-wider font-semibold">
+                  {/* Spatial Corridor Tag */}
+                  <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#c42f0b] font-bold block mb-1">
+                    Verified Transit Corridor
+                  </span>
+                  <div className="flex flex-wrap items-center gap-3 text-xl sm:text-3xl font-bold tracking-tight text-[#0b2144]">
                     <span>{selectedProject.route_origin}</span>
-                    <ArrowRight className="w-3 h-3" />
-                    <span>{selectedProject.route_destination}</span>
+                    <div className="flex items-center gap-1.5 text-[#c42f0b]">
+                      <span className="w-5 h-[2px] bg-[#c42f0b]" />
+                      <ArrowRight className="w-4 h-4 shrink-0" />
+                    </div>
+                    <span className="text-slate-500 font-light italic">
+                      {selectedProject.route_destination}
+                    </span>
                   </div>
-                  <h2 id="modal-project-title" className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+
+                  <h2 id="modal-project-title" className="text-lg sm:text-xl font-bold text-slate-800 tracking-tight mt-3">
                     {selectedProject.title}
                   </h2>
-                  <p className="text-slate-300 text-sm mt-2 leading-relaxed">
+                  <p className="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
                     {selectedProject.details}
                   </p>
                 </div>
 
-                {/* Technical Spec Sheet */}
-                <div className="bg-white/[0.02] border border-white/10 rounded-xl p-5 sm:p-6">
-                  <h4 className="text-xs font-mono uppercase tracking-widest text-slate-400 font-semibold mb-4">
-                    Technical Specifications
-                  </h4>
-                  <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
-                    <div className="border-b border-white/5 pb-2">
-                      <dt className="text-slate-400">Origin Port / Site</dt>
-                      <dd className="text-white font-semibold mt-0.5">{selectedProject.route_origin}</dd>
+                {/* Technical Engineering Specifications Ledger */}
+                <div className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-2xs space-y-4">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                    <h4 className="text-xs font-mono uppercase tracking-widest text-[#0b2144] font-bold">
+                      Engineering Specifications
+                    </h4>
+                    <span className="text-[11px] font-mono text-slate-400">
+                      CBIC / Port Captaincy Validated
+                    </span>
+                  </div>
+
+                  <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-xs font-mono">
+                    <div className="border-b border-slate-100 pb-2">
+                      <dt className="text-slate-400 text-[10px] uppercase">Origin Port / Site</dt>
+                      <dd className="text-[#0b2144] font-bold text-sm mt-0.5">{selectedProject.route_origin}</dd>
                     </div>
-                    <div className="border-b border-white/5 pb-2">
-                      <dt className="text-slate-400">Destination Port / Site</dt>
-                      <dd className="text-white font-semibold mt-0.5">{selectedProject.route_destination}</dd>
+                    <div className="border-b border-slate-100 pb-2">
+                      <dt className="text-slate-400 text-[10px] uppercase">Destination Port / Site</dt>
+                      <dd className="text-[#0b2144] font-bold text-sm mt-0.5">{selectedProject.route_destination}</dd>
                     </div>
-                    <div className="border-b border-white/5 pb-2">
-                      <dt className="text-slate-400">Transport Method</dt>
-                      <dd className="text-white font-semibold mt-0.5">{selectedProject.transport_mode}</dd>
+                    <div className="border-b border-slate-100 pb-2">
+                      <dt className="text-slate-400 text-[10px] uppercase">Transport Method</dt>
+                      <dd className="text-[#0b2144] font-bold text-sm mt-0.5">{selectedProject.transport_mode}</dd>
                     </div>
-                    <div className="border-b border-white/5 pb-2">
-                      <dt className="text-slate-400">Gross Weight</dt>
-                      <dd className="text-white font-semibold mt-0.5">
-                        {selectedProject.weight_mt ? `${selectedProject.weight_mt} MT` : selectedProject.weight_kg ? `${selectedProject.weight_kg.toLocaleString()} KG` : "Special Weight Profile"}
+                    <div className="border-b border-slate-100 pb-2">
+                      <dt className="text-slate-400 text-[10px] uppercase">Total Mass</dt>
+                      <dd className="text-[#0b2144] font-bold text-sm mt-0.5 tabular-nums">
+                        {selectedProject.weight_mt ? `${selectedProject.weight_mt} MT` : selectedProject.weight_kg ? `${selectedProject.weight_kg.toLocaleString()} KG` : "Special Profile"}
                       </dd>
                     </div>
                     {selectedProject.dimensions_cm && (
-                      <div className="border-b border-white/5 pb-2">
-                        <dt className="text-slate-400">Dimensions (L × W × H)</dt>
-                        <dd className="text-white font-semibold mt-0.5">{selectedProject.dimensions_cm} cm</dd>
+                      <div className="border-b border-slate-100 pb-2">
+                        <dt className="text-slate-400 text-[10px] uppercase">Dimensions (L × W × H)</dt>
+                        <dd className="text-slate-800 font-bold text-sm mt-0.5 tabular-nums">{selectedProject.dimensions_cm} cm</dd>
                       </div>
                     )}
                     {selectedProject.packages && (
-                      <div className="border-b border-white/5 pb-2">
-                        <dt className="text-slate-400">Package Quantity</dt>
-                        <dd className="text-white font-semibold mt-0.5">{selectedProject.packages} Packages</dd>
+                      <div className="border-b border-slate-100 pb-2">
+                        <dt className="text-slate-400 text-[10px] uppercase">Package Quantity</dt>
+                        <dd className="text-slate-800 font-bold text-sm mt-0.5 tabular-nums">{selectedProject.packages} Packages</dd>
                       </div>
                     )}
                     {selectedProject.cbm && (
-                      <div className="border-b border-white/5 pb-2">
-                        <dt className="text-slate-400">Volume</dt>
-                        <dd className="text-white font-semibold mt-0.5">{selectedProject.cbm} CBM</dd>
+                      <div className="border-b border-slate-100 pb-2">
+                        <dt className="text-slate-400 text-[10px] uppercase">Volume</dt>
+                        <dd className="text-slate-800 font-bold text-sm mt-0.5 tabular-nums">{selectedProject.cbm} CBM</dd>
                       </div>
                     )}
                     {selectedProject.incoterm && (
-                      <div className="border-b border-white/5 pb-2">
-                        <dt className="text-slate-400">Commercial Incoterm</dt>
-                        <dd className="text-white font-semibold mt-0.5">{selectedProject.incoterm}</dd>
+                      <div className="border-b border-slate-100 pb-2">
+                        <dt className="text-slate-400 text-[10px] uppercase">Commercial Incoterm</dt>
+                        <dd className="text-slate-800 font-bold text-sm mt-0.5">{selectedProject.incoterm}</dd>
                       </div>
                     )}
                   </dl>
                 </div>
 
-                {/* Execution Notes */}
+                {/* Special Scope / Operational Handling */}
                 {selectedProject.special_handling && (
-                  <div className="p-4 bg-[#ff6b4a]/10 border border-[#ff6b4a]/20 rounded-xl text-xs text-slate-200 leading-relaxed">
-                    <span className="text-[#ff6b4a] font-mono font-semibold block mb-1">
+                  <div className="p-5 bg-slate-50 border border-slate-200/80 rounded-2xl text-xs text-slate-700 leading-relaxed">
+                    <span className="text-[#c42f0b] font-mono font-bold block mb-1 uppercase tracking-wider text-[11px]">
                       Operational Handling &amp; Engineering Scope:
                     </span>
                     {selectedProject.special_handling}
                   </div>
                 )}
 
-                {/* CTA Action */}
-                <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-                  <span className="text-xs font-mono text-slate-400">
-                    Official project record &middot; Freyer International Logistics
+                {/* Bottom Action Strip */}
+                <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+                  <span className="text-xs font-mono text-slate-500">
+                    Official Archival Case File &middot; Freyer International Logistics
                   </span>
                   <a
                     href="/#quote"
-                    className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold px-5 py-3 rounded transition-colors"
+                    onClick={closeProjectDetail}
+                    className="inline-flex items-center gap-2 bg-[#0b2144] hover:bg-[#071325] text-white text-xs font-mono font-semibold px-6 py-3 rounded-full transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b]"
                   >
-                    <span>Request Quote for Similar Cargo</span>
+                    <span>Request Quote For Similar Cargo</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
