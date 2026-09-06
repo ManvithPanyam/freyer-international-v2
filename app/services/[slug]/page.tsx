@@ -207,10 +207,10 @@ export async function generateMetadata({
   const service = SERVICES_DATA[slug];
   if (!service) return { title: "Service Not Found" };
 
-  const canonicalUrl = `https://freyer-international-logistics.vercel.app/services/${slug}`;
+  const canonicalUrl = `https://freyer-international-v2.vercel.app/services/${slug}`;
 
   return {
-    title: `${service.title} | Freyer International Logistics`,
+    title: service.title,
     description: `${service.title}: ${service.tagline} ${service.overview[0]}`,
     alternates: {
       canonical: canonicalUrl,
@@ -332,6 +332,103 @@ export default async function ServiceDetailPage({
               ))}
             </div>
           </div>
+
+          {/* ── Dedicated Aviation Technical Specification Matrix (Air Freight Proof-of-Pattern) ── */}
+          {service.slug === "air-freight" && (
+            <div className="bg-slate-900 text-white p-8 sm:p-10 lg:p-12 rounded-2xl border border-slate-800 shadow-xl space-y-8">
+              <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-white/10 gap-4">
+                <div>
+                  <span className="text-[#ff6b4a] text-xs font-mono tracking-widest uppercase font-semibold block mb-1">
+                    Aviation Engineering &amp; Charter Capacity
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    Freighter Aircraft Payload &amp; Dimension Envelopes
+                  </h3>
+                </div>
+                <span className="text-xs font-mono text-slate-400">
+                  IATA Cargo Agent Regulated Standards
+                </span>
+              </div>
+
+              {/* Technical Aircraft Matrix */}
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-mono text-xs border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10 text-slate-400 uppercase text-[10px] tracking-wider">
+                      <th className="pb-3 pr-4">Aircraft Type</th>
+                      <th className="pb-3 px-4">Max Payload</th>
+                      <th className="pb-3 px-4">Cargo Volume</th>
+                      <th className="pb-3 px-4">Main Deck Door (W × H)</th>
+                      <th className="pb-3 pl-4">Primary Application</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5 text-slate-200">
+                    <tr className="hover:bg-white/5 transition-colors">
+                      <td className="py-3.5 pr-4 font-bold text-white">Boeing 777-200F</td>
+                      <td className="py-3.5 px-4 text-emerald-400">102,000 KG</td>
+                      <td className="py-3.5 px-4">653 CBM</td>
+                      <td className="py-3.5 px-4">3.72 m &times; 3.05 m</td>
+                      <td className="py-3.5 pl-4 text-slate-400">Intercontinental long-haul express / High-density cargo</td>
+                    </tr>
+                    <tr className="hover:bg-white/5 transition-colors">
+                      <td className="py-3.5 pr-4 font-bold text-white">Boeing 747-8F</td>
+                      <td className="py-3.5 px-4 text-emerald-400">137,700 KG</td>
+                      <td className="py-3.5 px-4">858 CBM</td>
+                      <td className="py-3.5 px-4">Nose Door: 3.40 m &times; 2.49 m</td>
+                      <td className="py-3.5 pl-4 text-slate-400">Straight-in nose loading for long ODC machinery &amp; pipes</td>
+                    </tr>
+                    <tr className="hover:bg-white/5 transition-colors">
+                      <td className="py-3.5 pr-4 font-bold text-white">Airbus A330-200F</td>
+                      <td className="py-3.5 px-4 text-emerald-400">65,000 KG</td>
+                      <td className="py-3.5 px-4">475 CBM</td>
+                      <td className="py-3.5 px-4">3.58 m &times; 2.56 m</td>
+                      <td className="py-3.5 pl-4 text-slate-400">Medium-range regional charter / Pharma cold-chain pallets</td>
+                    </tr>
+                    <tr className="hover:bg-white/5 transition-colors">
+                      <td className="py-3.5 pr-4 font-bold text-white">Antonov AN-124</td>
+                      <td className="py-3.5 px-4 text-emerald-400">120,000 KG</td>
+                      <td className="py-3.5 px-4">1,040 CBM</td>
+                      <td className="py-3.5 px-4">Drive-on Ramp (6.4m &times; 4.4m)</td>
+                      <td className="py-3.5 pl-4 text-slate-400">Outsized industrial equipment, aerospace engines &amp; project lifts</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Cold-Chain & AOG Assurance Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-white/10">
+                <div className="bg-white/5 p-4 rounded-xl border border-white/5 space-y-1.5">
+                  <span className="text-[10px] font-mono uppercase text-[#ff6b4a] font-bold block">
+                    Pharma GDP Cold Chain
+                  </span>
+                  <h4 className="text-sm font-bold text-white">Active Envirotainer Certified</h4>
+                  <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                    Temperature integrity monitoring (+2&deg;C to +8&deg;C, -20&deg;C) with ramp-side cool dollies at AISATS and Menzies Coolports.
+                  </p>
+                </div>
+
+                <div className="bg-white/5 p-4 rounded-xl border border-white/5 space-y-1.5">
+                  <span className="text-[10px] font-mono uppercase text-[#ff6b4a] font-bold block">
+                    Emergency Dispatch
+                  </span>
+                  <h4 className="text-sm font-bold text-white">24/7 AOG Control Tower</h4>
+                  <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                    Critical Aircraft On Ground parts dispatched with 120-minute departure cut-offs and hand-carry on-board courier (OBC) options.
+                  </p>
+                </div>
+
+                <div className="bg-white/5 p-4 rounded-xl border border-white/5 space-y-1.5">
+                  <span className="text-[10px] font-mono uppercase text-[#ff6b4a] font-bold block">
+                    Digital Operations
+                  </span>
+                  <h4 className="text-sm font-bold text-white">IATA e-AWB Automated EDI</h4>
+                  <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                    Instant airway bill issuance, automated customs manifests on ICEGATE, and real-time flight milestone notifications.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* ── Institutional Proof Block ── */}
           <div className="bg-[#060f1e] text-white p-8 sm:p-12 rounded-2xl border border-white/10 shadow-lg flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">

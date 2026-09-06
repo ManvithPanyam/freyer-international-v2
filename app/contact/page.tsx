@@ -2,19 +2,127 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowUpRight } from "lucide-react";
+import { RfqProduct } from "@/components/home/RfqProduct";
+import {
+  Building2,
+  Phone,
+  Mail,
+  MapPin,
+  ShieldCheck,
+  Clock,
+  ArrowUpRight,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Desk & Corporate Offices | Freyer International Logistics",
-  description: "Connect with Freyer International Logistics corporate headquarters in Bengaluru, primary operational hub in Chennai, or branch desks across India.",
+  title: "Contact Desk & Corporate Offices",
+  description:
+    "Direct commercial desks, tender RFQs, and operational hubs across 9 locations in India: Bengaluru HQ, Chennai, Mumbai, Delhi NCR, Hyderabad, Vizag, Coimbatore, Tuticorin, and Ahmedabad.",
   alternates: {
     canonical: "/contact",
   },
 };
 
-const CONTACTS = [
-  { city: "Bengaluru", type: "Corporate headquarters", email: "Vijay.Palagiri@freyerinternational.com", phone: "080 4120 0300", address: "Marathahalli, Bengaluru — Karnataka" },
-  { city: "Chennai", type: "Primary operational hub", email: "Selvakumar@freyerinternational.com", phone: "+91 44 4319 1919", address: "Egmore, Chennai — Tamil Nadu" },
+interface BranchContact {
+  city: string;
+  role: string;
+  region: "Corporate HQ" | "South India" | "North India" | "West India";
+  address: string;
+  phone: string;
+  email: string;
+  gateway: string;
+}
+
+const ALL_BRANCHES: BranchContact[] = [
+  {
+    city: "Bengaluru",
+    role: "Corporate Registered Headquarters",
+    region: "Corporate HQ",
+    address: "No.19, KMJ AVEN, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru - 560037, Karnataka",
+    phone: "+91 80 4120 0300",
+    email: "blr.corporate@freyerinternational.com",
+    gateway: "Kempegowda Int'l Airport (BLR) & Whitefield ICD",
+  },
+  {
+    city: "Chennai (Central)",
+    role: "Primary Maritime & Project Cargo Operations",
+    region: "South India",
+    address: "TAGA Tower, New No: 45 Old No 20, 1st Floor, 2nd Street, Sait Colony, Egmore, Chennai - 600008, Tamil Nadu",
+    phone: "+91 44 4319 1919",
+    email: "chennai.ops@freyerinternational.com",
+    gateway: "Chennai Port (CITPL / CCTPL) & Kamarajar Port",
+  },
+  {
+    city: "Chennai Airport",
+    role: "Airfreight & Pharma Cold-Chain Terminal",
+    region: "South India",
+    address: "No.2 Ambedkar Street, G.S.T. Road, Meenambakkam, Chennai - 600017, Tamil Nadu",
+    phone: "+91 44 4319 1920",
+    email: "chennai.air@freyerinternational.com",
+    gateway: "Chennai International Airport Cargo Complex (MAA)",
+  },
+  {
+    city: "Mumbai",
+    role: "West Coast Maritime & Container Gateway",
+    region: "West India",
+    address: "A - 401, Polaris Building, Off Makwana Road, Marol, Andheri (East), Mumbai - 400059, Maharashtra",
+    phone: "+91 22 4619 1301",
+    email: "mumbai.ops@freyerinternational.com",
+    gateway: "Jawaharlal Nehru Port (JNPT / Nhava Sheva) & BOM Air Cargo",
+  },
+  {
+    city: "Delhi / NCR",
+    role: "North India Gateway & Automotive Desk",
+    region: "North India",
+    address: "Plot No. 524, First Floor, Udyog Vihar Phase 5, Gurugram - 122016, Haryana",
+    phone: "+91 124 406 8388",
+    email: "delhi.ops@freyerinternational.com",
+    gateway: "Indira Gandhi Int'l Airport (DEL) & TKD ICD",
+  },
+  {
+    city: "Hyderabad",
+    role: "Deccan Pharma & Life Sciences Gateway",
+    region: "South India",
+    address: "#109, 1st Floor, Ashoka Bhoopal Chambers, S.P. Road, Secunderabad - 500003, Telangana",
+    phone: "+91 40 4856 1797",
+    email: "hyd.ops@freyerinternational.com",
+    gateway: "Rajiv Gandhi Int'l Airport (HYD) Cargo Complex",
+  },
+  {
+    city: "Visakhapatnam",
+    role: "East Coast Deep-Water Seaport Desk",
+    region: "South India",
+    address: "YCN Complex, D.No.58-1-256, NAD X Road, Visakhapatnam - 530009, Andhra Pradesh",
+    phone: "+91 891 278 4910",
+    email: "vizag.ops@freyerinternational.com",
+    gateway: "Visakhapatnam Port Trust (VPT) & Gangavaram Port",
+  },
+  {
+    city: "Coimbatore",
+    role: "Industrial Machinery & Textile Corridor",
+    region: "South India",
+    address: "S.F.No. 407/1, Avinashi Road, Peelamedu, Coimbatore - 641004, Tamil Nadu",
+    phone: "+91 422 439 1919",
+    email: "cbe.ops@freyerinternational.com",
+    gateway: "Irugur ICD & Coimbatore International Airport",
+  },
+  {
+    city: "Tuticorin",
+    role: "Southern Deep-Sea Maritime Gateway",
+    region: "South India",
+    address: "No. 4/128-B, Madurai Road, Meelavittan, Tuticorin - 628008, Tamil Nadu",
+    phone: "+91 461 234 1919",
+    email: "tuticorin.ops@freyerinternational.com",
+    gateway: "V.O. Chidambaranar Port (VOCPT)",
+  },
+  {
+    city: "Ahmedabad",
+    role: "Gujarat Commercial & Chemical Corridor",
+    region: "West India",
+    address: "304, Saffron Building, Near Panchwati Cross Road, Ambawadi, Ahmedabad - 380006, Gujarat",
+    phone: "+91 79 4891 1919",
+    email: "gujarat.ops@freyerinternational.com",
+    gateway: "Mundra Port (INMUN) & Khodiyar ICD",
+  },
 ];
 
 export default function ContactPage() {
@@ -22,16 +130,16 @@ export default function ContactPage() {
     <>
       <Header />
       <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-24 sm:pt-32">
-        <section className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
+        {/* Page Header */}
+        <section className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 mb-12">
           <div className="mb-3 flex items-center gap-2 font-mono text-[11px] text-slate-400">
             <Link href="/" className="transition-colors hover:text-[#c42f0b]">Home</Link>
             <span>/</span>
-            <span className="text-slate-700">Contact</span>
+            <span className="text-slate-700 font-medium">Contact Desks</span>
           </div>
-
           <div className="max-w-4xl pt-2 sm:pt-4">
             <span className="block font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#c42f0b] sm:text-sm mb-3">
-              Commercial desks &amp; inquiries
+              Commercial Desks &amp; Operating Network
             </span>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
               Talk to the team
@@ -41,49 +149,108 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="mt-4 sm:mt-5 max-w-3xl text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600">
-              Direct communication with our corporate office in Bengaluru, primary seaport operations in Chennai, and station desks across India.
+              Direct routing support from licensed customs brokers, air charter controllers, and project engineers across 9 regional hubs in India.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/#quote" className="inline-flex items-center gap-2 rounded-full bg-[#0b2144] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 shadow-sm">
-                Request a quote <ArrowUpRight className="h-4 w-4" />
-              </Link>
-              <Link href="/locations" className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-[#0b2144] transition-colors hover:border-[#0b2144]">
-                Find a branch
-              </Link>
-            </div>
           </div>
         </section>
 
-        <section className="mx-auto mt-24 max-w-[1440px] px-6 sm:mt-32 sm:px-10 lg:px-16">
-          <div className="border-y border-slate-200">
-            {CONTACTS.map((contact) => (
-              <div key={contact.city} className="grid gap-8 border-b border-slate-200 py-10 last:border-b-0 sm:grid-cols-[1.1fr_1fr_1fr] sm:items-center sm:py-14">
-                <div>
-                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#c42f0b]">{contact.type}</span>
-                  <h2 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">{contact.city}</h2>
-                  <p className="mt-2 text-sm text-slate-500">{contact.address}</p>
+        {/* 4-Step Enterprise RFQ Module */}
+        <div className="mb-20">
+          <RfqProduct />
+        </div>
+
+        {/* Direct Branch Office Directory */}
+        <section className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
+          <div className="mb-10 pb-6 border-b border-slate-200 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-[#c42f0b] font-bold block mb-1">
+                Direct Station Directory
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0b2144]">
+                9 Regional Company Hubs &amp; Desks
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-500 max-w-md font-mono">
+              All telephone numbers route directly to corporate landline desks (Mon&ndash;Sat, 09:00&ndash;18:00 IST). Emergency AOG / Project lines operate 24/7.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ALL_BRANCHES.map((b) => (
+              <div
+                key={b.city}
+                className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
+                        {b.region}
+                      </span>
+                      <h3 className="text-xl font-bold text-[#0b2144]">{b.city}</h3>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
+                      Active Desk
+                    </span>
+                  </div>
+
+                  <p className="text-xs font-mono text-[#c42f0b] font-medium leading-tight">
+                    {b.role}
+                  </p>
+
+                  <div className="text-xs text-slate-600 space-y-2 pt-2 border-t border-slate-100">
+                    <div className="flex items-start gap-2">
+                      <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
+                      <span className="font-sans leading-relaxed">{b.address}</span>
+                    </div>
+
+                    <div className="flex items-center gap-2 font-mono text-slate-500 text-[11px]">
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>{b.gateway}</span>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-mono text-xs uppercase tracking-[0.15em] text-slate-400">Direct line</div>
-                  <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="mt-2 block text-lg font-semibold hover:text-[#c42f0b]">{contact.phone}</a>
-                </div>
-                <div>
-                  <div className="font-mono text-xs uppercase tracking-[0.15em] text-slate-400">Email</div>
-                  <a href={`mailto:${contact.email}`} className="mt-2 inline-flex items-center gap-2 text-base font-semibold hover:text-[#c42f0b]">{contact.email} <ArrowUpRight className="h-4 w-4" /></a>
+
+                <div className="mt-6 pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-xs">
+                  <a
+                    href={`tel:${b.phone.replace(/[^0-9+]/g, "")}`}
+                    className="flex items-center gap-1.5 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-800 transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-[#c42f0b]" />
+                    <span className="truncate">{b.phone}</span>
+                  </a>
+                  <a
+                    href={`mailto:${b.email}`}
+                    className="flex items-center gap-1.5 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-800 transition-colors"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-[#c42f0b]" />
+                    <span className="truncate">Email Desk</span>
+                  </a>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-20 grid gap-10 sm:grid-cols-2 sm:gap-16">
-            <div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400">Commercial</span>
-              <a href="mailto:info@freyerinternational.com" className="mt-3 block text-2xl font-semibold tracking-tight hover:text-[#c42f0b]">info@freyerinternational.com</a>
+          {/* Institutional Contact Bar */}
+          <div className="mt-16 p-8 rounded-2xl bg-[#0b2144] text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="space-y-1">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b4a] font-bold">
+                Tender &amp; Global Procurement Desk
+              </span>
+              <h3 className="text-xl sm:text-2xl font-bold text-white">
+                Have a multi-lane annual tender or enterprise RFQ?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
+                Direct commercial proposals submitted to corporate management in Bengaluru within 24 hours.
+              </p>
             </div>
-            <div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-slate-400">Careers</span>
-              <a href="mailto:careers@freyerinternational.com" className="mt-3 block text-2xl font-semibold tracking-tight hover:text-[#c42f0b]">careers@freyerinternational.com</a>
-            </div>
+            <a
+              href="mailto:info@freyerinternational.com?subject=Enterprise%20Freight%20Tender%20Inquiry"
+              className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white font-mono text-xs sm:text-sm font-semibold px-6 py-3.5 rounded-xl transition-colors shrink-0 shadow-lg shadow-[#c42f0b]/30"
+            >
+              <span>Email Commercial Tender Desk</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
           </div>
         </section>
       </main>

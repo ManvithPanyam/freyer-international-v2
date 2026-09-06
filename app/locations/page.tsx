@@ -5,8 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { MinimalLocations } from "@/components/locations/MinimalLocations";
 
 export const metadata: Metadata = {
-  title: "Locations & Global Network | Freyer International Logistics",
-  description: "A physical Indian network across 10 branch locations, connected globally through established forwarding alliances.",
+  title: "Locations & Global Network",
+  description: "A physical Indian network across 9 branch hubs and 10 facilities, connected globally through established forwarding alliances.",
   alternates: {
     canonical: "/locations",
   },
@@ -28,7 +28,7 @@ export default function LocationsPage() {
               Physical domestic footprint
             </span>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-              10 operating hubs across India.
+              9 operating hubs across India.
               <br />
               <span className="font-light italic text-slate-500">
                 190+ countries through global alliances.

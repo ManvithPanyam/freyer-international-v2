@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AboutExplorer } from "@/components/about/AboutExplorer";
 
 export const metadata: Metadata = {
-  title: "About Freyer International Logistics | Credentials, Story & Governance",
+  title: "About Us | Credentials, Story & Governance",
   description:
     "Explore the corporate history, Indian Customs AEO Tier-2 certification, IATA accreditation, Great Place to Work certification, and leadership of Freyer International Logistics.",
   alternates: {

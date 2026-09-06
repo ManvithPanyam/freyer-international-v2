@@ -6,7 +6,7 @@ import { ProjectsExplorer } from "@/components/projects/ProjectsExplorer";
 import projectsData from "@/freyer-forensics-v2/content/projects.json";
 
 export const metadata: Metadata = {
-  title: "Documented Project Movements | Freyer International Logistics",
+  title: "Documented Project Movements",
   description:
     "Operational case studies of heavy-lift, over-dimensional cargo (ODC), breakbulk, and turnkey multimodal engineering by Freyer International Logistics.",
   alternates: {

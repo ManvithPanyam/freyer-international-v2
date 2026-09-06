@@ -217,66 +217,91 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                     </p>
 
                     {/* Inline Technical Specifications (tnum) */}
-                    <div className="pt-5 border-t border-slate-200/80">
-                      <div className="flex flex-wrap items-baseline gap-x-6 gap-y-3 text-xs font-mono">
-                        {project.weight_mt && (
-                          <div>
-                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
-                              Total Mass
-                            </span>
-                            <span className="text-base font-bold text-[#0b2144] tabular-nums">
-                              {project.weight_mt} MT
-                            </span>
+                    {(project.weight_mt ||
+                      project.weight_kg ||
+                      project.dimensions_cm ||
+                      project.cbm ||
+                      project.packages ||
+                      project.incoterm ||
+                      project.special_handling) && (
+                      <div className="pt-5 border-t border-slate-200/80">
+                        {(project.weight_mt ||
+                          project.weight_kg ||
+                          project.dimensions_cm ||
+                          project.cbm ||
+                          project.packages ||
+                          project.incoterm) && (
+                          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-3 text-xs font-mono">
+                            {project.weight_mt && (
+                              <div>
+                                <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                                  Total Mass
+                                </span>
+                                <span className="text-base font-bold text-[#0b2144] tabular-nums">
+                                  {project.weight_mt} MT
+                                </span>
+                              </div>
+                            )}
+                            {project.weight_kg && !project.weight_mt && (
+                              <div>
+                                <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                                  Total Mass
+                                </span>
+                                <span className="text-base font-bold text-[#0b2144] tabular-nums">
+                                  {project.weight_kg.toLocaleString()} KG
+                                </span>
+                              </div>
+                            )}
+                            {project.dimensions_cm && (
+                              <div>
+                                <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                                  Dimensions
+                                </span>
+                                <span className="text-sm font-semibold text-slate-800 tabular-nums">
+                                  {project.dimensions_cm} cm
+                                </span>
+                              </div>
+                            )}
+                            {project.cbm && (
+                              <div>
+                                <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                                  Volume
+                                </span>
+                                <span className="text-sm font-semibold text-slate-800 tabular-nums">
+                                  {project.cbm} CBM
+                                </span>
+                              </div>
+                            )}
+                            {project.packages && (
+                              <div>
+                                <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                                  Units
+                                </span>
+                                <span className="text-sm font-semibold text-slate-800 tabular-nums">
+                                  {project.packages} PKG
+                                </span>
+                              </div>
+                            )}
+                            {project.incoterm && (
+                              <div>
+                                <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
+                                  Incoterm
+                                </span>
+                                <span className="text-sm font-semibold text-slate-800">
+                                  {project.incoterm}
+                                </span>
+                              </div>
+                            )}
                           </div>
                         )}
-                        {project.weight_kg && !project.weight_mt && (
-                          <div>
-                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
-                              Total Mass
-                            </span>
-                            <span className="text-base font-bold text-[#0b2144] tabular-nums">
-                              {project.weight_kg.toLocaleString()} KG
-                            </span>
-                          </div>
-                        )}
-                        {project.dimensions_cm && (
-                          <div>
-                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
-                              Dimensions
-                            </span>
-                            <span className="text-sm font-semibold text-slate-800 tabular-nums">
-                              {project.dimensions_cm} cm
-                            </span>
-                          </div>
-                        )}
-                        {project.cbm && (
-                          <div>
-                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
-                              Volume
-                            </span>
-                            <span className="text-sm font-semibold text-slate-800 tabular-nums">
-                              {project.cbm} CBM
-                            </span>
-                          </div>
-                        )}
-                        {project.packages && (
-                          <div>
-                            <span className="text-slate-400 block text-[9px] uppercase tracking-wider">
-                              Units
-                            </span>
-                            <span className="text-sm font-semibold text-slate-800 tabular-nums">
-                              {project.packages} PKG
-                            </span>
-                          </div>
+
+                        {project.special_handling && (
+                          <p className="text-xs text-slate-500 font-mono mt-3 line-clamp-2">
+                            Special Scope: {project.special_handling}
+                          </p>
                         )}
                       </div>
-
-                      {project.special_handling && (
-                        <p className="text-xs text-slate-500 font-mono mt-3 line-clamp-2">
-                          Special Scope: {project.special_handling}
-                        </p>
-                      )}
-                    </div>
+                    )}
 
                     {/* Direct Case File Exploration Link */}
                     <div className="pt-2">
@@ -456,12 +481,22 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                       <dt className="text-slate-400 text-[10px] uppercase">Transport Method</dt>
                       <dd className="text-[#0b2144] font-bold text-sm mt-0.5">{selectedProject.transport_mode}</dd>
                     </div>
-                    <div className="border-b border-slate-100 pb-2">
-                      <dt className="text-slate-400 text-[10px] uppercase">Total Mass</dt>
-                      <dd className="text-[#0b2144] font-bold text-sm mt-0.5 tabular-nums">
-                        {selectedProject.weight_mt ? `${selectedProject.weight_mt} MT` : selectedProject.weight_kg ? `${selectedProject.weight_kg.toLocaleString()} KG` : "Special Profile"}
-                      </dd>
-                    </div>
+                    {(selectedProject.weight_mt || selectedProject.weight_kg) && (
+                      <div className="border-b border-slate-100 pb-2">
+                        <dt className="text-slate-400 text-[10px] uppercase">Total Mass</dt>
+                        <dd className="text-[#0b2144] font-bold text-sm mt-0.5 tabular-nums">
+                          {selectedProject.weight_mt
+                            ? `${selectedProject.weight_mt} MT`
+                            : `${selectedProject.weight_kg?.toLocaleString()} KG`}
+                        </dd>
+                      </div>
+                    )}
+                    {selectedProject.date && (
+                      <div className="border-b border-slate-100 pb-2">
+                        <dt className="text-slate-400 text-[10px] uppercase">Execution Period</dt>
+                        <dd className="text-slate-800 font-bold text-sm mt-0.5">{selectedProject.date}</dd>
+                      </div>
+                    )}
                     {selectedProject.dimensions_cm && (
                       <div className="border-b border-slate-100 pb-2">
                         <dt className="text-slate-400 text-[10px] uppercase">Dimensions (L × W × H)</dt>

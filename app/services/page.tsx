@@ -6,7 +6,7 @@ import { ServicesExplorer } from "@/components/services/ServicesExplorer";
 import { ServiceFAQ } from "@/components/services/ServiceFAQ";
 
 export const metadata: Metadata = {
-  title: "Services & Capabilities | Freyer International Logistics",
+  title: "Services & Capabilities",
   description:
     "Six integrated logistics disciplines: 1,000,000+ sq ft warehousing & 3PL, turnkey project cargo engineering, ocean FCL/LCL, air charter, AEO-certified customs brokerage, and cargo risk management.",
   alternates: {

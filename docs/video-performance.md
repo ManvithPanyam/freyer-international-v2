@@ -2,7 +2,7 @@
 
 ## 1. Live Production Vercel Baseline vs. Adaptive HLS
 
-Target: `https://freyer-international-logistics.vercel.app/`  
+Target: `https://freyer-international-v2.vercel.app/`  
 Deployed Commit: `6330440` (HLS Adaptive Bitrate Ladder)
 
 | Metric / Property | Wi-Fi / Unthrottled | Fast 4G (1.5 Mbps, 40ms RTT) | Slow 4G (500 Kbps, 150ms RTT) |

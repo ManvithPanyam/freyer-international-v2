@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Mail, Award } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Careers & Culture | Freyer International Logistics",
+  title: "Careers & Culture",
   description: "Join Freyer International Logistics, a Great Place to Work certified logistics organization operating across 10 corporate branch hubs in India.",
   alternates: {
     canonical: "/careers",

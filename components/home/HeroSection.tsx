@@ -3,12 +3,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Play, Pause } from "lucide-react";
+import { ArrowRight, Play, Pause, Search } from "lucide-react";
 import Hls from "hls.js";
+import { TrackShipmentModal } from "@/components/modals/TrackShipmentModal";
 
 export function HeroSection() {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isTrackModalOpen, setIsTrackModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Respect prefers-reduced-motion
@@ -167,27 +169,34 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-xl font-normal leading-relaxed"
+          className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-2xl font-normal leading-relaxed"
         >
-          International air &amp; ocean freight, AEO-certified customs
-          brokerage, and turnkey project cargo across 10 operational hubs in
-          India.
+          Nationwide reach, personal accountability. International air &amp; ocean freight, AEO-certified customs brokerage, and turnkey project cargo across 9 national operating hubs in India.
         </motion.p>
 
-        {/* Single Primary Action: Request a Quote */}
+        {/* Dual Actions: Request a Quote + Track Consignment */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-10 flex items-center justify-center w-full sm:w-auto"
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
         >
           <a
             href="/#quote"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold px-9 py-4 rounded-sm text-sm sm:text-base transition-colors duration-150 shadow-2xl shadow-[#c42f0b]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07152b]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold px-8 py-4 rounded-xl text-sm sm:text-base transition-colors duration-150 shadow-2xl shadow-[#c42f0b]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07152b]"
           >
             <span>Request a Quote</span>
             <ArrowRight className="w-4 h-4" />
           </a>
+
+          <button
+            type="button"
+            onClick={() => setIsTrackModalOpen(true)}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 active:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl text-sm sm:text-base transition-colors duration-150 border border-white/20 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07152b]"
+          >
+            <Search className="w-4 h-4 text-slate-300" />
+            <span>Track Consignment</span>
+          </button>
         </motion.div>
 
         {/* Scroll cue */}
@@ -195,11 +204,17 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-24 text-[10px] font-mono tracking-[0.25em] text-slate-500 uppercase"
+          className="mt-20 text-[10px] font-mono tracking-[0.25em] text-slate-500 uppercase"
         >
-          Scroll to explore ↓
+          Scroll to explore &darr;
         </motion.div>
       </div>
+
+      {/* Live Consignment Tracking Modal */}
+      <TrackShipmentModal
+        isOpen={isTrackModalOpen}
+        onClose={() => setIsTrackModalOpen(false)}
+      />
     </section>
   );
 }

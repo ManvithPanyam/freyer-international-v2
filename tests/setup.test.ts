@@ -37,3 +37,33 @@ describe("RFQ Schema Validation", () => {
     expect(result.success).toBe(false);
   });
 });
+
+describe("Credibility & SEO Integrity Tests", () => {
+  it("verifies all 11 documented projects data integrity", async () => {
+    const projects = (await import("../freyer-forensics-v2/content/projects.json")).default;
+    expect(projects).toHaveLength(11);
+
+    for (const p of projects) {
+      expect(p.id).toBeDefined();
+      expect(p.route_origin).toBeTruthy();
+      expect(p.route_destination).toBeTruthy();
+      expect(p.transport_mode).toBeTruthy();
+      expect(p.local_images.length).toBeGreaterThan(0);
+
+      // Project 8 (Hamburg to Jeddah) has unverified weight, must remain null without fabricated values
+      if (p.id === 8) {
+        expect(p.weight_kg).toBeNull();
+        expect(p.weight_mt).toBeNull();
+        expect(p.incoterm).toBe("Ex-Works");
+      }
+    }
+  });
+
+  it("verifies all 9 distinct industry accolades exist on disk", async () => {
+    const fs = await import("fs");
+    const path = await import("path");
+    const awardsDir = path.join(process.cwd(), "public/images/awards");
+    const files = fs.readdirSync(awardsDir).filter(f => /\.(jpe?g|png)$/i.test(f));
+    expect(files).toHaveLength(9);
+  });
+});

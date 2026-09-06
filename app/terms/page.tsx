@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Freyer International Logistics",
+  title: "Terms & Conditions",
   description:
     "Commercial trading terms, multimodal carriage conditions, quotation validity, and limitation of liability governing services by Freyer International Logistics Pvt. Ltd.",
   alternates: {

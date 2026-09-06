@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Freyer International Logistics",
+  title: "Privacy Policy",
   description:
     "Data governance notice and privacy policy of Freyer International Logistics Pvt. Ltd., detailing information processing under India's DPDP Act 2023 & 2025 Rules, AEO Tier-2 customs compliance, and global forwarding data workflows.",
   alternates: {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
@@ -66,6 +66,24 @@ const REGIONAL_BRANCHES = [
 
 export function AboutExplorer() {
   const [showAllAwardsModal, setShowAllAwardsModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!showAllAwardsModal) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowAllAwardsModal(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showAllAwardsModal]);
 
   return (
     <div className="space-y-20 sm:space-y-28">
@@ -365,7 +383,7 @@ export function AboutExplorer() {
             onClick={() => setShowAllAwardsModal(true)}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c42f0b] hover:text-[#0b2144] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] self-start sm:self-auto"
           >
-            <span>View All 9 Accolades</span>
+            <span>View All {ALL_AWARDS.length} Accolades</span>
             <ChevronRight className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -623,7 +641,7 @@ export function AboutExplorer() {
             >
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0b2144]">All 9 Industry Accolades &amp; Honors</h3>
+                  <h3 className="text-xl font-bold text-[#0b2144]">All {ALL_AWARDS.length} Industry Accolades &amp; Honors</h3>
                   <p className="text-xs text-slate-500 mt-0.5">Verified awards from maritime, forwarding, and logistics forums.</p>
                 </div>
                 <button

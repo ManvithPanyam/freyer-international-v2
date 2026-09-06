@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 
-const BASE_URL = "https://freyer-international-logistics.vercel.app";
+const BASE_URL = "https://freyer-international-v2.vercel.app";
 
 const ROUTES = [
   { slug: "home", path: "/" },
