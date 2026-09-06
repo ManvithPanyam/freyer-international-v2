@@ -13,17 +13,17 @@ const FAQS: FAQItem[] = [
   {
     question: "What core logistics disciplines does Freyer International provide?",
     answer:
-      "Freyer operates across 6 integrated disciplines: Project Cargo & Heavy-Lift Engineering, High-Bay Warehousing & 3PL Distribution, Ocean Freight Forwarding (FCL/LCL), Scheduled Airfreight & Charters, AEO Tier-2 Licensed Customs Brokerage, and Cargo Risk Management.",
+      "Freyer operates across 6 integrated disciplines: Project Cargo & Heavy-Lift Engineering, High-Bay Warehousing & 3PL Distribution, Ocean Freight Forwarding (FCL/LCL), Scheduled Airfreight & Charters, AEO Certified Customs Brokerage, and Cargo Risk Management.",
   },
   {
     question: "Which Indian ports, airports, and commercial centers does Freyer operate from?",
     answer:
-      "Freyer maintains dedicated physical operations across 10 strategic Indian commercial hubs: Corporate Registered Office in Bengaluru, primary seaport gateway in Chennai (Egmore & Meenambakkam Airport), North India hub in Delhi/NCR, West Coast hub in Mumbai, Deccan hub in Hyderabad, East Coast maritime hub in Visakhapatnam, plus industrial stations in Coimbatore, Tuticorin, and Ahmedabad.",
+      "Freyer maintains dedicated physical operations across 9 branches in 8 strategic Indian commercial cities: Corporate Registered Office in Bengaluru, primary seaport & airport gateway in Chennai (Egmore & Meenambakkam), North India hub in Delhi/NCR, West Coast hub in Mumbai, Deccan hub in Hyderabad, East Coast maritime hub in Visakhapatnam, plus industrial stations in Coimbatore, Tuticorin, and Ahmedabad.",
   },
   {
     question: "How does Freyer coordinate door-to-door overseas cargo outside India?",
     answer:
-      "Freyer is a certified active member of premier global freight forwarder consortiums including WCA World, Security Cargo Network (SCN), Worldwide Partners Alliance (WPA), and FDX Global. This grants our clients audited, reciprocal agency coverage across 190+ countries with door-to-door customs and final-mile coordination.",
+      "Freyer is an active member of international freight networks including WCA World, Security Cargo Network (SCN), WPA (The Logistics Network), and FDX Logistics Network. This provides reciprocal agency coverage worldwide with door-to-door customs and final-mile coordination.",
   },
   {
     question: "What information is required to receive a formal freight proposal?",

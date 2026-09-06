@@ -30,7 +30,7 @@ const CAPABILITIES: CapabilityItem[] = [
     verifiedProofs: [
       { label: "Carriage Modes", value: "FCL, LCL & Breakbulk" },
       { label: "Service Scope", value: "Port-to-Port & Door-to-Door" },
-      { label: "Global Reach", value: "190+ Countries (WCA / SCN)" },
+      { label: "Global Reach", value: "Global Networks (WCA / SCN)" },
     ],
   },
   {
@@ -52,14 +52,14 @@ const CAPABILITIES: CapabilityItem[] = [
     id: "customs",
     index: "03",
     name: "Customs Brokerage",
-    tagline: "AEO Tier-2 certified Customs House Agency and tariff governance.",
+    tagline: "AEO Certified Customs House Agency and tariff governance.",
     description:
       "Direct CBIC-authorized customs brokerage with rapid port release, precise HSN duty classification, bonded transfers, and full ICEGATE electronic compliance across all Indian seaports and air terminals.",
     image: "/images/Customs-Services.jpg",
     routeHref: "/services/customs-brokerage",
     verifiedProofs: [
-      { label: "Sovereign License", value: "AEO Tier-2 (CBIC, India)" },
-      { label: "Certificate Record", value: "INAAQCA4076M0F243" },
+      { label: "Accreditation", value: "AEO Certified (Indian Customs)" },
+      { label: "Compliance Model", value: "AEO Priority Clearance & DPD" },
       { label: "Filing Authority", value: "Direct ICEGATE EDI Clearance" },
     ],
   },
@@ -88,9 +88,9 @@ const CAPABILITIES: CapabilityItem[] = [
     image: "/images/Project-Cargo.jpg",
     routeHref: "/services/project-cargo",
     verifiedProofs: [
-      { label: "Verified Movement", value: "37.6 MT ITALGRU Boom Crane" },
-      { label: "Trailer Equipment", value: "12-Axle Hydraulic Modular SPMT" },
-      { label: "Surveyed Distance", value: "1,420 KM Mundra-to-Site Route" },
+      { label: "Verified Movement", value: "37.6 MT Boom Crane" },
+      { label: "Transport Mode", value: "Breakbulk on Container Vessel" },
+      { label: "Cargo Corridor", value: "Venice to Mundra Movement" },
     ],
   },
   {
@@ -132,7 +132,7 @@ export function CapabilitiesIndex() {
               6 Core Transport Disciplines
             </span>
             <span className="text-xs font-mono text-[#c42f0b] font-semibold block mt-0.5">
-              AEO Tier-2 &middot; IATA &middot; Pan-India Network
+              AEO Certified &middot; IATA &middot; Pan-India Network
             </span>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { AboutExplorer } from "@/components/about/AboutExplorer";
 export const metadata: Metadata = {
   title: "About Us | Credentials, Story & Governance",
   description:
-    "Explore the corporate history, Indian Customs AEO Tier-2 certification, IATA accreditation, Great Place to Work certification, and leadership of Freyer International Logistics.",
+    "Explore the corporate history, Indian Customs AEO certification, IATA accreditation, and leadership of Freyer International Logistics.",
   alternates: {
     canonical: "/about",
   },
@@ -40,7 +40,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-4 sm:mt-5 leading-relaxed max-w-3xl">
-              From our registered headquarters in Bengaluru and primary seaport hub in Chennai, Freyer International operates across 10 strategic hubs in India—combining AEO Tier-2 customs authority, IATA air cargo certification, and audited global forwarding alliances.
+              From our registered headquarters in Bengaluru and primary seaport hub in Chennai, Freyer International operates across 9 branches in 8 cities in India—combining AEO certified customs authority, IATA air cargo certification, and audited global forwarding alliances.
             </p>
 
             {/* Section Navigation Line */}

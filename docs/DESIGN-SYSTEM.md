@@ -56,7 +56,7 @@
 
 ### 4.2 Trust & Accreditation Badges
 - Displayed in a high-contrast horizontal proof ribbon across all pages.
-- Verified badges: **AEO Certified** (Indian Customs), **IATA Approved Cargo Agent**, **WCA World Member**, **SCN Partner**, **Great Place to Work**.
+- Verified badges: **AEO Certified** (Indian Customs), **IATA Approved Cargo Agent**, **WCA World Member**, **SCN Partner**, **AMTOI Member**, **ACAAI Member**.
 
 ### 4.3 Motion & Interaction Principles
 - Framework: `motion` from `motion/react`.

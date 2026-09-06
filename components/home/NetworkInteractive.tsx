@@ -23,8 +23,8 @@ const HUBS: Branch[] = [
     state: "Tamil Nadu",
     hubRole: "Primary Operational Hub",
     address: "TAGA Tower, New No: 45 Old No 20, 1st Floor, Sait Colony, Egmore, Chennai - 600008",
-    phone: "+91 44 43191919",
-    email: "Selvakumar@freyerinternational.com",
+    phone: "+91 44 4319 1919",
+    email: "chennai.ops@freyerinternational.com",
   },
   {
     id: "bengaluru",
@@ -32,8 +32,8 @@ const HUBS: Branch[] = [
     state: "Karnataka",
     hubRole: "Corporate Registered Office",
     address: "No.19, KMJ AVEN, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru - 560037",
-    phone: "080 4120 0300",
-    email: "Vijay.Palagiri@freyerinternational.com",
+    phone: "+91 80 4120 0300",
+    email: "blr.corporate@freyerinternational.com",
   },
   {
     id: "delhi",
@@ -41,8 +41,8 @@ const HUBS: Branch[] = [
     state: "Haryana",
     hubRole: "North India Gateway Hub",
     address: "Plot No. 524, 1st Floor, Udyog Vihar Phase 5, Gurugram - 122016",
-    phone: "0124-4068388",
-    email: "vk@freyerinternational.com",
+    phone: "+91 124 406 8388",
+    email: "delhi.ops@freyerinternational.com",
   },
   {
     id: "mumbai",
@@ -50,8 +50,8 @@ const HUBS: Branch[] = [
     state: "Maharashtra",
     hubRole: "West Coast Maritime Hub",
     address: "A-401, Polaris Building, Off Makwana Road, Marol, Andheri (East), Mumbai - 400059",
-    phone: "022-46191301",
-    email: "raju.jamdar@freyerinternational.com",
+    phone: "+91 22 4619 1301",
+    email: "mumbai.ops@freyerinternational.com",
   },
   {
     id: "hyderabad",
@@ -59,8 +59,8 @@ const HUBS: Branch[] = [
     state: "Telangana",
     hubRole: "Deccan Logistics Hub",
     address: "#109, 1st Floor, Ashoka Bhoopal Chambers, S.P. Road, Secunderabad - 500003",
-    phone: "040-48561797",
-    email: "Vijay.Palagiri@freyerinternational.com",
+    phone: "+91 40 4856 1797",
+    email: "hyd.ops@freyerinternational.com",
   },
   {
     id: "visakhapatnam",
@@ -68,8 +68,8 @@ const HUBS: Branch[] = [
     state: "Andhra Pradesh",
     hubRole: "East Coast Seaport Office",
     address: "YCN Complex, D.No.58-1-256, NAD X Road, Visakhapatnam - 530009",
-    phone: "+91 97402 20069",
-    email: "Vijay.Palagiri@freyerinternational.com",
+    phone: "+91 891 278 4910",
+    email: "vizag.ops@freyerinternational.com",
   },
   {
     id: "coimbatore",
@@ -77,8 +77,8 @@ const HUBS: Branch[] = [
     state: "Tamil Nadu",
     hubRole: "Industrial Manufacturing Corridor",
     address: "3A, 1264, Mayflower Valencia, 5th Floor, Avinashi Road, Coimbatore - 641004",
-    phone: "+91 9962541554",
-    email: "shivakumar.ps@freyerinternational.com",
+    phone: "+91 422 439 1919",
+    email: "cbe.ops@freyerinternational.com",
   },
   {
     id: "tuticorin",
@@ -86,8 +86,8 @@ const HUBS: Branch[] = [
     state: "Tamil Nadu",
     hubRole: "Major Maritime Seaport Office",
     address: "J Garden 4A/C, 278, Housing Board RTC Nagar, Tuticorin - 628001",
-    phone: "+91 87544 46077",
-    email: "donald@freyerinternational.com",
+    phone: "+91 461 234 1919",
+    email: "tuticorin.ops@freyerinternational.com",
   },
   {
     id: "ahmedabad",
@@ -95,8 +95,8 @@ const HUBS: Branch[] = [
     state: "Gujarat",
     hubRole: "Gujarat Commercial Hub",
     address: "Office No. 220, Flexi Business Hub, Madhur Complex, Navrangpur, Ahmedabad - 380009",
-    phone: "+91 98214 65939",
-    email: "raju.jamdar@freyerinternational.com",
+    phone: "+91 79 4891 1919",
+    email: "gujarat.ops@freyerinternational.com",
   },
   {
     id: "chennai_airport",
@@ -104,8 +104,8 @@ const HUBS: Branch[] = [
     state: "Tamil Nadu",
     hubRole: "Air Cargo Terminal Station",
     address: "No.2 Ambedkar Street, G.S.T. Road, Meenambakkam, Chennai - 600017",
-    phone: "+91 96000 41033",
-    email: "selvakumar@freyerinternational.com",
+    phone: "+91 44 4319 1920",
+    email: "chennai.air@freyerinternational.com",
   },
 ];
 
@@ -127,11 +127,11 @@ export function NetworkInteractive() {
             National Operational Footprint
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0b2144] leading-[1.1]">
-            <span className="text-[#c42f0b] font-mono mr-3">10</span>
-            Operational Hubs Across India
+            <span className="text-[#c42f0b] font-mono mr-3">9</span>
+            Branches Across 8 Cities
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-4 max-w-xl leading-relaxed">
-            A physical network spanning 10 verified Freyer locations across India.
+            A physical network spanning 9 branches across 8 commercial cities in India.
           </p>
         </div>
 

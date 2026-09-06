@@ -206,7 +206,7 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:text-[#c42f0b] transition-colors py-1"
               >
-                9 Operating Hubs
+                9 Branches Across 8 Cities
               </Link>
               <Link
                 href="/network-partners"

@@ -37,7 +37,7 @@ This document tracks all external photographic, cartographic, and media assets u
 ## Institutional Marks & Accreditations
 
 ### 4. Certification Marks (`/public/images/`)
-- **AEO (Authorized Economic Operator)**: Indian Customs / Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, Government of India. (Certificate No. `INAAQCA4076M0F243`).
+- **AEO (Authorized Economic Operator)**: Indian Customs / Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, Government of India.
 - **IATA**: International Air Transport Association.
 - **WCA World**: WCA Inter Global Network.
 - **SCN**: Security Cargo Network.

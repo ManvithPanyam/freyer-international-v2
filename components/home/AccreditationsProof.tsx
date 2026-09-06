@@ -11,7 +11,7 @@ const ACCREDITATIONS = [
     logo: null,           // rendered as CSS text-mark below
     w: 120,
     h: 56,
-    cert: "INAAQCA4076M0F243",
+    cert: "CBIC Accredited",
   },
   {
     id: "iata",
@@ -133,7 +133,7 @@ export function AccreditationsProof() {
           transition={{ duration: 0.5, delay: 0.55 }}
           className="text-center text-[10px] font-mono text-slate-300 mt-8 sm:mt-10 tracking-wider"
         >
-          ALL CERTIFICATIONS VALID · AEO CERT NO. INAAQCA4076M0F243
+          ALL ACCREDITATIONS &amp; CONSORTIUM MEMBERSHIPS CURRENT
         </motion.p>
       </div>
     </section>

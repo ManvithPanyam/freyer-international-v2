@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Contact Desk & Corporate Offices",
   description:
-    "Direct commercial desks, tender RFQs, and operational hubs across 9 locations in India: Bengaluru HQ, Chennai, Mumbai, Delhi NCR, Hyderabad, Vizag, Coimbatore, Tuticorin, and Ahmedabad.",
+    "Direct commercial desks, tender RFQs, and operational hubs across 9 branches in 8 cities in India: Bengaluru HQ, Chennai, Mumbai, Delhi NCR, Hyderabad, Vizag, Coimbatore, Tuticorin, and Ahmedabad.",
   alternates: {
     canonical: "/contact",
   },
@@ -149,7 +149,7 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="mt-4 sm:mt-5 max-w-3xl text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600">
-              Direct routing support from licensed customs brokers, air charter controllers, and project engineers across 9 regional hubs in India.
+              Direct routing support from licensed customs brokers, air charter controllers, and project engineers across 9 branches in 8 cities in India.
             </p>
           </div>
         </section>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                 Direct Station Directory
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0b2144]">
-                9 Regional Company Hubs &amp; Desks
+                9 Branches Across 8 Cities
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-500 max-w-md font-mono">

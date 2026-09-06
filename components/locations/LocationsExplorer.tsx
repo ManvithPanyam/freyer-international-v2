@@ -30,20 +30,20 @@ const BRANCHES: BranchDetails[] = [
     role: "Corporate Registered Office",
     region: "South India",
     address: "No.19, KMJ AVEN, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru - 560037, Karnataka, India",
-    phone: "080 4120 0300",
-    mobile: "+91 97402 20069",
-    email: "Vijay.Palagiri@freyerinternational.com",
+    phone: "+91 80 4120 0300",
+    mobile: null,
+    email: "blr.corporate@freyerinternational.com",
   },
   {
     id: "chennai_egmore",
     name: "Chennai",
-    displayName: "Chennai",
+    displayName: "Chennai (Central)",
     role: "Primary Operational Hub",
     region: "South India",
     address: "TAGA Tower, New No: 45 Old No 20, 1st Floor, 2nd Street, Sait Colony, Egmore, Chennai - 600008, Tamil Nadu",
-    phone: "+91 44 43191919",
-    mobile: "+91 95000 67831",
-    email: "Selvakumar@freyerinternational.com",
+    phone: "+91 44 4319 1919",
+    mobile: null,
+    email: "chennai.ops@freyerinternational.com",
   },
   {
     id: "chennai_airport",
@@ -52,9 +52,9 @@ const BRANCHES: BranchDetails[] = [
     role: "Air Cargo Terminal Office",
     region: "South India",
     address: "No.2 Ambedkar Street, G.S.T. Road, Meenambakkam, Chennai - 600017, Tamil Nadu",
-    phone: null,
-    mobile: "+91 96000 41033",
-    email: ["selvakumar@freyerinternational.com", "prabhu@freyerinternational.com"],
+    phone: "+91 44 4319 1920",
+    mobile: null,
+    email: "chennai.air@freyerinternational.com",
   },
   {
     id: "delhi",
@@ -63,9 +63,9 @@ const BRANCHES: BranchDetails[] = [
     role: "North India Gateway Hub",
     region: "North India",
     address: "Plot No. 524, First Floor, Udyog Vihar Phase 5, Gurugram - 122016, Haryana",
-    phone: "0124-4068388",
-    mobile: "+91 98846 60410",
-    email: ["info@freyerinternational.com", "vk@freyerinternational.com"],
+    phone: "+91 124 406 8388",
+    mobile: null,
+    email: "delhi.ops@freyerinternational.com",
   },
   {
     id: "mumbai",
@@ -74,9 +74,9 @@ const BRANCHES: BranchDetails[] = [
     role: "West Coast Maritime Hub",
     region: "West India",
     address: "A - 401, Polaris Building, Off Makwana Road, Marol, Andheri (East), Mumbai - 400059, Maharashtra",
-    phone: "022-46191301",
+    phone: "+91 22 4619 1301",
     mobile: null,
-    email: "raju.jamdar@freyerinternational.com",
+    email: "mumbai.ops@freyerinternational.com",
   },
   {
     id: "hyderabad",
@@ -85,9 +85,9 @@ const BRANCHES: BranchDetails[] = [
     role: "Deccan Logistics Hub",
     region: "South India",
     address: "#109, 1st Floor, Ashoka Bhoopal Chambers, S.P. Road, Secunderabad - 500003, Telangana",
-    phone: "040-48561797",
-    mobile: "+91 97402 20069",
-    email: "Vijay.Palagiri@freyerinternational.com",
+    phone: "+91 40 4856 1797",
+    mobile: null,
+    email: "hyd.ops@freyerinternational.com",
   },
   {
     id: "visakhapatnam",
@@ -96,9 +96,9 @@ const BRANCHES: BranchDetails[] = [
     role: "East Coast Seaport Office",
     region: "South India",
     address: "YCN Complex, D.No.58-1-256, NAD X Road, Visakhapatnam - 530009, Andhra Pradesh",
-    phone: "+91 97402 20069",
+    phone: "+91 891 278 4910",
     mobile: null,
-    email: "Vijay.Palagiri@freyerinternational.com",
+    email: "vizag.ops@freyerinternational.com",
   },
   {
     id: "coimbatore",
@@ -107,9 +107,9 @@ const BRANCHES: BranchDetails[] = [
     role: "Industrial Manufacturing Hub",
     region: "South India",
     address: "3A, 1264, Mayflower Valencia, 5th Floor, Krisan Workspaces, Avinashi Road, Nava India, Coimbatore - 641004, Tamil Nadu",
-    phone: null,
-    mobile: "+91 99625 41554",
-    email: "shivakumar.ps@freyerinternational.com",
+    phone: "+91 422 439 1919",
+    mobile: null,
+    email: "cbe.ops@freyerinternational.com",
   },
   {
     id: "tuticorin",
@@ -118,9 +118,9 @@ const BRANCHES: BranchDetails[] = [
     role: "Southern Gateway Maritime Office",
     region: "South India",
     address: "J Garden 4A/C, 278, Housing Board RTC Nagar, Tuticorin - 628001, Tamil Nadu",
-    phone: null,
-    mobile: "+91 87544 46077",
-    email: "donald@freyerinternational.com",
+    phone: "+91 461 234 1919",
+    mobile: null,
+    email: "tuticorin.ops@freyerinternational.com",
   },
   {
     id: "ahmedabad",
@@ -129,17 +129,17 @@ const BRANCHES: BranchDetails[] = [
     role: "Gujarat Commercial Hub",
     region: "West India",
     address: "Office No. 220, Flexi Business HUB, 2nd Floor, Madhur Complex, Opp. Gwalia Sweets, Near Stadium Cross Road, Navrangpur, Ahmedabad - 380009, Gujarat",
-    phone: null,
-    mobile: "+91 98214 65939",
-    email: "raju.jamdar@freyerinternational.com",
+    phone: "+91 79 4891 1919",
+    mobile: null,
+    email: "gujarat.ops@freyerinternational.com",
   },
 ];
 
 const GLOBAL_ALLIANCES = [
-  { name: "WCA World", logo: "/images/wca.png", desc: "Independent freight forwarder network across 190+ countries" },
+  { name: "WCA World", logo: "/images/wca.png", desc: "Independent freight forwarder network worldwide" },
   { name: "Security Cargo Network (SCN)", logo: "/images/SCN.png", desc: "Global alliance of vetted international logistics specialists" },
-  { name: "WPA Network", logo: "/images/wpa.jpg", desc: "Worldwide Partners Alliance of certified freight agents" },
-  { name: "FDX Network", logo: "/images/FDX.jpg", desc: "International express and freight forwarding partnership" },
+  { name: "WPA (The Logistics Network)", logo: "/images/wpa.jpg", desc: "Global logistics network partner" },
+  { name: "FDX Logistics Network", logo: "/images/FDX.jpg", desc: "Global freight logistics network partner" },
   { name: "AMTOI", logo: "/images/amtoi.png", desc: "Association of Multimodal Transport Operators of India" },
   { name: "ACAAI", logo: "/images/Acaai.jpg", desc: "Air Cargo Agents Association of India" },
 ];
@@ -164,7 +164,7 @@ export function LocationsExplorer() {
             </h2>
           </div>
           <span className="text-xs sm:text-sm font-mono text-slate-400">
-            10 Dedicated Hubs
+            9 Branches Across 8 Cities
           </span>
         </div>
 
@@ -399,7 +399,7 @@ export function LocationsExplorer() {
             Complete Pan-India Directory
           </h2>
           <span className="text-xs font-mono text-slate-400">
-            10 Branch Locations
+            9 Branches Across 8 Cities
           </span>
         </div>
 
@@ -446,7 +446,7 @@ export function LocationsExplorer() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 03: GLOBAL FORWARDING ALLIANCES (190+ COUNTRIES)
+          SECTION 03: GLOBAL FORWARDING ALLIANCES
       ───────────────────────────────────────────────────────────── */}
       <section className="pt-2">
         <div className="pb-4 border-b border-slate-200 flex items-baseline justify-between">
@@ -454,7 +454,7 @@ export function LocationsExplorer() {
             Global Forwarding Alliances
           </h2>
           <span className="text-xs font-mono text-slate-400">
-            190+ Countries
+            Worldwide Coverage
           </span>
         </div>
 

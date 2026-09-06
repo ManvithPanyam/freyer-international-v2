@@ -120,7 +120,7 @@ export function ProjectCargoStory() {
         <div ref={imageRef} className="relative w-full h-full">
           <Image
             src="/images/11.4.jpg"
-            alt="ITALGRU heavy-lift crane boom structure on vessel flatracks — Freyer project cargo engineering"
+            alt="Heavy-lift boom crane structure on container vessel — Freyer project cargo movement"
             fill
             priority
             sizes="100vw"
@@ -152,17 +152,17 @@ export function ProjectCargoStory() {
           <div className="flex items-center gap-6 text-xs font-mono text-slate-400">
             <span className="flex items-center gap-1.5">
               <Compass className="w-3.5 h-3.5 text-[#ff6b4a]" />
-              Port-to-Foundation Turnkey
+              Ex-Works Terms
             </span>
             <span className="hidden sm:inline text-slate-600">/</span>
             <span className="hidden sm:inline flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-slate-400" />
-              Civil Route Clearance
+              Road Permit Clearance
             </span>
           </div>
         </div>
 
-        {/* ── Signature Movement Corridor: MUNDRA ──→ SITE ── */}
+        {/* ── Signature Movement Corridor: VENICE ──→ MUNDRA ── */}
         <div className="pt-10 sm:pt-14 pb-12 sm:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
@@ -171,7 +171,7 @@ export function ProjectCargoStory() {
               {/* Route Trajectory Title */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3 sm:gap-4 text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white">
-                  <span>MUNDRA</span>
+                  <span>VENICE</span>
                   <div className="relative flex-1 min-w-[50px] sm:min-w-[120px] max-w-[180px] h-[2px] bg-white/20">
                     <div
                       ref={routeLineRef}
@@ -182,11 +182,11 @@ export function ProjectCargoStory() {
                       className="absolute -right-1.5 -top-1 w-2.5 h-2.5 rounded-full bg-[#ff6b4a]"
                     />
                   </div>
-                  <span className="text-slate-300 font-light italic">SITE</span>
+                  <span className="text-slate-300 font-light italic">MUNDRA</span>
                 </div>
 
                 <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-xl font-normal leading-relaxed">
-                  Turnkey heavy-lift engineering for an ITALGRU boom crane superstructure — navigating 1,420 km of civil bypasses, bridge load distributions, and port-to-foundation placement.
+                  Boom Crane movement from Venice to Mundra — 2,700 × 400 × 455 cm, WT 37,600 KG. Ex-Works terms including road permit, loaded as breakbulk (BBK) on container vessel.
                 </p>
               </div>
 
@@ -194,16 +194,16 @@ export function ProjectCargoStory() {
               <div ref={specTagsRef} className="pt-4 border-t border-white/10">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-xs font-mono">
                   <div>
-                    <span className="text-[10px] tracking-widest text-slate-400 uppercase block">Configuration</span>
-                    <span className="text-sm sm:text-base font-bold text-white mt-0.5 block">12-Axle Hydraulic SPMT</span>
+                    <span className="text-[10px] tracking-widest text-slate-400 uppercase block">Mode</span>
+                    <span className="text-sm sm:text-base font-bold text-white mt-0.5 block">BBK on Container Vessel</span>
                   </div>
                   <div>
                     <span className="text-[10px] tracking-widest text-slate-400 uppercase block">Dimensions</span>
                     <span className="text-sm sm:text-base font-bold text-white mt-0.5 block tabular-nums">2,700 × 400 × 455 cm</span>
                   </div>
                   <div>
-                    <span className="text-[10px] tracking-widest text-slate-400 uppercase block">Surveyed Corridor</span>
-                    <span className="text-sm sm:text-base font-bold text-white mt-0.5 block tabular-nums">1,420 KM Route</span>
+                    <span className="text-[10px] tracking-widest text-slate-400 uppercase block">Total Weight</span>
+                    <span className="text-sm sm:text-base font-bold text-white mt-0.5 block tabular-nums">37,600 KG (37.6 MT)</span>
                   </div>
                 </div>
               </div>
@@ -233,7 +233,7 @@ export function ProjectCargoStory() {
                   </span>
                   <span className="text-slate-400 flex items-center gap-1">
                     <MapPin className="w-3.5 h-3.5 text-[#ff6b4a]" />
-                    Mundra Quayside
+                    Venice to Mundra
                   </span>
                 </div>
 
@@ -243,13 +243,13 @@ export function ProjectCargoStory() {
                     37.6 <span className="text-2xl sm:text-4xl text-[#ff6b4a] font-light">MT</span>
                   </div>
                   <div className="text-xs sm:text-sm font-mono tracking-wider text-slate-300 uppercase pt-1">
-                    Superstructure Boom Assembly
+                    Boom Crane Movement
                   </div>
                 </div>
 
                 {/* Engineered Execution Details */}
                 <p className="pt-4 border-t border-white/10 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Lashed on heavy-duty vessel flatracks with certified marine lashing calculations, transferred to hydraulic multi-axle trailers without intermediate laydown.
+                  Boom Crane measuring 2,700 × 400 × 455 cm, weight 37,600 KG. Shipped under Ex-Works terms including road permit, loaded as BBK on container vessel.
                 </p>
               </div>
             </div>

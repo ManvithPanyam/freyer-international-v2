@@ -85,7 +85,7 @@ export default function ServicesPage() {
                 Need a logistics solution built around the cargo?
               </h2>
               <p className="text-slate-300 text-base sm:text-lg mt-2 leading-relaxed">
-                Connect directly with our operations teams across 10 corporate branches in India for freight rates, warehouse allocation, and project route planning.
+                Connect directly with our operations teams across 9 branches in 8 cities in India for freight rates, warehouse allocation, and project route planning.
               </p>
             </div>
 

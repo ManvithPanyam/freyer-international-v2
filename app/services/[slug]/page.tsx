@@ -36,7 +36,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Project Cargo Logistics",
     tagline: "From site disassembly to final foundation.",
     heroImage: "/images/11.3.jpg",
-    imageAlt: "Heavy-lift crane spreader hoist lifting 37.6 MT ITALGRU boom assembly mid-air at container terminal",
+    imageAlt: "Heavy-lift crane spreader hoist lifting 37.6 MT boom assembly mid-air at container terminal",
     overview: [
       "Moving oversized and heavy-lift cargo requires deep technical knowledge, rigorous civil route planning, and dedicated engineering resources. Freyer International provides a complete turnkey logistics chain for industrial projects across the energy sector, offshore industry, wind farm development, machinery, steel, and metals.",
       "From the heaviest single pieces to the smallest accompanying hardware, we manage the entire movement: on-site disassembly, hydraulic multi-axle transport, intermediate yard storage, tandem crane loading, vessel breakbulk stowage, and onward transport to the final operating foundation.",
@@ -144,7 +144,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     slug: "customs-brokerage",
     category: "Regulatory Compliance",
     title: "Customs Brokerage",
-    tagline: "AEO Tier-2 certified Indian Customs clearance specialists.",
+    tagline: "AEO-certified Indian Customs clearance specialists.",
     heroImage: "/images/slide3.jpg",
     imageAlt: "Customs inspection and container freight clearance terminal",
     overview: [
@@ -153,17 +153,17 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     capabilitiesTitle: "Compliance & Brokerage Services",
     capabilities: [
-      "AEO Tier-2 prioritized customs clearance and fast-track processing",
+      "AEO prioritized customs clearance and fast-track processing",
       "Electronic Export Information (EEI) filing and designated export clearance",
       "Import duty classification, valuation assessment & tariff advisory",
       "Advance authorization, EPCG scheme, and duty drawback management",
-      "On-site licensed customs brokers across 10 Indian branch hubs",
+      "On-site licensed customs brokers across 9 branches in 8 cities",
       "Liaison with Participating Government Agencies (FSSAI, PQ, WPC, etc.)",
     ],
-    evidenceBadge: "CBIC Certificate: INAAQCA4076M0F243",
-    evidenceHeadline: "AEO Tier-2 Certified Brokerage",
+    evidenceBadge: "CBIC Accredited Customs House Agent",
+    evidenceHeadline: "AEO Certified Brokerage",
     evidenceText:
-      "Certified by the Central Board of Indirect Taxes & Customs (CBIC), Ministry of Finance, Govt of India, offering expedited customs release and reduced bank guarantees.",
+      "Certified by the Central Board of Indirect Taxes & Customs (CBIC), Ministry of Finance, Govt of India, offering expedited customs release and reduced examination rates.",
     ctaText: "Consult Customs Specialists",
   },
   "risk-management": {

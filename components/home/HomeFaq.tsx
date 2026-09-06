@@ -14,19 +14,19 @@ const FAQS: FaqItem[] = [
   {
     question: "What is Freyer's operational presence across India and global trade lanes?",
     answer:
-      "Freyer operates 9 full-fledged company branch offices covering India's vital trade hubs: Bengaluru (Corporate HQ), Chennai (Seaport & Air Cargo terminals), Mumbai (Nhava Sheva/JNPT), Delhi NCR, Hyderabad, Visakhapatnam, Coimbatore, Tuticorin, and Ahmedabad. Globally, we hold direct service contracts with premier ocean lines (Maersk, MSC, Hapag-Lloyd) and airlines (Emirates, Qatar, Singapore), supplemented by vetted WCA InterGlobal and FIATA agency networks across 190+ countries.",
+      "Freyer operates 9 full-fledged company branch offices covering India's vital trade gateways: Bengaluru (Corporate HQ), Chennai (Seaport & Air Cargo offices), Mumbai (Nhava Sheva/JNPT), Delhi NCR, Hyderabad, Visakhapatnam, Coimbatore, Tuticorin, and Ahmedabad. Globally, we hold direct service relationships with premier ocean carriers and airlines, supplemented by vetted international forwarder networks worldwide.",
     tag: "Network & Scale",
   },
   {
-    question: "How does Freyer's AEO Tier-2 certification accelerate customs clearance?",
+    question: "How does Freyer's AEO certification accelerate customs clearance?",
     answer:
-      "As an Authorized Economic Operator Tier-2 (AEO-T2) certified forwarder accredited by the Indian Customs Administration (CBIC), Freyer's consignments receive priority 'Green Channel' assessment on ICEGATE EDI, significantly reduced physical inspections, Direct Port Delivery (DPD) priority, reduced bank guarantee requirements, and expedited 24/7 customs examination at maritime ports and air cargo complexes.",
+      "As an Authorized Economic Operator (AEO) certified forwarder accredited by the Indian Customs Administration (CBIC), Freyer's consignments receive priority 'Green Channel' assessment on ICEGATE EDI, significantly reduced physical inspections, Direct Port Delivery (DPD) priority, and expedited customs examination at maritime ports and air cargo complexes.",
     tag: "Customs Regulatory",
   },
   {
     question: "What capacity do you have for Over-Dimensional Cargo (ODC) & project logistics?",
     answer:
-      "Project cargo is one of Freyer's flagship competencies. We engineer complete turnkey solutions: route civil surveys, bridge load verifications, overhead utility clearances, state road transit permits, hydraulic multi-axle trailer mobilization (Goldhofer / SPMT), and port captaincy lashing certifications. Our documented portfolio includes single-piece heavy lifts up to 296 MT and continuous breakbulk movements up to 482 MT.",
+      "Project cargo is one of Freyer's core competencies. We handle complete multimodal movements: route surveys, bridge load verifications, overhead clearances, state road transit permits, multi-axle trailer mobilization, and breakbulk ocean stowage. Our documented project portfolio includes movements up to 482 MT and heavy-lift units including 2 x 148 MT pieces and 37.6 MT boom crane consignments.",
     tag: "Project Cargo",
   },
   {

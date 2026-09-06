@@ -50,7 +50,7 @@ const DEMO_PRESETS: Record<string, TrackingResult> = {
         location: "Chennai Air & Sea Customs",
         timestamp: "01 Sept 2026, 14:20 IST",
         status: "completed",
-        details: "AEO Tier-2 Green Channel Clearance (ICEGATE EDI File #7849102)",
+        details: "AEO Priority Clearance (ICEGATE EDI File #7849102)",
       },
       {
         title: "Container Gated-In & Weighed (VGM)",
@@ -130,39 +130,39 @@ const DEMO_PRESETS: Record<string, TrackingResult> = {
   "PC-11-MUNDRA": {
     number: "PC-11-MUNDRA",
     type: "Project Cargo",
-    origin: "Mundra Port Quayside (INMUN)",
-    destination: "Site Foundation (Rajasthan)",
-    vesselFlight: "12-Axle Goldhofer SPMT Convoy",
-    eta: "10 Sept 2026",
-    currentStatus: "Civil Corridor Movement (NH-68 Bypass)",
+    origin: "Port of Venice (ITVCE)",
+    destination: "Mundra Port (INMUN)",
+    vesselFlight: "Breakbulk on Container Vessel",
+    eta: "Completed",
+    currentStatus: "Discharged at Mundra Port Laydown",
     milestones: [
       {
-        title: "Tandem Crane Quayside Discharge",
-        location: "Adani Ports Berth 4, Mundra",
-        timestamp: "02 Sept 2026, 08:00 IST",
+        title: "Ex-Works Collection & Road Movement",
+        location: "Venice Industrial Laydown, Italy",
+        timestamp: "Historical Movement Record",
         status: "completed",
-        details: "37.6 MT ITALGRU boom assembly lifted via heavy spreader beam",
+        details: "2,700 x 400 x 455 cm - WT 37,600 KG Ex-Works road permit loaded",
       },
       {
-        title: "Lashed to 12-Axle Hydraulic Platform",
-        location: "Mundra Port Intermediate Laydown",
-        timestamp: "03 Sept 2026, 16:30 IST",
+        title: "Vessel Loading as Breakbulk",
+        location: "Port of Venice Quayside",
+        timestamp: "Historical Movement Record",
         status: "completed",
-        details: "Certified marine lashing calculations verified by Port Captain",
+        details: "Loaded as BBK on container vessel with certified lashing",
       },
       {
-        title: "En Route with Escort Convoy",
-        location: "Km 420, Gujarat - Rajasthan Border",
-        timestamp: "06 Sept 2026, 19:45 IST",
-        status: "current",
-        details: "Daylight escort convoy / Overhead wire clearances coordinated",
+        title: "Maritime Corridor Transit",
+        location: "Mediterranean / Red Sea / Arabian Sea",
+        timestamp: "Historical Movement Record",
+        status: "completed",
+        details: "Safe ocean transit under marine surveyor supervision",
       },
       {
-        title: "Final Site Foundation Placement",
-        location: "Energy Project Site Foundation",
-        timestamp: "Expected 10 Sept 2026",
-        status: "upcoming",
-        details: "Hydraulic jacking & direct foundation bolt alignment",
+        title: "Discharge at Destination Port",
+        location: "Mundra Port, Gujarat",
+        timestamp: "Delivered",
+        status: "completed",
+        details: "Quayside discharge and handover completed",
       },
     ],
   },
@@ -216,7 +216,7 @@ export function TrackShipmentModal({
           destination: "Rotterdam (NLRTM)",
           vesselFlight: "MAERSK MC-KINNEY / 2609E",
           eta: "18 Sept 2026",
-          currentStatus: "Indian Customs Cleared (AEO Tier-2) / Ready for Departure",
+          currentStatus: "Indian Customs Cleared (AEO Certified) / Ready for Departure",
           milestones: [
             {
               title: "Booking & Equipment Released",
@@ -225,7 +225,7 @@ export function TrackShipmentModal({
               status: "completed",
             },
             {
-              title: "Customs AEO Tier-2 Verification",
+              title: "Customs AEO Priority Verification",
               location: "JNPT Customs Commissionerate",
               timestamp: "05 Sept 2026, 15:30 IST",
               status: "completed",
@@ -464,7 +464,7 @@ export function TrackShipmentModal({
             <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                AEO Tier-2 Priority Clearance Enabled
+                AEO Priority Clearance Enabled
               </span>
               <span className="hidden sm:inline">24/7 Control Tower: +91 44 4319 1919</span>
             </div>

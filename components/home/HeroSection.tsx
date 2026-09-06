@@ -171,7 +171,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.25 }}
           className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-2xl font-normal leading-relaxed"
         >
-          Nationwide reach, personal accountability. International air &amp; ocean freight, AEO-certified customs brokerage, and turnkey project cargo across 9 national operating hubs in India.
+          Nationwide reach, personal accountability. International air &amp; ocean freight, AEO-certified customs brokerage, and turnkey project cargo across 9 branches in 8 cities in India.
         </motion.p>
 
         {/* Dual Actions: Request a Quote + Track Consignment */}

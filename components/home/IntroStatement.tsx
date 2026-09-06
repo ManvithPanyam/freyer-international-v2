@@ -11,7 +11,7 @@ export function IntroStatement() {
           &ldquo;We don&apos;t just want to move your goods from point A to point B. We want to understand your business and design a solution to fit your requirements.&rdquo;
         </blockquote>
         <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed pt-2">
-          From high-velocity international air and ocean freight to turnkey project cargo engineering — backed by AEO-certified customs brokerage across 10 operational hubs in India.
+          From high-velocity international air and ocean freight to turnkey project cargo engineering — backed by AEO-certified customs brokerage across 9 branches in 8 cities in India.
         </p>
       </div>
     </section>

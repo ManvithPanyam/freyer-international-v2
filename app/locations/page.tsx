@@ -6,7 +6,7 @@ import { MinimalLocations } from "@/components/locations/MinimalLocations";
 
 export const metadata: Metadata = {
   title: "Locations & Global Network",
-  description: "A physical Indian network across 9 branch hubs and 10 facilities, connected globally through established forwarding alliances.",
+  description: "A physical Indian network across 9 branches in 8 cities, connected globally through established forwarding alliances.",
   alternates: {
     canonical: "/locations",
   },
@@ -28,10 +28,10 @@ export default function LocationsPage() {
               Physical domestic footprint
             </span>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-              9 operating hubs across India.
+              9 branches across 8 cities in India.
               <br />
               <span className="font-light italic text-slate-500">
-                190+ countries through global alliances.
+                Connected worldwide through global alliances.
               </span>
             </h1>
             <p className="mt-4 sm:mt-5 max-w-3xl text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600">

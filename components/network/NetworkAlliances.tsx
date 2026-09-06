@@ -5,10 +5,10 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
 const ALLIANCES = [
-  { name: "WCA World", logo: "/images/wca.png", detail: "190+ countries" },
+  { name: "WCA World", logo: "/images/wca.png", detail: "Global partner network" },
   { name: "Security Cargo Network", logo: "/images/SCN.png", detail: "Vetted global forwarders" },
-  { name: "Worldwide Partners Alliance", logo: "/images/wpa.jpg", detail: "Air & ocean forwarding" },
-  { name: "FDX Global", logo: "/images/FDX.jpg", detail: "Express & freight" },
+  { name: "WPA (The Logistics Network)", logo: "/images/wpa.jpg", detail: "Global logistics network" },
+  { name: "FDX Logistics Network", logo: "/images/FDX.jpg", detail: "Global logistics network" },
   { name: "AMTOI", logo: "/images/amtoi.png", detail: "Indian multimodal network" },
   { name: "ACAAI", logo: "/images/Acaai.jpg", detail: "Indian air cargo network" },
 ];
@@ -33,7 +33,7 @@ export function NetworkAlliances() {
             <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#c42f0b]">Accredited network</span>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-[#0b2144] sm:text-4xl">Global reach, locally executed.</h2>
           </div>
-          <span className="hidden font-mono text-xs text-slate-400 sm:block">6 networks · 190+ countries</span>
+          <span className="hidden font-mono text-xs text-slate-400 sm:block">6 networks · Global coverage</span>
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-10">

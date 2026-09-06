@@ -43,13 +43,13 @@ export function Footer() {
             </p>
 
             <p className="text-sm text-slate-400 max-w-md leading-relaxed">
-              Integrated multimodal freight forwarding, AEO Tier-2 licensed customs brokerage, high-bay warehousing, and heavy-lift project engineering across India and global trading corridors.
+              Integrated multimodal freight forwarding, AEO-certified customs brokerage, high-bay warehousing, and heavy-lift project engineering across India and global trading corridors.
             </p>
 
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>AEO Tier-2: INAAQCA4076M0F243</div>
+              <div>AEO Certified (Indian Customs)</div>
               <div>IATA Regulated Cargo Agent</div>
-              <div>Great Place to Work&reg; Certified</div>
+              <div>SCN &amp; WCA Partner Network</div>
             </div>
           </div>
 
@@ -110,7 +110,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/locations" className="hover:text-white transition-colors">
-                  10 Indian Hubs
+                  9 Branches Across 8 Cities
                 </Link>
               </li>
               <li>

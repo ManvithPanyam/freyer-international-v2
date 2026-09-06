@@ -41,7 +41,7 @@ export default function ProjectsPage() {
               </span>
             </h1>
             <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed max-w-2xl">
-              A comprehensive technical archive of 11 verified heavy-lift and multimodal engineering movements spanning breakbulk ocean freight, hydraulic SPMT trailers, flatracks, and civil route clearances.
+              A comprehensive technical archive of 11 verified heavy-lift and multimodal engineering movements spanning breakbulk ocean freight, heavy multi-axle trailers, flatracks, and civil route clearances.
             </p>
           </div>
 

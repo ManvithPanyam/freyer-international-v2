@@ -41,7 +41,7 @@ The legacy website (built on PHP 7.4.33, jQuery 1.12.4, Bootstrap 3.4.1) suffers
 1. **Enterprise Supply Chain Director / Freight Buyer**: Seeks reliable international air/ocean forwarding capacity, verified compliance credentials (AEO), and an instant rate inquiry mechanism.
 2. **Project Cargo Engineering Manager**: Needs specialized heavy-lift, multi-axle, over-dimensional cargo (ODC) transport proof and route survey expertise.
 3. **Import / Export Logistics Executive**: Needs fast customs clearance assistance (CHA), tariff advisory, and localized port branch contacts.
-4. **Logistics Job Candidate**: Looking for corporate culture insights (Great Place to Work certification) and a functional job application portal.
+4. **Logistics Job Candidate**: Looking for corporate culture insights and a functional job application portal.
 5. **Internal Freyer Sales Desk (Arun Sharma & Team)**: Needs clean, structured inbound RFQ leads with cargo parameters and attachments delivered in real time.
 
 ---

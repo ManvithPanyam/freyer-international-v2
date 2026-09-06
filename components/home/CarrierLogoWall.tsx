@@ -28,7 +28,7 @@ const CARRIERS: CarrierPartner[] = [
 
   // Global Alliances & Accreditations
   { name: "IATA AGENT", category: "Global Alliance", detail: "Regulated international air cargo issuing agent" },
-  { name: "WCA INTERGLOBAL", category: "Global Alliance", detail: "Vetted forwarding partners in 190+ countries" },
+  { name: "WCA INTERGLOBAL", category: "Global Alliance", detail: "Vetted forwarding partners worldwide" },
   { name: "FIATA", category: "Global Alliance", detail: "Federation of Freight Forwarders Associations" },
   { name: "AMTOI", category: "Global Alliance", detail: "Association of Multimodal Transport Operators" },
 ];
@@ -96,7 +96,7 @@ export function CarrierLogoWall() {
         <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-400">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Active Volume Tier Contracts: Indian Subcontinent, Middle East, Europe &amp; Americas</span>
+            <span>Active Volume Service Contracts: Indian Subcontinent, Middle East, Europe &amp; Americas</span>
           </div>
           <span className="text-slate-500">
             Freyer International Logistics Pvt. Ltd. &middot; Corporate Carrier Ledger

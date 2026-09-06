@@ -71,7 +71,7 @@ const VERTICALS: IndustryVertical[] = [
       "Foundation bolt-to-bolt offloading",
     ],
     cargoExamples: "Boilers, pressure vessels, boom cranes, heat exchangers & tunnel boring segments",
-    transitModes: ["SPMT Multi-Axle", "Coastal Barge", "Ocean Heavy Lift"],
+    transitModes: ["Heavy Multi-Axle", "Coastal Barge", "Ocean Heavy Lift"],
   },
   {
     id: "pharma",

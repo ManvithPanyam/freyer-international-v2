@@ -160,7 +160,7 @@ export function ServicesExplorer() {
           <div className="lg:col-span-7 relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/40">
             <Image
               src="/images/11.3.jpg"
-              alt="Heavy-lift crane spreader hoist lifting 37.6 MT ITALGRU boom assembly mid-air at container terminal - Freyer Project Cargo"
+              alt="Heavy-lift crane spreader hoist lifting 37.6 MT boom assembly mid-air at container terminal - Freyer Project Cargo"
               fill
               className="object-cover object-center"
               sizes="(min-width: 1024px) 60vw, 100vw"
@@ -291,7 +291,7 @@ export function ServicesExplorer() {
           <div id="customs" className="space-y-3">
             <div className="flex items-center justify-between text-xs font-mono text-slate-600 pb-2 border-b border-slate-200">
               <span className="text-[#0b2144] font-bold uppercase">05 &middot; Customs Brokerage</span>
-              <span>AEO Tier-2 Certified</span>
+              <span>AEO Certified</span>
             </div>
             <h3 className="text-xl font-bold text-[#0b2144]">
               AEO Compliance &amp; Licensed Customs Brokers
@@ -302,7 +302,7 @@ export function ServicesExplorer() {
             <ul className="space-y-1.5 text-xs text-slate-700 font-medium pt-1">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#c42f0b] shrink-0" />
-                <span>On-site licensed customs brokers across 10 corporate hubs</span>
+                <span>On-site licensed customs brokers across 9 branches in 8 cities</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#c42f0b] shrink-0" />

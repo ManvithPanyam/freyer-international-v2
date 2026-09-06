@@ -21,30 +21,31 @@ interface StatItem {
 const STATS: StatItem[] = [
   {
     value: "9",
-    label: "National Operating Hubs",
-    sublabel: "Strategic offices across major Indian ports & airports",
+    label: "Branches in 8 Cities",
+    sublabel: "Dedicated offices across major Indian ports & commercial centers",
     icon: Building2,
-    verifiedBadge: "Verified Network",
+    verifiedBadge: "Pan-India Reach",
   },
   {
-    value: "100–200+",
-    label: "Logistics Specialists",
-    sublabel: "In-house customs custodians & heavy-lift engineers",
-    icon: Users,
-  },
-  {
-    value: "₹177 Cr+",
-    label: "Annual Trade Volume",
-    sublabel: "Operating turnover benchmark across multimodal trade corridors",
-    icon: TrendingUp,
-    verifiedBadge: "Operating Scale",
-  },
-  {
-    value: "AEO Tier-2",
-    label: "Indian Customs & IATA",
-    sublabel: "Priority Green Channel clearance with global air agency",
+    value: "AEO",
+    label: "AEO Certified",
+    sublabel: "Authorized Economic Operator status with Indian Customs",
     icon: ShieldCheck,
-    verifiedBadge: "CBIC Regulated",
+    verifiedBadge: "CBIC Accredited",
+  },
+  {
+    value: "IATA",
+    label: "IATA Cargo Agent",
+    sublabel: "Regulated international air cargo agency authority",
+    icon: CheckCircle2,
+    verifiedBadge: "Global Standards",
+  },
+  {
+    value: "482 MT",
+    label: "Heavy-Lift Benchmark",
+    sublabel: "11 documented breakbulk & heavy-lift project movements",
+    icon: TrendingUp,
+    verifiedBadge: "Documented Projects",
   },
 ];
 

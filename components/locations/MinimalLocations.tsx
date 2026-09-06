@@ -36,7 +36,7 @@ const STATIONS: StationDetail[] = [
     phone: "+91 80 4120 0300",
     email: "blr.corporate@freyerinternational.com",
     gateway: "Kempegowda Int'l Airport (BLR) Cargo & Whitefield ICD",
-    capabilities: ["Central Control Tower", "Air Charter Operations", "AEO Tier-2 Governance", "ERP Integrations"],
+    capabilities: ["Central Control Tower", "Air Charter Operations", "AEO Governance", "ERP Integrations"],
   },
   {
     id: "chennai_egmore",
@@ -236,7 +236,7 @@ export function MinimalLocations() {
               National Operating Footprint
             </span>
             <div className="mt-1 text-xl sm:text-2xl font-bold tracking-tight text-white">
-              9 Strategic Regional Hubs
+              9 Branches Across 8 Cities
             </div>
             <p className="text-xs text-slate-400 font-mono mt-0.5">
               Dedicated company offices at vital maritime ports and air complexes

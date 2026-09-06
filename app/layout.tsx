@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Freyer International Logistics",
   },
   description:
-    "Integrated logistics, international air and ocean freight forwarding, AEO Tier-2 certified customs brokerage, and heavy-lift project cargo engineering across India and global trading corridors.",
+    "Integrated logistics, international air and ocean freight forwarding, AEO Certified customs brokerage, and heavy-lift project cargo engineering across India and global trading corridors.",
   metadataBase: new URL("https://freyer-international-v2.vercel.app"),
   alternates: {
     canonical: "/",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Freyer International Logistics | Precision Freight Forwarding",
     description:
-      "Integrated logistics, AEO Tier-2 customs clearance, high-bay warehousing, and heavy-lift project cargo engineering across 10 Indian hubs and 190+ countries.",
+      "Integrated logistics, AEO Certified customs clearance, warehousing, and project cargo engineering across 9 branches in India.",
     url: "https://freyer-international-v2.vercel.app",
     siteName: "Freyer International Logistics",
     images: [
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Freyer International Logistics",
     description:
-      "Precision freight forwarding, AEO Tier-2 customs clearance, and heavy-lift engineering across India.",
+      "Precision freight forwarding, AEO Certified customs clearance, and heavy-lift engineering across India.",
     images: ["/images/hero-poster.jpg"],
   },
 };
@@ -67,9 +67,9 @@ const jsonLd = {
       "legalName": "Freyer International Logistics Private Limited",
       "url": "https://freyer-international-v2.vercel.app",
       "logo": "https://freyer-international-v2.vercel.app/images/logo.png",
-      "description": "Integrated logistics, international freight forwarding, AEO Tier-2 certified customs brokerage, and project cargo engineering.",
+      "description": "Integrated logistics, international freight forwarding, AEO Certified customs brokerage, and project cargo engineering.",
       "telephone": "+91-44-43191919",
-      "email": "Selvakumar@freyerinternational.com",
+      "email": "info@freyerinternational.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "TAGA Tower, New No: 45 Old No 20, 1st Floor, Sait Colony, Egmore",
@@ -79,9 +79,8 @@ const jsonLd = {
         "addressCountry": "IN"
       },
       "award": [
-        "AEO Tier-2 Authorized Economic Operator (CBIC License INAAQCA4076M0F243)",
-        "IATA Regulated Cargo Agent Accreditation",
-        "Great Place to Work Certified"
+        "AEO Certified (Authorized Economic Operator)",
+        "IATA Regulated Cargo Agent Accreditation"
       ],
       "memberOf": [
         {
@@ -121,7 +120,7 @@ const jsonLd = {
       "serviceType": [
         "Ocean Freight Forwarding (FCL/LCL)",
         "International Air Cargo Handling",
-        "AEO Tier-2 Customs Clearance",
+        "AEO Customs Clearance",
         "Heavy-Lift Project Cargo Logistics",
         "Contract Warehousing & 3PL Distribution",
         "Marine Cargo Risk Underwriting & Survey"
@@ -133,7 +132,7 @@ const jsonLd = {
         },
         {
           "@type": "AdministrativeArea",
-          "name": "Worldwide via 190+ Country Forwarding Alliances"
+          "name": "Worldwide via Global Forwarding Alliances"
         }
       ]
     }

@@ -17,7 +17,7 @@
 │   └── /services/risk-management (Marine Transit Insurance & Loss Prevention)
 ├── /projects (Filterable Technical Case Study Showcase)
 ├── /locations (Interactive Directory of 10 Pan-India Hubs & Port Proximity)
-├── /careers (Culture, Great Place to Work Certified, Job Openings & Resume Drop)
+├── /careers (Culture, Logistics Practice Disciplines, Job Openings & Resume Drop)
 ├── /contact (Departmental Inquiry Routing: Sales, Operations, Billing, General)
 └── /quote (Dedicated 5-Step Guided Freight RFQ Engine)
 ```

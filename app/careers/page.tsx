@@ -7,7 +7,7 @@ import { Mail, Award } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Careers & Culture",
-  description: "Join Freyer International Logistics, a Great Place to Work certified logistics organization operating across 10 corporate branch hubs in India.",
+  description: "Join Freyer International Logistics, a certified logistics organization operating across 9 branches in 8 cities in India.",
   alternates: {
     canonical: "/careers",
   },
@@ -22,7 +22,7 @@ const PRACTICE_AREAS = [
   {
     num: "02",
     title: "Licensed Customs Brokerage",
-    desc: "Indian Customs import/export compliance, AEO Tier-2 statutory filings, EDI documentation, and tariff classification.",
+    desc: "Indian Customs import/export compliance, AEO statutory filings, EDI documentation, and tariff classification.",
   },
   {
     num: "03",
@@ -64,7 +64,7 @@ export default function CareersPage() {
               People who move the movement.
             </h1>
             <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-4 sm:mt-5 leading-relaxed max-w-3xl">
-              Freyer International is certified as a Great Place to Work&reg;. We invest continuously in talented logistics practitioners, licensed customs specialists, and supply chain architects operating across 10 strategic hubs in India.
+              We invest continuously in talented logistics practitioners, licensed customs specialists, and supply chain architects operating across 9 branches in 8 cities in India.
             </p>
           </div>
         </div>
@@ -148,29 +148,29 @@ export default function CareersPage() {
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-sm font-mono text-slate-400">
-                    <span>10 Indian Hubs</span>
+                    <span>9 Indian Branches</span>
                     <span className="text-[#0b2144] font-semibold">Active Practice</span>
                   </div>
                 </div>
               ))}
 
-              {/* GPTW Trust Highlight Card */}
+              {/* Operational Culture Card */}
               <div className="p-8 sm:p-10 bg-[#060f1e] text-white rounded-3xl border border-white/10 shadow-md space-y-4 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-emerald-400 font-bold">
-                    <span>NATIONAL STANDARD</span>
-                    <Award className="w-5 h-5" />
+                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-slate-400 font-bold">
+                    <span>OPERATIONAL CULTURE</span>
+                    <Award className="w-5 h-5 text-[#ff6846]" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white mt-1.5">
-                    Great Place to Work&reg; Certified
+                    Nationwide Freight Standards
                   </h3>
                   <p className="text-base text-slate-300 mt-2.5 leading-relaxed">
-                    Nationally certified for fostering high workplace trust, long-term talent retention, and professional development across all Indian branch offices.
+                    Committed to operational discipline, workplace safety, and continuous logistics training across all 9 Indian branch offices.
                   </p>
                 </div>
 
                 <div className="pt-4 border-t border-white/10 text-sm font-mono text-slate-400">
-                  Trust Index Assessment
+                  Branch Network Standards
                 </div>
               </div>
             </div>

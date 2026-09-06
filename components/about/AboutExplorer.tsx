@@ -15,28 +15,28 @@ import {
 } from "lucide-react";
 
 const FEATURED_AWARDS = [
-  { id: 1, img: "/images/awards/1.jpg", title: "Logistics Excellence Award", forum: "National Logistics Forum" },
-  { id: 3, img: "/images/awards/3.jpg", title: "Excellence in Project Cargo", forum: "Industrial Forwarding Forum" },
-  { id: 11, img: "/images/awards/11.jpeg", title: "Freight Forwarder of the Year", forum: "Regional Transport Awards" },
+  { id: 1, img: "/images/awards/1.jpg", title: "Logistics Excellence Recognition", forum: "Industry Award Trophy" },
+  { id: 3, img: "/images/awards/3.jpg", title: "Project Cargo Achievement", forum: "Industry Award Trophy" },
+  { id: 11, img: "/images/awards/11.jpeg", title: "Freight Forwarder Recognition", forum: "Industry Award Trophy" },
 ];
 
 const ALL_AWARDS = [
-  { id: 1, img: "/images/awards/1.jpg", title: "Logistics Excellence Award", forum: "National Logistics Forum" },
-  { id: 2, img: "/images/awards/2.jpg", title: "Cargo Handling Achievement", forum: "Maritime Gateway Honors" },
-  { id: 3, img: "/images/awards/3.jpg", title: "Excellence in Project Cargo", forum: "Industrial Forwarding Forum" },
-  { id: 4, img: "/images/awards/4.jpg", title: "Supply Chain Leadership Trophy", forum: "EXIM Logistics Conclave" },
-  { id: 5, img: "/images/awards/5.jpg", title: "Customs Compliance Merit", forum: "Port Clearance Summit" },
-  { id: 11, img: "/images/awards/11.jpeg", title: "Freight Forwarder of the Year", forum: "Regional Transport Awards" },
-  { id: 12, img: "/images/awards/12.jpeg", title: "Operational Rigor Citation", forum: "Supply Chain Council" },
-  { id: 13, img: "/images/awards/13.jpeg", title: "Best Multimodal Performer", forum: "Air & Ocean Guild" },
-  { id: 14, img: "/images/awards/14.jpeg", title: "Carrier Partnership Award", forum: "Global Forwarding Alliance" },
+  { id: 1, img: "/images/awards/1.jpg", title: "Logistics Excellence Recognition", forum: "Industry Award Trophy" },
+  { id: 2, img: "/images/awards/2.jpg", title: "Cargo Handling Achievement", forum: "Industry Award Trophy" },
+  { id: 3, img: "/images/awards/3.jpg", title: "Project Cargo Achievement", forum: "Industry Award Trophy" },
+  { id: 4, img: "/images/awards/4.jpg", title: "Supply Chain Performance Trophy", forum: "Industry Award Trophy" },
+  { id: 5, img: "/images/awards/5.jpg", title: "Customs Operations Recognition", forum: "Industry Award Trophy" },
+  { id: 11, img: "/images/awards/11.jpeg", title: "Freight Forwarder Recognition", forum: "Industry Award Trophy" },
+  { id: 12, img: "/images/awards/12.jpeg", title: "Operational Rigor Citation", forum: "Industry Award Trophy" },
+  { id: 13, img: "/images/awards/13.jpeg", title: "Multimodal Performance Trophy", forum: "Industry Award Trophy" },
+  { id: 14, img: "/images/awards/14.jpeg", title: "Carrier Partnership Award", forum: "Industry Award Trophy" },
 ];
 
 const GLOBAL_ALLIANCES = [
-  { name: "WCA World", logo: "/images/wca.png", desc: "Leading independent freight forwarder network across 190+ countries" },
+  { name: "WCA World", logo: "/images/wca.png", desc: "Leading independent freight forwarder network worldwide" },
   { name: "Security Cargo Network (SCN)", logo: "/images/SCN.png", desc: "Global alliance of vetted international logistics specialists" },
-  { name: "WPA Network", logo: "/images/wpa.jpg", desc: "Worldwide Partners Alliance of certified freight agents" },
-  { name: "FDX Network", logo: "/images/FDX.jpg", desc: "International express and freight forwarding partnership" },
+  { name: "WPA (The Logistics Network)", logo: "/images/wpa.jpg", desc: "Global logistics network partner" },
+  { name: "FDX Logistics Network", logo: "/images/FDX.jpg", desc: "Global freight logistics network partner" },
   { name: "AMTOI", logo: "/images/amtoi.png", desc: "Association of Multimodal Transport Operators of India" },
   { name: "ACAAI", logo: "/images/Acaai.jpg", desc: "Air Cargo Agents Association of India" },
 ];
@@ -267,7 +267,7 @@ export function AboutExplorer() {
               </span>
               <h4 className="text-base font-bold text-[#0b2144]">Our Employees</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                A culture built on shared values and continuous professional development across all Indian hubs, certified as a Great Place to Work&reg;.
+                A culture built on shared values, technical discipline, and continuous professional development across all Indian branch offices.
               </p>
             </div>
           </div>
@@ -293,22 +293,22 @@ export function AboutExplorer() {
 
         {/* 3 Evidence Blocks */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {/* AEO Tier-2 Block */}
+          {/* AEO Block */}
           <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-5">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-slate-500 pb-2 border-b border-slate-100">
-                <span className="text-[#c42f0b] font-bold">AEO TIER-2 ACCREDITATION</span>
+                <span className="text-[#c42f0b] font-bold">AEO ACCREDITATION</span>
                 <span>Indian Customs</span>
               </div>
               <h3 className="text-lg font-bold text-[#0b2144] mt-3">
-                Authorized Economic Operator (AEO Tier-2)
+                Authorized Economic Operator (AEO)
               </h3>
               <p className="text-slate-600 text-xs mt-2 leading-relaxed">
                 Certified by the Central Board of Indirect Taxes &amp; Customs (CBIC), Ministry of Finance, Government of India.
               </p>
               <div className="mt-3 p-2.5 bg-slate-50 rounded border border-slate-200/70 text-xs font-mono">
-                <span className="text-slate-500 block text-[10px]">Certificate No:</span>
-                <span className="font-bold text-[#0b2144]">INAAQCA4076M0F243</span>
+                <span className="text-slate-500 block text-[10px]">Accreditation Authority:</span>
+                <span className="font-bold text-[#0b2144]">Indian Customs (CBIC)</span>
               </div>
             </div>
 
@@ -347,24 +347,24 @@ export function AboutExplorer() {
             </div>
           </div>
 
-          {/* Great Place to Work Block */}
+          {/* SCN & WCA Alliances Block */}
           <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-5">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-slate-500 pb-2 border-b border-slate-100">
-                <span className="text-emerald-700 font-bold">WORKPLACE EXCELLENCE</span>
-                <span>National Index</span>
+                <span className="text-[#0b2144] font-bold">GLOBAL NETWORKS</span>
+                <span>International Alliances</span>
               </div>
               <h3 className="text-lg font-bold text-[#0b2144] mt-3">
-                Great Place to Work&reg; Certified
+                SCN &amp; WCA World Member
               </h3>
               <p className="text-slate-600 text-xs mt-2 leading-relaxed">
-                Nationally certified workplace culture supporting low operational turnover and experienced freight account teams across India.
+                Vetted international forwarding partner of Security Cargo Network (SCN) and WCA World, providing verified reciprocal agency coverage across key global gateways.
               </p>
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
-              <span>Trust Standard:</span>
-              <span className="font-semibold text-emerald-700">Certified Organization</span>
+              <span>Network Status:</span>
+              <span className="font-semibold text-slate-800">Certified Partner</span>
             </div>
           </div>
         </div>
@@ -492,7 +492,7 @@ export function AboutExplorer() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 04: 10-BRANCH GEOGRAPHIC FOOTPRINT
+          SECTION 04: 9-BRANCH GEOGRAPHIC FOOTPRINT
       ───────────────────────────────────────────────────────────── */}
       <section id="footprint" className="pt-2">
         <div className="pb-6 border-b border-slate-200">
@@ -509,10 +509,10 @@ export function AboutExplorer() {
             </Link>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
-            Direct Physical Network Across 10 Hubs
+            Direct Physical Network Across 9 Branches in 8 Cities
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-            Direct offices positioned at India&apos;s critical manufacturing centers, deepwater sea ports, and international air cargo complexes, connected to 190+ countries through certified global forwarder alliances.
+            Direct offices positioned at India&apos;s critical manufacturing centers, deepwater sea ports, and international air cargo complexes, connected globally through certified forwarder alliances.
           </p>
         </div>
 
@@ -550,7 +550,7 @@ export function AboutExplorer() {
             International Forwarding Network Alliances
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-            Active certified membership in the world&apos;s leading independent freight networks, ensuring reliable agency representation across 190+ countries.
+            Active certified membership in the world&apos;s leading independent freight networks, ensuring reliable agency representation across global trade corridors worldwide.
           </p>
         </div>
 

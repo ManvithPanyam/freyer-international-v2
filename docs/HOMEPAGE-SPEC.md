@@ -14,7 +14,7 @@
 - **Embedded Floating Card**: 3-Tab Quick Trigger: **Quick RFQ / Find Nearest Branch / Track Status [Future]**.
 
 ## Section 3: Verified Trust & Accreditation Ribbon
-- **Visual Composition**: Clean contrast bar displaying verified badges: **AEO Certified**, **IATA Agent**, **WCA World**, **SCN Partner**, **Great Place to Work**.
+- **Visual Composition**: Clean contrast bar displaying verified badges: **AEO Certified**, **IATA Agent**, **WCA World**, **SCN Partner**, **AMTOI**, **ACAAI**.
 - **Evidence Requirement**: Strictly verified badges only; zero unverified industry claims.
 
 ## Section 4: Core Logistics Capabilities Matrix

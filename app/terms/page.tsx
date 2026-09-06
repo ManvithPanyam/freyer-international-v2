@@ -53,7 +53,7 @@ export default function TermsPage() {
               <ul className="list-disc pl-6 space-y-2 text-slate-600 text-base">
                 <li>The Multimodal Transportation of Goods Act, 1993 (India).</li>
                 <li>The Indian Carriage of Goods by Sea Act, 1925, and Carriage by Air Act, 1972.</li>
-                <li>The Customs Act, 1962, under Authorized Economic Operator Tier-2 (AEO-T2) compliance rules.</li>
+                <li>The Customs Act, 1962, under Authorized Economic Operator (AEO) compliance rules.</li>
                 <li>The International Air Transport Association (IATA) Regulated Agent standards and FIATA standard rules where applicable.</li>
               </ul>
             </section>

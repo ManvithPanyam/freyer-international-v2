@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Data governance notice and privacy policy of Freyer International Logistics Pvt. Ltd., detailing information processing under India's DPDP Act 2023 & 2025 Rules, AEO Tier-2 customs compliance, and global forwarding data workflows.",
+    "Data governance notice and privacy policy of Freyer International Logistics Pvt. Ltd., detailing information processing under India's DPDP Act 2023 & 2025 Rules, AEO customs compliance, and global forwarding data workflows.",
   alternates: {
     canonical: "/privacy",
   },
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
                 This Data Governance Notice applies to all digital interactions with Freyer International Logistics Pvt. Ltd., including our corporate domain (<span className="font-mono text-sm text-[#0b2144]">freyerinternational.com</span> and associated deployment mirrors), freight inquiry portals, Freight Configurator tools, branch contact channels, and career desks.
               </p>
               <p>
-                Under the DPDP Act 2023, <strong>Freyer International Logistics Pvt. Ltd.</strong> acts as the Data Fiduciary for personal data submitted through this website. For physical cargo operations, bills of lading, and customs declarations, data processing is additionally governed by statutory customs regulations under Indian Customs AEO Tier-2 certification (<span className="font-mono text-sm font-semibold text-slate-900">INAAQCA4076M0F243</span>).
+                Under the DPDP Act 2023, <strong>Freyer International Logistics Pvt. Ltd.</strong> acts as the Data Fiduciary for personal data submitted through this website. For physical cargo operations, bills of lading, and customs declarations, data processing is additionally governed by statutory customs regulations under Indian Customs AEO Certification.
               </p>
             </section>
 
@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
                     <strong>Data Elements:</strong> Candidate curriculum vitae (CV), educational qualifications, past logistics experience, professional certifications, contact coordinates, and identity credentials.
                   </p>
                   <p className="text-xs font-mono text-slate-500 mt-2">
-                    <strong>Purpose:</strong> Talent acquisition and background verification across our 10 operating hubs.
+                    <strong>Purpose:</strong> Talent acquisition and background verification across our branch offices in India.
                   </p>
                 </div>
 
@@ -127,12 +127,12 @@ export default function PrivacyPolicyPage() {
                 4. Cross-Border Forwarding &amp; Consortium Data Sharing
               </h2>
               <p>
-                To provide seamless door-to-door multimodal freight across 190+ countries, Freyer coordinates with accredited international freight forwarder networks:
+                To provide seamless door-to-door multimodal freight globally, Freyer coordinates with accredited international freight forwarder networks:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-slate-600 text-base">
-                <li><strong>Alliances:</strong> WCA World, Security Cargo Network (SCN), Worldwide Partners Alliance (WPA), and FDX Network partner offices solely in destination countries relevant to the specific shipment.</li>
+                <li><strong>Alliances:</strong> WCA World, Security Cargo Network (SCN), WPA (The Logistics Network), and FDX Logistics Network partner offices solely in destination countries relevant to the specific shipment.</li>
                 <li><strong>Carriers &amp; Port Authorities:</strong> Commercial ocean lines, air charter operators, terminal operators, and bonded container freight stations (CFS).</li>
-                <li><strong>Statutory Regulatory Bodies:</strong> Indian Customs (AEO-T2 framework), port captaincies, and international customs administrations.</li>
+                <li><strong>Statutory Regulatory Bodies:</strong> Indian Customs (AEO framework), port captaincies, and international customs administrations.</li>
               </ul>
               <p className="text-sm text-slate-500 italic">
                 We do not sell, license, rent, or trade commercial contact lists or shipment databases to third-party marketing brokers or data brokers under any circumstances.
@@ -164,7 +164,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-slate-600 text-base">
                 <li><strong>Rate Quotes &amp; Inquiries:</strong> Retained for 12 months from the date of submission if no commercial booking ensues.</li>
-                <li><strong>Statutory Logistics &amp; Customs Records:</strong> Retained for 5 to 7 years in compliance with Section 143AA of the Indian Customs Act, 1962, AEO Tier-2 audit mandates, and GST accounting rules.</li>
+                <li><strong>Statutory Logistics &amp; Customs Records:</strong> Retained for 5 to 7 years in compliance with Section 143AA of the Indian Customs Act, 1962, AEO audit mandates, and GST accounting rules.</li>
                 <li><strong>Candidate Résumés:</strong> Retained for up to 6 months for recruitment consideration, after which records are securely purged unless active candidate consent is renewed.</li>
               </ul>
             </section>
@@ -202,7 +202,7 @@ export default function PrivacyPolicyPage() {
                 <div><strong>Operational Gateway:</strong> No.8, 1st Cross Street, Rajiv Gandhi Nagar, Vanagaram, Chennai - 600077, Tamil Nadu, India</div>
                 <div><strong>Email:</strong> <a href="mailto:info@freyerinternational.com" className="text-[#c42f0b] hover:underline font-semibold">info@freyerinternational.com</a></div>
                 <div><strong>Telephone:</strong> +91 44 4319 1919 / 080 4120 0300</div>
-                <div><strong>Customs Certification:</strong> Indian Customs AEO-T2 INAAQCA4076M0F243</div>
+                <div><strong>Customs Certification:</strong> Indian Customs AEO Certified</div>
               </div>
             </section>
           </div>
