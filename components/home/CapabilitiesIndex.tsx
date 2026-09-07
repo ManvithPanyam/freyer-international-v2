@@ -58,7 +58,7 @@ const CAPABILITIES: CapabilityItem[] = [
     image: "/images/Customs-Services.jpg",
     routeHref: "/services/customs-brokerage",
     verifiedProofs: [
-      { label: "Accreditation", value: "AEO Certified (Indian Customs)" },
+      { label: "Accreditation", value: "CBIC AEO-LO (INAAQCA4076M0F243)" },
       { label: "Compliance Model", value: "AEO Priority Clearance & DPD" },
       { label: "Filing Authority", value: "Direct ICEGATE EDI Clearance" },
     ],
@@ -67,15 +67,15 @@ const CAPABILITIES: CapabilityItem[] = [
     id: "warehouse",
     index: "04",
     name: "Contract Warehousing & 3PL",
-    tagline: "Strategic multi-hub storage, inventory governance, and CFS handling.",
+    tagline: "1,000,000+ sq. ft. footprint, inventory governance, and CFS handling.",
     description:
-      "Positioned in close proximity to major ports and national highway corridors. Operations span container freight station (CFS) handling, cross-docking, and full 3PL distribution.",
+      "Footprint that equates to over 1,000,000 square feet. All facilities are Warehouse Management Systems enabled with multi-client and multi-location capabilities in close proximity to major ports and highways.",
     image: "/images/Warehouse.jpg",
     routeHref: "/services/warehousing",
     verifiedProofs: [
-      { label: "Storage Model", value: "Short & Long-Term Contract" },
-      { label: "Handling Scope", value: "Pick & Pack, CFS & Cross-Dock" },
-      { label: "Location Synergy", value: "Port & Industrial Gateways" },
+      { label: "Storage Model", value: "1,000,000+ Sq. Ft. WMS Network" },
+      { label: "Handling Scope", value: "CFS to Full 3PL Outsourced Partner" },
+      { label: "Location Synergy", value: "Close Proximity to Ports & Highways" },
     ],
   },
   {

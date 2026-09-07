@@ -127,11 +127,11 @@ export function NetworkInteractive() {
             National Operational Footprint
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0b2144] leading-[1.1]">
-            <span className="text-[#c42f0b] font-mono mr-3">9</span>
-            Branches Across 8 Cities
+            <span className="text-amber-500 font-mono mr-3">10</span>
+            Stations Across 8 Cities
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-4 max-w-xl leading-relaxed">
-            A physical network spanning 9 branches across 8 commercial cities in India.
+            A physical station network spanning 10 operating locations across 8 commercial hubs and port gateways in India.
           </p>
         </div>
 

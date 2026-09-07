@@ -229,7 +229,7 @@ export function ServicesExplorer() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 03: CORE DISCIPLINES (TIER 2 REFINED 2x2 GRID)
+          SECTION 03: CORE DISCIPLINES (SECONDARY 2x2 GRID)
       ───────────────────────────────────────────────────────────── */}
       <section id="core-disciplines" className="pt-2">
         <div className="pb-6 border-b border-slate-200">

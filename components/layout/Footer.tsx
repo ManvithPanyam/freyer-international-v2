@@ -47,7 +47,7 @@ export function Footer() {
             </p>
 
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>AEO Certified (Indian Customs)</div>
+              <div>CBIC AEO-LO Certified (INAAQCA4076M0F243)</div>
               <div>IATA Regulated Cargo Agent</div>
               <div>SCN &amp; WCA Partner Network</div>
             </div>
@@ -110,7 +110,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/locations" className="hover:text-white transition-colors">
-                  9 Branches Across 8 Cities
+                  10 Stations Across 8 Cities
                 </Link>
               </li>
               <li>

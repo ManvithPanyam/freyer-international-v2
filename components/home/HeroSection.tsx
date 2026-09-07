@@ -1,212 +1,153 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Play, Pause, Search } from "lucide-react";
-import Hls from "hls.js";
+import { ArrowRight, Search, ShieldCheck, CheckCircle2, Globe2, Info } from "lucide-react";
 import { TrackShipmentModal } from "@/components/modals/TrackShipmentModal";
 
 export function HeroSection() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [isTrackModalOpen, setIsTrackModalOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Respect prefers-reduced-motion
-  const prefersReducedMotion =
-    typeof window !== "undefined"
-      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      : false;
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || prefersReducedMotion) return;
-
-    let hlsInstance: Hls | null = null;
-    const hlsSrc = "/video/hls/master.m3u8";
-
-    const handleCanPlay = () => setVideoLoaded(true);
-    video.addEventListener("canplay", handleCanPlay);
-
-    if (Hls.isSupported()) {
-      hlsInstance = new Hls({
-        autoStartLoad: true,
-        startLevel: 0, // Instant start with lightweight 360p fragment (~90 KB)
-        capLevelToPlayerSize: false,
-        maxBufferLength: 10,
-        maxMaxBufferLength: 20,
-      });
-
-      hlsInstance.loadSource(hlsSrc);
-      hlsInstance.attachMedia(video);
-
-      hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play().catch(() => {
-          // Autoplay policy fallback
-        });
-      });
-
-      hlsInstance.on(Hls.Events.LEVEL_SWITCHED, (_event, data) => {
-        const level = hlsInstance?.levels[data.level];
-        if (level) {
-          console.log(`[HLS] Switched to rendition: ${level.width}x${level.height} @ ${Math.round(level.bitrate / 1000)} kbps`);
-        }
-      });
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // Native HLS for Safari / iOS WebKit
-      video.src = hlsSrc;
-      video.play().catch(() => {});
-    } else {
-      // Fallback MP4
-      video.src = "/video/freyer-hero.mp4";
-      video.play().catch(() => {});
-    }
-
-    return () => {
-      video.removeEventListener("canplay", handleCanPlay);
-      if (hlsInstance) {
-        hlsInstance.destroy();
-      }
-    };
-  }, [prefersReducedMotion]);
-
-  // Handle video pause / play toggle (WCAG 2.2.2)
-  const toggleBackgroundVideo = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (isPlaying) {
-      video.pause();
-      setIsPlaying(false);
-    } else {
-      video.play();
-      setIsPlaying(true);
-    }
-  };
 
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-center justify-center bg-[#07152b] text-white overflow-hidden pt-24 pb-16"
+      aria-label="Freyer International Overview"
+      className="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center bg-[#07152b] text-white overflow-hidden pt-28 pb-20 sm:pb-24"
     >
-      {/* ── Cinematic Background ── */}
-      <div className="absolute inset-0 z-0">
-        {/* 0ms Poster Frame (Seamless instant first frame) */}
-        <Image
-          src="/images/hero-poster.jpg"
-          alt=""
-          aria-hidden="true"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-          style={{
-            opacity: videoLoaded && isPlaying ? 0 : 0.75,
-            transition: "opacity 0.8s ease",
-            filter: "saturate(0.95)",
-          }}
-        />
-
-        {/* Adaptive HLS Video Stream */}
-        {!prefersReducedMotion && (
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            style={{
-              opacity: videoLoaded && isPlaying ? 0.72 : 0,
-              transition: "opacity 0.8s ease",
-              filter: "saturate(0.95)",
-            }}
+      {/* ── Background Imagery: Candidate 1 (Port Terminal at Dusk) ── */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.div
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.04 }}
+          transition={{ duration: 16, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+          className="relative w-full h-full"
+        >
+          <Image
+            src="/images/ai-candidates/AI-GENERATED_NOT_A_REAL_FREYER_FACILITY_ai_port_terminal_1788788622412.jpg"
+            alt="Deep-water container terminal at dusk with illuminated cranes — AI-generated conceptual illustration"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+            style={{ filter: "brightness(0.72) contrast(1.05)" }}
           />
-        )}
+        </motion.div>
 
-        {/* Neutral cinematic black vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 to-transparent" />
+        {/* Deep Maritime Navy Gradient Overlays (High-Contrast Readability) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#040914] via-[#07152b]/75 to-[#040914]/90" />
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
-          style={{ boxShadow: "inset 0 0 180px 60px rgba(0,0,0,0.35)" }}
+          style={{ boxShadow: "inset 0 0 200px 70px rgba(4,9,20,0.65)" }}
         />
 
-        {/* Background Video Pause/Play Control (WCAG 2.2.2) */}
-        {!prefersReducedMotion && (
-          <button
-            type="button"
-            onClick={toggleBackgroundVideo}
-            className="absolute bottom-6 right-6 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            aria-label={isPlaying ? "Pause background video" : "Play background video"}
-          >
-            {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-          </button>
-        )}
+        {/* ── Mandatory Attribution Badge (Visible in UI) ── */}
+        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 pointer-events-auto">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/70 hover:bg-black/90 backdrop-blur-md border border-white/15 text-[11px] font-mono text-slate-300 transition-colors shadow-lg">
+            <Info className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <span className="tracking-wide">AI-Generated Conceptual Illustration &mdash; Not a real Freyer facility</span>
+          </div>
+        </div>
       </div>
 
-      {/* ── Hero Content ── */}
+      {/* ── Hero Content (United Carriers Authority Tier) ── */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-        {/* Main Statement */}
-        <motion.h1
-          initial={{ opacity: 0, y: 28 }}
+        
+        {/* Eyebrow / Tagline (Verbatim from index.html) */}
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white leading-[1.04] max-w-4xl"
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-6"
         >
-          Complex cargo.
+          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+          <span className="text-xs font-mono font-semibold tracking-wider text-amber-300 uppercase">
+            Logistics Beyond Boundaries
+          </span>
+        </motion.div>
+
+        {/* Main Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.08] max-w-4xl"
+        >
+          Complex Cargo.
           <br />
-          <span className="text-slate-300 font-light italic">
-            Precisely moved.
+          <span className="text-slate-200 font-light italic">
+            Disciplined Execution.
           </span>
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Subtitle (Grounded in Verified Section 1 Scope) */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25 }}
-          className="mt-7 text-base sm:text-lg text-slate-300/90 max-w-2xl font-normal leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-6 text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl font-normal leading-relaxed"
         >
-          Nationwide reach, personal accountability. International air &amp; ocean freight, AEO-certified customs brokerage, and turnkey project cargo across 9 branches in 8 cities in India.
+          Integrated logistics, international freight forwarding, and project cargo engineering &mdash; connecting Indian enterprise to global commerce across 10 stations in 8 commercial hubs.
         </motion.p>
+
+        {/* Trust Proof Pills Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs font-mono"
+        >
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/[0.08] border border-white/15 backdrop-blur-sm text-slate-200">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <span>CBIC AEO-LO Certified (INAAQCA4076M0F243)</span>
+          </div>
+
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/[0.08] border border-white/15 backdrop-blur-sm text-slate-200">
+            <CheckCircle2 className="w-3.5 h-3.5 text-sky-400" />
+            <span>IATA Cargo Agent</span>
+          </div>
+
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/[0.08] border border-white/15 backdrop-blur-sm text-slate-200">
+            <Globe2 className="w-3.5 h-3.5 text-amber-400" />
+            <span>WCA World & SCN Member #420</span>
+          </div>
+        </motion.div>
 
         {/* Dual Actions: Request a Quote + Track Consignment */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
         >
           <a
-            href="/#quote"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold px-8 py-4 rounded-xl text-sm sm:text-base transition-colors duration-150 shadow-2xl shadow-[#c42f0b]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07152b]"
+            href="#rfq"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold px-8 py-4 rounded-xl text-sm sm:text-base transition-colors duration-150 shadow-2xl shadow-[#c42f0b]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
-            <span>Request a Quote</span>
+            <span>Request a Freight Quote</span>
             <ArrowRight className="w-4 h-4" />
           </a>
 
           <button
             type="button"
             onClick={() => setIsTrackModalOpen(true)}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 active:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl text-sm sm:text-base transition-colors duration-150 border border-white/20 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07152b]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/15 active:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl text-sm sm:text-base transition-colors duration-150 border border-white/20 backdrop-blur-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <Search className="w-4 h-4 text-slate-300" />
             <span>Track Consignment</span>
           </button>
         </motion.div>
 
-        {/* Scroll cue */}
+        {/* Scroll Cue */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-20 text-[10px] font-mono tracking-[0.25em] text-slate-500 uppercase"
+          className="mt-16 sm:mt-20 text-[10px] font-mono tracking-[0.25em] text-slate-400 uppercase flex items-center gap-2"
         >
-          Scroll to explore &darr;
+          <span>Scroll to explore</span>
+          <span>&darr;</span>
         </motion.div>
       </div>
 

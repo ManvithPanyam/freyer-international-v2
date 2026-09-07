@@ -3,55 +3,62 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "motion/react";
+import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
 const ACCREDITATIONS = [
   {
     id: "aeo",
-    name: "AEO Certified",
-    logo: null,           // rendered as CSS text-mark below
+    name: "CBIC AEO-LO Certified",
+    detail: "Logistics Operator (INAAQCA4076M0F243)",
+    subdetail: "Valid through 19/08/2029",
+    logo: null, // Custom badge
     w: 120,
     h: 56,
-    cert: "CBIC Accredited",
   },
   {
     id: "iata",
-    name: "IATA Accredited",
+    name: "IATA Cargo Agent",
+    detail: "Regulated International Air Forwarder",
+    subdetail: "Global Standards",
     logo: "/images/IATA.png",
     w: 100,
     h: 64,
-    cert: "Cargo Agent",
   },
   {
     id: "wca",
     name: "WCA World",
+    detail: "Independent Freight Forwarder Network",
+    subdetail: "Full Member",
     logo: "/images/wca.png",
     w: 110,
-    h: 61,
-    cert: "Full Member",
+    h: 56,
   },
   {
     id: "scn",
-    name: "SCN Partner",
+    name: "Security Cargo Network (SCN)",
+    detail: "Member #420 in Good Standing (Since 2019)",
+    subdetail: "Vetted International Alliance",
     logo: "/images/SCN.png",
-    w: 130,
+    w: 120,
     h: 50,
-    cert: "Partner",
   },
   {
     id: "amtoi",
     name: "AMTOI",
+    detail: "Assoc. of Multimodal Transport Operators",
+    subdetail: "Member in Standing",
     logo: "/images/amtoi.png",
     w: 64,
     h: 64,
-    cert: "Member",
   },
   {
     id: "acaai",
     name: "ACAAI",
+    detail: "Air Cargo Agents Association of India",
+    subdetail: "Member",
     logo: "/images/Acaai.jpg",
-    w: 48,
+    w: 52,
     h: 64,
-    cert: "Member",
   },
 ];
 
@@ -63,77 +70,87 @@ export function AccreditationsProof() {
     <section
       ref={ref}
       id="accreditations"
-      className="py-16 sm:py-20 bg-white border-t border-slate-100"
+      className="py-16 sm:py-24 bg-white border-t border-slate-100"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header — quiet, institutional */}
+        {/* Header — quiet, institutional authority */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10 sm:mb-12"
+          className="text-center mb-12 sm:mb-16"
         >
-          <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-slate-400">
-            Certifications &amp; Network Memberships
-          </span>
-          <p className="mt-3 text-slate-400 text-sm max-w-sm mx-auto leading-relaxed">
-            Freyer operates under direct certification from Indian Customs,
-            IATA, and four global freight networks.
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-mono uppercase tracking-widest mb-3">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Verified Credentials &amp; Global Alliances</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0b2144]">
+            Government Accreditations &amp; Global Freight Networks
+          </h2>
+          <p className="mt-3 text-slate-500 text-sm max-w-xl mx-auto leading-relaxed">
+            Directly accredited by the Central Board of Indirect Taxes &amp; Customs (CBIC) as an AEO Logistics Operator, IATA, and vetted global consortia.
           </p>
         </motion.div>
 
-        {/* Proof wall — two rows of three, logos floating on white */}
-        <div className="grid grid-cols-3 gap-x-8 gap-y-10 sm:gap-x-16 sm:gap-y-12 items-center justify-items-center">
+        {/* Proof Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {ACCREDITATIONS.map((a, i) => (
             <motion.div
               key={a.id}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.45, delay: i * 0.07 }}
-              className="flex flex-col items-center gap-3 group"
+              transition={{ duration: 0.45, delay: i * 0.08 }}
+              className="group p-6 rounded-xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
             >
-              {/* Logo — grayscale at rest, color on hover */}
-              {a.logo ? (
-                <div
-                  className="relative transition-all duration-300 group-hover:scale-105"
-                  style={{ width: a.w, height: a.h }}
-                >
-                  <Image
-                    src={a.logo}
-                    alt={a.name}
-                    fill
-                    className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-200"
-                    sizes="160px"
-                  />
-                </div>
-              ) : (
-                /* AEO text-mark — cleaner than certificate JPEG crop */
-                <div
-                  className="flex flex-col items-center justify-center transition-transform duration-200 group-hover:scale-105"
-                  style={{ width: a.w, height: a.h }}
-                  aria-label={a.name}
-                >
-                  <span className="text-[22px] font-black tracking-[0.08em] text-[#1a3a6b] leading-none">
-                    AEO
-                  </span>
-                  <span className="text-[8px] font-mono tracking-[0.18em] uppercase text-slate-500 mt-0.5">
-                    Indian Customs
-                  </span>
-                </div>
-              )}
+              <div className="flex items-center justify-between gap-4 mb-4">
+                {a.logo ? (
+                  <div
+                    className="relative transition-transform duration-200 group-hover:scale-105"
+                    style={{ width: a.w, height: a.h }}
+                  >
+                    <Image
+                      src={a.logo}
+                      alt={a.name}
+                      fill
+                      className="object-contain"
+                      sizes="160px"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex flex-col justify-center px-3 py-1.5 rounded-lg bg-[#0b2144] text-white">
+                    <span className="text-lg font-black tracking-wider leading-none">AEO-LO</span>
+                    <span className="text-[9px] font-mono tracking-widest text-emerald-400 mt-0.5">CBIC INDIA</span>
+                  </div>
+                )}
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
+                  <CheckCircle2 className="w-2.5 h-2.5 text-emerald-500" />
+                  Verified
+                </span>
+              </div>
 
+              <div>
+                <h3 className="text-sm font-bold text-[#0b2144]">
+                  {a.name}
+                </h3>
+                <p className="text-xs text-slate-600 mt-1 font-mono">
+                  {a.detail}
+                </p>
+                <p className="text-[11px] text-slate-400 mt-0.5">
+                  {a.subdetail}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Divider + verification note */}
+        {/* Verification Footer Note */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.55 }}
-          className="text-center text-[10px] font-mono text-slate-300 mt-8 sm:mt-10 tracking-wider"
+          className="text-center text-[11px] font-mono text-slate-400 mt-10 tracking-wider"
         >
-          ALL ACCREDITATIONS &amp; CONSORTIUM MEMBERSHIPS CURRENT
+          ALL CERTIFICATIONS &amp; CONSORTIUM MEMBERSHIPS CURRENT &amp; ACTIVE
         </motion.p>
       </div>
     </section>

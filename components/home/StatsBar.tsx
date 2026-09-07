@@ -4,10 +4,10 @@ import React from "react";
 import { motion } from "motion/react";
 import {
   Building2,
-  Users,
   TrendingUp,
   ShieldCheck,
   CheckCircle2,
+  Warehouse,
 } from "lucide-react";
 
 interface StatItem {
@@ -20,32 +20,32 @@ interface StatItem {
 
 const STATS: StatItem[] = [
   {
-    value: "9",
-    label: "Branches in 8 Cities",
-    sublabel: "Dedicated offices across major Indian ports & commercial centers",
+    value: "10",
+    label: "Stations across 8 Cities",
+    sublabel: "Physical offices across major Indian ports and trade centers",
     icon: Building2,
     verifiedBadge: "Pan-India Reach",
   },
   {
-    value: "AEO",
-    label: "AEO Certified",
-    sublabel: "Authorized Economic Operator status with Indian Customs",
+    value: "AEO-LO",
+    label: "CBIC Customs Certified",
+    sublabel: "Logistics Operator (INAAQCA4076M0F243) valid through Aug 2029",
     icon: ShieldCheck,
-    verifiedBadge: "CBIC Accredited",
+    verifiedBadge: "Official CBIC Tier",
   },
   {
-    value: "IATA",
-    label: "IATA Cargo Agent",
-    sublabel: "Regulated international air cargo agency authority",
-    icon: CheckCircle2,
-    verifiedBadge: "Global Standards",
+    value: "1,000,000+ sq. ft.",
+    label: "Warehousing Footprint",
+    sublabel: "Multi-client WMS facilities, CFS operations & 3PL distribution",
+    icon: Warehouse,
+    verifiedBadge: "Verified Capacity",
   },
   {
     value: "482 MT",
     label: "Heavy-Lift Benchmark",
-    sublabel: "11 documented breakbulk & heavy-lift project movements",
+    sublabel: "Single breakbulk movement & 11 documented project cases",
     icon: TrendingUp,
-    verifiedBadge: "Documented Projects",
+    verifiedBadge: "Verified Moves",
   },
 ];
 
@@ -72,7 +72,7 @@ export function StatsBar() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#c42f0b]">
+                    <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-400">
                       <Icon className="w-5 h-5" />
                     </div>
                     {stat.verifiedBadge && (
@@ -83,7 +83,7 @@ export function StatsBar() {
                     )}
                   </div>
 
-                  <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-mono tabular-nums">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-mono tabular-nums">
                     {stat.value}
                   </div>
                   <div className="text-sm font-semibold text-slate-200 mt-1">

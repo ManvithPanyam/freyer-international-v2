@@ -14,13 +14,13 @@ const FAQS: FaqItem[] = [
   {
     question: "What is Freyer's operational presence across India and global trade lanes?",
     answer:
-      "Freyer operates 9 full-fledged company branch offices covering India's vital trade gateways: Bengaluru (Corporate HQ), Chennai (Seaport & Air Cargo offices), Mumbai (Nhava Sheva/JNPT), Delhi NCR, Hyderabad, Visakhapatnam, Coimbatore, Tuticorin, and Ahmedabad. Globally, we hold direct service relationships with premier ocean carriers and airlines, supplemented by vetted international forwarder networks worldwide.",
+      "Freyer operates 10 stations across 8 commercial cities covering India's vital trade gateways: Bengaluru (Corporate Reg. Office), Chennai (Central Operations in Egmore & Air Cargo station at Airport), Mumbai (Andheri/Nhava Sheva), Delhi NCR (Gurugram), Hyderabad, Visakhapatnam, Coimbatore, Tuticorin, and Ahmedabad. Globally, we hold direct service relationships with premier ocean carriers and airlines, supplemented by vetted international forwarder networks worldwide.",
     tag: "Network & Scale",
   },
   {
     question: "How does Freyer's AEO certification accelerate customs clearance?",
     answer:
-      "As an Authorized Economic Operator (AEO) certified forwarder accredited by the Indian Customs Administration (CBIC), Freyer's consignments receive priority 'Green Channel' assessment on ICEGATE EDI, significantly reduced physical inspections, Direct Port Delivery (DPD) priority, and expedited customs examination at maritime ports and air cargo complexes.",
+      "As a CBIC-accredited Authorized Economic Operator (AEO-LO, Reg. INAAQCA4076M0F243), Freyer's consignments receive priority 'Green Channel' assessment on ICEGATE EDI, significantly reduced physical inspections, Direct Port Delivery (DPD) priority, and expedited customs examination at maritime ports and air cargo complexes.",
     tag: "Customs Regulatory",
   },
   {
