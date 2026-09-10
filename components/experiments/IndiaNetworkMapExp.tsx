@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
-import { MapPin, Phone, Mail, Building, Navigation, ArrowUpRight, Compass } from "lucide-react";
-import { HUB_COORDS } from "../home/indiaMapData";
+import { MapPin, Phone, Mail, Navigation, Compass, Layers } from "lucide-react";
 
 interface StationDetail {
   id: string;
@@ -12,27 +11,39 @@ interface StationDetail {
   shortLabel: string;
   stationName: string;
   category: "Operational Hub" | "Corporate Office" | "Air Terminal" | "Seaport Station";
+  region: "south" | "north_west" | "east_deccan";
+  isMaritime: boolean;
+  isAirTerminal: boolean;
   address: string;
   phone: string;
   email: string;
   keyGateways: string;
   cx: number;
   cy: number;
+  labelAnchor: "start" | "end" | "middle";
+  labelDx: number;
+  labelDy: number;
 }
 
 const STATIONS: StationDetail[] = [
   {
     id: "chennai_egmore",
     city: "Chennai",
-    shortLabel: "Chennai (Egmore)",
+    shortLabel: "Chennai (Egmore HQ)",
     stationName: "Chennai Central Operational Station",
     category: "Operational Hub",
+    region: "south",
+    isMaritime: true,
+    isAirTerminal: false,
     address: "TAGA Tower, New No: 45 Old No 20, 1st Floor, Sait Colony, Egmore, Chennai - 600008",
     phone: "+91 44 4319 1919",
     email: "chennai.ops@freyerinternational.com",
     keyGateways: "Chennai Port Trust & Ennore Kamarajar Port",
     cx: 256.84,
     cy: 476.0,
+    labelAnchor: "start",
+    labelDx: 12,
+    labelDy: -2,
   },
   {
     id: "chennai_airport",
@@ -40,12 +51,18 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Chennai (Airport)",
     stationName: "Chennai International Air Cargo Station",
     category: "Air Terminal",
+    region: "south",
+    isMaritime: false,
+    isAirTerminal: true,
     address: "No.2 Ambedkar Street, G.S.T. Road, Meenambakkam, Chennai - 600017",
     phone: "+91 44 4319 1920",
     email: "chennai.air@freyerinternational.com",
     keyGateways: "Chennai International Airport (MAA) Cargo Terminal",
     cx: 256.0,
     cy: 498.0,
+    labelAnchor: "start",
+    labelDx: 12,
+    labelDy: 14,
   },
   {
     id: "bengaluru",
@@ -53,12 +70,18 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Bengaluru",
     stationName: "Corporate Registered Office",
     category: "Corporate Office",
+    region: "south",
+    isMaritime: false,
+    isAirTerminal: true,
     address: "No.19, KMJ AVEN, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru - 560037",
     phone: "+91 80 4120 0300",
     email: "blr.corporate@freyerinternational.com",
     keyGateways: "Kempegowda Int'l Airport (BLR) & Whitefield ICD",
     cx: 204.97,
     cy: 484.96,
+    labelAnchor: "end",
+    labelDx: -12,
+    labelDy: 4,
   },
   {
     id: "delhi",
@@ -66,12 +89,18 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Delhi / NCR",
     stationName: "North India Gateway Station",
     category: "Operational Hub",
+    region: "north_west",
+    isMaritime: false,
+    isAirTerminal: true,
     address: "Plot No. 524, 1st Floor, Udyog Vihar Phase 5, Gurugram - 122016",
     phone: "+91 124 406 8388",
     email: "delhi.ops@freyerinternational.com",
     keyGateways: "Indira Gandhi Int'l Airport (DEL) & Tuglakabad ICD",
     cx: 194.13,
     cy: 184.64,
+    labelAnchor: "middle",
+    labelDx: 0,
+    labelDy: -12,
   },
   {
     id: "mumbai",
@@ -79,12 +108,18 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Mumbai",
     stationName: "West Coast Maritime Station",
     category: "Operational Hub",
+    region: "north_west",
+    isMaritime: true,
+    isAirTerminal: true,
     address: "A-401, Polaris Building, Off Makwana Road, Marol, Andheri (East), Mumbai - 400059",
     phone: "+91 22 4619 1301",
     email: "mumbai.ops@freyerinternational.com",
     keyGateways: "Jawaharlal Nehru Port Trust (JNPT / Nhava Sheva) & BOM Air Cargo",
     cx: 113.61,
     cy: 365.8,
+    labelAnchor: "end",
+    labelDx: -12,
+    labelDy: 4,
   },
   {
     id: "hyderabad",
@@ -92,12 +127,18 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Hyderabad",
     stationName: "Deccan Regional Station",
     category: "Operational Hub",
+    region: "east_deccan",
+    isMaritime: false,
+    isAirTerminal: true,
     address: "#109, 1st Floor, Ashoka Bhoopal Chambers, S.P. Road, Secunderabad - 500003",
     phone: "+91 40 4856 1797",
     email: "hyd.ops@freyerinternational.com",
     keyGateways: "Rajiv Gandhi Int'l Airport (HYD) & Sanathnagar ICD",
     cx: 222.39,
     cy: 398.35,
+    labelAnchor: "start",
+    labelDx: 12,
+    labelDy: 4,
   },
   {
     id: "visakhapatnam",
@@ -105,12 +146,18 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Visakhapatnam",
     stationName: "East Coast Seaport Station",
     category: "Seaport Station",
+    region: "east_deccan",
+    isMaritime: true,
+    isAirTerminal: false,
     address: "YCN Complex, D.No.58-1-256, NAD X Road, Visakhapatnam - 530009",
     phone: "+91 891 278 4910",
     email: "vizag.ops@freyerinternational.com",
     keyGateways: "Visakhapatnam Port Authority (VPA) & Gangavaram Port",
     cx: 315.68,
     cy: 392.73,
+    labelAnchor: "start",
+    labelDx: 12,
+    labelDy: 4,
   },
   {
     id: "coimbatore",
@@ -118,12 +165,18 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Coimbatore",
     stationName: "Manufacturing Corridor Station",
     category: "Operational Hub",
+    region: "south",
+    isMaritime: false,
+    isAirTerminal: true,
     address: "3A, 1264, Mayflower Valencia, 5th Floor, Avinashi Road, Coimbatore - 641004",
     phone: "+91 422 439 1919",
     email: "cbe.ops@freyerinternational.com",
     keyGateways: "Coimbatore Int'l Airport (CJB) & Irugur ICD",
     cx: 192.77,
     cy: 522.74,
+    labelAnchor: "end",
+    labelDx: -12,
+    labelDy: 4,
   },
   {
     id: "tuticorin",
@@ -131,12 +184,18 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Tuticorin",
     stationName: "Major Maritime Seaport Station",
     category: "Seaport Station",
+    region: "south",
+    isMaritime: true,
+    isAirTerminal: false,
     address: "J Garden 4A/C, 278, Housing Board RTC Nagar, Tuticorin - 628001",
     phone: "+91 461 234 1919",
     email: "tuticorin.ops@freyerinternational.com",
     keyGateways: "V.O. Chidambaranar Port Trust (VOC / Tuticorin Port)",
     cx: 215.61,
     cy: 565.94,
+    labelAnchor: "middle",
+    labelDx: 0,
+    labelDy: 18,
   },
   {
     id: "ahmedabad",
@@ -144,24 +203,41 @@ const STATIONS: StationDetail[] = [
     shortLabel: "Ahmedabad",
     stationName: "Gujarat Commercial Station",
     category: "Operational Hub",
+    region: "north_west",
+    isMaritime: true,
+    isAirTerminal: true,
     address: "Office No. 220, Flexi Business Hub, Madhur Complex, Navrangpur, Ahmedabad - 380009",
     phone: "+91 79 4891 1919",
     email: "gujarat.ops@freyerinternational.com",
     keyGateways: "Mundra Port, Kandla Port & Ahmedabad Air Cargo",
     cx: 108.19,
     cy: 290.04,
+    labelAnchor: "end",
+    labelDx: -12,
+    labelDy: 4,
   },
 ];
 
+type CorridorFilter = "all" | "south" | "maritime" | "air";
+
 export function IndiaNetworkMapExp() {
   const [activeId, setActiveId] = useState<string>("chennai_egmore");
+  const [corridorFilter, setCorridorFilter] = useState<CorridorFilter>("all");
+
   const activeStation = STATIONS.find((s) => s.id === activeId) || STATIONS[0];
+
+  const filteredStations = STATIONS.filter((s) => {
+    if (corridorFilter === "south") return s.region === "south";
+    if (corridorFilter === "maritime") return s.isMaritime;
+    if (corridorFilter === "air") return s.isAirTerminal;
+    return true;
+  });
 
   return (
     <section id="india-network" className="py-24 sm:py-32 bg-[#060f1e] text-white overflow-hidden selection:bg-[#e1390f] selection:text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Editorial Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono tracking-[0.25em] uppercase text-amber-400 mb-4">
             <Compass className="w-3.5 h-3.5" />
             National Logistics Architecture
@@ -176,17 +252,65 @@ export function IndiaNetworkMapExp() {
           </p>
         </div>
 
+        {/* Corridor Lens Filter Ribbon */}
+        <div className="mb-10 flex flex-wrap items-center gap-2 bg-black/40 p-1.5 rounded-xl border border-white/10 w-fit">
+          <span className="text-xs font-mono uppercase tracking-widest text-slate-400 px-3 flex items-center gap-1.5">
+            <Layers className="w-3.5 h-3.5 text-amber-400" />
+            Network View:
+          </span>
+          <button
+            onClick={() => setCorridorFilter("all")}
+            className={`text-xs font-mono px-3.5 py-1.5 rounded-lg transition-all ${
+              corridorFilter === "all"
+                ? "bg-[#e1390f] text-white font-medium shadow"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            All 10 Stations
+          </button>
+          <button
+            onClick={() => setCorridorFilter("south")}
+            className={`text-xs font-mono px-3.5 py-1.5 rounded-lg transition-all ${
+              corridorFilter === "south"
+                ? "bg-amber-500 text-black font-medium shadow"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            South India Cluster (5 Stations)
+          </button>
+          <button
+            onClick={() => setCorridorFilter("maritime")}
+            className={`text-xs font-mono px-3.5 py-1.5 rounded-lg transition-all ${
+              corridorFilter === "maritime"
+                ? "bg-amber-500 text-black font-medium shadow"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            Maritime Seaport Gateways
+          </button>
+          <button
+            onClick={() => setCorridorFilter("air")}
+            className={`text-xs font-mono px-3.5 py-1.5 rounded-lg transition-all ${
+              corridorFilter === "air"
+                ? "bg-amber-500 text-black font-medium shadow"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            Air Terminals & ICDs
+          </button>
+        </div>
+
         {/* Interactive Layout: Map + Dossier */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Map Artboard Column */}
           <div className="lg:col-span-6 flex flex-col items-center">
-            <div className="relative w-full max-w-[480px] aspect-[600/620] rounded-2xl overflow-hidden border border-white/10 bg-[#040914] p-4 shadow-2xl">
+            <div className="relative w-full max-w-[500px] aspect-[600/620] rounded-2xl overflow-hidden border border-white/10 bg-[#040914] p-4 shadow-2xl">
               {/* Satellite / Dark Terrain Base */}
               <Image
                 src="/images/india-satellite.webp"
                 alt="High-resolution Indian subcontinent cartography"
                 fill
-                sizes="(max-width: 1024px) 100vw, 480px"
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-cover object-center select-none opacity-45 brightness-95"
                 priority
               />
@@ -200,27 +324,47 @@ export function IndiaNetworkMapExp() {
                 className="absolute inset-0 w-full h-full select-none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* Connecting Inter-Station Vectors (HQ to Branches) */}
-                <g stroke="rgba(245, 158, 11, 0.2)" strokeWidth="1" strokeDasharray="3 3">
-                  {STATIONS.filter((s) => s.id !== "chennai_egmore").map((s) => (
-                    <line
-                      key={s.id}
-                      x1={256.84}
-                      y1={476.0}
-                      x2={s.cx}
-                      y2={s.cy}
-                    />
-                  ))}
+                {/* Connecting Inter-Station Vectors (HQ to Filtered Branches) */}
+                <g stroke="rgba(245, 158, 11, 0.25)" strokeWidth="1" strokeDasharray="3 3">
+                  {filteredStations
+                    .filter((s) => s.id !== "chennai_egmore")
+                    .map((s) => (
+                      <line
+                        key={s.id}
+                        x1={256.84}
+                        y1={476.0}
+                        x2={s.cx}
+                        y2={s.cy}
+                      />
+                    ))}
                 </g>
+
+                {/* Chennai Hub Special Offset Callout Line */}
+                <path
+                  d="M 256.84 476 L 270 476"
+                  stroke="rgba(245, 158, 11, 0.6)"
+                  strokeWidth="1"
+                  fill="none"
+                />
+                <path
+                  d="M 256.0 498 L 270 498"
+                  stroke="rgba(245, 158, 11, 0.6)"
+                  strokeWidth="1"
+                  fill="none"
+                />
 
                 {/* Station Markers */}
                 {STATIONS.map((station) => {
                   const isSelected = station.id === activeId;
+                  const isFiltered = filteredStations.some((s) => s.id === station.id);
+
                   return (
                     <g
                       key={station.id}
                       onClick={() => setActiveId(station.id)}
-                      className="cursor-pointer group"
+                      className={`cursor-pointer group transition-opacity duration-300 ${
+                        isFiltered ? "opacity-100" : "opacity-25"
+                      }`}
                       tabIndex={0}
                       role="button"
                       aria-label={`Select ${station.shortLabel}`}
@@ -260,15 +404,15 @@ export function IndiaNetworkMapExp() {
                         fill={isSelected ? "#ffffff" : "#e1390f"}
                       />
 
-                      {/* City Label Tag */}
+                      {/* Smart-Offset City Label Tag */}
                       <text
-                        x={station.cx}
-                        y={station.cy - 10}
-                        textAnchor="middle"
-                        className={`text-[11px] font-mono tracking-wider transition-all pointer-events-none select-none ${
+                        x={station.cx + station.labelDx}
+                        y={station.cy + station.labelDy}
+                        textAnchor={station.labelAnchor}
+                        className={`text-[10px] sm:text-[11px] font-mono tracking-wider transition-all pointer-events-none select-none ${
                           isSelected
                             ? "fill-amber-400 font-bold"
-                            : "fill-slate-300 font-normal opacity-70 group-hover:opacity-100"
+                            : "fill-slate-300 font-normal opacity-75 group-hover:opacity-100"
                         }`}
                       >
                         {station.shortLabel}
@@ -282,7 +426,7 @@ export function IndiaNetworkMapExp() {
             {/* Hint underneath map */}
             <div className="flex items-center gap-2 mt-4 text-xs font-mono text-slate-400">
               <span className="w-2 h-2 rounded-full bg-amber-400" />
-              <span>Select any station on the map or the directory below</span>
+              <span>Select any station or corridor lens above</span>
             </div>
           </div>
 
@@ -341,7 +485,7 @@ export function IndiaNetworkMapExp() {
                   </div>
                 </div>
 
-                {/* Corporate Verified Communications (NO Personal Mobile Numbers) */}
+                {/* Corporate Verified Communications */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-white/10 pt-6">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
