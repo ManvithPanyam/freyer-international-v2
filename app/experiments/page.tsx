@@ -30,43 +30,80 @@ export default function ExperimentsWorkbenchPage() {
               Experiments Hub
             </span>
             <Link
-              href="/experiments/homepage-v4-2"
-              className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-amber-400 text-black font-semibold hover:bg-amber-300 transition-colors"
+              href="/experiments/homepage-v5"
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-[#e1390f] text-white font-semibold hover:bg-[#e1390f]/80 transition-colors"
             >
-              Pass 4.2 &rarr;
+              Pass 5 (Motion) &rarr;
             </Link>
           </div>
         </div>
 
         {/* Passes Direct Links */}
-        <div className="flex items-center gap-2 text-xs font-mono">
+        <div className="flex items-center gap-1.5 text-xs font-mono flex-wrap">
+          <Link
+            href="/experiments/homepage-v5"
+            className="px-2.5 py-1 rounded bg-[#e1390f]/20 text-[#ff7247] border border-[#e1390f]/40 hover:bg-[#e1390f]/30 transition-colors font-semibold"
+          >
+            V5 Motion
+          </Link>
+          <Link
+            href="/experiments/map-v5"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            Map A
+          </Link>
+          <Link
+            href="/experiments/cargo-v5"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            Cargo B
+          </Link>
+          <Link
+            href="/experiments/routes-v5"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            Route C
+          </Link>
+          <Link
+            href="/experiments/services-v5"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            Services D
+          </Link>
+          <Link
+            href="/experiments/three-v5"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            3D E
+          </Link>
+          <span className="text-white/20">|</span>
           <Link
             href="/experiments/homepage-v4-2"
-            className="px-2.5 py-1 rounded bg-amber-400/20 text-amber-300 border border-amber-400/40 hover:bg-amber-400/30 transition-colors"
+            className="px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
           >
-            V4.2 (Latest)
+            V4.2
           </Link>
           <Link
             href="/experiments/homepage-v4-1"
-            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+            className="px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
           >
             V4.1
           </Link>
           <Link
             href="/experiments/homepage-v4"
-            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+            className="px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
           >
             V4
           </Link>
           <Link
             href="/experiments/homepage-v3"
-            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+            className="px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
           >
             V3
           </Link>
           <Link
             href="/experiments/homepage-v2"
-            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+            className="px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
           >
             V2
           </Link>
