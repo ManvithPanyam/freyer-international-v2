@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { RotateCcw } from "lucide-react";
 
 export interface StationItem {
   id: string;
@@ -17,7 +18,7 @@ export interface StationItem {
   labelDx: number;
   labelDy: number;
   region: "South" | "West" | "North" | "East";
-  revealTier: 1 | 2 | 3; // 1: Chennai, 2: South/Central, 3: West/North
+  revealTier: 1 | 2 | 3; // 1: Chennai HQ & Airport, 2: South hubs, 3: National gateways
 }
 
 export const FREYER_10_STATIONS: StationItem[] = [
@@ -196,21 +197,48 @@ const DOMESTIC_CORRIDORS = [
 
 export function IndiaMapV5() {
   const [selectedStationId, setSelectedStationId] = useState<string>("chennai_egmore");
+  const [sequenceKey, setSequenceKey] = useState<number>(0);
+  const [cartoPhase, setCartoPhase] = useState<number>(1); // 1: blank, 2: outline, 3: structure, 4: stations, 5: origin, 6: corridors, 7: settled
+
   const selectedStation =
     FREYER_10_STATIONS.find((s) => s.id === selectedStationId) || FREYER_10_STATIONS[0];
 
-  // Subtle pan/zoom focus offset relative to center of map (225, 310)
-  const targetX = 225 - (selectedStation.cx - 225) * 0.18;
-  const targetY = 310 - (selectedStation.cy - 310) * 0.18;
+  // 7-Stage Cinematic Sequence Timer
+  useEffect(() => {
+    setCartoPhase(1);
+    const t2 = setTimeout(() => setCartoPhase(2), 200);   // Coastline draws
+    const t3 = setTimeout(() => setCartoPhase(3), 1000);  // Structure settles
+    const t4 = setTimeout(() => setCartoPhase(4), 1600);  // Stations appear
+    const t5 = setTimeout(() => setCartoPhase(5), 2100);  // Chennai HQ origin reticle
+    const t6 = setTimeout(() => setCartoPhase(6), 2500);  // Corridors animate outward
+    const t7 = setTimeout(() => setCartoPhase(7), 3200);  // Fully settled & interactive
+
+    return () => {
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+      clearTimeout(t5);
+      clearTimeout(t6);
+      clearTimeout(t7);
+    };
+  }, [sequenceKey]);
+
+  const handleReplay = () => {
+    setSequenceKey((k) => k + 1);
+  };
+
+  // Subtle pan/zoom focus offset relative to center of map (225, 320)
+  const targetX = 225 - (selectedStation.cx - 225) * 0.15;
+  const targetY = 320 - (selectedStation.cy - 320) * 0.15;
 
   return (
     <section
       id="network-scene"
-      className="relative py-20 sm:py-28 bg-[#f6f5f1] text-[#0a1424] selection:bg-[#0a1424] selection:text-white transition-colors duration-700"
+      className="relative py-20 sm:py-28 bg-[#f6f5f1] text-[#0a1424] selection:bg-[#0a1424] selection:text-white transition-colors duration-700 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-slate-300 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-slate-300/80 mb-12">
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-[#e1390f] font-mono mb-2">
               Locations
@@ -220,32 +248,53 @@ export function IndiaMapV5() {
             </h2>
           </div>
 
-          <div className="text-sm sm:text-base text-slate-600 font-light max-w-sm">
-            10 stations across 8 cities in India &bull; Ocean ports, air terminals, and inland corridors.
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+            <div className="text-sm sm:text-base text-slate-600 font-light max-w-sm">
+              10 stations across 8 cities in India &bull; Ocean ports, air terminals, and inland corridors.
+            </div>
+            <button
+              onClick={handleReplay}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-300 text-xs font-mono uppercase tracking-wider text-slate-600 hover:text-[#0a1424] hover:border-slate-500 transition-colors bg-white/60 shadow-sm"
+              title="Replay Cartography Sequence"
+            >
+              <RotateCcw className="w-3 h-3" />
+              <span>Replay</span>
+            </button>
           </div>
         </div>
 
-        {/* Master Cartographic Stage */}
+        {/* Master Cartographic Stage: Unboxed Luxury Paper Canvas */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Geographic SVG Map Column */}
-          <div className="lg:col-span-7 relative">
-            <div className="relative w-full aspect-[4/4.5] max-w-[560px] mx-auto bg-white/95 rounded-3xl p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-slate-200">
+          {/* Geographic Cartography Column: Full silhouette visible with comfortable padding */}
+          <div className="lg:col-span-7 relative flex items-center justify-center">
+            <div className="relative w-full aspect-[4/5.3] max-w-[560px] mx-auto select-none">
+              {/* Subtle Luxury Cartographic Watermark & Grid Rules */}
+              <div className="absolute inset-0 pointer-events-none opacity-40">
+                <div className="absolute left-4 top-4 text-[9px] font-mono text-slate-400 tracking-widest">
+                  CARTOGRAPHY // FREYER OPERATING FOOTPRINT
+                </div>
+                <div className="absolute right-4 bottom-4 text-[9px] font-mono text-slate-400 tracking-widest">
+                  DATUM: 8 CITIES • 10 STATIONS
+                </div>
+              </div>
+
               <svg
-                viewBox="0 0 450 620"
-                className="w-full h-full overflow-visible select-none"
+                viewBox="0 0 450 640"
+                className="w-full h-full overflow-visible"
               >
-                {/* Geographic Transform Group with Subtle Pan & Zoom */}
+                {/* Master Geographic Transform Group with Subtle Pan & Zoom */}
                 <motion.g
                   animate={{
-                    x: (targetX - 225) * 0.5,
-                    y: (targetY - 310) * 0.5,
-                    scale: 1.03,
+                    x: cartoPhase >= 7 ? (targetX - 225) * 0.45 : 0,
+                    y: cartoPhase >= 7 ? (targetY - 320) * 0.45 : 0,
+                    scale: cartoPhase >= 7 ? 1.02 : 1.0,
                   }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ transformOrigin: "225px 310px" }}
+                  style={{ transformOrigin: "225px 320px" }}
                 >
-                  {/* Subtle India Geographic Vector Silhouette with Peninsular & Coastal Curves */}
+                  {/* Sequence 01 -> 03: Geographic Silhouette & Topographic Fill */}
                   <motion.path
+                    key={`silhouette-${sequenceKey}`}
                     d="M 188 68 
                        C 202 75, 215 88, 224 95 
                        C 236 92, 248 108, 252 118 
@@ -265,97 +314,123 @@ export function IndiaMapV5() {
                        C 52 272, 70 258, 92 248 
                        C 114 238, 134 220, 154 186 
                        C 168 152, 176 112, 188 68 Z"
-                    fill="#edf0f5"
-                    stroke="#cbd5e1"
+                    fill={cartoPhase >= 3 ? "#eaeef4" : "none"}
+                    stroke="#94a3b8"
                     strokeWidth="1.6"
                     strokeLinejoin="round"
-                    initial={{ opacity: 0.8 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6 }}
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{
+                      pathLength: cartoPhase >= 2 ? 1 : 0,
+                      opacity: cartoPhase >= 2 ? 1 : 0,
+                    }}
+                    transition={{
+                      pathLength: { duration: 1.1, ease: [0.16, 1, 0.3, 1] },
+                      opacity: { duration: 0.4 },
+                    }}
                   />
 
-                  {/* Coastline Definition & Bay of Bengal / Arabian Sea Coastal Lines */}
+                  {/* Coastline Definition & Coastal Corridors */}
                   <motion.path
+                    key={`coastline-${sequenceKey}`}
                     d="M 54 292 C 72 308, 98 335, 114 370 C 138 412, 166 462, 182 520 C 196 558, 208 586, 214 586 C 228 565, 246 524, 260 480 C 275 432, 294 380, 318 340 C 334 316, 342 290, 336 270"
                     fill="none"
-                    stroke="#94a3b8"
+                    stroke="#64748b"
                     strokeWidth="1.2"
-                    strokeDasharray="3 2"
-                    initial={{ opacity: 0.6 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6 }}
+                    strokeDasharray="4 3"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{
+                      pathLength: cartoPhase >= 3 ? 1 : 0,
+                      opacity: cartoPhase >= 3 ? 0.85 : 0,
+                    }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
                   />
 
-                  {/* Sri Lanka Reference Outline */}
+                  {/* Sri Lanka Reference Outline (southern reference) */}
                   <motion.path
                     d="M 235 580 C 242 585, 246 595, 242 602 C 238 608, 230 605, 228 596 C 226 588, 230 582, 235 580 Z"
                     fill="#f1f5f9"
                     stroke="#cbd5e1"
                     strokeWidth="1"
-                    initial={{ opacity: 0.5 }}
-                    animate={{ opacity: 0.7 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: cartoPhase >= 3 ? 0.75 : 0 }}
+                    transition={{ duration: 0.5 }}
                   />
 
-                  {/* Domestic Connecting Corridors */}
+                  {/* Sequence 06: Domestic Corridors Animating Outward from Chennai HQ */}
                   {DOMESTIC_CORRIDORS.map((c, i) => (
                     <motion.line
-                      key={i}
+                      key={`corridor-${sequenceKey}-${i}`}
                       x1={c.from[0]}
                       y1={c.from[1]}
                       x2={c.to[0]}
                       y2={c.to[1]}
                       stroke="#e1390f"
-                      strokeWidth="1.3"
+                      strokeWidth="1.4"
                       strokeDasharray="4 3"
-                      initial={{ opacity: 0.4 }}
-                      animate={{ opacity: 0.75 }}
-                      transition={{ duration: 0.5 }}
+                      initial={{ pathLength: 0, opacity: 0 }}
+                      animate={{
+                        pathLength: cartoPhase >= 6 ? 1 : 0,
+                        opacity: cartoPhase >= 6 ? 0.8 : 0,
+                      }}
+                      transition={{
+                        pathLength: { duration: 0.6, delay: c.tier === 2 ? 0.1 : 0.35, ease: "easeOut" },
+                        opacity: { duration: 0.2 },
+                      }}
                     />
                   ))}
 
-                  {/* Chennai Leader Lines */}
-                  <g>
-                    <line
-                      x1="260"
-                      y1="480"
-                      x2="282"
-                      y2="476"
-                      stroke="#0a1424"
-                      strokeWidth="1.2"
-                    />
-                    <line
-                      x1="258"
-                      y1="504"
-                      x2="282"
-                      y2="508"
-                      stroke="#e1390f"
-                      strokeWidth="1.2"
-                    />
-                  </g>
+                  {/* Sequence 05: Chennai Egmore Visual Origin Radiating Reticle */}
+                  {cartoPhase >= 5 && (
+                    <g>
+                      <motion.circle
+                        cx="260"
+                        cy="480"
+                        r={22}
+                        fill="none"
+                        stroke="#e1390f"
+                        strokeWidth="1.5"
+                        initial={{ scale: 0.4, opacity: 1 }}
+                        animate={{ scale: [0.6, 1.8, 0.6], opacity: [0.9, 0, 0.9] }}
+                        transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+                      />
+                      <circle
+                        cx="260"
+                        cy="480"
+                        r={11}
+                        fill="none"
+                        stroke="#0a1424"
+                        strokeWidth="1.2"
+                        strokeDasharray="2 2"
+                      />
+                    </g>
+                  )}
 
-                  {/* The 10 Verified Station Nodes */}
+                  {/* Sequence 04: The 10 Verified Station Nodes */}
                   {FREYER_10_STATIONS.map((st) => {
                     const isSelected = st.id === selectedStationId;
                     const isChennaiHQ = st.id === "chennai_egmore";
                     const isAirport = st.id === "chennai_airport";
 
-                    const tierDelay =
-                      st.revealTier === 1
-                        ? 0.1
-                        : st.revealTier === 2
-                        ? 0.3
-                        : 0.5;
+                    const isRevealed =
+                      cartoPhase >= 4 &&
+                      (st.revealTier === 1 ||
+                        (st.revealTier === 2 && cartoPhase >= 5) ||
+                        (st.revealTier === 3 && cartoPhase >= 6));
 
                     return (
                       <motion.g
-                        key={st.id}
+                        key={`station-${sequenceKey}-${st.id}`}
                         onClick={() => setSelectedStationId(st.id)}
                         className="cursor-pointer group"
-                        initial={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.4 }}
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{
+                          opacity: isRevealed ? 1 : 0,
+                          scale: isRevealed ? 1 : 0.5,
+                        }}
+                        transition={{ duration: 0.35 }}
                       >
-                        {/* Interactive Radial Radar Pulse & Reticle on Selected */}
-                        {isSelected && (
+                        {/* Interactive Reticle on Selected */}
+                        {isSelected && cartoPhase >= 7 && (
                           <>
                             <motion.circle
                               cx={st.cx}
@@ -381,48 +456,36 @@ export function IndiaMapV5() {
                           </>
                         )}
 
-                        {/* Station Pin Core */}
+                        {/* Outer Hub Ring */}
                         <circle
                           cx={st.cx}
                           cy={st.cy}
-                          r={isSelected ? (isChennaiHQ ? 8 : 6) : (isChennaiHQ ? 6.5 : 4.5)}
-                          fill={
-                            isSelected
-                              ? isChennaiHQ
-                                ? "#0a1424"
-                                : "#e1390f"
-                              : isChennaiHQ
-                              ? "#0a1424"
-                              : "#475569"
-                          }
-                          stroke="#ffffff"
-                          strokeWidth="2"
-                          className="transition-all duration-300 group-hover:scale-125"
+                          r={isChennaiHQ ? 7 : isAirport ? 5 : 4.5}
+                          fill={isChennaiHQ ? "#0a1424" : "#ffffff"}
+                          stroke={isChennaiHQ ? "#e1390f" : isSelected ? "#e1390f" : "#0a1424"}
+                          strokeWidth={isChennaiHQ ? 2.5 : 2}
+                          className="transition-transform group-hover:scale-125"
                         />
 
-                        {/* Typographic Label */}
+                        {/* Center Dot */}
+                        <circle
+                          cx={st.cx}
+                          cy={st.cy}
+                          r={isChennaiHQ ? 2.5 : 1.8}
+                          fill={isChennaiHQ ? "#ffffff" : isSelected ? "#e1390f" : "#0a1424"}
+                        />
+
+                        {/* Station Typography Label */}
                         <text
-                          x={
-                            isChennaiHQ || isAirport
-                              ? 288
-                              : st.cx + st.labelDx
-                          }
-                          y={
-                            isChennaiHQ
-                              ? 479
-                              : isAirport
-                              ? 511
-                              : st.cy + st.labelDy
-                          }
-                          textAnchor={
-                            isChennaiHQ || isAirport
-                              ? "start"
-                              : st.labelAnchor
-                          }
-                          className={`text-[11px] select-none font-sans ${
+                          x={st.cx + st.labelDx}
+                          y={st.cy + st.labelDy}
+                          textAnchor={st.labelAnchor}
+                          className={`text-[11px] font-sans transition-all duration-300 select-none ${
                             isSelected
-                              ? "fill-[#0a1424] font-semibold"
-                              : "fill-slate-600 font-normal group-hover:fill-[#0a1424]"
+                              ? "font-semibold fill-[#0a1424]"
+                              : isChennaiHQ
+                              ? "font-medium fill-[#0a1424]"
+                              : "font-normal fill-slate-700 group-hover:fill-[#0a1424]"
                           }`}
                         >
                           {st.shortLabel}
@@ -435,16 +498,16 @@ export function IndiaMapV5() {
             </div>
           </div>
 
-          {/* Station Details Context Card: Clean, Source-Only Verified Fields */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+          {/* Right Column: Architectural Station Detail Dossier */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedStation.id}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
+                exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.25 }}
-                className="bg-white rounded-3xl p-8 shadow-[0_15px_40px_rgba(0,0,0,0.05)] border border-slate-200/80"
+                className="bg-white/90 backdrop-blur-md rounded-2xl p-8 shadow-[0_15px_40px_rgba(0,0,0,0.04)] border border-slate-200/80"
               >
                 <div className="text-xs uppercase tracking-widest text-[#e1390f] font-mono mb-2">
                   {selectedStation.region} India &bull; Station

@@ -190,50 +190,71 @@ export function ServicesCinematicV5() {
   const [selectedId, setSelectedId] = useState<string>("air");
   const current = SERVICES_CATALOGUE_V5.find((s) => s.id === selectedId) || SERVICES_CATALOGUE_V5[0];
 
-  // Motion variants depending on transition type
+  // Motion variants tailored specifically to each physical logistics medium
   const getMotionAnimation = (type: ServiceCatalogueItem["transitionType"]) => {
     switch (type) {
       case "verticalLift":
         return {
-          initial: { opacity: 0, y: 40 },
-          animate: { opacity: 1, y: 0 },
-          exit: { opacity: 0, y: -40 },
+          initial: { opacity: 0, y: 110, scale: 0.96 },
+          animate: { opacity: 1, y: 0, scale: 1 },
+          exit: { opacity: 0, y: -110, scale: 0.96 },
+          duration: 0.5,
+          ease: [0.16, 1, 0.3, 1],
+          label: "Vertical Runway Lift",
         };
       case "horizontalDrift":
         return {
-          initial: { opacity: 0, x: -50 },
-          animate: { opacity: 1, x: 0 },
-          exit: { opacity: 0, x: 50 },
+          initial: { opacity: 0, x: 150, scale: 0.97 },
+          animate: { opacity: 1, x: 0, scale: 1 },
+          exit: { opacity: 0, x: -150, scale: 0.97 },
+          duration: 0.55,
+          ease: [0.16, 1, 0.3, 1],
+          label: "Horizontal Horizon Drift",
         };
       case "apertureShutter":
         return {
-          initial: { opacity: 0, scale: 0.95 },
-          animate: { opacity: 1, scale: 1 },
-          exit: { opacity: 0, scale: 1.05 },
+          initial: { opacity: 0, scale: 0.88, filter: "brightness(1.4)" },
+          animate: { opacity: 1, scale: 1, filter: "brightness(1.0)" },
+          exit: { opacity: 0, scale: 1.12, filter: "brightness(0.7)" },
+          duration: 0.45,
+          ease: [0.16, 1, 0.3, 1],
+          label: "Aperture Document Reveal",
         };
       case "spatialDepth":
         return {
-          initial: { opacity: 0, scale: 0.9, y: 20 },
-          animate: { opacity: 1, scale: 1, y: 0 },
-          exit: { opacity: 0, scale: 1.08, y: -20 },
+          initial: { opacity: 0, scale: 0.82 },
+          animate: { opacity: 1, scale: 1 },
+          exit: { opacity: 0, scale: 1.25 },
+          duration: 0.6,
+          ease: [0.16, 1, 0.3, 1],
+          label: "Volumetric Spatial Depth",
         };
       case "analyticalSlide":
         return {
-          initial: { opacity: 0, x: 40 },
+          initial: { opacity: 0, x: -120 },
           animate: { opacity: 1, x: 0 },
-          exit: { opacity: 0, x: -40 },
+          exit: { opacity: 0, x: 120 },
+          duration: 0.5,
+          ease: [0.16, 1, 0.3, 1],
+          label: "Analytical Linear Slide",
         };
       case "deepZoom":
         return {
-          initial: { opacity: 0, scale: 1.15 },
-          animate: { opacity: 1, scale: 1 },
-          exit: { opacity: 0, scale: 0.9 },
+          initial: { opacity: 0, scale: 1.28, y: -25 },
+          animate: { opacity: 1, scale: 1, y: 0 },
+          exit: { opacity: 0, scale: 0.85, y: 25 },
+          duration: 0.55,
+          ease: [0.2, 0.9, 0.3, 1],
+          label: "Heavy-Scale Hydraulic Compression",
         };
       default:
         return {
-          initial: { opacity: 0, y: 20 },
+          initial: { opacity: 0, y: 30 },
           animate: { opacity: 1, y: 0 },
-          exit: { opacity: 0, y: -20 },
+          exit: { opacity: 0, y: -30 },
+          duration: 0.4,
+          ease: "easeOut",
+          label: "Standard Shift",
         };
     }
   };
@@ -291,14 +312,19 @@ export function ServicesCinematicV5() {
               initial={anim.initial}
               animate={anim.animate}
               exit={anim.exit}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: anim.duration || 0.5, ease: (anim.ease as any) || [0.16, 1, 0.3, 1] }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start"
             >
               {/* Left Column: Scope of Service */}
               <div className="lg:col-span-6 space-y-6">
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-amber-400 mb-2">
-                    {current.numeral} &bull; {current.name}
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-xs font-mono uppercase tracking-widest text-amber-400">
+                      {current.numeral} &bull; {current.name}
+                    </span>
+                    <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-white/10 text-slate-300 border border-white/10">
+                      {anim.label}
+                    </span>
                   </div>
                   <h3 className="text-3xl sm:text-4xl font-light text-white tracking-tight mb-4">
                     {current.name}
