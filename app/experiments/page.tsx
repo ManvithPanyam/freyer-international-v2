@@ -27,12 +27,49 @@ export default function ExperimentsWorkbenchPage() {
           <span className="text-white/20">&bull;</span>
           <div className="flex items-center gap-2">
             <span className="text-sm font-semibold tracking-tight text-white uppercase font-mono">
-              Pass 1 Prototypes
+              Experiments Hub
             </span>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30">
-              Isolated Testbed
-            </span>
+            <Link
+              href="/experiments/homepage-v4-2"
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-amber-400 text-black font-semibold hover:bg-amber-300 transition-colors"
+            >
+              Pass 4.2 &rarr;
+            </Link>
           </div>
+        </div>
+
+        {/* Passes Direct Links */}
+        <div className="flex items-center gap-2 text-xs font-mono">
+          <Link
+            href="/experiments/homepage-v4-2"
+            className="px-2.5 py-1 rounded bg-amber-400/20 text-amber-300 border border-amber-400/40 hover:bg-amber-400/30 transition-colors"
+          >
+            V4.2 (Latest)
+          </Link>
+          <Link
+            href="/experiments/homepage-v4-1"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            V4.1
+          </Link>
+          <Link
+            href="/experiments/homepage-v4"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            V4
+          </Link>
+          <Link
+            href="/experiments/homepage-v3"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            V3
+          </Link>
+          <Link
+            href="/experiments/homepage-v2"
+            className="px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            V2
+          </Link>
         </div>
 
         {/* Center: View Switcher (All vs Isolated Mode) */}
