@@ -228,7 +228,7 @@ export function CargoClearanceCaliperExperiment() {
             {/* Inquire for Custom Envelope */}
             <div className="pt-4 border-t border-white/10">
               <a
-                href="mailto:Selvakumar@freyerinternational.com?subject=Oversized Cargo Feasibility Study"
+                href="mailto:info@freyerinternational.com?subject=Oversized Cargo Feasibility Study"
                 className="w-full inline-flex items-center justify-center gap-2 rounded bg-white/10 hover:bg-white/15 border border-white/20 text-white py-3 text-xs font-semibold tracking-wider uppercase font-mono transition"
               >
                 <span>Submit Custom Cargo Dimensions</span>

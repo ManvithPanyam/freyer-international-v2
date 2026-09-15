@@ -9,7 +9,7 @@ export const STATIONS = [
     city: "Chennai (Egmore HQ)",
     address: "TAGA Tower New No: 45 Old No 20, 1st Floor, 2nd Street, Sait Colony, Egmore, Chennai-600008.",
     phone: "+91 44 43191919",
-    email: "chennai@freyerinternational.com",
+    email: "info@freyerinternational.com",
     isHQ: true,
     cx: 295,
     cy: 485
@@ -19,7 +19,7 @@ export const STATIONS = [
     city: "Chennai Airport Office",
     address: "No.2 Ambedkar Street, G.S.T. Road, Meenambakkam, Chennai-600017.",
     phone: "+91 96000 41033",
-    email: "chennai@freyerinternational.com",
+    email: "info@freyerinternational.com",
     cx: 292,
     cy: 497
   },
