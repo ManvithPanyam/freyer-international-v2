@@ -47,7 +47,7 @@ export function Footer() {
             </p>
 
             <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <div>CBIC AEO-LO Certified (INAAQCA4076M0F243)</div>
+              <div>CBIC AEO-LO Certified</div>
               <div>IATA Regulated Cargo Agent</div>
               <div>SCN &amp; WCA Partner Network</div>
             </div>

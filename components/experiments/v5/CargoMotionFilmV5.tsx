@@ -75,8 +75,8 @@ export const VERIFIED_MOVEMENTS: ProjectRecord[] = [
       height: "Vessel Hold",
     },
     technicalNote: "Door-Delivery Heaviest piece- 2 x 148 MT + Accessories.",
-    primaryImage: "/images/4.1.jpg",
-    additionalImages: ["/images/4.2.jpg", "/images/4.3.jpg", "/images/4.4.jpg"],
+    primaryImage: "/images/4.jpg",
+    additionalImages: ["/images/4.jpg"],
   },
   {
     id: 2,

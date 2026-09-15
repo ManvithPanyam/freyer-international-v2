@@ -30,10 +30,10 @@ export default function ExperimentsWorkbenchPage() {
               Experiments Hub
             </span>
             <Link
-              href="/experiments/homepage-v5"
-              className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-[#e1390f] text-white font-semibold hover:bg-[#e1390f]/80 transition-colors"
+              href="/experiments/homepage-v5-3"
+              className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-[#e1390f] text-white font-bold hover:bg-[#ff552e] transition-colors flex items-center gap-1"
             >
-              Pass 5 (Motion) &rarr;
+              <span>V5.3 Signature Cut &rarr;</span>
             </Link>
           </div>
         </div>
