@@ -47,29 +47,29 @@ export function FTRNav() {
       >
         <div className="max-w-[1560px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-8">
 
-          {/* ── Wordmark ── */}
+          {/* ── Wordmark & Brand Lockup ── */}
           <Link
             href="/"
             aria-label="Freyer International Logistics — Home"
-            className="flex items-center gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e1390f] rounded"
+            className="flex items-center gap-2 sm:gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e1390f] rounded"
           >
-            <div className="relative h-9 w-[62px]">
+            <div className="relative h-8 sm:h-9 w-[54px] sm:w-[62px]">
               <Image
                 src="/images/logo.png"
                 alt="Freyer International Logistics"
                 fill
-                sizes="62px"
+                sizes="(max-width: 640px) 54px, 62px"
                 className="object-contain object-left brightness-0 invert"
                 priority
               />
             </div>
             <span
-              className="hidden xl:inline-block text-[11px] font-mono tracking-[0.18em] uppercase text-white/40 select-none"
+              className="text-[10px] sm:text-[11px] font-mono tracking-[0.16em] uppercase text-white/30 select-none"
               aria-hidden
             >
               |
             </span>
-            <span className="hidden xl:inline-block text-[11px] font-mono tracking-[0.16em] uppercase text-white/60 font-semibold whitespace-nowrap">
+            <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-mono tracking-[0.12em] sm:tracking-[0.16em] uppercase text-white/70 font-semibold leading-tight">
               Logistics Beyond Boundaries
             </span>
           </Link>
@@ -160,6 +160,12 @@ export function FTRNav() {
                     className="object-contain object-left brightness-0 invert"
                   />
                 </div>
+                <span className="text-[10px] font-mono tracking-[0.16em] uppercase text-white/30" aria-hidden>
+                  |
+                </span>
+                <span className="text-[9px] font-mono tracking-[0.14em] uppercase text-white/70 font-semibold">
+                  Logistics Beyond Boundaries
+                </span>
               </Link>
               <button
                 type="button"
