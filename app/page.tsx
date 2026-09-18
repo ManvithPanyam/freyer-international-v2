@@ -1,5 +1,5 @@
-import WorldClassFinalHomePage from "@/app/experiments/world-class-final-home/page";
+import FreyerTotalRedesignPage from "@/app/experiments/freyer-total-redesign/page";
 
 export default function HomePage() {
-  return <WorldClassFinalHomePage />;
+  return <FreyerTotalRedesignPage />;
 }
