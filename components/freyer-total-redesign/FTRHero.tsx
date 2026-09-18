@@ -7,14 +7,15 @@ import { ArrowUpRight, Shield, ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
 
 /**
- * FTRHero — DEFINITIVE REDESIGN
+ * FTRHero — with video restored
  *
  * Visual strategy:
- *   - slide2.jpg (dark port scene with massive gantry cranes) as sole background
- *   - Deep left curtain gradient: text zone is fully opaque dark, image bleeds through on right
- *   - NO video — zero warm-glare risk
- *   - "482" as huge translucent watermark for scale/drama
- *   - All content guaranteed above fold on 1366×768 laptops via clamp() + flex layout
+ *   - slide2.jpg (dark port / gantry cranes) as static poster/fallback
+ *   - freyer-hero.mp4 looped on top, BUT saturate(0) — fully desaturated to greyscale.
+ *     This kills every trace of warm orange/sunset without losing the cinematic motion.
+ *   - Deep left curtain gradient: text zone is pure opaque dark
+ *   - "482" ghost watermark for scale
+ *   - All content above fold on 1366×768 via clamp() + flex
  */
 
 const STATS = [
@@ -31,8 +32,9 @@ export function FTRHero() {
       className="relative w-full bg-[#040812] text-white overflow-hidden"
       style={{ minHeight: "100svh" }}
     >
-      {/* ── BACKGROUND: slide2.jpg — dark port / gantry cranes / containers ── */}
+      {/* ── BACKGROUND LAYER ── */}
       <div className="absolute inset-0 z-0">
+        {/* Static poster — slide2.jpg port scene, shown while video loads */}
         <Image
           src="/images/slide2.jpg"
           alt="Freyer International — Container Port with Gantry Cranes"
@@ -43,7 +45,25 @@ export function FTRHero() {
           className="object-cover"
           style={{ objectPosition: "65% 50%" }}
         />
-        {/* Primary left dark curtain — the text column sits over solid #040812 */}
+
+        {/* Video loop — saturate(0) converts to pure greyscale, completely eliminating
+            the warm orange/yellow sunset tones while keeping the cinematic motion */}
+        <video
+          src="/video/freyer-hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            filter: "saturate(0) brightness(0.45) contrast(1.15)",
+            objectPosition: "65% 50%",
+          }}
+        />
+
+        {/* Primary left dark curtain — text column sits over solid #040812 */}
         <div
           className="absolute inset-0"
           style={{
