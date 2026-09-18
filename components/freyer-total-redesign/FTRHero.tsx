@@ -46,8 +46,7 @@ export function FTRHero() {
           style={{ objectPosition: "65% 50%" }}
         />
 
-        {/* Video loop — saturate(0) converts to pure greyscale, completely eliminating
-            the warm orange/yellow sunset tones while keeping the cinematic motion */}
+        {/* Video loop — full color, dimmed to cinematic atmospheric level */}
         <video
           src="/video/freyer-hero.mp4"
           autoPlay
@@ -58,7 +57,7 @@ export function FTRHero() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            filter: "saturate(0) brightness(0.45) contrast(1.15)",
+            filter: "brightness(0.28) contrast(1.1)",
             objectPosition: "65% 50%",
           }}
         />
