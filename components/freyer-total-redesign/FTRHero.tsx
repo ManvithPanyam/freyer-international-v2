@@ -1,262 +1,243 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Shield, Phone, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Shield, ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
 
 /**
- * WORLD-CLASS ENTERPRISE HERO — CINEMATIC INDUSTRIAL PRECISION
- * 
- * Optimized for full visibility above the fold on all standard laptop viewports (1366x768, 1440x900, 1080p).
- * High-contrast dark maritime backdrop with muted saturation to prevent sunset glare blowout.
+ * FTRHero — DEFINITIVE REDESIGN
+ *
+ * Visual strategy:
+ *   - slide2.jpg (dark port scene with massive gantry cranes) as sole background
+ *   - Deep left curtain gradient: text zone is fully opaque dark, image bleeds through on right
+ *   - NO video — zero warm-glare risk
+ *   - "482" as huge translucent watermark for scale/drama
+ *   - All content guaranteed above fold on 1366×768 laptops via clamp() + flex layout
  */
 
-const VERIFIED_METRICS = [
-  {
-    label: "MAX HEAVY LIFT",
-    value: "482 MT",
-    detail: "Record #9 · Breakbulk Stowage",
-    badge: "Documented",
-  },
-  {
-    label: "WAREHOUSING FOOTPRINT",
-    value: "1,000,000+",
-    unit: "SQ FT",
-    detail: "WMS-Enabled · Multi-Client CFS",
-    badge: "Contract Storage",
-  },
-  {
-    label: "INDIAN NETWORK",
-    value: "10 STATIONS",
-    detail: "8 Strategic Cities · 100% Direct",
-    badge: "Pan-India",
-  },
-  {
-    label: "STATUTORY CLEARANCE",
-    value: "CBIC AEO-LO",
-    detail: "Tier 2 · INAAQCA4076M0F243",
-    badge: "Licensed Brokerage",
-  },
+const STATS = [
+  { value: "482 MT", label: "Max Heavy Lift", sub: "Record #9 · Breakbulk" },
+  { value: "10", label: "Indian Stations", sub: "Pan-India Direct Network" },
+  { value: "AEO-LO", label: "CBIC Certified", sub: "Tier 2 · Licensed Broker" },
+  { value: "1M+ SQ FT", label: "Warehousing", sub: "WMS-Enabled · Multi-Client" },
 ];
 
 export function FTRHero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-    const handler = () => setReducedMotion(mq.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || reducedMotion) return;
-    const handleCanPlay = () => setVideoLoaded(true);
-    video.addEventListener("canplay", handleCanPlay);
-    if (video.readyState >= 3) setVideoLoaded(true);
-    return () => video.removeEventListener("canplay", handleCanPlay);
-  }, [reducedMotion]);
-
   return (
     <section
-      aria-label="Freyer International Logistics — Command Hero"
-      className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-between bg-[#040812] text-white overflow-hidden"
+      aria-label="Freyer International Logistics — Hero"
+      className="relative w-full bg-[#040812] text-white overflow-hidden"
+      style={{ minHeight: "100svh" }}
     >
-      {/* ── BACKGROUND LAYER: Deep Maritime Atmosphere ── */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* High-res aerial poster */}
+      {/* ── BACKGROUND: slide2.jpg — dark port / gantry cranes / containers ── */}
+      <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-poster.jpg"
-          alt="Freyer International Container Shipping Aerial"
+          src="/images/slide2.jpg"
+          alt="Freyer International — Container Port with Gantry Cranes"
           fill
           priority
           loading="eager"
           sizes="100vw"
-          className="object-cover object-center brightness-[0.35] contrast-[1.2] transition-opacity duration-1000"
-          style={{ opacity: videoLoaded ? 0.3 : 0.75 }}
+          className="object-cover"
+          style={{ objectPosition: "65% 50%" }}
         />
-
-        {/* Cinematic video loop — muted saturation & calibrated brightness to prevent bright sunset blowout */}
-        {!reducedMotion && (
-          <video
-            ref={videoRef}
-            src="/video/freyer-hero.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
-            style={{
-              opacity: videoLoaded ? 0.3 : 0,
-              filter: "saturate(0.65) contrast(1.2) brightness(0.65)",
-            }}
-          />
-        )}
-
-        {/* Deep architectural gradients — ensures 100% crisp white text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#040812] via-[#040812]/85 to-[#040812]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#040812] via-[#040812]/90 via-[60%] to-[#040812]/40" />
+        {/* Primary left dark curtain — the text column sits over solid #040812 */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0"
           style={{
-            backgroundImage:
-              "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
+            background:
+              "linear-gradient(100deg, #040812 0%, #040812 40%, rgba(4,8,18,0.80) 58%, rgba(4,8,18,0.35) 78%, rgba(4,8,18,0.10) 100%)",
+          }}
+        />
+        {/* Bottom fade into stats bar */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to top, #040812 0%, rgba(4,8,18,0.92) 10%, transparent 32%)",
+          }}
+        />
+        {/* Top fade for nav */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to bottom, rgba(4,8,18,0.75) 0%, transparent 20%)",
           }}
         />
       </div>
 
-      {/* ── TOP OPERATIONAL TELEMETRY BAR ── */}
-      <div className="relative z-10 w-full max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 pt-20 sm:pt-24 pb-2">
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3 text-[11px] font-mono"
-        >
-          {/* Left: Operational status */}
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
-            </span>
-            <span className="uppercase tracking-[0.2em] text-white/80 font-semibold text-[10px] sm:text-[11px]">
-              Global Operations Active
-            </span>
-            <span className="text-white/20">|</span>
-            <span className="text-white/40 hidden md:inline text-[10px] sm:text-[11px]">
-              10 Indian Stations · Ocean & Air Gateways
-            </span>
-          </div>
-
-          {/* Right: Coordinates & Direct Desk */}
-          <div className="flex items-center gap-4 text-white/50 text-[10px] sm:text-[11px]">
-            <span className="hidden sm:inline">
-              HQ: <strong className="text-white/80 font-normal">13.0827° N, 80.2707° E</strong> (Chennai)
-            </span>
-            <span className="text-white/20 hidden sm:inline">|</span>
-            <a
-              href="tel:+914443191919"
-              className="flex items-center gap-1 text-white/80 hover:text-[#e1390f] transition-colors"
-            >
-              <Phone className="w-3 h-3 text-[#e1390f]" />
-              +91 44 43191919
-            </a>
-          </div>
-        </motion.div>
+      {/* ── 482 WATERMARK — ghost number for scale drama ── */}
+      <div
+        aria-hidden="true"
+        className="absolute z-[1] select-none pointer-events-none hidden lg:block"
+        style={{
+          bottom: "6%",
+          right: "-1vw",
+          fontSize: "clamp(120px, 22vw, 380px)",
+          fontWeight: 900,
+          letterSpacing: "-0.04em",
+          lineHeight: 1,
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(255,255,255,0.055)",
+          fontFamily: "var(--font-geist-sans, system-ui, sans-serif)",
+        }}
+      >
+        482
       </div>
 
-      {/* ── PRIMARY HERO CONTENT: FITS CLEANLY ABOVE THE FOLD ── */}
-      <div className="relative z-10 w-full max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 py-4 sm:py-6 my-auto">
-        <div className="max-w-3xl space-y-4 sm:space-y-5">
+      {/* ── MAIN CONTENT: flex column fills full viewport height ── */}
+      <div className="relative z-10 flex flex-col" style={{ minHeight: "100svh" }}>
 
-          {/* Kicker badge */}
+        {/* Operational status bar — below nav */}
+        <div className="w-full max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 pt-[76px] sm:pt-[84px]">
           <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/[0.05] border border-white/10 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.2em] text-slate-300"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#e1390f]" />
-            Tier-1 Multimodal Logistics & Project Cargo
-          </motion.div>
-
-          {/* Headline — Scaled to ensure "INDUSTRIAL SCALE." is always visible on laptops */}
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.18 }}
-            className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.06]"
+            transition={{ duration: 0.45 }}
+            className="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.08] pb-3"
           >
-            PRECISION AT <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/95 to-white/60">
-              INDUSTRIAL SCALE.
-            </span>
-          </motion.h1>
-
-          {/* Subheadline with verified authority */}
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.26 }}
-            className="text-sm sm:text-base lg:text-lg text-slate-300 font-light leading-relaxed max-w-2xl"
-          >
-            International air and ocean freight forwarding, licensed CBIC AEO-LO customs
-            brokerage, and out-of-gauge project cargo. Proven execution up to{" "}
-            <span className="text-white font-medium border-b border-[#e1390f]">
-              482 metric tons
-            </span>{" "}
-            from 10 strategic Indian branch stations.
-          </motion.p>
-
-          {/* Action cluster — Always visible on laptop displays */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="pt-1 flex flex-wrap items-center gap-3 sm:gap-4"
-          >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded bg-[#e1390f] hover:bg-[#c42f0b] text-white px-6 py-3 sm:px-7 sm:py-3.5 text-xs font-semibold uppercase tracking-[0.16em] font-mono transition-all duration-150 shadow-lg shadow-[#e1390f]/20 hover:shadow-[#e1390f]/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            >
-              Request Freight Rate
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-
-            <a
-              href="#cargo-monument"
-              className="inline-flex items-center gap-2 rounded bg-white/5 hover:bg-white/10 text-white/80 hover:text-white px-5 py-3 sm:px-6 sm:py-3.5 text-xs font-mono uppercase tracking-[0.16em] border border-white/10 hover:border-white/20 transition-colors"
-            >
-              Inspect 482 MT Record
-              <ChevronRight className="w-3.5 h-3.5 text-[#e1390f]" />
-            </a>
-
-            <div className="hidden lg:flex items-center gap-2.5 pl-3 border-l border-white/10 text-[10px] font-mono text-white/40">
-              <Shield className="w-3.5 h-3.5 text-[#e1390f]" />
-              <span>CBIC AEO-LO Tier 2 Verified</span>
+            <div className="flex items-center gap-2.5 text-[10px] font-mono uppercase tracking-[0.22em] text-white/60">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#e1390f]" />
+              </span>
+              <span>Global Operations Active</span>
+              <span className="text-white/20 hidden sm:inline">·</span>
+              <span className="hidden sm:inline text-white/35">10 Indian Stations · Ocean &amp; Air</span>
+            </div>
+            <div className="flex items-center gap-4 text-[10px] font-mono text-white/40">
+              <span className="hidden md:inline">
+                HQ: <strong className="text-white/70 font-normal">Chennai</strong> · 13.08° N 80.27° E
+              </span>
+              <a
+                href="tel:+914443191919"
+                className="text-white/70 hover:text-[#e1390f] transition-colors"
+              >
+                +91 44 43191919
+              </a>
             </div>
           </motion.div>
         </div>
-      </div>
 
-      {/* ── BOTTOM METRICS BAR: CLEANLY DOCKED ── */}
-      <div className="relative z-10 w-full border-t border-white/10 bg-[#060c18]/80 backdrop-blur-md">
-        <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 py-4 sm:py-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            {VERIFIED_METRICS.map((metric, i) => (
-              <motion.div
-                key={metric.label}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.4 + i * 0.06 }}
-                className="border-l-2 border-[#e1390f]/40 pl-3 sm:pl-4 py-0.5 space-y-0.5 group hover:border-[#e1390f] transition-colors"
+        {/* Hero text — flex-1 centers it vertically */}
+        <div className="flex-1 flex flex-col justify-center w-full max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 py-8">
+          <div className="max-w-[680px]">
+
+            {/* Kicker line */}
+            <motion.div
+              initial={{ opacity: 0, x: -14 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.45, delay: 0.08 }}
+              className="inline-flex items-center gap-2.5 mb-5 sm:mb-6"
+            >
+              <span className="block w-7 h-[2px] bg-[#e1390f]" />
+              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.28em] text-[#e1390f]">
+                Tier-1 Multimodal Logistics &amp; Project Cargo
+              </span>
+            </motion.div>
+
+            {/* Headline — 3 clean lines, always above fold on 1366×768 */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.58, delay: 0.14 }}
+              className="font-black text-white leading-[1.03] tracking-tight"
+              style={{ fontSize: "clamp(2.5rem, 6.2vw, 5.8rem)" }}
+            >
+              PRECISION
+              <br />
+              AT INDUSTRIAL
+              <br />
+              <span style={{ color: "#e1390f" }}>SCALE.</span>
+            </motion.h1>
+
+            {/* Body copy */}
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="mt-5 sm:mt-6 text-slate-300 leading-relaxed max-w-[500px]"
+              style={{ fontSize: "clamp(0.82rem, 1.4vw, 1rem)" }}
+            >
+              International air &amp; ocean freight, licensed CBIC AEO-LO customs brokerage, and
+              out-of-gauge project cargo — proven to{" "}
+              <span className="text-white font-semibold border-b border-[#e1390f]">
+                482 metric tons
+              </span>{" "}
+              across 10 strategic Indian branch stations.
+            </motion.p>
+
+            {/* CTA row */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.34 }}
+              className="mt-7 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4"
+            >
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#e1390f] hover:bg-[#c42f0b] text-white px-6 py-3 sm:px-7 sm:py-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] font-mono rounded transition-all duration-150 shadow-lg shadow-[#e1390f]/25 hover:shadow-[#e1390f]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
-                <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.18em] text-slate-400">
-                  {metric.label}
-                </div>
-                <div className="text-lg sm:text-2xl font-bold font-mono text-white tracking-tight flex items-baseline gap-1">
-                  <span>{metric.value}</span>
-                  {metric.unit && (
-                    <span className="text-xs font-normal text-white/40">{metric.unit}</span>
-                  )}
-                </div>
-                <div className="text-[10px] sm:text-[11px] font-mono text-white/45 truncate">
-                  {metric.detail}
-                </div>
-              </motion.div>
-            ))}
+                Request Freight Rate
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+
+              <a
+                href="#cargo-monument"
+                className="inline-flex items-center gap-2 bg-white/[0.06] hover:bg-white/[0.12] text-white/80 hover:text-white px-5 py-3 sm:px-6 sm:py-3.5 text-[11px] font-mono uppercase tracking-[0.18em] border border-white/[0.12] hover:border-white/25 rounded transition-colors"
+              >
+                View 482 MT Record
+                <ChevronDown className="w-3.5 h-3.5 text-[#e1390f]" />
+              </a>
+
+              <div className="hidden lg:flex items-center gap-2 pl-3 border-l border-white/10 text-[10px] font-mono text-white/35">
+                <Shield className="w-3.5 h-3.5 text-[#e1390f]" />
+                <span>CBIC AEO-LO Tier 2 Verified</span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* ── STATS BAR — pinned to bottom ── */}
+        <div
+          className="relative z-10 w-full border-t border-white/[0.07]"
+          style={{ background: "rgba(4,8,18,0.90)" }}
+        >
+          <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4">
+              {STATS.map((s, i) => (
+                <motion.div
+                  key={s.label}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.44 + i * 0.07 }}
+                  className={[
+                    "py-4 sm:py-5 px-4 sm:px-5",
+                    i < 3 ? "border-r border-white/[0.07]" : "",
+                    i >= 2 ? "border-t border-white/[0.07] lg:border-t-0" : "",
+                  ].join(" ")}
+                >
+                  <div
+                    className="font-bold font-mono text-white tracking-tight leading-none"
+                    style={{ fontSize: "clamp(1.05rem, 2vw, 1.55rem)" }}
+                  >
+                    {s.value}
+                  </div>
+                  <div className="mt-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-white/50">
+                    {s.label}
+                  </div>
+                  <div className="mt-0.5 text-[9px] sm:text-[10px] font-mono text-white/28 truncate">
+                    {s.sub}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
