@@ -211,17 +211,27 @@ export function FTRServices() {
         {/* ── SECTION HEADER ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-12 border-b border-white/10 gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.22em] text-[#e1390f]">
-              <span className="w-6 h-px bg-[#e1390f]" />
-              Core Infrastructure & Disciplines
-            </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08]">
-              SIX DISCIPLINES. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60">
-                ONE OPERATIONAL STANDARD.
+            <div className="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
               </span>
+              <span>Core Infrastructure &amp; Disciplines</span>
+            </div>
+            <h2
+              className="text-white font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              style={{
+                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                fontSize: "clamp(2.6rem, 5.5vw, 5rem)",
+              }}
+            >
+              SIX DISCIPLINES. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white/60">
+                ONE OPERATIONAL STANDARD
+              </span>
+              <span className="text-[#e1390f]">.</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
               Every shipment is executed with institutional rigor. From scheduled air and ocean
               container freight to CBIC licensed customs brokerage and heavy-lift breakbulk engineering.
             </p>

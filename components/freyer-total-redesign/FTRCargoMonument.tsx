@@ -116,17 +116,27 @@ export function FTRCargoMonument() {
         {/* ── SECTION HEADER: ARCHITECTURAL RIGOR ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-white/10">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.22em] text-[#e1390f]">
-              <span className="w-6 h-px bg-[#e1390f]" />
-              Physical Evidence & Documented Execution
-            </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08]">
-              THE WEIGHT OF <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60">
-                REAL DISPLACEMENT.
+            <div className="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
               </span>
+              <span>Physical Evidence &amp; Documented Execution</span>
+            </div>
+            <h2
+              className="text-white font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              style={{
+                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                fontSize: "clamp(2.6rem, 5.5vw, 5rem)",
+              }}
+            >
+              THE WEIGHT OF <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white/60">
+                REAL DISPLACEMENT
+              </span>
+              <span className="text-[#e1390f]">.</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
               No simulated cargo renders. No synthetic claims. These are the verified, unalterable
               records of heavy industrial breakbulk cargo engineered and transported by Freyer.
             </p>
@@ -185,11 +195,17 @@ export function FTRCargoMonument() {
 
                 {/* Massive Number */}
                 <div className="py-8 flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6">
-                  <span className="text-7xl sm:text-9xl font-black font-mono tracking-tighter text-white drop-shadow-2xl">
+                  <span
+                    className="text-7xl sm:text-9xl font-black uppercase text-white drop-shadow-2xl leading-none"
+                    style={{ fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif" }}
+                  >
                     {record.weight}
                   </span>
                   <div>
-                    <span className="text-xl sm:text-2xl font-bold font-mono text-[#e1390f] tracking-wide block">
+                    <span
+                      className="text-2xl sm:text-3xl font-black uppercase text-[#e1390f] tracking-wide block leading-tight"
+                      style={{ fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif" }}
+                    >
                       {record.weightUnit}
                     </span>
                     <span className="text-xs font-mono text-white/40 uppercase tracking-widest">

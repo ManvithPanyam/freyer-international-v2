@@ -67,27 +67,26 @@ export function FTRDispatch() {
       >
         {/* Section headline */}
         <div className="mb-14">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5 }}
-            className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#e1390f] mb-4"
-          >
-            Direct Engagement
-          </motion.div>
+          <div className="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-[0.24em] text-slate-300 font-medium mb-4">
+            <span className="flex h-2 w-2 relative">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
+            </span>
+            <span>Commercial Dispatch &amp; Rate Inquiries</span>
+          </div>
           <div className="overflow-hidden">
             <motion.h2
               initial={{ y: "100%" }}
               animate={isInView ? { y: "0%" } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-bold text-white tracking-tight"
+              className="text-white font-black tracking-[-0.02em] leading-[0.92] uppercase"
               style={{
-                fontSize: "clamp(2.2rem, 5vw, 4.5rem)",
-                letterSpacing: "-0.03em",
-                lineHeight: 1.0,
+                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                fontSize: "clamp(2.6rem, 5.5vw, 5rem)",
               }}
             >
-              ENGAGE DIRECTLY.
+              ENGAGE DIRECTLY
+              <span className="text-[#e1390f]">.</span>
             </motion.h2>
           </div>
         </div>
