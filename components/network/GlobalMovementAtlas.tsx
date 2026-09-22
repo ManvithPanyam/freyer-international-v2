@@ -335,6 +335,12 @@ export default function GlobalMovementAtlas({
                     const p1 = projectGeo(movement.origin.coordinates.lat, movement.origin.coordinates.lng);
                     const p2 = projectGeo(movement.destination.coordinates.lat, movement.destination.coordinates.lng);
                     const arcD = getRouteArcPath(p1.x, p1.y, p2.x, p2.y);
+                    const pSecondary = movement.destination.secondaryCoordinates
+                      ? projectGeo(movement.destination.secondaryCoordinates.lat, movement.destination.secondaryCoordinates.lng)
+                      : null;
+                    const secondaryArcD = pSecondary
+                      ? getRouteArcPath(p2.x, p2.y, pSecondary.x, pSecondary.y, 0.1)
+                      : null;
 
                     return (
                       <g
@@ -354,17 +360,37 @@ export default function GlobalMovementAtlas({
                           stroke="transparent"
                           strokeWidth="16"
                         />
+                        {secondaryArcD && (
+                          <path
+                            d={secondaryArcD}
+                            fill="none"
+                            stroke="transparent"
+                            strokeWidth="16"
+                          />
+                        )}
 
                         {/* Subtle soft glow for selected route */}
                         {isSelected && (
-                          <path
-                            d={arcD}
-                            fill="none"
-                            stroke="#e1390f"
-                            strokeWidth="3.5"
-                            strokeOpacity="0.35"
-                            filter="url(#softGlow)"
-                          />
+                          <>
+                            <path
+                              d={arcD}
+                              fill="none"
+                              stroke="#e1390f"
+                              strokeWidth="3.5"
+                              strokeOpacity="0.35"
+                              filter="url(#softGlow)"
+                            />
+                            {secondaryArcD && (
+                              <path
+                                d={secondaryArcD}
+                                fill="none"
+                                stroke="#e1390f"
+                                strokeWidth="3.5"
+                                strokeOpacity="0.35"
+                                filter="url(#softGlow)"
+                              />
+                            )}
+                          </>
                         )}
 
                         {/* Clean editorial route stroke */}
@@ -383,6 +409,23 @@ export default function GlobalMovementAtlas({
                           strokeDasharray={isSelected ? "none" : "3 3"}
                           className="transition-all duration-150"
                         />
+                        {secondaryArcD && (
+                          <path
+                            d={secondaryArcD}
+                            fill="none"
+                            stroke={
+                              isSelected
+                                ? "#e1390f"
+                                : isHovered
+                                ? "#fb923c"
+                                : "#38bdf8"
+                            }
+                            strokeWidth={isSelected ? "1.8" : isHovered ? "1.3" : "0.8"}
+                            strokeOpacity={isSelected ? 0.9 : isHovered ? 0.75 : 0.25}
+                            strokeDasharray="2 2"
+                            className="transition-all duration-150"
+                          />
+                        )}
                       </g>
                     );
                   })}
@@ -452,14 +495,18 @@ export default function GlobalMovementAtlas({
 
             {/* Cartographic Legend */}
             <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 text-[10px] font-mono text-slate-400 pt-3 border-t border-white/5">
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#e1390f]" />
-                  <span className="text-slate-300">Selected Movement Arc</span>
+                  <span className="text-slate-300">Discharge / Destination Port</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#38bdf8]" />
-                  <span className="text-slate-300">Documented Projects</span>
+                  <span className="text-slate-300">Origin Port / Documented Lanes</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#64748b]" />
+                  <span className="text-slate-300">Network Ports</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded bg-[#1e3a63] border border-[#3b82f6]" />

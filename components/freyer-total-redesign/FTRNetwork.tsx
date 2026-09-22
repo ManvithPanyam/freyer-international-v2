@@ -148,29 +148,39 @@ export function FTRNetwork() {
           </div>
         </div>
 
-        {/* Quick Station Filter Rail */}
-        <div className="py-4 border-b border-white/10 flex items-center gap-2 overflow-x-auto scrollbar-none">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 shrink-0 mr-1 flex items-center gap-1.5">
-            <Compass className="w-3.5 h-3.5 text-[#e1390f]" /> Select Station:
-          </span>
-          {STATIONS_DATA.map((st) => {
-            const isSelected = st.id === selected.id;
-            return (
-              <button
-                key={st.id}
-                onClick={() => setSelectedStationId(st.id)}
-                className={[
-                  "px-3.5 py-1.5 rounded-lg text-xs font-mono whitespace-nowrap transition-all flex items-center gap-1.5 border",
-                  isSelected
-                    ? "bg-[#e1390f] border-[#e1390f] text-white font-bold shadow-lg shadow-[#e1390f]/25"
-                    : "bg-white/5 border-white/10 text-slate-300 hover:text-white hover:bg-white/10 hover:border-white/20",
-                ].join(" ")}
-              >
-                {st.isHQ && <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />}
-                <span>{st.short}</span>
-              </button>
-            );
-          })}
+        {/* Quick Station Filter Rail & Global Atlas Switcher */}
+        <div className="py-4 border-b border-white/10 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-2 overflow-x-auto scrollbar-none">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 shrink-0 mr-1 flex items-center gap-1.5">
+              <Compass className="w-3.5 h-3.5 text-[#e1390f]" /> Select Station:
+            </span>
+            {STATIONS_DATA.map((st) => {
+              const isSelected = st.id === selected.id;
+              return (
+                <button
+                  key={st.id}
+                  onClick={() => setSelectedStationId(st.id)}
+                  className={[
+                    "px-3.5 py-1.5 rounded-lg text-xs font-mono whitespace-nowrap transition-all flex items-center gap-1.5 border",
+                    isSelected
+                      ? "bg-[#e1390f] border-[#e1390f] text-white font-bold shadow-lg shadow-[#e1390f]/25"
+                      : "bg-white/5 border-white/10 text-slate-300 hover:text-white hover:bg-white/10 hover:border-white/20",
+                  ].join(" ")}
+                >
+                  {st.isHQ && <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />}
+                  <span>{st.short}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <Link
+            href="/network-partners"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.10] border border-white/12 text-xs font-mono uppercase tracking-wider text-white transition-colors shrink-0"
+          >
+            <span>World Movement Atlas</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-[#e1390f]" />
+          </Link>
         </div>
 
         {/* ── MAP CANVAS + STATION DOSSIER GRID ── */}

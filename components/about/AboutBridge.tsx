@@ -17,8 +17,8 @@ export function AboutBridge() {
     {
       label: "WHERE WE MOVE",
       title: "Global Movement Atlas",
-      desc: "Documented international trade lanes spanning Asia, Europe, and the Americas.",
-      href: "/experiments/global-movement-atlas",
+      desc: "Documented international trade lanes spanning Asia, Europe, and the Middle East.",
+      href: "/network-partners",
       icon: Globe,
     },
     {

@@ -79,7 +79,7 @@ export function FTRFooter() {
                 Freyer International Logistics Pvt Ltd
               </div>
               <div className="text-[10px] font-mono text-white/30 leading-relaxed">
-                CIN: U63090TN2018PTC123456 <br />
+                CIN: U74999KA2018PTC109274 <br />
                 CBIC AEO-LO · INAAQCA4076M0F243
               </div>
             </div>

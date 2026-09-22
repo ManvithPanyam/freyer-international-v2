@@ -81,6 +81,10 @@ export function AboutHero() {
             <a href="#stakeholder-pillars" className="hover:text-[#e1390f] transition-colors flex items-center gap-1.5">
               <span>05 &middot; Three Stakeholders</span>
             </a>
+            <span className="text-white/20">&middot;</span>
+            <a href="#credentials-awards" className="hover:text-[#e1390f] transition-colors flex items-center gap-1.5">
+              <span>06 &middot; Accreditations</span>
+            </a>
           </nav>
 
           <div className="flex items-center gap-3">

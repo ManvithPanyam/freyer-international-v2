@@ -48,9 +48,9 @@ const RECORDS: ProjectRecord[] = [
     },
     mode: "Ocean Breakbulk Charter",
     vesselTerms: "Under-Deck Stowed Breakbulk",
-    photo: "/images/2.1.jpg",
-    photoAlt: "Breakbulk cargo stowage inside cargo hold — Record #9",
-    photoCaption: "Under-deck hold stowage, 482 MT Shanghai to Jebel Ali",
+    photo: "/images/9.2.jpg",
+    photoAlt: "Heavy industrial breakbulk lift at quayside hold hoist — Record #9",
+    photoCaption: "Quayside hold hoist, 482 MT Shanghai to Jebel Ali",
     specs: [
       { label: "Gross Weight", value: "482 Metric Tons" },
       { label: "Cargo Volume", value: "796 CBM" },
