@@ -90,7 +90,6 @@ export function PageHeader({
                 </span>
               </>
             )}
-            <span className="text-[#e1390f]">.</span>
           </h1>
 
           {/* Business Lead Copy */}
