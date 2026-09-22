@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AboutExplorer } from "@/components/about/AboutExplorer";
+import { PageHeader, THEME_TOKENS } from "@/components/ui/design-system";
 
 export const metadata: Metadata = {
-  title: "About Us | Credentials, Story & Governance",
+  title: "About Freyer | Corporate Overview, Credentials & Governance",
   description:
-    "Explore the corporate history, Indian Customs AEO certification, IATA accreditation, and leadership of Freyer International Logistics.",
+    "Explore the corporate story, CBIC AEO-LO certification, IATA accreditation, and nationwide forwarding governance of Freyer International Logistics.",
   alternates: {
     canonical: "/about",
   },
@@ -15,57 +15,41 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="min-h-screen bg-[#030712] text-white selection:bg-[#e1390f] selection:text-white">
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
-        {/* ── Page Header: Quiet, Confident Hero ── */}
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-12 sm:mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
-            <Link href="/" className="hover:text-[#c42f0b] transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <span className="text-slate-900 font-medium">About</span>
+      <main>
+        <PageHeader
+          breadcrumbs={[{ label: "About" }]}
+          eyebrow="Corporate Overview &amp; Compliance Dossier"
+          title="ENGINEERED FOR COMMERCE"
+          subtitle="GROUNDED IN REGULATORY INTEGRITY"
+          description="From our registered headquarters in Bengaluru and primary ocean seaport hub in Chennai, Freyer International operates across 10 branch stations in India—combining CBIC AEO-LO Tier 2 authority, IATA cargo accreditation, and vetted global forwarding alliances."
+          stats={[
+            { value: "CBIC AEO-LO", label: "TIER 2 VERIFIED", sub: "INAAQCA4076M0F243" },
+            { value: "IATA AGENT", label: "CODE 14-3-4852", sub: "Direct Apron Authority" },
+            { value: "10 STATIONS", label: "INDIAN GATEWAYS", sub: "Chennai · Mumbai · Delhi" },
+            { value: "6 ALLIANCES", label: "GLOBAL FORWARDING", sub: "WCA · SCN · WPA · FDX" },
+          ]}
+        >
+          {/* Section Jump Anchors */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 text-xs font-mono border-t border-white/10 text-white/60">
+            <a href="#story" className="hover:text-[#e1390f] transition-colors">01 &middot; Enterprise Story</a>
+            <span className="text-white/20">&middot;</span>
+            <a href="#credentials" className="hover:text-[#e1390f] transition-colors">02 &middot; Statutory Licenses</a>
+            <span className="text-white/20">&middot;</span>
+            <a href="#leadership" className="hover:text-[#e1390f] transition-colors">03 &middot; Leadership</a>
+            <span className="text-white/20">&middot;</span>
+            <a href="#footprint" className="hover:text-[#e1390f] transition-colors">04 &middot; Footprint</a>
+            <span className="text-white/20">&middot;</span>
+            <a href="#alliances" className="hover:text-[#e1390f] transition-colors">05 &middot; Alliances</a>
           </div>
+        </PageHeader>
 
-          <div className="max-w-4xl">
-            <span className="text-[#c42f0b] text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold block mb-3">
-              Corporate Overview &amp; Compliance
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-              Engineered for global commerce.
-              <br />
-              <span className="text-slate-500 font-light italic">
-                Grounded in compliance.
-              </span>
-            </h1>
-            <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-4 sm:mt-5 leading-relaxed max-w-3xl">
-              From our registered headquarters in Bengaluru and primary seaport hub in Chennai, Freyer International operates across 9 branches in 8 cities in India—combining AEO certified customs authority, IATA air cargo certification, and audited global forwarding alliances.
-            </p>
-
-            {/* Section Navigation Line */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 text-sm font-mono border-b border-slate-200 pb-4 text-slate-500">
-              <a href="#story" className="hover:text-[#c42f0b] transition-colors font-medium">Story</a>
-              <span>&middot;</span>
-              <a href="#credentials" className="hover:text-[#c42f0b] transition-colors font-medium">Credentials</a>
-              <span>&middot;</span>
-              <a href="#people" className="hover:text-[#c42f0b] transition-colors font-medium">People</a>
-              <span>&middot;</span>
-              <a href="#footprint" className="hover:text-[#c42f0b] transition-colors font-medium">Footprint</a>
-              <span>&middot;</span>
-              <a href="#alliances" className="hover:text-[#c42f0b] transition-colors font-medium">Alliances</a>
-              <span>&middot;</span>
-              <a href="#csr" className="hover:text-[#c42f0b] transition-colors font-medium">CSR</a>
-            </div>
-          </div>
-        </div>
-
-        {/* ── About Explorer Body ── */}
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
+        <section className={`py-16 sm:py-24 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
           <AboutExplorer />
-        </div>
+        </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

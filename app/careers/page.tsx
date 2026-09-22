@@ -3,11 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Mail, Award } from "lucide-react";
+import { Mail, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { PageHeader, FreyerCard, FreyerButton, SectionHeader, THEME_TOKENS } from "@/components/ui/design-system";
 
 export const metadata: Metadata = {
-  title: "Careers & Culture",
-  description: "Join Freyer International Logistics, a certified logistics organization operating across 9 branches in 8 cities in India.",
+  title: "Careers & Professional Culture | Join Freyer",
+  description:
+    "Join Freyer International Logistics, a licensed CBIC AEO-LO forwarding organization operating across 10 branch stations in India.",
   alternates: {
     canonical: "/careers",
   },
@@ -22,7 +24,7 @@ const PRACTICE_AREAS = [
   {
     num: "02",
     title: "Licensed Customs Brokerage",
-    desc: "Indian Customs import/export compliance, AEO statutory filings, EDI documentation, and tariff classification.",
+    desc: "Indian Customs import/export compliance, CBIC AEO statutory filings, EDI documentation, and tariff classification.",
   },
   {
     num: "03",
@@ -43,166 +45,78 @@ const PRACTICE_AREAS = [
 
 export default function CareersPage() {
   return (
-    <>
+    <div className="min-h-screen bg-[#030712] text-white selection:bg-[#e1390f] selection:text-white">
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
-        {/* ── Page Header: Quiet, Confident Hero ── */}
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 mb-12 sm:mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-3">
-            <Link href="/" className="hover:text-[#c42f0b] transition-colors">
-              Home
-            </Link>
-            <span>/</span>
-            <span className="text-slate-900 font-medium">Careers</span>
-          </div>
+      <main>
+        <PageHeader
+          breadcrumbs={[{ label: "Careers" }]}
+          eyebrow="Talent Acquisition &middot; Operational Culture"
+          title="OPERATIONAL RIGOR"
+          subtitle="ENGINEERING CAREERS IN LOGISTICS"
+          description="Build your career with an accredited, growing multimodal logistics organization. Join seasoned licensed customs brokers, marine freight specialists, and project cargo engineers across 10 branch stations in India."
+          stats={[
+            { value: "10 STATIONS", label: "PAN-INDIA DESKS", sub: "Direct Branch Locations" },
+            { value: "5 DISCIPLINES", label: "PRACTICE AREAS", sub: "Forwarding · Customs · Projects" },
+            { value: "CBIC AEO-LO", label: "GOVERNANCE", sub: "Tier 2 Statutory License" },
+            { value: "100%", label: "MERIT BASED", sub: "Professional Career Mobility" },
+          ]}
+        />
 
-          <div className="max-w-4xl">
-            <span className="text-[#c42f0b] text-xs sm:text-sm font-mono tracking-[0.22em] uppercase font-bold block mb-3">
-              Human Capital &amp; Operational Culture
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-              People who move the movement.
-            </h1>
-            <p className="text-slate-600 text-base sm:text-lg lg:text-xl mt-4 sm:mt-5 leading-relaxed max-w-3xl">
-              We invest continuously in talented logistics practitioners, licensed customs specialists, and supply chain architects operating across 9 branches in 8 cities in India.
-            </p>
-          </div>
-        </div>
-
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-24">
-          {/* ── Authentic Office Culture Photography Spread ── */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-7 relative aspect-[16/10] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-2xs">
-              <Image
-                src="/images/gallery/office/1.jpg"
-                alt="Freyer Logistics Operations Floor Bengaluru"
-                fill
-                className="object-cover object-center"
-                sizes="(min-width: 1024px) 60vw, 100vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-              <span className="absolute bottom-5 left-5 text-sm sm:text-base font-mono text-white bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
-                Corporate Operations Floor &middot; Bengaluru Headquarters
-              </span>
-            </div>
-
-            <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6">
-              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-2xs">
-                <Image
-                  src="/images/gallery/office/2.jpg"
-                  alt="Customs Documentation Coordination Desk"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 text-xs sm:text-sm font-mono text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
-                  Customs &amp; Compliance Team
-                </span>
-              </div>
-
-              <div className="relative aspect-[16/9] md:aspect-[16/8] rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-2xs">
-                <Image
-                  src="/images/gallery/office/3.jpg"
-                  alt="Freight Desk & Commercial Operations Floor"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 text-xs sm:text-sm font-mono text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
-                  Commercial Freight Coordination
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* ── Five Disciplines. One Operating Culture. ── */}
+        <section className={`py-16 sm:py-24 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter} space-y-20`}>
+          {/* Practice Areas */}
           <div>
-            <div className="pb-4 border-b border-slate-200 flex items-baseline justify-between">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0b2144]">
-                Five disciplines. One operating culture.
-              </h2>
-              <span className="text-sm font-mono text-slate-400 hidden sm:inline-block">
-                Active Operating Roles
-              </span>
-            </div>
+            <SectionHeader
+              num="01"
+              tag="Operational Disciplines"
+              title="PRACTICE AREAS."
+              highlight="DISCIPLINED DESKS."
+              description="Explore professional roles spanning core multimodal execution, statutory trade compliance, and heavy industrial logistics."
+            />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
-              {PRACTICE_AREAS.map((practice) => (
-                <div
-                  key={practice.num}
-                  className="p-8 sm:p-10 bg-white rounded-3xl border border-slate-200/90 shadow-2xs space-y-4 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="text-sm font-mono text-[#c42f0b] font-bold">
-                      {practice.num}
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] mt-1.5">
-                      {practice.title}
-                    </h3>
-                    <p className="text-base text-slate-600 mt-2.5 leading-relaxed">
-                      {practice.desc}
-                    </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PRACTICE_AREAS.map((area) => (
+                <FreyerCard key={area.num} className="p-6 space-y-3">
+                  <div className="text-xs font-mono uppercase text-[#e1390f] font-bold">
+                    {area.num} / Practice Area
                   </div>
-
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-sm font-mono text-slate-400">
-                    <span>9 Indian Branches</span>
-                    <span className="text-[#0b2144] font-semibold">Active Practice</span>
-                  </div>
-                </div>
-              ))}
-
-              {/* Operational Culture Card */}
-              <div className="p-8 sm:p-10 bg-[#060f1e] text-white rounded-3xl border border-white/10 shadow-md space-y-4 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-slate-400 font-bold">
-                    <span>OPERATIONAL CULTURE</span>
-                    <Award className="w-5 h-5 text-[#ff6846]" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mt-1.5">
-                    Nationwide Freight Standards
+                  <h3 className="text-lg font-bold text-white font-mono uppercase">
+                    {area.title}
                   </h3>
-                  <p className="text-base text-slate-300 mt-2.5 leading-relaxed">
-                    Committed to operational discipline, workplace safety, and continuous logistics training across all 9 Indian branch offices.
+                  <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                    {area.desc}
                   </p>
-                </div>
-
-                <div className="pt-4 border-t border-white/10 text-sm font-mono text-slate-400">
-                  Branch Network Standards
-                </div>
-              </div>
+                </FreyerCard>
+              ))}
             </div>
           </div>
 
-          {/* ── Direct Application Mechanism ── */}
-          <div className="bg-[#0b2144] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div className="max-w-2xl">
-              <span className="text-[#ff6b4a] text-xs sm:text-sm font-mono tracking-widest uppercase font-semibold">
-                Direct Human Resources Desk
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mt-1.5">
-                Submit your profile for consideration.
-              </h2>
-              <p className="text-slate-300 text-base sm:text-lg mt-2 leading-relaxed">
-                We are always interested in meeting experienced freight professionals, licensed customs brokers, and project logistics specialists. Send your CV and preferred operating location.
+          {/* Direct Application Dossier */}
+          <FreyerCard className="p-8 sm:p-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div className="max-w-2xl space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#e1390f] uppercase tracking-wider font-semibold">
+                <Mail className="w-4 h-4" />
+                <span>Direct HR Directorate</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white font-mono uppercase tracking-tight">
+                Submit Your Professional Profile
+              </h3>
+              <p className="text-slate-300 text-sm font-light leading-relaxed">
+                Forward your resume and operational experience directly to our talent acquisition team. State your preferred practice discipline and station location (Chennai, Bengaluru, Mumbai, Delhi, Hyderabad, Vizag, Coimbatore, Tuticorin, or Ahmedabad).
               </p>
+              <div className="pt-2 text-xs font-mono text-white/60">
+                Email: <span className="text-white">careers@freyerinternational.com</span>
+              </div>
             </div>
 
             <div className="shrink-0">
-              <a
-                href="mailto:careers@freyerinternational.com?subject=Career%20Application%20-%20Freyer%20International"
-                className="inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-base font-semibold px-7 py-3.5 rounded-xl transition-colors shadow-md shadow-[#c42f0b]/20"
-              >
-                <Mail className="w-5 h-5" />
-                <span>Email CV to careers@freyerinternational.com</span>
-              </a>
+              <FreyerButton href="mailto:careers@freyerinternational.com" size="md" variant="primary">
+                Email Resume Directly
+              </FreyerButton>
             </div>
-          </div>
-        </div>
+          </FreyerCard>
+        </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

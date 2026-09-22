@@ -166,7 +166,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen antialiased bg-[#fbfcfd] text-[#0b2144]">{children}</body>
+      <body className="min-h-screen antialiased bg-[#030712] text-white selection:bg-[#e1390f] selection:text-white">{children}</body>
     </html>
   );
 }

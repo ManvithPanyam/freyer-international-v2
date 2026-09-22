@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MinimalLocations } from "@/components/locations/MinimalLocations";
+import { PageHeader, THEME_TOKENS } from "@/components/ui/design-system";
 
 export const metadata: Metadata = {
-  title: "Locations & Global Network",
-  description: "A physical Indian network across 9 branches in 8 cities, connected globally through established forwarding alliances.",
+  title: "10 Branch Stations Across India | Network Map",
+  description:
+    "Direct physical infrastructure and CBIC AEO-LO customs authority across 10 branch stations in India: Chennai HQ, Chennai Airport, Bengaluru, Delhi NCR, Mumbai, Hyderabad, Visakhapatnam, Coimbatore, Tuticorin, and Ahmedabad.",
   alternates: {
     canonical: "/locations",
   },
@@ -14,37 +15,28 @@ export const metadata: Metadata = {
 
 export default function LocationsPage() {
   return (
-    <>
+    <div className="min-h-screen bg-[#030712] text-white selection:bg-[#e1390f] selection:text-white">
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-28 pb-24 sm:pt-32">
-        <section className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-          <div className="mb-3 flex items-center gap-2 font-mono text-[11px] text-slate-400">
-            <Link href="/" className="transition-colors hover:text-[#c42f0b]">Home</Link>
-            <span>/</span>
-            <span className="text-slate-700">Locations</span>
-          </div>
-          <div className="max-w-4xl pt-2 sm:pt-4">
-            <span className="block font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#c42f0b] sm:text-sm mb-3">
-              Physical domestic footprint
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0b2144] leading-[1.05]">
-              9 branches across 8 cities in India.
-              <br />
-              <span className="font-light italic text-slate-500">
-                Connected worldwide through global alliances.
-              </span>
-            </h1>
-            <p className="mt-4 sm:mt-5 max-w-3xl text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600">
-              A physical Indian network with dedicated infrastructure in major manufacturing, port, and gateway corridors, connected globally through established forwarding alliances.
-            </p>
-          </div>
-        </section>
+      <main>
+        <PageHeader
+          breadcrumbs={[{ label: "Locations" }]}
+          eyebrow="Physical Domestic Footprint &middot; 10 Verified Stations"
+          title="10 STATIONS ACROSS INDIA"
+          subtitle="DIRECT GATEWAYS. UNIFIED GOVERNANCE."
+          description="A dedicated physical network of 10 company branch stations operating at key maritime seaports, air cargo complexes, and manufacturing hubs, connecting domestic supply chains directly to international trade lanes."
+          stats={[
+            { value: "10 STATIONS", label: "INDIAN GATEWAYS", sub: "Direct Pan-India Presence" },
+            { value: "CBIC AEO-LO", label: "TIER 2 VERIFIED", sub: "INAAQCA4076M0F243 License" },
+            { value: "6 SEAPORTS", label: "DIRECT LIAISON", sub: "CITPL · JNPT · VOC · Vizag" },
+            { value: "100%", label: "COMPANY OPERATED", sub: "Zero Third-Party Franchises" },
+          ]}
+        />
 
-        <section className="mx-auto mt-20 max-w-[1440px] px-6 sm:mt-28 sm:px-10 lg:px-16">
+        <section className={`py-16 sm:py-24 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
           <MinimalLocations />
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

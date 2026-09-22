@@ -3,16 +3,24 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "motion/react";
 import {
   FileText,
-  ExternalLink,
   MapPin,
   ArrowRight,
   X,
   ChevronRight,
   CheckCircle2,
+  ShieldCheck,
+  Building2,
+  Phone,
+  Mail,
 } from "lucide-react";
+import {
+  SectionHeader,
+  FreyerCard,
+  FreyerButton,
+  THEME_TOKENS,
+} from "@/components/ui/design-system";
 
 const FEATURED_AWARDS = [
   { id: 1, img: "/images/awards/1.jpg", title: "Logistics Excellence Recognition", forum: "Industry Award Trophy" },
@@ -45,21 +53,21 @@ const REGIONAL_BRANCHES = [
   {
     region: "South India (HQ & Maritime Port Gateways)",
     branches: [
-      { name: "Bengaluru", role: "Corporate Headquarters & Commercial Operations" },
-      { name: "Chennai", role: "Corporate Branch & Sea Port Operations" },
-      { name: "Chennai Airport", role: "Air Cargo Terminal Office" },
+      { name: "Bengaluru", role: "Corporate Registered Office & Commercial Hub" },
+      { name: "Chennai (Egmore HQ)", role: "Primary Ocean Port Operations & Central Customs Brokerage" },
+      { name: "Chennai Airport", role: "Air Cargo Terminal Office & Apron Logistics" },
       { name: "Hyderabad", role: "Regional Operations Hub & ICD Rail Links" },
-      { name: "Visakhapatnam", role: "East Coast Deepwater Port Office" },
-      { name: "Coimbatore", role: "Industrial Inland Forwarding Branch" },
-      { name: "Tuticorin", role: "Southern Gateway Maritime Operations" },
+      { name: "Visakhapatnam", role: "East Coast Deepwater Port Gateway & Stevedoring" },
+      { name: "Coimbatore", role: "Industrial Inland Forwarding & Heavy Road Freight" },
+      { name: "Tuticorin", role: "Southern Deepwater Berth Operations & CFS Logistics" },
     ],
   },
   {
-    region: "North & West India Commercial Hubs",
+    region: "North & West India Commercial Corridors",
     branches: [
-      { name: "Delhi (Gurugram)", role: "North India Gateway & Air Cargo Desk" },
-      { name: "Mumbai", role: "Nhava Sheva Sea Port & West Coast Hub" },
-      { name: "Ahmedabad", role: "Gujarat Commercial & Industrial Cargo Hub" },
+      { name: "Delhi / NCR (Gurugram)", role: "Northern Gateway & Air Cargo Terminal Desk" },
+      { name: "Mumbai (Marol / Andheri)", role: "Western Seaboard Gateway & Nhava Sheva Support" },
+      { name: "Ahmedabad (Navrangpur)", role: "Gujarat Industrial Corridor & Mundra Port Feeder" },
     ],
   },
 ];
@@ -86,588 +94,380 @@ export function AboutExplorer() {
   }, [showAllAwardsModal]);
 
   return (
-    <div className="space-y-20 sm:space-y-28">
+    <div className="space-y-24 sm:space-y-32">
       {/* ─────────────────────────────────────────────────────────────
           SECTION 01: COMPANY STORY (WHAT IS FREYER?)
       ───────────────────────────────────────────────────────────── */}
       <section id="story">
-        <div className="flex items-center gap-2 text-xs font-mono text-[#c42f0b] uppercase tracking-widest font-semibold mb-2">
-          <span>01 / Enterprise Identity</span>
-        </div>
+        <SectionHeader
+          num="01"
+          tag="Enterprise Identity"
+          title="BUILT AROUND THE CARGO."
+          highlight="BUILT AROUND THE RELATIONSHIP."
+          description="Freyer International was established with a singular operational commitment: to provide responsive, personalized, and technically disciplined freight forwarding, customs compliance, and supply chain management across India and global trading corridors."
+        />
 
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 pb-6 border-b border-slate-200">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0b2144] leading-tight">
-              Built around the cargo.
-              <br />
-              <span className="text-slate-500 font-light italic">
-                Built around the relationship.
-              </span>
-            </h2>
-          </div>
-
-          <div className="text-left lg:text-right shrink-0">
-            <div className="text-xs font-mono text-slate-500 uppercase tracking-wider">
-              Multimodal Freight &middot; Customs &middot; Warehousing
+        {/* Narrative Grid with Documentary Photo */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-6 space-y-6 text-slate-300 font-light leading-relaxed">
+            <div className="border-l-2 border-[#e1390f] pl-4 py-1">
+              <p className="text-white font-medium text-lg sm:text-xl italic leading-snug">
+                &ldquo;We don&apos;t just want to move your goods from point A to point B, we want to understand your business and design a solution to fit your requirements.&rdquo;
+              </p>
             </div>
-          </div>
-        </div>
-
-        {/* Story Narrative with Integrated Documentary Photo */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mt-8 items-center">
-          <div className="lg:col-span-6 space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
-            <p className="font-semibold text-[#0b2144] text-base sm:text-lg italic border-l-2 border-[#c42f0b] pl-3.5">
-              &ldquo;We don&apos;t just want to move your goods from point A to point B, we want to understand your business and design a solution to fit your requirements.&rdquo;
+            <p className="text-sm sm:text-base">
+              From our registered headquarters in Bengaluru and primary seaport hub in Chennai, Freyer International operates across 10 branch stations in India. Our customers trust us with their cargo because we listen to their needs, react quickly, protect freight completely, and deliver reliably.
             </p>
-            <p>
-              Freyer International was established with a singular operational commitment: to provide responsive, personalized, and technically disciplined freight forwarding, customs compliance, and supply chain management.
-            </p>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Our customers trust us with their cargo because we listen to their needs, react quickly, protect freight completely, and deliver reliably across India and international trading gateways.
+            <p className="text-xs sm:text-sm text-white/50">
+              Licensed CBIC AEO-LO Tier 2 logistics operator (INAAQCA4076M0F243) and IATA approved cargo agent (14-3-4852) with nationwide direct operations.
             </p>
           </div>
 
-          {/* Documentary Visual in Top Viewport */}
-          <div className="lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm">
+          <div className="lg:col-span-6 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#091222]">
             <Image
               src="/images/About.jpg"
               alt="Freyer International Logistics Corporate Operations and Freight Coordination"
               fill
-              className="object-cover object-center"
+              className="object-cover object-center brightness-90 contrast-105"
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-3 left-3 text-xs font-mono text-white">
-              <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded border border-white/10 inline-block text-[11px]">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+            <div className="absolute bottom-4 left-4 text-xs font-mono text-white/80">
+              <span className="bg-[#030712]/80 backdrop-blur-md px-3 py-1 rounded border border-white/10 text-[11px]">
                 Freyer International Corporate Operations
               </span>
             </div>
           </div>
         </div>
 
-        {/* ── Institutional Mission, Vision & Core Values Architecture ── */}
-        <div className="mt-12 pt-10 border-t border-slate-200 space-y-8">
-          {/* Mission & Vision Dual Anchor */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Mission */}
-            <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-2xs flex flex-col justify-between space-y-4">
-              <div>
-                <span className="text-[11px] font-mono tracking-[0.2em] text-[#c42f0b] uppercase font-bold block mb-2">
-                  Corporate Mission
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] tracking-tight leading-snug">
-                  To be the leading supply chain solutions provider of choice by leveraging our People, Process &amp; Network.
-                </h3>
-              </div>
-              <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs font-mono text-slate-500">
-                <span className="font-semibold text-slate-800">People</span>
-                <span>&middot;</span>
-                <span className="font-semibold text-slate-800">Process</span>
-                <span>&middot;</span>
-                <span className="font-semibold text-slate-800">Network</span>
-              </div>
-            </div>
-
-            {/* Vision */}
-            <div className="bg-white p-7 sm:p-8 rounded-2xl border border-slate-200/90 shadow-2xs flex flex-col justify-between space-y-4">
-              <div>
-                <span className="text-[11px] font-mono tracking-[0.2em] text-[#0b2144] uppercase font-bold block mb-2">
-                  Corporate Vision
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] tracking-tight leading-snug">
-                  We want to be recognized as the most flexible and reliable partner of logistics services.
-                </h3>
-              </div>
-              <div className="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs font-mono text-slate-500">
-                <span className="font-semibold text-[#c42f0b]">Operational Flexibility</span>
-                <span>&middot;</span>
-                <span className="font-semibold text-slate-800">Global Reliability</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Tri-Value Charter: Reliability, Integrity, Sincerity */}
-          <div className="bg-slate-50/80 p-7 sm:p-9 rounded-2xl border border-slate-200/90 space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b border-slate-200/80 pb-4">
-              <div>
-                <span className="text-[11px] font-mono tracking-[0.2em] text-[#c42f0b] uppercase font-bold block mb-1">
-                  Core Values
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#0b2144] tracking-tight">
-                  Guiding Principles of Professional Governance
-                </h3>
-              </div>
-              <span className="text-xs font-mono text-slate-500">
-                Institutional Charter
+        {/* Mission, Vision & Charter Cards */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <FreyerCard className="p-8 flex flex-col justify-between">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#e1390f] font-semibold block mb-2">
+                Corporate Mission
               </span>
+              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                To be the leading supply chain solutions provider of choice by leveraging our People, Process &amp; Network.
+              </h3>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Reliability */}
-              <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-2.5">
-                <div className="flex items-center justify-between text-xs font-mono pb-2 border-b border-slate-100">
-                  <span className="font-bold text-[#0b2144] tracking-wider uppercase">01 / Reliability</span>
-                  <span className="text-slate-400">Execution</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
-                  Freyer International&apos;s proven <strong className="text-[#0b2144] font-semibold">RELIABILITY</strong> to perform its best is the company&apos;s assurance of professionalism in every freight movement.
-                </p>
-              </div>
-
-              {/* Integrity */}
-              <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-2.5">
-                <div className="flex items-center justify-between text-xs font-mono pb-2 border-b border-slate-100">
-                  <span className="font-bold text-[#0b2144] tracking-wider uppercase">02 / Integrity</span>
-                  <span className="text-slate-400">Compliance</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
-                  We foster an uncompromising commitment to <strong className="text-[#0b2144] font-semibold">INTEGRITY</strong> in all our business activities, statutory customs dealings, and fiscal reporting.
-                </p>
-              </div>
-
-              {/* Sincerity */}
-              <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-2.5">
-                <div className="flex items-center justify-between text-xs font-mono pb-2 border-b border-slate-100">
-                  <span className="font-bold text-[#0b2144] tracking-wider uppercase">03 / Sincerity</span>
-                  <span className="text-slate-400">Welfare</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
-                  <strong className="text-[#0b2144] font-semibold">SINCERITY</strong> is demonstrated by the genuine care and interest in the welfare of our Customers and Employees alike.
-                </p>
-              </div>
+            <div className="pt-4 mt-6 border-t border-white/10 flex items-center gap-2 text-xs font-mono text-white/40">
+              <span className="text-white">People</span>
+              <span>&middot;</span>
+              <span className="text-white">Process</span>
+              <span>&middot;</span>
+              <span className="text-white">Network</span>
             </div>
-          </div>
+          </FreyerCard>
 
-          {/* Three Stakeholder Governance Charter: Customers, Partners, Employees */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
-            <div className="p-5 bg-white rounded-xl border border-slate-200/80 shadow-2xs space-y-2">
-              <span className="text-[10px] font-mono tracking-widest text-[#c42f0b] uppercase font-bold block">
-                Stakeholder Commitment 01
+          <FreyerCard className="p-8 flex flex-col justify-between">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-white/40 font-semibold block mb-2">
+                Corporate Vision
               </span>
-              <h4 className="text-base font-bold text-[#0b2144]">Our Customers</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Custom solutions tailored to specific commercial needs, supported by responsive communication, milestone tracking, and seasoned logistics account leaders.
-              </p>
+              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                We want to be recognized as the most flexible and reliable partner of logistics services.
+              </h3>
             </div>
+            <div className="pt-4 mt-6 border-t border-white/10 flex items-center gap-2 text-xs font-mono text-white/40">
+              <span className="text-[#e1390f]">Operational Flexibility</span>
+              <span>&middot;</span>
+              <span className="text-white">Global Reliability</span>
+            </div>
+          </FreyerCard>
+        </div>
 
-            <div className="p-5 bg-white rounded-xl border border-slate-200/80 shadow-2xs space-y-2">
-              <span className="text-[10px] font-mono tracking-widest text-[#0b2144] uppercase font-bold block">
-                Stakeholder Commitment 02
-              </span>
-              <h4 className="text-base font-bold text-[#0b2144]">Our Partners &amp; Carriers</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Strict safety, legal, and regulatory compliance across all vendor management. Our customer&apos;s freight must move safely, legally, and timely with vetted transport operators.
-              </p>
-            </div>
+        {/* Core Values: Reliability, Integrity, Sincerity */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <FreyerCard className="p-6 space-y-3">
+            <div className="text-xs font-mono uppercase text-[#e1390f] font-bold">01 / Reliability</div>
+            <h4 className="text-base font-bold text-white">Execution Precision</h4>
+            <p className="text-xs text-slate-300 leading-relaxed font-light">
+              Freyer International&apos;s proven <strong className="text-white font-medium">RELIABILITY</strong> to perform its best is the company&apos;s assurance of professionalism in every freight movement.
+            </p>
+          </FreyerCard>
 
-            <div className="p-5 bg-white rounded-xl border border-slate-200/80 shadow-2xs space-y-2">
-              <span className="text-[10px] font-mono tracking-widest text-emerald-700 uppercase font-bold block">
-                Stakeholder Commitment 03
-              </span>
-              <h4 className="text-base font-bold text-[#0b2144]">Our Employees</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                A culture built on shared values, technical discipline, and continuous professional development across all Indian branch offices.
-              </p>
-            </div>
-          </div>
+          <FreyerCard className="p-6 space-y-3">
+            <div className="text-xs font-mono uppercase text-[#e1390f] font-bold">02 / Integrity</div>
+            <h4 className="text-base font-bold text-white">Regulatory Compliance</h4>
+            <p className="text-xs text-slate-300 leading-relaxed font-light">
+              We foster an uncompromising commitment to <strong className="text-white font-medium">INTEGRITY</strong> in all our business activities, statutory customs filings, and fiscal reporting.
+            </p>
+          </FreyerCard>
+
+          <FreyerCard className="p-6 space-y-3">
+            <div className="text-xs font-mono uppercase text-[#e1390f] font-bold">03 / Sincerity</div>
+            <h4 className="text-base font-bold text-white">Dedicated Welfare</h4>
+            <p className="text-xs text-slate-300 leading-relaxed font-light">
+              <strong className="text-white font-medium">SINCERITY</strong> is demonstrated by the genuine care and interest in the welfare of our Customers and Employees alike.
+            </p>
+          </FreyerCard>
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 02: INSTITUTIONAL EVIDENCE & ACCREDITATIONS
+          SECTION 02: CREDENTIALS & LICENSES
       ───────────────────────────────────────────────────────────── */}
-      <section id="credentials" className="pt-2">
-        <div className="flex items-center gap-2 text-xs font-mono text-[#c42f0b] uppercase tracking-widest font-semibold mb-2">
-          <span>02 / Institutional Evidence</span>
-        </div>
+      <section id="credentials">
+        <SectionHeader
+          num="02"
+          tag="Statutory Authority"
+          title="ACCREDITED GOVERNANCE."
+          highlight="VERIFIED COMPLIANCE."
+          description="Audited statutory authority issued by central government ministries, international aviation bodies, and global forwarder federations."
+        />
 
-        <div className="pb-6 border-b border-slate-200">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
-            Verified Accreditations &amp; Compliance Records
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-            Direct sovereign and international certifications governing customs processing, air cargo agency authority, and enterprise trust.
-          </p>
-        </div>
-
-        {/* 3 Evidence Blocks */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          {/* AEO Block */}
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <FreyerCard className="p-8 flex flex-col justify-between space-y-6">
             <div>
-              <div className="flex items-center justify-between text-xs font-mono text-slate-500 pb-2 border-b border-slate-100">
-                <span className="text-[#c42f0b] font-bold">AEO ACCREDITATION</span>
-                <span>Indian Customs</span>
+              <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
+                <span className="text-[#e1390f] font-bold">AEO-LO TIER 2</span>
+                <span>CBIC Customs</span>
               </div>
-              <h3 className="text-lg font-bold text-[#0b2144] mt-3">
-                Authorized Economic Operator (AEO)
+              <h3 className="text-xl font-bold text-white mt-4">
+                Authorized Economic Operator
               </h3>
-              <p className="text-slate-600 text-xs mt-2 leading-relaxed">
-                Certified by the Central Board of Indirect Taxes &amp; Customs (CBIC), Ministry of Finance, Government of India.
-              </p>
-              <div className="mt-3 p-2.5 bg-slate-50 rounded border border-slate-200/70 text-xs font-mono">
-                <span className="text-slate-500 block text-[10px]">Accreditation Authority:</span>
-                <span className="font-bold text-[#0b2144]">Indian Customs (CBIC)</span>
-              </div>
-            </div>
-
-            <div className="pt-3 border-t border-slate-100">
-              <a
-                href="/documents/AEO_Certificate.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c42f0b] hover:text-[#0b2144] transition-colors"
-              >
-                <FileText className="w-3.5 h-3.5" />
-                <span>View Official Certificate (PDF)</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-          </div>
-
-          {/* IATA Accreditation Block */}
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-5">
-            <div>
-              <div className="flex items-center justify-between text-xs font-mono text-slate-500 pb-2 border-b border-slate-100">
-                <span className="text-[#0b2144] font-bold">IATA CARGO AGENT</span>
-                <span>Global Aviation</span>
-              </div>
-              <h3 className="text-lg font-bold text-[#0b2144] mt-3">
-                Regulated International Air Cargo Agency
-              </h3>
-              <p className="text-slate-600 text-xs mt-2 leading-relaxed">
-                Direct scheduled airline booking authority, automated electronic airway bill issuance, and certified dangerous goods handling worldwide.
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed font-light">
+                Highest tier of trusted customs logistics operator accreditation granted by the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, Government of India.
               </p>
             </div>
-
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
-              <span>Standard:</span>
-              <span className="font-semibold text-slate-800">IATA Cargo Accredited</span>
+            <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50">
+              License: <span className="text-white">INAAQCA4076M0F243</span>
             </div>
-          </div>
+          </FreyerCard>
 
-          {/* SCN & WCA Alliances Block */}
-          <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-5">
+          <FreyerCard className="p-8 flex flex-col justify-between space-y-6">
             <div>
-              <div className="flex items-center justify-between text-xs font-mono text-slate-500 pb-2 border-b border-slate-100">
-                <span className="text-[#0b2144] font-bold">GLOBAL NETWORKS</span>
-                <span>International Alliances</span>
+              <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
+                <span className="text-[#e1390f] font-bold">IATA ACCREDITED</span>
+                <span>Aviation Authority</span>
               </div>
-              <h3 className="text-lg font-bold text-[#0b2144] mt-3">
-                SCN &amp; WCA World Member
+              <h3 className="text-xl font-bold text-white mt-4">
+                Approved Cargo Agent
               </h3>
-              <p className="text-slate-600 text-xs mt-2 leading-relaxed">
-                Vetted international forwarding partner of Security Cargo Network (SCN) and WCA World, providing verified reciprocal agency coverage across key global gateways.
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed font-light">
+                Direct apron and terminal privileges across major international air carriers, enabling rapid airway bill (AWB) issuance and prioritized space booking.
               </p>
             </div>
-
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
-              <span>Network Status:</span>
-              <span className="font-semibold text-slate-800">Certified Partner</span>
+            <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50">
+              Agent Code: <span className="text-white">14-3-4852</span>
             </div>
-          </div>
+          </FreyerCard>
+
+          <FreyerCard className="p-8 flex flex-col justify-between space-y-6">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
+                <span className="text-[#e1390f] font-bold">GLOBAL ALLIANCES</span>
+                <span>Forwarding Networks</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mt-4">
+                WCA &amp; SCN Member
+              </h3>
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed font-light">
+                Audited membership in Security Cargo Network and WCA World, providing verified reciprocal agency coverage across major international sea and air gateways.
+              </p>
+            </div>
+            <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50">
+              Status: <span className="text-white">Vetted Member</span>
+            </div>
+          </FreyerCard>
         </div>
 
-        {/* Curated Industry Recognitions */}
-        <div className="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        {/* Featured Industry Awards */}
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#0b2144] font-bold block">
-              Documented Industry Awards &amp; Trophies
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#e1390f] font-semibold block">
+              Documented Industry Awards &amp; Recognitions
             </span>
-            <span className="text-xs text-slate-500">
-              Recognitions awarded for freight forwarding, breakbulk operations, and customs compliance.
+            <span className="text-xs text-white/40">
+              Accolades awarded for freight forwarding, breakbulk operations, and customs compliance.
             </span>
           </div>
           <button
+            type="button"
             onClick={() => setShowAllAwardsModal(true)}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#c42f0b] hover:text-[#0b2144] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c42f0b] self-start sm:self-auto"
+            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#e1390f] hover:text-white transition-colors"
           >
             <span>View All {ALL_AWARDS.length} Accolades</span>
             <ChevronRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
           {FEATURED_AWARDS.map((award) => (
-            <div
-              key={award.id}
-              className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-2xs flex items-center gap-4"
-            >
-              <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-slate-50 shrink-0 border border-slate-100">
-                <Image src={award.img} alt={award.title} fill className="object-contain p-1.5" />
+            <FreyerCard key={award.id} className="p-5 flex items-center gap-4">
+              <div className="relative w-16 h-16 rounded overflow-hidden bg-black/40 shrink-0 border border-white/10">
+                <Image src={award.img} alt={award.title} fill className="object-contain p-2" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-[#0b2144]">{award.title}</h4>
-                <p className="text-[11px] font-mono text-slate-500 mt-0.5">{award.forum}</p>
+                <h4 className="text-xs font-bold text-white">{award.title}</h4>
+                <p className="text-[10px] font-mono text-white/40 mt-1">{award.forum}</p>
               </div>
-            </div>
+            </FreyerCard>
           ))}
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 03: PEOPLE BEHIND THE MOVEMENT (INTENTIONAL 3-IMAGE LAYOUT)
+          SECTION 03: LEADERSHIP & SPECIALISTS
       ───────────────────────────────────────────────────────────── */}
-      <section id="people" className="bg-[#060f1e] text-white rounded-3xl p-8 sm:p-12 lg:p-14 border border-white/10">
-        <div className="flex items-center gap-2 text-xs font-mono text-[#ff6b4a] uppercase tracking-widest font-semibold mb-2">
-          <span>03 / Operational Culture &amp; Human Capital</span>
-        </div>
+      <section id="leadership">
+        <SectionHeader
+          num="03"
+          tag="Operational Culture"
+          title="THE SPECIALISTS."
+          highlight="BEHIND THE MOVEMENT."
+          description="Behind every tandem crane lift, customs declaration, and ocean voyage is a dedicated team of licensed brokers, freight coordinators, and engineers."
+          action={
+            <FreyerButton href="/careers" size="sm" variant="secondary">
+              Explore Careers
+            </FreyerButton>
+          }
+        />
 
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-8 border-b border-white/10">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-              The specialists behind the movement.
-            </h2>
-            <p className="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-              Behind every heavy crane lift, customs clearance declaration, and ocean voyage is a dedicated team of licensed customs brokers, freight coordinators, and supply chain architects operating from our branch offices.
-            </p>
-          </div>
-
-          <div className="shrink-0">
-            <Link
-              href="/careers"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-6 py-3.5 rounded border border-white/15 transition-colors"
-            >
-              <span>Explore Careers at Freyer</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Intentional 3-Image Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-8">
-          {/* Main Hero Office Photo */}
-          <div className="lg:col-span-7 relative aspect-[16/11] rounded-2xl overflow-hidden bg-black/40 border border-white/10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#091222]">
             <Image
               src="/images/gallery/office/1.jpg"
-              alt="Freyer Corporate Operations Floor Bengaluru - Freight Forwarding & Logistics Coordination"
+              alt="Freyer Corporate Operations Floor - Freight Forwarding & Logistics Coordination"
               fill
-              className="object-cover object-center"
+              className="object-cover object-center brightness-90 contrast-105"
               sizes="(min-width: 1024px) 60vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 text-xs font-mono text-slate-200">
-              <span className="bg-black/60 backdrop-blur-md px-3 py-1 rounded border border-white/10 inline-block">
-                Corporate Operations Floor &middot; Bengaluru Headquarters
-              </span>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+            <div className="absolute bottom-4 left-4 text-xs font-mono text-white/80">
+              Corporate Control Operations Floor
             </div>
           </div>
 
-          {/* Stacked 2 Supporting Operational Photos */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-            <div className="relative aspect-[16/9] lg:aspect-[16/7.5] rounded-2xl overflow-hidden bg-black/40 border border-white/10">
-              <Image
-                src="/images/gallery/office/2.jpg"
-                alt="Customs Documentation Coordination Desk - Freyer Logistics"
-                fill
-                className="object-cover object-center"
-                sizes="(min-width: 1024px) 40vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 text-xs font-mono text-slate-200">
-                <span className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded border border-white/10 inline-block text-[11px]">
-                  Customs Clearance Coordination Desk
-                </span>
+          <div className="lg:col-span-5 space-y-4">
+            <FreyerCard className="p-6">
+              <div className="text-xs font-mono uppercase text-[#e1390f] font-semibold mb-1">
+                Customs Authority Desk
               </div>
-            </div>
+              <h4 className="text-base font-bold text-white">Licensed Brokerage Leadership</h4>
+              <p className="text-xs text-slate-300 font-light mt-1 leading-relaxed">
+                Direct in-house Customs Brokers managing EDI filings, valuation assessments, and specialized duty exemption schemes under Indian Customs Law.
+              </p>
+            </FreyerCard>
 
-            <div className="relative aspect-[16/9] lg:aspect-[16/7.5] rounded-2xl overflow-hidden bg-black/40 border border-white/10">
-              <Image
-                src="/images/gallery/office/3.jpg"
-                alt="Freight Desk & Commercial Operations Floor - Freyer Logistics"
-                fill
-                className="object-cover object-center"
-                sizes="(min-width: 1024px) 40vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-3 text-xs font-mono text-slate-200">
-                <span className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded border border-white/10 inline-block text-[11px]">
-                  Freight Operations &amp; Commercial Desk
-                </span>
+            <FreyerCard className="p-6">
+              <div className="text-xs font-mono uppercase text-[#e1390f] font-semibold mb-1">
+                Heavy Engineering Directorate
               </div>
-            </div>
+              <h4 className="text-base font-bold text-white">Project Cargo &amp; Civil Survey</h4>
+              <p className="text-xs text-slate-300 font-light mt-1 leading-relaxed">
+                Technical rigging supervisors, marine surveyors, and transport planners executing over-dimensional and heavy-lift movements up to 482 metric tons.
+              </p>
+            </FreyerCard>
           </div>
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 04: 9-BRANCH GEOGRAPHIC FOOTPRINT
+          SECTION 04: PHYSICAL FOOTPRINT (10 VERIFIED STATIONS)
       ───────────────────────────────────────────────────────────── */}
-      <section id="footprint" className="pt-2">
-        <div className="pb-6 border-b border-slate-200">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-mono text-[#c42f0b] uppercase tracking-widest font-semibold block mb-1.5">
-              04 / Physical Footprint
-            </span>
-            <Link
-              href="/locations"
-              className="text-xs font-semibold text-[#c42f0b] hover:text-[#0b2144] inline-flex items-center gap-1 transition-colors"
-            >
-              <span>Explore Satellite Map</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
-            Direct Physical Network Across 9 Branches in 8 Cities
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-            Direct offices positioned at India&apos;s critical manufacturing centers, deepwater sea ports, and international air cargo complexes, connected globally through certified forwarder alliances.
-          </p>
-        </div>
+      <section id="footprint">
+        <SectionHeader
+          num="04"
+          tag="Infrastructure Directory"
+          title="10 BRANCH STATIONS."
+          highlight="ACROSS INDIA."
+          description="Direct physical presence at critical manufacturing clusters, deepwater seaports, and air cargo complexes."
+          action={
+            <FreyerButton href="/locations" size="sm" variant="secondary">
+              Inspect Network Map
+            </FreyerButton>
+          }
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {REGIONAL_BRANCHES.map((reg, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
-              <h3 className="text-xs font-mono uppercase tracking-wider text-[#0b2144] font-bold pb-2 border-b border-slate-100">
+            <FreyerCard key={idx} className="p-8 space-y-6">
+              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#e1390f] font-bold pb-3 border-b border-white/10">
                 {reg.region}
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {reg.branches.map((b) => (
                   <div key={b.name} className="flex items-start justify-between gap-4 text-xs">
-                    <div className="flex items-center gap-2 font-bold text-[#0b2144]">
-                      <MapPin className="w-3.5 h-3.5 text-[#c42f0b] shrink-0" />
+                    <div className="flex items-center gap-2 font-bold text-white font-mono">
+                      <MapPin className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
                       <span>{b.name}</span>
                     </div>
-                    <span className="text-slate-500 font-mono text-[11px] text-right">{b.role}</span>
+                    <span className="text-slate-400 font-mono text-[11px] text-right font-light">
+                      {b.role}
+                    </span>
                   </div>
                 ))}
               </div>
-            </div>
+            </FreyerCard>
           ))}
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 05: GLOBAL ALLIANCES (TYPOGRAPHIC LEDGER)
+          SECTION 05: GLOBAL FORWARDING ALLIANCES
       ───────────────────────────────────────────────────────────── */}
-      <section id="alliances" className="pt-2">
-        <div className="pb-6 border-b border-slate-200">
-          <span className="text-xs font-mono text-[#c42f0b] uppercase tracking-widest font-semibold block mb-1.5">
-            05 / Forwarding Alliances
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
-            International Forwarding Network Alliances
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-            Active certified membership in the world&apos;s leading independent freight networks, ensuring reliable agency representation across global trade corridors worldwide.
-          </p>
-        </div>
+      <section id="alliances">
+        <SectionHeader
+          num="05"
+          tag="Global Coverage"
+          title="TRUSTED ALLIANCES."
+          highlight="WORLDWIDE CORRIDORS."
+          description="Active certified membership in the world&apos;s leading freight networks, ensuring reliable reciprocal agency representation worldwide."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {GLOBAL_ALLIANCES.map((alliance, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-2xs flex items-center gap-4 group hover:border-[#c42f0b]/30 transition-colors"
-            >
-              <div className="relative w-14 h-12 shrink-0 bg-slate-50 rounded-lg p-1 border border-slate-100 flex items-center justify-center">
-                <Image src={alliance.logo} alt={alliance.name} fill className="object-contain p-1" />
+            <FreyerCard key={idx} className="p-6 flex items-center gap-4">
+              <div className="relative w-16 h-12 shrink-0 bg-white/[0.05] rounded border border-white/10 flex items-center justify-center p-1.5">
+                <Image src={alliance.logo} alt={alliance.name} fill className="object-contain p-1 brightness-0 invert opacity-75" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-[#0b2144]">{alliance.name}</h4>
-                <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">{alliance.desc}</p>
+                <h4 className="text-xs font-bold text-white">{alliance.name}</h4>
+                <p className="text-[11px] text-white/50 mt-0.5 leading-snug">{alliance.desc}</p>
               </div>
-            </div>
+            </FreyerCard>
           ))}
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          SECTION 06: CSR & 3E CHARTER
-      ───────────────────────────────────────────────────────────── */}
-      <section id="csr" className="pt-2">
-        <div className="pb-6 border-b border-slate-200">
-          <span className="text-xs font-mono text-[#c42f0b] uppercase tracking-widest font-semibold block mb-1.5">
-            06 / Corporate Social Responsibility
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0b2144]">
-            The 3E Sustainability &amp; Talent Charter
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-            Our passion for supply chain excellence is fueled by our belief that the logistics sector plays a key role in driving economic growth and creating sustainable social impact.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
-          {/* Education */}
-          <div className="p-6 bg-slate-50 rounded-xl border border-slate-200/70 space-y-2">
-            <div className="text-xs font-mono text-[#c42f0b] font-bold">01 &middot; EDUCATION</div>
-            <h4 className="text-base font-bold text-[#0b2144]">Skills Upgrading &amp; Talent Incubation</h4>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Freyer embraces the philosophy &ldquo;Teach a man to fish rather than give a man a fish.&rdquo; We invest in logistics vocational training and supply chain education.
-            </p>
-          </div>
-
-          {/* Engagement */}
-          <div className="p-6 bg-slate-50 rounded-xl border border-slate-200/70 space-y-2">
-            <div className="text-xs font-mono text-[#c42f0b] font-bold">02 &middot; ENGAGEMENT</div>
-            <h4 className="text-base font-bold text-[#0b2144]">Community &amp; Civic Contribution</h4>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Active engagement with local communities surrounding our branch hubs and port stations, supporting inclusive growth.
-            </p>
-          </div>
-
-          {/* Environment */}
-          <div className="p-6 bg-slate-50 rounded-xl border border-slate-200/70 space-y-2">
-            <div className="text-xs font-mono text-[#c42f0b] font-bold">03 &middot; ENVIRONMENT</div>
-            <h4 className="text-base font-bold text-[#0b2144]">Eco-Efficient Multimodal Routing</h4>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Optimizing coastal shipping routes, consolidated LCL networks, and rail ramp intermodal transfers to minimize freight carbon intensity.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          MODAL: ALL 9 HONORS & TROPHIES
-      ───────────────────────────────────────────────────────────── */}
-      <AnimatePresence>
-        {showAllAwardsModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setShowAllAwardsModal(false)}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
-            role="dialog"
-            aria-modal="true"
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl max-w-3xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 shadow-2xl border border-slate-200"
-            >
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-                <div>
-                  <h3 className="text-xl font-bold text-[#0b2144]">All {ALL_AWARDS.length} Industry Accolades &amp; Honors</h3>
-                  <p className="text-xs text-slate-500 mt-0.5">Verified awards from maritime, forwarding, and logistics forums.</p>
-                </div>
-                <button
-                  onClick={() => setShowAllAwardsModal(false)}
-                  className="p-2 rounded-full hover:bg-slate-100 text-slate-500 hover:text-slate-800 transition-colors"
-                  aria-label="Close modal"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+      {/* Accolades Modal */}
+      {showAllAwardsModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+          <div className="bg-[#091222] border border-white/15 rounded-xl max-w-4xl w-full max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+            <div className="p-6 border-b border-white/10 flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-white font-mono uppercase">
+                  Documented Accolades Archive ({ALL_AWARDS.length})
+                </h3>
+                <p className="text-xs text-white/40">Verified trophies and industry citations</p>
               </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
-                {ALL_AWARDS.map((award) => (
-                  <div key={award.id} className="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col items-center text-center">
-                    <div className="relative w-24 h-24 rounded-lg overflow-hidden bg-white mb-2 p-1 border border-slate-100">
-                      <Image src={award.img} alt={award.title} fill className="object-contain" />
-                    </div>
-                    <div className="text-xs font-bold text-[#0b2144] line-clamp-2">{award.title}</div>
-                    <div className="text-[10px] font-mono text-slate-500 mt-0.5">{award.forum}</div>
+              <button
+                type="button"
+                onClick={() => setShowAllAwardsModal(false)}
+                className="p-2 rounded bg-white/10 hover:bg-white/20 text-white transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-6 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {ALL_AWARDS.map((a) => (
+                <div key={a.id} className="p-4 rounded border border-white/10 bg-black/40 flex items-center gap-4">
+                  <div className="relative w-16 h-16 rounded overflow-hidden bg-white/5 shrink-0 border border-white/10">
+                    <Image src={a.img} alt={a.title} fill className="object-contain p-2" />
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  <div>
+                    <h5 className="text-xs font-bold text-white">{a.title}</h5>
+                    <p className="text-[10px] font-mono text-white/40 mt-1">{a.forum}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

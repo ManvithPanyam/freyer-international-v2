@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowLeft, HeartHandshake } from "lucide-react";
+import { HeartHandshake, Leaf, GraduationCap } from "lucide-react";
+import { PageHeader, FreyerCard, SectionHeader, THEME_TOKENS } from "@/components/ui/design-system";
 
 export const metadata: Metadata = {
-  title: "Corporate Social Responsibility (CSR)",
+  title: "Corporate Social Responsibility (CSR) | Stewardship & Community",
   description:
     "Freyer International Logistics Corporate Social Responsibility initiatives and community engagement across healthcare, environment, and educational empowerment.",
   alternates: {
@@ -13,46 +14,79 @@ export const metadata: Metadata = {
   },
 };
 
+const CSR_PILLARS = [
+  {
+    icon: GraduationCap,
+    pillar: "01 / Education & Skills",
+    title: "Vocational Logistics Training",
+    desc: "Empowering underprivileged students with specialized supply chain and customs documentation skills, creating sustainable employment pathways in multimodal transport.",
+  },
+  {
+    icon: Leaf,
+    pillar: "02 / Environment",
+    title: "Green Freight Corridors",
+    desc: "Optimizing multi-axle overland routes and prioritizing rail intermodal transfers to measurably reduce carbon intensity across domestic transit corridors.",
+  },
+  {
+    icon: HeartHandshake,
+    pillar: "03 / Community Welfare",
+    title: "Healthcare & Regional Support",
+    desc: "Direct support to local community centers and rural healthcare facilities situated near major port terminals and transport gateways across India.",
+  },
+];
+
 export default function CsrPage() {
   return (
-    <>
+    <div className="min-h-screen bg-[#030712] text-white selection:bg-[#e1390f] selection:text-white">
       <Header />
-      <main className="min-h-screen bg-[#fbfcfd] text-[#0b2144] pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 hover:text-[#c42f0b] transition-colors"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Back to Overview</span>
-            </Link>
-          </div>
+      <main>
+        <PageHeader
+          breadcrumbs={[{ label: "CSR" }]}
+          eyebrow="Corporate Stewardship &middot; Social Responsibility"
+          title="COMMUNITY STEWARDSHIP"
+          subtitle="SUSTAINABLE SUPPLY CHAINS"
+          description="At Freyer International, our commitment to logistics excellence extends to the communities in which we operate. We invest in education, green logistics practices, and community healthcare initiatives."
+          stats={[
+            { value: "3 PILLARS", label: "CSR CHARTER", sub: "Education · Green · Welfare" },
+            { value: "10 CITIES", label: "COMMUNITY REACH", sub: "Local Station Programs" },
+            { value: "INTERMODAL", label: "CARBON REDUCTION", sub: "Rail Transfer Prioritization" },
+            { value: "100%", label: "TRANSPARENCY", sub: "Audited Corporate Governance" },
+          ]}
+        />
 
-          <div className="max-w-3xl mb-16">
-            <span className="text-[#c42f0b] text-xs font-mono tracking-[0.22em] uppercase font-semibold block mb-3">
-              Corporate Stewardship
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#0b2144] leading-[1.1]">
-              Corporate Social Responsibility
-            </h1>
-            <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-              Committed to sustainable supply chain operations, environmental responsibility, and community welfare programs across India.
-            </p>
-          </div>
+        <section className={`py-16 sm:py-24 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter} space-y-16`}>
+          <SectionHeader
+            num="01"
+            tag="Stewardship Pillars"
+            title="THE 3E CHARTER."
+            highlight="COMMUNITY IMPACT."
+            description="Our structured social responsibility initiatives focus on tangible, measurable community empowerment."
+          />
 
-          <div className="bg-white p-8 sm:p-12 rounded-xl border border-slate-200/80 shadow-xs max-w-3xl space-y-6">
-            <div className="w-10 h-10 rounded-lg bg-[#c42f0b]/10 text-[#c42f0b] flex items-center justify-center">
-              <HeartHandshake className="w-5 h-5" />
-            </div>
-            <h2 className="text-xl font-bold text-[#0b2144] tracking-tight">Our Commitment to Society</h2>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Freyer International Logistics actively participates in community welfare, educational support, and green logistics practices designed to reduce carbon intensity across multimodal transport corridors.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {CSR_PILLARS.map((p) => {
+              const Icon = p.icon;
+              return (
+                <FreyerCard key={p.pillar} className="p-8 space-y-4">
+                  <div className="w-10 h-10 rounded bg-[#e1390f]/15 border border-[#e1390f]/30 flex items-center justify-center text-[#e1390f]">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div className="text-xs font-mono uppercase text-[#e1390f] font-bold">
+                    {p.pillar}
+                  </div>
+                  <h3 className="text-xl font-bold text-white font-mono uppercase">
+                    {p.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                    {p.desc}
+                  </p>
+                </FreyerCard>
+              );
+            })}
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
