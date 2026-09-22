@@ -2,23 +2,53 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { FreyerCard, SectionHeader } from "@/components/ui/design-system";
+import { SectionHeader } from "@/components/ui/design-system";
 
 const ALLIANCES = [
-  { name: "WCA World", logo: "/images/wca.png", detail: "World's largest network of independent freight forwarders" },
-  { name: "Security Cargo Network", logo: "/images/SCN.png", detail: "Vetted international alliance of independent logistics operators" },
-  { name: "WPA (The Logistics Network)", logo: "/images/wpa.jpg", detail: "Global logistics network with verified financial protection" },
-  { name: "FDX Logistics Network", logo: "/images/FDX.jpg", detail: "International freight logistics alliance spanning key trade lanes" },
-  { name: "AMTOI", logo: "/images/amtoi.png", detail: "Association of Multimodal Transport Operators of India" },
-  { name: "ACAAI", logo: "/images/Acaai.jpg", detail: "Air Cargo Agents Association of India statutory body" },
+  {
+    name: "WCA World",
+    logo: "/images/wca.png",
+    detail: "World's largest network of independent freight forwarders, providing audited reciprocal financial protection.",
+    tier: "Global Forwarding Alliance",
+  },
+  {
+    name: "Security Cargo Network (SCN)",
+    logo: "/images/SCN.png",
+    detail: "Vetted international alliance of elite independent logistics operators with strict service benchmarks.",
+    tier: "Elite Forwarder Alliance",
+  },
+  {
+    name: "WPA (The Logistics Network)",
+    logo: "/images/wpa.jpg",
+    detail: "Global logistics network providing audited operational standards and verified cross-border settlement protection.",
+    tier: "International Logistics Network",
+  },
+  {
+    name: "FDX Logistics Network",
+    logo: "/images/FDX.jpg",
+    detail: "International freight logistics alliance spanning key trade corridors with priority agent reciprocal coverage.",
+    tier: "Global Freight Alliance",
+  },
+  {
+    name: "AMTOI",
+    logo: "/images/amtoi.png",
+    detail: "Association of Multimodal Transport Operators of India — statutory body promoting multimodal cargo efficiency.",
+    tier: "National Multimodal Body",
+  },
+  {
+    name: "ACAAI",
+    logo: "/images/Acaai.jpg",
+    detail: "Air Cargo Agents Association of India — primary national federation for regulated air cargo agents.",
+    tier: "Aviation Forwarder Federation",
+  },
 ];
 
 const CORRIDOR_STEPS = [
-  { num: "01", stage: "Origin Dispatch", desc: "Local pickup, warehousing and initial export customs filing" },
-  { num: "02", stage: "Statutory Clearance", desc: "ICEGATE EDI documentation and AEO-LO authorized clearance" },
-  { num: "03", stage: "Main Line-Haul", desc: "Direct ocean carrier or IATA scheduled air movement" },
-  { num: "04", stage: "Gateway Inbound", desc: "Port destination handling, customs import clearance & de-consolidation" },
-  { num: "05", stage: "Final Foundation", desc: "Hydraulic multi-axle or bonded truck delivery with digital POD" },
+  { num: "01", stage: "Origin Dispatch", desc: "Local pickup, bonded warehousing, and initial export customs EDI filing." },
+  { num: "02", stage: "Statutory Clearance", desc: "ICEGATE documentation and licensed CBIC AEO-LO authorized expedited clearance." },
+  { num: "03", stage: "Main Line-Haul", desc: "Tier-1 direct ocean container carrier or scheduled IATA freighter movement." },
+  { num: "04", stage: "Gateway Inbound", desc: "Port discharge operations, customs import assessment, and CFS de-consolidation." },
+  { num: "05", stage: "Final Foundation", desc: "Hydraulic multi-axle or bonded fleet delivery with verified electronic POD." },
 ];
 
 export function NetworkAlliances() {
@@ -37,29 +67,50 @@ export function NetworkAlliances() {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ALLIANCES.map((alliance, index) => (
-            <FreyerCard
-              key={alliance.name}
-              className={`p-6 cursor-pointer transition-all ${
-                active === index ? "border-[#e1390f] bg-[#0d1a30]" : ""
-              }`}
-              onClick={() => setActive(index)}
-            >
-              <div className="relative flex h-20 items-center justify-center border-b border-white/10 pb-4 mb-4">
-                <Image
-                  src={alliance.logo}
-                  alt={alliance.name}
-                  width={150}
-                  height={72}
-                  className="max-h-14 w-auto object-contain brightness-0 invert opacity-75 group-hover:opacity-100 transition-opacity"
-                />
+          {ALLIANCES.map((alliance, index) => {
+            const isSelected = active === index;
+            return (
+              <div
+                key={alliance.name}
+                onClick={() => setActive(index)}
+                className={`p-6 rounded-xl border transition-all duration-200 cursor-pointer flex flex-col justify-between ${
+                  isSelected
+                    ? "border-[#e1390f] bg-[#20242D] shadow-xl shadow-[#e1390f]/10"
+                    : "border-white/10 bg-[#181A1F] hover:border-white/25 hover:bg-[#1D2128]"
+                }`}
+              >
+                <div>
+                  {/* High-Contrast Pristine White Logo Plinth */}
+                  <div className="relative flex h-20 w-full items-center justify-center rounded-lg bg-white p-3 mb-5 shadow-sm">
+                    <Image
+                      src={alliance.logo}
+                      alt={alliance.name}
+                      width={160}
+                      height={64}
+                      className="max-h-12 w-auto object-contain"
+                    />
+                  </div>
+
+                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#e1390f] font-semibold mb-1">
+                    {alliance.tier}
+                  </div>
+                  <h3 className="text-base font-bold text-white font-mono uppercase tracking-tight">
+                    {alliance.name}
+                  </h3>
+                  <p className="mt-2 text-xs text-slate-300 font-light leading-relaxed">
+                    {alliance.detail}
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-white/8 flex items-center justify-between text-[11px] font-mono text-white/40">
+                  <span>Reciprocal Agency</span>
+                  <span className={isSelected ? "text-[#e1390f] font-semibold" : "text-white/60"}>
+                    {isSelected ? "Active Focus" : "Vetted Partner"}
+                  </span>
+                </div>
               </div>
-              <div className="text-base font-bold text-white font-mono uppercase">{alliance.name}</div>
-              <div className="mt-1 text-xs text-slate-300 font-light leading-relaxed">
-                {alliance.detail}
-              </div>
-            </FreyerCard>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -75,17 +126,20 @@ export function NetworkAlliances() {
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {CORRIDOR_STEPS.map((step) => (
-            <FreyerCard key={step.num} className="p-5 space-y-2">
+            <div
+              key={step.num}
+              className="p-5 rounded-xl border border-white/10 bg-[#181A1F] space-y-2 hover:border-white/20 transition-colors"
+            >
               <div className="w-8 h-8 rounded bg-[#e1390f]/15 border border-[#e1390f]/30 flex items-center justify-center text-xs font-mono font-bold text-[#e1390f]">
                 {step.num}
               </div>
               <div className="font-bold text-white text-sm font-mono uppercase mt-2">
                 {step.stage}
               </div>
-              <p className="text-xs text-slate-400 font-light leading-relaxed">
+              <p className="text-xs text-slate-300 font-light leading-relaxed">
                 {step.desc}
               </p>
-            </FreyerCard>
+            </div>
           ))}
         </div>
       </section>

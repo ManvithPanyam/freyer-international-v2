@@ -100,7 +100,7 @@ export default function GlobalMovementAtlas({
   }, []);
 
   return (
-    <div className="w-full bg-[#030712] text-slate-100 selection:bg-[#e1390f]/30">
+    <div className="w-full bg-[#121316] text-slate-100 selection:bg-[#e1390f]/30">
       {/* SECTION HEADER: Editorial Industrial Typography */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 pb-6 border-b border-white/10">
         <div className="space-y-3">
@@ -123,35 +123,35 @@ export default function GlobalMovementAtlas({
 
         {/* VERIFIED EMPIRICAL KPI BAR (Strictly Documented Facts — No Inferred Totals) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 pt-6">
-          <div className="bg-[#050b14] border border-white/10 rounded-lg p-3.5">
+          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5">
             <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Documented Evidence</div>
             <div className="text-xl sm:text-2xl font-bold text-white font-[family-name:var(--font-barlow-condensed)] mt-0.5">
               11 <span className="text-xs font-mono font-normal text-slate-400">PROJECT MOVEMENTS</span>
             </div>
           </div>
 
-          <div className="bg-[#050b14] border border-white/10 rounded-lg p-3.5">
+          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5">
             <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Largest Movement</div>
             <div className="text-xl sm:text-2xl font-bold text-[#e1390f] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
               1,156 <span className="text-xs font-mono font-normal text-slate-400">MT (17 × 68 MT)</span>
             </div>
           </div>
 
-          <div className="bg-[#050b14] border border-white/10 rounded-lg p-3.5">
+          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5">
             <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Longest Cargo Consignment</div>
             <div className="text-xl sm:text-2xl font-bold text-white font-[family-name:var(--font-barlow-condensed)] mt-0.5">
               2,700 <span className="text-xs font-mono font-normal text-slate-400">CM (27 M)</span>
             </div>
           </div>
 
-          <div className="bg-[#050b14] border border-white/10 rounded-lg p-3.5">
+          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5">
             <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Project Countries</div>
             <div className="text-xl sm:text-2xl font-bold text-white font-[family-name:var(--font-barlow-condensed)] mt-0.5">
               10 <span className="text-xs font-mono font-normal text-slate-400">COUNTRIES</span>
             </div>
           </div>
 
-          <div className="bg-[#050b14] border border-white/10 rounded-lg p-3.5 col-span-2 sm:col-span-1">
+          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5 col-span-2 sm:col-span-1">
             <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Customs License</div>
             <div className="text-xl sm:text-2xl font-bold text-emerald-400 font-[family-name:var(--font-barlow-condensed)] flex items-center gap-1.5 mt-0.5">
               AEO (LO) <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -205,7 +205,7 @@ export default function GlobalMovementAtlas({
                   className={`px-2 py-0.5 rounded text-[11px] font-mono transition border whitespace-nowrap flex items-center gap-1 ${
                     isSelected
                       ? "bg-[#e1390f] border-[#e1390f] text-white font-bold shadow-md shadow-[#e1390f]/20"
-                      : "bg-[#060e1a] border-white/10 text-slate-400 hover:text-white hover:bg-white/5"
+                      : "bg-[#181A1F] border-white/10 text-slate-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   <span>{m.id}</span>
@@ -222,7 +222,7 @@ export default function GlobalMovementAtlas({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* CARTOGRAPHIC VECTOR STAGE (8 Columns on Desktop) */}
-          <div className="lg:col-span-8 relative bg-[#040812] rounded-xl border border-white/15 p-4 sm:p-6 overflow-hidden flex flex-col justify-between shadow-2xl shadow-black/80">
+          <div className="lg:col-span-8 relative bg-[#16181F] rounded-xl border border-white/15 p-4 sm:p-6 overflow-hidden flex flex-col justify-between shadow-2xl shadow-black/80">
             
             {/* Subtle Grid Canvas */}
             <div
@@ -253,18 +253,18 @@ export default function GlobalMovementAtlas({
                 <defs>
                   {/* Subtle Landmass Fills */}
                   <linearGradient id="worldLandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#0b1526" />
-                    <stop offset="100%" stopColor="#070d18" />
+                    <stop offset="0%" stopColor="#1E222B" />
+                    <stop offset="100%" stopColor="#171A21" />
                   </linearGradient>
 
                   <linearGradient id="verifiedCountryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#142642" />
-                    <stop offset="100%" stopColor="#0d1b30" />
+                    <stop offset="0%" stopColor="#2A303C" />
+                    <stop offset="100%" stopColor="#20252E" />
                   </linearGradient>
 
                   <linearGradient id="indiaSovereignGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#1e3a63" />
-                    <stop offset="100%" stopColor="#142845" />
+                    <stop offset="0%" stopColor="#323A48" />
+                    <stop offset="100%" stopColor="#252B36" />
                   </linearGradient>
 
                   {/* Soft Route Glow Filter */}
@@ -288,7 +288,7 @@ export default function GlobalMovementAtlas({
                 <path
                   d={WORLD_LAND_PATH}
                   fill="url(#worldLandGradient)"
-                  stroke="#162742"
+                  stroke="#232832"
                   strokeWidth="0.5"
                   strokeLinejoin="round"
                   strokeLinecap="round"
@@ -309,15 +309,15 @@ export default function GlobalMovementAtlas({
                         isIndia
                           ? "url(#indiaSovereignGradient)"
                           : isHighlighted
-                          ? "#1c355c"
+                          ? "#384252"
                           : "url(#verifiedCountryGradient)"
                       }
                       stroke={
                         isIndia
-                          ? "#3b82f6"
+                          ? "#e1390f"
                           : isHighlighted
                           ? "#e1390f"
-                          : "#23406a"
+                          : "#333C4A"
                       }
                       strokeWidth={isIndia ? 0.9 : isHighlighted ? 1.0 : 0.6}
                       strokeLinejoin="round"
@@ -453,7 +453,7 @@ export default function GlobalMovementAtlas({
                                 : "#e1390f"
                               : "#64748b"
                           }
-                          stroke="#030712"
+                          stroke="#16181F"
                           strokeWidth={isFocus ? 1.2 : 0.6}
                         />
 
@@ -469,7 +469,7 @@ export default function GlobalMovementAtlas({
                               width={node.city.length * 6.0 + 10}
                               height="11"
                               rx="2"
-                              fill="#050b14"
+                              fill="#181A1F"
                               stroke={isOrigin ? "#38bdf8" : "#e1390f"}
                               strokeWidth="0.6"
                               opacity="0.95"
@@ -509,7 +509,7 @@ export default function GlobalMovementAtlas({
                   <span className="text-slate-300">Network Ports</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded bg-[#1e3a63] border border-[#3b82f6]" />
+                  <span className="w-2.5 h-2.5 rounded bg-[#323A48] border border-[#e1390f]" />
                   <span className="text-slate-300">India Sovereign Base</span>
                 </div>
               </div>
@@ -523,7 +523,7 @@ export default function GlobalMovementAtlas({
           <div className="lg:col-span-4 space-y-5">
             
             {/* Active Manifest Card */}
-            <div className="bg-[#050b16] rounded-xl border border-white/15 p-5 sm:p-6 shadow-xl relative overflow-hidden">
+            <div className="bg-[#181A1F] rounded-xl border border-white/15 p-5 sm:p-6 shadow-xl relative overflow-hidden">
               
               {/* Dossier Header */}
               <div className="border-b border-white/10 pb-3.5 mb-4">
@@ -541,7 +541,7 @@ export default function GlobalMovementAtlas({
               </div>
 
               {/* ORIGIN & DESTINATION */}
-              <div className="grid grid-cols-2 gap-3 p-3 bg-[#030712] rounded-lg border border-white/5 mb-4">
+              <div className="grid grid-cols-2 gap-3 p-3 bg-[#121316] rounded-lg border border-white/5 mb-4">
                 <div>
                   <div className="text-[9px] font-mono text-slate-400 uppercase tracking-widest flex items-center gap-1">
                     <Anchor className="w-3 h-3 text-[#38bdf8]" /> ORIGIN
@@ -581,7 +581,7 @@ export default function GlobalMovementAtlas({
                 
                 <div className="grid grid-cols-2 gap-2">
                   {selectedMovement.weightTons && (
-                    <div className="bg-[#030712] p-2.5 rounded border border-white/5">
+                    <div className="bg-[#121316] p-2.5 rounded border border-white/5">
                       <div className="text-[9px] font-mono text-slate-400 uppercase flex items-center gap-1">
                         <Scale className="w-3 h-3 text-slate-400" /> Weight
                       </div>
@@ -597,7 +597,7 @@ export default function GlobalMovementAtlas({
                   )}
 
                   {selectedMovement.volumeCbm && (
-                    <div className="bg-[#030712] p-2.5 rounded border border-white/5">
+                    <div className="bg-[#121316] p-2.5 rounded border border-white/5">
                       <div className="text-[9px] font-mono text-slate-400 uppercase flex items-center gap-1">
                         <Box className="w-3 h-3 text-slate-400" /> Volume
                       </div>
@@ -613,7 +613,7 @@ export default function GlobalMovementAtlas({
                   )}
 
                   {selectedMovement.dimensions && (
-                    <div className="col-span-2 bg-[#030712] p-2.5 rounded border border-white/5">
+                    <div className="col-span-2 bg-[#121316] p-2.5 rounded border border-white/5">
                       <div className="text-[9px] font-mono text-slate-400 uppercase flex items-center gap-1">
                         <Maximize2 className="w-3 h-3 text-slate-400" /> Dimensions
                       </div>
@@ -624,7 +624,7 @@ export default function GlobalMovementAtlas({
                   )}
 
                   {selectedMovement.date && (
-                    <div className="col-span-2 bg-[#030712] p-2 rounded border border-white/5 flex items-center justify-between text-xs">
+                    <div className="col-span-2 bg-[#121316] p-2 rounded border border-white/5 flex items-center justify-between text-xs">
                       <span className="text-[9px] font-mono text-slate-400 uppercase flex items-center gap-1">
                         <Calendar className="w-3 h-3 text-slate-400" /> Record Date
                       </span>
@@ -636,7 +636,7 @@ export default function GlobalMovementAtlas({
                 </div>
 
                 {selectedMovement.details && (
-                  <div className="bg-[#030712] p-2.5 rounded border border-white/5 text-xs text-slate-300 leading-relaxed font-sans">
+                  <div className="bg-[#121316] p-2.5 rounded border border-white/5 text-xs text-slate-300 leading-relaxed font-sans">
                     <span className="text-[9px] font-mono text-slate-400 uppercase block mb-0.5">
                       Loading / Shipment Description:
                     </span>
@@ -663,7 +663,7 @@ export default function GlobalMovementAtlas({
             </div>
 
             {/* SECONDARY CONTEXT: Published Shipping Corridors */}
-            <div className="bg-[#050b16] rounded-xl border border-white/10 p-4 space-y-3">
+            <div className="bg-[#181A1F] rounded-xl border border-white/10 p-4 space-y-3">
               <div className="flex items-center justify-between border-b border-white/5 pb-2">
                 <div className="text-xs font-mono uppercase tracking-widest text-slate-400 flex items-center gap-1.5">
                   <Navigation className="w-3.5 h-3.5 text-blue-400" /> Published Shipping Corridors
@@ -688,7 +688,7 @@ export default function GlobalMovementAtlas({
                       className={`w-full text-left p-2 rounded border text-xs font-mono transition flex items-center justify-between gap-2 ${
                         isLaneActive
                           ? "bg-blue-500/10 border-blue-500/30 text-white"
-                          : "bg-[#030712] border-white/5 text-slate-400 hover:text-slate-200 hover:bg-white/5"
+                          : "bg-[#121316] border-white/5 text-slate-400 hover:text-slate-200 hover:bg-white/5"
                       }`}
                     >
                       <div>
@@ -703,7 +703,7 @@ export default function GlobalMovementAtlas({
             </div>
 
             {/* SECONDARY CONTEXT: Network Partner Accreditations */}
-            <div className="bg-[#050b16] rounded-xl border border-white/10 p-4 space-y-3">
+            <div className="bg-[#181A1F] rounded-xl border border-white/10 p-4 space-y-3">
               <div className="flex items-center justify-between border-b border-white/5 pb-2">
                 <div className="text-xs font-mono uppercase tracking-widest text-slate-400 flex items-center gap-1.5">
                   <Award className="w-3.5 h-3.5 text-amber-400" /> Network Memberships & Awards
@@ -713,7 +713,7 @@ export default function GlobalMovementAtlas({
               
               <div className="space-y-2 text-xs">
                 {/* WPA */}
-                <div className="p-2.5 bg-[#030712] rounded border border-white/5 space-y-1">
+                <div className="p-2.5 bg-[#121316] rounded border border-white/5 space-y-1">
                   <div className="flex items-center justify-between font-bold text-white">
                     <span>Worldwide Partners Alliance (WPA)</span>
                     <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30">
@@ -729,7 +729,7 @@ export default function GlobalMovementAtlas({
                 </div>
 
                 {/* SCN */}
-                <div className="p-2.5 bg-[#030712] rounded border border-white/5 space-y-1">
+                <div className="p-2.5 bg-[#121316] rounded border border-white/5 space-y-1">
                   <div className="flex items-center justify-between font-bold text-white">
                     <span>Security Cargo Network (SCN)</span>
                     <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-blue-500/10 text-blue-300 border border-blue-500/30">
@@ -742,7 +742,7 @@ export default function GlobalMovementAtlas({
                 </div>
 
                 {/* AEO Government Certificate */}
-                <div className="p-2.5 bg-[#030712] rounded border border-white/5 space-y-1">
+                <div className="p-2.5 bg-[#121316] rounded border border-white/5 space-y-1">
                   <div className="flex items-center justify-between font-bold text-white">
                     <span>Indian Customs AEO Certificate</span>
                     <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
@@ -765,7 +765,7 @@ export default function GlobalMovementAtlas({
 
       {/* MOBILE DOSSIER BOTTOM SHEET */}
       {mobileDossierOpen && (
-        <div className="fixed inset-x-0 bottom-0 z-50 lg:hidden bg-[#050b16] border-t border-white/20 p-5 rounded-t-2xl shadow-2xl max-h-[85vh] overflow-y-auto">
+        <div className="fixed inset-x-0 bottom-0 z-50 lg:hidden bg-[#181A1F] border-t border-white/20 p-5 rounded-t-2xl shadow-2xl max-h-[85vh] overflow-y-auto">
           <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
             <div className="flex items-center gap-2">
               <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#e1390f] text-white">
@@ -784,7 +784,7 @@ export default function GlobalMovementAtlas({
           </div>
 
           <div className="space-y-3 text-xs">
-            <div className="grid grid-cols-2 gap-2 bg-[#030712] p-2.5 rounded border border-white/5">
+            <div className="grid grid-cols-2 gap-2 bg-[#121316] p-2.5 rounded border border-white/5">
               <div>
                 <span className="text-[9px] font-mono text-slate-400 block">ORIGIN</span>
                 <span className="font-bold text-white">{selectedMovement.origin.city}</span>
@@ -799,7 +799,7 @@ export default function GlobalMovementAtlas({
 
             <div className="grid grid-cols-2 gap-2">
               {selectedMovement.weightTons && (
-                <div className="bg-[#030712] p-2 rounded border border-white/5">
+                <div className="bg-[#121316] p-2 rounded border border-white/5">
                   <span className="text-[9px] font-mono text-slate-400 block">WEIGHT</span>
                   <span className="text-base font-bold text-[#e1390f] font-[family-name:var(--font-barlow-condensed)]">
                     {selectedMovement.weightTons.toLocaleString()} MT
@@ -807,7 +807,7 @@ export default function GlobalMovementAtlas({
                 </div>
               )}
               {selectedMovement.dimensions && (
-                <div className="bg-[#030712] p-2 rounded border border-white/5">
+                <div className="bg-[#121316] p-2 rounded border border-white/5">
                   <span className="text-[9px] font-mono text-slate-400 block">DIMENSIONS</span>
                   <span className="font-mono text-[11px] font-bold text-white block truncate">
                     {selectedMovement.dimensions}
@@ -816,7 +816,7 @@ export default function GlobalMovementAtlas({
               )}
             </div>
 
-            <div className="bg-[#030712] p-2.5 rounded border border-white/5 italic text-slate-300 text-[11px]">
+            <div className="bg-[#121316] p-2.5 rounded border border-white/5 italic text-slate-300 text-[11px]">
               "{selectedMovement.exactWording}"
             </div>
 
