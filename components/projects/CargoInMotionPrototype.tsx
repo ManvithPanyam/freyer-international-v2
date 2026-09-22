@@ -468,9 +468,7 @@ export default function CargoInMotionPrototype({
       {/* KF2 & KF3: PHYSICAL MANIFEST STENCIL OVERLAY                        */}
       {/* Rendered as industrial stenciled typography physically aligned      */}
       {/* ------------------------------------------------------------------- */}
-      <div className="absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-8 sm:p-12">
-        <div /> {/* Spacer */}
-
+      <div className="absolute inset-0 pointer-events-none z-20 flex flex-col justify-end p-8 sm:p-12 pb-24 sm:pb-28">
         {/* Physical Stencil Block */}
         <div className="max-w-2xl">
           {/* 1. ROUTE STENCIL (KF2: SHANGHAI → JEBEL ALI) */}
