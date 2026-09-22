@@ -57,9 +57,10 @@ export function FTRNav() {
               <Image
                 src="/images/logo.png"
                 alt="Freyer International Logistics"
-                fill
-                sizes="(max-width: 640px) 54px, 62px"
-                className="object-contain object-left brightness-0 invert"
+                width={62}
+                height={36}
+                unoptimized
+                className="w-full h-full object-contain object-left brightness-0 invert"
                 priority
               />
             </div>
@@ -155,9 +156,10 @@ export function FTRNav() {
                   <Image
                     src="/images/logo.png"
                     alt="Freyer International"
-                    fill
-                    sizes="54px"
-                    className="object-contain object-left brightness-0 invert"
+                    width={54}
+                    height={32}
+                    unoptimized
+                    className="w-full h-full object-contain object-left brightness-0 invert"
                   />
                 </div>
                 <span className="text-[10px] font-mono tracking-[0.16em] uppercase text-white/30" aria-hidden>

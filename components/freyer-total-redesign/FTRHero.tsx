@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -107,13 +107,8 @@ export function FTRHero() {
             </span>
           </motion.div>
 
-          {/* Core Brand Lockup: FREYER INTERNATIONAL */}
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-          >
-            {/* Primary Wordmark */}
+          {/* Core Brand Lockup: FREYER INTERNATIONAL — Plain H1 for instant LCP render */}
+          <div>
             <h1
               className="text-white font-black tracking-[-0.03em] leading-[0.88] uppercase"
               style={{
@@ -127,7 +122,7 @@ export function FTRHero() {
               </span>
               <span className="text-[#e1390f]">.</span>
             </h1>
-          </motion.div>
+          </div>
 
           {/* Concise Business Definition */}
           <motion.p
