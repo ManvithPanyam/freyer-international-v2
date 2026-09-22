@@ -115,8 +115,9 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.3 }}
                 key={project.id}
+                id={`project-record-${project.id}`}
                 onClick={() => openProjectDetail(project)}
-                className="group cursor-pointer pb-16 sm:pb-24 border-b border-white/10 last:border-b-0"
+                className="group cursor-pointer pb-16 sm:pb-24 border-b border-white/10 last:border-b-0 scroll-mt-28"
               >
                 {/* Header Line */}
                 <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-white/40 mb-6">

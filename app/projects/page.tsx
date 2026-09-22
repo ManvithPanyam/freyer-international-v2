@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { ProjectsCargoHeroStage } from "@/components/projects/ProjectsCargoHeroStage";
+
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-[#121316] text-[#F8F7F4] selection:bg-[#e1390f] selection:text-white">
@@ -27,13 +29,19 @@ export default function ProjectsPage() {
           description="A comprehensive technical archive of 11 verified heavy-lift and multimodal movements across breakbulk ocean carriage, hydraulic multi-axle road trailers, flatracks, and civil route clearance operations."
           stats={[
             { value: "11 PROJECTS", label: "VERIFIED ARCHIVE", sub: "Documented Case Studies" },
-            { value: "482 MT", label: "MAX HEAVY LIFT", sub: "Shanghai to Mumbai Movement" },
+            { value: "482 MT", label: "MAX HEAVY LIFT", sub: "Shanghai to Jebel Ali Record" },
             { value: "2,700 CM", label: "LONGEST LENGTH", sub: "Boom Crane 37.6 MT (Venice)" },
             { value: "100%", label: "INCIDENT FREE", sub: "Rigorous Port & Route Planning" },
           ]}
         />
 
-        <section className={`py-16 sm:py-24 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
+        {/* ── KINETIC CARGO SHIPMENTS HERO STAGE ── */}
+        <section className={`pt-6 pb-12 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
+          <ProjectsCargoHeroStage />
+        </section>
+
+        {/* ── COMPLETE 11-PROJECT FORENSIC EXPLORER ── */}
+        <section className={`py-12 sm:py-16 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
           <ProjectsExplorer initialProjects={projectsData} />
         </section>
       </main>
