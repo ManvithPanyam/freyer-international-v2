@@ -6,8 +6,10 @@ import CargoInMotionPrototype from "@/components/projects/CargoInMotionPrototype
 import { VERIFIED_SHANGHAI_RECORD } from "@/data/cargo-records";
 import { ArrowLeft, CheckCircle2, ShieldCheck, Database, Sliders, ExternalLink } from "lucide-react";
 
+import CargoDocumentaryMonograph from "@/components/projects/CargoDocumentaryMonograph";
+
 export default function CargoInMotionPrototypePage() {
-  const [activeTab, setActiveTab] = useState<"prototype" | "data_audit">("prototype");
+  const [activeTab, setActiveTab] = useState<"option_a" | "option_b" | "data_audit">("option_a");
 
   return (
     <main className="min-h-screen bg-[#0a0c10] text-[#f1f5f9] selection:bg-[#e1390f] selection:text-white">
@@ -61,14 +63,24 @@ export default function CargoInMotionPrototypePage() {
           {/* Tab Selector */}
           <div className="flex items-center gap-2 bg-white/5 p-1 rounded-xl border border-white/10 shrink-0 text-xs font-mono">
             <button
-              onClick={() => setActiveTab("prototype")}
+              onClick={() => setActiveTab("option_a")}
               className={`px-3 py-1.5 rounded-lg transition ${
-                activeTab === "prototype"
+                activeTab === "option_a"
+                  ? "bg-[#e1390f] text-white font-bold shadow-md shadow-[#e1390f]/20"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              Option A: Documentary Monograph (Recommended)
+            </button>
+            <button
+              onClick={() => setActiveTab("option_b")}
+              className={`px-3 py-1.5 rounded-lg transition ${
+                activeTab === "option_b"
                   ? "bg-white/15 text-white font-bold border border-white/20"
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              Interactive 3D Scene
+              Option B: Upgraded 3D Keyframes
             </button>
             <button
               onClick={() => setActiveTab("data_audit")}
@@ -86,7 +98,44 @@ export default function CargoInMotionPrototypePage() {
 
       {/* MAIN STAGE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 py-8">
-        {activeTab === "prototype" ? (
+        {activeTab === "option_a" ? (
+          <div className="space-y-6">
+            <CargoDocumentaryMonograph record={VERIFIED_SHANGHAI_RECORD} />
+
+            {/* Editorial Evaluation Checklist */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+              <div className="bg-[#0f1217] border border-white/10 rounded-xl p-4 space-y-2">
+                <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>AUTHENTIC PHOTOGRAPHIC PROOF</span>
+                </div>
+                <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                  Leverages Freyer's real quayside field photography (9.1 & 9.2) rather than speculative or synthetic geometry.
+                </p>
+              </div>
+
+              <div className="bg-[#0f1217] border border-white/10 rounded-xl p-4 space-y-2">
+                <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>MONUMENTAL TYPOGRAPHY</span>
+                </div>
+                <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                  Large-scale display typography (482 MT) gives physical weight to verified engineering metrics without digital jitter.
+                </p>
+              </div>
+
+              <div className="bg-[#0f1217] border border-white/10 rounded-xl p-4 space-y-2">
+                <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>COMMERCIAL AUTHORITY</span>
+                </div>
+                <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                  Reads like a prestigious industrial engineering monograph tailored directly for enterprise logistics buyers.
+                </p>
+              </div>
+            </div>
+          </div>
+        ) : activeTab === "option_b" ? (
           <div className="space-y-6">
             {/* The 3D Prototype Scene */}
             <CargoInMotionPrototype record={VERIFIED_SHANGHAI_RECORD} />

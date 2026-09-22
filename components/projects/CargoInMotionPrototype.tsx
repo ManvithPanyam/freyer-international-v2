@@ -91,27 +91,32 @@ export default function CargoInMotionPrototype({
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.1;
 
-    // LIGHTING SYSTEM
-    // Dusk Ambient
-    const ambientLight = new THREE.AmbientLight(0x181c24, 0.9);
+    // LIGHTING SYSTEM: Cinematic Maritime Chiaroscuro
+    // Deep Dusk Ambient
+    const ambientLight = new THREE.AmbientLight(0x1e2430, 1.2);
     scene.add(ambientLight);
 
-    // Primary Industrial Key Light (Rises during KF1 approach)
-    const keyLight = new THREE.DirectionalLight(0xf1f5f9, 0.4);
-    keyLight.position.set(16, 24, 18);
+    // Primary Industrial Daylight / Key Floodlight (Rises during KF1 approach)
+    const keyLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    keyLight.position.set(22, 28, 20);
     scene.add(keyLight);
 
-    // Quayside High-Pressure Sodium Spot (Warm dusk maritime sodium illumination)
-    const sodiumSpot = new THREE.SpotLight(0xd97706, 0.8, 55, Math.PI / 4, 0.5, 1);
-    sodiumSpot.position.set(-16, 20, 10);
-    sodiumSpot.target.position.set(0, 0, 0);
+    // Quayside High-Pressure Sodium Spotlight (Warm golden terminal illumination)
+    const sodiumSpot = new THREE.SpotLight(0xf59e0b, 1.8, 65, Math.PI / 3.8, 0.45, 1.2);
+    sodiumSpot.position.set(-20, 24, 14);
+    sodiumSpot.target.position.set(0, 1.5, 0);
     scene.add(sodiumSpot);
     scene.add(sodiumSpot.target);
 
-    // Subtle Cool Blue Sky Rim Light (Edge definition)
-    const rimLight = new THREE.DirectionalLight(0x475569, 0.7);
-    rimLight.position.set(-15, 10, -18);
+    // Cool Maritime Sky Rim Light (Crisp silhouette edge definition)
+    const rimLight = new THREE.DirectionalLight(0x94a3b8, 1.4);
+    rimLight.position.set(-18, 14, -20);
     scene.add(rimLight);
+
+    // Low-angle safety amber accent (quayside ground reflector)
+    const warmAccent = new THREE.PointLight(0xe1390f, 1.2, 30);
+    warmAccent.position.set(0, 0.8, 8);
+    scene.add(warmAccent);
 
     // -------------------------------------------------------------------------
     // PORT DECK / VESSEL STOWAGE STAGE
@@ -120,42 +125,42 @@ export default function CargoInMotionPrototype({
     const deckGroup = new THREE.Group();
     scene.add(deckGroup);
 
-    // Deck Surface
+    // Deck Surface (Textured industrial non-skid maritime steel)
     const deckMat = new THREE.MeshStandardMaterial({
-      color: 0x121418,
-      roughness: 0.85,
-      metalness: 0.25,
+      color: 0x181a20,
+      roughness: 0.78,
+      metalness: 0.35,
     });
-    const deckMesh = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), deckMat);
+    const deckMesh = new THREE.Mesh(new THREE.PlaneGeometry(100, 100), deckMat);
     deckMesh.rotation.x = -Math.PI / 2;
     deckMesh.position.y = 0;
     deckGroup.add(deckMesh);
 
     // Steel Hatch Plate Grid Lines
-    const gridHelper = new THREE.GridHelper(70, 35, 0x222630, 0x171a20);
+    const gridHelper = new THREE.GridHelper(80, 40, 0x333b4d, 0x222733);
     gridHelper.position.y = 0.01;
     deckGroup.add(gridHelper);
 
-    // Baked Ground Ambient Contact Shadow
+    // Baked Ground Ambient Contact Shadow (Multi-tiered soft contact shadow)
     const shadowMat = new THREE.MeshBasicMaterial({
-      color: 0x040507,
+      color: 0x020305,
       transparent: true,
-      opacity: 0.75,
+      opacity: 0.82,
     });
-    const shadowMesh = new THREE.Mesh(new THREE.PlaneGeometry(24, 8), shadowMat);
+    const shadowMesh = new THREE.Mesh(new THREE.PlaneGeometry(26, 9), shadowMat);
     shadowMesh.rotation.x = -Math.PI / 2;
     shadowMesh.position.set(0, 0.02, 0);
     deckGroup.add(shadowMesh);
 
-    // Heavy Hardwood Dunnage Sleepers (supporting the cargo mass off deck)
+    // Heavy Hardwood Dunnage Sleepers (supporting the 482 MT cargo mass off deck)
     const timberMat = new THREE.MeshStandardMaterial({
-      color: 0x271e16,
-      roughness: 0.95,
-      metalness: 0.05,
+      color: 0x4a3b2c,
+      roughness: 0.92,
+      metalness: 0.04,
     });
-    for (let x = -8; x <= 8; x += 2.6) {
-      const sleeper = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.35, 5.2), timberMat);
-      sleeper.position.set(x, 0.175, 0);
+    for (let x = -8.5; x <= 8.5; x += 2.4) {
+      const sleeper = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.42, 5.6), timberMat);
+      sleeper.position.set(x, 0.21, 0);
       deckGroup.add(sleeper);
     }
 
@@ -166,55 +171,75 @@ export default function CargoInMotionPrototype({
     scene.add(cargoRoot);
 
     // --- Branch A: Dedicated Break Bulk Mass (Record #9 Shanghai 482 MT) ---
+    // Realistic heavy structural steel fabrication matching archival photos 9.1 & 9.2
     const breakbulkMass = new THREE.Group();
     cargoRoot.add(breakbulkMass);
 
-    const weatheredSteelMat = new THREE.MeshStandardMaterial({
-      color: 0x23262d,
-      roughness: 0.72,
-      metalness: 0.45,
+    const industrialOxideSteelMat = new THREE.MeshStandardMaterial({
+      color: 0x3b4252, // Weathered industrial slate steel
+      roughness: 0.62,
+      metalness: 0.58,
     });
-    const structuralRibMat = new THREE.MeshStandardMaterial({
-      color: 0x1a1c22,
-      roughness: 0.65,
-      metalness: 0.55,
+    const reinforcementMat = new THREE.MeshStandardMaterial({
+      color: 0x252a34, // Dark structural cast alloy
+      roughness: 0.5,
+      metalness: 0.7,
+    });
+    const safetyStripeMat = new THREE.MeshStandardMaterial({
+      color: 0xd97706, // Industrial safety amber accents
+      roughness: 0.4,
+      metalness: 0.2,
     });
 
     const girderLength = 17.5;
-    const girderHeight = 2.6;
-    const girderWidth = 1.8;
+    const girderHeight = 2.8;
+    const girderWidth = 1.85;
 
     // Twin massive fabricated steel box girders
-    const girderA = new THREE.Mesh(new THREE.BoxGeometry(girderLength, girderHeight, girderWidth), weatheredSteelMat);
-    girderA.position.set(0, girderHeight / 2 + 0.35, -1.35);
+    const girderA = new THREE.Mesh(new THREE.BoxGeometry(girderLength, girderHeight, girderWidth), industrialOxideSteelMat);
+    girderA.position.set(0, girderHeight / 2 + 0.42, -1.4);
     breakbulkMass.add(girderA);
 
-    const girderB = new THREE.Mesh(new THREE.BoxGeometry(girderLength, girderHeight, girderWidth), weatheredSteelMat);
-    girderB.position.set(0, girderHeight / 2 + 0.35, 1.35);
+    const girderB = new THREE.Mesh(new THREE.BoxGeometry(girderLength, girderHeight, girderWidth), industrialOxideSteelMat);
+    girderB.position.set(0, girderHeight / 2 + 0.42, 1.4);
     breakbulkMass.add(girderB);
 
-    // Heavy structural cross-lacing diaphragms (6 internal reinforcement bays)
-    for (let x = -7; x <= 7; x += 2.8) {
-      const diaphragm = new THREE.Mesh(new THREE.BoxGeometry(0.65, girderHeight - 0.3, 2.7), structuralRibMat);
-      diaphragm.position.set(x, girderHeight / 2 + 0.35, 0);
+    // Top reinforcement flange plates
+    const flangeA = new THREE.Mesh(new THREE.BoxGeometry(girderLength + 0.4, 0.15, girderWidth + 0.3), reinforcementMat);
+    flangeA.position.set(0, girderHeight + 0.48, -1.4);
+    breakbulkMass.add(flangeA);
+
+    const flangeB = new THREE.Mesh(new THREE.BoxGeometry(girderLength + 0.4, 0.15, girderWidth + 0.3), reinforcementMat);
+    flangeB.position.set(0, girderHeight + 0.48, 1.4);
+    breakbulkMass.add(flangeB);
+
+    // Heavy structural cross-lacing diaphragms & transverse beams (7 internal reinforcement bays)
+    for (let x = -7.2; x <= 7.2; x += 2.4) {
+      const diaphragm = new THREE.Mesh(new THREE.BoxGeometry(0.75, girderHeight - 0.2, 2.9), reinforcementMat);
+      diaphragm.position.set(x, girderHeight / 2 + 0.42, 0);
       breakbulkMass.add(diaphragm);
     }
 
-    // Lifting lugs / trunnions
+    // Heavy crane lifting trunnions / pad eyes
     const lugPositions = [
-      { x: -7.2, z: -1.35 },
-      { x: 7.2, z: -1.35 },
-      { x: -7.2, z: 1.35 },
-      { x: 7.2, z: 1.35 },
-      { x: -2.4, z: -1.35 },
-      { x: 2.4, z: -1.35 },
-      { x: -2.4, z: 1.35 },
-      { x: 2.4, z: 1.35 },
+      { x: -7.6, z: -1.4 },
+      { x: 7.6, z: -1.4 },
+      { x: -7.6, z: 1.4 },
+      { x: 7.6, z: 1.4 },
+      { x: -2.5, z: -1.4 },
+      { x: 2.5, z: -1.4 },
+      { x: -2.5, z: 1.4 },
+      { x: 2.5, z: 1.4 },
     ];
     lugPositions.forEach((pos) => {
-      const lug = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 0.65, 16), structuralRibMat);
-      lug.position.set(pos.x, girderHeight + 0.55, pos.z);
-      breakbulkMass.add(lug);
+      const lugBase = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.32, 0.8, 16), reinforcementMat);
+      lugBase.position.set(pos.x, girderHeight + 0.8, pos.z);
+      breakbulkMass.add(lugBase);
+
+      const lugRing = new THREE.Mesh(new THREE.TorusGeometry(0.22, 0.08, 12, 24), safetyStripeMat);
+      lugRing.rotation.y = Math.PI / 2;
+      lugRing.position.set(pos.x, girderHeight + 1.25, pos.z);
+      breakbulkMass.add(lugRing);
     });
 
     // --- Branch B: Generic Heavy-Lift Silhouette (Fallback per §3) ---
