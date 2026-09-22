@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Anchor, Globe, MapPin, Mail } from "lucide-react";
+import { ArrowUpRight, Anchor, Globe, MapPin, Briefcase, HeartHandshake, Mail } from "lucide-react";
 import { THEME_TOKENS } from "@/components/ui/design-system";
 
 export function AboutBridge() {
@@ -28,6 +28,20 @@ export function AboutBridge() {
       href: "/locations",
       icon: MapPin,
     },
+    {
+      label: "JOIN OUR TEAMS",
+      title: "Careers at Freyer",
+      desc: "Join our licensed customs brokers, marine freight directors, and logistics engineers.",
+      href: "/careers",
+      icon: Briefcase,
+    },
+    {
+      label: "SOCIAL IMPACT",
+      title: "Stewardship & CSR",
+      desc: "Community welfare, vocational logistics education, and green freight corridors.",
+      href: "/csr",
+      icon: HeartHandshake,
+    },
   ];
 
   return (
@@ -47,17 +61,17 @@ export function AboutBridge() {
           </div>
 
           <p className="text-sm font-mono text-white/50 max-w-md">
-            Having seen who leads Freyer, explore our physical operations, global shipment routes, and domestic infrastructure.
+            Having seen who leads Freyer, explore our physical operations, global shipment routes, talent opportunities, and community stewardship.
           </p>
         </div>
 
         {/* Pathways Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {pathways.map((path) => {
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pathways.map((path, idx) => {
             const Icon = path.icon;
             return (
               <Link
-                key={path.href}
+                key={path.href + idx}
                 href={path.href}
                 className="group p-8 rounded-xl border border-white/10 bg-[#181A1F] hover:border-white/30 hover:bg-[#1F232B] transition-all flex flex-col justify-between"
               >
@@ -77,7 +91,7 @@ export function AboutBridge() {
                 </div>
 
                 <div className="mt-8 pt-4 border-t border-white/8 flex items-center justify-between text-xs font-mono text-white/60 group-hover:text-white transition-colors">
-                  <span>Enter Experience</span>
+                  <span>Explore Destination</span>
                   <ArrowUpRight className="w-4 h-4 text-[#e1390f] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
               </Link>

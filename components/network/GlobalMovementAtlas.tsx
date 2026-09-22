@@ -36,7 +36,7 @@ interface GlobalMovementAtlasProps {
 }
 
 export default function GlobalMovementAtlas({
-  initialSelectedId = "MV-09",
+  initialSelectedId = "MV-01",
 }: GlobalMovementAtlasProps) {
   const [selectedMovementId, setSelectedMovementId] = useState<string>(initialSelectedId);
   const [selectedLaneId, setSelectedLaneId] = useState<string | null>(null);
