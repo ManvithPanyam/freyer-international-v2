@@ -55,7 +55,7 @@ export function FTRFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#030710] border-t border-white/10 text-white">
+    <footer className="bg-[#121316] border-t border-white/10 text-[#F8F7F4]">
 
       {/* ── Main Footer Body ── */}
       <div className="max-w-[1560px] mx-auto px-6 lg:px-12 py-16 sm:py-20">

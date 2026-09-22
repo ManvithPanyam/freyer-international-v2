@@ -27,7 +27,7 @@ export function FTRHero() {
   return (
     <section
       aria-label="Freyer International Logistics"
-      className="bg-[#030712] text-white overflow-hidden relative flex flex-col justify-between"
+      className="bg-[#121316] text-[#F8F7F4] overflow-hidden relative flex flex-col justify-between"
       style={{ minHeight: "100svh" }}
     >
       {/* ═══════════════════════════════════════
@@ -66,21 +66,21 @@ export function FTRHero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(115deg, rgba(3,7,18,0.95) 0%, rgba(3,7,18,0.85) 38%, rgba(3,7,18,0.42) 70%, rgba(3,7,18,0.18) 100%)",
+              "linear-gradient(115deg, rgba(18,19,22,0.95) 0%, rgba(18,19,22,0.85) 38%, rgba(18,19,22,0.42) 70%, rgba(18,19,22,0.18) 100%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, #030712 0%, rgba(3,7,18,0.92) 18%, transparent 55%)",
+              "linear-gradient(to top, #121316 0%, rgba(18,19,22,0.92) 18%, transparent 55%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(3,7,18,0.75) 0%, transparent 25%)",
+              "linear-gradient(to bottom, rgba(18,19,22,0.75) 0%, transparent 25%)",
           }}
         />
       </div>

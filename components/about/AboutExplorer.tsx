@@ -123,7 +123,7 @@ export function AboutExplorer() {
             </p>
           </div>
 
-          <div className="lg:col-span-6 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#091222]">
+          <div className="lg:col-span-6 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#181A1F]">
             <Image
               src="/images/About.jpg"
               alt="Freyer International Logistics Corporate Operations and Freight Coordination"
@@ -132,9 +132,9 @@ export function AboutExplorer() {
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-80" />
             <div className="absolute bottom-4 left-4 text-xs font-mono text-white/80">
-              <span className="bg-[#030712]/80 backdrop-blur-md px-3 py-1 rounded border border-white/10 text-[11px]">
+              <span className="bg-[#121316]/80 backdrop-blur-md px-3 py-1 rounded border border-white/10 text-[11px]">
                 Freyer International Corporate Operations
               </span>
             </div>
@@ -327,7 +327,7 @@ export function AboutExplorer() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#091222]">
+          <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#181A1F]">
             <Image
               src="/images/gallery/office/1.jpg"
               alt="Freyer Corporate Operations Floor - Freight Forwarding & Logistics Coordination"
@@ -335,7 +335,7 @@ export function AboutExplorer() {
               className="object-cover object-center brightness-90 contrast-105"
               sizes="(min-width: 1024px) 60vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-80" />
             <div className="absolute bottom-4 left-4 text-xs font-mono text-white/80">
               Corporate Control Operations Floor
             </div>
@@ -354,11 +354,11 @@ export function AboutExplorer() {
 
             <FreyerCard className="p-6">
               <div className="text-xs font-mono uppercase text-[#e1390f] font-semibold mb-1">
-                Heavy Engineering Directorate
+                International Line Management
               </div>
-              <h4 className="text-base font-bold text-white">Project Cargo &amp; Civil Survey</h4>
+              <h4 className="text-base font-bold text-white">Route Directors &amp; Pricing Desks</h4>
               <p className="text-xs text-slate-300 font-light mt-1 leading-relaxed">
-                Technical rigging supervisors, marine surveyors, and transport planners executing over-dimensional and heavy-lift movements up to 482 metric tons.
+                Dedicated trade lane managers controlling contracted allocations with Tier-1 ocean shipping lines and scheduled international air freighters.
               </p>
             </FreyerCard>
           </div>
@@ -436,7 +436,7 @@ export function AboutExplorer() {
       {/* Accolades Modal */}
       {showAllAwardsModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="bg-[#091222] border border-white/15 rounded-xl max-w-4xl w-full max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+          <div className="bg-[#181A1F] border border-white/15 rounded-xl max-w-4xl w-full max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
             <div className="p-6 border-b border-white/10 flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-bold text-white font-mono uppercase">

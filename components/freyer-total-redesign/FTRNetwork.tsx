@@ -96,10 +96,10 @@ export function FTRNetwork() {
       id="india-network"
       ref={sectionRef}
       aria-label="Freyer India Branch Network Map"
-      className="relative bg-[#040812] text-white py-24 sm:py-32 border-t border-white/10 overflow-hidden"
+      className="relative bg-[#121316] text-[#F8F7F4] py-24 sm:py-32 border-t border-white/10 overflow-hidden"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/[0.035] blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.015] blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
 
@@ -185,13 +185,13 @@ export function FTRNetwork() {
             >
               <defs>
                 <linearGradient id="ftrIndiaLandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#0d1f38" />
-                  <stop offset="50%" stopColor="#081426" />
-                  <stop offset="100%" stopColor="#040a14" />
+                  <stop offset="0%" stopColor="#22252B" />
+                  <stop offset="50%" stopColor="#1A1C22" />
+                  <stop offset="100%" stopColor="#14161B" />
                 </linearGradient>
 
                 <filter id="ftrCoastlineGlow" x="-10%" y="-10%" width="120%" height="120%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="3.5" floodColor="#3b82f6" floodOpacity="0.4" />
+                  <feDropShadow dx="0" dy="0" stdDeviation="2.5" floodColor="#FFFFFF" floodOpacity="0.12" />
                 </filter>
               </defs>
 
@@ -199,8 +199,8 @@ export function FTRNetwork() {
               <path
                 d={MAINLAND_PATH}
                 fill="url(#ftrIndiaLandGradient)"
-                stroke="#3b82f6"
-                strokeWidth="1.3"
+                stroke="rgba(255, 255, 255, 0.30)"
+                strokeWidth="1.2"
                 strokeLinejoin="round"
                 strokeLinecap="round"
                 strokeOpacity="0.9"
@@ -213,7 +213,7 @@ export function FTRNetwork() {
                   key={idx}
                   d={d}
                   fill="url(#ftrIndiaLandGradient)"
-                  stroke="#3b82f6"
+                  stroke="rgba(255, 255, 255, 0.25)"
                   strokeWidth="1.0"
                   strokeLinejoin="round"
                   strokeLinecap="round"

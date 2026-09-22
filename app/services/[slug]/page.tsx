@@ -248,7 +248,7 @@ export default async function ServiceDetailPage({
   }
 
   return (
-    <div className="min-h-screen bg-[#030712] text-white selection:bg-[#e1390f] selection:text-white">
+    <div className="min-h-screen bg-[#121316] text-white selection:bg-[#e1390f] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -276,9 +276,9 @@ export default async function ServiceDetailPage({
                   sizes="(min-width: 1024px) 60vw, 100vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-4 left-4 text-xs font-mono text-white/80">
-                  <span className="bg-[#030712]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
+                  <span className="bg-[#121316]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
                     {service.evidenceBadge}
                   </span>
                 </div>

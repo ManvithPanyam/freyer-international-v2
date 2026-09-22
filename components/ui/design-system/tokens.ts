@@ -5,10 +5,10 @@
 
 export const THEME_TOKENS = {
   colors: {
-    // Primary Backgrounds
-    background: "#030712",         // Deepest stage canvas (FTRHero background)
-    backgroundAlt: "#040812",      // Primary section alternating canvas
-    surfaceElevated: "#091222",    // Raised card / panel surface
+    // Primary Backgrounds (Dark Grey / Graphite)
+    background: "#121316",         // Deepest graphite stage canvas (FTRHero background)
+    backgroundAlt: "#181A1F",      // Primary section alternating graphite canvas
+    surfaceElevated: "#1E2026",    // Raised card / panel surface
     surfaceMuted: "rgba(255, 255, 255, 0.03)",
     surfaceHover: "rgba(255, 255, 255, 0.06)",
     
@@ -18,15 +18,15 @@ export const THEME_TOKENS = {
     borderFocus: "rgba(255, 255, 255, 0.28)",
 
     // Foregrounds & Text
-    textPrimary: "#ffffff",
-    textSecondary: "#cbd5e1",      // slate-300
-    textMuted: "#94a3b8",          // slate-400
+    textPrimary: "#F8F7F4",
+    textSecondary: "#A1A1AA",      // zinc-400
+    textMuted: "#71717A",          // zinc-500
     textFaint: "rgba(255, 255, 255, 0.40)",
     textGhost: "rgba(255, 255, 255, 0.25)",
 
     // Canonical Brand Accent
-    accent: "#e1390f",             // Freyer International Orange/Red
-    accentHover: "#c42f0b",
+    accent: "#E1390F",             // Freyer International Orange/Red
+    accentHover: "#C42F0B",
     accentMuted: "rgba(225, 57, 15, 0.15)",
     accentGlow: "rgba(225, 57, 15, 0.35)",
   },

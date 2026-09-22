@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-[#030712] text-white selection:bg-[#e1390f] selection:text-white">
+    <div className="min-h-screen bg-[#121316] text-[#F8F7F4] selection:bg-[#e1390f] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 For data protection inquiries or exercising statutory rights under the DPDP Act 2023, contact our corporate legal desk:
               </p>
-              <div className="p-4 rounded border border-white/10 bg-[#091222] font-mono text-xs text-white space-y-1">
+              <div className="p-4 rounded border border-white/10 bg-[#181A1F] font-mono text-xs text-white space-y-1">
                 <div>Corporate Compliance Directorate: Freyer International Logistics Pvt Ltd</div>
                 <div>TAGA Tower, Sait Colony, Egmore, Chennai – 600 008, India</div>
                 <div>Email: <span className="text-[#e1390f]">compliance@freyerinternational.com</span></div>

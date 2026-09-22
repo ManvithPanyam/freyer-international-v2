@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#030712] text-white selection:bg-[#e1390f] selection:text-white">
+    <div className="min-h-screen bg-[#121316] text-[#F8F7F4] selection:bg-[#e1390f] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -58,7 +58,7 @@ export default function ContactPage() {
               highlight="INSTANT DISPATCH."
               description="Complete the freight configurator below to receive an engineered tariff proposal tailored to your cargo profile."
             />
-            <div className="bg-[#091222]/90 border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl">
+            <div className="bg-[#181A1F]/90 border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl">
               <RfqProduct />
             </div>
           </div>

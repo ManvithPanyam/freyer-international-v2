@@ -105,11 +105,11 @@ export function FTRCargoMonument() {
       id="cargo-monument"
       ref={sectionRef}
       aria-label="Verified Project Cargo Monument"
-      className="relative bg-[#050913] text-white py-24 sm:py-32 border-t border-white/10 overflow-hidden"
+      className="relative bg-[#121316] text-[#F8F7F4] py-24 sm:py-32 border-t border-white/10 overflow-hidden"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#e1390f]/[0.035] blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/[0.025] blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.015] blur-[140px] pointer-events-none" />
 
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
 

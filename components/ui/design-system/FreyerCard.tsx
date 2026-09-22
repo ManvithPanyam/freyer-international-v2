@@ -23,9 +23,9 @@ export function FreyerCard({
       id={id}
       onClick={onClick}
       className={[
-        "bg-[#091222]/80 backdrop-blur-md border border-white/10 rounded-lg transition-all duration-200",
+        "bg-[#181A1F]/90 backdrop-blur-md border border-white/10 rounded-lg transition-all duration-200",
         hoverEffect
-          ? "hover:border-white/25 hover:bg-[#0d1a30] hover:shadow-xl hover:shadow-black/40"
+          ? "hover:border-white/25 hover:bg-[#20222A] hover:shadow-xl hover:shadow-black/40"
           : "",
         className,
       ].join(" ")}

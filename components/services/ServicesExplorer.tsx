@@ -79,7 +79,7 @@ export function ServicesExplorer() {
         />
 
         {/* High-Bay Warehouse Photography Panel */}
-        <div className="relative aspect-[16/10] sm:aspect-[2.2/1] w-full rounded-xl overflow-hidden bg-[#091222] border border-white/10 shadow-2xl">
+        <div className="relative aspect-[16/10] sm:aspect-[2.2/1] w-full rounded-xl overflow-hidden bg-[#181A1F] border border-white/10 shadow-2xl">
           <Image
             src="/images/slide4.jpg"
             alt="High-bay multi-client warehouse facility with industrial racking and WMS material handling"
@@ -88,12 +88,12 @@ export function ServicesExplorer() {
             sizes="(min-width: 1280px) 1400px, 100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-80" />
           <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 flex flex-wrap items-center justify-between gap-3 text-white text-xs font-mono">
-            <span className="bg-[#030712]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
+            <span className="bg-[#121316]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
               Multi-Client &middot; Bonded CFS &middot; Temperature Controlled
             </span>
-            <span className="bg-[#030712]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10 hidden sm:inline-block">
+            <span className="bg-[#121316]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10 hidden sm:inline-block">
               Port &amp; Rail ICD Connectivity
             </span>
           </div>
@@ -147,7 +147,7 @@ export function ServicesExplorer() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 bg-[#091222] shadow-2xl">
+          <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 bg-[#181A1F] shadow-2xl">
             <Image
               src="/images/11.3.jpg"
               alt="Heavy-lift crane spreader hoist lifting 37.6 MT boom assembly mid-air at container terminal"
@@ -155,8 +155,8 @@ export function ServicesExplorer() {
               className="object-cover object-center brightness-90 contrast-105"
               sizes="(min-width: 1024px) 60vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-80" />
-            <span className="absolute bottom-4 left-4 text-xs font-mono text-white/80 bg-[#030712]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-80" />
+            <span className="absolute bottom-4 left-4 text-xs font-mono text-white/80 bg-[#121316]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
               37.6 MT Boom Crane Lift &middot; Venice to Mundra
             </span>
           </div>

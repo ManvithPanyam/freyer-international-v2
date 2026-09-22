@@ -149,7 +149,7 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                 >
                   {/* Photograph Frame */}
                   <div
-                    className={`relative w-full rounded-xl overflow-hidden bg-[#091222] border border-white/10 group-hover:border-white/25 transition-all duration-300 ${
+                    className={`relative w-full rounded-xl overflow-hidden bg-[#181A1F] border border-white/10 group-hover:border-white/25 transition-all duration-300 ${
                       isAlternate
                         ? "lg:col-span-6 lg:order-2 aspect-[16/10]"
                         : "lg:col-span-7 lg:order-1 aspect-[16/10]"
@@ -168,7 +168,7 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                         Archived Operational Record
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
                   </div>
 
                   {/* Route & Specifications */}
@@ -277,7 +277,7 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
               exit={{ scale: 0.96, opacity: 0, y: 15 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-[#091222] border border-white/15 rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl text-white"
+              className="relative bg-[#181A1F] border border-white/15 rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl text-white"
             >
               <button
                 ref={closeButtonRef}

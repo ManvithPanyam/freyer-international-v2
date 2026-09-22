@@ -39,7 +39,7 @@ export function MinimalLocations() {
       {/* ── Interactive India Cartography Stage ── */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column: Authoritative India Map Silhouette */}
-        <div className="lg:col-span-7 bg-[#091222]/90 border border-white/10 rounded-xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between min-h-[580px] sm:min-h-[640px]">
+        <div className="lg:col-span-7 bg-[#181A1F]/90 border border-white/10 rounded-xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between min-h-[580px] sm:min-h-[640px]">
           {/* Subtle Radial Glow */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(225,57,15,0.08),transparent_60%)] pointer-events-none" />
 
@@ -50,7 +50,7 @@ export function MinimalLocations() {
                 Survey of India Geometry
               </span>
               <div className="text-lg sm:text-xl font-bold font-mono text-white mt-0.5">
-                10 Branch Stations Across India
+                Authoritative Boundary Alignment
               </div>
             </div>
             <div className="hidden sm:flex items-center gap-2 text-[11px] font-mono text-white/40">
@@ -76,8 +76,8 @@ export function MinimalLocations() {
               {/* Authoritative Mainland Geometry */}
               <path
                 d={MAINLAND_PATH}
-                fill="#0b172a"
-                stroke="rgba(255, 255, 255, 0.18)"
+                fill="#22252B"
+                stroke="rgba(255, 255, 255, 0.28)"
                 strokeWidth="1.2"
                 strokeLinejoin="round"
                 strokeLinecap="round"
@@ -89,8 +89,8 @@ export function MinimalLocations() {
                 <path
                   key={`island-${i}`}
                   d={pathStr}
-                  fill="#0b172a"
-                  stroke="rgba(255, 255, 255, 0.18)"
+                  fill="#22252B"
+                  stroke="rgba(255, 255, 255, 0.22)"
                   strokeWidth="1.2"
                 />
               ))}
@@ -262,7 +262,7 @@ export function MinimalLocations() {
                 className={`text-left p-3 rounded border text-xs font-mono transition-all ${
                   st.id === selectedId
                     ? "bg-[#e1390f]/15 border-[#e1390f] text-white font-semibold"
-                    : "bg-[#091222]/50 border-white/10 text-white/60 hover:text-white hover:border-white/20"
+                    : "bg-[#181A1F]/80 border-white/10 text-white/60 hover:text-white hover:border-white/20"
                 }`}
               >
                 <div className="truncate">{st.city}</div>

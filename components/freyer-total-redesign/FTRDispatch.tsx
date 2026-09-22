@@ -59,7 +59,7 @@ export function FTRDispatch() {
     <section
       id="engage"
       aria-label="Contact and freight rate enquiry"
-      className="bg-[#05090f] text-white border-t border-white/10"
+      className="bg-[#121316] text-[#F8F7F4] border-t border-white/10"
     >
       <div
         ref={sectionRef}

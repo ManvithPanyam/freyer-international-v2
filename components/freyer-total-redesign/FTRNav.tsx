@@ -41,8 +41,8 @@ export function FTRNav() {
         className={[
           "fixed top-0 inset-x-0 z-50 transition-all duration-300",
           isTransparentMode
-            ? "bg-[#040812]/50 backdrop-blur-md border-b border-white/8 py-4"
-            : "bg-[#040812]/95 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl",
+            ? "bg-[#121316]/50 backdrop-blur-md border-b border-white/8 py-4"
+            : "bg-[#121316]/95 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl",
         ].join(" ")}
       >
         <div className="max-w-[1560px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-8">

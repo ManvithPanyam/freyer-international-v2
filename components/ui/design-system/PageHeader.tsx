@@ -31,13 +31,13 @@ export function PageHeader({
   children,
 }: PageHeaderProps) {
   return (
-    <section className="relative bg-[#030712] text-white pt-32 sm:pt-36 pb-12 sm:pb-16 border-b border-white/10 overflow-hidden">
+    <section className="relative bg-[#121316] text-[#F8F7F4] pt-32 sm:pt-36 pb-12 sm:pb-16 border-b border-white/10 overflow-hidden">
       {/* Background Architectural Vignette */}
       <div
         className="absolute inset-0 pointer-events-none opacity-40 select-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 18% 20%, rgba(225, 57, 15, 0.08) 0%, transparent 45%), radial-gradient(circle at 85% 65%, rgba(14, 27, 49, 0.4) 0%, transparent 60%)",
+            "radial-gradient(circle at 18% 20%, rgba(225, 57, 15, 0.08) 0%, transparent 45%), radial-gradient(circle at 85% 65%, rgba(255, 255, 255, 0.04) 0%, transparent 60%)",
         }}
       />
 

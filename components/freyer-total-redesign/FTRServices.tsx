@@ -204,7 +204,7 @@ export function FTRServices() {
       id="services-matrix"
       ref={sectionRef}
       aria-label="Freyer Logistics Core Services"
-      className="relative bg-[#050913] text-white py-24 sm:py-32 border-t border-white/10 overflow-hidden"
+      className="relative bg-[#181A1F] text-[#F8F7F4] py-24 sm:py-32 border-t border-white/10 overflow-hidden"
     >
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
 

@@ -47,7 +47,7 @@ export function FTRTrustBar() {
   return (
     <section
       aria-label="Official Accreditations & Statutory Certifications"
-      className="relative bg-[#060a15] border-y border-white/10 py-6 overflow-hidden"
+      className="relative bg-[#181A1F] border-y border-white/10 py-6 overflow-hidden"
     >
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">

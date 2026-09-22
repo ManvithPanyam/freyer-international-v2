@@ -44,7 +44,7 @@ import { FTRFooter } from "@/components/freyer-total-redesign/FTRFooter";
  */
 export default function FreyerTotalRedesignPage() {
   return (
-    <div className="min-h-screen bg-[#040812] text-white selection:bg-[#e1390f] selection:text-white">
+    <div className="min-h-screen bg-[#121316] text-[#F8F7F4] selection:bg-[#e1390f] selection:text-white">
       {/* Navigation — transparent on hero, solid on scroll */}
       <FTRNav />
 
