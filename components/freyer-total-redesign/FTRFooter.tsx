@@ -9,12 +9,12 @@ const NAV_COLUMNS = [
   {
     heading: "Services",
     links: [
-      { label: "Ocean Freight", href: "/services" },
-      { label: "Air Freight", href: "/services" },
-      { label: "Customs Brokerage", href: "/services" },
-      { label: "Warehousing & Distribution", href: "/services" },
-      { label: "Risk Management", href: "/services" },
-      { label: "Project Cargo", href: "/services" },
+      { label: "Ocean Freight", href: "/services#ocean-freight" },
+      { label: "Air Freight", href: "/services#air-freight" },
+      { label: "Customs Brokerage", href: "/services#customs-brokerage" },
+      { label: "Warehousing & Distribution", href: "/services#warehousing" },
+      { label: "Risk Management", href: "/services#risk-management" },
+      { label: "Project Cargo", href: "/services#project-cargo" },
     ],
   },
   {
@@ -110,6 +110,48 @@ export function FTRFooter() {
                 <Mail className="w-3 h-3 text-white/25" />
                 info@freyerinternational.com
               </a>
+            </div>
+
+            {/* Social Channels: LinkedIn, Facebook, Twitter / X */}
+            <div className="pt-2">
+              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/25 mb-2.5">
+                Connect With Us
+              </div>
+              <div className="flex items-center gap-2.5">
+                <a
+                  href="https://www.linkedin.com/company/freyer-international-logistics"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Freyer International Logistics on LinkedIn"
+                  className="w-8 h-8 rounded border border-white/10 bg-white/[0.03] hover:bg-[#e1390f] hover:border-[#e1390f] text-white/60 hover:text-white flex items-center justify-center transition-all duration-150"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://twitter.com/freyerintl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Freyer International Logistics on Twitter / X"
+                  className="w-8 h-8 rounded border border-white/10 bg-white/[0.03] hover:bg-[#e1390f] hover:border-[#e1390f] text-white/60 hover:text-white flex items-center justify-center transition-all duration-150"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://facebook.com/freyerinternational"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Freyer International Logistics on Facebook"
+                  className="w-8 h-8 rounded border border-white/10 bg-white/[0.03] hover:bg-[#e1390f] hover:border-[#e1390f] text-white/60 hover:text-white flex items-center justify-center transition-all duration-150"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 

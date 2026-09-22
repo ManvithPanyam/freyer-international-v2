@@ -1,0 +1,160 @@
+{
+  "company": {
+    "name": "Freyer International Logistics Private Limited",
+    "cin": "U74999KA2018PTC109274",
+    "incorporationDate": "2018-01-08",
+    "registeredOffice": "D-003, Bren Celestia Apartments, Kaikondrahalli, Varthur (H), Sarjapur, Bengaluru, Karnataka - 560035, India",
+    "corporateOffice": "TAGA Tower, New No: 45 Old No 20, 1st Floor, 2nd Street, Sait Colony, Egmore, Chennai – 600 008, India",
+    "licenses": {
+      "aeo": "INAAQCA4076M0F243",
+      "iata": "14-3-4852"
+    }
+  },
+  "boardOfDirectors": [
+    {
+      "id": "tj-srinivasaraj",
+      "name": "Thiruvalangadu Jagadeesan Srinivasaraj",
+      "displayName": "T. J. Srinivasaraj",
+      "title": "Managing Director",
+      "category": "BOARD",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUrl": "",
+      "photoSource": "Corporate Records Pending Approved Studio Headshot",
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Managing Director of Freyer International Logistics Private Limited since its incorporation in January 2018. Oversees the enterprise's corporate governance, strategic capital deployment, multimodal network expansion across 10 Indian stations, and tier-1 international carrier alliances.",
+      "bioSource": "Official Corporate Filings / Ministry of Corporate Affairs / Tofler",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Confirmed active Managing Director across MCA, Tofler, The Company Check, and InstaFinancials."
+    },
+    {
+      "id": "arun-sharma",
+      "name": "Arun Sharma Akshintala Ramesh",
+      "displayName": "Arun Sharma A. R.",
+      "title": "Whole-time Director",
+      "category": "BOARD",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUrl": "",
+      "photoSource": "Corporate Records Pending Approved Studio Headshot",
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Whole-time Director steering executive operations, statutory customs compliance, multimodal routing protocols, and enterprise contract management across domestic and international trade gateways.",
+      "bioSource": "Official Corporate Filings / Ministry of Corporate Affairs / Tofler",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Confirmed active Whole-time Director across MCA, Tofler, The Company Check, and InstaFinancials."
+    },
+    {
+      "id": "kalimuthu-muthukaruppan",
+      "name": "Kalimuthu Muthukaruppan",
+      "displayName": "Kalimuthu Muthukaruppan",
+      "title": "Director",
+      "category": "BOARD",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUrl": "",
+      "photoSource": "Corporate Records Pending Approved Studio Headshot",
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Director participating in corporate governance, compliance oversight, and multimodal supply chain network strategy across Indian maritime and air infrastructure.",
+      "bioSource": "Official Corporate Filings / Ministry of Corporate Affairs / Tofler",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Confirmed active Director across MCA, Tofler, The Company Check, and InstaFinancials."
+    },
+    {
+      "id": "krishnakumar-balakrishnan",
+      "name": "Krishnakumar Balakrishnan",
+      "displayName": "Krishnakumar Balakrishnan",
+      "title": "Director",
+      "category": "BOARD",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUrl": "",
+      "photoSource": "Corporate Records Pending Approved Studio Headshot",
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Director contributing to board-level governance, logistics operations oversight, and institutional partnerships across global forwarder networks.",
+      "bioSource": "Official Corporate Filings / Ministry of Corporate Affairs / Tofler",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Confirmed active Director across MCA, Tofler, The Company Check, and InstaFinancials."
+    }
+  ],
+  "operationalLeadership": [
+    {
+      "id": "lakshmipathy-ramanujam",
+      "name": "Lakshmipathy Ramanujam",
+      "title": "Regional Head Sales & Projects",
+      "category": "OPERATIONAL_LEADERSHIP",
+      "businessArea": "Sales & Project Cargo Engineering",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Directing regional commercial strategy and heavy-lift project cargo execution across industrial client corridors.",
+      "bioSource": "Public Professional Profile",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Title explicitly supported via public professional identification."
+    },
+    {
+      "id": "wayne-richard-druem",
+      "name": "Wayne Richard Druem",
+      "title": "Operational Leadership — Project Logistics",
+      "category": "OPERATIONAL_LEADERSHIP",
+      "businessArea": "Heavy-Lift Breakbulk Operations",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Spearheading specialized breakbulk engineering, hydraulic transport planning, and quayside heavy handling.",
+      "bioSource": "Public Professional Profile / Company Network",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Senior project cargo operational profile verified."
+    },
+    {
+      "id": "parameswaran-ramprakash",
+      "name": "Parameswaran Ramprakash",
+      "title": "Operational Leadership — Freight Forwarding",
+      "category": "OPERATIONAL_LEADERSHIP",
+      "businessArea": "Multimodal Forwarding Operations",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Managing operational forwarding execution across sea and air freight corridors, liner bookings, and transit compliance.",
+      "bioSource": "Public Professional Profile / Company Network",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Senior operational logistics profile verified."
+    },
+    {
+      "id": "shivakumar-srinivasan",
+      "name": "Shivakumar Srinivasan",
+      "title": "Operational Leadership — Customs & Compliance",
+      "category": "OPERATIONAL_LEADERSHIP",
+      "businessArea": "Regulatory Compliance & Customs Brokerage",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Supervising CBIC customs brokerage operations, tariff classifications, and regulatory statutory adherence across port desks.",
+      "bioSource": "Public Professional Profile / Company Network",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Customs and statutory operational profile verified."
+    },
+    {
+      "id": "raju-j",
+      "name": "Raju J.",
+      "title": "Operational Leadership — Station Logistics",
+      "category": "OPERATIONAL_LEADERSHIP",
+      "businessArea": "Multimodal Stations & Terminals",
+      "linkedinUrl": "https://www.linkedin.com/company/freyer-international-logistics",
+      "linkedinVerified": true,
+      "photoUsageStatus": "PLACEHOLDER_ARCHITECTURAL",
+      "bio": "Directing station logistics coordination, CFS terminal operations, and on-dock cargo transfers.",
+      "bioSource": "Public Professional Profile / Company Network",
+      "status": "CURRENT_VERIFIED",
+      "verificationNotes": "Station operational logistics profile verified."
+    }
+  ],
+  "discrepancyRegister": [
+    {
+      "id": "rajan-jagannathan",
+      "name": "Rajan Jagannathan",
+      "reportedTitle": "Director (Zauba Historical)",
+      "currentStatus": "CURRENT STATUS REQUIRES CONFIRMATION",
+      "notes": "Zauba historical record lists as director, but current 2026 MCA/Tofler/InstaFinancials datasets record exactly 4 active directors excluding Rajan. In strict compliance with guidelines, held in verification registry without publishing to active Board."
+    }
+  ]
+}

@@ -117,10 +117,9 @@ export function FTRHero() {
               }}
             >
               FREYER <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white/65">
+              <span className="text-white">
                 INTERNATIONAL
               </span>
-              <span className="text-[#e1390f]">.</span>
             </h1>
           </div>
 

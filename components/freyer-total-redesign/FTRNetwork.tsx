@@ -120,11 +120,10 @@ export function FTRNetwork() {
                 fontSize: "clamp(2.6rem, 5.5vw, 5rem)",
               }}
             >
-              10 STATIONS <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white/60">
-                ACROSS INDIA
+              TEN STATIONS. <br />
+              <span className="text-white">
+                ONE INTEGRATED DESK
               </span>
-              <span className="text-[#e1390f]">.</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
               Direct company-owned branch offices, licensed customs brokerage, and on-dock

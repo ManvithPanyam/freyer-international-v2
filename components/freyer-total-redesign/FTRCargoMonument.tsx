@@ -131,10 +131,9 @@ export function FTRCargoMonument() {
               }}
             >
               THE WEIGHT OF <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white/60">
+              <span className="text-white">
                 REAL DISPLACEMENT
               </span>
-              <span className="text-[#e1390f]">.</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
               No simulated cargo renders. No synthetic claims. These are the verified, unalterable

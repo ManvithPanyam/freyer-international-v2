@@ -1,0 +1,476 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FreyerGlobalNetworkData",
+  "version": "1.0.0",
+  "metadata": {
+    "organization": "Freyer International Logistics Pvt. Ltd.",
+    "auditDate": "2026-09-22",
+    "compiler": "Freyer Forensic Discovery Pipeline",
+    "evidencePolicy": "Strict empirical truth. Zero synthetic claims, zero inferred countries as direct presence.",
+    "tiers": {
+      "A": "Current Official Government License / Primary Filing",
+      "B": "Original Scraped Freyer Archive",
+      "C": "Published External Network Certification / Award Trophy",
+      "D": "Documented Project Movement Record",
+      "E": "Inference / Research Context Only (Non-Public)"
+    }
+  },
+  "documentedMovements": [
+    {
+      "id": "MV-01",
+      "slug": "kobe-to-chennai-roro",
+      "route": "Kobe to Chennai",
+      "origin": {
+        "port": "Port of Kobe",
+        "city": "Kobe",
+        "country": "Japan",
+        "countryCode": "JP",
+        "coordinates": { "lat": 34.6901, "lng": 135.1955 }
+      },
+      "destination": {
+        "port": "Chennai Port (INMAA)",
+        "city": "Chennai",
+        "country": "India",
+        "countryCode": "IN",
+        "coordinates": { "lat": 13.0827, "lng": 80.2707 }
+      },
+      "transportType": "RoRo Movement",
+      "weightKg": 37100,
+      "weightTons": 37.1,
+      "dimensions": "904 x 310 x 316 cm",
+      "date": "2023-04",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "KOBE TO CHENNAI RORO MOVEMENT - 904 x 310 x 316 cm - WT 37100 KG (April 2023)",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-02",
+      "slug": "masan-to-chennai-bb",
+      "route": "Masan to Chennai",
+      "origin": {
+        "port": "Port of Masan",
+        "city": "Masan",
+        "country": "South Korea",
+        "countryCode": "KR",
+        "coordinates": { "lat": 35.2000, "lng": 128.5667 }
+      },
+      "destination": {
+        "port": "Chennai Port (INMAA)",
+        "city": "Chennai",
+        "country": "India",
+        "countryCode": "IN",
+        "coordinates": { "lat": 13.0827, "lng": 80.2707 }
+      },
+      "transportType": "Breakbulk (BB) Movement",
+      "weightKg": 200000,
+      "weightTons": 200.0,
+      "volumeCbm": 837,
+      "packageCount": 22,
+      "date": "2023-05",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "MASAN TO CHENNAI BB MOVEMENT - 22 Packages / 837 cbm / WT 200 MT (May 2023)",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-03",
+      "slug": "qingdao-to-sohar-dammam",
+      "route": "Qingdao to Sohar & Dammam",
+      "origin": {
+        "port": "Port of Qingdao",
+        "city": "Qingdao",
+        "country": "China",
+        "countryCode": "CN",
+        "coordinates": { "lat": 36.0671, "lng": 120.3826 }
+      },
+      "destination": {
+        "port": "Port of Sohar & King Abdulaziz Port, Dammam",
+        "city": "Sohar & Dammam",
+        "country": "Oman & Saudi Arabia",
+        "countryCode": "OM / SA",
+        "coordinates": { "lat": 24.3644, "lng": 56.7468 },
+        "secondaryCoordinates": { "lat": 26.4207, "lng": 50.0888 }
+      },
+      "transportType": "Breakbulk on Container Vessel",
+      "weightKg": 16000,
+      "weightTons": 16.0,
+      "dimensions": "760 x 615 x 50 cm",
+      "details": "4 x BBK units + 1 x 20 FR and 1 x 40 FR for each POD",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "QINGDAO TO SOHAR & DAMMAM - 4 x BBK unit on cntr. vessel 760 x 615 x 50 cm/ 16 MT + 1 x 20 FR and 1 X40 FRfor each POD",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-04",
+      "slug": "al-jubail-to-jebel-ali",
+      "route": "Al Jubail to Jebel Ali",
+      "origin": {
+        "port": "King Fahd Industrial Port",
+        "city": "Al Jubail",
+        "country": "Saudi Arabia",
+        "countryCode": "SA",
+        "coordinates": { "lat": 27.0046, "lng": 49.6596 }
+      },
+      "destination": {
+        "port": "Port of Jebel Ali",
+        "city": "Jebel Ali (Dubai)",
+        "country": "United Arab Emirates",
+        "countryCode": "AE",
+        "coordinates": { "lat": 25.0064, "lng": 55.0633 }
+      },
+      "transportType": "Door-Delivery Heavy Lift",
+      "weightKg": 296000,
+      "weightTons": 296.0,
+      "details": "Door-Delivery Heaviest piece- 2 x 148 MT + Accessories",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "AL JUBAIL TO JEBEL ALI - Door-Delivery Heaviest piece- 2 x 148 MT + Accessories",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-05",
+      "slug": "nhava-sheva-to-mogadishu",
+      "route": "Nhava Sheva to Mogadishu",
+      "origin": {
+        "port": "Jawaharlal Nehru Port (Nhava Sheva)",
+        "city": "Mumbai / Navi Mumbai",
+        "country": "India",
+        "countryCode": "IN",
+        "coordinates": { "lat": 18.9499, "lng": 72.9515 }
+      },
+      "destination": {
+        "port": "Port of Mogadishu",
+        "city": "Mogadishu",
+        "country": "Somalia",
+        "countryCode": "SO",
+        "coordinates": { "lat": 2.0469, "lng": 45.3182 }
+      },
+      "transportType": "Flat Rack Ocean Freight",
+      "weightKg": 135000,
+      "weightTons": 135.0,
+      "details": "5 x 40 FR - WT 27000 KG each",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "EX NHAVA SHEVA TO MOGADISHU - 5 x 40 FR - WT 27000 KG each",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-06",
+      "slug": "genoa-to-sohar",
+      "route": "Genoa to Sohar",
+      "origin": {
+        "port": "Port of Genoa",
+        "city": "Genoa",
+        "country": "Italy",
+        "countryCode": "IT",
+        "coordinates": { "lat": 44.4056, "lng": 8.9463 }
+      },
+      "destination": {
+        "port": "Port of Sohar",
+        "city": "Sohar",
+        "country": "Oman",
+        "countryCode": "OM",
+        "coordinates": { "lat": 24.3644, "lng": 56.7468 }
+      },
+      "transportType": "Flat Rack Ocean Freight",
+      "weightKg": 318400,
+      "weightTons": 318.4,
+      "dimensions": "319 x 231 x 360 cm",
+      "details": "8 x 40 FR - WT 39800 KG each (lots of 2 x 40 FR loaded on consecutive vessels)",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "EX GENOA TO SOHAR - 8 x 40 FR – 319 x 231 x 360 cm- WT 39800 KG each (lots of 2 x 40 FR loaded on consecutive vessels)",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-07",
+      "slug": "genoa-to-jebel-ali",
+      "route": "Genoa to Jebel Ali",
+      "origin": {
+        "port": "Port of Genoa",
+        "city": "Genoa",
+        "country": "Italy",
+        "countryCode": "IT",
+        "coordinates": { "lat": 44.4056, "lng": 8.9463 }
+      },
+      "destination": {
+        "port": "Port of Jebel Ali",
+        "city": "Jebel Ali (Dubai)",
+        "country": "United Arab Emirates",
+        "countryCode": "AE",
+        "coordinates": { "lat": 25.0064, "lng": 55.0633 }
+      },
+      "transportType": "Door-to-Door Heavy Machinery",
+      "weightKg": 1156000,
+      "weightTons": 1156.0,
+      "dimensions": "360 x 263 x 400 cm",
+      "details": "17 units moved in different lots (Door to Door) - WT 68000 KG each",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "EX GENOA TO JEBEL ALI - 360 x 263 x 400 cm- WT 68000 KG each Total 17 units moved in different lots (Door to Door )",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-08",
+      "slug": "hamburg-to-jeddah",
+      "route": "Hamburg to Jeddah",
+      "origin": {
+        "port": "Port of Hamburg",
+        "city": "Hamburg",
+        "country": "Germany",
+        "countryCode": "DE",
+        "coordinates": { "lat": 53.5511, "lng": 9.9937 }
+      },
+      "destination": {
+        "port": "Jeddah Islamic Port",
+        "city": "Jeddah",
+        "country": "Saudi Arabia",
+        "countryCode": "SA",
+        "coordinates": { "lat": 21.4858, "lng": 39.1925 }
+      },
+      "transportType": "Breakbulk Shipment (Ex-Works)",
+      "details": "Ex-Works Break Bulk Shipment",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "HAMBURG TO JEDDAH - Ex-Works Break Bulk Shipment",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-09",
+      "slug": "shanghai-to-jebel-ali-482mt",
+      "route": "Shanghai to Jebel Ali",
+      "origin": {
+        "port": "Port of Shanghai",
+        "city": "Shanghai",
+        "country": "China",
+        "countryCode": "CN",
+        "coordinates": { "lat": 31.2304, "lng": 121.4737 }
+      },
+      "destination": {
+        "port": "Port of Jebel Ali",
+        "city": "Jebel Ali (Dubai)",
+        "country": "United Arab Emirates",
+        "countryCode": "AE",
+        "coordinates": { "lat": 25.0064, "lng": 55.0633 }
+      },
+      "transportType": "Signature Heavy Breakbulk Record",
+      "weightKg": 482000,
+      "weightTons": 482.0,
+      "volumeCbm": 796,
+      "packageCount": 29,
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "SHANGHAI TO JEBEL ALI - Break Bulk Shipment 29 PKG, 796 cbm with a weight of 482 MT",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-10",
+      "slug": "venice-to-mundra-21mt",
+      "route": "Venice to Mundra",
+      "origin": {
+        "port": "Port of Venice",
+        "city": "Venice",
+        "country": "Italy",
+        "countryCode": "IT",
+        "coordinates": { "lat": 45.4408, "lng": 12.3155 }
+      },
+      "destination": {
+        "port": "Port of Mundra",
+        "city": "Mundra (Gujarat)",
+        "country": "India",
+        "countryCode": "IN",
+        "coordinates": { "lat": 22.8396, "lng": 69.7042 }
+      },
+      "transportType": "Ex-Works Industrial Equipment",
+      "weightKg": 21000,
+      "weightTons": 21.0,
+      "dimensions": "410 x 345 x 495 cm",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "VENICE TO MUNDRA - Ex-Works 410 x 345 x 495 cm – 21000 KG",
+      "safeForPublicDisplay": true
+    },
+    {
+      "id": "MV-11",
+      "slug": "venice-to-mundra-boom-crane",
+      "route": "Venice to Mundra",
+      "origin": {
+        "port": "Port of Venice",
+        "city": "Venice",
+        "country": "Italy",
+        "countryCode": "IT",
+        "coordinates": { "lat": 45.4408, "lng": 12.3155 }
+      },
+      "destination": {
+        "port": "Port of Mundra",
+        "city": "Mundra (Gujarat)",
+        "country": "India",
+        "countryCode": "IN",
+        "coordinates": { "lat": 22.8396, "lng": 69.7042 }
+      },
+      "transportType": "Boom Crane Breakbulk",
+      "weightKg": 37600,
+      "weightTons": 37.6,
+      "dimensions": "2700 x 400 x 455 cm (27 meters)",
+      "details": "Ex-Works terms including road permit loaded as BBK on cntr. vessel",
+      "sourceFile": "freyer-forensics-v2/raw/html/project.html",
+      "sourceTier": "D",
+      "exactWording": "VENICE TO MUNDRA - Boom Crane – 2700 x 400 x 455 cm - WT 37600 KG Ex-Works terms including road permit loaded as BBK on cntr. vessel",
+      "safeForPublicDisplay": true
+    }
+  ],
+  "publishedTrafficLanes": [
+    {
+      "id": "LANE-01",
+      "name": "India ↔ Arabian Gulf & Red Sea",
+      "corridor": "Western Seaboard India to UAE, Saudi Arabia, and Oman",
+      "originRegion": "South Asia (India: Nhava Sheva, Mundra, Chennai)",
+      "destinationRegion": "Middle East (UAE: Jebel Ali; Saudi Arabia: Dammam, Al Jubail, Jeddah; Oman: Sohar)",
+      "keyPorts": ["Nhava Sheva", "Mundra", "Chennai", "Jebel Ali", "Dammam", "Al Jubail", "Jeddah", "Sohar"],
+      "associatedMovements": ["MV-03", "MV-04", "MV-06", "MV-07", "MV-08", "MV-09"],
+      "sourceTier": "B/D",
+      "description": "High-volume maritime artery supporting regular breakbulk, FCL project cargo, and door-to-door delivery across GCC industrial hubs."
+    },
+    {
+      "id": "LANE-02",
+      "name": "East Asia ↔ India & Persian Gulf",
+      "corridor": "China, Japan, South Korea to Indian Seaports & Jebel Ali",
+      "originRegion": "East Asia (China: Shanghai, Qingdao; Japan: Kobe; South Korea: Masan)",
+      "destinationRegion": "South Asia & Middle East (India: Chennai; UAE: Jebel Ali; Oman: Sohar; Saudi Arabia: Dammam)",
+      "keyPorts": ["Shanghai", "Qingdao", "Kobe", "Masan", "Chennai", "Jebel Ali", "Sohar"],
+      "associatedMovements": ["MV-01", "MV-02", "MV-03", "MV-09"],
+      "sourceTier": "B/D",
+      "description": "Major manufacturing trade lane transporting automotive, heavy engineering, and RoRo cargo into Chennai gateway and Middle East hubs."
+    },
+    {
+      "id": "LANE-03",
+      "name": "Western & Southern Europe ↔ India & Middle East",
+      "corridor": "Italy and Germany through Mediterranean and Suez to Western India and Red Sea",
+      "originRegion": "Europe (Italy: Genoa, Venice; Germany: Hamburg)",
+      "destinationRegion": "South Asia & Middle East (India: Mundra; UAE: Jebel Ali; Saudi Arabia: Jeddah; Oman: Sohar)",
+      "keyPorts": ["Genoa", "Venice", "Hamburg", "Mundra", "Jeddah", "Jebel Ali", "Sohar"],
+      "associatedMovements": ["MV-06", "MV-07", "MV-08", "MV-10", "MV-11"],
+      "sourceTier": "B/D",
+      "description": "Capital equipment and heavy crane transport corridor connecting European specialized manufacturing sites with Indian infrastructure projects."
+    },
+    {
+      "id": "LANE-04",
+      "name": "Western India ↔ East Africa",
+      "corridor": "Nhava Sheva to Mogadishu across the Western Indian Ocean",
+      "originRegion": "South Asia (India: Nhava Sheva / Mumbai)",
+      "destinationRegion": "East Africa (Somalia: Mogadishu)",
+      "keyPorts": ["Nhava Sheva", "Mogadishu"],
+      "associatedMovements": ["MV-05"],
+      "sourceTier": "D",
+      "description": "Direct flat rack containerized project logistics connecting India's primary container port with the Horn of Africa."
+    }
+  ],
+  "networkPartners": [
+    {
+      "id": "NET-WPA",
+      "name": "Worldwide Partners Alliance (WPA)",
+      "category": "Global Logistics Alliance",
+      "sourceTier": "C",
+      "credentials": [
+        "Global Winner – 2022/23: Most Valuable Member South Asia (11th Annual Conference, Bangkok, Thailand)",
+        "Global Winner – 2023/24: Excellent Sales (12th Annual Conference, Phuket, Thailand)"
+      ],
+      "logoUrl": "/images/Our Network Partners/wpa.jpg"
+    },
+    {
+      "id": "NET-SCN",
+      "name": "Security Cargo Network (SCN)",
+      "category": "Global Alliance of Independent Freight Forwarders",
+      "sourceTier": "C",
+      "membershipDetails": {
+        "memberSince": "February 2019",
+        "memberNumber": 420,
+        "status": "Member in Good Standing 2024",
+        "headquarters": "Colorado, USA"
+      },
+      "logoUrl": "/images/Our Network Partners/SCN.png"
+    },
+    {
+      "id": "NET-WCA",
+      "name": "World Cargo Alliance (WCA)",
+      "category": "Global Freight Forwarder Network",
+      "sourceTier": "B",
+      "description": "World's largest network of independent freight forwarders providing verified reciprocal agent coverage.",
+      "logoUrl": "/images/Our Network Partners/wca.png"
+    },
+    {
+      "id": "NET-FDX",
+      "name": "Freight Dynamic Exchange (FDX)",
+      "category": "Forwarders Directory & Trade Network",
+      "sourceTier": "B",
+      "logoUrl": "/images/Our Network Partners/FDX.jpg"
+    }
+  ],
+  "institutionalAccreditations": [
+    {
+      "id": "ACC-AEO",
+      "name": "CBIC Indian Customs Authorized Economic Operator (AEO-LO)",
+      "licenseNumber": "INAAQCA4076M0F243",
+      "validity": "2024-08-20 to 2029-08-19",
+      "sourceTier": "A",
+      "significance": "Tier-2 Authorized Customs Broker and Logistics Operator under WCO SAFE Framework of Standards."
+    },
+    {
+      "id": "ACC-FIATA",
+      "name": "International Federation of Freight Forwarders Associations (FIATA)",
+      "sourceTier": "B",
+      "significance": "Global federation representing international freight forwarding standards."
+    },
+    {
+      "id": "ACC-IATA",
+      "name": "International Air Transport Association (IATA)",
+      "sourceTier": "B",
+      "significance": "Accredited air cargo agent standard."
+    },
+    {
+      "id": "ACC-AMTOI",
+      "name": "Association of Multimodal Transport Operators of India (AMTOI)",
+      "sourceTier": "B",
+      "significance": "Apex body of multimodal transport operators in India."
+    }
+  ],
+  "globalReachEvidence": [
+    {
+      "id": "RCH-01",
+      "statement": "Connecting India to the world.",
+      "sourceFile": "index.html",
+      "context": "Headline statement across all 6 core service verticals.",
+      "sourceTier": "B"
+    },
+    {
+      "id": "RCH-02",
+      "statement": "From sourcing and manufacturing to selling around the world.",
+      "sourceFile": "about.html",
+      "context": "Customer supply chain scope definition.",
+      "sourceTier": "B"
+    },
+    {
+      "id": "RCH-03",
+      "statement": "Proven our ability to react quickly, protect your cargo completely and deliver them anywhere in the world.",
+      "sourceFile": "about.html",
+      "context": "Corporate reliability assurance.",
+      "sourceTier": "B"
+    },
+    {
+      "id": "RCH-04",
+      "statement": "Dependable weekly sailing into and out of all major global locations.",
+      "sourceFile": "services/ocean-services.html",
+      "context": "Scheduled ocean carrier agreement scope.",
+      "sourceTier": "B"
+    },
+    {
+      "id": "RCH-05",
+      "statement": "Global air transportation services... shipping to a remote destination, or moving a project or emergency shipment.",
+      "sourceFile": "services/air-services.html",
+      "context": "Aviation freight and charter capabilities.",
+      "sourceTier": "B"
+    }
+  ]
+}
