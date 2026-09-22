@@ -62,26 +62,32 @@ export function MinimalLocations() {
           {/* SVG Map Container */}
           <div className="relative z-10 w-full flex-1 flex items-center justify-center py-4">
             <svg
-              viewBox="0 0 650 720"
-              className="w-full max-w-[480px] h-auto select-none"
+              viewBox="0 0 1000 1208"
+              className="w-full max-w-[560px] h-auto select-none filter drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)]"
               aria-label="Authoritative Freyer India Branch Network Map"
             >
               <defs>
-                <filter id="nodeGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="3" result="glow" />
-                  <feComposite in="SourceGraphic" in2="glow" operator="over" />
+                <linearGradient id="minLocIndiaLandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#22252B" />
+                  <stop offset="50%" stopColor="#1A1C22" />
+                  <stop offset="100%" stopColor="#14161B" />
+                </linearGradient>
+
+                <filter id="minLocCoastlineGlow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="2.5" floodColor="#FFFFFF" floodOpacity="0.12" />
                 </filter>
               </defs>
 
               {/* Authoritative Mainland Geometry */}
               <path
                 d={MAINLAND_PATH}
-                fill="#22252B"
-                stroke="rgba(255, 255, 255, 0.28)"
+                fill="url(#minLocIndiaLandGradient)"
+                stroke="rgba(255, 255, 255, 0.30)"
                 strokeWidth="1.2"
                 strokeLinejoin="round"
                 strokeLinecap="round"
-                className="transition-colors duration-300"
+                strokeOpacity="0.9"
+                filter="url(#minLocCoastlineGlow)"
               />
 
               {/* Authoritative Island Territories (Andaman, Nicobar, Lakshadweep) */}
@@ -89,69 +95,99 @@ export function MinimalLocations() {
                 <path
                   key={`island-${i}`}
                   d={pathStr}
-                  fill="#22252B"
-                  stroke="rgba(255, 255, 255, 0.22)"
-                  strokeWidth="1.2"
+                  fill="url(#minLocIndiaLandGradient)"
+                  stroke="rgba(255, 255, 255, 0.25)"
+                  strokeWidth="1.0"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeOpacity="0.75"
                 />
               ))}
 
-              {/* Station Markers */}
-              {STATIONS_DATA.map((station) => {
-                const isSelected = station.id === selectedId;
+              {/* Station Markers with Clean Offset Labels */}
+              {STATIONS_DATA.map((st) => {
+                const isSelected = st.id === selectedId;
+                const isLeftAligned =
+                  st.city === "Mumbai" ||
+                  st.city === "Ahmedabad" ||
+                  st.city === "Bengaluru" ||
+                  st.city === "Coimbatore";
+
+                const labelX = isLeftAligned ? st.cx - 16 : st.cx + 16;
+                const labelY =
+                  st.id === "chennai_egmore"
+                    ? st.cy - 6
+                    : st.id === "chennai_airport"
+                    ? st.cy + 16
+                    : st.cy + 4;
+
                 return (
                   <g
-                    key={station.id}
-                    onClick={() => setSelectedId(station.id)}
+                    key={st.id}
+                    onClick={() => setSelectedId(st.id)}
                     className="cursor-pointer group"
                   >
-                    {/* Pulsing ring on selected station */}
+                    {/* Active Radar Pulse */}
                     {isSelected && (
-                      <circle
-                        cx={station.cx}
-                        cy={station.cy}
-                        r="14"
-                        fill="none"
-                        stroke="#e1390f"
-                        strokeWidth="1.5"
-                        opacity="0.75"
-                        className="animate-ping"
-                        style={{ animationDuration: "2.2s" }}
-                      />
+                      <>
+                        <circle
+                          cx={st.cx}
+                          cy={st.cy}
+                          r={st.isHQ ? 24 : 20}
+                          fill="none"
+                          stroke="#e1390f"
+                          strokeWidth="1.5"
+                          strokeDasharray="4 3"
+                          className="animate-spin"
+                          style={{
+                            animationDuration: "10s",
+                            transformOrigin: `${st.cx}px ${st.cy}px`,
+                          }}
+                        />
+                        <circle
+                          cx={st.cx}
+                          cy={st.cy}
+                          r={st.isHQ ? 14 : 12}
+                          fill="none"
+                          stroke="#e1390f"
+                          strokeWidth="1"
+                          className="opacity-50"
+                        />
+                      </>
                     )}
 
-                    {/* Outer halo on hover */}
+                    {/* Outer Marker Core */}
                     <circle
-                      cx={station.cx}
-                      cy={station.cy}
-                      r={isSelected ? 9 : 6}
-                      fill={isSelected ? "rgba(225, 57, 15, 0.3)" : "rgba(255, 255, 255, 0.08)"}
+                      cx={st.cx}
+                      cy={st.cy}
+                      r={isSelected ? 9 : st.isHQ ? 8 : 6.5}
+                      fill={isSelected ? "#e1390f" : st.isHQ ? "#f59e0b" : "#ffffff"}
+                      stroke="#121316"
+                      strokeWidth={2}
                       className="transition-all duration-200 group-hover:scale-125"
                     />
 
-                    {/* Central station core */}
+                    {/* Inner Center Dot */}
                     <circle
-                      cx={station.cx}
-                      cy={station.cy}
-                      r={isSelected ? 5 : 3.5}
-                      fill={isSelected ? "#e1390f" : "#ffffff"}
-                      stroke="#030712"
-                      strokeWidth="1.5"
-                      className="transition-colors duration-200"
-                      filter={isSelected ? "url(#nodeGlow)" : undefined}
+                      cx={st.cx}
+                      cy={st.cy}
+                      r={isSelected ? 3.5 : 2}
+                      fill={isSelected ? "#ffffff" : "#121316"}
                     />
 
                     {/* Clean Station City Label */}
                     <text
-                      x={station.cx + (station.cx > 380 ? -10 : 12)}
-                      y={station.cy + (station.cy > 600 ? -8 : 4)}
-                      textAnchor={station.cx > 380 ? "end" : "start"}
-                      className={`font-mono text-[10px] sm:text-[11px] select-none transition-colors duration-200 ${
-                        isSelected
-                          ? "fill-[#e1390f] font-bold"
-                          : "fill-white/60 group-hover:fill-white font-medium"
-                      }`}
+                      x={labelX}
+                      y={labelY}
+                      textAnchor={isLeftAligned ? "end" : "start"}
+                      fontSize={isSelected ? "14" : "12"}
+                      fontWeight={isSelected ? "bold" : "600"}
+                      fontFamily="ui-monospace, monospace"
+                      fill={isSelected ? "#ffffff" : "rgba(255, 255, 255, 0.75)"}
+                      dominantBaseline="middle"
+                      className="transition-colors duration-200 select-none group-hover:fill-white"
                     >
-                      {station.short}
+                      {st.short}
                     </text>
                   </g>
                 );
