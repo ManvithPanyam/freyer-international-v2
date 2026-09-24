@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
+import { Button } from "@/components/ui/Button";
 import {
   ArrowRight,
   Ship,
@@ -385,7 +386,8 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
               </div>
 
               {/* Jump to Project Card in Explorer below */}
-              <button
+              <Button
+                type="button"
                 onClick={() => {
                   const target = document.getElementById(`project-record-${currentItem.id}`);
                   if (target) {
@@ -394,11 +396,13 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
                     onSelectProject(currentItem.id);
                   }
                 }}
-                className="w-full py-3.5 px-5 rounded-xl bg-white/5 hover:bg-[#e1390f] border border-white/10 hover:border-[#e1390f] text-xs font-mono font-bold tracking-widest uppercase text-white transition-all flex items-center justify-center gap-2 group shadow-lg"
+                variant="secondary"
+                size="lg"
+                className="w-full"
+                icon={<ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
               >
-                <span>Inspect Full Technical Dossier for #{currentItem.id}</span>
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+                Inspect Full Technical Dossier for #{currentItem.id}
+              </Button>
             </div>
           </motion.div>
         </AnimatePresence>

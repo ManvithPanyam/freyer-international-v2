@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
+import { Button } from "@/components/ui/Button";
+import { IconButton } from "@/components/ui/IconButton";
 import {
   ArrowUpRight,
   Menu,
@@ -56,7 +58,7 @@ export function FTRNav() {
             : "bg-[#121316]/95 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl",
         ].join(" ")}
       >
-        <div className="max-w-[1560px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-8">
+        <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between gap-8">
 
           {/* ── Wordmark & Brand Lockup ── */}
           <Link
@@ -76,12 +78,12 @@ export function FTRNav() {
               />
             </div>
             <span
-              className="text-[10px] sm:text-[11px] font-mono tracking-[0.16em] uppercase text-white/30 select-none"
+              className="text-2xs sm:text-xs font-mono tracking-[0.16em] uppercase text-white/30 select-none"
               aria-hidden
             >
               |
             </span>
-            <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-mono tracking-[0.12em] sm:tracking-[0.16em] uppercase text-white/70 font-semibold leading-tight">
+            <span className="text-2xs sm:text-xs font-mono tracking-[0.12em] sm:tracking-[0.16em] uppercase text-white/70 font-semibold leading-tight">
               Logistics Beyond Boundaries
             </span>
           </Link>
@@ -377,13 +379,14 @@ export function FTRNav() {
 
             <div className="h-4 w-px bg-white/15 hidden lg:block" />
 
-            <Link
+            <Button
               href="/contact"
-              className="inline-flex items-center gap-1.5 bg-[#e1390f] hover:bg-[#c42f0b] text-white text-xs font-semibold px-4 py-2.5 rounded transition-colors duration-150 font-mono tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              variant="primary"
+              size="sm"
+              icon
             >
               Request Rate
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
+            </Button>
           </div>
 
           {/* ── Mobile Hamburger ── */}
@@ -437,14 +440,11 @@ export function FTRNav() {
                   Logistics Beyond Boundaries
                 </span>
               </Link>
-              <button
-                type="button"
+              <IconButton
+                icon={<X className="w-5 h-5" />}
+                aria-label="Close navigation menu"
                 onClick={() => setDrawerOpen(false)}
-                className="p-2 text-white/70 hover:text-white transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="w-6 h-6" />
-              </button>
+              />
             </div>
 
             {/* Complete Mobile Directory */}
@@ -552,21 +552,25 @@ export function FTRNav() {
 
             {/* Drawer Bottom Actions */}
             <div className="px-6 pb-8 pt-4 border-t border-white/10 space-y-3 sticky bottom-0 bg-[#070A0F]">
-              <a
+              <Button
                 href="tel:+914443191919"
-                className="flex items-center justify-center gap-2 w-full border border-white/20 text-white font-mono text-xs font-semibold py-3.5 rounded-lg hover:bg-white/5 transition-colors"
+                variant="secondary"
+                size="md"
+                className="w-full"
+                icon={<Phone className="w-3.5 h-3.5 text-[#e1390f]" />}
               >
-                <Phone className="w-3.5 h-3.5 text-[#e1390f]" />
                 +91 44 43191919
-              </a>
-              <Link
+              </Button>
+              <Button
                 href="/contact"
+                variant="primary"
+                size="md"
+                className="w-full"
                 onClick={() => setDrawerOpen(false)}
-                className="flex items-center justify-center gap-2 w-full bg-[#e1390f] hover:bg-[#c42f0b] text-white font-mono text-xs font-semibold py-3.5 rounded-lg transition-colors"
+                icon
               >
                 Request Freight Rate
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </Link>
+              </Button>
             </div>
           </motion.div>
         )}

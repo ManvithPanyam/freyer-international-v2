@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "motion/react";
 import { ArrowUpRight, Scale, Box, MapPin, Ship, CheckCircle2, ChevronRight, FileText } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 interface ProjectRecord {
   id: string;
@@ -116,7 +117,7 @@ export function FTRCargoMonument() {
         {/* ── SECTION HEADER: ARCHITECTURAL RIGOR ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-white/10">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
+            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
@@ -127,7 +128,7 @@ export function FTRCargoMonument() {
               className="text-white font-black tracking-[-0.02em] leading-[0.92] uppercase"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
-                fontSize: "clamp(2.6rem, 5.5vw, 5rem)",
+                fontSize: "var(--token-text-4xl)",
               }}
             >
               THE WEIGHT OF <br />
@@ -143,30 +144,24 @@ export function FTRCargoMonument() {
 
           {/* Record Selector Tabs */}
           <div className="flex items-center gap-2 p-1.5 rounded-xl bg-white/[0.04] border border-white/10 self-start lg:self-end">
-            <button
+            <Button
+              type="button"
               onClick={() => setActiveTab("record-9")}
-              className={[
-                "px-5 py-3 rounded-lg text-xs font-mono uppercase tracking-wider transition-all duration-150 flex items-center gap-2",
-                activeTab === "record-9"
-                  ? "bg-[#e1390f] text-white font-semibold shadow-lg shadow-[#e1390f]/25"
-                  : "text-white/60 hover:text-white hover:bg-white/5",
-              ].join(" ")}
+              variant={activeTab === "record-9" ? "primary" : "secondary"}
+              size="sm"
+              icon={<Scale className="w-3.5 h-3.5" />}
             >
-              <Scale className="w-3.5 h-3.5" />
-              <span>Record #9 · 482 MT</span>
-            </button>
-            <button
+              Record #9 · 482 MT
+            </Button>
+            <Button
+              type="button"
               onClick={() => setActiveTab("record-11")}
-              className={[
-                "px-5 py-3 rounded-lg text-xs font-mono uppercase tracking-wider transition-all duration-150 flex items-center gap-2",
-                activeTab === "record-11"
-                  ? "bg-[#e1390f] text-white font-semibold shadow-lg shadow-[#e1390f]/25"
-                  : "text-white/60 hover:text-white hover:bg-white/5",
-              ].join(" ")}
+              variant={activeTab === "record-11" ? "primary" : "secondary"}
+              size="sm"
+              icon={<Box className="w-3.5 h-3.5" />}
             >
-              <Box className="w-3.5 h-3.5" />
-              <span>Record #11 · 37.6 MT</span>
-            </button>
+              Record #11 · 37.6 MT
+            </Button>
           </div>
         </div>
 
@@ -195,8 +190,11 @@ export function FTRCargoMonument() {
                 {/* Massive Number */}
                 <div className="py-8 flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6">
                   <span
-                    className="text-7xl sm:text-9xl font-black uppercase text-white drop-shadow-2xl leading-none"
-                    style={{ fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif" }}
+                    className="font-black uppercase text-white drop-shadow-2xl leading-none"
+                    style={{
+                      fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                      fontSize: "var(--token-text-display-giant)",
+                    }}
                   >
                     {record.weight}
                   </span>
@@ -297,17 +295,19 @@ export function FTRCargoMonument() {
                   <div className="text-xs font-bold text-white font-mono">
                     Explore Full Project Cargo Archive
                   </div>
-                  <div className="text-[11px] font-mono text-white/40">
+                  <div className="text-2xs font-mono text-white/40">
                     Industrial turbines, heavy cranes, energy transformers
                   </div>
                 </div>
-                <Link
+                <Button
                   href="/projects"
-                  className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-mono uppercase tracking-wider transition-colors"
+                  variant="secondary"
+                  size="sm"
+                  className="shrink-0"
+                  icon
                 >
                   View All
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#e1390f]" />
-                </Link>
+                </Button>
               </div>
             </div>
           </motion.div>

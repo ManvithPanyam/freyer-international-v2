@@ -3,6 +3,8 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { X, ShieldCheck, Building2, MapPin, Award, ExternalLink, FileText } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { IconButton } from "@/components/ui/IconButton";
 import { LeadershipPerson } from "@/data/leadership";
 import { THEME_TOKENS } from "@/components/ui/design-system";
 
@@ -53,14 +55,11 @@ export function LeadershipDrawer({ person, onClose }: LeadershipDrawerProps) {
             </span>
           </div>
 
-          <button
-            type="button"
+          <IconButton
+            icon={<X className="w-5 h-5" />}
+            aria-label="Close executive dossier"
             onClick={onClose}
-            className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.10] border border-white/10 text-white/70 hover:text-white transition-colors"
-            aria-label="Close dossier"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          />
         </div>
 
         {/* Drawer Body */}
@@ -156,18 +155,19 @@ export function LeadershipDrawer({ person, onClose }: LeadershipDrawerProps) {
           {/* Links & Affiliations */}
           {person.linkedinUrl && (
             <div className="pt-2">
-              <a
+              <Button
                 href={person.linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-lg bg-white/[0.05] hover:bg-white/[0.10] border border-white/15 text-xs font-mono uppercase tracking-[0.2em] text-white transition-colors"
+                external
+                variant="secondary"
+                size="md"
+                className="w-full"
+                icon={<ExternalLink className="w-3.5 h-3.5 text-white/40" />}
               >
-                <svg className="w-4 h-4 fill-current text-[#0077b5]" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 fill-current text-[#0077b5] mr-1.5 shrink-0" viewBox="0 0 24 24">
                   <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                 </svg>
                 <span>View Corporate Network Profile</span>
-                <ExternalLink className="w-3.5 h-3.5 text-white/40" />
-              </a>
+              </Button>
             </div>
           )}
         </div>

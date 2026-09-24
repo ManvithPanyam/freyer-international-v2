@@ -4,6 +4,8 @@ import React, { useRef, useState, useTransition } from "react";
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { ArrowRight, Phone, Mail, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { TextLink } from "@/components/ui/TextLink";
 
 /**
  * FTR Dispatch — Direct commercial engagement section.
@@ -63,11 +65,11 @@ export function FTRDispatch() {
     >
       <div
         ref={sectionRef}
-        className="max-w-[1560px] mx-auto px-6 lg:px-12 py-20 sm:py-28"
+        className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 py-24 sm:py-32"
       >
         {/* Section headline */}
         <div className="mb-14">
-          <div className="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-[0.24em] text-slate-300 font-medium mb-4">
+          <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-slate-300 font-medium mb-4">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
@@ -82,7 +84,7 @@ export function FTRDispatch() {
               className="text-white font-black tracking-[-0.02em] leading-[0.92] uppercase"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
-                fontSize: "clamp(2.6rem, 5.5vw, 5rem)",
+                fontSize: "var(--token-text-4xl)",
               }}
             >
               ENGAGE DIRECTLY
@@ -128,7 +130,7 @@ export function FTRDispatch() {
                   <div>
                     <label
                       htmlFor="ftr-name"
-                      className="block text-[10px] font-mono uppercase tracking-wider text-white/35 mb-2"
+                      className="block text-2xs font-mono uppercase tracking-wider text-white/35 mb-2"
                     >
                       Your Name
                     </label>
@@ -141,7 +143,7 @@ export function FTRDispatch() {
                       required
                       autoComplete="name"
                       placeholder="Full name"
-                      className="w-full bg-[#09111e] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 font-mono focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors"
+                      className="w-full bg-[#181a1f] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 font-mono focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors"
                     />
                   </div>
 
@@ -149,7 +151,7 @@ export function FTRDispatch() {
                   <div>
                     <label
                       htmlFor="ftr-company"
-                      className="block text-[10px] font-mono uppercase tracking-wider text-white/35 mb-2"
+                      className="block text-2xs font-mono uppercase tracking-wider text-white/35 mb-2"
                     >
                       Company
                     </label>
@@ -161,7 +163,7 @@ export function FTRDispatch() {
                       onChange={handleChange}
                       autoComplete="organization"
                       placeholder="Company or trade name"
-                      className="w-full bg-[#09111e] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 font-mono focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors"
+                      className="w-full bg-[#181a1f] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 font-mono focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors"
                     />
                   </div>
                 </div>
@@ -170,7 +172,7 @@ export function FTRDispatch() {
                 <div>
                   <label
                     htmlFor="ftr-service"
-                    className="block text-[10px] font-mono uppercase tracking-wider text-white/35 mb-2"
+                    className="block text-2xs font-mono uppercase tracking-wider text-white/35 mb-2"
                   >
                     Service Required
                   </label>
@@ -180,14 +182,14 @@ export function FTRDispatch() {
                     value={formData.serviceType}
                     onChange={handleChange}
                     required
-                    className="w-full bg-[#09111e] border border-white/10 rounded-lg px-4 py-3 text-sm text-white font-mono focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors appearance-none cursor-pointer"
+                    className="w-full bg-[#181a1f] border border-white/10 rounded-lg px-4 py-3 text-sm text-white font-mono focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors appearance-none cursor-pointer"
                     style={{ colorScheme: "dark" }}
                   >
                     <option value="" disabled className="text-white/30">
                       Select service type
                     </option>
                     {SERVICE_OPTIONS.map((opt) => (
-                      <option key={opt} value={opt} className="bg-[#09111e]">
+                      <option key={opt} value={opt} className="bg-[#181a1f]">
                         {opt}
                       </option>
                     ))}
@@ -198,7 +200,7 @@ export function FTRDispatch() {
                 <div>
                   <label
                     htmlFor="ftr-message"
-                    className="block text-[10px] font-mono uppercase tracking-wider text-white/35 mb-2"
+                    className="block text-2xs font-mono uppercase tracking-wider text-white/35 mb-2"
                   >
                     Shipment Details
                   </label>
@@ -210,30 +212,30 @@ export function FTRDispatch() {
                     rows={5}
                     required
                     placeholder="Origin, destination, commodity, approximate weight/volume, required timeline..."
-                    className="w-full bg-[#09111e] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 font-mono focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors resize-none"
+                    className="w-full bg-[#181a1f] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 font-mono focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-colors resize-none"
                   />
                 </div>
 
                 {/* Submit */}
-                <button
+                <Button
                   type="submit"
+                  variant="primary"
+                  size="lg"
                   disabled={formState === "submitting"}
-                  className="inline-flex items-center gap-2.5 bg-[#e1390f] hover:bg-[#c42f0b] disabled:opacity-60 text-white font-mono text-sm font-semibold px-6 py-3.5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                >
-                  {formState === "submitting" ? (
-                    <>
+                  icon={
+                    formState === "submitting" ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      Sending Enquiry…
-                    </>
-                  ) : (
-                    <>
-                      Send Freight Enquiry
+                    ) : (
                       <Send className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
+                    )
+                  }
+                >
+                  {formState === "submitting"
+                    ? "Sending Enquiry…"
+                    : "Send Freight Enquiry"}
+                </Button>
 
-                <p className="text-[10px] font-mono text-white/20 leading-relaxed">
+                <p className="text-2xs font-mono text-white/20 leading-relaxed">
                   Direct submission to Freyer operations desk. Responses within 1 business day.
                 </p>
               </form>
@@ -248,9 +250,9 @@ export function FTRDispatch() {
             className="space-y-8"
           >
             {/* HQ Address Block */}
-            <div className="bg-[#09111e] border border-white/10 rounded-xl p-6 space-y-5">
+            <div className="bg-[#181a1f] border border-white/10 rounded-xl p-6 space-y-5">
               <div>
-                <div className="text-[10px] font-mono uppercase tracking-wider text-[#e1390f] mb-2">
+                <div className="text-2xs font-mono uppercase tracking-wider text-[#e1390f] mb-2">
                   Corporate Registered Headquarters
                 </div>
                 <div className="text-base font-bold text-white">
@@ -277,7 +279,7 @@ export function FTRDispatch() {
               >
                 <Phone className="w-4 h-4 text-[#e1390f] shrink-0" />
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-white/25 mb-0.5">
+                  <div className="text-2xs font-mono uppercase tracking-wider text-white/25 mb-0.5">
                     Direct HQ Line
                   </div>
                   <span className="text-sm font-mono font-semibold text-white group-hover:underline underline-offset-2">
@@ -293,7 +295,7 @@ export function FTRDispatch() {
               >
                 <Mail className="w-4 h-4 text-white/30 shrink-0" />
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-white/25 mb-0.5">
+                  <div className="text-2xs font-mono uppercase tracking-wider text-white/25 mb-0.5">
                     Official Email
                   </div>
                   <span className="text-sm font-mono text-white/70 group-hover:text-white transition-colors group-hover:underline underline-offset-2">
@@ -305,7 +307,7 @@ export function FTRDispatch() {
 
             {/* Credentials summary */}
             <div className="space-y-2">
-              <div className="text-[10px] font-mono uppercase tracking-wider text-white/25 mb-3">
+              <div className="text-2xs font-mono uppercase tracking-wider text-white/25 mb-3">
                 Verified Credentials
               </div>
               {[
@@ -325,13 +327,12 @@ export function FTRDispatch() {
 
             {/* Locations CTA */}
             <div className="border-t border-white/10 pt-6">
-              <Link
+              <TextLink
                 href="/locations"
-                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-white/30 hover:text-white transition-colors"
+                icon={<ArrowRight className="w-3.5 h-3.5" />}
               >
                 Find your nearest station
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </TextLink>
             </div>
           </motion.div>
         </div>

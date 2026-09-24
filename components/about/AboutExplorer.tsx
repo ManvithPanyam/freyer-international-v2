@@ -19,6 +19,7 @@ import {
   SectionHeader,
   FreyerCard,
   FreyerButton,
+  IconButton,
   THEME_TOKENS,
 } from "@/components/ui/design-system";
 
@@ -444,14 +445,12 @@ export function AboutExplorer() {
                 </h3>
                 <p className="text-xs text-white/40">Verified trophies and industry citations</p>
               </div>
-              <button
-                type="button"
-                onClick={() => setShowAllAwardsModal(false)}
-                className="p-2 rounded bg-white/10 hover:bg-white/20 text-white transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+                <IconButton
+                  icon={<X className="w-5 h-5" />}
+                  aria-label="Close accolades archive modal"
+                  onClick={() => setShowAllAwardsModal(false)}
+                />
+              </div>
             <div className="p-6 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {ALL_AWARDS.map((a) => (
                 <div key={a.id} className="p-4 rounded border border-white/10 bg-black/40 flex items-center gap-4">

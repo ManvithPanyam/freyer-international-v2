@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, Anchor, Globe, MapPin, Briefcase, HeartHandshake, Mail } from "lucide-react";
 import { THEME_TOKENS } from "@/components/ui/design-system";
+import { Button } from "@/components/ui/Button";
 
 export function AboutBridge() {
   const pathways = [
@@ -113,13 +114,15 @@ export function AboutBridge() {
             </p>
           </div>
 
-          <Link
+          <Button
             href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#e1390f] hover:bg-[#ff4614] text-white text-xs font-mono uppercase tracking-[0.2em] font-bold shadow-lg transition-colors"
+            variant="primary"
+            size="lg"
+            className="shrink-0"
+            icon={<Mail className="w-4 h-4" />}
           >
-            <Mail className="w-4 h-4" />
-            <span>Connect With Us</span>
-          </Link>
+            Connect With Us
+          </Button>
         </div>
       </div>
     </section>

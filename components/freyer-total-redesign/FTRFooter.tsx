@@ -58,7 +58,7 @@ export function FTRFooter() {
     <footer className="bg-[#121316] border-t border-white/10 text-[#F8F7F4]">
 
       {/* ── Main Footer Body ── */}
-      <div className="max-w-[1560px] mx-auto px-6 lg:px-12 py-16 sm:py-20">
+      <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 py-16 sm:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-16">
 
           {/* Brand + HQ contact */}
@@ -78,7 +78,7 @@ export function FTRFooter() {
               <div className="text-xs font-mono font-semibold text-white/80 mb-1">
                 Freyer International Logistics Pvt Ltd
               </div>
-              <div className="text-[10px] font-mono text-white/30 leading-relaxed">
+              <div className="text-2xs font-mono text-white/30 leading-relaxed">
                 CIN: U74999KA2018PTC109274 <br />
                 CBIC AEO-LO · INAAQCA4076M0F243
               </div>
@@ -87,7 +87,7 @@ export function FTRFooter() {
             {/* HQ Address */}
             <div className="flex items-start gap-2.5">
               <MapPin className="w-3.5 h-3.5 text-[#e1390f] shrink-0 mt-0.5" />
-              <address className="not-italic text-[11px] font-mono text-white/40 leading-relaxed">
+              <address className="not-italic text-xs font-mono text-white/40 leading-relaxed">
                 TAGA Tower, New No: 45 Old No 20<br />
                 1st Floor, 2nd Street, Sait Colony<br />
                 Egmore, Chennai – 600 008, India
@@ -98,14 +98,14 @@ export function FTRFooter() {
             <div className="space-y-2">
               <a
                 href="tel:+914443191919"
-                className="flex items-center gap-2 text-[11px] font-mono text-white/50 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-xs font-mono text-white/50 hover:text-white transition-colors"
               >
                 <Phone className="w-3 h-3 text-[#e1390f]" />
                 +91 44 43191919
               </a>
               <a
                 href="mailto:info@freyerinternational.com"
-                className="flex items-center gap-2 text-[11px] font-mono text-white/40 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-xs font-mono text-white/40 hover:text-white transition-colors"
               >
                 <Mail className="w-3 h-3 text-white/25" />
                 info@freyerinternational.com
@@ -158,7 +158,7 @@ export function FTRFooter() {
           {/* Nav Columns */}
           {NAV_COLUMNS.map((col) => (
             <div key={col.heading}>
-              <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/25 mb-5">
+              <div className="text-2xs font-mono uppercase tracking-[0.2em] text-white/25 mb-5">
                 {col.heading}
               </div>
               <ul className="space-y-2.5">
@@ -166,7 +166,7 @@ export function FTRFooter() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[12px] font-mono text-white/50 hover:text-white transition-colors"
+                      className="text-xs font-mono text-white/50 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -179,12 +179,12 @@ export function FTRFooter() {
 
         {/* Station Network Grid */}
         <div className="mt-16 pt-10 border-t border-white/8">
-          <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/20 mb-4">
+          <div className="text-2xs font-mono uppercase tracking-[0.2em] text-white/20 mb-4">
             10 Branch Stations
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
             {STATIONS_BRIEF.map((station) => (
-              <div key={station} className="text-[10px] font-mono text-white/30 leading-relaxed">
+              <div key={station} className="text-2xs font-mono text-white/30 leading-relaxed">
                 {station}
               </div>
             ))}
@@ -194,7 +194,7 @@ export function FTRFooter() {
 
       {/* ── Colophon Bar ── */}
       <div className="border-t border-white/8">
-        <div className="max-w-[1560px] mx-auto px-6 lg:px-12 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[10px] font-mono text-white/20">
+        <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-2xs font-mono text-white/20">
           <span>
             © {year} Freyer International Logistics Pvt Ltd · All Rights Reserved
           </span>

@@ -2,7 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { ShieldCheck, ChevronRight, X, Award, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Award, FileText, ChevronRight, X, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { TextLink } from "@/components/ui/TextLink";
+import { IconButton } from "@/components/ui/IconButton";
 import { THEME_TOKENS } from "@/components/ui/design-system";
 
 const FEATURED_AWARDS = [
@@ -140,14 +143,12 @@ export function AboutCredentialsAwards() {
               Accolades awarded for freight forwarding, breakbulk operations, and customs compliance.
             </span>
           </div>
-          <button
-            type="button"
+          <TextLink
             onClick={() => setShowAllAwardsModal(true)}
-            className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#e1390f] hover:text-white transition-colors"
+            icon={<ChevronRight className="w-3.5 h-3.5 text-[#e1390f]" />}
           >
-            <span>View All {ALL_AWARDS.length} Accolades</span>
-            <ChevronRight className="w-3.5 h-3.5" />
-          </button>
+            View All {ALL_AWARDS.length} Accolades
+          </TextLink>
         </div>
 
         {/* Featured 3 Trophies */}
@@ -178,13 +179,11 @@ export function AboutCredentialsAwards() {
                     Verified archive trophies &middot; Freyer International Logistics
                   </p>
                 </div>
-                <button
-                  type="button"
+                <IconButton
+                  icon={<X className="w-5 h-5" />}
+                  aria-label="Close accolades archive"
                   onClick={() => setShowAllAwardsModal(false)}
-                  className="p-2 rounded-lg bg-white/[0.05] hover:bg-white/[0.12] border border-white/10 text-white/70 hover:text-white transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+                />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 overflow-y-auto py-6 pr-2">

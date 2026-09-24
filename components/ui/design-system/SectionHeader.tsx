@@ -26,7 +26,7 @@ export function SectionHeader({
     <div className={`mb-12 sm:mb-16 ${className}`}>
       {/* Category Eyebrow */}
       {(num || tag) && (
-        <div className={`flex items-center gap-2 text-[11px] font-mono text-[#e1390f] uppercase tracking-[0.24em] font-semibold mb-3 ${align === "center" ? "justify-center" : ""}`}>
+        <div className={`flex items-center gap-2 text-xs font-mono text-[#e1390f] uppercase tracking-[0.24em] font-semibold mb-3 ${align === "center" ? "justify-center" : ""}`}>
           {num && <span>{num}</span>}
           {num && tag && <span className="text-white/20 select-none">/</span>}
           {tag && <span>{tag}</span>}
@@ -37,14 +37,17 @@ export function SectionHeader({
       <div className={`flex flex-col ${align === "center" ? "items-center text-center" : "lg:flex-row lg:items-end lg:justify-between"} gap-6 pb-6 border-b border-white/10`}>
         <div className={align === "center" ? "max-w-3xl" : "max-w-2xl"}>
           <h2
-            className="text-white font-black tracking-[-0.02em] leading-[0.94] uppercase text-3xl sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
+            className="text-white font-black tracking-[-0.02em] leading-[0.94] uppercase"
+            style={{
+              fontFamily: THEME_TOKENS.typography.fontDisplay,
+              fontSize: "var(--token-text-4xl)",
+            }}
           >
             {title}
             {highlight && (
               <>
                 {" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-white/60 font-light italic">
+                <span className="text-white/80 font-light italic">
                   {highlight}
                 </span>
               </>

@@ -4,6 +4,8 @@ import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "motion/react";
 import { Phone, Mail, MapPin, Copy, Check, Compass, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { TextLink } from "@/components/ui/TextLink";
 import {
   MAINLAND_PATH,
   ISLAND_PATHS,
@@ -106,7 +108,7 @@ export function FTRNetwork() {
         {/* ── SECTION HEADER ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 border-b border-white/10 gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
+            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
@@ -117,7 +119,7 @@ export function FTRNetwork() {
               className="text-white font-black tracking-[-0.02em] leading-[0.92] uppercase"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
-                fontSize: "clamp(2.6rem, 5.5vw, 5rem)",
+                fontSize: "var(--token-text-4xl)",
               }}
             >
               TEN STATIONS. <br />
@@ -135,11 +137,11 @@ export function FTRNetwork() {
           <div className="grid grid-cols-3 gap-6 text-xs font-mono shrink-0">
             <div className="border-l-2 border-[#e1390f] pl-4 space-y-1">
               <span className="block text-2xl sm:text-3xl font-bold text-white font-mono">10</span>
-              <span className="text-slate-400 text-[10px] uppercase tracking-wider">Stations</span>
+              <span className="text-slate-400 text-2xs uppercase tracking-wider">Stations</span>
             </div>
             <div className="border-l-2 border-white/20 pl-4 space-y-1">
               <span className="block text-2xl sm:text-3xl font-bold text-white font-mono">8</span>
-              <span className="text-slate-400 text-[10px] uppercase tracking-wider">Strategic Cities</span>
+              <span className="text-slate-400 text-2xs uppercase tracking-wider">Strategic Cities</span>
             </div>
             <div className="border-l-2 border-white/20 pl-4 space-y-1">
               <span className="block text-2xl sm:text-3xl font-bold text-[#e1390f] font-mono">100%</span>
@@ -174,13 +176,14 @@ export function FTRNetwork() {
             })}
           </div>
 
-          <Link
+          <Button
             href="/network-partners"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.10] border border-white/12 text-xs font-mono uppercase tracking-wider text-white transition-colors shrink-0"
+            variant="secondary"
+            size="sm"
+            icon
           >
-            <span>World Movement Atlas</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#e1390f]" />
-          </Link>
+            World Movement Atlas
+          </Button>
         </div>
 
         {/* ── MAP CANVAS + STATION DOSSIER GRID ── */}
@@ -335,16 +338,19 @@ export function FTRNetwork() {
                 {/* Station Title */}
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#e1390f] font-bold">
+                    <span className="text-2xs font-mono uppercase tracking-widest text-[#e1390f] font-bold">
                       {meta.type}
                     </span>
                     {selected.isHQ && (
-                      <span className="px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 text-[9px] font-mono uppercase font-bold">
+                      <span className="px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 text-2xs font-mono uppercase font-bold">
                         Corporate HQ
                       </span>
                     )}
                   </div>
-                  <h3 className="text-2xl font-bold font-mono text-white tracking-tight">
+                  <h3
+                    className="font-bold font-mono text-white tracking-tight"
+                    style={{ fontSize: "var(--token-text-xl)" }}
+                  >
                     {selected.name}
                   </h3>
                   <p className="text-xs font-mono text-white/50 mt-1">
@@ -354,14 +360,14 @@ export function FTRNetwork() {
 
                 {/* Verified Address */}
                 <div className="space-y-2 border-t border-white/10 pt-4">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                  <div className="text-2xs font-mono uppercase tracking-wider text-slate-400">
                     Physical Station Address
                   </div>
                   <div className="p-3.5 rounded-xl bg-black/40 border border-white/8 text-xs font-mono text-slate-300 leading-relaxed relative group">
                     <p>{selected.address}</p>
                     <button
                       onClick={copyAddress}
-                      className="mt-2 text-[10px] font-mono text-[#e1390f] hover:underline flex items-center gap-1"
+                      className="mt-2 text-2xs font-mono text-[#e1390f] hover:underline flex items-center gap-1"
                     >
                       {copied ? (
                         <>
@@ -378,7 +384,7 @@ export function FTRNetwork() {
 
                 {/* Direct Communications */}
                 <div className="space-y-3 border-t border-white/10 pt-4">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                  <div className="text-2xs font-mono uppercase tracking-wider text-slate-400">
                     Direct Contact Lines
                   </div>
                   <a
@@ -387,7 +393,7 @@ export function FTRNetwork() {
                   >
                     <Phone className="w-4 h-4 text-[#e1390f] shrink-0" />
                     <div>
-                      <div className="text-[9px] font-mono uppercase text-white/40">Direct Desk</div>
+                      <div className="text-2xs font-mono uppercase text-white/40">Direct Desk</div>
                       <div className="text-sm font-bold font-mono text-white group-hover:text-[#e1390f] transition-colors">
                         {selected.phone}
                       </div>
@@ -400,7 +406,7 @@ export function FTRNetwork() {
                   >
                     <Mail className="w-4 h-4 text-white/40 shrink-0" />
                     <div className="truncate">
-                      <div className="text-[9px] font-mono uppercase text-white/40">Official Email</div>
+                      <div className="text-2xs font-mono uppercase text-white/40">Official Email</div>
                       <div className="text-xs font-mono text-white/70 group-hover:text-white transition-colors truncate">
                         {selected.email}
                       </div>
@@ -427,13 +433,12 @@ export function FTRNetwork() {
 
                 {/* View All Locations Link */}
                 <div className="pt-2">
-                  <Link
+                  <TextLink
                     href="/locations"
-                    className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-white/50 hover:text-white transition-colors"
+                    icon
                   >
-                    <span>View All 10 Branch Dossiers</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#e1390f]" />
-                  </Link>
+                    View All 10 Branch Dossiers
+                  </TextLink>
                 </div>
               </motion.div>
             </AnimatePresence>

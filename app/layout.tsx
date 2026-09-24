@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Space_Grotesk, Barlow_Condensed } from "next/font/google";
+import { Poppins, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -16,18 +16,12 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-space",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0b2144",
+  themeColor: "#121316",
 };
 
 export const metadata: Metadata = {
@@ -38,9 +32,6 @@ export const metadata: Metadata = {
   description:
     "Integrated logistics, international air and ocean freight forwarding, AEO Certified customs brokerage, and heavy-lift project cargo engineering across India and global trading corridors.",
   metadataBase: new URL("https://freyer-international-v2.vercel.app"),
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: "/favicon.ico",
     apple: "/images/logo.png",
@@ -48,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Freyer International Logistics | Precision Freight Forwarding",
     description:
-      "Integrated logistics, AEO Certified customs clearance, warehousing, and project cargo engineering across 9 branches in India.",
+      "Integrated logistics, AEO Certified customs clearance, warehousing, and project cargo engineering across 10 branches in India.",
     url: "https://freyer-international-v2.vercel.app",
     siteName: "Freyer International Logistics",
     images: [
@@ -159,7 +150,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${barlowCondensed.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${barlowCondensed.variable}`}>
       <head>
         <script
           type="application/ld+json"

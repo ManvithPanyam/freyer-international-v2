@@ -37,7 +37,7 @@ export function CompanyPhilosophy() {
             style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
           >
             &ldquo;We don&rsquo;t just want to move your goods from point A to B,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e1390f] via-orange-400 to-amber-300">
+            <span className="text-[#e1390f]">
               we want to understand your business
             </span>{" "}
             and design a solution to fit your requirements.&rdquo;

@@ -17,6 +17,8 @@ import {
   Clock,
   Layers,
 } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { TextLink } from "@/components/ui/TextLink";
 
 interface ServiceItem {
   id: string;
@@ -211,7 +213,7 @@ export function FTRServices() {
         {/* ── SECTION HEADER ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-12 border-b border-white/10 gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-[11px] font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
+            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
@@ -222,7 +224,7 @@ export function FTRServices() {
               className="text-white font-black tracking-[-0.02em] leading-[0.92] uppercase"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
-                fontSize: "clamp(2.6rem, 5.5vw, 5rem)",
+                fontSize: "var(--token-text-4xl)",
               }}
             >
               SIX DISCIPLINES. <br />
@@ -304,10 +306,13 @@ export function FTRServices() {
             {/* LEFT: Core Capability Details (7 cols) */}
             <div className="lg:col-span-7 space-y-8">
               <div>
-                <div className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#e1390f] mb-2">
+                <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#e1390f] mb-2">
                   Discipline {activeService.step}
                 </div>
-                <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                <h3
+                  className="font-bold text-white tracking-tight"
+                  style={{ fontSize: "var(--token-text-2xl)" }}
+                >
                   {activeService.name}
                 </h3>
                 <p className="text-base text-slate-200 font-medium leading-relaxed mt-3">
@@ -320,7 +325,7 @@ export function FTRServices() {
 
               {/* Verified Capabilities Checklist */}
               <div className="space-y-3 border-t border-white/10 pt-6">
-                <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                <div className="text-2xs font-mono uppercase tracking-wider text-slate-400">
                   Operational Capabilities
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -340,7 +345,7 @@ export function FTRServices() {
               <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
                 {activeService.metrics.map((m) => (
                   <div key={m.label} className="space-y-1">
-                    <div className="text-[9px] font-mono uppercase tracking-wider text-slate-400">
+                    <div className="text-2xs font-mono uppercase tracking-wider text-slate-400">
                       {m.label}
                     </div>
                     <div className="text-sm font-bold font-mono text-white">
@@ -352,20 +357,20 @@ export function FTRServices() {
 
               {/* Action Cluster */}
               <div className="pt-2 flex items-center gap-4">
-                <Link
+                <Button
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#e1390f] hover:bg-[#c42f0b] text-white text-xs font-mono uppercase tracking-wider font-semibold px-6 py-3.5 rounded-lg transition-colors"
+                  variant="primary"
+                  size="lg"
+                  icon
                 >
                   Request {activeService.name.split(" ")[0]} Rate
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-                <Link
+                </Button>
+                <TextLink
                   href={activeService.href}
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-white/50 hover:text-white transition-colors"
+                  icon={<ChevronRight className="w-3.5 h-3.5 text-[#e1390f]" />}
                 >
-                  <span>Full Service Specifications</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#e1390f]" />
-                </Link>
+                  Full Service Specifications
+                </TextLink>
               </div>
             </div>
 

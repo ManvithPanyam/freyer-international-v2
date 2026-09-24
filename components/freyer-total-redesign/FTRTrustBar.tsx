@@ -86,11 +86,11 @@ export function FTRTrustBar() {
                     <span className="text-xs font-mono font-bold text-white tracking-wide">
                       {item.name}
                     </span>
-                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-[#e1390f]/20 text-[#e1390f] uppercase font-semibold">
+                    <span className="text-2xs font-mono px-1.5 py-0.2 rounded bg-[#e1390f]/20 text-[#e1390f] uppercase font-semibold">
                       {item.badge}
                     </span>
                   </div>
-                  <div className="text-[10px] font-mono text-white/40">
+                  <div className="text-2xs font-mono text-white/40">
                     {item.detail}
                   </div>
                 </div>

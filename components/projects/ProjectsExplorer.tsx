@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, X, ChevronRight, ChevronLeft, Maximize2 } from "lucide-react";
-import { THEME_TOKENS, FreyerCard, FreyerButton } from "@/components/ui/design-system";
+import { THEME_TOKENS, FreyerCard, FreyerButton, IconButton } from "@/components/ui/design-system";
 
 interface Project {
   id: number;
@@ -280,14 +280,12 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
               onClick={(e) => e.stopPropagation()}
               className="relative bg-[#181A1F] border border-white/15 rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl text-white"
             >
-              <button
-                ref={closeButtonRef}
-                onClick={closeProjectDetail}
-                className="absolute top-4 right-4 z-30 p-2.5 text-white/70 hover:text-white rounded-full bg-black/60 hover:bg-black border border-white/10 transition-colors"
+              <IconButton
+                icon={<X className="w-5 h-5" />}
                 aria-label="Close project details"
-              >
-                <X className="w-5 h-5" />
-              </button>
+                onClick={closeProjectDetail}
+                className="absolute top-4 right-4 z-30"
+              />
 
               {/* Modal Photograph */}
               <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-black/50 overflow-hidden">

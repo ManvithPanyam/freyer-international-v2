@@ -2,13 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  X,
-  Search,
-  CheckCircle2,
-  Clock,
-  ShieldCheck,
-} from "lucide-react";
+import { Search, X, Ship, Plane, Truck, CheckCircle2, Clock, MapPin, AlertCircle, FileText, ChevronRight, Compass, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { IconButton } from "@/components/ui/IconButton";
 
 export interface TrackShipmentModalProps {
   isOpen: boolean;
@@ -291,13 +287,12 @@ export function TrackShipmentModal({
                   </p>
                 </div>
               </div>
-              <button
+              <IconButton
+                variant="light"
+                icon={<X className="w-5 h-5" />}
+                aria-label="Close cargo tracking modal"
                 onClick={onClose}
-                className="min-w-[40px] min-h-[40px] p-2 text-slate-400 hover:text-slate-800 rounded-full hover:bg-slate-100 transition-colors flex items-center justify-center"
-                aria-label="Close tracking modal"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              />
             </div>
 
             {/* Input & Presets */}
@@ -319,12 +314,14 @@ export function TrackShipmentModal({
                     className="w-full bg-white border border-slate-300 rounded-xl pl-10 pr-4 py-3 text-xs sm:text-sm font-mono text-[#0b2144] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#c42f0b] focus:border-transparent uppercase shadow-2xs"
                   />
                 </div>
-                <button
+                <Button
                   type="submit"
-                  className="bg-[#c42f0b] hover:bg-[#a82506] text-white font-semibold text-xs sm:text-sm px-6 py-3 rounded-xl transition-colors shrink-0 shadow-sm font-mono"
+                  variant="primary"
+                  size="md"
+                  className="shrink-0"
                 >
                   Track Cargo
-                </button>
+                </Button>
               </form>
 
               {/* Pitch Demo Presets */}

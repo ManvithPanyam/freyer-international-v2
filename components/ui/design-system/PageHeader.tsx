@@ -43,7 +43,7 @@ export function PageHeader({
 
       <div className={`relative z-10 w-full max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
         {/* Breadcrumb Row */}
-        <nav aria-label="Breadcrumbs" className="flex items-center gap-2 text-[11px] font-mono text-white/45 mb-6">
+        <nav aria-label="Breadcrumbs" className="flex items-center gap-2 text-xs font-mono text-white/45 mb-6">
           <Link href="/" className="hover:text-white transition-colors">
             Home
           </Link>
@@ -67,7 +67,7 @@ export function PageHeader({
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
           </span>
-          <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
+          <span className="text-xs font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
             {eyebrow}
           </span>
         </div>
@@ -85,7 +85,7 @@ export function PageHeader({
             {subtitle && (
               <>
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-white/60 font-light italic">
+                <span className="text-white/80 font-light italic">
                   {subtitle}
                 </span>
               </>

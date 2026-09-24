@@ -388,10 +388,9 @@ export default function EditorialIndustrialThemePage() {
                 }}
               >
                 FREYER <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white/65">
+                <span className="text-white">
                   INTERNATIONAL
                 </span>
-                <span className="text-[#E1390F]">.</span>
               </h1>
             </div>
 
@@ -636,10 +635,9 @@ export default function EditorialIndustrialThemePage() {
                 }}
               >
                 SIX DISCIPLINES. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-white/60">
+                <span className="text-white">
                   ONE OPERATIONAL STANDARD
                 </span>
-                <span className="text-[#E1390F]">.</span>
               </h2>
               <p className={`text-base sm:text-lg font-light leading-relaxed ${t.servicesSub}`}>
                 Institutional logistics governance across scheduled liner services, customs brokerage, and project cargo.

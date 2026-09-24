@@ -1,17 +1,36 @@
 @import "tailwindcss";
 
+
 @layer base {
   :root {
-    --primary-navy: #0b2144;
-    --primary-navy-dark: #07152b;
-    --primary-red: #e1390f;
-    --primary-red-hover: #c42f0b;
-    --accent-blue: #3282e6;
-    --canvas-light: #f8f9fa;
-    --canvas-white: #ffffff;
-    --text-primary: #0b2144;
-    --text-muted: #5a6a85;
-    --border-subtle: #e2e8f0;
+    --color-bg-base: #121316;
+    --color-bg-elevated: #181a1f;
+    --color-bg-overlay: rgba(18, 19, 22, 0.90);
+    --color-text-primary: #F8F7F4;
+    --color-brand: #e1390f;
+    --color-brand-hover: #c42f0b;
+    --color-border-subtle: rgba(255, 255, 255, 0.10);
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       TYPOGRAPHY SCALE TOKENS
+       - Steps --token-text-2xs through --token-text-2xl follow a 1.250 (Major Third) ratio
+         anchored cleanly to --token-text-base: 16px.
+       - --token-text-3xl (60px) is currently an intentionally scoped utility rung (e.g. not-found.tsx).
+       - Steps --token-text-4xl, --token-text-5xl, and --token-text-display-giant are preserved
+         pre-existing brand display anchors with deliberate fluid clamp() bounds.
+         Do not modify these to mechanically fit the body ratio.
+       ═══════════════════════════════════════════════════════════════════════ */
+    --token-text-2xs: 0.625rem; /* 10px */
+    --token-text-xs: 0.75rem;   /* 12px */
+    --token-text-sm: 0.875rem;  /* 14px */
+    --token-text-base: 1.000rem; /* 16px - Base Anchor */
+    --token-text-lg: 1.250rem;  /* 20px - Step +1 */
+    --token-text-xl: 1.5625rem; /* 25px - Step +2 */
+    --token-text-2xl: clamp(2.0rem, 3.2vw, 2.44rem); /* 39px - Step +3 */
+    --token-text-3xl: clamp(2.5rem, 4.5vw, 3.75rem); /* 60px - Scoped utility tier (not-found.tsx) */
+    --token-text-4xl: clamp(2.6rem, 5.5vw, 5.00rem); /* 80px - Preserved Brand H2 Anchor */
+    --token-text-5xl: clamp(3.8rem, 9.5vw, 8.80rem); /* 140px - Preserved Brand H1 Anchor */
+    --token-text-display-giant: clamp(4.5rem, 9.5vw, 8.00rem); /* 128px - Preserved Monumental Stat Anchor */
   }
 
   html {
@@ -23,9 +42,17 @@
   body {
     overflow-x: clip;
     max-width: 100vw;
-    background-color: var(--canvas-light);
-    color: var(--text-primary);
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
     font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+}
+
+@utility text-2xs {
+  font-size: var(--token-text-2xs);
+}
+
+@utility text-display-giant {
+  font-size: var(--token-text-display-giant);
 }

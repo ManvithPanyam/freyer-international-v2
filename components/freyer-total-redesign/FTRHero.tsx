@@ -1,208 +1,160 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight, Shield, Anchor } from "lucide-react";
 import { motion } from "motion/react";
+import { ArrowRight, Search, ShieldCheck, CheckCircle2, Globe2, Info } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { TrackShipmentModal } from "@/components/modals/TrackShipmentModal";
 
 /**
- * FTRHero — EDITORIAL MARITIME SHOWCASE
+ * FTRHero — EXECUTIVE LOGISTICS ENTERPRISE HERO
  *
- * Feature:
- * - Prominent, beautifully crafted "FREYER INTERNATIONAL" brand statement.
- * - Precision letterspacing, refined line weight, and optical vertical centering.
- * - Direct capability sub-lead and uncluttered action pathways.
- * - Full-screen cinematic maritime backdrop with deep edge lighting.
+ * Grounded in Section 1 verified facts and authentic institutional design:
+ * - Backdrop: Approved Candidate 1 (Deep-water container terminal at dusk with amber crane lighting)
+ * - Attribution: Mandatory visible AI attribution pill in bottom-right corner
+ * - Headline: Clean, standard-weight value-proposition typography (no oversized animation/game font)
+ * - Trust Proof: CBIC AEO-LO Certified, IATA Cargo Agent, WCA World & SCN Member
+ * - Action Pathways: Dual primary CTAs (Request Freight Rate + Track Consignment modal trigger)
  */
-
-const STATS = [
-  { value: "482 MT", label: "MAX HEAVY LIFT", sub: "Record #9 · Breakbulk Stowage" },
-  { value: "10 STATIONS", label: "INDIAN GATEWAYS", sub: "Direct Pan-India Presence" },
-  { value: "CBIC AEO-LO", label: "TIER 2 VERIFIED", sub: "INAAQCA4076M0F243 License" },
-  { value: "1M+ SQ FT", label: "CONTRACT STORAGE", sub: "WMS · Bonded CFS Facilities" },
-];
-
 export function FTRHero() {
+  const [isTrackModalOpen, setIsTrackModalOpen] = useState(false);
+
   return (
     <section
       aria-label="Freyer International Logistics"
-      className="bg-[#121316] text-[#F8F7F4] overflow-hidden relative flex flex-col justify-between"
-      style={{ minHeight: "100svh" }}
+      className="bg-[#121316] text-[#F8F7F4] overflow-hidden relative min-h-[92vh] sm:min-h-screen flex items-center justify-center pt-24 pb-16 sm:pt-28 sm:pb-20"
     >
       {/* ═══════════════════════════════════════
-          CINEMATIC FULL-SCREEN BACKGROUND
+          01. APPROVED CANDIDATE 1 HERO BACKGROUND
       ═══════════════════════════════════════ */}
-      <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        {/* High-res poster fallback */}
-        <Image
-          src="/images/slide2.jpg"
-          alt="Freyer International Container Vessels and Terminals"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-          style={{ objectPosition: "62% 42%" }}
-        />
+      <div className="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+        <motion.div
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.03 }}
+          transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+          className="relative w-full h-full"
+        >
+          <Image
+            src="/images/ai-candidates/AI-GENERATED_NOT_A_REAL_FREYER_FACILITY_ai_port_terminal_1788788622412.jpg"
+            alt="Deep-water container terminal at dusk with illuminated cranes — AI-generated conceptual illustration"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center brightness-90"
+          />
+        </motion.div>
 
-        {/* Video loop in rich contrast */}
-        <video
-          src="/video/freyer-hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{
-            objectPosition: "62% 42%",
-            filter: "brightness(0.60) contrast(1.12)",
-          }}
-        />
-
-        {/* Architectural Vignette for clean legibility */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(115deg, rgba(18,19,22,0.95) 0%, rgba(18,19,22,0.85) 38%, rgba(18,19,22,0.42) 70%, rgba(18,19,22,0.18) 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to top, #121316 0%, rgba(18,19,22,0.92) 18%, transparent 55%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(18,19,22,0.75) 0%, transparent 25%)",
-          }}
-        />
+        {/* Professional Architectural Vignette (Lets warm amber crane lighting glow through) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-[#121316]/55 to-[#121316]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#121316]/80 via-transparent to-[#121316]/80" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#121316]/90 to-transparent" />
       </div>
 
-      {/* ═══════════════════════════════════════
-          HERO MAIN STAGE
-      ═══════════════════════════════════════ */}
-      <div className="relative z-10 w-full max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 pt-32 sm:pt-36 pb-12 sm:pb-16 flex-1 flex flex-col justify-center">
-        <div className="max-w-4xl">
-
-          {/* Sub-Brand Monospace Kicker */}
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-3 mb-6"
-          >
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
-            </span>
-            <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.28em] text-slate-300 font-medium">
-              Global Logistics &amp; Project Cargo Forwarding
-            </span>
-          </motion.div>
-
-          {/* Core Brand Lockup: FREYER INTERNATIONAL — Plain H1 for instant LCP render */}
-          <div>
-            <h1
-              className="text-white font-black tracking-[-0.03em] leading-[0.88] uppercase"
-              style={{
-                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
-                fontSize: "clamp(3.8rem, 9.5vw, 8.8rem)",
-              }}
-            >
-              FREYER <br />
-              <span className="text-white">
-                INTERNATIONAL
-              </span>
-            </h1>
-          </div>
-
-          {/* Concise Business Definition */}
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="mt-6 text-slate-300 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl"
-          >
-            Licensed CBIC AEO-LO Tier 2 multimodal freight forwarding, international air and ocean cargo,
-            and heavy-lift logistics engineered up to{" "}
-            <span className="text-white font-semibold border-b border-[#e1390f]">
-              482 metric tons
-            </span>{" "}
-            across 10 Indian branch stations.
-          </motion.p>
-
-          {/* Action Pathways */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.34 }}
-            className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4"
-          >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2.5 bg-[#e1390f] hover:bg-[#c42f0b] text-white px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] font-mono rounded transition-all duration-150 shadow-xl shadow-[#e1390f]/25 hover:shadow-[#e1390f]/40 hover:scale-[1.01] active:scale-[0.99]"
-            >
-              Request Freight Rate
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-
-            <a
-              href="#cargo-monument"
-              className="inline-flex items-center gap-2 bg-white/[0.08] hover:bg-white/[0.14] text-white px-6 py-3.5 text-xs font-mono uppercase tracking-[0.2em] border border-white/20 hover:border-white/35 rounded transition-all duration-150 backdrop-blur-sm"
-            >
-              <Anchor className="w-3.5 h-3.5 text-[#e1390f]" />
-              Inspect 482 MT Record
-            </a>
-
-            <div className="hidden lg:flex items-center gap-2 pl-4 border-l border-white/15 text-[11px] font-mono text-white/45">
-              <Shield className="w-3.5 h-3.5 text-[#e1390f]" />
-              <span>AEO-LO Tier 2 Licensed Broker</span>
-            </div>
-          </motion.div>
+      {/* ── Mandatory Attribution Badge (Visible in UI) ── */}
+      <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 pointer-events-auto">
+        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/75 backdrop-blur-md border border-white/15 text-[11px] font-mono text-slate-300 shadow-xl">
+          <Info className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+          <span className="tracking-wide">AI-Generated Conceptual Illustration &mdash; Not a real Freyer facility</span>
         </div>
       </div>
 
       {/* ═══════════════════════════════════════
-          DOCKED METRICS BAR
+          02. HERO CONTENT (VALUE-PROPOSITION & TRUST)
       ═══════════════════════════════════════ */}
-      <div
-        className="relative z-10 w-full border-t border-white/10 backdrop-blur-xl shrink-0"
-        style={{ background: "rgba(3, 7, 18, 0.90)" }}
-      >
-        <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
-            {STATS.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.38, delay: 0.38 + i * 0.05 }}
-                className="py-4 sm:py-5 px-3 sm:px-6 group hover:bg-white/[0.02] transition-colors"
-              >
-                <div
-                  className="font-bold text-white tracking-tight leading-none text-xl sm:text-2xl lg:text-3xl"
-                  style={{ fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif" }}
-                >
-                  {s.value}
-                </div>
-                <div className="mt-1.5 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-[#e1390f] font-semibold">
-                  {s.label}
-                </div>
-                <div className="mt-0.5 text-[10px] font-mono text-white/40 truncate">
-                  {s.sub}
-                </div>
-              </motion.div>
-            ))}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 text-center flex flex-col items-center">
+        
+        {/* Eyebrow / Tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/15 backdrop-blur-md mb-6"
+        >
+          <span className="w-2 h-2 rounded-full bg-[#e1390f] animate-pulse" />
+          <span className="text-2xs sm:text-xs font-mono font-semibold tracking-[0.2em] text-white/90 uppercase">
+            Logistics Beyond Boundaries
+          </span>
+        </motion.div>
+
+        {/* Clean, Non-Glow Standard Enterprise Value Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          className="text-white font-bold tracking-tight text-3xl sm:text-5xl md:text-6xl leading-[1.12] max-w-4xl"
+        >
+          Integrated logistics and project cargo engineering across India.
+        </motion.h1>
+
+        {/* Grounded Subtitle (Section 1 Verified Scope) */}
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.15 }}
+          className="mt-6 text-slate-300 text-base sm:text-lg md:text-xl max-w-3xl font-light leading-relaxed"
+        >
+          Licensed CBIC AEO-LO Tier 2 multimodal freight forwarding, international air and ocean cargo, and heavy-lift logistics engineered up to 482 metric tons across 10 Indian branch stations.
+        </motion.p>
+
+        {/* Trust Proof Stat Pills Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-2xs sm:text-xs font-mono"
+        >
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/12 backdrop-blur-sm text-slate-200">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            <span>CBIC AEO-LO Tier 2 Certified</span>
           </div>
-        </div>
+
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/12 backdrop-blur-sm text-slate-200">
+            <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+            <span>IATA Cargo Agent</span>
+          </div>
+
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/12 backdrop-blur-sm text-slate-200">
+            <Globe2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <span>WCA World & SCN Member</span>
+          </div>
+        </motion.div>
+
+        {/* Dual Actions: Request Freight Quote + Track Consignment */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
+        >
+          <Button
+            href="/contact"
+            variant="primary"
+            size="lg"
+            icon={<ArrowRight className="w-4 h-4 ml-1" />}
+            className="w-full sm:w-auto tracking-[0.16em]"
+          >
+            Request a Freight Quote
+          </Button>
+
+          <Button
+            type="button"
+            onClick={() => setIsTrackModalOpen(true)}
+            variant="secondary"
+            size="lg"
+            icon={<Search className="w-4 h-4 mr-0.5 text-slate-300" />}
+            className="w-full sm:w-auto tracking-[0.16em]"
+          >
+            Track Consignment
+          </Button>
+        </motion.div>
       </div>
+
+      {/* Live Consignment Tracking Modal */}
+      <TrackShipmentModal
+        isOpen={isTrackModalOpen}
+        onClose={() => setIsTrackModalOpen(false)}
+      />
     </section>
   );
 }
