@@ -92,14 +92,14 @@ const SERVICES: ServiceItem[] = [
     id: "customs-brokerage",
     step: "03",
     name: "Licensed Customs Brokerage",
-    tagline: "In-house CBIC AEO-LO Tier 2 licensed customs brokerage across Indian ports.",
+    tagline: "In-house CBIC AEO-LO licensed customs brokerage across Indian ports.",
     icon: FileCheck2,
     description:
       "In-house licensed Customs Brokers executing regulatory classification, valuation, duty calculation, and PGA clearance through Indian Customs EDI. Direct station presence at air cargo complexes, seaports, and inland container depots (ICDs) to prevent demurrage and detention.",
     image: "/images/Customs-Services.jpg",
     imageAlt: "Customs brokerage inspection and clearance",
     capabilities: [
-      "CBIC AEO-LO Tier 2 Certified",
+      "CBIC AEO-LO Certified",
       "Licensed Customs House Agent",
       "HS Code Tariff Classification",
       "PGA Liaison (FSSAI, CDSCO, Plant)",
@@ -107,7 +107,7 @@ const SERVICES: ServiceItem[] = [
       "Bonded Warehouse Transfer",
     ],
     metrics: [
-      { label: "License Status", value: "CBIC AEO-LO Tier 2" },
+      { label: "License Status", value: "CBIC AEO-LO" },
       { label: "License Ref", value: "INAAQCA4076M0F243" },
       { label: "Clearance Rate", value: "Zero Demurrage Focus" },
     ],

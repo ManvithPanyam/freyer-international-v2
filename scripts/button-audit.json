@@ -1,0 +1,1352 @@
+[
+  {
+    "file": "app/experiments/cargo-in-motion/page.tsx",
+    "line": 39,
+    "tag": "Link",
+    "className": "px-3 py-1.5 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 transition"
+  },
+  {
+    "file": "app/experiments/cargo-in-motion/prototype/page.tsx",
+    "line": 36,
+    "tag": "Link",
+    "className": "px-3 py-1.5 rounded text-xs font-mono bg-white/5 border border-white/10 text-slate-300 hover:text-white transition"
+  },
+  {
+    "file": "app/experiments/cargo-in-motion/prototype/page.tsx",
+    "line": 65,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/cargo-in-motion/prototype/page.tsx",
+    "line": 75,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/cargo-in-motion/prototype/page.tsx",
+    "line": 85,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/editorial-industrial-theme/page.tsx",
+    "line": 252,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/editorial-industrial-theme/page.tsx",
+    "line": 299,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/editorial-industrial-theme/page.tsx",
+    "line": 316,
+    "tag": "a",
+    "className": "inline-flex items-center gap-1.5 bg-[#E1390F] text-white px-4 py-2 text-xs font-mono uppercase tracking-wider font-semibold rounded hover:bg-[#C42F0B] transition-colors"
+  },
+  {
+    "file": "app/experiments/editorial-industrial-theme/page.tsx",
+    "line": 407,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2.5 bg-[#E1390F] hover:bg-[#C42F0B] text-white px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] font-mono rounded shadow-xl"
+  },
+  {
+    "file": "app/experiments/editorial-industrial-theme/page.tsx",
+    "line": 414,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2 bg-white/[0.08] hover:bg-white/[0.14] text-white px-6 py-3.5 text-xs font-mono uppercase tracking-[0.2em] border border-white/20 rounded backdrop-blur-sm"
+  },
+  {
+    "file": "app/experiments/editorial-industrial-theme/page.tsx",
+    "line": 663,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/editorial-industrial-theme/page.tsx",
+    "line": 867,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/editorial-industrial-theme/page.tsx",
+    "line": 962,
+    "tag": "button",
+    "className": "w-full py-3.5 bg-[#E1390F] hover:bg-[#C42F0B] text-white font-bold uppercase tracking-widest rounded transition-colors shadow-lg"
+  },
+  {
+    "file": "app/experiments/global-movement-atlas/page.tsx",
+    "line": 51,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/global-movement-atlas/page.tsx",
+    "line": 58,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/global-movement-atlas/page.tsx",
+    "line": 112,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/homepage-v5/page.tsx",
+    "line": 67,
+    "tag": "Link",
+    "className": "rounded border border-white/20 px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-slate-300 transition hover:border-white hover:text-white"
+  },
+  {
+    "file": "app/experiments/homepage-v5-2/page.tsx",
+    "line": 39,
+    "tag": "Link",
+    "className": "hidden sm:inline-flex items-center gap-1.5 rounded border border-white/20 px-3 py-1 text-xs font-mono uppercase tracking-wider text-slate-300 transition hover:border-[#e1390f] hover:text-white"
+  },
+  {
+    "file": "app/experiments/homepage-v5-2/page.tsx",
+    "line": 45,
+    "tag": "a",
+    "className": "rounded bg-[#e1390f] px-3 py-1 text-xs font-mono uppercase tracking-wider text-white font-semibold hover:bg-[#ff552e] transition"
+  },
+  {
+    "file": "app/experiments/homepage-v5-3/page.tsx",
+    "line": 38,
+    "tag": "Link",
+    "className": "hidden sm:inline-flex items-center gap-1.5 rounded border border-white/20 px-3 py-1 text-xs font-mono uppercase tracking-wider text-slate-300 transition hover:border-[#e1390f] hover:text-white"
+  },
+  {
+    "file": "app/experiments/homepage-v5-3/page.tsx",
+    "line": 44,
+    "tag": "a",
+    "className": "rounded bg-[#e1390f] px-3 py-1 text-xs font-mono uppercase tracking-wider text-white font-semibold hover:bg-[#ff552e] transition"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 32,
+    "tag": "Link",
+    "className": "text-[11px] font-mono px-2.5 py-0.5 rounded bg-[#e1390f] text-white font-bold hover:bg-[#ff552e] transition-colors flex items-center gap-1"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 43,
+    "tag": "Link",
+    "className": "px-2.5 py-1 rounded bg-[#e1390f]/20 text-[#ff7247] border border-[#e1390f]/40 hover:bg-[#e1390f]/30 transition-colors font-semibold"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 49,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 55,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 61,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 67,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 73,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 80,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 86,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 92,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 98,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 104,
+    "tag": "Link",
+    "className": "px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 114,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 124,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 134,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 144,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/page.tsx",
+    "line": 154,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/routes-v5/page.tsx",
+    "line": 30,
+    "tag": "Link",
+    "className": "rounded bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-white transition hover:bg-white/20"
+  },
+  {
+    "file": "app/experiments/services-bridge-workbench/page.tsx",
+    "line": 28,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/services-bridge-workbench/page.tsx",
+    "line": 38,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/services-bridge-workbench/page.tsx",
+    "line": 48,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/services-bridge-workbench/page.tsx",
+    "line": 58,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "app/experiments/services-v5/page.tsx",
+    "line": 30,
+    "tag": "Link",
+    "className": "rounded bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-white transition hover:bg-white/20"
+  },
+  {
+    "file": "app/experiments/three-v5/page.tsx",
+    "line": 30,
+    "tag": "Link",
+    "className": "rounded bg-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-white transition hover:bg-white/20"
+  },
+  {
+    "file": "app/experiments/world-class-audit/page.tsx",
+    "line": 39,
+    "tag": "a",
+    "className": "px-2.5 py-1 rounded hover:bg-white/10 text-slate-300 transition"
+  },
+  {
+    "file": "app/experiments/world-class-audit/page.tsx",
+    "line": 45,
+    "tag": "a",
+    "className": "px-2.5 py-1 rounded hover:bg-white/10 text-slate-300 transition"
+  },
+  {
+    "file": "app/experiments/world-class-audit/page.tsx",
+    "line": 51,
+    "tag": "a",
+    "className": "px-2.5 py-1 rounded hover:bg-white/10 text-slate-300 transition"
+  },
+  {
+    "file": "app/experiments/world-class-audit/page.tsx",
+    "line": 57,
+    "tag": "a",
+    "className": "px-2.5 py-1 rounded hover:bg-white/10 text-slate-300 transition"
+  },
+  {
+    "file": "app/experiments/world-class-audit/page.tsx",
+    "line": 63,
+    "tag": "a",
+    "className": "px-2.5 py-1 rounded hover:bg-white/10 text-slate-300 transition"
+  },
+  {
+    "file": "app/not-found.tsx",
+    "line": 23,
+    "tag": "Link",
+    "className": "inline-flex items-center gap-2 bg-[#0b2144] hover:bg-[#07152b] text-white text-base font-semibold px-7 py-3.5 rounded-xl transition-colors shadow-sm"
+  },
+  {
+    "file": "components/about/AboutBridge.tsx",
+    "line": 116,
+    "tag": "Link",
+    "className": "shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#e1390f] hover:bg-[#ff4614] text-white text-xs font-mono uppercase tracking-[0.2em] font-bold shadow-lg transition-colors"
+  },
+  {
+    "file": "components/about/AboutCredentialsAwards.tsx",
+    "line": 143,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/about/AboutCredentialsAwards.tsx",
+    "line": 181,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/about/AboutCredentialsAwards.tsx",
+    "line": 208,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/about/AboutExplorer.tsx",
+    "line": 287,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/about/AboutExplorer.tsx",
+    "line": 447,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/about/AboutHero.tsx",
+    "line": 91,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-white/70 hover:text-white bg-white/[0.05] hover:bg-white/[0.10] px-4 py-2 rounded border border-white/10 transition-colors"
+  },
+  {
+    "file": "components/about/FeaturedLeader.tsx",
+    "line": 147,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/about/FeaturedLeader.tsx",
+    "line": 157,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-white/60 hover:text-white px-4 py-3 rounded border border-white/10 hover:border-white/25 transition-colors"
+  },
+  {
+    "file": "components/about/LeadershipDrawer.tsx",
+    "line": 56,
+    "tag": "button",
+    "className": "p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.10] border border-white/10 text-white/70 hover:text-white transition-colors"
+  },
+  {
+    "file": "components/about/LeadershipDrawer.tsx",
+    "line": 159,
+    "tag": "a",
+    "className": "w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-lg bg-white/[0.05] hover:bg-white/[0.10] border border-white/15 text-xs font-mono uppercase tracking-[0.2em] text-white transition-colors"
+  },
+  {
+    "file": "components/experiments/CinematicHeroExp.tsx",
+    "line": 99,
+    "tag": "a",
+    "className": "inline-flex items-center gap-3 px-7 py-4 rounded bg-[#e1390f] hover:bg-[#c42f0b] text-white font-medium text-sm sm:text-base tracking-wide transition-all shadow-lg shadow-black/20 hover:shadow-orange-950/40 group"
+  },
+  {
+    "file": "components/experiments/CinematicHeroExp.tsx",
+    "line": 107,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2.5 px-6 py-4 rounded bg-white/5 hover:bg-white/10 text-white font-normal text-sm sm:text-base tracking-wide border border-white/15 transition-all"
+  },
+  {
+    "file": "components/experiments/IndiaNetworkMapExp.tsx",
+    "line": 261,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/IndiaNetworkMapExp.tsx",
+    "line": 271,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/IndiaNetworkMapExp.tsx",
+    "line": 281,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/IndiaNetworkMapExp.tsx",
+    "line": 291,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/IndiaNetworkMapExp.tsx",
+    "line": 524,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/india_map_final/AuthoritativeIndiaMap.tsx",
+    "line": 208,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/india_map_final/AuthoritativeIndiaMap.tsx",
+    "line": 378,
+    "tag": "a",
+    "className": "flex items-center gap-3 p-3 rounded bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs font-mono text-white group"
+  },
+  {
+    "file": "components/experiments/india_map_final/AuthoritativeIndiaMap.tsx",
+    "line": 386,
+    "tag": "a",
+    "className": "flex items-center gap-3 p-3 rounded bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs font-mono text-white group truncate"
+  },
+  {
+    "file": "components/experiments/india_map_presentation/PresentationIndiaMap.tsx",
+    "line": 151,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/india_map_presentation/PresentationIndiaMap.tsx",
+    "line": 378,
+    "tag": "button",
+    "className": "flex items-center gap-1 text-[10px] text-slate-400 hover:text-white transition"
+  },
+  {
+    "file": "components/experiments/india_map_presentation/PresentationIndiaMap.tsx",
+    "line": 407,
+    "tag": "a",
+    "className": "flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs font-mono text-white group"
+  },
+  {
+    "file": "components/experiments/india_map_presentation/PresentationIndiaMap.tsx",
+    "line": 422,
+    "tag": "a",
+    "className": "flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs font-mono text-white group"
+  },
+  {
+    "file": "components/experiments/ProjectCargoEditorialExp.tsx",
+    "line": 186,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/ServicesSystemExp.tsx",
+    "line": 236,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/services_bridge/ServicesEditorialA.tsx",
+    "line": 121,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v2/EditorialNetwork.tsx",
+    "line": 378,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v2/EditorialProjectCargo.tsx",
+    "line": 120,
+    "tag": "button",
+    "className": "w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v2/EditorialProjectCargo.tsx",
+    "line": 130,
+    "tag": "button",
+    "className": "w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v2/EditorialProjectCargo.tsx",
+    "line": 260,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v2/EditorialServices.tsx",
+    "line": 196,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v3/AliveNetworkScene.tsx",
+    "line": 479,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v3/MonumentalCargoScene.tsx",
+    "line": 122,
+    "tag": "button",
+    "className": "w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v3/MonumentalCargoScene.tsx",
+    "line": 132,
+    "tag": "button",
+    "className": "w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v3/MonumentalCargoScene.tsx",
+    "line": 273,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v3/TransformingServicesScene.tsx",
+    "line": 200,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4/ContinuousCargo.tsx",
+    "line": 127,
+    "tag": "button",
+    "className": "w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v4/ContinuousCargo.tsx",
+    "line": 137,
+    "tag": "button",
+    "className": "w-11 h-11 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v4/ContinuousCargo.tsx",
+    "line": 255,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4/ContinuousNetwork.tsx",
+    "line": 425,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4/ContinuousServices.tsx",
+    "line": 204,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4-1/CargoScene.tsx",
+    "line": 145,
+    "tag": "button",
+    "className": "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v4-1/CargoScene.tsx",
+    "line": 155,
+    "tag": "button",
+    "className": "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v4-1/CargoScene.tsx",
+    "line": 273,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4-1/NetworkScene.tsx",
+    "line": 419,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4-1/ServicesScene.tsx",
+    "line": 220,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4-2/CargoScene.tsx",
+    "line": 145,
+    "tag": "button",
+    "className": "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v4-2/CargoScene.tsx",
+    "line": 155,
+    "tag": "button",
+    "className": "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
+  },
+  {
+    "file": "components/experiments/v4-2/CargoScene.tsx",
+    "line": 268,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4-2/CargoScene.tsx",
+    "line": 305,
+    "tag": "button",
+    "className": "w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-slate-300"
+  },
+  {
+    "file": "components/experiments/v4-2/CargoScene.tsx",
+    "line": 311,
+    "tag": "button",
+    "className": "w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-slate-300"
+  },
+  {
+    "file": "components/experiments/v4-2/CargoScene.tsx",
+    "line": 386,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4-2/NetworkScene.tsx",
+    "line": 435,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v4-2/ServicesScene.tsx",
+    "line": 220,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5/CargoMotionFilmV5.tsx",
+    "line": 248,
+    "tag": "button",
+    "className": "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors cursor-pointer"
+  },
+  {
+    "file": "components/experiments/v5/CargoMotionFilmV5.tsx",
+    "line": 258,
+    "tag": "button",
+    "className": "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors cursor-pointer"
+  },
+  {
+    "file": "components/experiments/v5/CargoMotionFilmV5.tsx",
+    "line": 525,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5/CargoMotionFilmV5.tsx",
+    "line": 559,
+    "tag": "button",
+    "className": "w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-slate-300 active:bg-white/20"
+  },
+  {
+    "file": "components/experiments/v5/CargoMotionFilmV5.tsx",
+    "line": 565,
+    "tag": "button",
+    "className": "w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-slate-300 active:bg-white/20"
+  },
+  {
+    "file": "components/experiments/v5/CargoMotionFilmV5.tsx",
+    "line": 649,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5/IndiaMapV5.tsx",
+    "line": 255,
+    "tag": "button",
+    "className": "inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-300 text-xs font-mono uppercase tracking-wider text-slate-600 hover:text-[#0a1424] hover:border-slate-500 transition-colors bg-white/60 shadow-sm"
+  },
+  {
+    "file": "components/experiments/v5/IndiaMapV5.tsx",
+    "line": 549,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5/ServicesCinematicV5.tsx",
+    "line": 291,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_2/CargoFilmV52.tsx",
+    "line": 217,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_2/CargoFilmV52.tsx",
+    "line": 234,
+    "tag": "button",
+    "className": "p-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded text-white/80 hover:text-white transition-colors"
+  },
+  {
+    "file": "components/experiments/v5_2/CargoFilmV52.tsx",
+    "line": 241,
+    "tag": "button",
+    "className": "p-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded text-white/80 hover:text-white transition-colors"
+  },
+  {
+    "file": "components/experiments/v5_2/CartographicTheatreV52.tsx",
+    "line": 296,
+    "tag": "button",
+    "className": "flex items-center gap-2 px-4 py-2 bg-[#0a1424] text-white hover:bg-[#e1390f] transition-colors text-xs font-mono tracking-wider uppercase rounded"
+  },
+  {
+    "file": "components/experiments/v5_2/CartographicTheatreV52.tsx",
+    "line": 576,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_2/SeamlessJourneyV52.tsx",
+    "line": 221,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_2/SeamlessJourneyV52.tsx",
+    "line": 232,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_2/SeamlessJourneyV52.tsx",
+    "line": 243,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_2/SeamlessJourneyV52.tsx",
+    "line": 327,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_3/CargoFilmV53.tsx",
+    "line": 188,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_3/CargoFilmV53.tsx",
+    "line": 206,
+    "tag": "button",
+    "className": "p-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded text-white/80 transition-colors"
+  },
+  {
+    "file": "components/experiments/v5_3/CargoFilmV53.tsx",
+    "line": 213,
+    "tag": "button",
+    "className": "p-1.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded text-white/80 transition-colors"
+  },
+  {
+    "file": "components/experiments/v5_3/CartographicTheatreV53.tsx",
+    "line": 266,
+    "tag": "button",
+    "className": "flex items-center gap-2 px-3.5 py-1.5 bg-[#0a1424] text-white hover:bg-[#e1390f] transition-colors text-xs font-mono tracking-wider uppercase rounded"
+  },
+  {
+    "file": "components/experiments/v5_3/CartographicTheatreV53.tsx",
+    "line": 518,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/v5_3/ContinuousVoyageV53.tsx",
+    "line": 335,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_audit/CargoClearanceCaliperExperiment.tsx",
+    "line": 107,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_audit/CargoClearanceCaliperExperiment.tsx",
+    "line": 230,
+    "tag": "a",
+    "className": "w-full inline-flex items-center justify-center gap-2 rounded bg-white/10 hover:bg-white/15 border border-white/20 text-white py-3 text-xs font-semibold tracking-wider uppercase font-mono transition"
+  },
+  {
+    "file": "components/experiments/world_class_audit/CargoDisplacementExperiment.tsx",
+    "line": 150,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_audit/CargoDisplacementExperiment.tsx",
+    "line": 216,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_audit/CartographicTerminalExperiment.tsx",
+    "line": 186,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_audit/CartographicTerminalExperiment.tsx",
+    "line": 385,
+    "tag": "a",
+    "className": "w-full inline-flex items-center justify-center gap-2 rounded bg-white/10 hover:bg-white/15 border border-white/20 text-white py-2.5 text-xs font-semibold tracking-wider uppercase font-mono transition"
+  },
+  {
+    "file": "components/experiments/world_class_audit/HeroExperiment.tsx",
+    "line": 96,
+    "tag": "a",
+    "className": "inline-flex items-center justify-center gap-2 rounded bg-[#e1390f] hover:bg-[#c42f0b] text-white px-6 py-3.5 text-sm font-semibold tracking-wide transition duration-150 shadow-lg shadow-[#e1390f]/25"
+  },
+  {
+    "file": "components/experiments/world_class_audit/HeroExperiment.tsx",
+    "line": 104,
+    "tag": "a",
+    "className": "inline-flex items-center justify-center gap-2 rounded border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white px-6 py-3.5 text-sm font-medium tracking-wide transition duration-150 backdrop-blur-sm"
+  },
+  {
+    "file": "components/experiments/world_class_audit/ServicesHorizonExperiment.tsx",
+    "line": 149,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_audit/ServicesHorizonExperiment.tsx",
+    "line": 245,
+    "tag": "a",
+    "className": "w-full inline-flex items-center justify-center gap-2 rounded bg-[#e1390f] hover:bg-[#c42f0b] text-white py-3 text-xs font-semibold tracking-wider uppercase font-mono transition shadow-lg shadow-[#e1390f]/20"
+  },
+  {
+    "file": "components/experiments/world_class_audit_final/CargoScaleFinalist.tsx",
+    "line": 27,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_audit_final/CargoScaleFinalist.tsx",
+    "line": 37,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_audit_final/CleanHeroFinalist.tsx",
+    "line": 97,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2 rounded bg-[#e1390f] hover:bg-[#c42f0b] text-white px-5 py-3 text-xs font-semibold uppercase tracking-wider font-mono transition"
+  },
+  {
+    "file": "components/experiments/world_class_audit_final/CleanHeroFinalist.tsx",
+    "line": 105,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2 rounded border border-white/20 hover:border-white/40 bg-white/5 text-white px-5 py-3 text-xs font-medium uppercase tracking-wider font-mono transition"
+  },
+  {
+    "file": "components/experiments/world_class_audit_final/TruthfulNetworkFinalist.tsx",
+    "line": 123,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_final_home/DirectDispatchFinalist.tsx",
+    "line": 61,
+    "tag": "a",
+    "className": "flex items-center gap-3 p-3 rounded bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs font-mono text-white"
+  },
+  {
+    "file": "components/experiments/world_class_final_home/DirectDispatchFinalist.tsx",
+    "line": 68,
+    "tag": "a",
+    "className": "flex items-center gap-3 p-3 rounded bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs font-mono text-white"
+  },
+  {
+    "file": "components/experiments/world_class_final_home/DirectDispatchFinalist.tsx",
+    "line": 101,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/experiments/world_class_final_home/DirectDispatchFinalist.tsx",
+    "line": 180,
+    "tag": "button",
+    "className": "w-full flex items-center justify-center gap-2 rounded bg-[#e1390f] hover:bg-[#c42f0b] text-white py-3.5 px-6 text-xs font-mono font-bold uppercase tracking-wider transition"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRCargoMonument.tsx",
+    "line": 146,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRCargoMonument.tsx",
+    "line": 158,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRCargoMonument.tsx",
+    "line": 304,
+    "tag": "Link",
+    "className": "shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-mono uppercase tracking-wider transition-colors"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRDispatch.tsx",
+    "line": 113,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRDispatch.tsx",
+    "line": 218,
+    "tag": "button",
+    "className": "inline-flex items-center gap-2.5 bg-[#e1390f] hover:bg-[#c42f0b] disabled:opacity-60 text-white font-mono text-sm font-semibold px-6 py-3.5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRFooter.tsx",
+    "line": 121,
+    "tag": "a",
+    "className": "w-8 h-8 rounded border border-white/10 bg-white/[0.03] hover:bg-[#e1390f] hover:border-[#e1390f] text-white/60 hover:text-white flex items-center justify-center transition-all duration-150"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRFooter.tsx",
+    "line": 132,
+    "tag": "a",
+    "className": "w-8 h-8 rounded border border-white/10 bg-white/[0.03] hover:bg-[#e1390f] hover:border-[#e1390f] text-white/60 hover:text-white flex items-center justify-center transition-all duration-150"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRFooter.tsx",
+    "line": 143,
+    "tag": "a",
+    "className": "w-8 h-8 rounded border border-white/10 bg-white/[0.03] hover:bg-[#e1390f] hover:border-[#e1390f] text-white/60 hover:text-white flex items-center justify-center transition-all duration-150"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRHero.tsx",
+    "line": 148,
+    "tag": "Link",
+    "className": "inline-flex items-center gap-2.5 bg-[#e1390f] hover:bg-[#c42f0b] text-white px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] font-mono rounded transition-all duration-150 shadow-xl shadow-[#e1390f]/25 hover:shadow-[#e1390f]/40 hover:scale-[1.01] active:scale-[0.99]"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRHero.tsx",
+    "line": 156,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2 bg-white/[0.08] hover:bg-white/[0.14] text-white px-6 py-3.5 text-xs font-mono uppercase tracking-[0.2em] border border-white/20 hover:border-white/35 rounded transition-all duration-150 backdrop-blur-sm"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 98,
+    "tag": "Link",
+    "className": "[ \"inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded\", pathname.startsWith(\"/services\") ? \"text-white font-semibold\" : \"text-white/70 hover:text-white\", ].join(\" \")"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 187,
+    "tag": "Link",
+    "className": "[ \"text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded\", pathname === \"/projects\" ? \"text-white font-semibold\" : \"text-white/70 hover:text-white\", ].join(\" \")"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 203,
+    "tag": "Link",
+    "className": "[ \"inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded\", pathname === \"/locations\" || pathname === \"/network-partners\" ? \"text-white font-semibold\" : \"text-white/70 hover:text-white\", ].join(\" \")"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 282,
+    "tag": "Link",
+    "className": "[ \"inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded\", pathname === \"/about\" || pathname === \"/careers\" || pathname === \"/csr\" ? \"text-white font-semibold\" : \"text-white/70 hover:text-white\", ].join(\" \")"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 356,
+    "tag": "Link",
+    "className": "[ \"text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded\", pathname === \"/contact\" ? \"text-white font-semibold\" : \"text-white/70 hover:text-white\", ].join(\" \")"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 380,
+    "tag": "Link",
+    "className": "inline-flex items-center gap-1.5 bg-[#e1390f] hover:bg-[#c42f0b] text-white text-xs font-semibold px-4 py-2.5 rounded transition-colors duration-150 font-mono tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 390,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 440,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNav.tsx",
+    "line": 555,
+    "tag": "a",
+    "className": "flex items-center justify-center gap-2 w-full border border-white/20 text-white font-mono text-xs font-semibold py-3.5 rounded-lg hover:bg-white/5 transition-colors"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNetwork.tsx",
+    "line": 160,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNetwork.tsx",
+    "line": 177,
+    "tag": "Link",
+    "className": "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.10] border border-white/12 text-xs font-mono uppercase tracking-wider text-white transition-colors shrink-0"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRNetwork.tsx",
+    "line": 362,
+    "tag": "button",
+    "className": "mt-2 text-[10px] font-mono text-[#e1390f] hover:underline flex items-center gap-1"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRServices.tsx",
+    "line": 255,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/freyer-total-redesign/FTRServices.tsx",
+    "line": 355,
+    "tag": "Link",
+    "className": "inline-flex items-center gap-2 bg-[#e1390f] hover:bg-[#c42f0b] text-white text-xs font-mono uppercase tracking-wider font-semibold px-6 py-3.5 rounded-lg transition-colors"
+  },
+  {
+    "file": "components/home/CapabilitiesIndex.tsx",
+    "line": 293,
+    "tag": "Link",
+    "className": "inline-flex items-center justify-between w-full bg-[#0b2144] hover:bg-[#1a365d] text-white text-xs font-semibold px-4 py-3 rounded-lg transition-colors font-mono"
+  },
+  {
+    "file": "components/home/HeroSection.tsx",
+    "line": 124,
+    "tag": "a",
+    "className": "w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold px-8 py-4 rounded-xl text-sm sm:text-base transition-colors duration-150 shadow-2xl shadow-[#c42f0b]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+  },
+  {
+    "file": "components/home/HeroSection.tsx",
+    "line": 132,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/home/HomeFaq.tsx",
+    "line": 89,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/home/HomeFaq.tsx",
+    "line": 141,
+    "tag": "a",
+    "className": "inline-flex items-center gap-1.5 text-xs font-mono font-semibold bg-white/10 hover:bg-white/20 text-white px-4 py-2.5 rounded-xl transition-colors"
+  },
+  {
+    "file": "components/home/HomeFaq.tsx",
+    "line": 148,
+    "tag": "a",
+    "className": "inline-flex items-center gap-1.5 text-xs font-mono font-semibold bg-[#c42f0b] hover:bg-[#a82506] text-white px-5 py-2.5 rounded-xl transition-colors"
+  },
+  {
+    "file": "components/home/IndustriesServed.tsx",
+    "line": 163,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/home/IndustriesServed.tsx",
+    "line": 265,
+    "tag": "a",
+    "className": "inline-flex items-center justify-center gap-2 w-full bg-[#c42f0b] hover:bg-[#a82506] text-white text-xs font-semibold py-3 px-4 rounded-xl transition-colors font-mono"
+  },
+  {
+    "file": "components/home/NetworkInteractive.tsx",
+    "line": 274,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/home/ProjectCargoStory.tsx",
+    "line": 213,
+    "tag": "Link",
+    "className": "inline-flex items-center gap-3 bg-[#c42f0b] hover:bg-[#a82506] active:bg-[#8f1f04] text-white font-semibold text-xs sm:text-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-colors duration-150 shadow-xl shadow-[#c42f0b]/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+  },
+  {
+    "file": "components/home/RfqProduct.tsx",
+    "line": 203,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/home/RfqProduct.tsx",
+    "line": 454,
+    "tag": "button",
+    "className": "inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white px-3 py-2 rounded focus:outline-none focus-visible:ring-1 focus-visible:ring-white transition-colors"
+  },
+  {
+    "file": "components/home/RfqProduct.tsx",
+    "line": 467,
+    "tag": "button",
+    "className": "inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] disabled:opacity-50 text-white font-semibold text-xs sm:text-sm px-6 py-3 rounded transition-all duration-150 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+  },
+  {
+    "file": "components/home/RfqProduct.tsx",
+    "line": 505,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/locations/LocationsExplorer.tsx",
+    "line": 320,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/locations/LocationsExplorer.tsx",
+    "line": 375,
+    "tag": "a",
+    "className": "inline-flex items-center gap-2 bg-[#c42f0b] hover:bg-[#a82506] text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors"
+  },
+  {
+    "file": "components/locations/MinimalLocations.tsx",
+    "line": 232,
+    "tag": "button",
+    "className": "mt-3 inline-flex items-center gap-1.5 text-[11px] font-mono text-white/50 hover:text-white transition-colors"
+  },
+  {
+    "file": "components/locations/MinimalLocations.tsx",
+    "line": 294,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/modals/TrackShipmentModal.tsx",
+    "line": 294,
+    "tag": "button",
+    "className": "min-w-[40px] min-h-[40px] p-2 text-slate-400 hover:text-slate-800 rounded-full hover:bg-slate-100 transition-colors flex items-center justify-center"
+  },
+  {
+    "file": "components/modals/TrackShipmentModal.tsx",
+    "line": 322,
+    "tag": "button",
+    "className": "bg-[#c42f0b] hover:bg-[#a82506] text-white font-semibold text-xs sm:text-sm px-6 py-3 rounded-xl transition-colors shrink-0 shadow-sm font-mono"
+  },
+  {
+    "file": "components/modals/TrackShipmentModal.tsx",
+    "line": 335,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/modals/TrackShipmentModal.tsx",
+    "line": 342,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/modals/TrackShipmentModal.tsx",
+    "line": 349,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/network/GlobalMovementAtlas.tsx",
+    "line": 177,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/network/GlobalMovementAtlas.tsx",
+    "line": 199,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/network/GlobalMovementAtlas.tsx",
+    "line": 680,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/network/GlobalMovementAtlas.tsx",
+    "line": 778,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/network/GlobalMovementAtlas.tsx",
+    "line": 823,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoDocumentaryMonograph.tsx",
+    "line": 146,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoDocumentaryMonograph.tsx",
+    "line": 163,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionCinematic.tsx",
+    "line": 781,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionCinematic.tsx",
+    "line": 795,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionCinematic.tsx",
+    "line": 811,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionCinematic.tsx",
+    "line": 908,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionCinematic.tsx",
+    "line": 949,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionCinematic.tsx",
+    "line": 997,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionCinematic.tsx",
+    "line": 1005,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionCinematic.tsx",
+    "line": 1017,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionPrototype.tsx",
+    "line": 594,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/CargoInMotionPrototype.tsx",
+    "line": 603,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/ProjectsCargoHeroStage.tsx",
+    "line": 213,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/ProjectsCargoHeroStage.tsx",
+    "line": 231,
+    "tag": "button",
+    "className": "p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition"
+  },
+  {
+    "file": "components/projects/ProjectsCargoHeroStage.tsx",
+    "line": 238,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/ProjectsCargoHeroStage.tsx",
+    "line": 245,
+    "tag": "button",
+    "className": "p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition"
+  },
+  {
+    "file": "components/projects/ProjectsCargoHeroStage.tsx",
+    "line": 388,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/ProjectsExplorer.tsx",
+    "line": 86,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/ProjectsExplorer.tsx",
+    "line": 283,
+    "tag": "button",
+    "className": "absolute top-4 right-4 z-30 p-2.5 text-white/70 hover:text-white rounded-full bg-black/60 hover:bg-black border border-white/10 transition-colors"
+  },
+  {
+    "file": "components/projects/ProjectsExplorer.tsx",
+    "line": 314,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/projects/ProjectsExplorer.tsx",
+    "line": 324,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/services/ServiceFAQ.tsx",
+    "line": 58,
+    "tag": "button",
+    "className": "unknown"
+  },
+  {
+    "file": "components/ui/design-system/FreyerCard.tsx",
+    "line": 88,
+    "tag": "button",
+    "className": "${baseClasses} ${sizeClasses} ${variantClasses} ${className}"
+  }
+]

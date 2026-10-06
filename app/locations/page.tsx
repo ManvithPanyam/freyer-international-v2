@@ -26,7 +26,7 @@ export default function LocationsPage() {
           description="A dedicated physical network of 10 company branch stations operating at key maritime seaports, air cargo complexes, and manufacturing hubs, connecting domestic supply chains directly to international trade lanes."
           stats={[
             { value: "10 STATIONS", label: "INDIAN GATEWAYS", sub: "Direct Pan-India Presence" },
-            { value: "CBIC AEO-LO", label: "TIER 2 VERIFIED", sub: "INAAQCA4076M0F243 License" },
+            { value: "CBIC AEO-LO", label: "STATUTORY LICENSE", sub: "INAAQCA4076M0F243 License" },
             { value: "6 SEAPORTS", label: "DIRECT LIAISON", sub: "CITPL · JNPT · VOC · Vizag" },
             { value: "100%", label: "COMPANY OPERATED", sub: "Zero Third-Party Franchises" },
           ]}

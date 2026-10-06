@@ -275,7 +275,7 @@ export function ServicesExplorer() {
           <FreyerCard id="customs-brokerage" className="p-8 space-y-4">
             <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
               <span className="text-[#e1390f] font-bold">05 &middot; CUSTOMS BROKERAGE</span>
-              <span>AEO-LO Tier 2</span>
+              <span>AEO-LO Certified</span>
             </div>
             <h3 className="text-xl font-bold text-white tracking-tight">
               CBIC Customs Authority &amp; In-House Licensed Brokers

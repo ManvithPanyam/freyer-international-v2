@@ -3,3 +3,4 @@ import FreyerTotalRedesignPage from "@/app/experiments/freyer-total-redesign/pag
 export default function HomePage() {
   return <FreyerTotalRedesignPage />;
 }
+

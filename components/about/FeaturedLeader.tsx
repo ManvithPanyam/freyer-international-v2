@@ -134,7 +134,7 @@ export function FeaturedLeader({ person, onSelect }: FeaturedLeaderProps) {
                     Statutory Alignment
                   </div>
                   <div className="text-sm font-medium text-white">
-                    AEO-LO Tier 2 &amp; IATA Agency
+                    AEO-LO &amp; IATA Agency
                   </div>
                   <div className="text-xs font-mono text-white/40 mt-1">
                     Direct MCA &amp; CBIC Verified Authority

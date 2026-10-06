@@ -125,7 +125,7 @@ const SERVICES_DATA: Record<string, ServiceData> = {
     heroImage: "/images/slide1.jpg",
     imageAlt: "Customs officer examining containerized freight documentation at maritime container terminal",
     overview: [
-      "Indian Customs regulations are rigorous, detailed, and continually updated. Freyer International operates as a licensed Customs House Agent (CHA) and is accredited as an Authorized Economic Operator (CBIC AEO-LO Tier 2).",
+      "Indian Customs regulations are rigorous, detailed, and continually updated. Freyer International operates as a licensed Customs House Agent (CHA) and is accredited as an Authorized Economic Operator (CBIC AEO-LO).",
       "Our in-house team of licensed customs brokers manages the entire clearance process—from classification and valuation to examination and duty payment—ensuring strict regulatory compliance and eliminating unnecessary demurrage or detention costs.",
     ],
     capabilitiesTitle: "Licensed Brokerage Scope",

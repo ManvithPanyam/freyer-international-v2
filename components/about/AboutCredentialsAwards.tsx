@@ -78,14 +78,14 @@ export function AboutCredentialsAwards() {
           <div className="p-8 rounded-xl border border-white/10 bg-[#181A1F] flex flex-col justify-between space-y-6">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
-                <span className="text-[#e1390f] font-bold">AEO-LO TIER 2</span>
+                <span className="text-[#e1390f] font-bold">AEO-LO CERTIFIED</span>
                 <span>CBIC Customs</span>
               </div>
               <h3 className="text-xl font-bold text-white mt-4">
                 Authorized Economic Operator
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed font-light">
-                Highest tier of trusted customs logistics operator accreditation granted by the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, Government of India.
+                Trusted customs logistics operator accreditation granted by the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, Government of India.
               </p>
             </div>
             <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50 flex items-center justify-between">

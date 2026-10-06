@@ -311,7 +311,7 @@ export function FTRDispatch() {
                 Verified Credentials
               </div>
               {[
-                "CBIC AEO-LO Tier 2 (INAAQCA4076M0F243)",
+                "CBIC AEO-LO (INAAQCA4076M0F243)",
                 "IATA Approved Cargo Agent",
                 "WCA World Member",
                 "Security Cargo Network (SCN)",

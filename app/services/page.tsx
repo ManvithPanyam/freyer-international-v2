@@ -28,7 +28,7 @@ export default function ServicesPage() {
           stats={[
             { value: "1M+ SQ FT", label: "CONTRACT STORAGE", sub: "Bonded CFS & 3PL Facilities" },
             { value: "482 MT", label: "MAX HEAVY LIFT", sub: "Breakbulk Rigging & Civil Survey" },
-            { value: "CBIC AEO-LO", label: "TIER 2 VERIFIED", sub: "INAAQCA4076M0F243 License" },
+            { value: "CBIC AEO-LO", label: "STATUTORY LICENSE", sub: "INAAQCA4076M0F243 License" },
             { value: "10 STATIONS", label: "INDIAN GATEWAYS", sub: "Pan-India Dedicated Desks" },
           ]}
         >

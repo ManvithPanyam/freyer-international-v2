@@ -57,7 +57,7 @@ export default function CareersPage() {
           stats={[
             { value: "10 STATIONS", label: "PAN-INDIA DESKS", sub: "Direct Branch Locations" },
             { value: "5 DISCIPLINES", label: "PRACTICE AREAS", sub: "Forwarding · Customs · Projects" },
-            { value: "CBIC AEO-LO", label: "GOVERNANCE", sub: "Tier 2 Statutory License" },
+            { value: "CBIC AEO-LO", label: "GOVERNANCE", sub: "Statutory Broker License" },
             { value: "100%", label: "MERIT BASED", sub: "Professional Career Mobility" },
           ]}
         />

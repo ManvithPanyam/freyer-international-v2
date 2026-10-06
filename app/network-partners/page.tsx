@@ -25,7 +25,7 @@ export default function NetworkPartnersPage() {
         </section>
 
         {/* Global Forwarding Alliances & Accreditations */}
-        <section className={`py-16 sm:py-24 max-w-[1560px] mx-auto border-t border-white/10 ${THEME_TOKENS.layout.contentGutter}`}>
+        <section id="alliances" className={`py-16 sm:py-24 max-w-[1560px] mx-auto border-t border-white/10 ${THEME_TOKENS.layout.contentGutter}`}>
           <div className="mb-12">
             <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.24em] text-[#e1390f] font-semibold mb-2">
               <span className="w-2 h-2 rounded-full bg-[#e1390f]" />

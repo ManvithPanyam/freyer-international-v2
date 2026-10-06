@@ -141,7 +141,7 @@ export function FTRNav() {
                       <ShieldCheck className="w-4 h-4 text-[#e1390f] shrink-0" />
                       <div>
                         <div className="text-white font-medium group-hover:text-[#e1390f] transition-colors">Customs Brokerage</div>
-                        <div className="text-[11px] text-white/40">CBIC AEO-LO Tier 2 clearance</div>
+                        <div className="text-[11px] text-white/40">CBIC AEO-LO clearance</div>
                       </div>
                     </Link>
                     <Link
@@ -257,7 +257,7 @@ export function FTRNav() {
                     </Link>
 
                     <Link
-                      href="/network-partners"
+                      href="/network-partners#alliances"
                       className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-white/[0.06] transition-colors group"
                     >
                       <Users className="w-4 h-4 text-[#e1390f] shrink-0 mt-0.5" />
@@ -510,7 +510,7 @@ export function FTRNav() {
                     <ArrowUpRight className="w-4 h-4 text-white/40" />
                   </Link>
                   <Link
-                    href="/network-partners"
+                    href="/network-partners#alliances"
                     onClick={() => setDrawerOpen(false)}
                     className="p-3 rounded-lg bg-white/[0.03] border border-white/8 text-white font-medium hover:border-white/20 transition-colors flex items-center justify-between"
                   >

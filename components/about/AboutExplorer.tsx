@@ -120,7 +120,7 @@ export function AboutExplorer() {
               From our registered headquarters in Bengaluru and primary seaport hub in Chennai, Freyer International operates across 10 branch stations in India. Our customers trust us with their cargo because we listen to their needs, react quickly, protect freight completely, and deliver reliably.
             </p>
             <p className="text-xs sm:text-sm text-white/50">
-              Licensed CBIC AEO-LO Tier 2 logistics operator (INAAQCA4076M0F243) and IATA approved cargo agent (14-3-4852) with nationwide direct operations.
+              Licensed CBIC AEO-LO logistics operator (INAAQCA4076M0F243) and IATA approved cargo agent (14-3-4852) with nationwide direct operations.
             </p>
           </div>
 
@@ -223,14 +223,14 @@ export function AboutExplorer() {
           <FreyerCard className="p-8 flex flex-col justify-between space-y-6">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
-                <span className="text-[#e1390f] font-bold">AEO-LO TIER 2</span>
+                <span className="text-[#e1390f] font-bold">AEO-LO CERTIFIED</span>
                 <span>CBIC Customs</span>
               </div>
               <h3 className="text-xl font-bold text-white mt-4">
                 Authorized Economic Operator
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed font-light">
-                Highest tier of trusted customs logistics operator accreditation granted by the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, Government of India.
+                Trusted customs logistics operator accreditation granted by the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, Government of India.
               </p>
             </div>
             <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50">

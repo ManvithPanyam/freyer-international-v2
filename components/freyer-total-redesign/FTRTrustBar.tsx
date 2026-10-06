@@ -8,7 +8,7 @@ import { ShieldCheck, Award, Globe, Shield } from "lucide-react";
 const ACCREDITATIONS = [
   {
     name: "CBIC AEO-LO",
-    badge: "Tier 2 Certified",
+    badge: "AEO Certified",
     detail: "INAAQCA4076M0F243",
     img: "/images/aeo-logo.jpg",
     width: 68,

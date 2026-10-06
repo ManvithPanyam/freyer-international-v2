@@ -184,7 +184,7 @@ const SERVICES_DATA = [
   {
     step: "03",
     name: "CBIC Licensed Customs Clearance",
-    tagline: "AEO-LO Tier 2 accredited customs house brokerage.",
+    tagline: "CBIC AEO-LO accredited customs house brokerage.",
     desc: "Direct EDI document filing, paperless fast-track customs clearance, and duty assessment advisory.",
     terminals: "Air Cargo Complexes · Seaports · Pan-India ICDs",
     icon: FileCheck2,
@@ -396,7 +396,7 @@ export default function EditorialIndustrialThemePage() {
 
             {/* Sub-Headline */}
             <p className="mt-6 text-slate-300 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl">
-              Licensed CBIC AEO-LO Tier 2 multimodal freight forwarding, international air and ocean cargo,
+              Licensed CBIC AEO-LO multimodal freight forwarding, international air and ocean cargo,
               and heavy-lift project cargo engineered up to{" "}
               <span className="text-white font-semibold border-b border-[#E1390F]">482 metric tons</span>{" "}
               across 10 direct Indian branch stations.
@@ -419,7 +419,7 @@ export default function EditorialIndustrialThemePage() {
               </a>
               <div className="hidden lg:flex items-center gap-2 pl-4 border-l border-white/15 text-[11px] font-mono text-white/45">
                 <Shield className="w-3.5 h-3.5 text-[#E1390F]" />
-                <span>AEO-LO Tier 2 Licensed Broker</span>
+                <span>CBIC AEO-LO Licensed Broker</span>
               </div>
             </div>
           </div>
@@ -432,7 +432,7 @@ export default function EditorialIndustrialThemePage() {
               {[
                 { v: "482 MT", l: "MAX HEAVY LIFT", s: "Record #9 · Breakbulk Stowage" },
                 { v: "10 STATIONS", l: "INDIAN GATEWAYS", s: "Direct Pan-India Presence" },
-                { v: "CBIC AEO-LO", l: "TIER 2 VERIFIED", s: "INAAQCA4076M0F243 License" },
+                { v: "CBIC AEO-LO", l: "STATUTORY LICENSE", s: "INAAQCA4076M0F243 License" },
                 { v: "1M+ SQ FT", l: "CONTRACT STORAGE", s: "WMS · Bonded CFS Facilities" },
               ].map((item) => (
                 <div key={item.l} className="py-4 sm:py-5 px-4 sm:px-6">
@@ -464,7 +464,7 @@ export default function EditorialIndustrialThemePage() {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 text-xs font-mono">
               {[
-                { name: "CBIC AEO-LO", sub: "Tier 2 Accredited", img: "/images/aeo-logo.jpg", w: 56 },
+                { name: "CBIC AEO-LO", sub: "AEO Certified", img: "/images/aeo-logo.jpg", w: 56 },
                 { name: "IATA CARGO", sub: "Regulated Agent", img: "/images/IATA.png", w: 52 },
                 { name: "WCA WORLD", sub: "ID: 61840 Verified", img: "/images/wca.png", w: 52 },
                 { name: "SCN NETWORK", sub: "Security Network", img: "/images/SCN.png", w: 52 },
