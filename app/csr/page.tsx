@@ -37,7 +37,7 @@ const CSR_PILLARS = [
 
 export default function CsrPage() {
   return (
-    <div className="min-h-screen bg-[#121316] text-[#F8F7F4] selection:bg-[#e1390f] selection:text-white">
+    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -68,16 +68,16 @@ export default function CsrPage() {
               const Icon = p.icon;
               return (
                 <FreyerCard key={p.pillar} className="p-8 space-y-4">
-                  <div className="w-10 h-10 rounded bg-[#e1390f]/15 border border-[#e1390f]/30 flex items-center justify-center text-[#e1390f]">
+                  <div className="w-10 h-10 rounded bg-[#E33B12]/10 border border-[#E33B12]/20 flex items-center justify-center text-[#E33B12]">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <div className="text-xs font-mono uppercase text-[#e1390f] font-bold">
+                  <div className="text-xs font-mono uppercase text-[#E33B12] font-bold">
                     {p.pillar}
                   </div>
-                  <h3 className="text-xl font-bold text-white font-mono uppercase">
+                  <h3 className="text-xl font-bold text-[#17181B] font-mono uppercase">
                     {p.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#62656B] font-light leading-relaxed">
                     {p.desc}
                   </p>
                 </FreyerCard>

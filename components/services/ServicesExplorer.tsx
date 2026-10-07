@@ -71,7 +71,7 @@ export function ServicesExplorer() {
               >
                 1,000,000+ SQ FT
               </div>
-              <div className="text-[10px] font-mono text-[#e1390f] uppercase tracking-wider mt-1">
+              <div className="text-[10px] font-mono text-[#E33B12] uppercase tracking-wider mt-1">
                 WMS Managed Footprint
               </div>
             </div>
@@ -79,21 +79,21 @@ export function ServicesExplorer() {
         />
 
         {/* High-Bay Warehouse Photography Panel */}
-        <div className="relative aspect-[16/10] sm:aspect-[2.2/1] w-full rounded-xl overflow-hidden bg-[#181A1F] border border-white/10 shadow-2xl">
+        <div className="relative aspect-[16/10] sm:aspect-[2.2/1] w-full rounded-xl overflow-hidden bg-[#FFFFFF] border border-[#DCDCD7] shadow-lg">
           <Image
             src="/images/slide4.jpg"
             alt="High-bay multi-client warehouse facility with industrial racking and WMS material handling"
             fill
-            className="object-cover object-[center_38%] brightness-90 contrast-105"
+            className="object-cover object-[center_38%] brightness-95 contrast-105"
             sizes="(min-width: 1280px) 1400px, 100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#17181B]/70 via-transparent to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 flex flex-wrap items-center justify-between gap-3 text-white text-xs font-mono">
-            <span className="bg-[#121316]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
+            <span className="bg-[#17181B]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
               Multi-Client &middot; Bonded CFS &middot; Temperature Controlled
             </span>
-            <span className="bg-[#121316]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10 hidden sm:inline-block">
+            <span className="bg-[#17181B]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10 hidden sm:inline-block">
               Port &amp; Rail ICD Connectivity
             </span>
           </div>
@@ -101,11 +101,11 @@ export function ServicesExplorer() {
 
         {/* 19 Capabilities Typographic Ledger */}
         <div className="mt-12">
-          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between pb-3 border-b border-white/10">
-            <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#e1390f] font-semibold">
+          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between pb-3 border-b border-[#DCDCD7]">
+            <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#E33B12] font-semibold">
               19 Value-Added Fulfillment &amp; Processing Services
             </h3>
-            <span className="text-xs font-mono text-white/40 mt-1 sm:mt-0">
+            <span className="text-xs font-mono text-[#62656B] mt-1 sm:mt-0">
               Integrated WMS Control
             </span>
           </div>
@@ -114,15 +114,15 @@ export function ServicesExplorer() {
             {WAREHOUSE_19_CAPABILITIES.map((service, idx) => (
               <div
                 key={idx}
-                className="py-3 border-b border-white/5 flex items-center justify-between text-slate-300 font-light hover:text-white transition-colors"
+                className="py-3 border-b border-[#DCDCD7] flex items-center justify-between text-[#17181B] font-light hover:text-[#E33B12] transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-mono text-[#e1390f] font-semibold w-5">
+                  <span className="text-[10px] font-mono text-[#E33B12] font-semibold w-5">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                   <span>{service}</span>
                 </div>
-                <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#DCDCD7]" />
               </div>
             ))}
           </div>
@@ -147,36 +147,36 @@ export function ServicesExplorer() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 bg-[#181A1F] shadow-2xl">
+          <div className="lg:col-span-7 relative aspect-[16/10] rounded-xl overflow-hidden border border-[#DCDCD7] bg-[#FFFFFF] shadow-lg">
             <Image
               src="/images/11.3.jpg"
               alt="Heavy-lift crane spreader hoist lifting 37.6 MT boom assembly mid-air at container terminal"
               fill
-              className="object-cover object-center brightness-90 contrast-105"
+              className="object-cover object-center brightness-95 contrast-105"
               sizes="(min-width: 1024px) 60vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-80" />
-            <span className="absolute bottom-4 left-4 text-xs font-mono text-white/80 bg-[#121316]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#17181B]/70 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 text-xs font-mono text-white bg-[#17181B]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
               37.6 MT Boom Crane Lift &middot; Venice to Mundra
             </span>
           </div>
 
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10">
-              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#e1390f] font-semibold">
+            <div className="flex items-center justify-between pb-2 border-b border-[#DCDCD7]">
+              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#E33B12] font-semibold">
                 Target Industrial Sectors
               </h3>
-              <span className="text-[10px] font-mono text-white/40">Turnkey Scope</span>
+              <span className="text-[10px] font-mono text-[#62656B]">Turnkey Scope</span>
             </div>
 
-            <div className="divide-y divide-white/5 text-xs">
+            <div className="divide-y divide-[#DCDCD7] text-xs">
               {PROJECT_SECTORS.map((sector) => (
                 <div key={sector.step} className="py-3 flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-[10px] font-mono text-[#e1390f] font-bold">{sector.step}</span>
-                    <span className="font-semibold text-white font-mono">{sector.name}</span>
+                    <span className="text-[10px] font-mono text-[#E33B12] font-bold">{sector.step}</span>
+                    <span className="font-semibold text-[#17181B] font-mono">{sector.name}</span>
                   </div>
-                  <span className="text-[11px] text-white/50 font-light text-right">{sector.scope}</span>
+                  <span className="text-[11px] text-[#62656B] font-light text-right">{sector.scope}</span>
                 </div>
               ))}
             </div>
@@ -184,19 +184,19 @@ export function ServicesExplorer() {
         </div>
 
         {/* 6-Step Operational Execution Process */}
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-white/40 font-semibold mb-6">
+        <div className="mt-12 pt-8 border-t border-[#DCDCD7]">
+          <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[#62656B] font-semibold mb-6">
             Engineered Operational Execution Sequence
           </h3>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {PROJECT_EXECUTION_STAGES.map((stage) => (
               <FreyerCard key={stage.step} className="p-4 space-y-2">
-                <div className="w-7 h-7 rounded bg-[#e1390f]/15 border border-[#e1390f]/30 flex items-center justify-center text-[10px] font-mono font-bold text-[#e1390f]">
+                <div className="w-7 h-7 rounded bg-[#E33B12]/15 border border-[#E33B12]/30 flex items-center justify-center text-[10px] font-mono font-bold text-[#E33B12]">
                   {stage.step}
                 </div>
-                <div className="font-semibold text-white text-xs">{stage.title}</div>
-                <p className="text-slate-400 text-[11px] font-light leading-relaxed">{stage.desc}</p>
+                <div className="font-semibold text-[#17181B] text-xs">{stage.title}</div>
+                <p className="text-[#62656B] text-[11px] font-light leading-relaxed">{stage.desc}</p>
               </FreyerCard>
             ))}
           </div>
@@ -218,28 +218,28 @@ export function ServicesExplorer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* 03: Ocean Freight */}
           <FreyerCard id="ocean-freight" className="p-8 space-y-4">
-            <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
-              <span className="text-[#e1390f] font-bold">03 &middot; OCEAN FREIGHT</span>
+            <div className="flex items-center justify-between text-xs font-mono text-[#62656B] pb-2 border-b border-[#DCDCD7]">
+              <span className="text-[#E33B12] font-bold">03 &middot; OCEAN FREIGHT</span>
               <span>FCL &amp; LCL Sailings</span>
             </div>
-            <h3 className="text-xl font-bold text-white tracking-tight">
+            <h3 className="text-xl font-bold text-[#17181B] tracking-tight">
               Direct Carrier Contracts &amp; Consolidated LCL Sailings
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#62656B] font-light leading-relaxed">
               We leverage established ocean carrier alliances to secure guaranteed capacity, dependable container scheduling, and competitive slot agreements across major global trade corridors.
             </p>
-            <ul className="space-y-2 text-xs text-white/80 pt-2 font-light">
+            <ul className="space-y-2 text-xs text-[#17181B] pt-2 font-light">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
                 <span>Full Container Load (FCL) carrier space allocations</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
                 <span>Weekly Less-than-Container Load (LCL) consolidated sailings</span>
               </li>
             </ul>
-            <div className="pt-4 border-t border-white/10">
-              <Link href="/services/ocean-freight" className="text-xs font-mono text-[#e1390f] hover:text-white inline-flex items-center gap-1">
+            <div className="pt-4 border-t border-[#DCDCD7]">
+              <Link href="/services/ocean-freight" className="text-xs font-mono text-[#E33B12] hover:text-[#17181B] inline-flex items-center gap-1">
                 <span>View Full Ocean Specifications</span>
                 <ArrowUpRight className="w-3 h-3" />
               </Link>
@@ -248,23 +248,23 @@ export function ServicesExplorer() {
 
           {/* 04: Air Freight */}
           <FreyerCard id="air-freight" className="p-8 space-y-4">
-            <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
-              <span className="text-[#e1390f] font-bold">04 &middot; AIR FREIGHT</span>
+            <div className="flex items-center justify-between text-xs font-mono text-[#62656B] pb-2 border-b border-[#DCDCD7]">
+              <span className="text-[#E33B12] font-bold">04 &middot; AIR FREIGHT</span>
               <span>IATA 14-3-4852</span>
             </div>
-            <h3 className="text-xl font-bold text-white tracking-tight">
+            <h3 className="text-xl font-bold text-[#17181B] tracking-tight">
               Scheduled Airline Bookings &amp; Tailored Freighter Chartering
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#62656B] font-light leading-relaxed">
               Standard and expedited international air transportation with door-to-apron visibility. When capacity shortages or remote landing strips require dedicated aircraft, we broker full and part-charter flights.
             </p>
-            <div className="flex flex-wrap gap-2 pt-2 text-[10px] font-mono text-white/70">
-              <span className="px-2.5 py-1 bg-white/5 rounded border border-white/10">Pharma Cold Chain</span>
-              <span className="px-2.5 py-1 bg-white/5 rounded border border-white/10">Dangerous Goods (DG)</span>
-              <span className="px-2.5 py-1 bg-white/5 rounded border border-white/10">High Value Secure</span>
+            <div className="flex flex-wrap gap-2 pt-2 text-[10px] font-mono text-[#17181B]">
+              <span className="px-2.5 py-1 bg-[#F7F6F2] rounded border border-[#DCDCD7]">Pharma Cold Chain</span>
+              <span className="px-2.5 py-1 bg-[#F7F6F2] rounded border border-[#DCDCD7]">Dangerous Goods (DG)</span>
+              <span className="px-2.5 py-1 bg-[#F7F6F2] rounded border border-[#DCDCD7]">High Value Secure</span>
             </div>
-            <div className="pt-4 border-t border-white/10">
-              <Link href="/services/air-freight" className="text-xs font-mono text-[#e1390f] hover:text-white inline-flex items-center gap-1">
+            <div className="pt-4 border-t border-[#DCDCD7]">
+              <Link href="/services/air-freight" className="text-xs font-mono text-[#E33B12] hover:text-[#17181B] inline-flex items-center gap-1">
                 <span>View Full Air Cargo Specifications</span>
                 <ArrowUpRight className="w-3 h-3" />
               </Link>
@@ -273,28 +273,28 @@ export function ServicesExplorer() {
 
           {/* 05: Customs Brokerage */}
           <FreyerCard id="customs-brokerage" className="p-8 space-y-4">
-            <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
-              <span className="text-[#e1390f] font-bold">05 &middot; CUSTOMS BROKERAGE</span>
+            <div className="flex items-center justify-between text-xs font-mono text-[#62656B] pb-2 border-b border-[#DCDCD7]">
+              <span className="text-[#E33B12] font-bold">05 &middot; CUSTOMS BROKERAGE</span>
               <span>AEO-LO Certified</span>
             </div>
-            <h3 className="text-xl font-bold text-white tracking-tight">
+            <h3 className="text-xl font-bold text-[#17181B] tracking-tight">
               CBIC Customs Authority &amp; In-House Licensed Brokers
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#62656B] font-light leading-relaxed">
               Managed by in-house Licensed Customs Brokers at corporate and branch desks across India. Facilitating import and export clearances to Indian Customs with prioritized processing privileges.
             </p>
-            <ul className="space-y-2 text-xs text-white/80 pt-2 font-light">
+            <ul className="space-y-2 text-xs text-[#17181B] pt-2 font-light">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
                 <span>On-site licensed customs house brokers across 10 branch stations</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
                 <span>Specialized tariff classification and duty exemption management</span>
               </li>
             </ul>
-            <div className="pt-4 border-t border-white/10">
-              <Link href="/services/customs-brokerage" className="text-xs font-mono text-[#e1390f] hover:text-white inline-flex items-center gap-1">
+            <div className="pt-4 border-t border-[#DCDCD7]">
+              <Link href="/services/customs-brokerage" className="text-xs font-mono text-[#E33B12] hover:text-[#17181B] inline-flex items-center gap-1">
                 <span>View Full Customs Specifications</span>
                 <ArrowUpRight className="w-3 h-3" />
               </Link>
@@ -303,28 +303,28 @@ export function ServicesExplorer() {
 
           {/* 06: Risk Management */}
           <FreyerCard id="risk-management" className="p-8 space-y-4">
-            <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
-              <span className="text-[#e1390f] font-bold">06 &middot; CARGO RISK MANAGEMENT</span>
+            <div className="flex items-center justify-between text-xs font-mono text-[#62656B] pb-2 border-b border-[#DCDCD7]">
+              <span className="text-[#E33B12] font-bold">06 &middot; CARGO RISK MANAGEMENT</span>
               <span>Marine Insurance</span>
             </div>
-            <h3 className="text-xl font-bold text-white tracking-tight">
+            <h3 className="text-xl font-bold text-[#17181B] tracking-tight">
               Supply Chain Exposure Underwriting &amp; Marine Policies
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#62656B] font-light leading-relaxed">
               Carrier liability is strictly capped under international transport conventions. Our marine surveyors evaluate transit exposure, providing comprehensive All-Risk insurance policies.
             </p>
-            <ul className="space-y-2 text-xs text-white/80 pt-2 font-light">
+            <ul className="space-y-2 text-xs text-[#17181B] pt-2 font-light">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
                 <span>All-Risk ICC(A) marine cargo coverage for global movements</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
                 <span>Spot single-voyage policies and continuous annual blanket covers</span>
               </li>
             </ul>
-            <div className="pt-4 border-t border-white/10">
-              <Link href="/services/risk-management" className="text-xs font-mono text-[#e1390f] hover:text-white inline-flex items-center gap-1">
+            <div className="pt-4 border-t border-[#DCDCD7]">
+              <Link href="/services/risk-management" className="text-xs font-mono text-[#E33B12] hover:text-[#17181B] inline-flex items-center gap-1">
                 <span>View Full Risk Management Specifications</span>
                 <ArrowUpRight className="w-3 h-3" />
               </Link>

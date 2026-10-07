@@ -75,13 +75,13 @@ export function NetworkAlliances() {
                 onClick={() => setActive(index)}
                 className={`p-6 rounded-xl border transition-all duration-200 cursor-pointer flex flex-col justify-between ${
                   isSelected
-                    ? "border-[#e1390f] bg-[#20242D] shadow-xl shadow-[#e1390f]/10"
-                    : "border-white/10 bg-[#181A1F] hover:border-white/25 hover:bg-[#1D2128]"
+                    ? "border-[#E33B12] bg-white shadow-md shadow-[#E33B12]/10"
+                    : "border-[#DCDCD7] bg-white hover:border-[#17181B] hover:shadow-xs"
                 }`}
               >
                 <div>
-                  {/* High-Contrast Pristine White Logo Plinth */}
-                  <div className="relative flex h-20 w-full items-center justify-center rounded-lg bg-white p-3 mb-5 shadow-sm">
+                  {/* High-Contrast Clean Plinth */}
+                  <div className="relative flex h-20 w-full items-center justify-center rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] p-3 mb-5">
                     <Image
                       src={alliance.logo}
                       alt={alliance.name}
@@ -91,20 +91,20 @@ export function NetworkAlliances() {
                     />
                   </div>
 
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#e1390f] font-semibold mb-1">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#E33B12] font-semibold mb-1">
                     {alliance.tier}
                   </div>
-                  <h3 className="text-base font-bold text-white font-mono uppercase tracking-tight">
+                  <h3 className="text-base font-bold text-[#17181B] font-mono uppercase tracking-tight">
                     {alliance.name}
                   </h3>
-                  <p className="mt-2 text-xs text-slate-300 font-light leading-relaxed">
+                  <p className="mt-2 text-xs text-[#62656B] font-normal leading-relaxed">
                     {alliance.detail}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/8 flex items-center justify-between text-[11px] font-mono text-white/40">
+                <div className="mt-6 pt-4 border-t border-[#DCDCD7] flex items-center justify-between text-[11px] font-mono text-[#62656B]">
                   <span>Reciprocal Agency</span>
-                  <span className={isSelected ? "text-[#e1390f] font-semibold" : "text-white/60"}>
+                  <span className={isSelected ? "text-[#E33B12] font-semibold" : "text-[#17181B]/70"}>
                     {isSelected ? "Active Focus" : "Vetted Partner"}
                   </span>
                 </div>
@@ -128,15 +128,15 @@ export function NetworkAlliances() {
           {CORRIDOR_STEPS.map((step) => (
             <div
               key={step.num}
-              className="p-5 rounded-xl border border-white/10 bg-[#181A1F] space-y-2 hover:border-white/20 transition-colors"
+              className="p-5 rounded-xl border border-[#DCDCD7] bg-white space-y-2 hover:border-[#17181B] transition-colors shadow-xs"
             >
-              <div className="w-8 h-8 rounded bg-[#e1390f]/15 border border-[#e1390f]/30 flex items-center justify-center text-xs font-mono font-bold text-[#e1390f]">
+              <div className="w-8 h-8 rounded bg-[#E33B12]/10 border border-[#E33B12]/20 flex items-center justify-center text-xs font-mono font-bold text-[#E33B12]">
                 {step.num}
               </div>
-              <div className="font-bold text-white text-sm font-mono uppercase mt-2">
+              <div className="font-bold text-[#17181B] text-sm font-mono uppercase mt-2">
                 {step.stage}
               </div>
-              <p className="text-xs text-slate-300 font-light leading-relaxed">
+              <p className="text-xs text-[#62656B] font-normal leading-relaxed">
                 {step.desc}
               </p>
             </div>

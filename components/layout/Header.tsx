@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { FTRNav } from "@/components/freyer-total-redesign/FTRNav";
+import { LTNav } from "@/components/freyer-light-theme/LTNav";
 
 export function Header() {
-  return <FTRNav />;
+  return <LTNav />;
 }

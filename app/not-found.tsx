@@ -8,18 +8,18 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main className="min-h-[75vh] flex items-center justify-center bg-[#121316] text-[#F8F7F4] px-4 pt-32 pb-24">
+      <main className="min-h-[75vh] flex items-center justify-center bg-[#F7F6F2] text-[#17181B] px-4 pt-32 pb-24">
         <div className="max-w-xl text-center space-y-6">
-          <span className="text-[#e1390f] text-xs font-mono tracking-[0.22em] uppercase font-bold block">
+          <span className="text-[#E33B12] text-xs font-mono tracking-[0.22em] uppercase font-bold block">
             404 &middot; Resource Not Found
           </span>
           <h1
-            className="font-bold tracking-tight text-white leading-[1.08]"
+            className="font-bold tracking-tight text-[#17181B] leading-[1.08]"
             style={{ fontSize: "var(--token-text-3xl)" }}
           >
             Page not found.
           </h1>
-          <p className="text-white/60 text-base sm:text-lg leading-relaxed max-w-md mx-auto">
+          <p className="text-[#62656B] text-base sm:text-lg leading-relaxed max-w-md mx-auto">
             The requested destination route does not exist or has been relocated within our network directory.
           </p>
 

@@ -26,18 +26,18 @@ export function SectionHeader({
     <div className={`mb-12 sm:mb-16 ${className}`}>
       {/* Category Eyebrow */}
       {(num || tag) && (
-        <div className={`flex items-center gap-2 text-xs font-mono text-[#e1390f] uppercase tracking-[0.24em] font-semibold mb-3 ${align === "center" ? "justify-center" : ""}`}>
+        <div className={`flex items-center gap-2 text-xs font-mono text-[#E33B12] uppercase tracking-[0.24em] font-semibold mb-3 ${align === "center" ? "justify-center" : ""}`}>
           {num && <span>{num}</span>}
-          {num && tag && <span className="text-white/20 select-none">/</span>}
+          {num && tag && <span className="text-[#DCDCD7] select-none">/</span>}
           {tag && <span>{tag}</span>}
         </div>
       )}
 
       {/* Main Title & Action Alignment */}
-      <div className={`flex flex-col ${align === "center" ? "items-center text-center" : "lg:flex-row lg:items-end lg:justify-between"} gap-6 pb-6 border-b border-white/10`}>
+      <div className={`flex flex-col ${align === "center" ? "items-center text-center" : "lg:flex-row lg:items-end lg:justify-between"} gap-6 pb-6 border-b border-[#DCDCD7]`}>
         <div className={align === "center" ? "max-w-3xl" : "max-w-2xl"}>
           <h2
-            className="text-white font-black tracking-[-0.02em] leading-[0.94] uppercase"
+            className="text-[#17181B] font-black tracking-[-0.02em] leading-[0.94] uppercase"
             style={{
               fontFamily: THEME_TOKENS.typography.fontDisplay,
               fontSize: "var(--token-text-4xl)",
@@ -47,14 +47,14 @@ export function SectionHeader({
             {highlight && (
               <>
                 {" "}
-                <span className="text-white/80 font-light italic">
+                <span className="text-[#62656B] font-light italic">
                   {highlight}
                 </span>
               </>
             )}
           </h2>
           {description && (
-            <p className="mt-4 text-slate-300 text-sm sm:text-base font-light leading-relaxed">
+            <p className="mt-4 text-[#62656B] text-sm sm:text-base font-light leading-relaxed">
               {description}
             </p>
           )}

@@ -100,22 +100,22 @@ export default function GlobalMovementAtlas({
   }, []);
 
   return (
-    <div className="w-full bg-[#121316] text-slate-100 selection:bg-[#e1390f]/30">
+    <div className="w-full bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12]/20">
       {/* SECTION HEADER: Editorial Industrial Typography */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 pb-6 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 pb-6 border-b border-[#DCDCD7]">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#e1390f]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#e1390f] font-semibold">
+            <span className="inline-block w-2 h-2 rounded-full bg-[#E33B12]" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#E33B12] font-semibold">
               WHERE FREYER MOVES &bull; INTERNATIONAL PROJECT CARGO
             </span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white font-[family-name:var(--font-barlow-condensed)]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#17181B] font-[family-name:var(--font-barlow-condensed)]">
             World Movement Atlas
           </h2>
 
-          <p className="text-slate-400 max-w-3xl text-sm sm:text-base leading-relaxed font-sans">
+          <p className="text-[#62656B] max-w-3xl text-sm sm:text-base leading-relaxed font-sans">
             Every movement charted is derived directly from original project documentation.
             Verified heavy-lift, breakbulk, and out-of-gauge industrial consignments across 10 countries represented in documented project movements.
           </p>
@@ -123,49 +123,49 @@ export default function GlobalMovementAtlas({
 
         {/* VERIFIED EMPIRICAL KPI BAR (Strictly Documented Facts — No Inferred Totals) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 pt-6">
-          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5">
-            <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Documented Evidence</div>
-            <div className="text-xl sm:text-2xl font-bold text-white font-[family-name:var(--font-barlow-condensed)] mt-0.5">
-              11 <span className="text-xs font-mono font-normal text-slate-400">PROJECT MOVEMENTS</span>
+          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
+            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Documented Evidence</div>
+            <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
+              11 <span className="text-xs font-mono font-normal text-[#62656B]">PROJECT MOVEMENTS</span>
             </div>
           </div>
 
-          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5">
-            <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Largest Movement</div>
-            <div className="text-xl sm:text-2xl font-bold text-[#e1390f] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
-              1,156 <span className="text-xs font-mono font-normal text-slate-400">MT (17 × 68 MT)</span>
+          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
+            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Largest Movement</div>
+            <div className="text-xl sm:text-2xl font-bold text-[#E33B12] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
+              1,156 <span className="text-xs font-mono font-normal text-[#62656B]">MT (17 × 68 MT)</span>
             </div>
           </div>
 
-          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5">
-            <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Longest Cargo Consignment</div>
-            <div className="text-xl sm:text-2xl font-bold text-white font-[family-name:var(--font-barlow-condensed)] mt-0.5">
-              2,700 <span className="text-xs font-mono font-normal text-slate-400">CM (27 M)</span>
+          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
+            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Longest Cargo Consignment</div>
+            <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
+              2,700 <span className="text-xs font-mono font-normal text-[#62656B]">CM (27 M)</span>
             </div>
           </div>
 
-          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5">
-            <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Project Countries</div>
-            <div className="text-xl sm:text-2xl font-bold text-white font-[family-name:var(--font-barlow-condensed)] mt-0.5">
-              10 <span className="text-xs font-mono font-normal text-slate-400">COUNTRIES</span>
+          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
+            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Project Countries</div>
+            <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
+              10 <span className="text-xs font-mono font-normal text-[#62656B]">COUNTRIES</span>
             </div>
           </div>
 
-          <div className="bg-[#181A1F] border border-white/10 rounded-lg p-3.5 col-span-2 sm:col-span-1">
-            <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Customs License</div>
-            <div className="text-xl sm:text-2xl font-bold text-emerald-400 font-[family-name:var(--font-barlow-condensed)] flex items-center gap-1.5 mt-0.5">
-              AEO (LO) <ShieldCheck className="w-4 h-4 text-emerald-400" />
+          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 col-span-2 sm:col-span-1 shadow-xs">
+            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Customs License</div>
+            <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] flex items-center gap-1.5 mt-0.5">
+              AEO (LO) <ShieldCheck className="w-4 h-4 text-[#E33B12]" />
             </div>
           </div>
         </div>
       </div>
 
       {/* FILTER & ROUTE SELECTOR RAIL */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 border-b border-[#DCDCD7]">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           {/* Classification Filter */}
           <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 no-scrollbar">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 shrink-0 flex items-center gap-1">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#62656B] shrink-0 flex items-center gap-1">
               <Filter className="w-3 h-3" /> Filter:
             </span>
             {[
@@ -179,8 +179,8 @@ export default function GlobalMovementAtlas({
                 onClick={() => setCategoryFilter(f.id)}
                 className={`px-2.5 py-1 rounded text-xs font-mono whitespace-nowrap transition border ${
                   categoryFilter === f.id
-                    ? "bg-white/10 border-white/30 text-white font-semibold"
-                    : "bg-transparent border-white/5 text-slate-400 hover:text-white hover:bg-white/5"
+                    ? "bg-[#17181B] border-[#17181B] text-[#F7F6F2] font-semibold"
+                    : "bg-white border-[#DCDCD7] text-[#62656B] hover:text-[#17181B] hover:border-[#17181B]"
                 }`}
               >
                 {f.label}
@@ -190,7 +190,7 @@ export default function GlobalMovementAtlas({
 
           {/* Quick Route Selector Chips */}
           <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 no-scrollbar">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 shrink-0 mr-1">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#62656B] shrink-0 mr-1">
               Manifest:
             </span>
             {filteredMovements.map((m) => {
@@ -204,8 +204,8 @@ export default function GlobalMovementAtlas({
                   }}
                   className={`px-2 py-0.5 rounded text-[11px] font-mono transition border whitespace-nowrap flex items-center gap-1 ${
                     isSelected
-                      ? "bg-[#e1390f] border-[#e1390f] text-white font-bold shadow-md shadow-[#e1390f]/20"
-                      : "bg-[#181A1F] border-white/10 text-slate-400 hover:text-white hover:bg-white/5"
+                      ? "bg-[#E33B12] border-[#E33B12] text-white font-bold shadow-xs"
+                      : "bg-white border-[#DCDCD7] text-[#62656B] hover:text-[#17181B] hover:border-[#17181B]"
                   }`}
                 >
                   <span>{m.id}</span>
@@ -222,25 +222,25 @@ export default function GlobalMovementAtlas({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* CARTOGRAPHIC VECTOR STAGE (8 Columns on Desktop) */}
-          <div className="lg:col-span-8 relative bg-[#16181F] rounded-xl border border-white/15 p-4 sm:p-6 overflow-hidden flex flex-col justify-between shadow-2xl shadow-black/80">
+          <div className="lg:col-span-8 relative bg-white rounded-xl border border-[#DCDCD7] p-4 sm:p-6 overflow-hidden flex flex-col justify-between shadow-xs">
             
             {/* Subtle Grid Canvas */}
             <div
               className="absolute inset-0 opacity-[0.03] pointer-events-none"
               style={{
-                backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
+                backgroundImage: "radial-gradient(#17181B 1px, transparent 1px)",
                 backgroundSize: "32px 32px",
               }}
             />
 
             {/* Stage Header Info */}
-            <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-slate-400 border-b border-white/5 pb-2.5 mb-2">
-              <div className="flex items-center gap-2 text-slate-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#e1390f]" />
+            <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-[#62656B] border-b border-[#DCDCD7] pb-2.5 mb-2">
+              <div className="flex items-center gap-2 text-[#17181B]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E33B12]" />
                 <span className="font-semibold uppercase tracking-wider">INTERNATIONAL MOVEMENT THEATRE</span>
               </div>
-              <div className="font-mono text-slate-400">
-                ACTIVE MANIFEST: <span className="text-[#e1390f] font-bold">{selectedMovement.id}</span>
+              <div className="font-mono text-[#62656B]">
+                ACTIVE MANIFEST: <span className="text-[#E33B12] font-bold">{selectedMovement.id}</span>
               </div>
             </div>
 
@@ -248,23 +248,23 @@ export default function GlobalMovementAtlas({
             <div className="relative w-full aspect-[2/1] my-auto select-none">
               <svg
                 viewBox={WORLD_VIEWBOX}
-                className="w-full h-full filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+                className="w-full h-full"
               >
                 <defs>
-                  {/* Subtle Landmass Fills */}
+                  {/* Landmass Fills */}
                   <linearGradient id="worldLandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#1E222B" />
-                    <stop offset="100%" stopColor="#171A21" />
+                    <stop offset="0%" stopColor="#DCDCD7" />
+                    <stop offset="100%" stopColor="#DCDCD7" />
                   </linearGradient>
 
                   <linearGradient id="verifiedCountryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#2A303C" />
-                    <stop offset="100%" stopColor="#20252E" />
+                    <stop offset="0%" stopColor="#D4D4CE" />
+                    <stop offset="100%" stopColor="#D4D4CE" />
                   </linearGradient>
 
                   <linearGradient id="indiaSovereignGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#323A48" />
-                    <stop offset="100%" stopColor="#252B36" />
+                    <stop offset="0%" stopColor="#C2C2BB" />
+                    <stop offset="100%" stopColor="#C2C2BB" />
                   </linearGradient>
 
                   {/* Soft Route Glow Filter */}
@@ -275,7 +275,7 @@ export default function GlobalMovementAtlas({
                 </defs>
 
                 {/* 1. Subtle Cartographic Coordinate Lines */}
-                <g className="opacity-10 stroke-slate-500 stroke-[0.4]" strokeDasharray="2 4">
+                <g className="opacity-40 stroke-[#DCDCD7] stroke-[0.5]" strokeDasharray="2 4">
                   <line x1="0" y1="250" x2="1000" y2="250" />
                   <line x1="0" y1="184.7" x2="1000" y2="184.7" />
                   <line x1="0" y1="315.3" x2="1000" y2="315.3" />
@@ -288,7 +288,7 @@ export default function GlobalMovementAtlas({
                 <path
                   d={WORLD_LAND_PATH}
                   fill="url(#worldLandGradient)"
-                  stroke="#232832"
+                  stroke="rgba(23, 24, 27, 0.15)"
                   strokeWidth="0.5"
                   strokeLinejoin="round"
                   strokeLinecap="round"
@@ -309,17 +309,17 @@ export default function GlobalMovementAtlas({
                         isIndia
                           ? "url(#indiaSovereignGradient)"
                           : isHighlighted
-                          ? "#384252"
+                          ? "#C8C8C2"
                           : "url(#verifiedCountryGradient)"
                       }
                       stroke={
                         isIndia
-                          ? "#e1390f"
+                          ? "#E33B12"
                           : isHighlighted
-                          ? "#e1390f"
-                          : "#333C4A"
+                          ? "#E33B12"
+                          : "#B8B8B2"
                       }
-                      strokeWidth={isIndia ? 0.9 : isHighlighted ? 1.0 : 0.6}
+                      strokeWidth={isIndia ? 1.0 : isHighlighted ? 1.2 : 0.6}
                       strokeLinejoin="round"
                       strokeLinecap="round"
                       className="transition-colors duration-200"
@@ -375,18 +375,18 @@ export default function GlobalMovementAtlas({
                             <path
                               d={arcD}
                               fill="none"
-                              stroke="#e1390f"
+                              stroke="#E33B12"
                               strokeWidth="3.5"
-                              strokeOpacity="0.35"
+                              strokeOpacity="0.25"
                               filter="url(#softGlow)"
                             />
                             {secondaryArcD && (
                               <path
                                 d={secondaryArcD}
                                 fill="none"
-                                stroke="#e1390f"
+                                stroke="#E33B12"
                                 strokeWidth="3.5"
-                                strokeOpacity="0.35"
+                                strokeOpacity="0.25"
                                 filter="url(#softGlow)"
                               />
                             )}
@@ -399,13 +399,13 @@ export default function GlobalMovementAtlas({
                           fill="none"
                           stroke={
                             isSelected
-                              ? "#e1390f"
+                              ? "#E33B12"
                               : isHovered
-                              ? "#fb923c"
-                              : "#38bdf8"
+                              ? "#E33B12"
+                              : "#62656B"
                           }
-                          strokeWidth={isSelected ? "2.0" : isHovered ? "1.5" : "0.9"}
-                          strokeOpacity={isSelected ? 1 : isHovered ? 0.85 : 0.3}
+                          strokeWidth={isSelected ? "2.2" : isHovered ? "1.6" : "0.9"}
+                          strokeOpacity={isSelected ? 1 : isHovered ? 0.85 : 0.35}
                           strokeDasharray={isSelected ? "none" : "3 3"}
                           className="transition-all duration-150"
                         />
@@ -415,13 +415,13 @@ export default function GlobalMovementAtlas({
                             fill="none"
                             stroke={
                               isSelected
-                                ? "#e1390f"
+                                ? "#E33B12"
                                 : isHovered
-                                ? "#fb923c"
-                                : "#38bdf8"
+                                ? "#E33B12"
+                                : "#62656B"
                             }
-                            strokeWidth={isSelected ? "1.8" : isHovered ? "1.3" : "0.8"}
-                            strokeOpacity={isSelected ? 0.9 : isHovered ? 0.75 : 0.25}
+                            strokeWidth={isSelected ? "2.0" : isHovered ? "1.4" : "0.8"}
+                            strokeOpacity={isSelected ? 0.9 : isHovered ? 0.75 : 0.3}
                             strokeDasharray="2 2"
                             className="transition-all duration-150"
                           />
@@ -445,16 +445,16 @@ export default function GlobalMovementAtlas({
                       <g key={node.port} transform={`translate(${pt.x}, ${pt.y})`}>
                         {/* Outer Pin Dot */}
                         <circle
-                          r={isFocus ? 3.5 : 1.8}
+                          r={isFocus ? 4 : 2}
                           fill={
                             isFocus
                               ? isOrigin
-                                ? "#38bdf8"
-                                : "#e1390f"
-                              : "#64748b"
+                                ? "#17181B"
+                                : "#E33B12"
+                              : "#62656B"
                           }
-                          stroke="#16181F"
-                          strokeWidth={isFocus ? 1.2 : 0.6}
+                          stroke="#FFFFFF"
+                          strokeWidth={isFocus ? 1.5 : 0.8}
                         />
 
                         {/* Center White Pinpoint */}
@@ -469,8 +469,8 @@ export default function GlobalMovementAtlas({
                               width={node.city.length * 6.0 + 10}
                               height="11"
                               rx="2"
-                              fill="#181A1F"
-                              stroke={isOrigin ? "#38bdf8" : "#e1390f"}
+                              fill="#17181B"
+                              stroke="#17181B"
                               strokeWidth="0.6"
                               opacity="0.95"
                             />
@@ -494,27 +494,27 @@ export default function GlobalMovementAtlas({
             </div>
 
             {/* Cartographic Legend */}
-            <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 text-[10px] font-mono text-slate-400 pt-3 border-t border-white/5">
+            <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 text-[10px] font-mono text-[#62656B] pt-3 border-t border-[#DCDCD7]">
               <div className="flex flex-wrap items-center gap-4">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#e1390f]" />
-                  <span className="text-slate-300">Discharge / Destination Port</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#E33B12]" />
+                  <span className="text-[#17181B]">Discharge / Destination Port</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#38bdf8]" />
-                  <span className="text-slate-300">Origin Port / Documented Lanes</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#17181B]" />
+                  <span className="text-[#17181B]">Origin Port / Documented Lanes</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#64748b]" />
-                  <span className="text-slate-300">Network Ports</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#62656B]" />
+                  <span className="text-[#17181B]">Network Ports</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded bg-[#323A48] border border-[#e1390f]" />
-                  <span className="text-slate-300">India Sovereign Base</span>
+                  <span className="w-2.5 h-2.5 rounded bg-[#C2C2BB] border border-[#E33B12]" />
+                  <span className="text-[#17181B]">India Sovereign Base</span>
                 </div>
               </div>
-              <div className="text-[9px] text-slate-400 font-mono">
-                SOURCE: <code className="text-slate-300">freyer-forensics-v2/raw/html/project.html</code>
+              <div className="text-[9px] text-[#62656B] font-mono">
+                SOURCE: <code className="text-[#17181B]">freyer-forensics-v2/raw/html/project.html</code>
               </div>
             </div>
           </div>
@@ -523,51 +523,51 @@ export default function GlobalMovementAtlas({
           <div className="lg:col-span-4 space-y-5">
             
             {/* Active Manifest Card */}
-            <div className="bg-[#181A1F] rounded-xl border border-white/15 p-5 sm:p-6 shadow-xl relative overflow-hidden">
+            <div className="bg-white rounded-xl border border-[#DCDCD7] p-5 sm:p-6 shadow-xs relative overflow-hidden">
               
               {/* Dossier Header */}
-              <div className="border-b border-white/10 pb-3.5 mb-4">
+              <div className="border-b border-[#DCDCD7] pb-3.5 mb-4">
                 <div className="flex items-center justify-between">
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#e1390f] text-white">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#E33B12] text-white">
                     {selectedMovement.id}
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#62656B]">
                     TIER-D PROJECT RECORD
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold uppercase tracking-tight text-white font-[family-name:var(--font-barlow-condensed)] mt-1.5">
+                <h3 className="text-2xl font-bold uppercase tracking-tight text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-1.5">
                   {selectedMovement.route}
                 </h3>
               </div>
 
               {/* ORIGIN & DESTINATION */}
-              <div className="grid grid-cols-2 gap-3 p-3 bg-[#121316] rounded-lg border border-white/5 mb-4">
+              <div className="grid grid-cols-2 gap-3 p-3 bg-[#F7F6F2] rounded-lg border border-[#DCDCD7] mb-4">
                 <div>
-                  <div className="text-[9px] font-mono text-slate-400 uppercase tracking-widest flex items-center gap-1">
-                    <Anchor className="w-3 h-3 text-[#38bdf8]" /> ORIGIN
+                  <div className="text-[9px] font-mono text-[#62656B] uppercase tracking-widest flex items-center gap-1">
+                    <Anchor className="w-3 h-3 text-[#17181B]" /> ORIGIN
                   </div>
-                  <div className="text-sm font-bold text-white mt-1">
+                  <div className="text-sm font-bold text-[#17181B] mt-1">
                     {selectedMovement.origin.city}
                   </div>
-                  <div className="text-xs text-slate-400 font-mono truncate">
+                  <div className="text-xs text-[#62656B] font-mono truncate">
                     {selectedMovement.origin.port}
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                  <div className="text-[10px] text-[#62656B] font-mono mt-0.5">
                     {selectedMovement.origin.country}
                   </div>
                 </div>
 
-                <div className="border-l border-white/10 pl-3">
-                  <div className="text-[9px] font-mono text-slate-400 uppercase tracking-widest flex items-center gap-1">
-                    <Navigation className="w-3 h-3 text-[#e1390f]" /> DESTINATION
+                <div className="border-l border-[#DCDCD7] pl-3">
+                  <div className="text-[9px] font-mono text-[#62656B] uppercase tracking-widest flex items-center gap-1">
+                    <Navigation className="w-3 h-3 text-[#E33B12]" /> DESTINATION
                   </div>
-                  <div className="text-sm font-bold text-white mt-1">
+                  <div className="text-sm font-bold text-[#17181B] mt-1">
                     {selectedMovement.destination.city}
                   </div>
-                  <div className="text-xs text-slate-400 font-mono truncate">
+                  <div className="text-xs text-[#62656B] font-mono truncate">
                     {selectedMovement.destination.port}
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                  <div className="text-[10px] text-[#62656B] font-mono mt-0.5">
                     {selectedMovement.destination.country}
                   </div>
                 </div>
@@ -575,21 +575,21 @@ export default function GlobalMovementAtlas({
 
               {/* DOCUMENTED PROJECT: Exact Verified Specifications */}
               <div className="space-y-2.5 mb-4">
-                <div className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+                <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-widest">
                   Documented Project Manifest
                 </div>
                 
                 <div className="grid grid-cols-2 gap-2">
                   {selectedMovement.weightTons && (
-                    <div className="bg-[#121316] p-2.5 rounded border border-white/5">
-                      <div className="text-[9px] font-mono text-slate-400 uppercase flex items-center gap-1">
-                        <Scale className="w-3 h-3 text-slate-400" /> Weight
+                    <div className="bg-[#F7F6F2] p-2.5 rounded border border-[#DCDCD7]">
+                      <div className="text-[9px] font-mono text-[#62656B] uppercase flex items-center gap-1">
+                        <Scale className="w-3 h-3 text-[#62656B]" /> Weight
                       </div>
-                      <div className="text-lg font-bold text-white font-[family-name:var(--font-barlow-condensed)]">
+                      <div className="text-lg font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)]">
                         {selectedMovement.weightTons.toLocaleString()} MT
                       </div>
                       {selectedMovement.weightKg && (
-                        <div className="text-[10px] font-mono text-slate-400">
+                        <div className="text-[10px] font-mono text-[#62656B]">
                           ({selectedMovement.weightKg.toLocaleString()} KG)
                         </div>
                       )}
@@ -597,15 +597,15 @@ export default function GlobalMovementAtlas({
                   )}
 
                   {selectedMovement.volumeCbm && (
-                    <div className="bg-[#121316] p-2.5 rounded border border-white/5">
-                      <div className="text-[9px] font-mono text-slate-400 uppercase flex items-center gap-1">
-                        <Box className="w-3 h-3 text-slate-400" /> Volume
+                    <div className="bg-[#F7F6F2] p-2.5 rounded border border-[#DCDCD7]">
+                      <div className="text-[9px] font-mono text-[#62656B] uppercase flex items-center gap-1">
+                        <Box className="w-3 h-3 text-[#62656B]" /> Volume
                       </div>
-                      <div className="text-lg font-bold text-white font-[family-name:var(--font-barlow-condensed)]">
+                      <div className="text-lg font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)]">
                         {selectedMovement.volumeCbm} CBM
                       </div>
                       {selectedMovement.packageCount && (
-                        <div className="text-[10px] font-mono text-slate-400">
+                        <div className="text-[10px] font-mono text-[#62656B]">
                           {selectedMovement.packageCount} Packages
                         </div>
                       )}
@@ -613,22 +613,22 @@ export default function GlobalMovementAtlas({
                   )}
 
                   {selectedMovement.dimensions && (
-                    <div className="col-span-2 bg-[#121316] p-2.5 rounded border border-white/5">
-                      <div className="text-[9px] font-mono text-slate-400 uppercase flex items-center gap-1">
-                        <Maximize2 className="w-3 h-3 text-slate-400" /> Dimensions
+                    <div className="col-span-2 bg-[#F7F6F2] p-2.5 rounded border border-[#DCDCD7]">
+                      <div className="text-[9px] font-mono text-[#62656B] uppercase flex items-center gap-1">
+                        <Maximize2 className="w-3 h-3 text-[#62656B]" /> Dimensions
                       </div>
-                      <div className="text-xs font-mono font-bold text-white mt-0.5">
+                      <div className="text-xs font-mono font-bold text-[#17181B] mt-0.5">
                         {selectedMovement.dimensions}
                       </div>
                     </div>
                   )}
 
                   {selectedMovement.date && (
-                    <div className="col-span-2 bg-[#121316] p-2 rounded border border-white/5 flex items-center justify-between text-xs">
-                      <span className="text-[9px] font-mono text-slate-400 uppercase flex items-center gap-1">
-                        <Calendar className="w-3 h-3 text-slate-400" /> Record Date
+                    <div className="col-span-2 bg-[#F7F6F2] p-2 rounded border border-[#DCDCD7] flex items-center justify-between text-xs">
+                      <span className="text-[9px] font-mono text-[#62656B] uppercase flex items-center gap-1">
+                        <Calendar className="w-3 h-3 text-[#62656B]" /> Record Date
                       </span>
-                      <span className="font-mono font-semibold text-white">
+                      <span className="font-mono font-semibold text-[#17181B]">
                         {selectedMovement.date}
                       </span>
                     </div>
@@ -636,8 +636,8 @@ export default function GlobalMovementAtlas({
                 </div>
 
                 {selectedMovement.details && (
-                  <div className="bg-[#121316] p-2.5 rounded border border-white/5 text-xs text-slate-300 leading-relaxed font-sans">
-                    <span className="text-[9px] font-mono text-slate-400 uppercase block mb-0.5">
+                  <div className="bg-[#F7F6F2] p-2.5 rounded border border-[#DCDCD7] text-xs text-[#62656B] leading-relaxed font-sans">
+                    <span className="text-[9px] font-mono text-[#17181B] uppercase block mb-0.5 font-semibold">
                       Loading / Shipment Description:
                     </span>
                     {selectedMovement.details}
@@ -646,31 +646,31 @@ export default function GlobalMovementAtlas({
               </div>
 
               {/* SOURCE PROVENANCE */}
-              <div className="border-t border-white/10 pt-3 space-y-1.5">
+              <div className="border-t border-[#DCDCD7] pt-3 space-y-1.5">
                 <div className="flex items-center justify-between text-[10px] font-mono">
-                  <span className="text-slate-400 uppercase">Original Source Record</span>
-                  <span className="text-emerald-400 flex items-center gap-1">
-                    <FileCheck2 className="w-3 h-3" /> VERIFIED
+                  <span className="text-[#62656B] uppercase">Original Source Record</span>
+                  <span className="text-[#17181B] font-semibold flex items-center gap-1">
+                    <FileCheck2 className="w-3 h-3 text-[#E33B12]" /> VERIFIED
                   </span>
                 </div>
-                <div className="p-2.5 bg-black/40 rounded border border-white/5 text-[11px] font-mono text-slate-300 italic leading-snug">
+                <div className="p-2.5 bg-[#F7F6F2] rounded border border-[#DCDCD7] text-[11px] font-mono text-[#17181B] italic leading-snug">
                   "{selectedMovement.exactWording}"
                 </div>
-                <div className="text-[9px] font-mono text-slate-400">
-                  FILE: <code className="text-slate-400">{selectedMovement.sourceFile}</code>
+                <div className="text-[9px] font-mono text-[#62656B]">
+                  FILE: <code className="text-[#17181B]">{selectedMovement.sourceFile}</code>
                 </div>
               </div>
             </div>
 
             {/* SECONDARY CONTEXT: Published Shipping Corridors */}
-            <div className="bg-[#181A1F] rounded-xl border border-white/10 p-4 space-y-3">
-              <div className="flex items-center justify-between border-b border-white/5 pb-2">
-                <div className="text-xs font-mono uppercase tracking-widest text-slate-400 flex items-center gap-1.5">
-                  <Navigation className="w-3.5 h-3.5 text-blue-400" /> Published Shipping Corridors
+            <div className="bg-white rounded-xl border border-[#DCDCD7] p-4 space-y-3 shadow-xs">
+              <div className="flex items-center justify-between border-b border-[#DCDCD7] pb-2">
+                <div className="text-xs font-mono uppercase tracking-widest text-[#17181B] flex items-center gap-1.5 font-semibold">
+                  <Navigation className="w-3.5 h-3.5 text-[#E33B12]" /> Published Shipping Corridors
                 </div>
-                <span className="text-[10px] font-mono text-slate-400">SECONDARY</span>
+                <span className="text-[10px] font-mono text-[#62656B]">SECONDARY</span>
               </div>
-              <p className="text-[11px] text-slate-400 leading-relaxed font-sans">
+              <p className="text-[11px] text-[#62656B] leading-relaxed font-sans">
                 Commercial shipping corridors documented in Freyer service archives and corroborated by project records.
               </p>
               <div className="space-y-1.5">
@@ -685,17 +685,17 @@ export default function GlobalMovementAtlas({
                           setSelectedMovementId(lane.associatedMovements[0]);
                         }
                       }}
-                      className={`w-full text-left p-2 rounded border text-xs font-mono transition flex items-center justify-between gap-2 ${
+                      className={`w-full text-left p-2 rounded-lg border text-xs font-mono transition flex items-center justify-between gap-2 ${
                         isLaneActive
-                          ? "bg-blue-500/10 border-blue-500/30 text-white"
-                          : "bg-[#121316] border-white/5 text-slate-400 hover:text-slate-200 hover:bg-white/5"
+                          ? "bg-[#17181B] border-[#17181B] text-[#F7F6F2]"
+                          : "bg-[#F7F6F2] border-[#DCDCD7] text-[#62656B] hover:text-[#17181B] hover:border-[#17181B]"
                       }`}
                     >
                       <div>
-                        <div className="font-semibold text-white text-[11px]">{lane.name}</div>
-                        <div className="text-[10px] text-slate-400 line-clamp-1">{lane.corridor}</div>
+                        <div className={`font-semibold text-[11px] ${isLaneActive ? "text-[#F7F6F2]" : "text-[#17181B]"}`}>{lane.name}</div>
+                        <div className={`text-[10px] line-clamp-1 ${isLaneActive ? "text-[#F7F6F2]/70" : "text-[#62656B]"}`}>{lane.corridor}</div>
                       </div>
-                      <ChevronRight className={`w-3.5 h-3.5 shrink-0 transition-transform ${isLaneActive ? "rotate-90 text-blue-400" : "text-slate-400"}`} />
+                      <ChevronRight className={`w-3.5 h-3.5 shrink-0 transition-transform ${isLaneActive ? "rotate-90 text-[#E33B12]" : "text-[#62656B]"}`} />
                     </button>
                   );
                 })}
@@ -703,56 +703,56 @@ export default function GlobalMovementAtlas({
             </div>
 
             {/* SECONDARY CONTEXT: Network Partner Accreditations */}
-            <div className="bg-[#181A1F] rounded-xl border border-white/10 p-4 space-y-3">
-              <div className="flex items-center justify-between border-b border-white/5 pb-2">
-                <div className="text-xs font-mono uppercase tracking-widest text-slate-400 flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-amber-400" /> Network Memberships & Awards
+            <div className="bg-white rounded-xl border border-[#DCDCD7] p-4 space-y-3 shadow-xs">
+              <div className="flex items-center justify-between border-b border-[#DCDCD7] pb-2">
+                <div className="text-xs font-mono uppercase tracking-widest text-[#17181B] flex items-center gap-1.5 font-semibold">
+                  <Award className="w-3.5 h-3.5 text-[#E33B12]" /> Network Memberships & Awards
                 </div>
-                <span className="text-[10px] font-mono text-slate-400">TIER-C</span>
+                <span className="text-[10px] font-mono text-[#62656B]">TIER-C</span>
               </div>
               
               <div className="space-y-2 text-xs">
                 {/* WPA */}
-                <div className="p-2.5 bg-[#121316] rounded border border-white/5 space-y-1">
-                  <div className="flex items-center justify-between font-bold text-white">
+                <div className="p-2.5 bg-[#F7F6F2] rounded border border-[#DCDCD7] space-y-1">
+                  <div className="flex items-center justify-between font-bold text-[#17181B]">
                     <span>Worldwide Partners Alliance (WPA)</span>
-                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30">
+                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-[#E33B12]/10 text-[#E33B12] border border-[#E33B12]/20 font-semibold">
                       GLOBAL WINNER
                     </span>
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono">
+                  <div className="text-[10px] text-[#62656B] font-mono">
                     &bull; Global Winner 2022/23: Most Valuable Member South Asia (Bangkok)
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono">
+                  <div className="text-[10px] text-[#62656B] font-mono">
                     &bull; Global Winner 2023/24: Excellent Sales (Phuket)
                   </div>
                 </div>
 
                 {/* SCN */}
-                <div className="p-2.5 bg-[#121316] rounded border border-white/5 space-y-1">
-                  <div className="flex items-center justify-between font-bold text-white">
+                <div className="p-2.5 bg-[#F7F6F2] rounded border border-[#DCDCD7] space-y-1">
+                  <div className="flex items-center justify-between font-bold text-[#17181B]">
                     <span>Security Cargo Network (SCN)</span>
-                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-blue-500/10 text-blue-300 border border-blue-500/30">
+                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-slate-200 text-[#17181B] border border-slate-300 font-semibold">
                       MEMBER #420
                     </span>
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono">
+                  <div className="text-[10px] text-[#62656B] font-mono">
                     Member in Good Standing 2024 &bull; Member since Feb 2019 (Colorado, USA)
                   </div>
                 </div>
 
                 {/* AEO Government Certificate */}
-                <div className="p-2.5 bg-[#121316] rounded border border-white/5 space-y-1">
-                  <div className="flex items-center justify-between font-bold text-white">
+                <div className="p-2.5 bg-[#F7F6F2] rounded border border-[#DCDCD7] space-y-1">
+                  <div className="flex items-center justify-between font-bold text-[#17181B]">
                     <span>Indian Customs AEO Certificate</span>
-                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-[#E33B12]/10 text-[#E33B12] border border-[#E33B12]/20 font-semibold">
                       TIER-A
                     </span>
                   </div>
-                  <div className="text-[10px] text-emerald-300/90 font-mono">
+                  <div className="text-[10px] text-[#17181B] font-mono font-medium">
                     Classification: LO (Freight Forwarder) &bull; No: INAAQCA4076M0F243
                   </div>
-                  <div className="text-[9px] text-slate-400 font-mono">
+                  <div className="text-[9px] text-[#62656B] font-mono">
                     Issued by CBIC, Ministry of Finance &bull; Valid upto 19/08/2029
                   </div>
                 </div>
@@ -765,64 +765,64 @@ export default function GlobalMovementAtlas({
 
       {/* MOBILE DOSSIER BOTTOM SHEET */}
       {mobileDossierOpen && (
-        <div className="fixed inset-x-0 bottom-0 z-50 lg:hidden bg-[#181A1F] border-t border-white/20 p-5 rounded-t-2xl shadow-2xl max-h-[85vh] overflow-y-auto">
-          <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
+        <div className="fixed inset-x-0 bottom-0 z-50 lg:hidden bg-[#F7F6F2] border-t border-[#DCDCD7] p-5 rounded-t-2xl shadow-2xl max-h-[85vh] overflow-y-auto">
+          <div className="flex items-center justify-between border-b border-[#DCDCD7] pb-3 mb-3">
             <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#e1390f] text-white">
+              <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-[#E33B12] text-white">
                 {selectedMovement.id}
               </span>
-              <h4 className="text-lg font-bold text-white font-[family-name:var(--font-barlow-condensed)]">
+              <h4 className="text-lg font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)]">
                 {selectedMovement.route}
               </h4>
             </div>
             <button
               onClick={() => setMobileDossierOpen(false)}
-              className="p-1 rounded bg-white/10 text-slate-400 hover:text-white"
+              className="p-1 rounded bg-black/5 text-[#17181B] hover:text-[#E33B12]"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
           <div className="space-y-3 text-xs">
-            <div className="grid grid-cols-2 gap-2 bg-[#121316] p-2.5 rounded border border-white/5">
+            <div className="grid grid-cols-2 gap-2 bg-white p-2.5 rounded-lg border border-[#DCDCD7]">
               <div>
-                <span className="text-[9px] font-mono text-slate-400 block">ORIGIN</span>
-                <span className="font-bold text-white">{selectedMovement.origin.city}</span>
-                <span className="text-[10px] text-slate-400 block">{selectedMovement.origin.country}</span>
+                <span className="text-[9px] font-mono text-[#62656B] block">ORIGIN</span>
+                <span className="font-bold text-[#17181B]">{selectedMovement.origin.city}</span>
+                <span className="text-[10px] text-[#62656B] block">{selectedMovement.origin.country}</span>
               </div>
               <div>
-                <span className="text-[9px] font-mono text-slate-400 block">DESTINATION</span>
-                <span className="font-bold text-white">{selectedMovement.destination.city}</span>
-                <span className="text-[10px] text-slate-400 block">{selectedMovement.destination.country}</span>
+                <span className="text-[9px] font-mono text-[#62656B] block">DESTINATION</span>
+                <span className="font-bold text-[#17181B]">{selectedMovement.destination.city}</span>
+                <span className="text-[10px] text-[#62656B] block">{selectedMovement.destination.country}</span>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-2">
               {selectedMovement.weightTons && (
-                <div className="bg-[#121316] p-2 rounded border border-white/5">
-                  <span className="text-[9px] font-mono text-slate-400 block">WEIGHT</span>
-                  <span className="text-base font-bold text-[#e1390f] font-[family-name:var(--font-barlow-condensed)]">
+                <div className="bg-white p-2 rounded-lg border border-[#DCDCD7]">
+                  <span className="text-[9px] font-mono text-[#62656B] block">WEIGHT</span>
+                  <span className="text-base font-bold text-[#E33B12] font-[family-name:var(--font-barlow-condensed)]">
                     {selectedMovement.weightTons.toLocaleString()} MT
                   </span>
                 </div>
               )}
               {selectedMovement.dimensions && (
-                <div className="bg-[#121316] p-2 rounded border border-white/5">
-                  <span className="text-[9px] font-mono text-slate-400 block">DIMENSIONS</span>
-                  <span className="font-mono text-[11px] font-bold text-white block truncate">
+                <div className="bg-white p-2 rounded-lg border border-[#DCDCD7]">
+                  <span className="text-[9px] font-mono text-[#62656B] block">DIMENSIONS</span>
+                  <span className="font-mono text-[11px] font-bold text-[#17181B] block truncate">
                     {selectedMovement.dimensions}
                   </span>
                 </div>
               )}
             </div>
 
-            <div className="bg-[#121316] p-2.5 rounded border border-white/5 italic text-slate-300 text-[11px]">
+            <div className="bg-white p-2.5 rounded-lg border border-[#DCDCD7] italic text-[#62656B] text-[11px]">
               "{selectedMovement.exactWording}"
             </div>
 
             <button
               onClick={() => setMobileDossierOpen(false)}
-              className="w-full py-2.5 bg-white/10 text-white font-mono text-xs rounded hover:bg-white/15 transition"
+              className="w-full py-2.5 bg-[#17181B] hover:bg-[#E33B12] text-white font-mono text-xs rounded-lg transition"
             >
               Close Dossier
             </button>

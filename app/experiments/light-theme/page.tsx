@@ -1,3 +1,4 @@
+// Light theme experiment home page at /experiments/light-theme
 'use client';
 
 import { LTNav } from '@/components/freyer-light-theme/LTNav';
@@ -9,13 +10,13 @@ import { LTNetwork } from '@/components/freyer-light-theme/LTNetwork';
 import { LTDispatch } from '@/components/freyer-light-theme/LTDispatch';
 import { LTFooter } from '@/components/freyer-light-theme/LTFooter';
 
-export default function HomePage() {
+export default function LightThemePage() {
   return (
     <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
       <LTNav />
       <LTHero />
       <LTTrustBar />
-      <FTRCargoMonument />
+      <FTRCargoMonument />  {/* Intentionally kept dark — cinematic contrast section */}
       <LTServices />
       <LTNetwork />
       <LTDispatch />
@@ -23,4 +24,3 @@ export default function HomePage() {
     </div>
   );
 }
-

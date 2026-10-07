@@ -28,7 +28,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center font-mono uppercase tracking-[0.2em] font-semibold transition-all duration-150 rounded select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e1390f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121316] disabled:opacity-60 disabled:pointer-events-none active:scale-[0.99]";
+    "inline-flex items-center justify-center font-mono uppercase tracking-[0.2em] font-semibold transition-all duration-150 rounded select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E33B12] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F6F2] disabled:opacity-60 disabled:pointer-events-none active:scale-[0.99]";
 
   const sizeClasses: Record<ButtonSize, string> = {
     sm: "px-4 py-2 text-xs gap-2 min-h-[36px]",
@@ -38,11 +38,11 @@ export function Button({
 
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
-      "bg-[#e1390f] hover:bg-[#c42f0b] text-white shadow-xl shadow-[#e1390f]/20 hover:shadow-[#e1390f]/35 hover:scale-[1.01]",
+      "bg-[#17181B] hover:bg-[#E33B12] text-[#F7F6F2] hover:text-white shadow-md hover:shadow-lg transition-colors border border-transparent",
     secondary:
-      "bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/20 hover:border-white/35 backdrop-blur-sm",
+      "bg-transparent hover:bg-[#17181B] text-[#17181B] hover:text-[#F7F6F2] border border-[#17181B] transition-colors",
     ghost:
-      "bg-transparent hover:bg-white/[0.06] text-white/70 hover:text-white border border-transparent",
+      "bg-transparent hover:bg-[#17181B]/[0.05] text-[#17181B] hover:text-[#E33B12] border border-transparent transition-colors",
   };
 
   const mergedClasses = twMerge(
