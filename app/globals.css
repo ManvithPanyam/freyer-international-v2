@@ -3,14 +3,13 @@
 
 @layer base {
   :root {
-    --color-bg-base: #F7F6F2;
-    --color-bg-elevated: #FFFFFF;
-    --color-bg-overlay: rgba(247, 246, 242, 0.90);
-    --color-text-primary: #17181B;
-    --color-text-secondary: #62656B;
-    --color-brand: #E33B12;
+    --color-bg-base: #121316;
+    --color-bg-elevated: #181a1f;
+    --color-bg-overlay: rgba(18, 19, 22, 0.90);
+    --color-text-primary: #F8F7F4;
+    --color-brand: #e1390f;
     --color-brand-hover: #c42f0b;
-    --color-border-subtle: #DCDCD7;
+    --color-border-subtle: rgba(255, 255, 255, 0.10);
 
     /* ═══════════════════════════════════════════════════════════════════════
        TYPOGRAPHY SCALE TOKENS

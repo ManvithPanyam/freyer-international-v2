@@ -28,18 +28,18 @@ export function TextLink({
   ...props
 }: TextLinkProps) {
   const baseClasses =
-    "inline-flex items-center gap-1.5 text-xs font-mono text-[#62656B] hover:text-[#17181B] transition-colors duration-150 py-1.5 px-0.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E33B12] rounded-xs select-none min-h-[24px]";
+    "inline-flex items-center gap-1.5 text-xs font-mono text-white/50 hover:text-white transition-colors duration-150 py-1.5 px-0.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#e1390f] rounded-xs select-none min-h-[24px]";
 
   const iconElement =
     icon === true ? (
-      <ArrowUpRight className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
+      <ArrowUpRight className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
     ) : React.isValidElement(icon) ? (
       icon
     ) : null;
 
   const content = (
     <>
-      <span className="hover:underline underline-offset-4 decoration-[#62656B]/40">{children}</span>
+      <span className="hover:underline underline-offset-4 decoration-white/30">{children}</span>
       {iconElement}
     </>
   );

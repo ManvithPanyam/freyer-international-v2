@@ -25,13 +25,13 @@ export function IconButton({
   ...props
 }: IconButtonProps) {
   const baseClasses =
-    "w-10 h-10 min-w-[40px] min-h-[40px] rounded-full inline-flex items-center justify-center transition-colors duration-150 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E33B12] focus-visible:ring-offset-2";
+    "w-10 h-10 min-w-[40px] min-h-[40px] rounded-full inline-flex items-center justify-center transition-colors duration-150 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e1390f] focus-visible:ring-offset-2";
 
   const variantClasses: Record<IconButtonVariant, string> = {
     dark:
-      "bg-[#17181B] hover:bg-[#25282F] border border-white/10 text-white/70 hover:text-white focus-visible:ring-offset-[#17181B]",
+      "bg-white/[0.08] hover:bg-white/[0.16] border border-white/10 text-white/70 hover:text-white focus-visible:ring-offset-[#121316] backdrop-blur-sm",
     light:
-      "bg-[#FFFFFF] hover:bg-[#F7F6F2] border border-[#DCDCD7] text-[#62656B] hover:text-[#17181B] focus-visible:ring-offset-[#F7F6F2]",
+      "bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-500 hover:text-slate-900 focus-visible:ring-offset-white",
   };
 
   const mergedClasses = twMerge(

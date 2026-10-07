@@ -248,7 +248,7 @@ export default async function ServiceDetailPage({
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
+    <div className="min-h-screen bg-[#121316] text-white selection:bg-[#e1390f] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -267,24 +267,24 @@ export default async function ServiceDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left: Detailed Overview & Visual */}
             <div className="lg:col-span-7 space-y-8">
-              <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-[#DCDCD7] bg-white shadow-sm">
+              <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-white/10 bg-[#091222] shadow-2xl">
                 <Image
                   src={service.heroImage}
                   alt={service.imageAlt}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center brightness-90 contrast-105"
                   sizes="(min-width: 1024px) 60vw, 100vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-4 left-4 text-xs font-mono text-white">
-                  <span className="bg-[#17181B]/85 backdrop-blur-md px-3 py-1.5 rounded border border-white/20">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#121316] via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-4 left-4 text-xs font-mono text-white/80">
+                  <span className="bg-[#121316]/80 backdrop-blur-md px-3 py-1.5 rounded border border-white/10">
                     {service.evidenceBadge}
                   </span>
                 </div>
               </div>
 
-              <div className="space-y-4 text-[#62656B] font-normal text-base sm:text-lg leading-relaxed">
+              <div className="space-y-4 text-slate-300 font-light text-base sm:text-lg leading-relaxed">
                 {service.overview.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -294,25 +294,25 @@ export default async function ServiceDetailPage({
             {/* Right: Technical Capabilities Checklist */}
             <div className="lg:col-span-5">
               <FreyerCard className="p-8 space-y-6">
-                <div className="border-b border-[#DCDCD7] pb-4">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#E33B12] font-semibold block mb-1">
+                <div className="border-b border-white/10 pb-4">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#e1390f] font-semibold block mb-1">
                     Technical Specifications
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#17181B] font-mono uppercase">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white font-mono uppercase">
                     {service.capabilitiesTitle}
                   </h3>
                 </div>
 
-                <ul className="space-y-3.5 text-xs sm:text-sm text-[#62656B]">
+                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-300 font-light">
                   {service.capabilities.map((capability, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#e1390f] shrink-0 mt-0.5" />
                       <span>{capability}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="pt-6 border-t border-[#DCDCD7] space-y-3">
+                <div className="pt-6 border-t border-white/10 space-y-3">
                   <FreyerButton href="/contact" size="md" variant="primary" className="w-full">
                     {service.ctaText}
                   </FreyerButton>
@@ -329,14 +329,14 @@ export default async function ServiceDetailPage({
           {/* Institutional Proof Banner */}
           <FreyerCard className="p-8 sm:p-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-2xl space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-[#E33B12] uppercase tracking-wider font-semibold">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#e1390f] uppercase tracking-wider font-semibold">
                 <ShieldCheck className="w-4 h-4" />
                 <span>{service.evidenceBadge}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#17181B] tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 {service.evidenceHeadline}
               </h3>
-              <p className="text-[#62656B] text-sm leading-relaxed">
+              <p className="text-slate-300 text-sm font-light leading-relaxed">
                 {service.evidenceText}
               </p>
             </div>

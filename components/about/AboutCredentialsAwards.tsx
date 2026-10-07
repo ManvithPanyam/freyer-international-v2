@@ -48,104 +48,104 @@ export function AboutCredentialsAwards() {
   }, [showAllAwardsModal]);
 
   return (
-    <section id="credentials-awards" className="scroll-mt-28 py-16 sm:py-24 border-b border-[#DCDCD7] bg-[#F7F6F2]">
+    <section id="credentials-awards" className="scroll-mt-28 py-16 sm:py-24 border-b border-white/10 bg-[#121316]">
       <div className={`max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[#DCDCD7] mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-white/10 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-mono text-[#E33B12] font-semibold">06</span>
-              <span className="text-[#DCDCD7] font-mono">/</span>
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#62656B]">
+              <span className="text-xs font-mono text-[#e1390f] font-semibold">06</span>
+              <span className="text-white/20 font-mono">/</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/50">
                 Statutory Authority &middot; Verified Accreditations
               </span>
             </div>
             <h2
-              className="text-[#17181B] font-black tracking-[-0.02em] leading-[0.95] uppercase text-3xl sm:text-4xl lg:text-5xl"
+              className="text-white font-black tracking-[-0.02em] leading-[0.95] uppercase text-3xl sm:text-4xl lg:text-5xl"
               style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
             >
               LICENSES &amp; HONORS
             </h2>
           </div>
 
-          <p className="text-xs sm:text-sm font-mono text-[#62656B] max-w-md">
+          <p className="text-xs sm:text-sm font-mono text-white/50 max-w-md">
             Audited statutory certifications issued by the Ministry of Finance, international aviation bodies, and documented industry trophies.
           </p>
         </div>
 
         {/* Credentials Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-8 rounded-xl border border-[#DCDCD7] bg-white shadow-xs flex flex-col justify-between space-y-6">
+          <div className="p-8 rounded-xl border border-white/10 bg-[#181A1F] flex flex-col justify-between space-y-6">
             <div>
-              <div className="flex items-center justify-between text-xs font-mono text-[#62656B] pb-2 border-b border-[#DCDCD7]">
-                <span className="text-[#E33B12] font-bold">AEO-LO CERTIFIED</span>
+              <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
+                <span className="text-[#e1390f] font-bold">AEO-LO CERTIFIED</span>
                 <span>CBIC Customs</span>
               </div>
-              <h3 className="text-xl font-bold text-[#17181B] mt-4">
+              <h3 className="text-xl font-bold text-white mt-4">
                 Authorized Economic Operator
               </h3>
-              <p className="text-[#62656B] text-xs sm:text-sm mt-2 leading-relaxed font-normal">
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed font-light">
                 Trusted customs logistics operator accreditation granted by the Central Board of Indirect Taxes and Customs (CBIC), Ministry of Finance, Government of India.
               </p>
             </div>
-            <div className="pt-4 border-t border-[#DCDCD7] text-xs font-mono text-[#62656B] flex items-center justify-between">
-              <span>License: <strong className="text-[#17181B] font-mono">INAAQCA4076M0F243</strong></span>
-              <ShieldCheck className="w-4 h-4 text-[#E33B12]" />
+            <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50 flex items-center justify-between">
+              <span>License: <strong className="text-white font-mono">INAAQCA4076M0F243</strong></span>
+              <ShieldCheck className="w-4 h-4 text-[#e1390f]" />
             </div>
           </div>
 
-          <div className="p-8 rounded-xl border border-[#DCDCD7] bg-white shadow-xs flex flex-col justify-between space-y-6">
+          <div className="p-8 rounded-xl border border-white/10 bg-[#181A1F] flex flex-col justify-between space-y-6">
             <div>
-              <div className="flex items-center justify-between text-xs font-mono text-[#62656B] pb-2 border-b border-[#DCDCD7]">
-                <span className="text-[#E33B12] font-bold">IATA ACCREDITED</span>
+              <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
+                <span className="text-[#e1390f] font-bold">IATA ACCREDITED</span>
                 <span>Aviation Authority</span>
               </div>
-              <h3 className="text-xl font-bold text-[#17181B] mt-4">
+              <h3 className="text-xl font-bold text-white mt-4">
                 Approved Cargo Agent
               </h3>
-              <p className="text-[#62656B] text-xs sm:text-sm mt-2 leading-relaxed font-normal">
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed font-light">
                 Direct apron and terminal privileges across major international air carriers, enabling rapid airway bill (AWB) issuance and prioritized space booking.
               </p>
             </div>
-            <div className="pt-4 border-t border-[#DCDCD7] text-xs font-mono text-[#62656B] flex items-center justify-between">
-              <span>Agent Code: <strong className="text-[#17181B] font-mono">14-3-4852</strong></span>
-              <CheckCircle2 className="w-4 h-4 text-[#E33B12]" />
+            <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50 flex items-center justify-between">
+              <span>Agent Code: <strong className="text-white font-mono">14-3-4852</strong></span>
+              <CheckCircle2 className="w-4 h-4 text-[#e1390f]" />
             </div>
           </div>
 
-          <div className="p-8 rounded-xl border border-[#DCDCD7] bg-white shadow-xs flex flex-col justify-between space-y-6">
+          <div className="p-8 rounded-xl border border-white/10 bg-[#181A1F] flex flex-col justify-between space-y-6">
             <div>
-              <div className="flex items-center justify-between text-xs font-mono text-[#62656B] pb-2 border-b border-[#DCDCD7]">
-                <span className="text-[#E33B12] font-bold">GLOBAL ALLIANCES</span>
+              <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-2 border-b border-white/10">
+                <span className="text-[#e1390f] font-bold">GLOBAL ALLIANCES</span>
                 <span>Forwarding Networks</span>
               </div>
-              <h3 className="text-xl font-bold text-[#17181B] mt-4">
+              <h3 className="text-xl font-bold text-white mt-4">
                 WCA &amp; SCN Member
               </h3>
-              <p className="text-[#62656B] text-xs sm:text-sm mt-2 leading-relaxed font-normal">
+              <p className="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed font-light">
                 Audited membership in Security Cargo Network and WCA World, providing verified reciprocal agency coverage across major international sea and air gateways.
               </p>
             </div>
-            <div className="pt-4 border-t border-[#DCDCD7] text-xs font-mono text-[#62656B] flex items-center justify-between">
-              <span>Status: <strong className="text-[#17181B] font-mono">Vetted Member</strong></span>
-              <Award className="w-4 h-4 text-[#E33B12]" />
+            <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50 flex items-center justify-between">
+              <span>Status: <strong className="text-white font-mono">Vetted Member</strong></span>
+              <Award className="w-4 h-4 text-[#e1390f]" />
             </div>
           </div>
         </div>
 
         {/* Featured Industry Awards Bar */}
-        <div className="mt-12 pt-8 border-t border-[#DCDCD7] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#E33B12] font-semibold block">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#e1390f] font-semibold block">
               Documented Industry Awards &amp; Recognitions
             </span>
-            <span className="text-xs text-[#62656B]">
+            <span className="text-xs text-white/40">
               Accolades awarded for freight forwarding, breakbulk operations, and customs compliance.
             </span>
           </div>
           <TextLink
             onClick={() => setShowAllAwardsModal(true)}
-            icon={<ChevronRight className="w-3.5 h-3.5 text-[#E33B12]" />}
+            icon={<ChevronRight className="w-3.5 h-3.5 text-[#e1390f]" />}
           >
             View All {ALL_AWARDS.length} Accolades
           </TextLink>
@@ -154,13 +154,13 @@ export function AboutCredentialsAwards() {
         {/* Featured 3 Trophies */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
           {FEATURED_AWARDS.map((award) => (
-            <div key={award.id} className="p-5 rounded-xl border border-[#DCDCD7] bg-white shadow-xs flex items-center gap-4">
-              <div className="relative w-16 h-16 rounded overflow-hidden bg-[#F7F6F2] shrink-0 border border-[#DCDCD7]">
+            <div key={award.id} className="p-5 rounded-xl border border-white/10 bg-[#181A1F] flex items-center gap-4">
+              <div className="relative w-16 h-16 rounded overflow-hidden bg-black/40 shrink-0 border border-white/10">
                 <Image src={award.img} alt={award.title} fill className="object-contain p-2" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-[#17181B]">{award.title}</h4>
-                <p className="text-[10px] font-mono text-[#62656B] mt-1">{award.forum}</p>
+                <h4 className="text-xs font-bold text-white">{award.title}</h4>
+                <p className="text-[10px] font-mono text-white/40 mt-1">{award.forum}</p>
               </div>
             </div>
           ))}
@@ -168,19 +168,19 @@ export function AboutCredentialsAwards() {
 
         {/* Modal for All Awards */}
         {showAllAwardsModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="relative w-full max-w-4xl max-h-[85vh] bg-[#F7F6F2] border border-[#DCDCD7] rounded-2xl p-6 sm:p-8 flex flex-col shadow-2xl overflow-hidden">
-              <div className="flex items-center justify-between pb-4 border-b border-[#DCDCD7] shrink-0">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+            <div className="relative w-full max-w-4xl max-h-[85vh] bg-[#15171C] border border-white/20 rounded-2xl p-6 sm:p-8 flex flex-col shadow-2xl overflow-hidden">
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 shrink-0">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-[#17181B] uppercase tracking-tight font-mono">
+                  <h3 className="text-lg sm:text-xl font-bold text-white uppercase tracking-tight font-mono">
                     All Documented Industry Honors
                   </h3>
-                  <p className="text-xs font-mono text-[#62656B] mt-1">
+                  <p className="text-xs font-mono text-white/50 mt-1">
                     Verified archive trophies &middot; Freyer International Logistics
                   </p>
                 </div>
                 <IconButton
-                  icon={<X className="w-5 h-5 text-[#17181B]" />}
+                  icon={<X className="w-5 h-5" />}
                   aria-label="Close accolades archive"
                   onClick={() => setShowAllAwardsModal(false)}
                 />
@@ -190,24 +190,24 @@ export function AboutCredentialsAwards() {
                 {ALL_AWARDS.map((award) => (
                   <div
                     key={award.id}
-                    className="p-4 rounded-xl border border-[#DCDCD7] bg-white flex items-center gap-3.5 hover:border-[#17181B] transition-colors shadow-xs"
+                    className="p-4 rounded-xl border border-white/8 bg-[#1B1E26] flex items-center gap-3.5 hover:border-white/20 transition-colors"
                   >
-                    <div className="relative w-16 h-16 rounded overflow-hidden bg-[#F7F6F2] shrink-0 border border-[#DCDCD7]">
+                    <div className="relative w-16 h-16 rounded overflow-hidden bg-black/50 shrink-0 border border-white/10">
                       <Image src={award.img} alt={award.title} fill className="object-contain p-1.5" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-[#17181B] leading-snug">{award.title}</h4>
-                      <p className="text-[10px] font-mono text-[#62656B] mt-1">{award.forum}</p>
+                      <h4 className="text-xs font-bold text-white leading-snug">{award.title}</h4>
+                      <p className="text-[10px] font-mono text-white/40 mt-1">{award.forum}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-[#DCDCD7] flex justify-end shrink-0">
+              <div className="pt-4 border-t border-white/10 flex justify-end shrink-0">
                 <button
                   type="button"
                   onClick={() => setShowAllAwardsModal(false)}
-                  className="px-5 py-2.5 rounded-lg bg-[#17181B] hover:bg-[#E33B12] text-white text-xs font-mono uppercase tracking-wider font-semibold transition-colors"
+                  className="px-5 py-2.5 rounded-lg bg-[#e1390f] hover:bg-[#c42f0b] text-white text-xs font-mono uppercase tracking-wider font-semibold transition-colors"
                 >
                   Close Archive
                 </button>

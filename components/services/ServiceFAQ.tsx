@@ -36,21 +36,21 @@ export function ServiceFAQ() {
 
   return (
     <section>
-      <div className="pb-6 border-b border-[#DCDCD7] flex items-baseline justify-between">
+      <div className="pb-6 border-b border-white/10 flex items-baseline justify-between">
         <div>
-          <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#E33B12] font-semibold block mb-2">
+          <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#e1390f] font-semibold block mb-2">
             Operational Clarifications
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#17181B] font-mono uppercase">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white font-mono uppercase">
             Frequently Asked Questions
           </h2>
         </div>
-        <span className="text-xs font-mono text-[#62656B] hidden sm:inline-block">
+        <span className="text-xs font-mono text-white/40 hidden sm:inline-block">
           Commercial Governance
         </span>
       </div>
 
-      <div className="divide-y divide-[#DCDCD7] pt-4">
+      <div className="divide-y divide-white/10 pt-4">
         {FAQS.map((faq, idx) => {
           const isOpen = openIndex === idx;
           return (
@@ -60,17 +60,17 @@ export function ServiceFAQ() {
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
                 className="w-full flex items-center justify-between text-left gap-4 group"
               >
-                <span className="text-base sm:text-lg font-semibold text-[#17181B] group-hover:text-[#E33B12] transition-colors">
+                <span className="text-base sm:text-lg font-semibold text-white group-hover:text-[#e1390f] transition-colors">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-4 h-4 text-[#62656B] transition-transform duration-200 shrink-0 ${
-                    isOpen ? "rotate-180 text-[#E33B12]" : ""
+                  className={`w-4 h-4 text-white/40 transition-transform duration-200 shrink-0 ${
+                    isOpen ? "rotate-180 text-[#e1390f]" : ""
                   }`}
                 />
               </button>
               {isOpen && (
-                <div className="mt-4 text-sm text-[#62656B] font-normal leading-relaxed max-w-4xl">
+                <div className="mt-4 text-sm text-slate-300 font-light leading-relaxed max-w-4xl">
                   {faq.answer}
                 </div>
               )}

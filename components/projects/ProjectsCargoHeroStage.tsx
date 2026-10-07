@@ -188,16 +188,16 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
     <section className="relative w-full rounded-2xl bg-[#0f1217] border border-white/10 overflow-hidden shadow-2xl">
       {/* ── BACKGROUND AMBIENT INDUSTRIAL MIST ── */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-[#12141a]/95 to-black/90 pointer-events-none" />
-      <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-[#E33B12]/[0.03] blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-[#e1390f]/[0.03] blur-[140px] pointer-events-none" />
 
       {/* ── TOP CONTROL BAR & CHOREOGRAPHY TICKER ── */}
       <div className="relative z-20 px-6 sm:px-8 py-4 border-b border-white/10 flex flex-wrap items-center justify-between gap-4 bg-black/40 backdrop-blur-md">
         <div className="flex items-center gap-3">
           <span className="flex h-2.5 w-2.5 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E33B12] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E33B12]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#e1390f]" />
           </span>
-          <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#E33B12] font-bold">
+          <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#e1390f] font-bold">
             CARGO IN MOTION &bull; KINETIC SHIPMENT RADAR
           </span>
           <span className="hidden md:inline text-white/30">&bull;</span>
@@ -216,7 +216,7 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
                 onClick={() => handleSelect(idx)}
                 className={`px-3 py-1 rounded text-xs font-mono tracking-wider transition-all ${
                   activeIndex === idx
-                    ? "bg-[#E33B12] text-white font-bold shadow-md shadow-[#E33B12]/20"
+                    ? "bg-[#e1390f] text-white font-bold shadow-md shadow-[#e1390f]/20"
                     : "text-white/60 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -270,7 +270,7 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
               {/* Transit Header */}
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-[#E33B12] font-bold">
+                  <span className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-[#e1390f] font-bold">
                     {currentItem.transport_mode}
                   </span>
                   <span className="text-white/40 text-xs font-mono">
@@ -280,8 +280,8 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
 
                 <div className="flex flex-wrap items-center gap-3 text-3xl sm:text-5xl lg:text-6xl font-black text-white font-[family-name:var(--font-barlow-condensed)] tracking-tight uppercase leading-none">
                   <span>{currentItem.route_origin}</span>
-                  <div className="inline-flex items-center gap-2 text-[#E33B12]">
-                    <span className="w-6 sm:w-10 h-1 bg-[#E33B12]" />
+                  <div className="inline-flex items-center gap-2 text-[#e1390f]">
+                    <span className="w-6 sm:w-10 h-1 bg-[#e1390f]" />
                     <ArrowRight className="w-6 sm:w-8 h-6 sm:h-8" />
                   </div>
                   <span className="text-white/40 italic">{currentItem.route_destination}</span>
@@ -306,22 +306,22 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
                   <div className="flex items-center gap-1.5 text-white">
                     <span className="font-bold">{currentItem.route_destination}</span>
                     <span className="text-white/40">({currentItem.dest_country})</span>
-                    <span className="w-2 h-2 rounded-full bg-[#E33B12]" />
+                    <span className="w-2 h-2 rounded-full bg-[#e1390f]" />
                   </div>
                 </div>
 
                 {/* Animated Waypoint Corridor */}
                 <div className="relative h-2 w-full bg-white/10 rounded-full overflow-hidden">
                   <motion.div
-                    className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-emerald-400 via-[#E33B12] to-[#E33B12] rounded-full"
+                    className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-emerald-400 via-[#e1390f] to-[#e1390f] rounded-full"
                     style={{ width: `${Math.max(15, transitProgress * 100)}%` }}
                   />
                   {/* Glowing Transit Carrier Indicator */}
                   <motion.div
-                    className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#E33B12] shadow-[0_0_12px_#E33B12] flex items-center justify-center"
+                    className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#e1390f] shadow-[0_0_12px_#e1390f] flex items-center justify-center"
                     style={{ left: `${Math.max(8, transitProgress * 92)}%` }}
                   >
-                    <Ship className="w-2.5 h-2.5 text-[#17181B]" />
+                    <Ship className="w-2.5 h-2.5 text-[#121316]" />
                   </motion.div>
                 </div>
               </div>
@@ -333,7 +333,7 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
                     {currentItem.primary_metric}
                   </span>
                   <div>
-                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#E33B12] font-bold block">
+                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#e1390f] font-bold block">
                       {currentItem.primary_label}
                     </span>
                     <span className="text-[11px] font-mono text-white/40 mt-1 block">
@@ -372,13 +372,13 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
 
                 {/* Overlaid Terminal Stencil */}
                 <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 rounded bg-black/70 backdrop-blur-md border border-white/20 text-[10px] font-mono uppercase tracking-widest text-white">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E33B12]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e1390f]" />
                   <span>AUTHENTIC FIELD PHOTOGRAPHY</span>
                 </div>
 
                 {/* Overlaid Caption */}
                 <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/75 backdrop-blur-md border border-white/15 text-xs font-mono text-white/80 space-y-1">
-                  <div className="text-[10px] text-[#E33B12] font-bold uppercase tracking-wider">
+                  <div className="text-[10px] text-[#e1390f] font-bold uppercase tracking-wider">
                     OPERATIONAL RECORD &bull; {currentItem.title}
                   </div>
                   <p className="line-clamp-2 text-white/70">{currentItem.photo_caption}</p>

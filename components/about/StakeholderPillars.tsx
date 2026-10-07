@@ -39,27 +39,27 @@ export function StakeholderPillars() {
   ];
 
   return (
-    <section id="stakeholder-pillars" className="scroll-mt-28 py-20 sm:py-32 border-b border-[#DCDCD7] bg-[#F7F6F2]">
+    <section id="stakeholder-pillars" className="scroll-mt-28 py-20 sm:py-32 border-b border-white/10 bg-[#15171C]">
       <div className={`max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[#DCDCD7] mb-16">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-white/10 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-mono text-[#E33B12] font-semibold">05</span>
-              <span className="text-[#DCDCD7] font-mono">/</span>
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#62656B]">
+              <span className="text-xs font-mono text-[#e1390f] font-semibold">05</span>
+              <span className="text-white/20 font-mono">/</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/50">
                 Institutional Ecosystem &middot; Three Stakeholders
               </span>
             </div>
             <h2
-              className="text-[#17181B] font-black tracking-[-0.02em] leading-[0.95] uppercase text-3xl sm:text-4xl lg:text-5xl"
+              className="text-white font-black tracking-[-0.02em] leading-[0.95] uppercase text-3xl sm:text-4xl lg:text-5xl"
               style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
             >
               THE THREE STAKEHOLDERS
             </h2>
           </div>
 
-          <p className="text-xs sm:text-sm font-mono text-[#62656B] max-w-md">
+          <p className="text-xs sm:text-sm font-mono text-white/50 max-w-md">
             Freyer International&rsquo;s sustainable operational framework is built upon three foundational commitments.
           </p>
         </div>
@@ -71,37 +71,37 @@ export function StakeholderPillars() {
             return (
               <div
                 key={pillar.num}
-                className="group relative rounded-xl border border-[#DCDCD7] bg-white hover:border-[#17181B] hover:shadow-md transition-all duration-200 p-8 sm:p-10 flex flex-col justify-between"
+                className="group relative rounded-xl border border-white/10 bg-[#1A1D23] hover:border-white/25 hover:bg-[#20242D] transition-all duration-200 p-8 sm:p-10 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between pb-6 border-b border-[#DCDCD7] text-xs font-mono text-[#62656B]">
-                    <span className="text-[#E33B12] font-semibold">PILLAR {pillar.num}</span>
+                  <div className="flex items-center justify-between pb-6 border-b border-white/8 text-xs font-mono text-white/40">
+                    <span className="text-[#e1390f] font-semibold">PILLAR {pillar.num}</span>
                     <span className="uppercase tracking-widest">{pillar.eyebrow}</span>
                   </div>
 
                   <div className="mt-8 flex items-center justify-between">
-                    <h3 className="text-2xl font-bold text-[#17181B] tracking-tight">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">
                       {pillar.title}
                     </h3>
-                    <div className="w-10 h-10 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] flex items-center justify-center text-[#E33B12]">
+                    <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center text-[#e1390f]">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <div className="mt-4 text-xs font-mono uppercase tracking-wider text-[#E33B12] font-semibold">
+                  <div className="mt-4 text-xs font-mono uppercase tracking-wider text-[#e1390f]">
                     {pillar.highlight}
                   </div>
 
-                  <p className="mt-4 text-sm text-[#62656B] font-normal leading-relaxed">
+                  <p className="mt-4 text-sm text-slate-300 font-light leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-[#DCDCD7]">
-                  <div className="text-[11px] font-mono text-[#62656B] uppercase tracking-wider mb-1">
+                <div className="mt-8 pt-6 border-t border-white/8">
+                  <div className="text-[11px] font-mono text-white/40 uppercase tracking-wider mb-1">
                     Institutional Standard
                   </div>
-                  <div className="text-xs text-[#17181B] font-medium">
+                  <div className="text-xs text-white/70 font-light">
                     {pillar.commitment}
                   </div>
                 </div>

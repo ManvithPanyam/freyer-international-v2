@@ -13,12 +13,12 @@ export default function CargoDocumentaryMonograph({ record }: DocumentaryMonogra
   const [activePhoto, setActivePhoto] = useState<"9.1" | "9.2">("9.1");
 
   return (
-    <div className="w-full bg-[#17181B] border border-white/10 rounded-2xl overflow-hidden shadow-2xl text-[#F7F6F2]">
+    <div className="w-full bg-[#121316] border border-white/10 rounded-2xl overflow-hidden shadow-2xl text-[#F8F7F4]">
       {/* ── TOP EDITORIAL STRIP ── */}
-      <div className="px-6 sm:px-10 py-5 bg-[#1F2228] border-b border-white/10 flex flex-wrap items-center justify-between gap-4">
+      <div className="px-6 sm:px-10 py-5 bg-[#181A1F] border-b border-white/10 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#E33B12] animate-pulse" />
-          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#E33B12] font-bold">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#e1390f] animate-pulse" />
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#e1390f] font-bold">
             OPTION A: DOCUMENTARY EDITORIAL MONOGRAPH
           </span>
           <span className="text-white/30 hidden sm:inline">&bull;</span>
@@ -67,7 +67,7 @@ export default function CargoDocumentaryMonograph({ record }: DocumentaryMonogra
                 {record.weight_mt}
               </span>
               <div>
-                <span className="text-3xl sm:text-4xl font-black uppercase text-[#E33B12] font-[family-name:var(--font-barlow-condensed)] leading-none block">
+                <span className="text-3xl sm:text-4xl font-black uppercase text-[#e1390f] font-[family-name:var(--font-barlow-condensed)] leading-none block">
                   METRIC TONS
                 </span>
                 <span className="text-xs font-mono text-white/50 tracking-wider">
