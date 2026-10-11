@@ -16,7 +16,7 @@ export function LTHero() {
   return (
     <section
       aria-label="Freyer International Logistics"
-      className="bg-[#121316] text-white overflow-hidden relative min-h-[92vh] sm:min-h-screen flex items-center justify-center pt-24 pb-16 sm:pt-28 sm:pb-20"
+      className="bg-[var(--color-dark-surface)] text-white overflow-hidden relative min-h-[92vh] sm:min-h-screen flex items-center justify-center pt-24 pb-16 sm:pt-28 sm:pb-20"
     >
       {/* ═══════════════════════════════════════
           01. REAL FREYER CORPORATE VIDEO BACKGROUND
@@ -37,9 +37,9 @@ export function LTHero() {
         </video>
 
         {/* 50% dark overlay scrim to keep video rich and text crystal clear */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121316]/90 via-[#121316]/45 to-[#121316]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#121316]/60 via-transparent to-[#121316]/60" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#121316]/85 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-surface)]/90 via-[var(--color-dark-surface)]/45 to-[var(--color-dark-surface)]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-dark-surface)]/60 via-transparent to-[var(--color-dark-surface)]/60" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[var(--color-dark-surface)]/85 to-transparent" />
       </div>
 
       {/* ═══════════════════════════════════════
@@ -54,7 +54,7 @@ export function LTHero() {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/15 backdrop-blur-md mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-[#E33B12] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[var(--color-brand-orange)] animate-pulse" />
           <span className="text-2xs sm:text-xs font-mono font-semibold tracking-[0.2em] text-white/90 uppercase">
             Logistics Beyond Boundaries
           </span>
@@ -100,7 +100,7 @@ export function LTHero() {
           className="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-2xs sm:text-xs font-mono"
         >
           <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.08] border border-white/15 backdrop-blur-sm text-slate-200">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
+            <ShieldCheck className="w-3.5 h-3.5 text-[var(--color-brand-orange)] shrink-0" />
             <span>CBIC AEO-LO Certified</span>
           </div>
 
@@ -110,7 +110,7 @@ export function LTHero() {
           </div>
 
           <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.08] border border-white/15 backdrop-blur-sm text-slate-200">
-            <Globe2 className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
+            <Globe2 className="w-3.5 h-3.5 text-[var(--color-brand-orange)] shrink-0" />
             <span>WCA World &amp; SCN Member</span>
           </div>
         </motion.div>
@@ -126,7 +126,7 @@ export function LTHero() {
             href="/contact"
             size="lg"
             icon={<ArrowRight className="w-4 h-4 ml-1" />}
-            className="w-full sm:w-auto tracking-[0.16em] bg-[#E33B12] text-white hover:bg-[#c42f0b] border-transparent"
+            className="w-full sm:w-auto tracking-[0.16em] bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] border-transparent"
           >
             Request a Freight Quote
           </Button>
