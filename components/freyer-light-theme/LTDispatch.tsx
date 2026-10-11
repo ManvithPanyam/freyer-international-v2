@@ -50,7 +50,7 @@ export function LTDispatch() {
     <section
       id="engage"
       aria-label="Contact and freight rate enquiry"
-      className="bg-[#17181B] text-[#F7F6F2] border-t border-[#F7F6F2]/10"
+      className="bg-[var(--color-bg-alt)] text-[var(--color-text-primary)] border-t border-[var(--color-border-subtle)]"
     >
       <div
         ref={sectionRef}
@@ -58,10 +58,10 @@ export function LTDispatch() {
       >
         {/* Section headline */}
         <div className="mb-14">
-          <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[#E33B12] font-medium mb-4">
+          <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] font-medium mb-4">
             <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E33B12] opacity-80" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E33B12]" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
             </span>
             <span>Commercial Dispatch &amp; Rate Inquiries</span>
           </div>
@@ -70,14 +70,14 @@ export function LTDispatch() {
               initial={{ y: "100%" }}
               animate={isInView ? { y: "0%" } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[#F7F6F2] font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.92] uppercase"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
                 fontSize: "var(--token-text-4xl)",
               }}
             >
               ENGAGE DIRECTLY
-              <span className="text-[#E33B12]">.</span>
+              <span className="text-[var(--color-brand-orange)]">.</span>
             </motion.h2>
           </div>
         </div>
@@ -93,10 +93,10 @@ export function LTDispatch() {
           >
             {formState === "success" ? (
               /* Success state */
-              <div className="flex flex-col items-start gap-5 p-8 rounded-xl bg-[#E33B12]/10 border border-[#E33B12]/30">
-                <CheckCircle2 className="w-10 h-10 text-[#E33B12]" />
-                <h3 className="text-xl font-bold text-[#F7F6F2]">Enquiry received.</h3>
-                <p className="text-[#F7F6F2]/60 text-sm leading-relaxed max-w-md">
+              <div className="flex flex-col items-start gap-5 p-8 rounded-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] shadow-sm">
+                <CheckCircle2 className="w-10 h-10 text-[var(--color-brand-orange)]" />
+                <h3 className="text-xl font-bold text-[var(--color-text-primary)]">Enquiry received.</h3>
+                <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed max-w-md">
                   Your freight enquiry has been submitted to the Freyer operations team.
                   You will receive a direct response from the relevant commercial desk
                   within one business day.
@@ -106,7 +106,7 @@ export function LTDispatch() {
                     setFormState("idle");
                     setFormData({ name: "", company: "", serviceType: "", message: "" });
                   }}
-                  className="mt-2 text-xs font-mono uppercase tracking-wider text-[#F7F6F2]/40 hover:text-[#F7F6F2] transition-colors"
+                  className="mt-2 text-xs font-mono uppercase tracking-wider text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] transition-colors"
                 >
                   Submit another enquiry →
                 </button>
@@ -119,7 +119,7 @@ export function LTDispatch() {
                   <div>
                     <label
                       htmlFor="ftr-name"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#F7F6F2]/50 mb-2"
+                      className="block text-xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)] mb-2"
                     >
                       Your Name
                     </label>
@@ -132,7 +132,7 @@ export function LTDispatch() {
                       required
                       autoComplete="name"
                       placeholder="Full name"
-                      className="w-full bg-[#F7F6F2]/[0.06] border border-[#F7F6F2]/15 rounded-lg px-4 py-3 text-sm text-[#F7F6F2] placeholder-[#F7F6F2]/30 font-mono focus:outline-none focus:border-[#E33B12] focus:ring-1 focus:ring-[#E33B12] transition-colors"
+                      className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] font-mono focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors"
                     />
                   </div>
 
@@ -140,7 +140,7 @@ export function LTDispatch() {
                   <div>
                     <label
                       htmlFor="ftr-company"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#F7F6F2]/50 mb-2"
+                      className="block text-xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)] mb-2"
                     >
                       Company
                     </label>
@@ -152,7 +152,7 @@ export function LTDispatch() {
                       onChange={handleChange}
                       autoComplete="organization"
                       placeholder="Company or trade name"
-                      className="w-full bg-[#F7F6F2]/[0.06] border border-[#F7F6F2]/15 rounded-lg px-4 py-3 text-sm text-[#F7F6F2] placeholder-[#F7F6F2]/30 font-mono focus:outline-none focus:border-[#E33B12] focus:ring-1 focus:ring-[#E33B12] transition-colors"
+                      className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] font-mono focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors"
                     />
                   </div>
                 </div>
@@ -161,7 +161,7 @@ export function LTDispatch() {
                 <div>
                   <label
                     htmlFor="ftr-service"
-                    className="block text-xs font-mono uppercase tracking-wider text-[#F7F6F2]/50 mb-2"
+                    className="block text-xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)] mb-2"
                   >
                     Service Required
                   </label>
@@ -171,14 +171,13 @@ export function LTDispatch() {
                     value={formData.serviceType}
                     onChange={handleChange}
                     required
-                    className="w-full bg-[#F7F6F2]/[0.06] border border-[#F7F6F2]/15 rounded-lg px-4 py-3 text-sm text-[#F7F6F2] font-mono focus:outline-none focus:border-[#E33B12] focus:ring-1 focus:ring-[#E33B12] transition-colors appearance-none cursor-pointer"
-                    style={{ colorScheme: "dark" }}
+                    className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] font-mono focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors appearance-none cursor-pointer"
                   >
-                    <option value="" disabled className="text-gray-500">
+                    <option value="" disabled className="text-[var(--color-text-secondary)]">
                       Select service type
                     </option>
                     {SERVICE_OPTIONS.map((opt) => (
-                      <option key={opt} value={opt} className="bg-[#17181B] text-[#F7F6F2]">
+                      <option key={opt} value={opt} className="bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
                         {opt}
                       </option>
                     ))}
@@ -189,7 +188,7 @@ export function LTDispatch() {
                 <div>
                   <label
                     htmlFor="ftr-message"
-                    className="block text-xs font-mono uppercase tracking-wider text-[#F7F6F2]/50 mb-2"
+                    className="block text-xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)] mb-2"
                   >
                     Shipment Details
                   </label>
@@ -201,7 +200,7 @@ export function LTDispatch() {
                     rows={5}
                     required
                     placeholder="Origin, destination, commodity, approximate weight/volume, required timeline..."
-                    className="w-full bg-[#F7F6F2]/[0.06] border border-[#F7F6F2]/15 rounded-lg px-4 py-3 text-sm text-[#F7F6F2] placeholder-[#F7F6F2]/30 font-mono focus:outline-none focus:border-[#E33B12] focus:ring-1 focus:ring-[#E33B12] transition-colors resize-none"
+                    className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] font-mono focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors resize-none"
                   />
                 </div>
 
@@ -209,7 +208,7 @@ export function LTDispatch() {
                 <button
                   type="submit"
                   disabled={formState === "submitting"}
-                  className="w-full flex items-center justify-center gap-2 bg-[#E33B12] text-white hover:bg-[#E33B12]/90 rounded-lg px-6 py-3 font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] rounded-lg px-6 py-3 font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
                 >
                   {formState === "submitting" ? (
                     <>
@@ -224,7 +223,7 @@ export function LTDispatch() {
                   )}
                 </button>
 
-                <p className="text-xs font-mono text-[#F7F6F2]/40 leading-relaxed">
+                <p className="text-xs font-mono text-[var(--color-text-secondary)] leading-relaxed">
                   Direct submission to Freyer operations desk. Responses within 1 business day.
                 </p>
               </form>
@@ -239,20 +238,20 @@ export function LTDispatch() {
             className="space-y-8"
           >
             {/* HQ Address Block */}
-            <div className="bg-[#F7F6F2]/[0.06] border border-[#F7F6F2]/15 rounded-xl p-6 space-y-5">
+            <div className="bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] rounded-xl p-6 space-y-5 shadow-sm">
               <div>
-                <div className="font-mono text-xs uppercase tracking-wider text-[#F7F6F2]/40 mb-2">
+                <div className="font-mono text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
                   Corporate Registered Headquarters
                 </div>
-                <div className="text-base font-bold text-[#F7F6F2]">
+                <div className="text-base font-bold text-[var(--color-text-primary)]">
                   Freyer International Logistics Pvt Ltd
                 </div>
               </div>
 
               {/* Address */}
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
-                <address className="not-italic text-sm text-[#F7F6F2]/70 leading-relaxed font-mono">
+                <MapPin className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
+                <address className="not-italic text-sm text-[var(--color-text-secondary)] leading-relaxed font-mono">
                   TAGA Tower<br />
                   New No: 45, Old No 20, 1st Floor<br />
                   2nd Street, Sait Colony<br />
@@ -266,12 +265,12 @@ export function LTDispatch() {
                 href="tel:+914443191919"
                 className="flex items-center gap-3 group"
               >
-                <Phone className="w-4 h-4 text-[#E33B12] shrink-0" />
+                <Phone className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                 <div>
-                  <div className="font-mono text-xs uppercase tracking-wider text-[#F7F6F2]/40 mb-0.5">
+                  <div className="font-mono text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-0.5">
                     Direct HQ Line
                   </div>
-                  <span className="text-sm font-mono font-semibold text-[#E33B12] group-hover:underline underline-offset-2">
+                  <span className="text-sm font-mono font-semibold text-[var(--color-brand-blue)] group-hover:underline underline-offset-2">
                     +91 44 43191919
                   </span>
                 </div>
@@ -282,12 +281,12 @@ export function LTDispatch() {
                 href="mailto:info@freyerinternational.com"
                 className="flex items-center gap-3 group"
               >
-                <Mail className="w-4 h-4 text-[#F7F6F2]/50 shrink-0" />
+                <Mail className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                 <div>
-                  <div className="font-mono text-xs uppercase tracking-wider text-[#F7F6F2]/40 mb-0.5">
+                  <div className="font-mono text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-0.5">
                     Official Email
                   </div>
-                  <span className="text-sm font-mono text-[#F7F6F2]/50 group-hover:text-[#F7F6F2] transition-colors group-hover:underline underline-offset-2">
+                  <span className="text-sm font-mono text-[var(--color-brand-blue)] group-hover:underline underline-offset-2">
                     info@freyerinternational.com
                   </span>
                 </div>
@@ -296,7 +295,7 @@ export function LTDispatch() {
 
             {/* Credentials summary */}
             <div className="space-y-2">
-              <div className="font-mono text-xs uppercase tracking-wider text-[#F7F6F2]/40 mb-3">
+              <div className="font-mono text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-3">
                 Verified Credentials
               </div>
               {[
@@ -307,18 +306,19 @@ export function LTDispatch() {
                 "AMTOI Member",
                 "MTO Licensed",
               ].map((cred) => (
-                <div key={cred} className="flex items-center gap-2.5 font-mono text-xs text-[#E33B12]/80">
-                  <span className="w-1 h-1 rounded-full bg-[#E33B12] shrink-0" />
+                <div key={cred} className="flex items-center gap-2.5 font-mono text-xs text-[var(--color-text-secondary)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-orange)] shrink-0" />
                   {cred}
                 </div>
               ))}
             </div>
 
             {/* Locations CTA */}
-            <div className="border-t border-[#F7F6F2]/10 pt-6">
+            <div className="border-t border-[var(--color-border-subtle)] pt-6">
               <TextLink
                 href="/locations"
                 icon={<ArrowRight className="w-3.5 h-3.5" />}
+                className="text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)]"
               >
                 Find your nearest station
               </TextLink>
