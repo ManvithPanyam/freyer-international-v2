@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { FTRFooter } from "@/components/freyer-total-redesign/FTRFooter";
+import { LTFooter } from "@/components/freyer-light-theme/LTFooter";
 
 export function Footer() {
-  return <FTRFooter />;
+  return <LTFooter />;
 }

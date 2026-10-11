@@ -5,35 +5,40 @@
 
 export const THEME_TOKENS = {
   colors: {
-    // Primary Backgrounds (Dark Grey / Graphite)
-    background: "#121316",         // Deepest graphite stage canvas (FTRHero background)
-    backgroundAlt: "#181A1F",      // Primary section alternating graphite canvas
-    surfaceElevated: "#1E2026",    // Raised card / panel surface
-    surfaceMuted: "rgba(255, 255, 255, 0.03)",
-    surfaceHover: "rgba(255, 255, 255, 0.06)",
+    // Primary Backgrounds (Warm Light Stone / Paper)
+    background: "#F7F6F2",         // Primary light canvas
+    backgroundAlt: "#FFFFFF",      // Clean white card / panel surface
+    surfaceElevated: "#FFFFFF",    // Raised card / panel surface
+    surfaceMuted: "rgba(23, 24, 27, 0.04)",
+    surfaceHover: "rgba(23, 24, 27, 0.07)",
     
     // Borders
-    borderHairline: "rgba(255, 255, 255, 0.08)",
-    borderSubtle: "rgba(255, 255, 255, 0.12)",
-    borderFocus: "rgba(255, 255, 255, 0.28)",
+    borderHairline: "#DCDCD7",
+    borderSubtle: "#DCDCD7",
+    borderFocus: "#17181B",
 
     // Foregrounds & Text
-    textPrimary: "#F8F7F4",
-    textSecondary: "#A1A1AA",      // zinc-400
-    textMuted: "#71717A",          // zinc-500
-    textFaint: "rgba(255, 255, 255, 0.40)",
-    textGhost: "rgba(255, 255, 255, 0.25)",
+    textPrimary: "#17181B",        // Primary charcoal/black
+    textSecondary: "#62656B",      // Secondary editorial slate
+    textMuted: "#62656B",
+    textFaint: "rgba(23, 24, 27, 0.40)",
+    textGhost: "rgba(23, 24, 27, 0.25)",
+
+    // Cinematic Dark Contrast Section
+    darkBackground: "#17181B",
+    darkText: "#F7F6F2",
+    darkBorder: "rgba(247, 246, 242, 0.12)",
 
     // Canonical Brand Accent
-    accent: "#E1390F",             // Freyer International Orange/Red
+    accent: "#E33B12",             // Freyer International Red
     accentHover: "#C42F0B",
-    accentMuted: "rgba(225, 57, 15, 0.15)",
-    accentGlow: "rgba(225, 57, 15, 0.35)",
+    accentMuted: "rgba(227, 59, 18, 0.12)",
+    accentGlow: "rgba(227, 59, 18, 0.25)",
   },
   typography: {
     fontDisplay: "var(--font-barlow-condensed), system-ui, sans-serif",
     fontBody: "var(--font-poppins), system-ui, sans-serif",
-    fontMono: "var(--font-space), monospace",
+    fontMono: "var(--font-ibm-plex-mono), var(--font-space), monospace",
   },
   layout: {
     maxWidth: "1560px",

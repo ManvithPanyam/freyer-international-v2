@@ -106,10 +106,10 @@ export function FTRCargoMonument() {
       id="cargo-monument"
       ref={sectionRef}
       aria-label="Verified Project Cargo Monument"
-      className="relative bg-[#121316] text-[#F8F7F4] py-24 sm:py-32 border-t border-white/10 overflow-hidden"
+      className="relative bg-[#17181B] text-[#F7F6F2] py-24 sm:py-32 border-t border-white/10 overflow-hidden"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#e1390f]/[0.035] blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E33B12]/[0.035] blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.015] blur-[140px] pointer-events-none" />
 
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
@@ -119,8 +119,8 @@ export function FTRCargoMonument() {
           <div className="space-y-4 max-w-2xl">
             <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
               <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#e1390f] opacity-80" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e1390f]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E33B12] opacity-80" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E33B12]" />
               </span>
               <span>Physical Evidence &amp; Documented Execution</span>
             </div>
@@ -181,7 +181,7 @@ export function FTRCargoMonument() {
               {/* Tonnage Callout */}
               <div className="p-8 sm:p-10 rounded-2xl bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 backdrop-blur-sm relative overflow-hidden">
                 <div className="flex items-center justify-between gap-4 pb-6 border-b border-white/10 text-xs font-mono">
-                  <span className="text-[#e1390f] uppercase tracking-[0.2em] font-semibold">
+                  <span className="text-[#E33B12] uppercase tracking-[0.2em] font-semibold">
                     {record.recordNumber}
                   </span>
                   <span className="text-white/40">{record.mode}</span>
@@ -200,7 +200,7 @@ export function FTRCargoMonument() {
                   </span>
                   <div>
                     <span
-                      className="text-2xl sm:text-3xl font-black uppercase text-[#e1390f] tracking-wide block leading-tight"
+                      className="text-2xl sm:text-3xl font-black uppercase text-[#E33B12] tracking-wide block leading-tight"
                       style={{ fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif" }}
                     >
                       {record.weightUnit}
@@ -222,8 +222,8 @@ export function FTRCargoMonument() {
                   </div>
 
                   <div className="flex-1 flex items-center justify-center px-4">
-                    <div className="h-px w-full bg-gradient-to-r from-transparent via-[#e1390f] to-transparent relative">
-                      <Ship className="w-3.5 h-3.5 text-[#e1390f] absolute -top-1.5 left-1/2 -translate-x-1/2" />
+                    <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E33B12] to-transparent relative">
+                      <Ship className="w-3.5 h-3.5 text-[#E33B12] absolute -top-1.5 left-1/2 -translate-x-1/2" />
                     </div>
                   </div>
 
@@ -232,7 +232,7 @@ export function FTRCargoMonument() {
                       <span className="font-bold text-white">{record.route.destination}</span>
                       <span className="text-white/40 ml-1">({record.route.destinationCountry})</span>
                     </div>
-                    <MapPin className="w-3.5 h-3.5 text-[#e1390f]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#E33B12]" />
                   </div>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export function FTRCargoMonument() {
 
               {/* Verbatim Source Note */}
               <div className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs font-mono text-white/50 leading-relaxed">
-                <FileText className="w-4 h-4 text-[#e1390f] shrink-0 mt-0.5" />
+                <FileText className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
                 <p>{record.sourceNote}</p>
               </div>
             </div>
@@ -280,7 +280,7 @@ export function FTRCargoMonument() {
 
                 {/* Photo lower label badge */}
                 <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
-                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#e1390f] text-[10px] font-mono font-bold uppercase tracking-wider text-white mb-2">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#E33B12] text-[10px] font-mono font-bold uppercase tracking-wider text-white mb-2">
                     Official Field Archive
                   </div>
                   <p className="text-xs font-mono text-white/80 leading-relaxed">

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#121316] text-[#F8F7F4] selection:bg-[#e1390f] selection:text-white">
+    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -58,7 +58,7 @@ export default function ContactPage() {
               highlight="INSTANT DISPATCH."
               description="Complete the freight configurator below to receive an engineered tariff proposal tailored to your cargo profile."
             />
-            <div className="bg-[#181A1F]/90 border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl">
+            <div className="mt-8">
               <RfqProduct />
             </div>
           </div>
@@ -73,46 +73,46 @@ export default function ContactPage() {
               description="Direct telephone lines, email addresses, and physical premises across India's principal commercial gateways."
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
               {VERIFIED_STATIONS.map((station) => (
                 <FreyerCard key={station.id} className="p-6 flex flex-col justify-between space-y-4">
                   <div>
-                    <div className="flex items-start justify-between gap-2 border-b border-white/10 pb-3 mb-3">
+                    <div className="flex items-start justify-between gap-2 border-b border-[#DCDCD7] pb-3 mb-3">
                       <div>
-                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#e1390f] font-semibold block">
+                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#E33B12] font-semibold block">
                           {station.city} Station
                         </span>
-                        <h3 className="text-lg font-bold text-white font-mono uppercase mt-0.5">
+                        <h3 className="text-lg font-bold text-[#17181B] font-mono uppercase mt-0.5">
                           {station.name}
                         </h3>
                       </div>
                       {station.isHQ && (
-                        <span className="text-[9px] font-mono uppercase bg-[#e1390f]/20 text-[#e1390f] px-2 py-0.5 rounded shrink-0">
+                        <span className="text-[9px] font-mono uppercase bg-[#E33B12]/10 text-[#E33B12] border border-[#E33B12]/20 px-2 py-0.5 rounded shrink-0 font-semibold">
                           Corporate HQ
                         </span>
                       )}
                     </div>
 
-                    <div className="space-y-2 text-xs font-mono text-slate-300">
+                    <div className="space-y-2 text-xs font-mono text-[#62656B]">
                       <div className="flex items-start gap-2">
-                        <MapPin className="w-3.5 h-3.5 text-[#e1390f] shrink-0 mt-0.5" />
-                        <address className="not-italic font-light leading-relaxed text-white/70">
+                        <MapPin className="w-3.5 h-3.5 text-[#E33B12] shrink-0 mt-0.5" />
+                        <address className="not-italic leading-relaxed text-[#62656B]">
                           {station.address}
                         </address>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-white/10 space-y-2 text-xs font-mono">
+                  <div className="pt-4 border-t border-[#DCDCD7] space-y-2 text-xs font-mono">
                     <div className="flex items-center gap-2">
-                      <Phone className="w-3.5 h-3.5 text-[#e1390f] shrink-0" />
-                      <a href={`tel:${station.phone.replace(/\s+/g, "")}`} className="text-white hover:text-[#e1390f] transition-colors">
+                      <Phone className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
+                      <a href={`tel:${station.phone.replace(/\s+/g, "")}`} className="text-[#17181B] hover:text-[#E33B12] transition-colors font-medium">
                         {station.phone}
                       </a>
                     </div>
                     <div className="flex items-center gap-2 truncate">
-                      <Mail className="w-3.5 h-3.5 text-white/40 shrink-0" />
-                      <a href={`mailto:${station.email}`} className="text-white/60 hover:text-white transition-colors truncate">
+                      <Mail className="w-3.5 h-3.5 text-[#62656B] shrink-0" />
+                      <a href={`mailto:${station.email}`} className="text-[#62656B] hover:text-[#17181B] transition-colors truncate">
                         {station.email}
                       </a>
                     </div>

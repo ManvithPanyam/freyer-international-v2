@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function LocationsPage() {
   return (
-    <div className="min-h-screen bg-[#121316] text-[#F8F7F4] selection:bg-[#e1390f] selection:text-white">
+    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
       <Header />
       <main>
         <PageHeader

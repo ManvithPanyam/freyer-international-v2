@@ -45,7 +45,7 @@ const PRACTICE_AREAS = [
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-[#121316] text-[#F8F7F4] selection:bg-[#e1390f] selection:text-white">
+    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -76,13 +76,13 @@ export default function CareersPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {PRACTICE_AREAS.map((area) => (
                 <FreyerCard key={area.num} className="p-6 space-y-3">
-                  <div className="text-xs font-mono uppercase text-[#e1390f] font-bold">
+                  <div className="text-xs font-mono uppercase text-[#E33B12] font-bold">
                     {area.num} / Practice Area
                   </div>
-                  <h3 className="text-lg font-bold text-white font-mono uppercase">
+                  <h3 className="text-lg font-bold text-[#17181B] font-mono uppercase">
                     {area.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#62656B] font-light leading-relaxed">
                     {area.desc}
                   </p>
                 </FreyerCard>
@@ -93,18 +93,18 @@ export default function CareersPage() {
           {/* Direct Application Dossier */}
           <FreyerCard className="p-8 sm:p-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-2xl space-y-3">
-              <div className="flex items-center gap-2 text-xs font-mono text-[#e1390f] uppercase tracking-wider font-semibold">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#E33B12] uppercase tracking-wider font-semibold">
                 <Mail className="w-4 h-4" />
                 <span>Direct HR Directorate</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white font-mono uppercase tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#17181B] font-mono uppercase tracking-tight">
                 Submit Your Professional Profile
               </h3>
-              <p className="text-slate-300 text-sm font-light leading-relaxed">
+              <p className="text-[#62656B] text-sm font-light leading-relaxed">
                 Forward your resume and operational experience directly to our talent acquisition team. State your preferred practice discipline and station location (Chennai, Bengaluru, Mumbai, Delhi, Hyderabad, Vizag, Coimbatore, Tuticorin, or Ahmedabad).
               </p>
-              <div className="pt-2 text-xs font-mono text-white/60">
-                Email: <span className="text-white">careers@freyerinternational.com</span>
+              <div className="pt-2 text-xs font-mono text-[#62656B]">
+                Email: <span className="text-[#17181B] font-medium">careers@freyerinternational.com</span>
               </div>
             </div>
 

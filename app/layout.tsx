@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Barlow_Condensed } from "next/font/google";
+import { Poppins, Barlow_Condensed, Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -16,12 +16,26 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-ibm-plex-mono",
+  display: "swap",
+});
+
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#ffffff",
+  themeColor: "#F7F6F2",
 };
 
 export const metadata: Metadata = {
@@ -150,14 +164,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${barlowCondensed.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${barlowCondensed.variable} ${archivo.variable} ${ibmPlexMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen antialiased selection:bg-[#e0350b] selection:text-white">{children}</body>
+      <body className="min-h-screen antialiased bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">{children}</body>
     </html>
   );
 }

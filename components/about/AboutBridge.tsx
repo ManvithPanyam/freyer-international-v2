@@ -46,22 +46,22 @@ export function AboutBridge() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 border-b border-white/10 bg-[#121316]">
+    <section className="py-20 sm:py-28 border-b border-[#DCDCD7] bg-[#F7F6F2]">
       <div className={`max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-white/10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-[#DCDCD7]">
           <div>
-            <div className="text-xs font-mono uppercase tracking-[0.24em] text-[#e1390f] mb-3 font-semibold">
+            <div className="text-xs font-mono uppercase tracking-[0.24em] text-[#E33B12] mb-3 font-semibold">
               The Architecture of Freyer
             </div>
             <h2
-              className="text-white font-black tracking-[-0.02em] leading-tight uppercase text-3xl sm:text-5xl"
+              className="text-[#17181B] font-black tracking-[-0.02em] leading-tight uppercase text-3xl sm:text-5xl"
               style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
             >
               PEOPLE &rarr; CAPABILITY &rarr; REACH
             </h2>
           </div>
 
-          <p className="text-sm font-mono text-white/50 max-w-md">
+          <p className="text-sm font-mono text-[#62656B] max-w-md">
             Having seen who leads Freyer, explore our physical operations, global shipment routes, talent opportunities, and community stewardship.
           </p>
         </div>
@@ -74,42 +74,42 @@ export function AboutBridge() {
               <Link
                 key={path.href + idx}
                 href={path.href}
-                className="group p-8 rounded-xl border border-white/10 bg-[#181A1F] hover:border-white/30 hover:bg-[#1F232B] transition-all flex flex-col justify-between"
+                className="group p-8 rounded-xl border border-[#DCDCD7] bg-white hover:border-[#17181B] hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs font-mono text-white/40 mb-6">
-                    <span className="text-[#e1390f] font-semibold">{path.label}</span>
-                    <Icon className="w-4 h-4 text-white/40 group-hover:text-white transition-colors" />
+                  <div className="flex items-center justify-between text-xs font-mono text-[#62656B] mb-6">
+                    <span className="text-[#E33B12] font-semibold">{path.label}</span>
+                    <Icon className="w-4 h-4 text-[#62656B] group-hover:text-[#17181B] transition-colors" />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white tracking-tight group-hover:text-[#e1390f] transition-colors">
+                  <h3 className="text-2xl font-bold text-[#17181B] tracking-tight group-hover:text-[#E33B12] transition-colors">
                     {path.title}
                   </h3>
 
-                  <p className="mt-3 text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+                  <p className="mt-3 text-xs sm:text-sm text-[#62656B] font-normal leading-relaxed">
                     {path.desc}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-white/8 flex items-center justify-between text-xs font-mono text-white/60 group-hover:text-white transition-colors">
+                <div className="mt-8 pt-4 border-t border-[#DCDCD7] flex items-center justify-between text-xs font-mono text-[#62656B] group-hover:text-[#17181B] transition-colors">
                   <span>Explore Destination</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#e1390f] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <ArrowUpRight className="w-4 h-4 text-[#E33B12] transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
               </Link>
             );
           })}
         </div>
 
-        {/* Commercial Inquiry Callout */}
-        <div className="mt-12 p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-[#181A1F] via-[#1E222A] to-[#181A1F] border border-white/12 flex flex-col sm:flex-row items-center justify-between gap-6">
+        {/* Commercial Inquiry Callout - Intentional Dark Editorial Contrast */}
+        <div className="mt-12 p-8 sm:p-10 rounded-2xl bg-[#17181B] text-[#F7F6F2] border border-[#17181B] shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#e1390f] mb-1">
+            <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#E33B12] mb-1 font-semibold">
               Engage Freyer Leadership Desk
             </div>
-            <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+            <h4 className="text-xl sm:text-2xl font-bold text-[#F7F6F2] tracking-tight">
               Ready to engineer your next critical cargo consignment?
             </h4>
-            <p className="text-xs sm:text-sm text-white/50 mt-1">
+            <p className="text-xs sm:text-sm text-[#F7F6F2]/70 mt-1 font-light">
               Connect directly with our central freight forwarding desk and operational directors.
             </p>
           </div>
@@ -118,7 +118,7 @@ export function AboutBridge() {
             href="/contact"
             variant="primary"
             size="lg"
-            className="shrink-0"
+            className="shrink-0 bg-[#E33B12] text-white hover:bg-white hover:text-[#17181B]"
             icon={<Mail className="w-4 h-4" />}
           >
             Connect With Us
