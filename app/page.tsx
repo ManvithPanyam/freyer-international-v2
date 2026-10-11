@@ -1,6 +1,12 @@
-import FreyerTotalRedesignPage from "@/app/experiments/freyer-total-redesign/page";
+import { HomepageNav } from "@/components/homepage/HomepageNav";
+import { HomepageContent } from "@/components/homepage/HomepageContent";
 
 export default function HomePage() {
-  return <FreyerTotalRedesignPage />;
+  return (
+    <>
+      <HomepageNav />
+      <HomepageContent />
+    </>
+  );
 }
 

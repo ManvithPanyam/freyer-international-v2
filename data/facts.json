@@ -1,0 +1,119 @@
+{
+  "_note": "Single source of truth. All page content must read from this file. Do not hardcode content in components.",
+  "company": {
+    "name": "Freyer International Logistics Pvt Ltd",
+    "phone": "+91 44 43191919",
+    "email": "info@freyerinternational.com",
+    "tagline": "Logistics Beyond Boundaries"
+  },
+  "services": [
+    { "id": "air-services",     "name": "Air Services",     "href": "/services/air-freight",     "image": "/images/Air-Services.jpg" },
+    { "id": "ocean-services",   "name": "Ocean Services",   "href": "/services/ocean-freight",   "image": "/images/Ocean-Services.jpg" },
+    { "id": "customs-services", "name": "Customs Services", "href": "/services/customs-services","image": "/images/Customs-Services.jpg" },
+    { "id": "warehouse",        "name": "Warehouse",        "href": "/services/warehousing",     "image": "/images/Warehouse.jpg" },
+    { "id": "risk-management",  "name": "Risk Management",  "href": "/services/risk-management", "image": "/images/Risk-Management.jpg" },
+    { "id": "project-cargo",    "name": "Project Cargo",    "href": "/services/project-cargo",   "image": "/images/Project-Cargo.jpg" }
+  ],
+  "offices": [
+    {
+      "city": "Chennai",
+      "label": "Chennai (Egmore)",
+      "address": "TAGA Tower, New No 45 Old No 20, 1st Floor, 2nd Street, Sait Colony, Egmore, Chennai 600008",
+      "phone": "+91 44 43191919"
+    },
+    {
+      "city": "Chennai",
+      "label": "Chennai Airport",
+      "address": "No.2 Ambedkar Street, G.S.T. Road, Meenambakkam, Chennai 600017",
+      "phone": "+91 96000 41033"
+    },
+    {
+      "city": "Bengaluru",
+      "label": "Bengaluru",
+      "address": "No.19 KMJ Avenue, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru 560037",
+      "phone": "080 4120 0300"
+    },
+    {
+      "city": "Delhi / NCR",
+      "label": "Delhi / NCR (Gurugram)",
+      "address": "Plot 524, First Floor, Udyog Vihar Phase 5, Gurugram 122016",
+      "phone": "0124-4068388"
+    },
+    {
+      "city": "Mumbai",
+      "label": "Mumbai",
+      "address": "A-401 Polaris Building, Off Makwana Road, Marol, Andheri (East), Mumbai 400059",
+      "phone": "022-46191301"
+    },
+    {
+      "city": "Hyderabad",
+      "label": "Hyderabad (Secunderabad)",
+      "address": "#109, 1st Floor, Ashoka Bhoopal Chambers, S.P. Road, Secunderabad 500003",
+      "phone": "040-48561797"
+    },
+    {
+      "city": "Visakhapatnam",
+      "label": "Visakhapatnam",
+      "address": "YCN Complex, D.No.58-1-256, NAD X Road, Visakhapatnam 530009",
+      "phone": "+91 97402 20069"
+    },
+    {
+      "city": "Coimbatore",
+      "label": "Coimbatore",
+      "address": "3A, 1264 Mayflower Valencia, 5th Floor, Krisan Workspaces, Avinashi Road, Nava India, Coimbatore 641004",
+      "phone": "+91 99625 41554"
+    },
+    {
+      "city": "Tuticorin",
+      "label": "Tuticorin",
+      "address": "J Garden 4A/C 278, Housing Board RTC Nagar, Tuticorin 628001",
+      "phone": "+91 87544 46077"
+    },
+    {
+      "city": "Ahmedabad",
+      "label": "Ahmedabad",
+      "address": "Office 220, Flexi Business Hub, 2nd Floor, Madhur Complex, Opp. Gwalia Sweets, Near Stadium Cross Road, Navrangpur, Ahmedabad 380009",
+      "phone": "+91 98214 65939"
+    }
+  ],
+  "stats": {
+    "offices": 10,
+    "cities": 9,
+    "flagshipWeight": "482 MT",
+    "flagshipCBM": "796 CBM",
+    "flagshipUnits": 29
+  },
+  "flagshipProject": {
+    "_status": "pending document confirmation",
+    "weight": "482 MT",
+    "weightNote": "breakbulk",
+    "origin": "Shanghai",
+    "destination": "Jebel Ali",
+    "cbm": "796 CBM",
+    "units": 29,
+    "unitLabel": "heavy units",
+    "image": "/images/9.1.jpg"
+  },
+  "credentials": [
+    { "id": "aeo",   "name": "AEO",                "logo": "/images/AEO.jpg" },
+    { "id": "iata",  "name": "IATA",               "logo": "/images/IATA.png" },
+    { "id": "amtoi", "name": "AMTOI",              "logo": "/images/amtoi.png" },
+    { "id": "scn",   "name": "SCN",                "logo": "/images/SCN.png" },
+    { "id": "gptw",  "name": "Great Place to Work","logo": "/images/great_work_place_jpg.jpg" },
+    { "id": "iso",   "name": "ISO",                "logo": "/images/iso.png" }
+  ],
+  "mission": "To be the leading supply chain solutions provider of choice by leveraging our People, Process & Network.",
+  "values": ["Reliability", "Integrity", "Sincerity"],
+  "removed_claims": [
+    "contracted Tier-1 carrier allocations",
+    "direct vessel capacity contracts",
+    "weekly fixed sailings",
+    "real-time tracking",
+    "100% direct network",
+    "company-owned branches",
+    "Direct Carrier Authority",
+    "responses within 1 business day",
+    "founding year",
+    "headcount"
+  ]
+}

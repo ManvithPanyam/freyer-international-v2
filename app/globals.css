@@ -3,12 +3,28 @@
 
 @layer base {
   :root {
+    /* ── Light theme ──────────────────────────────────────── */
+    --bg:          #FFFFFF;
+    --bg-alt:      #F5F6F8;
+    --text:        #121316;
+    --border:      #E3E5E9;
+    --muted:       #5B6270;
+    /* Accent sampled from /public/logos/logo.png (avg of red sun pixels = #e0350b).
+       #e0350b is 4.48:1 on white (WCAG AA FAIL for small text).
+       --accent-text is darkened to #c92f09 → 5.39:1 (PASS). */
+    --accent:      #e0350b;
+    --accent-text: #c92f09;
+    --accent-hover:#b82808;
+    --dark:        #121316;
+    --dark-text:   #F5F6F8;
+
+    /* Legacy dark-theme vars (kept for non-homepage pages not yet converted) */
     --color-bg-base: #121316;
     --color-bg-elevated: #181a1f;
     --color-bg-overlay: rgba(18, 19, 22, 0.90);
     --color-text-primary: #F8F7F4;
-    --color-brand: #e1390f;
-    --color-brand-hover: #c42f0b;
+    --color-brand: #e0350b;
+    --color-brand-hover: #c92f09;
     --color-border-subtle: rgba(255, 255, 255, 0.10);
 
     /* ═══════════════════════════════════════════════════════════════════════
@@ -42,8 +58,8 @@
   body {
     overflow-x: clip;
     max-width: 100vw;
-    background-color: var(--color-bg-base);
-    color: var(--color-text-primary);
+    background-color: var(--bg);
+    color: var(--text);
     font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
@@ -55,4 +71,26 @@
 
 @utility text-display-giant {
   font-size: var(--token-text-display-giant);
+}
+
+/* ── Scroll-reveal fade-up (homepage only animation) ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.fade-up.visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+    opacity: 1;
+  }
 }
