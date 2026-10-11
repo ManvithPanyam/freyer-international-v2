@@ -106,62 +106,64 @@ export function FTRCargoMonument() {
       id="cargo-monument"
       ref={sectionRef}
       aria-label="Verified Project Cargo Monument"
-      className="relative bg-[#17181B] text-[#F7F6F2] py-24 sm:py-32 border-t border-white/10 overflow-hidden"
+      className="relative bg-[var(--color-bg-base)] text-[var(--color-text-primary)] py-24 sm:py-32 border-t border-[var(--color-border-subtle)] overflow-hidden"
     >
-      {/* Background ambient lighting */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E33B12]/[0.035] blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/[0.015] blur-[140px] pointer-events-none" />
-
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
 
         {/* ── SECTION HEADER: ARCHITECTURAL RIGOR ── */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-white/10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-[var(--color-border-subtle)]">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-slate-300 font-medium">
+            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-text-secondary)] font-medium">
               <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E33B12] opacity-80" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E33B12]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
               </span>
               <span>Physical Evidence &amp; Documented Execution</span>
             </div>
             <h2
-              className="text-white font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.92] uppercase"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
                 fontSize: "var(--token-text-4xl)",
               }}
             >
               THE WEIGHT OF <br />
-              <span className="text-white">
+              <span className="text-[var(--color-text-primary)]">
                 REAL DISPLACEMENT
               </span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-[var(--color-text-secondary)] font-light leading-relaxed">
               No simulated cargo renders. No synthetic claims. These are the verified, unalterable
               records of heavy industrial breakbulk cargo engineered and transported by Freyer.
             </p>
           </div>
 
           {/* Record Selector Tabs */}
-          <div className="flex items-center gap-2 p-1.5 rounded-xl bg-white/[0.04] border border-white/10 self-start lg:self-end">
-            <Button
+          <div className="flex items-center gap-2 p-1.5 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] self-start lg:self-end">
+            <button
               type="button"
               onClick={() => setActiveTab("record-9")}
-              variant={activeTab === "record-9" ? "primary" : "secondary"}
-              size="sm"
-              icon={<Scale className="w-3.5 h-3.5" />}
+              className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5 ${
+                activeTab === "record-9"
+                  ? "bg-[var(--color-brand-blue)] text-white font-bold shadow-sm"
+                  : "bg-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+              }`}
             >
-              Record #9 · 482 MT
-            </Button>
-            <Button
+              <Scale className="w-3.5 h-3.5" />
+              <span>Record #9 · 482 MT</span>
+            </button>
+            <button
               type="button"
               onClick={() => setActiveTab("record-11")}
-              variant={activeTab === "record-11" ? "primary" : "secondary"}
-              size="sm"
-              icon={<Box className="w-3.5 h-3.5" />}
+              className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5 ${
+                activeTab === "record-11"
+                  ? "bg-[var(--color-brand-blue)] text-white font-bold shadow-sm"
+                  : "bg-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
+              }`}
             >
-              Record #11 · 37.6 MT
-            </Button>
+              <Box className="w-3.5 h-3.5" />
+              <span>Record #11 · 37.6 MT</span>
+            </button>
           </div>
         </div>
 
@@ -179,18 +181,18 @@ export function FTRCargoMonument() {
             <div className="lg:col-span-7 space-y-8">
 
               {/* Tonnage Callout */}
-              <div className="p-8 sm:p-10 rounded-2xl bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 backdrop-blur-sm relative overflow-hidden">
-                <div className="flex items-center justify-between gap-4 pb-6 border-b border-white/10 text-xs font-mono">
-                  <span className="text-[#E33B12] uppercase tracking-[0.2em] font-semibold">
+              <div className="p-8 sm:p-10 rounded-2xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] shadow-sm relative overflow-hidden">
+                <div className="flex items-center justify-between gap-4 pb-6 border-b border-[var(--color-border-subtle)] text-xs font-mono">
+                  <span className="px-2 py-0.5 rounded bg-white border border-[var(--color-border-subtle)] text-[var(--color-cta)] uppercase tracking-[0.2em] font-semibold">
                     {record.recordNumber}
                   </span>
-                  <span className="text-white/40">{record.mode}</span>
+                  <span className="text-[var(--color-text-secondary)]">{record.mode}</span>
                 </div>
 
                 {/* Massive Number */}
                 <div className="py-8 flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6">
                   <span
-                    className="font-black uppercase text-white drop-shadow-2xl leading-none"
+                    className="font-black uppercase text-[var(--color-brand-blue)] leading-none"
                     style={{
                       fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
                       fontSize: "var(--token-text-display-giant)",
@@ -200,39 +202,39 @@ export function FTRCargoMonument() {
                   </span>
                   <div>
                     <span
-                      className="text-2xl sm:text-3xl font-black uppercase text-[#E33B12] tracking-wide block leading-tight"
+                      className="text-2xl sm:text-3xl font-black uppercase text-[var(--color-brand-blue)] tracking-wide block leading-tight"
                       style={{ fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif" }}
                     >
                       {record.weightUnit}
                     </span>
-                    <span className="text-xs font-mono text-white/40 uppercase tracking-widest">
+                    <span className="text-xs font-mono text-[var(--color-text-secondary)] uppercase tracking-widest">
                       {record.commodity}
                     </span>
                   </div>
                 </div>
 
                 {/* Route Vector Strip */}
-                <div className="p-4 rounded-xl bg-black/40 border border-white/10 flex items-center justify-between gap-4 text-xs font-mono">
+                <div className="p-4 rounded-xl bg-white border border-[var(--color-border-subtle)] flex items-center justify-between gap-4 text-xs font-mono">
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-3.5 h-3.5 text-white/50" />
+                    <MapPin className="w-3.5 h-3.5 text-[var(--color-text-secondary)]" />
                     <div>
-                      <span className="font-bold text-white">{record.route.origin}</span>
-                      <span className="text-white/40 ml-1">({record.route.originCountry})</span>
+                      <span className="font-bold text-[var(--color-text-primary)]">{record.route.origin}</span>
+                      <span className="text-[var(--color-text-secondary)] ml-1">({record.route.originCountry})</span>
                     </div>
                   </div>
 
                   <div className="flex-1 flex items-center justify-center px-4">
-                    <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E33B12] to-transparent relative">
-                      <Ship className="w-3.5 h-3.5 text-[#E33B12] absolute -top-1.5 left-1/2 -translate-x-1/2" />
+                    <div className="h-px w-full bg-[var(--color-border-subtle)] relative">
+                      <Ship className="w-3.5 h-3.5 text-[var(--color-brand-orange)] absolute -top-1.5 left-1/2 -translate-x-1/2" />
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2 text-right">
                     <div>
-                      <span className="font-bold text-white">{record.route.destination}</span>
-                      <span className="text-white/40 ml-1">({record.route.destinationCountry})</span>
+                      <span className="font-bold text-[var(--color-text-primary)]">{record.route.destination}</span>
+                      <span className="text-[var(--color-text-secondary)] ml-1">({record.route.destinationCountry})</span>
                     </div>
-                    <MapPin className="w-3.5 h-3.5 text-[#E33B12]" />
+                    <MapPin className="w-3.5 h-3.5 text-[var(--color-brand-orange)]" />
                   </div>
                 </div>
               </div>
@@ -242,12 +244,12 @@ export function FTRCargoMonument() {
                 {record.specs.map((spec) => (
                   <div
                     key={spec.label}
-                    className="p-4 rounded-xl bg-white/[0.03] border border-white/8 space-y-1"
+                    className="p-4 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] space-y-1"
                   >
-                    <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
                       {spec.label}
                     </div>
-                    <div className="text-sm sm:text-base font-bold font-mono text-white">
+                    <div className="text-sm sm:text-base font-bold font-mono text-[var(--color-text-primary)]">
                       {spec.value}
                     </div>
                   </div>
@@ -255,15 +257,15 @@ export function FTRCargoMonument() {
               </div>
 
               {/* Verbatim Source Note */}
-              <div className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs font-mono text-white/50 leading-relaxed">
-                <FileText className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-xs font-mono text-[var(--color-text-secondary)] leading-relaxed">
+                <FileText className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                 <p>{record.sourceNote}</p>
               </div>
             </div>
 
             {/* RIGHT COLUMN: Authentic Documentary Photography (5 cols) */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] shadow-md bg-black">
                 <Image
                   src={record.photo}
                   alt={record.photoAlt}
@@ -278,9 +280,9 @@ export function FTRCargoMonument() {
                 <div className="absolute bottom-4 left-4 border-b border-l border-white/40 w-4 h-4" />
                 <div className="absolute bottom-4 right-4 border-b border-r border-white/40 w-4 h-4" />
 
-                {/* Photo lower label badge */}
+                {/* Photo lower label badge: keep dark caption gradient sitting on photo */}
                 <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
-                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#E33B12] text-[10px] font-mono font-bold uppercase tracking-wider text-white mb-2">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[var(--color-cta)] text-[10px] font-mono font-bold uppercase tracking-wider text-white mb-2">
                     Official Field Archive
                   </div>
                   <p className="text-xs font-mono text-white/80 leading-relaxed">
@@ -290,12 +292,12 @@ export function FTRCargoMonument() {
               </div>
 
               {/* Call to full projects archive */}
-              <div className="p-5 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-between gap-4">
+              <div className="p-5 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-alt)] flex items-center justify-between gap-4 shadow-sm">
                 <div className="space-y-0.5">
-                  <div className="text-xs font-bold text-white font-mono">
+                  <div className="text-xs font-bold text-[var(--color-text-primary)] font-mono">
                     Explore Full Project Cargo Archive
                   </div>
-                  <div className="text-2xs font-mono text-white/40">
+                  <div className="text-2xs font-mono text-[var(--color-text-secondary)]">
                     Industrial turbines, heavy cranes, energy transformers
                   </div>
                 </div>
@@ -303,7 +305,7 @@ export function FTRCargoMonument() {
                   href="/projects"
                   variant="secondary"
                   size="sm"
-                  className="shrink-0"
+                  className="shrink-0 border-[var(--color-brand-blue)] text-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue)] hover:text-white"
                   icon
                 >
                   View All
