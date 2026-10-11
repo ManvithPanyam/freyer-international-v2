@@ -47,19 +47,19 @@ export function LTTrustBar() {
   return (
     <section
       aria-label="Official Accreditations & Statutory Certifications"
-      className="relative bg-[#FFFFFF] border-y border-[#DCDCD7] py-6 overflow-hidden"
+      className="relative bg-[var(--color-bg-alt)] border-y border-[var(--color-border-subtle)] py-6 overflow-hidden"
     >
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
 
           {/* Institutional Label */}
           <div className="flex items-center gap-3 shrink-0">
-            <ShieldCheck className="w-5 h-5 text-[#E33B12]" />
+            <ShieldCheck className="w-5 h-5 text-[var(--color-brand-orange)]" />
             <div>
-              <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#17181B]">
+              <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[var(--color-text-primary)]">
                 Statutory Accreditations
               </div>
-              <div className="text-[10px] font-mono text-[#62656B]">
+              <div className="text-[10px] font-mono text-[var(--color-text-secondary)]">
                 Government & International Cargo Authorizations
               </div>
             </div>
@@ -70,9 +70,9 @@ export function LTTrustBar() {
             {ACCREDITATIONS.map((item) => (
               <div
                 key={item.name}
-                className="shrink-0 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[#F7F6F2] border border-[#DCDCD7] hover:border-[#E33B12] transition-colors"
+                className="shrink-0 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] hover:border-[var(--color-brand-blue)] transition-colors shadow-sm"
               >
-                <div className="relative h-6 w-12 shrink-0 bg-[#FFFFFF] rounded border border-[#DCDCD7] p-1 flex items-center justify-center">
+                <div className="relative h-6 w-12 shrink-0 bg-[var(--color-bg-elevated)] rounded border border-[var(--color-border-subtle)] p-1 flex items-center justify-center">
                   <Image
                     src={item.img}
                     alt={item.name}
@@ -83,14 +83,14 @@ export function LTTrustBar() {
                 </div>
                 <div className="space-y-0.5">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-xs font-mono font-bold text-[#17181B] tracking-wide">
+                    <span className="text-xs font-mono font-bold text-[var(--color-text-primary)] tracking-wide">
                       {item.name}
                     </span>
-                    <span className="text-2xs font-mono px-1.5 py-0.2 rounded bg-[#E33B12]/15 text-[#E33B12] uppercase font-semibold">
+                    <span className="text-2xs font-mono px-1.5 py-0.2 rounded bg-[var(--color-cta)]/10 text-[var(--color-cta)] uppercase font-semibold">
                       {item.badge}
                     </span>
                   </div>
-                  <div className="text-2xs font-mono text-[#62656B]">
+                  <div className="text-2xs font-mono text-[var(--color-text-secondary)]">
                     {item.detail}
                   </div>
                 </div>
