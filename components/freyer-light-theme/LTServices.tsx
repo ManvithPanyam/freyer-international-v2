@@ -206,50 +206,50 @@ export function LTServices() {
       id="services-matrix"
       ref={sectionRef}
       aria-label="Freyer Logistics Core Services"
-      className="relative bg-[#F7F6F2] text-[#17181B] py-24 sm:py-32 border-t border-[#DCDCD7] overflow-hidden"
+      className="relative bg-[var(--color-bg-alt)] text-[var(--color-text-primary)] py-24 sm:py-32 border-t border-[var(--color-border-subtle)] overflow-hidden"
     >
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
 
         {/* ── SECTION HEADER ── */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-12 border-b border-[#DCDCD7] gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-12 border-b border-[var(--color-border-subtle)] gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[#62656B] font-medium">
+            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-text-secondary)] font-medium">
               <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E33B12] opacity-80" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E33B12]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
               </span>
               <span>Core Infrastructure &amp; Disciplines</span>
             </div>
             <h2
-              className="text-[#17181B] font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.92] uppercase"
               style={{
                 fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
                 fontSize: "var(--token-text-4xl)",
               }}
             >
               SIX DISCIPLINES. <br />
-              <span className="text-[#17181B]">
+              <span className="text-[var(--color-text-primary)]">
                 ONE OPERATIONAL STANDARD
               </span>
             </h2>
-            <p className="text-base sm:text-lg text-[#62656B] font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-[var(--color-text-secondary)] font-light leading-relaxed">
               Every shipment is executed with institutional rigor. From scheduled air and ocean
               container freight to CBIC licensed customs brokerage and heavy-lift breakbulk engineering.
             </p>
           </div>
 
           <div className="hidden lg:block text-right space-y-1">
-            <div className="text-xs font-mono uppercase tracking-widest text-[#E33B12]">
+            <div className="text-xs font-mono uppercase tracking-widest text-[var(--color-cta)]">
               Operational Footprint
             </div>
-            <div className="text-sm font-mono text-[#62656B]">
+            <div className="text-sm font-mono text-[var(--color-text-secondary)]">
               10 Indian Stations · Tier-1 Global Port Gateways
             </div>
           </div>
         </div>
 
         {/* ── INTERACTIVE SERVICE TABS ── */}
-        <div className="py-6 border-b border-[#DCDCD7] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+        <div className="py-6 border-b border-[var(--color-border-subtle)] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
           {SERVICES.map((s) => {
             const isActive = s.id === activeService.id;
             const Icon = s.icon;
@@ -260,15 +260,15 @@ export function LTServices() {
                 className={[
                   "p-3.5 rounded-xl border text-left transition-all duration-150 flex flex-col justify-between gap-3 group",
                   isActive
-                    ? "bg-[#17181B] border-[#17181B] text-[#F7F6F2] shadow-lg"
-                    : "bg-[#FFFFFF] border-[#DCDCD7] text-[#17181B] hover:border-[#E33B12] hover:text-[#E33B12]",
+                    ? "bg-[var(--color-text-primary)] border-[var(--color-text-primary)] text-white shadow-lg"
+                    : "bg-[var(--color-bg-elevated)] border-[var(--color-border-subtle)] text-[var(--color-text-primary)] hover:border-[var(--color-brand-orange)] hover:text-[var(--color-cta)]",
                 ].join(" ")}
               >
                 <div className="flex items-center justify-between w-full">
                   <span
                     className={[
                       "text-[10px] font-mono font-bold tracking-wider",
-                      isActive ? "text-[#F7F6F2]" : "text-[#62656B] group-hover:text-[#E33B12]",
+                      isActive ? "text-white" : "text-[var(--color-text-secondary)] group-hover:text-[var(--color-brand-blue)]",
                     ].join(" ")}
                   >
                     {s.step}
@@ -276,14 +276,14 @@ export function LTServices() {
                   <Icon
                     className={[
                       "w-4 h-4 transition-colors",
-                      isActive ? "text-[#F7F6F2]" : "text-[#17181B] group-hover:text-[#E33B12]",
+                      isActive ? "text-white" : "text-[var(--color-text-primary)] group-hover:text-[var(--color-brand-blue)]",
                     ].join(" ")}
                   />
                 </div>
                 <div
                   className={[
                     "text-xs font-mono font-bold tracking-tight line-clamp-1",
-                    isActive ? "text-[#F7F6F2]" : "text-[#17181B] group-hover:text-[#E33B12]",
+                    isActive ? "text-white" : "text-[var(--color-text-primary)] group-hover:text-[var(--color-brand-blue)]",
                   ].join(" ")}
                 >
                   {s.name.split(" ")[0]} {s.name.split(" ")[1] ?? ""}
@@ -304,37 +304,37 @@ export function LTServices() {
             className="pt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start"
           >
             {/* LEFT: Core Capability Details (7 cols) */}
-            <div className="lg:col-span-7 space-y-8 bg-[#FFFFFF] p-8 rounded-2xl border border-[#DCDCD7]">
+            <div className="lg:col-span-7 space-y-8 bg-[var(--color-bg-elevated)] p-8 rounded-2xl border border-[var(--color-border-subtle)] shadow-sm">
               <div>
-                <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#E33B12] mb-2">
+                <div className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--color-cta)] font-semibold mb-2">
                   Discipline {activeService.step}
                 </div>
                 <h3
-                  className="font-bold text-[#17181B] tracking-tight"
+                  className="font-bold text-[var(--color-text-primary)] tracking-tight"
                   style={{ fontSize: "var(--token-text-2xl)" }}
                 >
                   {activeService.name}
                 </h3>
-                <p className="text-base text-[#17181B] font-semibold leading-relaxed mt-3">
+                <p className="text-base text-[var(--color-text-primary)] font-semibold leading-relaxed mt-3">
                   {activeService.tagline}
                 </p>
-                <p className="text-sm text-[#62656B] font-light leading-relaxed mt-3">
+                <p className="text-sm text-[var(--color-text-secondary)] font-light leading-relaxed mt-3">
                   {activeService.description}
                 </p>
               </div>
 
               {/* Verified Capabilities Checklist */}
-              <div className="space-y-3 border-t border-[#DCDCD7] pt-6">
-                <div className="text-2xs font-mono uppercase tracking-wider text-[#62656B]">
+              <div className="space-y-3 border-t border-[var(--color-border-subtle)] pt-6">
+                <div className="text-2xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
                   Operational Capabilities
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {activeService.capabilities.map((cap) => (
                     <div
                       key={cap}
-                      className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-xs font-mono text-[#17181B]"
+                      className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-xs font-mono text-[var(--color-text-primary)]"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#E33B12] shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-brand-orange)] shrink-0" />
                       <span>{cap}</span>
                     </div>
                   ))}
@@ -342,13 +342,13 @@ export function LTServices() {
               </div>
 
               {/* Metrics Grid */}
-              <div className="grid grid-cols-3 gap-4 border-t border-[#DCDCD7] pt-6">
+              <div className="grid grid-cols-3 gap-4 border-t border-[var(--color-border-subtle)] pt-6">
                 {activeService.metrics.map((m) => (
-                  <div key={m.label} className="space-y-1 bg-[#F7F6F2] p-4 rounded-lg border border-[#DCDCD7]">
-                    <div className="text-2xs font-mono uppercase tracking-wider text-[#62656B]">
+                  <div key={m.label} className="space-y-1 bg-[var(--color-bg-alt)] p-4 rounded-lg border border-[var(--color-border-subtle)]">
+                    <div className="text-2xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
                       {m.label}
                     </div>
-                    <div className="text-sm font-bold font-mono text-[#17181B]">
+                    <div className="text-sm font-bold font-mono text-[var(--color-text-primary)]">
                       {m.value}
                     </div>
                   </div>
@@ -362,14 +362,14 @@ export function LTServices() {
                   variant="primary"
                   size="lg"
                   icon
-                  className="bg-[#17181B] text-[#F7F6F2] hover:bg-[#E33B12]"
+                  className="bg-[var(--color-text-primary)] text-[var(--color-bg-alt)] hover:bg-[var(--color-brand-orange)]"
                 >
                   Request {activeService.name.split(" ")[0]} Rate
                 </Button>
                 <TextLink
                   href={activeService.href}
-                  icon={<ChevronRight className="w-3.5 h-3.5 text-[#E33B12]" />}
-                  className="text-[#E33B12] hover:text-[#17181B]"
+                  icon={<ChevronRight className="w-3.5 h-3.5 text-[var(--color-cta)]" />}
+                  className="text-[var(--color-cta)] hover:text-[var(--color-text-primary)]"
                 >
                   Full Service Specifications
                 </TextLink>
@@ -378,7 +378,7 @@ export function LTServices() {
 
             {/* RIGHT: Visual Anchor (5 cols) */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[#DCDCD7] shadow-lg bg-[#F7F6F2]">
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] shadow-md bg-black">
                 <Image
                   src={activeService.image}
                   alt={activeService.imageAlt}
@@ -386,14 +386,14 @@ export function LTServices() {
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#17181B]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-surface)]/80 via-transparent to-transparent" />
 
                 {/* Bottom Terminal Badge */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[#17181B]/80 backdrop-blur-md border border-[#DCDCD7] text-xs font-mono">
-                  <div className="text-[10px] text-[#E33B12] uppercase tracking-wider mb-0.5">
+                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[var(--color-dark-surface)]/80 backdrop-blur-md border border-white/15 text-xs font-mono">
+                  <div className="text-[10px] text-[var(--color-cta)] uppercase tracking-wider mb-0.5">
                     Operating Gateways
                   </div>
-                  <div className="text-[#F7F6F2] font-medium truncate">
+                  <div className="text-[var(--color-bg-alt)] font-medium truncate">
                     {activeService.terminals}
                   </div>
                 </div>
