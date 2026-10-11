@@ -11,7 +11,7 @@ import { LTFooter } from '@/components/freyer-light-theme/LTFooter';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
+    <div className="min-h-screen bg-[var(--color-bg-base)] text-[var(--color-text-primary)] selection:bg-[var(--color-cta)] selection:text-white">
       <LTNav />
       <LTHero />
       <LTTrustBar />
