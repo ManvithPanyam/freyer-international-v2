@@ -50,7 +50,7 @@ export function LTNav() {
       <header
         className={[
           "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-          "bg-[#F7F6F2] border-b border-[#DCDCD7] shadow-sm py-3",
+          "bg-[var(--color-bg-overlay)] border-b border-[var(--color-border-subtle)] backdrop-blur-md shadow-sm py-3",
         ].join(" ")}
       >
         <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between gap-8">
@@ -59,26 +59,26 @@ export function LTNav() {
           <Link
             href="/"
             aria-label="Freyer International Logistics — Home"
-            className="flex items-center gap-2 sm:gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E33B12] rounded"
+            className="flex items-center gap-2 sm:gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand-blue)] rounded"
           >
             <div className="relative h-8 sm:h-9 w-[54px] sm:w-[62px]">
               <Image
-                src="/images/logo.png"
+                src="/images/logo-colour.png"
                 alt="Freyer International Logistics"
                 width={62}
                 height={36}
                 unoptimized
-                className="w-full h-full object-contain object-left brightness-0"
+                className="w-full h-full object-contain object-left "
                 priority
               />
             </div>
             <span
-              className="text-2xs sm:text-xs font-mono tracking-[0.16em] uppercase text-[#DCDCD7] select-none"
+              className="text-2xs sm:text-xs font-mono tracking-[0.16em] uppercase text-[var(--color-border-subtle)] select-none"
               aria-hidden
             >
               |
             </span>
-            <span className="text-2xs sm:text-xs font-mono tracking-[0.12em] sm:tracking-[0.16em] uppercase text-[#62656B] font-semibold leading-tight">
+            <span className="text-2xs sm:text-xs font-mono tracking-[0.12em] sm:tracking-[0.16em] uppercase text-[var(--color-text-secondary)] font-semibold leading-tight">
               Logistics Beyond Boundaries
             </span>
           </Link>
@@ -96,82 +96,82 @@ export function LTNav() {
                 href="/services"
                 className={[
                   "inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
-                  pathname.startsWith("/services") ? "text-[#E33B12] font-semibold" : "text-[#17181B] hover:text-[#E33B12]",
+                  pathname.startsWith("/services") ? "text-[var(--color-brand-blue)] font-bold" : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
                 ].join(" ")}
               >
                 <span>Services</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#17181B]/40 group-hover:text-[#E33B12] transition-transform" />
+                <ChevronDown className="w-3.5 h-3.5 text-[var(--color-brand-blue)]/60 group-hover:text-[var(--color-brand-blue-hover)] transition-transform" />
               </Link>
 
               {activeDropdown === "services" && (
-                <div className="absolute top-full left-0 w-80 bg-[#FFFFFF] border border-[#DCDCD7] rounded-xl shadow-sm p-3 pt-2 text-xs backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150 z-50">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#62656B] font-semibold px-2 py-1.5 border-b border-[#DCDCD7] mb-1">
+                <div className="absolute top-full left-0 w-80 bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] rounded-xl shadow-sm p-3 pt-2 text-xs backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-semibold px-2 py-1.5 border-b border-[var(--color-border-subtle)] mb-1">
                     Multimodal Logistics Portfolio
                   </div>
                   <div className="space-y-0.5">
                     <Link
                       href="/services#ocean-freight"
-                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <Anchor className="w-4 h-4 text-[#E33B12] shrink-0" />
+                      <Anchor className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">Ocean Freight Forwarding</div>
-                        <div className="text-[11px] text-[#62656B]">FCL &amp; LCL global liner allocations</div>
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">Ocean Freight Forwarding</div>
+                        <div className="text-[11px] text-[var(--color-text-secondary)]">FCL &amp; LCL global liner allocations</div>
                       </div>
                     </Link>
                     <Link
                       href="/services#air-freight"
-                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <Plane className="w-4 h-4 text-[#E33B12] shrink-0" />
+                      <Plane className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">Air Freight Solutions</div>
-                        <div className="text-[11px] text-[#62656B]">Direct apron IATA agent privileges</div>
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">Air Freight Solutions</div>
+                        <div className="text-[11px] text-[var(--color-text-secondary)]">Direct apron IATA agent privileges</div>
                       </div>
                     </Link>
                     <Link
                       href="/services#customs-brokerage"
-                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <ShieldCheck className="w-4 h-4 text-[#E33B12] shrink-0" />
+                      <ShieldCheck className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">Customs Brokerage</div>
-                        <div className="text-[11px] text-[#62656B]">CBIC AEO-LO clearance</div>
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">Customs Brokerage</div>
+                        <div className="text-[11px] text-[var(--color-text-secondary)]">CBIC AEO-LO clearance</div>
                       </div>
                     </Link>
                     <Link
                       href="/services#project-cargo"
-                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <Building2 className="w-4 h-4 text-[#E33B12] shrink-0" />
+                      <Building2 className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">Project Cargo &amp; Heavy Lift</div>
-                        <div className="text-[11px] text-[#62656B]">Engineered out-of-gauge transport</div>
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">Project Cargo &amp; Heavy Lift</div>
+                        <div className="text-[11px] text-[var(--color-text-secondary)]">Engineered out-of-gauge transport</div>
                       </div>
                     </Link>
                     <Link
                       href="/services#warehousing"
-                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <Warehouse className="w-4 h-4 text-[#E33B12] shrink-0" />
+                      <Warehouse className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">Warehousing &amp; 3PL</div>
-                        <div className="text-[11px] text-[#62656B]">CFS &amp; bonded facility management</div>
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">Warehousing &amp; 3PL</div>
+                        <div className="text-[11px] text-[var(--color-text-secondary)]">CFS &amp; bonded facility management</div>
                       </div>
                     </Link>
                     <Link
                       href="/services#risk-management"
-                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <ShieldAlert className="w-4 h-4 text-[#E33B12] shrink-0" />
+                      <ShieldAlert className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">Marine Risk Management</div>
-                        <div className="text-[11px] text-[#62656B]">Comprehensive transit protection</div>
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">Marine Risk Management</div>
+                        <div className="text-[11px] text-[var(--color-text-secondary)]">Comprehensive transit protection</div>
                       </div>
                     </Link>
                   </div>
-                  <div className="mt-2 pt-2 border-t border-[#DCDCD7] px-2 flex justify-between items-center text-[11px] font-mono">
-                    <Link href="/services" className="text-[#E33B12] hover:text-[#17181B] transition-colors flex items-center gap-1">
+                  <div className="mt-2 pt-2 border-t border-[var(--color-border-subtle)] px-2 flex justify-between items-center text-[11px] font-mono">
+                    <Link href="/services" className="text-[var(--color-brand-orange)] hover:text-[var(--color-text-primary)] transition-colors flex items-center gap-1">
                       <span>View All Services</span>
                       <ArrowUpRight className="w-3 h-3" />
                     </Link>
@@ -185,7 +185,7 @@ export function LTNav() {
               href="/projects"
               className={[
                 "text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
-                pathname === "/projects" ? "text-[#E33B12] font-semibold" : "text-[#17181B] hover:text-[#E33B12]",
+                pathname === "/projects" ? "text-[var(--color-brand-blue)] font-bold" : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
               ].join(" ")}
             >
               Projects
@@ -202,30 +202,30 @@ export function LTNav() {
                 className={[
                   "inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
                   pathname === "/locations" || pathname === "/network-partners"
-                    ? "text-[#E33B12] font-semibold"
-                    : "text-[#17181B] hover:text-[#E33B12]",
+                    ? "text-[var(--color-brand-orange)] font-semibold"
+                    : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]",
                 ].join(" ")}
               >
                 <span>Network</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#17181B]/40 group-hover:text-[#E33B12] transition-transform" />
+                <ChevronDown className="w-3.5 h-3.5 text-[var(--color-brand-blue)]/60 group-hover:text-[var(--color-brand-blue-hover)] transition-transform" />
               </Link>
 
               {activeDropdown === "network" && (
-                <div className="absolute top-full left-0 w-80 bg-[#FFFFFF] border border-[#DCDCD7] rounded-xl shadow-sm p-3 pt-2 text-xs backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150 z-50">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#62656B] font-semibold px-2 py-1.5 border-b border-[#DCDCD7] mb-1">
+                <div className="absolute top-full left-0 w-80 bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] rounded-xl shadow-sm p-3 pt-2 text-xs backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-semibold px-2 py-1.5 border-b border-[var(--color-border-subtle)] mb-1">
                     Pan-India &amp; International Network
                   </div>
                   <div className="space-y-1">
                     <Link
                       href="/locations"
-                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <MapPin className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
+                      <MapPin className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">
                           India Branch Network (10)
                         </div>
-                        <div className="text-[11px] text-[#62656B] leading-relaxed mt-0.5">
+                        <div className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed mt-0.5">
                           Physical station footprint across primary seaports, air hubs &amp; industrial ICDs.
                         </div>
                       </div>
@@ -233,19 +233,19 @@ export function LTNav() {
 
                     <Link
                       href="/network-partners"
-                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <Globe2 className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
+                      <Globe2 className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">
+                          <span className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">
                             World Movement Atlas
                           </span>
-                          <span className="px-1.5 py-0.2 rounded bg-[#E33B12]/10 text-[#E33B12] text-[9px] font-mono font-bold">
+                          <span className="px-1.5 py-0.2 rounded bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-orange)] text-[9px] font-mono font-bold">
                             ATLAS
                           </span>
                         </div>
-                        <div className="text-[11px] text-[#62656B] leading-relaxed mt-0.5">
+                        <div className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed mt-0.5">
                           Interactive cartography of 11 documented global voyages across 10 countries.
                         </div>
                       </div>
@@ -253,14 +253,14 @@ export function LTNav() {
 
                     <Link
                       href="/network-partners#alliances"
-                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <Users className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
+                      <Users className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">
                           Network Alliances
                         </div>
-                        <div className="text-[11px] text-[#62656B] leading-relaxed mt-0.5">
+                        <div className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed mt-0.5">
                           Vetted reciprocal agency through WCA World, SCN, WPA, FDX, AMTOI &amp; ACAAI.
                         </div>
                       </div>
@@ -281,30 +281,30 @@ export function LTNav() {
                 className={[
                   "inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
                   pathname === "/about" || pathname === "/careers" || pathname === "/csr"
-                    ? "text-[#E33B12] font-semibold"
-                    : "text-[#17181B] hover:text-[#E33B12]",
+                    ? "text-[var(--color-brand-orange)] font-semibold"
+                    : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]",
                 ].join(" ")}
               >
                 <span>Company</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#17181B]/40 group-hover:text-[#E33B12] transition-transform" />
+                <ChevronDown className="w-3.5 h-3.5 text-[var(--color-brand-blue)]/60 group-hover:text-[var(--color-brand-blue-hover)] transition-transform" />
               </Link>
 
               {activeDropdown === "company" && (
-                <div className="absolute top-full left-0 w-80 bg-[#FFFFFF] border border-[#DCDCD7] rounded-xl shadow-sm p-3 pt-2 text-xs backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150 z-50">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#62656B] font-semibold px-2 py-1.5 border-b border-[#DCDCD7] mb-1">
+                <div className="absolute top-full left-0 w-80 bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] rounded-xl shadow-sm p-3 pt-2 text-xs backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-semibold px-2 py-1.5 border-b border-[var(--color-border-subtle)] mb-1">
                     Enterprise &amp; Institutional Governance
                   </div>
                   <div className="space-y-1">
                     <Link
                       href="/about"
-                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <Building2 className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
+                      <Building2 className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">
                           About &amp; Leadership
                         </div>
-                        <div className="text-[11px] text-[#62656B] leading-relaxed mt-0.5">
+                        <div className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed mt-0.5">
                           Board of Directors, MCA dossier, statutory AEO-LO licenses &amp; philosophy.
                         </div>
                       </div>
@@ -312,19 +312,19 @@ export function LTNav() {
 
                     <Link
                       href="/careers"
-                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <Briefcase className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
+                      <Briefcase className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">
+                          <span className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">
                             Careers at Freyer
                           </span>
                           <span className="px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-600 text-[9px] font-mono font-bold">
                             HIRING
                           </span>
                         </div>
-                        <div className="text-[11px] text-[#62656B] leading-relaxed mt-0.5">
+                        <div className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed mt-0.5">
                           Forwarding operations, licensed brokerage &amp; heavy-lift engineering talent.
                         </div>
                       </div>
@@ -332,14 +332,14 @@ export function LTNav() {
 
                     <Link
                       href="/csr"
-                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[#F7F6F2] transition-colors group"
+                      className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-[var(--color-bg-alt)] transition-colors group"
                     >
-                      <HeartHandshake className="w-4 h-4 text-[#E33B12] shrink-0 mt-0.5" />
+                      <HeartHandshake className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                       <div>
-                        <div className="text-[#17181B] font-medium group-hover:text-[#E33B12] transition-colors">
+                        <div className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">
                           CSR &amp; Community
                         </div>
-                        <div className="text-[11px] text-[#62656B] leading-relaxed mt-0.5">
+                        <div className="text-[11px] text-[var(--color-text-secondary)] leading-relaxed mt-0.5">
                           Vocational training, green freight corridors &amp; regional healthcare support.
                         </div>
                       </div>
@@ -354,7 +354,7 @@ export function LTNav() {
               href="/contact"
               className={[
                 "text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
-                pathname === "/contact" ? "text-[#E33B12] font-semibold" : "text-[#17181B] hover:text-[#E33B12]",
+                pathname === "/contact" ? "text-[var(--color-brand-blue)] font-bold" : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
               ].join(" ")}
             >
               Contact
@@ -366,19 +366,19 @@ export function LTNav() {
             {/* Phone — always visible */}
             <a
               href="tel:+914443191919"
-              className="hidden lg:flex items-center gap-1.5 text-xs font-mono text-[#17181B] hover:text-[#E33B12] transition-colors"
+              className="hidden lg:flex items-center gap-1.5 text-xs font-mono text-[var(--color-text-primary)] hover:text-[var(--color-brand-blue)] transition-colors"
             >
-              <Phone className="w-3 h-3 text-[#E33B12]" />
+              <Phone className="w-3 h-3 text-[var(--color-brand-orange)]" />
               +91 44 43191919
             </a>
 
-            <div className="h-4 w-px bg-[#DCDCD7] hidden lg:block" />
+            <div className="h-4 w-px bg-[var(--color-border-subtle)] hidden lg:block" />
 
             <Button
               href="/contact"
               size="sm"
               icon
-              className="bg-[#17181B] text-[#F7F6F2] hover:bg-[#E33B12] border-transparent"
+              className="bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] border-transparent"
             >
               Request Rate
             </Button>
@@ -390,7 +390,7 @@ export function LTNav() {
             onClick={() => setDrawerOpen((v) => !v)}
             aria-expanded={drawerOpen}
             aria-label={drawerOpen ? "Close menu" : "Open menu"}
-            className="md:hidden p-2 text-[#17181B] hover:text-[#E33B12] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E33B12] rounded"
+            className="md:hidden p-2 text-[var(--color-text-primary)] hover:text-[var(--color-brand-blue)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand-blue)] rounded"
           >
             {drawerOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -406,13 +406,13 @@ export function LTNav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-50 bg-[#FFFFFF] flex flex-col md:hidden overflow-y-auto"
+            className="fixed inset-0 z-50 bg-[var(--color-bg-elevated)] flex flex-col md:hidden overflow-y-auto"
             aria-modal="true"
             role="dialog"
             aria-label="Navigation menu"
           >
             {/* Drawer Header */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-[#DCDCD7] sticky top-0 bg-[#FFFFFF]/95 backdrop-blur-md z-10">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--color-border-subtle)] sticky top-0 bg-[var(--color-bg-elevated)]/95 backdrop-blur-md z-10">
               <Link
                 href="/"
                 onClick={() => setDrawerOpen(false)}
@@ -420,18 +420,18 @@ export function LTNav() {
               >
                 <div className="relative h-8 w-[54px]">
                   <Image
-                    src="/images/logo.png"
+                    src="/images/logo-colour.png"
                     alt="Freyer International"
                     width={54}
                     height={32}
                     unoptimized
-                    className="w-full h-full object-contain object-left brightness-0"
+                    className="w-full h-full object-contain object-left "
                   />
                 </div>
-                <span className="text-[10px] font-mono tracking-[0.16em] uppercase text-[#DCDCD7]" aria-hidden>
+                <span className="text-[10px] font-mono tracking-[0.16em] uppercase text-[var(--color-border-subtle)]" aria-hidden>
                   |
                 </span>
-                <span className="text-[9px] font-mono tracking-[0.14em] uppercase text-[#62656B] font-semibold">
+                <span className="text-[9px] font-mono tracking-[0.14em] uppercase text-[var(--color-text-secondary)] font-semibold">
                   Logistics Beyond Boundaries
                 </span>
               </Link>
@@ -439,7 +439,7 @@ export function LTNav() {
                 icon={<X className="w-5 h-5" />}
                 aria-label="Close navigation menu"
                 onClick={() => setDrawerOpen(false)}
-                className="text-[#17181B] hover:text-[#E33B12]"
+                className="text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]"
               />
             </div>
 
@@ -447,76 +447,76 @@ export function LTNav() {
             <nav className="flex-1 px-6 py-6 space-y-8">
               {/* Group 1: Logistics & Network */}
               <div className="space-y-3">
-                <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#E33B12] font-semibold">
+                <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-[var(--color-brand-orange)] font-semibold">
                   Operations &amp; Network
                 </div>
                 <div className="grid grid-cols-1 gap-2 text-base">
                   <Link
                     href="/services"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <span>Services Directory</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                   <Link
                     href="/projects"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <span>Documented Projects</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                   <Link
                     href="/locations"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <span>India Stations (10 Gateways)</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                   <Link
                     href="/network-partners"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2">
                       <span>World Movement Atlas</span>
-                      <span className="px-1.5 py-0.2 rounded bg-[#E33B12]/10 text-[#E33B12] text-[9px] font-mono font-bold">
+                      <span className="px-1.5 py-0.2 rounded bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-orange)] text-[9px] font-mono font-bold">
                         ATLAS
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                 </div>
               </div>
 
               {/* Group 2: Enterprise & Governance */}
               <div className="space-y-3">
-                <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#E33B12] font-semibold">
+                <div className="text-[10px] font-mono uppercase tracking-[0.24em] text-[var(--color-brand-orange)] font-semibold">
                   Enterprise &amp; Culture
                 </div>
                 <div className="grid grid-cols-1 gap-2 text-base">
                   <Link
                     href="/about"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <span>About &amp; Leadership</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                   <Link
                     href="/network-partners#alliances"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <span>Network Partners &amp; Alliances</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                   <Link
                     href="/careers"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2">
                       <span>Careers at Freyer</span>
@@ -524,34 +524,34 @@ export function LTNav() {
                         HIRING
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                   <Link
                     href="/csr"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <span>CSR &amp; Stewardship</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                   <Link
                     href="/contact"
                     onClick={() => setDrawerOpen(false)}
-                    className="p-3 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] text-[#17181B] font-medium hover:border-[#17181B]/20 transition-colors flex items-center justify-between"
+                    className="p-3 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] font-medium hover:border-[var(--color-border-subtle)] transition-colors flex items-center justify-between"
                   >
                     <span>Contact &amp; Regional Desks</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#17181B]/40" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--color-text-primary)]/40" />
                   </Link>
                 </div>
               </div>
             </nav>
 
             {/* Drawer Bottom Actions */}
-            <div className="px-6 pb-8 pt-4 border-t border-[#DCDCD7] space-y-3 sticky bottom-0 bg-[#FFFFFF]">
+            <div className="px-6 pb-8 pt-4 border-t border-[var(--color-border-subtle)] space-y-3 sticky bottom-0 bg-[var(--color-bg-elevated)]">
               <Button
                 href="tel:+914443191919"
                 size="md"
-                className="w-full bg-transparent border border-[#17181B] text-[#17181B] hover:border-[#E33B12] hover:text-[#E33B12]"
+                className="w-full bg-transparent border border-[var(--color-text-primary)] text-[var(--color-text-primary)] hover:border-[var(--color-brand-blue)] hover:text-[var(--color-brand-orange)]"
                 icon={<Phone className="w-3.5 h-3.5" />}
               >
                 +91 44 43191919
@@ -559,7 +559,7 @@ export function LTNav() {
               <Button
                 href="/contact"
                 size="md"
-                className="w-full bg-[#17181B] text-[#F7F6F2] hover:bg-[#E33B12]"
+                className="w-full bg-[var(--color-text-primary)] text-[var(--color-bg-alt)] hover:bg-[var(--color-brand-blue)]"
                 onClick={() => setDrawerOpen(false)}
                 icon
               >
