@@ -58,27 +58,29 @@ export function LTDispatch() {
       >
         {/* Section headline */}
         <div className="mb-14">
-          <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] font-medium mb-4">
+          <div className="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[var(--color-cta)] font-semibold mb-4">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
             </span>
-            <span>Commercial Dispatch &amp; Rate Inquiries</span>
+            <span>Contact us</span>
           </div>
           <div className="overflow-hidden">
             <motion.h2
               initial={{ y: "100%" }}
               animate={isInView ? { y: "0%" } : {}}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              className="text-[var(--color-text-primary)] font-semibold tracking-[-0.02em] leading-tight"
               style={{
-                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: "var(--token-text-4xl)",
               }}
             >
-              ENGAGE DIRECTLY
-              <span className="text-[var(--color-brand-orange)]">.</span>
+              Request a quote
             </motion.h2>
+            <p className="mt-3 text-base sm:text-lg text-[var(--color-text-secondary)] font-normal max-w-2xl leading-relaxed">
+              Send shipment details and our commercial desk will reply within one business day.
+            </p>
           </div>
         </div>
 
@@ -95,8 +97,8 @@ export function LTDispatch() {
               /* Success state */
               <div className="flex flex-col items-start gap-5 p-8 rounded-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] shadow-sm">
                 <CheckCircle2 className="w-10 h-10 text-[var(--color-brand-orange)]" />
-                <h3 className="text-xl font-bold text-[var(--color-text-primary)]">Enquiry received.</h3>
-                <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed max-w-md">
+                <h3 className="text-xl font-semibold text-[var(--color-text-primary)]">Enquiry received</h3>
+                <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed max-w-md font-normal">
                   Your freight enquiry has been submitted to the Freyer operations team.
                   You will receive a direct response from the relevant commercial desk
                   within one business day.
@@ -106,7 +108,7 @@ export function LTDispatch() {
                     setFormState("idle");
                     setFormData({ name: "", company: "", serviceType: "", message: "" });
                   }}
-                  className="mt-2 text-xs font-mono uppercase tracking-wider text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] transition-colors"
+                  className="mt-2 text-xs uppercase tracking-wider text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] transition-colors font-medium"
                 >
                   Submit another enquiry →
                 </button>
@@ -119,9 +121,9 @@ export function LTDispatch() {
                   <div>
                     <label
                       htmlFor="ftr-name"
-                      className="block text-xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)] mb-2"
+                      className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2 font-medium"
                     >
-                      Your Name
+                      Your name
                     </label>
                     <input
                       id="ftr-name"
@@ -132,7 +134,7 @@ export function LTDispatch() {
                       required
                       autoComplete="name"
                       placeholder="Full name"
-                      className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] font-mono focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors"
+                      className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors"
                     />
                   </div>
 
@@ -140,7 +142,7 @@ export function LTDispatch() {
                   <div>
                     <label
                       htmlFor="ftr-company"
-                      className="block text-xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)] mb-2"
+                      className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2 font-medium"
                     >
                       Company
                     </label>
@@ -151,8 +153,8 @@ export function LTDispatch() {
                       value={formData.company}
                       onChange={handleChange}
                       autoComplete="organization"
-                      placeholder="Company or trade name"
-                      className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] font-mono focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors"
+                      placeholder="Company name"
+                      className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors"
                     />
                   </div>
                 </div>
@@ -161,9 +163,9 @@ export function LTDispatch() {
                 <div>
                   <label
                     htmlFor="ftr-service"
-                    className="block text-xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)] mb-2"
+                    className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2 font-medium"
                   >
-                    Service Required
+                    Service required
                   </label>
                   <select
                     id="ftr-service"
@@ -171,7 +173,7 @@ export function LTDispatch() {
                     value={formData.serviceType}
                     onChange={handleChange}
                     required
-                    className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] font-mono focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors appearance-none cursor-pointer"
+                    className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors appearance-none cursor-pointer"
                   >
                     <option value="" disabled className="text-[var(--color-text-secondary)]">
                       Select service type
@@ -188,9 +190,9 @@ export function LTDispatch() {
                 <div>
                   <label
                     htmlFor="ftr-message"
-                    className="block text-xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)] mb-2"
+                    className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2 font-medium"
                   >
-                    Shipment Details
+                    Shipment details
                   </label>
                   <textarea
                     id="ftr-message"
@@ -200,7 +202,7 @@ export function LTDispatch() {
                     rows={5}
                     required
                     placeholder="Origin, destination, commodity, approximate weight/volume, required timeline..."
-                    className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] font-mono focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors resize-none"
+                    className="w-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-input)] rounded-lg px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:border-[var(--color-brand-blue)] focus:ring-1 focus:ring-[var(--color-brand-blue)] transition-colors resize-none"
                   />
                 </div>
 
@@ -208,22 +210,22 @@ export function LTDispatch() {
                 <button
                   type="submit"
                   disabled={formState === "submitting"}
-                  className="w-full flex items-center justify-center gap-2 bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] rounded-lg px-6 py-3 font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+                  className="w-full flex items-center justify-center gap-2 bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] rounded-lg px-6 py-3 font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
                 >
                   {formState === "submitting" ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Sending Enquiry…</span>
+                      <span>Submitting enquiry…</span>
                     </>
                   ) : (
                     <>
-                      <span>Send Freight Enquiry</span>
+                      <span>Get a quote</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}
                 </button>
 
-                <p className="text-xs font-mono text-[var(--color-text-secondary)] leading-relaxed">
+                <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed font-normal">
                   Direct submission to Freyer operations desk. Responses within 1 business day.
                 </p>
               </form>
@@ -240,10 +242,10 @@ export function LTDispatch() {
             {/* HQ Address Block */}
             <div className="bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] rounded-xl p-6 space-y-5 shadow-sm">
               <div>
-                <div className="font-mono text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
-                  Corporate Registered Headquarters
+                <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2 font-medium">
+                  Head office
                 </div>
-                <div className="text-base font-bold text-[var(--color-text-primary)]">
+                <div className="text-base font-semibold text-[var(--color-text-primary)]">
                   Freyer International Logistics Pvt Ltd
                 </div>
               </div>
@@ -251,7 +253,7 @@ export function LTDispatch() {
               {/* Address */}
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
-                <address className="not-italic text-sm text-[var(--color-text-secondary)] leading-relaxed font-mono">
+                <address className="not-italic text-sm text-[var(--color-text-secondary)] leading-relaxed">
                   TAGA Tower<br />
                   New No: 45, Old No 20, 1st Floor<br />
                   2nd Street, Sait Colony<br />
@@ -267,10 +269,10 @@ export function LTDispatch() {
               >
                 <Phone className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                 <div>
-                  <div className="font-mono text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-0.5">
-                    Direct HQ Line
+                  <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-0.5 font-medium">
+                    Telephone
                   </div>
-                  <span className="text-sm font-mono font-semibold text-[var(--color-brand-blue)] group-hover:underline underline-offset-2">
+                  <span className="text-sm font-semibold text-[var(--color-brand-blue)] group-hover:underline underline-offset-2">
                     +91 44 43191919
                   </span>
                 </div>
@@ -283,10 +285,10 @@ export function LTDispatch() {
               >
                 <Mail className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                 <div>
-                  <div className="font-mono text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-0.5">
-                    Official Email
+                  <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-0.5 font-medium">
+                    Email
                   </div>
-                  <span className="text-sm font-mono text-[var(--color-brand-blue)] group-hover:underline underline-offset-2">
+                  <span className="text-sm font-semibold text-[var(--color-brand-blue)] group-hover:underline underline-offset-2">
                     info@freyerinternational.com
                   </span>
                 </div>
@@ -295,8 +297,8 @@ export function LTDispatch() {
 
             {/* Credentials summary */}
             <div className="space-y-2">
-              <div className="font-mono text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-3">
-                Verified Credentials
+              <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-3 font-medium">
+                Accreditations
               </div>
               {[
                 "CBIC AEO-LO (INAAQCA4076M0F243)",
@@ -306,7 +308,7 @@ export function LTDispatch() {
                 "AMTOI Member",
                 "MTO Licensed",
               ].map((cred) => (
-                <div key={cred} className="flex items-center gap-2.5 font-mono text-xs text-[var(--color-text-secondary)]">
+                <div key={cred} className="flex items-center gap-2.5 text-xs text-[var(--color-text-secondary)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-brand-orange)] shrink-0" />
                   {cred}
                 </div>
@@ -318,9 +320,9 @@ export function LTDispatch() {
               <TextLink
                 href="/locations"
                 icon={<ArrowRight className="w-3.5 h-3.5" />}
-                className="text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)]"
+                className="text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium text-sm"
               >
-                Find your nearest station
+                View all office locations
               </TextLink>
             </div>
           </motion.div>

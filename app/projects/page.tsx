@@ -29,9 +29,9 @@ export default function ProjectsPage() {
           description="A comprehensive technical archive of 11 verified heavy-lift and multimodal movements across breakbulk ocean carriage, hydraulic multi-axle road trailers, flatracks, and civil route clearance operations."
           stats={[
             { value: "11 PROJECTS", label: "VERIFIED ARCHIVE", sub: "Documented Case Studies" },
-            { value: "482 MT", label: "MAX HEAVY LIFT", sub: "Shanghai to Jebel Ali Record" },
+            { value: "482 MT", label: "MAX HEAVY LIFT", sub: "Shanghai to Jebel Ali Breakbulk" },
             { value: "2,700 CM", label: "LONGEST LENGTH", sub: "Boom Crane 37.6 MT (Venice)" },
-            { value: "100%", label: "INCIDENT FREE", sub: "Rigorous Port & Route Planning" },
+            { value: "10 COUNTRIES", label: "GLOBAL FOOTPRINT", sub: "Documented Intermodal Corridors" },
           ]}
         />
 

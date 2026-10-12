@@ -75,10 +75,10 @@ export function LTFooter() {
             </div>
 
             <div>
-              <div className="text-xs font-mono font-semibold text-[var(--color-text-primary)] mb-1">
+              <div className="text-xs font-semibold text-[var(--color-text-primary)] mb-1">
                 Freyer International Logistics Pvt Ltd
               </div>
-              <div className="text-2xs font-mono text-[var(--color-text-secondary)] leading-relaxed">
+              <div className="text-2xs text-[var(--color-text-secondary)] leading-relaxed font-normal">
                 CBIC AEO-LO · INAAQCA4076M0F243
               </div>
             </div>
@@ -86,7 +86,7 @@ export function LTFooter() {
             {/* HQ Address */}
             <div className="flex items-start gap-2.5">
               <MapPin className="w-3.5 h-3.5 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
-              <address className="not-italic text-xs font-mono text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors leading-relaxed">
+              <address className="not-italic text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors leading-relaxed">
                 TAGA Tower, New No: 45 Old No 20<br />
                 1st Floor, 2nd Street, Sait Colony<br />
                 Egmore, Chennai – 600 008, India
@@ -97,14 +97,14 @@ export function LTFooter() {
             <div className="space-y-2">
               <a
                 href="tel:+914443191919"
-                className="flex items-center gap-2 text-xs font-mono text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] transition-colors"
+                className="flex items-center gap-2 text-xs text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] transition-colors font-medium"
               >
                 <Phone className="w-3 h-3 text-[var(--color-brand-orange)]" />
                 +91 44 43191919
               </a>
               <a
                 href="mailto:info@freyerinternational.com"
-                className="flex items-center gap-2 text-xs font-mono text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] transition-colors"
+                className="flex items-center gap-2 text-xs text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] transition-colors font-medium"
               >
                 <Mail className="w-3 h-3 text-[var(--color-brand-orange)]" />
                 info@freyerinternational.com
@@ -141,7 +141,7 @@ export function LTFooter() {
           {/* Nav Columns */}
           {NAV_COLUMNS.map((col) => (
             <div key={col.heading}>
-              <div className="text-2xs font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-semibold mb-5">
+              <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] font-semibold mb-5">
                 {col.heading}
               </div>
               <ul className="space-y-2.5">
@@ -149,7 +149,7 @@ export function LTFooter() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-xs font-mono text-[var(--color-text-secondary)] hover:text-[var(--color-brand-blue)] transition-colors"
+                      className="text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-brand-blue)] transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -162,12 +162,12 @@ export function LTFooter() {
 
         {/* Station Network Grid */}
         <div className="mt-16 pt-10 border-t border-[var(--color-border-subtle)]">
-          <div className="text-2xs font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-semibold mb-4">
-            10 Branch Stations
+          <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] font-semibold mb-4">
+            10 office locations
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
             {STATIONS_BRIEF.map((station) => (
-              <div key={station} className="text-2xs font-mono text-[var(--color-text-secondary)] leading-relaxed">
+              <div key={station} className="text-2xs text-[var(--color-text-secondary)] leading-relaxed">
                 {station}
               </div>
             ))}
@@ -177,9 +177,9 @@ export function LTFooter() {
 
       {/* ── Colophon Bar ── */}
       <div className="border-t border-[var(--color-border-subtle)] bg-[var(--color-bg-alt)]">
-        <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-2xs font-mono text-[var(--color-text-secondary)]">
+        <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-2xs text-[var(--color-text-secondary)]">
           <span>
-            © {year} Freyer International Logistics Pvt Ltd · All Rights Reserved
+            © {year} Freyer International Logistics Pvt Ltd · All rights reserved
           </span>
           <span>
             Registered Chennai · AEO-LO Certified · IATA Approved Cargo Agent
@@ -188,7 +188,7 @@ export function LTFooter() {
             href="/contact"
             className="flex items-center gap-1 text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium transition-colors"
           >
-            Request Quote
+            Get a quote
             <ArrowUpRight className="w-3 h-3" />
           </Link>
         </div>

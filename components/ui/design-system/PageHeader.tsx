@@ -63,20 +63,20 @@ export function PageHeader({
           </span>
         </div>
 
-        {/* Monumental Barlow Condensed Title */}
+        {/* Monumental Barlow Condensed Title with Controlled Responsive Hierarchy */}
         <div className="max-w-4xl">
           <h1
-            className="text-[var(--color-text-primary)] font-black tracking-[-0.03em] leading-[0.92] uppercase"
+            className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.98] uppercase text-balance break-words"
             style={{
               fontFamily: THEME_TOKENS.typography.fontDisplay,
-              fontSize: "clamp(2.8rem, 6.5vw, 5.8rem)",
+              fontSize: "clamp(2.4rem, 4.6vw, 4.4rem)",
             }}
           >
             {title}
             {subtitle && (
               <>
                 <br />
-                <span className="text-[var(--color-brand-blue)] font-light italic">
+                <span className="text-[var(--color-brand-blue)] font-light italic text-[0.88em] leading-tight tracking-normal block mt-1.5 sm:mt-2">
                   {subtitle}
                 </span>
               </>
@@ -84,7 +84,7 @@ export function PageHeader({
           </h1>
 
           {/* Business Lead Copy */}
-          <p className="mt-6 text-[var(--color-text-secondary)] text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-3xl">
+          <p className="mt-6 text-[var(--color-text-secondary)] text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
             {description}
           </p>
         </div>

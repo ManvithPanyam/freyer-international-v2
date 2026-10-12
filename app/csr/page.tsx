@@ -37,12 +37,12 @@ const CSR_PILLARS = [
 
 export default function CsrPage() {
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
+    <div className="min-h-screen bg-[var(--color-bg-base)] text-[var(--color-text-primary)] selection:bg-[var(--color-cta)] selection:text-white">
       <Header />
       <main>
         <PageHeader
           breadcrumbs={[{ label: "CSR" }]}
-          eyebrow="Corporate Stewardship &middot; Social Responsibility"
+          eyebrow="Corporate Stewardship · Social Responsibility"
           title="COMMUNITY STEWARDSHIP"
           subtitle="SUSTAINABLE SUPPLY CHAINS"
           description="At Freyer International, our commitment to logistics excellence extends to the communities in which we operate. We invest in education, green logistics practices, and community healthcare initiatives."
@@ -50,7 +50,7 @@ export default function CsrPage() {
             { value: "3 PILLARS", label: "CSR CHARTER", sub: "Education · Green · Welfare" },
             { value: "10 CITIES", label: "COMMUNITY REACH", sub: "Local Station Programs" },
             { value: "INTERMODAL", label: "CARBON REDUCTION", sub: "Rail Transfer Prioritization" },
-            { value: "100%", label: "TRANSPARENCY", sub: "Audited Corporate Governance" },
+            { value: "GOVERNED", label: "COMPLIANCE", sub: "Audited Corporate Charter" },
           ]}
         />
 

@@ -45,20 +45,20 @@ const PRACTICE_AREAS = [
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
+    <div className="min-h-screen bg-[var(--color-bg-base)] text-[var(--color-text-primary)] selection:bg-[var(--color-cta)] selection:text-white">
       <Header />
       <main>
         <PageHeader
           breadcrumbs={[{ label: "Careers" }]}
-          eyebrow="Talent Acquisition &middot; Operational Culture"
+          eyebrow="Talent Acquisition · Operational Culture"
           title="OPERATIONAL RIGOR"
-          subtitle="ENGINEERING CAREERS IN LOGISTICS"
+          subtitle="BUILD YOUR CAREER IN GLOBAL LOGISTICS"
           description="Build your career with an accredited, growing multimodal logistics organization. Join seasoned licensed customs brokers, marine freight specialists, and project cargo engineers across 10 branch stations in India."
           stats={[
             { value: "10 STATIONS", label: "PAN-INDIA DESKS", sub: "Direct Branch Locations" },
             { value: "5 DISCIPLINES", label: "PRACTICE AREAS", sub: "Forwarding · Customs · Projects" },
             { value: "CBIC AEO-LO", label: "GOVERNANCE", sub: "Statutory Broker License" },
-            { value: "100%", label: "MERIT BASED", sub: "Professional Career Mobility" },
+            { value: "FULL-TIME", label: "CAREER MOBILITY", sub: "Professional Growth Paths" },
           ]}
         />
 

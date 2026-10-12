@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function LocationsPage() {
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
+    <div className="min-h-screen bg-[var(--color-bg-base)] text-[var(--color-text-primary)] selection:bg-[var(--color-cta)] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -28,7 +28,7 @@ export default function LocationsPage() {
             { value: "10 STATIONS", label: "INDIAN GATEWAYS", sub: "Direct Pan-India Presence" },
             { value: "CBIC AEO-LO", label: "STATUTORY LICENSE", sub: "INAAQCA4076M0F243 License" },
             { value: "6 SEAPORTS", label: "DIRECT LIAISON", sub: "CITPL · JNPT · VOC · Vizag" },
-            { value: "100%", label: "COMPANY OPERATED", sub: "Zero Third-Party Franchises" },
+            { value: "DIRECT", label: "BRANCH NETWORK", sub: "Dedicated Company Desks" },
           ]}
         />
 

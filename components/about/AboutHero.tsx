@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 
 export function AboutHero() {
   return (
-    <section className="relative bg-[var(--color-bg-base)] text-[var(--color-text-primary)] pt-32 sm:pt-40 pb-16 sm:pb-24 border-b border-[var(--color-border-subtle)] overflow-hidden">
+    <section className="relative bg-[var(--color-bg-base)] text-[var(--color-text-primary)] pt-32 sm:pt-36 pb-12 sm:pb-16 border-b border-[var(--color-border-subtle)] overflow-hidden">
       {/* Background Architectural Mesh & Subtle Vignette */}
       <div
         className="absolute inset-0 pointer-events-none opacity-40 select-none"
@@ -18,43 +18,43 @@ export function AboutHero() {
         }}
       />
       
-      <div className={`relative z-10 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
+      <div className={`relative z-10 w-full max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
         {/* Breadcrumb Row */}
-        <nav aria-label="Breadcrumbs" className="flex items-center gap-2 text-[11px] font-mono text-[var(--color-text-secondary)] mb-8">
+        <nav aria-label="Breadcrumbs" className="flex items-center gap-2 text-xs font-mono text-[var(--color-text-secondary)] mb-6">
           <Link href="/" className="hover:text-[var(--color-brand-blue)] transition-colors">
             Home
           </Link>
           <span className="text-[var(--color-border-subtle)] select-none">/</span>
-          <span className="text-[var(--color-cta)] font-medium">About &amp; Leadership</span>
+          <span className="text-[var(--color-cta)] font-semibold">About &amp; Leadership</span>
         </nav>
 
-        {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] mb-8 shadow-xs">
+        {/* Eyebrow Kicker */}
+        <div className="flex items-center gap-3 mb-5">
           <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
           </span>
-          <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] font-medium">
+          <span className="text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] font-semibold">
             Human &amp; Institutional Core &middot; Freyer International
           </span>
         </div>
 
-        {/* Monumental Display Title */}
-        <div className="max-w-5xl">
+        {/* Monumental Barlow Condensed Title with Controlled Responsive Hierarchy */}
+        <div className="max-w-4xl">
           <h1
-            className="text-[var(--color-text-primary)] font-black tracking-[-0.03em] leading-[0.90] uppercase"
+            className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.98] uppercase text-balance break-words"
             style={{
               fontFamily: THEME_TOKENS.typography.fontDisplay,
-              fontSize: "clamp(3.4rem, 8vw, 7.2rem)",
+              fontSize: "clamp(2.4rem, 4.6vw, 4.4rem)",
             }}
           >
             THE PEOPLE <br />
-            <span className="text-[var(--color-brand-blue)] font-light italic">
+            <span className="text-[var(--color-brand-blue)] font-light italic text-[0.88em] leading-tight tracking-normal block mt-1.5 sm:mt-2">
               BEHIND THE MOVEMENT
             </span>
           </h1>
 
-          <p className="mt-8 text-[var(--color-text-secondary)] text-base sm:text-lg lg:text-xl font-normal leading-relaxed max-w-3xl">
+          <p className="mt-6 text-[var(--color-text-secondary)] text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
             Logistics is not just heavy machinery and container vessels. It is the calculated decisions, 
             statutory licenses, and operational vigilance of people who engineer movements under rigorous physical reality.
           </p>

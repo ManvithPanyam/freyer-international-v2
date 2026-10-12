@@ -1,6 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Barlow_Condensed, Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Poppins, Inter, Barlow_Condensed, Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,7 +25,8 @@ const barlowCondensed = Barlow_Condensed({
 
 const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   variable: "--font-archivo",
   display: "swap",
 });
@@ -165,7 +173,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${barlowCondensed.variable} ${archivo.variable} ${ibmPlexMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable} ${barlowCondensed.variable} ${archivo.variable} ${ibmPlexMono.variable}`}>
       <head>
         <script
           type="application/ld+json"

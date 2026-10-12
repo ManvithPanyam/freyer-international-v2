@@ -213,37 +213,33 @@ export function LTServices() {
         {/* ── SECTION HEADER ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-12 border-b border-[var(--color-border-subtle)] gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-text-secondary)] font-medium">
+            <div className="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[var(--color-cta)] font-semibold">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
               </span>
-              <span>Core Infrastructure &amp; Disciplines</span>
+              <span>Services</span>
             </div>
             <h2
-              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              className="text-[var(--color-text-primary)] font-semibold tracking-[-0.02em] leading-tight"
               style={{
-                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: "var(--token-text-4xl)",
               }}
             >
-              SIX DISCIPLINES. <br />
-              <span className="text-[var(--color-text-primary)]">
-                ONE OPERATIONAL STANDARD
-              </span>
+              Six freight and logistics services
             </h2>
-            <p className="text-base sm:text-lg text-[var(--color-text-secondary)] font-light leading-relaxed">
-              Every shipment is executed with institutional rigor. From scheduled air and ocean
-              container freight to CBIC licensed customs brokerage and heavy-lift breakbulk engineering.
+            <p className="text-base sm:text-lg text-[var(--color-text-secondary)] font-normal leading-relaxed">
+              Air, ocean, customs brokerage, contract warehousing, risk management, and specialized heavy-lift project cargo across primary Indian freight gateways.
             </p>
           </div>
 
           <div className="hidden lg:block text-right space-y-1">
-            <div className="text-xs font-mono uppercase tracking-widest text-[var(--color-cta)]">
-              Operational Footprint
+            <div className="text-xs uppercase tracking-wider font-semibold text-[var(--color-cta)]">
+              Operational network
             </div>
-            <div className="text-sm font-mono text-[var(--color-text-secondary)]">
-              10 Indian Stations · Tier-1 Global Port Gateways
+            <div className="text-sm text-[var(--color-text-secondary)] font-medium">
+              10 Indian offices · Primary seaport &amp; airport gateways
             </div>
           </div>
         </div>
@@ -267,7 +263,7 @@ export function LTServices() {
                 <div className="flex items-center justify-between w-full">
                   <span
                     className={[
-                      "text-[10px] font-mono font-bold tracking-wider",
+                      "text-2xs font-semibold tracking-wide",
                       isActive ? "text-white" : "text-[var(--color-text-secondary)] group-hover:text-[var(--color-brand-blue)]",
                     ].join(" ")}
                   >
@@ -282,7 +278,7 @@ export function LTServices() {
                 </div>
                 <div
                   className={[
-                    "text-xs font-mono font-bold tracking-tight line-clamp-1",
+                    "text-xs font-semibold tracking-tight line-clamp-1",
                     isActive ? "text-white" : "text-[var(--color-text-primary)] group-hover:text-[var(--color-brand-blue)]",
                   ].join(" ")}
                 >
@@ -306,33 +302,33 @@ export function LTServices() {
             {/* LEFT: Core Capability Details (7 cols) */}
             <div className="lg:col-span-7 space-y-8 bg-[var(--color-bg-elevated)] p-8 rounded-2xl border border-[var(--color-border-subtle)] shadow-sm">
               <div>
-                <div className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--color-cta)] font-semibold mb-2">
-                  Discipline {activeService.step}
+                <div className="text-xs uppercase tracking-wider text-[var(--color-cta)] font-semibold mb-2">
+                  Service {activeService.step}
                 </div>
                 <h3
-                  className="font-bold text-[var(--color-text-primary)] tracking-tight"
+                  className="font-semibold text-[var(--color-text-primary)] tracking-tight"
                   style={{ fontSize: "var(--token-text-2xl)" }}
                 >
                   {activeService.name}
                 </h3>
-                <p className="text-base text-[var(--color-text-primary)] font-semibold leading-relaxed mt-3">
+                <p className="text-base text-[var(--color-text-primary)] font-medium leading-relaxed mt-3">
                   {activeService.tagline}
                 </p>
-                <p className="text-sm text-[var(--color-text-secondary)] font-light leading-relaxed mt-3">
+                <p className="text-sm text-[var(--color-text-secondary)] font-normal leading-relaxed mt-3">
                   {activeService.description}
                 </p>
               </div>
 
               {/* Verified Capabilities Checklist */}
               <div className="space-y-3 border-t border-[var(--color-border-subtle)] pt-6">
-                <div className="text-2xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
-                  Operational Capabilities
+                <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] font-medium">
+                  Service capabilities
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {activeService.capabilities.map((cap) => (
                     <div
                       key={cap}
-                      className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-xs font-mono text-[var(--color-text-primary)]"
+                      className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-xs text-[var(--color-text-primary)] font-normal"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-[var(--color-brand-orange)] shrink-0" />
                       <span>{cap}</span>
@@ -345,10 +341,10 @@ export function LTServices() {
               <div className="grid grid-cols-3 gap-4 border-t border-[var(--color-border-subtle)] pt-6">
                 {activeService.metrics.map((m) => (
                   <div key={m.label} className="space-y-1 bg-[var(--color-bg-alt)] p-4 rounded-lg border border-[var(--color-border-subtle)]">
-                    <div className="text-2xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
+                    <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] font-medium">
                       {m.label}
                     </div>
-                    <div className="text-sm font-bold font-mono text-[var(--color-text-primary)]">
+                    <div className="text-sm font-semibold text-[var(--color-text-primary)]">
                       {m.value}
                     </div>
                   </div>
@@ -356,22 +352,22 @@ export function LTServices() {
               </div>
 
               {/* Action Cluster */}
-              <div className="pt-2 flex items-center gap-4">
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Button
                   href="/contact"
                   variant="primary"
                   size="lg"
                   icon
-                  className="bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] border-transparent"
+                  className="bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] border-transparent font-medium"
                 >
-                  Request {activeService.name.split(" ")[0]} Rate
+                  Get a quote
                 </Button>
                 <TextLink
                   href={activeService.href}
                   icon={<ChevronRight className="w-3.5 h-3.5 text-[var(--color-brand-blue)]" />}
-                  className="text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)]"
+                  className="text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium text-sm"
                 >
-                  Full Service Specifications
+                  View service specifications
                 </TextLink>
               </div>
             </div>
@@ -389,9 +385,9 @@ export function LTServices() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-surface)]/80 via-transparent to-transparent" />
 
                 {/* Bottom Terminal Badge */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[var(--color-dark-surface)]/80 backdrop-blur-md border border-white/15 text-xs font-mono">
-                  <div className="text-[10px] text-[var(--color-cta)] uppercase tracking-wider mb-0.5">
-                    Operating Gateways
+                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[var(--color-dark-surface)]/80 backdrop-blur-md border border-white/15 text-xs">
+                  <div className="text-2xs text-[var(--color-cta)] uppercase tracking-wider mb-0.5 font-semibold">
+                    Operating gateways
                   </div>
                   <div className="text-[var(--color-bg-alt)] font-medium truncate">
                     {activeService.terminals}

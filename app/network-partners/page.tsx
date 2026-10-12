@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import GlobalMovementAtlas from "@/components/network/GlobalMovementAtlas";
 import { NetworkAlliances } from "@/components/network/NetworkAlliances";
-import { THEME_TOKENS } from "@/components/ui/design-system";
+import { PageHeader, THEME_TOKENS } from "@/components/ui/design-system";
 
 export const metadata: Metadata = {
   title: "World Movement Atlas & Global Alliances | Freyer International",
@@ -16,9 +16,23 @@ export const metadata: Metadata = {
 
 export default function NetworkPartnersPage() {
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white pt-20">
+    <div className="min-h-screen bg-[var(--color-bg-base)] text-[var(--color-text-primary)] selection:bg-[var(--color-cta)] selection:text-white">
       <Header />
       <main>
+        <PageHeader
+          breadcrumbs={[{ label: "Global Network" }]}
+          eyebrow="Cartographic Intelligence &middot; 11 Verified Movements"
+          title="WORLD MOVEMENT ATLAS"
+          subtitle="DOCUMENTED GLOBAL TRADE LANES"
+          description="An interactive global cartography charting 11 verified heavy-lift and multimodal project cargo shipments across 10 countries, backed by accredited international forwarding alliances."
+          stats={[
+            { value: "11 PROJECTS", label: "VERIFIED MOVEMENTS", sub: "Documented Case Studies" },
+            { value: "10 COUNTRIES", label: "GLOBAL REACH", sub: "India · UAE · China · Europe" },
+            { value: "CBIC AEO-LO", label: "CUSTOMS BROKER", sub: "Statutory License" },
+            { value: "6 ALLIANCES", label: "ACCREDITED NETWORKS", sub: "WCA · SCN · WPA · FDX · AMTOI" },
+          ]}
+        />
+
         {/* Primary Interactive Cartographic Experience: World Movement Atlas */}
         <section aria-label="World Movement Atlas">
           <GlobalMovementAtlas />

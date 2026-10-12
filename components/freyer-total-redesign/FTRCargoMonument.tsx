@@ -110,31 +110,27 @@ export function FTRCargoMonument() {
     >
       <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
 
-        {/* ── SECTION HEADER: ARCHITECTURAL RIGOR ── */}
+        {/* ── SECTION HEADER ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-[var(--color-border-subtle)]">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] font-medium">
+            <div className="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[var(--color-cta)] font-semibold">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
               </span>
-              <span>Physical Evidence &amp; Documented Execution</span>
+              <span>Project cargo case studies</span>
             </div>
             <h2
-              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              className="text-[var(--color-text-primary)] font-semibold tracking-[-0.02em] leading-tight"
               style={{
-                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: "var(--token-text-4xl)",
               }}
             >
-              THE WEIGHT OF <br />
-              <span className="text-[var(--color-text-primary)]">
-                REAL DISPLACEMENT
-              </span>
+              482 MT of breakbulk, Shanghai to Jebel Ali
             </h2>
-            <p className="text-base sm:text-lg text-[var(--color-text-secondary)] font-light leading-relaxed">
-              No simulated cargo renders. No synthetic claims. These are the verified, unalterable
-              records of heavy industrial breakbulk cargo engineered and transported by Freyer.
+            <p className="text-base sm:text-lg text-[var(--color-text-secondary)] font-normal leading-relaxed">
+              Documented heavy-lift and breakbulk operations engineered and executed by Freyer International across international trade routes.
             </p>
           </div>
 
@@ -143,9 +139,9 @@ export function FTRCargoMonument() {
             <button
               type="button"
               onClick={() => setActiveTab("record-9")}
-              className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                 activeTab === "record-9"
-                  ? "bg-[var(--color-brand-blue)] text-white font-bold shadow-sm"
+                  ? "bg-[var(--color-brand-blue)] text-white shadow-sm"
                   : "bg-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
               }`}
             >
@@ -155,9 +151,9 @@ export function FTRCargoMonument() {
             <button
               type="button"
               onClick={() => setActiveTab("record-11")}
-              className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                 activeTab === "record-11"
-                  ? "bg-[var(--color-brand-blue)] text-white font-bold shadow-sm"
+                  ? "bg-[var(--color-brand-blue)] text-white shadow-sm"
                   : "bg-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
               }`}
             >
@@ -182,43 +178,43 @@ export function FTRCargoMonument() {
 
               {/* Tonnage Callout */}
               <div className="p-8 sm:p-10 rounded-2xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] shadow-sm relative overflow-hidden">
-                <div className="flex items-center justify-between gap-4 pb-6 border-b border-[var(--color-border-subtle)] text-xs font-mono">
-                  <span className="px-2 py-0.5 rounded bg-white border border-[var(--color-border-subtle)] text-[var(--color-cta)] uppercase tracking-[0.2em] font-semibold">
+                <div className="flex items-center justify-between gap-4 pb-6 border-b border-[var(--color-border-subtle)] text-xs">
+                  <span className="px-2.5 py-0.5 rounded bg-white border border-[var(--color-border-subtle)] text-[var(--color-cta)] uppercase tracking-wider font-semibold">
                     {record.recordNumber}
                   </span>
-                  <span className="text-[var(--color-text-secondary)]">{record.mode}</span>
+                  <span className="text-[var(--color-text-secondary)] font-medium">{record.mode}</span>
                 </div>
 
                 {/* Massive Number */}
                 <div className="py-8 flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6">
                   <span
-                    className="font-black uppercase text-[var(--color-brand-blue)] leading-none"
+                    className="font-bold text-[var(--color-brand-blue)] leading-none"
                     style={{
-                      fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
-                      fontSize: "var(--token-text-display-giant)",
+                      fontFamily: "var(--font-inter), system-ui, sans-serif",
+                      fontSize: "clamp(64px, 8vw, 108px)",
                     }}
                   >
                     {record.weight}
                   </span>
                   <div>
                     <span
-                      className="text-2xl sm:text-3xl font-black uppercase text-[var(--color-brand-blue)] tracking-wide block leading-tight"
-                      style={{ fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif" }}
+                      className="text-2xl sm:text-3xl font-bold uppercase text-[var(--color-brand-blue)] tracking-wide block leading-tight"
+                      style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
                     >
                       {record.weightUnit}
                     </span>
-                    <span className="text-xs font-mono text-[var(--color-text-secondary)] uppercase tracking-widest">
+                    <span className="text-xs text-[var(--color-text-secondary)] uppercase tracking-wider font-medium">
                       {record.commodity}
                     </span>
                   </div>
                 </div>
 
                 {/* Route Vector Strip */}
-                <div className="p-4 rounded-xl bg-white border border-[var(--color-border-subtle)] flex items-center justify-between gap-4 text-xs font-mono">
+                <div className="p-4 rounded-xl bg-white border border-[var(--color-border-subtle)] flex items-center justify-between gap-4 text-xs">
                   <div className="flex items-center gap-2">
                     <MapPin className="w-3.5 h-3.5 text-[var(--color-text-secondary)]" />
                     <div>
-                      <span className="font-bold text-[var(--color-text-primary)]">{record.route.origin}</span>
+                      <span className="font-semibold text-[var(--color-text-primary)]">{record.route.origin}</span>
                       <span className="text-[var(--color-text-secondary)] ml-1">({record.route.originCountry})</span>
                     </div>
                   </div>
@@ -231,7 +227,7 @@ export function FTRCargoMonument() {
 
                   <div className="flex items-center gap-2 text-right">
                     <div>
-                      <span className="font-bold text-[var(--color-text-primary)]">{record.route.destination}</span>
+                      <span className="font-semibold text-[var(--color-text-primary)]">{record.route.destination}</span>
                       <span className="text-[var(--color-text-secondary)] ml-1">({record.route.destinationCountry})</span>
                     </div>
                     <MapPin className="w-3.5 h-3.5 text-[var(--color-brand-orange)]" />
@@ -246,10 +242,10 @@ export function FTRCargoMonument() {
                     key={spec.label}
                     className="p-4 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] space-y-1"
                   >
-                    <div className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
+                    <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] font-medium">
                       {spec.label}
                     </div>
-                    <div className="text-sm sm:text-base font-bold font-mono text-[var(--color-text-primary)]">
+                    <div className="text-sm sm:text-base font-semibold text-[var(--color-text-primary)]">
                       {spec.value}
                     </div>
                   </div>
@@ -257,7 +253,7 @@ export function FTRCargoMonument() {
               </div>
 
               {/* Verbatim Source Note */}
-              <div className="flex items-start gap-3 p-4 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-xs font-mono text-[var(--color-text-secondary)] leading-relaxed">
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-xs text-[var(--color-text-secondary)] leading-relaxed">
                 <FileText className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                 <p>{record.sourceNote}</p>
               </div>
@@ -282,10 +278,10 @@ export function FTRCargoMonument() {
 
                 {/* Photo lower label badge: keep dark caption gradient sitting on photo */}
                 <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
-                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[var(--color-cta)] text-[10px] font-mono font-bold uppercase tracking-wider text-white mb-2">
-                    Official Field Archive
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[var(--color-cta)] text-2xs font-semibold uppercase tracking-wider text-white mb-2">
+                    Case study
                   </div>
-                  <p className="text-xs font-mono text-white/80 leading-relaxed">
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
                     {record.photoCaption}
                   </p>
                 </div>
@@ -294,10 +290,10 @@ export function FTRCargoMonument() {
               {/* Call to full projects archive */}
               <div className="p-5 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-alt)] flex items-center justify-between gap-4 shadow-sm">
                 <div className="space-y-0.5">
-                  <div className="text-xs font-bold text-[var(--color-text-primary)] font-mono">
-                    Explore Full Project Cargo Archive
+                  <div className="text-xs font-semibold text-[var(--color-text-primary)]">
+                    View project cargo case studies
                   </div>
-                  <div className="text-2xs font-mono text-[var(--color-text-secondary)]">
+                  <div className="text-2xs text-[var(--color-text-secondary)]">
                     Industrial turbines, heavy cranes, energy transformers
                   </div>
                 </div>
@@ -308,7 +304,7 @@ export function FTRCargoMonument() {
                   className="shrink-0 border-[var(--color-brand-blue)] text-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue)] hover:text-white"
                   icon
                 >
-                  View All
+                  View all
                 </Button>
               </div>
             </div>

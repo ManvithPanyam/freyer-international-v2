@@ -50,7 +50,9 @@ export function LTNav() {
       <header
         className={[
           "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-          "bg-[var(--color-bg-base)] border-b border-[var(--color-border-subtle)] shadow-sm py-3",
+          scrolled || pathname !== "/"
+            ? "bg-[var(--color-bg-base)] border-b border-[var(--color-border-subtle)] shadow-sm py-2.5 text-[var(--color-text-primary)]"
+            : "bg-transparent border-b border-white/10 py-3 sm:py-3.5 text-white",
         ].join(" ")}
       >
         <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between gap-8">
@@ -68,17 +70,28 @@ export function LTNav() {
                 width={62}
                 height={36}
                 unoptimized
-                className="w-full h-full object-contain object-left "
+                className={[
+                  "w-full h-full object-contain object-left transition-all duration-300",
+                  scrolled || pathname !== "/" ? "" : "brightness-0 invert",
+                ].join(" ")}
                 priority
               />
             </div>
             <span
-              className="text-2xs sm:text-xs font-mono tracking-[0.16em] uppercase text-[var(--color-border-subtle)] select-none"
+              className={[
+                "text-xs select-none",
+                scrolled || pathname !== "/" ? "text-[var(--color-border-subtle)]" : "text-white/30",
+              ].join(" ")}
               aria-hidden
             >
               |
             </span>
-            <span className="text-2xs sm:text-xs font-mono tracking-[0.12em] sm:tracking-[0.16em] uppercase text-[var(--color-text-secondary)] font-semibold leading-tight">
+            <span
+              className={[
+                "text-xs font-medium leading-tight",
+                scrolled || pathname !== "/" ? "text-[var(--color-text-secondary)]" : "text-white/80",
+              ].join(" ")}
+            >
               Logistics Beyond Boundaries
             </span>
           </Link>
@@ -95,18 +108,22 @@ export function LTNav() {
               <Link
                 href="/services"
                 className={[
-                  "inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
-                  pathname.startsWith("/services") ? "text-[var(--color-brand-blue)] font-bold" : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
+                  "inline-flex items-center gap-1 text-sm font-medium transition-colors duration-150 px-3 py-2 rounded",
+                  scrolled || pathname !== "/"
+                    ? pathname.startsWith("/services")
+                      ? "text-[var(--color-brand-blue)] font-semibold"
+                      : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]"
+                    : "text-white/90 hover:text-white hover:bg-white/10",
                 ].join(" ")}
               >
                 <span>Services</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[var(--color-brand-blue)]/60 group-hover:text-[var(--color-brand-blue-hover)] transition-transform" />
+                <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-transform" />
               </Link>
 
               {activeDropdown === "services" && (
                 <div className="absolute top-full left-0 w-80 bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] rounded-xl shadow-sm p-3 pt-2 text-xs backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150 z-50">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-semibold px-2 py-1.5 border-b border-[var(--color-border-subtle)] mb-1">
-                    Multimodal Logistics Portfolio
+                  <div className="text-[11px] text-[var(--color-text-secondary)] font-medium px-2 py-1.5 border-b border-[var(--color-border-subtle)] mb-1">
+                    Multimodal logistics portfolio
                   </div>
                   <div className="space-y-0.5">
                     <Link
@@ -184,8 +201,12 @@ export function LTNav() {
             <Link
               href="/projects"
               className={[
-                "text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
-                pathname === "/projects" ? "text-[var(--color-brand-blue)] font-bold" : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
+                "text-sm font-medium transition-colors duration-150 px-3 py-2 rounded",
+                scrolled || pathname !== "/"
+                  ? pathname === "/projects"
+                    ? "text-[var(--color-brand-blue)] font-semibold"
+                    : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]"
+                  : "text-white/90 hover:text-white hover:bg-white/10",
               ].join(" ")}
             >
               Projects
@@ -200,14 +221,16 @@ export function LTNav() {
               <Link
                 href="/locations"
                 className={[
-                  "inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
-                  pathname === "/locations" || pathname === "/network-partners"
-                    ? "text-[var(--color-brand-blue)] font-bold"
-                    : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
+                  "inline-flex items-center gap-1 text-sm font-medium transition-colors duration-150 px-3 py-2 rounded",
+                  scrolled || pathname !== "/"
+                    ? pathname === "/locations" || pathname === "/network-partners"
+                      ? "text-[var(--color-brand-blue)] font-semibold"
+                      : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]"
+                    : "text-white/90 hover:text-white hover:bg-white/10",
                 ].join(" ")}
               >
                 <span>Network</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[var(--color-brand-blue)]/60 group-hover:text-[var(--color-brand-blue-hover)] transition-transform" />
+                <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-transform" />
               </Link>
 
               {activeDropdown === "network" && (
@@ -279,19 +302,21 @@ export function LTNav() {
               <Link
                 href="/about"
                 className={[
-                  "inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
-                  pathname === "/about" || pathname === "/careers" || pathname === "/csr"
-                    ? "text-[var(--color-brand-blue)] font-bold"
-                    : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
+                  "inline-flex items-center gap-1 text-sm font-medium transition-colors duration-150 px-3 py-2 rounded",
+                  scrolled || pathname !== "/"
+                    ? pathname === "/about" || pathname === "/careers" || pathname === "/csr"
+                      ? "text-[var(--color-brand-blue)] font-semibold"
+                      : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]"
+                    : "text-white/90 hover:text-white hover:bg-white/10",
                 ].join(" ")}
               >
                 <span>Company</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[var(--color-brand-blue)]/60 group-hover:text-[var(--color-brand-blue-hover)] transition-transform" />
+                <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-transform" />
               </Link>
 
               {activeDropdown === "company" && (
                 <div className="absolute top-full left-0 w-80 bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] rounded-xl shadow-sm p-3 pt-2 text-xs backdrop-blur-2xl animate-in fade-in slide-in-from-top-2 duration-150 z-50">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-semibold px-2 py-1.5 border-b border-[var(--color-border-subtle)] mb-1">
+                  <div className="text-[10px] uppercase tracking-wider text-[var(--color-text-secondary)] font-semibold px-2 py-1.5 border-b border-[var(--color-border-subtle)] mb-1">
                     Enterprise &amp; Institutional Governance
                   </div>
                   <div className="space-y-1">
@@ -320,7 +345,7 @@ export function LTNav() {
                           <span className="text-[var(--color-text-primary)] font-medium group-hover:text-[var(--color-brand-blue)] transition-colors">
                             Careers at Freyer
                           </span>
-                          <span className="px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-600 text-[9px] font-mono font-bold">
+                          <span className="px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-600 text-[9px] font-bold">
                             HIRING
                           </span>
                         </div>
@@ -353,8 +378,12 @@ export function LTNav() {
             <Link
               href="/contact"
               className={[
-                "text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
-                pathname === "/contact" ? "text-[var(--color-brand-blue)] font-bold" : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
+                "text-sm font-medium transition-colors duration-150 px-3 py-2 rounded",
+                scrolled || pathname !== "/"
+                  ? pathname === "/contact"
+                    ? "text-[var(--color-brand-blue)] font-semibold"
+                    : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]"
+                  : "text-white/90 hover:text-white hover:bg-white/10",
               ].join(" ")}
             >
               Contact
@@ -366,21 +395,31 @@ export function LTNav() {
             {/* Phone — always visible */}
             <a
               href="tel:+914443191919"
-              className="hidden lg:flex items-center gap-1.5 text-xs font-mono text-[var(--color-text-primary)] hover:text-[var(--color-brand-blue)] transition-colors"
+              className={[
+                "hidden lg:flex items-center gap-1.5 text-xs transition-colors",
+                scrolled || pathname !== "/"
+                  ? "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]"
+                  : "text-white/90 hover:text-white",
+              ].join(" ")}
             >
-              <Phone className="w-3 h-3 text-[var(--color-brand-orange)]" />
+              <Phone className="w-3.5 h-3.5 text-[var(--color-brand-orange)]" />
               +91 44 43191919
             </a>
 
-            <div className="h-4 w-px bg-[var(--color-border-subtle)] hidden lg:block" />
+            <div
+              className={[
+                "h-4 w-px hidden lg:block",
+                scrolled || pathname !== "/" ? "bg-[var(--color-border-subtle)]" : "bg-white/20",
+              ].join(" ")}
+            />
 
             <Button
               href="/contact"
               size="sm"
               icon
-              className="bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] border-transparent"
+              className="bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] border-transparent font-medium shadow-sm"
             >
-              Request Rate
+              Get a quote
             </Button>
           </div>
 
@@ -390,7 +429,12 @@ export function LTNav() {
             onClick={() => setDrawerOpen((v) => !v)}
             aria-expanded={drawerOpen}
             aria-label={drawerOpen ? "Close menu" : "Open menu"}
-            className="md:hidden p-2 text-[var(--color-text-primary)] hover:text-[var(--color-brand-blue)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand-blue)] rounded"
+            className={[
+              "md:hidden p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand-blue)] rounded",
+              scrolled || pathname !== "/"
+                ? "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]"
+                : "text-white hover:text-white/80",
+            ].join(" ")}
           >
             {drawerOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

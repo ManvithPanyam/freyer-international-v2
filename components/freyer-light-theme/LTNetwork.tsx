@@ -105,44 +105,40 @@ export function LTNetwork() {
         {/* ── SECTION HEADER ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 border-b border-[var(--color-border-subtle)] gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] font-medium">
+            <div className="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[var(--color-cta)] font-semibold">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
               </span>
-              <span>Verified Physical Footprint</span>
+              <span>Our offices</span>
             </div>
             <h2
-              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.92] uppercase"
+              className="text-[var(--color-text-primary)] font-semibold tracking-[-0.02em] leading-tight"
               style={{
-                fontFamily: "var(--font-barlow-condensed), system-ui, sans-serif",
+                fontFamily: "var(--font-inter), system-ui, sans-serif",
                 fontSize: "var(--token-text-4xl)",
               }}
             >
-              TEN STATIONS. <br />
-              <span className="text-[var(--color-text-primary)]">
-                ONE INTEGRATED DESK
-              </span>
+              10 offices across 9 Indian cities
             </h2>
-            <p className="text-base sm:text-lg text-[var(--color-text-secondary)] font-light leading-relaxed">
-              Direct company-owned branch offices, licensed customs brokerage, and on-dock
-              terminal handling across primary industrial corridors, air cargo gates, and deep-water ports.
+            <p className="text-base sm:text-lg text-[var(--color-text-secondary)] font-normal leading-relaxed">
+              Offices in Chennai, Bengaluru, Delhi NCR, Mumbai, Hyderabad, Visakhapatnam, Coimbatore, Tuticorin and Ahmedabad, plus a Chennai airport office.
             </p>
           </div>
 
           {/* Key Infrastructure Badges */}
-          <div className="grid grid-cols-3 gap-6 text-xs font-mono shrink-0">
+          <div className="grid grid-cols-3 gap-6 text-xs shrink-0">
             <div className="border-l-2 border-[var(--color-brand-orange)] pl-4 space-y-1">
-              <span className="block text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)] font-mono">10</span>
-              <span className="text-[var(--color-text-secondary)] text-2xs uppercase tracking-wider">Stations</span>
+              <span className="block text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)]">10</span>
+              <span className="text-[var(--color-text-secondary)] text-2xs uppercase tracking-wider font-medium">Offices</span>
             </div>
             <div className="border-l-2 border-[var(--color-border-subtle)] pl-4 space-y-1">
-              <span className="block text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)] font-mono">8</span>
-              <span className="text-[var(--color-text-secondary)] text-2xs uppercase tracking-wider">Strategic Cities</span>
+              <span className="block text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)]">9</span>
+              <span className="text-[var(--color-text-secondary)] text-2xs uppercase tracking-wider font-medium">Strategic cities</span>
             </div>
             <div className="border-l-2 border-[var(--color-border-subtle)] pl-4 space-y-1">
-              <span className="block text-2xl sm:text-3xl font-bold text-[var(--color-brand-orange)] font-mono">100%</span>
-              <span className="text-[var(--color-text-secondary)] text-[10px] uppercase tracking-wider">Direct Network</span>
+              <span className="block text-2xl sm:text-3xl font-bold text-[var(--color-brand-orange)]">100%</span>
+              <span className="text-[var(--color-text-secondary)] text-2xs uppercase tracking-wider font-medium">Company-owned</span>
             </div>
           </div>
         </div>
@@ -150,8 +146,8 @@ export function LTNetwork() {
         {/* Quick Station Filter Rail & Global Atlas Switcher */}
         <div className="py-4 border-b border-[var(--color-border-subtle)] flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2 overflow-x-auto scrollbar-none">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--color-text-secondary)] shrink-0 mr-1 flex items-center gap-1.5">
-              <Compass className="w-3.5 h-3.5 text-[var(--color-brand-orange)]" /> Select Station:
+            <span className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] shrink-0 mr-1 flex items-center gap-1.5 font-medium">
+              <Compass className="w-3.5 h-3.5 text-[var(--color-brand-orange)]" /> Select office:
             </span>
             {STATIONS_DATA.map((st) => {
               const isSelected = st.id === selected.id;
@@ -160,9 +156,9 @@ export function LTNetwork() {
                   key={st.id}
                   onClick={() => setSelectedStationId(st.id)}
                   className={[
-                    "px-3.5 py-1.5 rounded-lg text-xs font-mono whitespace-nowrap transition-all flex items-center gap-1.5 border",
+                    "px-3.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition-all flex items-center gap-1.5 border font-medium",
                     isSelected
-                      ? "bg-[var(--color-brand-blue)] border-[var(--color-brand-blue)] text-white font-bold shadow-sm"
+                      ? "bg-[var(--color-brand-blue)] border-[var(--color-brand-blue)] text-white shadow-sm"
                       : "bg-[var(--color-bg-alt)] border-[var(--color-border-subtle)] text-[var(--color-text-primary)] hover:text-[var(--color-brand-blue)] hover:border-[var(--color-brand-blue)]",
                   ].join(" ")}
                 >
@@ -178,9 +174,9 @@ export function LTNetwork() {
             variant="secondary"
             size="sm"
             icon
-            className="bg-transparent border-[var(--color-brand-blue)] text-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue)] hover:text-white"
+            className="bg-transparent border-[var(--color-brand-blue)] text-[var(--color-brand-blue)] hover:bg-[var(--color-brand-blue)] hover:text-white font-medium"
           >
-            World Movement Atlas
+            Global partner network
           </Button>
         </div>
 
@@ -329,38 +325,38 @@ export function LTNetwork() {
                 {/* Station Title */}
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-2xs font-mono uppercase tracking-widest text-[var(--color-tag-text)] font-bold bg-[var(--color-tag-bg)] border border-[var(--color-tag-text)]/20 px-2 py-0.5 rounded">
+                    <span className="text-2xs uppercase tracking-wider text-[var(--color-tag-text)] font-semibold bg-[var(--color-tag-bg)] border border-[var(--color-tag-text)]/20 px-2 py-0.5 rounded">
                       {meta.type}
                     </span>
                     {selected.isHQ && (
-                      <span className="px-2 py-0.5 rounded bg-[var(--color-tag-blue-bg)] text-[var(--color-brand-blue)] text-2xs font-mono uppercase font-bold border border-[var(--color-brand-blue)]/20">
-                        Corporate HQ
+                      <span className="px-2 py-0.5 rounded bg-[var(--color-tag-blue-bg)] text-[var(--color-brand-blue)] text-2xs uppercase font-semibold border border-[var(--color-brand-blue)]/20">
+                        Head office
                       </span>
                     )}
                   </div>
                   <h3
-                    className="font-bold font-mono text-[var(--color-text-primary)] tracking-tight mt-2"
+                    className="font-semibold text-[var(--color-text-primary)] tracking-tight mt-2"
                     style={{ fontSize: "var(--token-text-xl)" }}
                   >
                     {selected.name}
                   </h3>
-                  <p className="text-xs font-mono text-[var(--color-text-secondary)] mt-1">
+                  <p className="text-xs text-[var(--color-text-secondary)] mt-1 font-normal">
                     {meta.scope}
                   </p>
                 </div>
 
                 {/* Verified Address */}
                 <div className="space-y-2 border-t border-[var(--color-border-subtle)] pt-4">
-                  <div className="text-2xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
-                    Physical Station Address
+                  <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] font-medium">
+                    Office address
                   </div>
-                  <div className="p-3.5 rounded-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-xs font-mono text-[var(--color-text-secondary)] leading-relaxed relative group flex items-start gap-2">
+                  <div className="p-3.5 rounded-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-xs text-[var(--color-text-secondary)] leading-relaxed relative group flex items-start gap-2">
                     <MapPin className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0 mt-0.5" />
                     <div>
                       <p>{selected.address}</p>
                       <button
                         onClick={copyAddress}
-                        className="mt-3 px-3 py-1.5 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] text-2xs font-mono hover:border-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue)] transition-colors flex items-center gap-1.5"
+                        className="mt-3 px-3 py-1.5 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-primary)] text-2xs hover:border-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue)] transition-colors flex items-center gap-1.5 font-medium"
                       >
                         {copied ? (
                           <>
@@ -368,7 +364,7 @@ export function LTNetwork() {
                           </>
                         ) : (
                           <>
-                            <Copy className="w-3.5 h-3.5 text-[var(--color-text-primary)]" /> Copy Address
+                            <Copy className="w-3.5 h-3.5 text-[var(--color-text-primary)]" /> Copy address
                           </>
                         )}
                       </button>
@@ -378,8 +374,8 @@ export function LTNetwork() {
 
                 {/* Direct Communications */}
                 <div className="space-y-3 border-t border-[var(--color-border-subtle)] pt-4">
-                  <div className="text-2xs font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
-                    Direct Contact Lines
+                  <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] font-medium">
+                    Contact details
                   </div>
                   <a
                     href={`tel:${selected.phone.replace(/[^0-9+]/g, "")}`}
@@ -387,8 +383,8 @@ export function LTNetwork() {
                   >
                     <Phone className="w-4 h-4 text-[var(--color-brand-orange)] shrink-0" />
                     <div>
-                      <div className="text-2xs font-mono uppercase text-[var(--color-text-secondary)]">Direct Desk</div>
-                      <div className="text-sm font-bold font-mono text-[var(--color-text-primary)] group-hover:text-[var(--color-brand-blue)] transition-colors">
+                      <div className="text-2xs uppercase text-[var(--color-text-secondary)] font-medium">Telephone</div>
+                      <div className="text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-brand-blue)] transition-colors">
                         {selected.phone}
                       </div>
                     </div>
@@ -400,8 +396,8 @@ export function LTNetwork() {
                   >
                     <Mail className="w-4 h-4 text-[var(--color-text-secondary)] shrink-0 group-hover:text-[var(--color-brand-blue)]" />
                     <div className="truncate">
-                      <div className="text-2xs font-mono uppercase text-[var(--color-text-secondary)]">Official Email</div>
-                      <div className="text-xs font-mono text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors truncate">
+                      <div className="text-2xs uppercase text-[var(--color-text-secondary)] font-medium">Email</div>
+                      <div className="text-xs text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors truncate font-normal">
                         {selected.email}
                       </div>
                     </div>
@@ -410,14 +406,14 @@ export function LTNetwork() {
 
                 {/* Facilities Badges */}
                 <div className="space-y-2 border-t border-[var(--color-border-subtle)] pt-4">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-[var(--color-text-secondary)]">
-                    On-Site Facilities
+                  <div className="text-2xs uppercase tracking-wider text-[var(--color-text-secondary)] font-medium">
+                    Office capabilities
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {meta.facilities.map((fac) => (
                       <span
                         key={fac}
-                        className="px-2.5 py-1 rounded bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-[10px] font-mono text-[var(--color-text-primary)]"
+                        className="px-2.5 py-1 rounded bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-2xs text-[var(--color-text-primary)] font-medium"
                       >
                         {fac}
                       </span>
@@ -430,9 +426,9 @@ export function LTNetwork() {
                   <TextLink
                     href="/locations"
                     icon
-                    className="text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)]"
+                    className="text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium text-xs sm:text-sm"
                   >
-                    View All 10 Branch Dossiers
+                    View all 10 office locations
                   </TextLink>
                 </div>
               </motion.div>
