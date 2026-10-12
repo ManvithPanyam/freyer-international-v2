@@ -23,9 +23,9 @@ export function FreyerCard({
       id={id}
       onClick={onClick}
       className={[
-        "bg-[#FFFFFF] border border-[#DCDCD7] rounded-xl transition-all duration-200",
+        "bg-[#FFFFFF] border border-[var(--color-border-subtle)] rounded-xl transition-all duration-200",
         hoverEffect
-          ? "hover:border-[#17181B] hover:shadow-md"
+          ? "hover:border-[var(--color-border-subtle)] hover:shadow-md"
           : "",
         className,
       ].join(" ")}
@@ -62,11 +62,11 @@ export function FreyerButton({
 
   const variantClasses = {
     primary:
-      "bg-[#17181B] hover:bg-[#E33B12] text-[#F7F6F2] hover:text-white transition-colors border border-transparent shadow-sm",
+      "bg-[var(--color-bg-alt)] hover:bg-[var(--color-cta)] text-[var(--color-text-primary)] hover:text-white transition-colors border border-transparent shadow-sm",
     secondary:
-      "bg-transparent hover:bg-[#17181B] text-[#17181B] hover:text-[#F7F6F2] border border-[#17181B] transition-colors",
+      "bg-transparent hover:bg-[var(--color-bg-alt)] text-[var(--color-text-primary)] hover:text-[var(--color-text-primary)] border border-[var(--color-border-subtle)] transition-colors",
     ghost:
-      "bg-transparent hover:bg-[#17181B]/[0.05] text-[#17181B] hover:text-[#E33B12] border border-transparent transition-colors",
+      "bg-transparent hover:bg-[var(--color-bg-alt)]/[0.05] text-[var(--color-text-primary)] hover:text-[var(--color-cta)] border border-transparent transition-colors",
   }[variant];
 
   const content = (

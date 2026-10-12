@@ -39,27 +39,27 @@ export function StakeholderPillars() {
   ];
 
   return (
-    <section id="stakeholder-pillars" className="scroll-mt-28 py-20 sm:py-32 border-b border-[#DCDCD7] bg-[#F7F6F2]">
+    <section id="stakeholder-pillars" className="scroll-mt-28 py-20 sm:py-32 border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-base)]">
       <div className={`max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[#DCDCD7] mb-16">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[var(--color-border-subtle)] mb-16">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-mono text-[#E33B12] font-semibold">05</span>
-              <span className="text-[#DCDCD7] font-mono">/</span>
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#62656B]">
+              <span className="text-xs font-mono text-[var(--color-cta)] font-semibold">05</span>
+              <span className="text-[var(--color-border-subtle)] font-mono">/</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
                 Institutional Ecosystem &middot; Three Stakeholders
               </span>
             </div>
             <h2
-              className="text-[#17181B] font-black tracking-[-0.02em] leading-[0.95] uppercase text-3xl sm:text-4xl lg:text-5xl"
+              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.95] uppercase text-3xl sm:text-4xl lg:text-5xl"
               style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
             >
               THE THREE STAKEHOLDERS
             </h2>
           </div>
 
-          <p className="text-xs sm:text-sm font-mono text-[#62656B] max-w-md">
+          <p className="text-xs sm:text-sm font-mono text-[var(--color-text-secondary)] max-w-md">
             Freyer International&rsquo;s sustainable operational framework is built upon three foundational commitments.
           </p>
         </div>
@@ -71,37 +71,37 @@ export function StakeholderPillars() {
             return (
               <div
                 key={pillar.num}
-                className="group relative rounded-xl border border-[#DCDCD7] bg-white hover:border-[#17181B] hover:shadow-md transition-all duration-200 p-8 sm:p-10 flex flex-col justify-between"
+                className="group relative rounded-xl border border-[var(--color-border-subtle)] bg-white hover:border-[var(--color-border-subtle)] hover:shadow-md transition-all duration-200 p-8 sm:p-10 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between pb-6 border-b border-[#DCDCD7] text-xs font-mono text-[#62656B]">
-                    <span className="text-[#E33B12] font-semibold">PILLAR {pillar.num}</span>
+                  <div className="flex items-center justify-between pb-6 border-b border-[var(--color-border-subtle)] text-xs font-mono text-[var(--color-text-secondary)]">
+                    <span className="text-[var(--color-cta)] font-semibold">PILLAR {pillar.num}</span>
                     <span className="uppercase tracking-widest">{pillar.eyebrow}</span>
                   </div>
 
                   <div className="mt-8 flex items-center justify-between">
-                    <h3 className="text-2xl font-bold text-[#17181B] tracking-tight">
+                    <h3 className="text-2xl font-bold text-[var(--color-text-primary)] tracking-tight">
                       {pillar.title}
                     </h3>
-                    <div className="w-10 h-10 rounded-lg bg-[#F7F6F2] border border-[#DCDCD7] flex items-center justify-center text-[#E33B12]">
+                    <div className="w-10 h-10 rounded-lg bg-[var(--color-bg-base)] border border-[var(--color-border-subtle)] flex items-center justify-center text-[var(--color-cta)]">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <div className="mt-4 text-xs font-mono uppercase tracking-wider text-[#E33B12] font-semibold">
+                  <div className="mt-4 text-xs font-mono uppercase tracking-wider text-[var(--color-cta)] font-semibold">
                     {pillar.highlight}
                   </div>
 
-                  <p className="mt-4 text-sm text-[#62656B] font-normal leading-relaxed">
+                  <p className="mt-4 text-sm text-[var(--color-text-secondary)] font-normal leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-[#DCDCD7]">
-                  <div className="text-[11px] font-mono text-[#62656B] uppercase tracking-wider mb-1">
+                <div className="mt-8 pt-6 border-t border-[var(--color-border-subtle)]">
+                  <div className="text-[11px] font-mono text-[var(--color-text-secondary)] uppercase tracking-wider mb-1">
                     Institutional Standard
                   </div>
-                  <div className="text-xs text-[#17181B] font-medium">
+                  <div className="text-xs text-[var(--color-text-primary)] font-medium">
                     {pillar.commitment}
                   </div>
                 </div>

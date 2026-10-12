@@ -36,21 +36,21 @@ export function ServiceFAQ() {
 
   return (
     <section>
-      <div className="pb-6 border-b border-[#DCDCD7] flex items-baseline justify-between">
+      <div className="pb-6 border-b border-[var(--color-border-subtle)] flex items-baseline justify-between">
         <div>
-          <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[#E33B12] font-semibold block mb-2">
+          <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] font-semibold block mb-2">
             Operational Clarifications
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#17181B] font-mono uppercase">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--color-text-primary)] font-mono uppercase">
             Frequently Asked Questions
           </h2>
         </div>
-        <span className="text-xs font-mono text-[#62656B] hidden sm:inline-block">
+        <span className="text-xs font-mono text-[var(--color-text-secondary)] hidden sm:inline-block">
           Commercial Governance
         </span>
       </div>
 
-      <div className="divide-y divide-[#DCDCD7] pt-4">
+      <div className="divide-y divide-[var(--color-border-subtle)] pt-4">
         {FAQS.map((faq, idx) => {
           const isOpen = openIndex === idx;
           return (
@@ -60,17 +60,17 @@ export function ServiceFAQ() {
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
                 className="w-full flex items-center justify-between text-left gap-4 group"
               >
-                <span className="text-base sm:text-lg font-semibold text-[#17181B] group-hover:text-[#E33B12] transition-colors">
+                <span className="text-base sm:text-lg font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-cta)] transition-colors">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-4 h-4 text-[#62656B] transition-transform duration-200 shrink-0 ${
-                    isOpen ? "rotate-180 text-[#E33B12]" : ""
+                  className={`w-4 h-4 text-[var(--color-text-secondary)] transition-transform duration-200 shrink-0 ${
+                    isOpen ? "rotate-180 text-[var(--color-cta)]" : ""
                   }`}
                 />
               </button>
               {isOpen && (
-                <div className="mt-4 text-sm text-[#62656B] font-normal leading-relaxed max-w-4xl">
+                <div className="mt-4 text-sm text-[var(--color-text-secondary)] font-normal leading-relaxed max-w-4xl">
                   {faq.answer}
                 </div>
               )}

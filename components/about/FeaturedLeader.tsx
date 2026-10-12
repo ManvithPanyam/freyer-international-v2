@@ -14,18 +14,18 @@ interface FeaturedLeaderProps {
 
 export function FeaturedLeader({ person, onSelect }: FeaturedLeaderProps) {
   return (
-    <section id="featured-leader" className="scroll-mt-28 py-16 sm:py-24 border-b border-[#DCDCD7] bg-[#F7F6F2]">
+    <section id="featured-leader" className="scroll-mt-28 py-16 sm:py-24 border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-base)]">
       <div className={`max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
         {/* Section Header Line */}
-        <div className="flex items-center justify-between pb-6 border-b border-[#DCDCD7] mb-12">
+        <div className="flex items-center justify-between pb-6 border-b border-[var(--color-border-subtle)] mb-12">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono text-[#E33B12] font-semibold">01</span>
-            <span className="text-[#DCDCD7] font-mono">/</span>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#62656B]">
+            <span className="text-xs font-mono text-[var(--color-cta)] font-semibold">01</span>
+            <span className="text-[var(--color-border-subtle)] font-mono">/</span>
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
               Executive Leadership &middot; Managing Director
             </span>
           </div>
-          <span className="text-[11px] font-mono text-[#62656B] hidden sm:inline-block">
+          <span className="text-[11px] font-mono text-[var(--color-text-secondary)] hidden sm:inline-block">
             DIN Verified &middot; Ministry of Corporate Affairs
           </span>
         </div>
@@ -35,7 +35,7 @@ export function FeaturedLeader({ person, onSelect }: FeaturedLeaderProps) {
           
           {/* LEFT: Portrait Column (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden border border-[#DCDCD7] bg-white shadow-sm group">
+            <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden border border-[var(--color-border-subtle)] bg-white shadow-sm group">
               {person.imageSrc ? (
                 <Image
                   src={person.imageSrc}
@@ -47,38 +47,38 @@ export function FeaturedLeader({ person, onSelect }: FeaturedLeaderProps) {
                 />
               ) : (
                 /* Architectural Executive Monogram Placeholder */
-                <div className="w-full h-full flex flex-col justify-between p-8 sm:p-10 bg-white border border-[#DCDCD7]">
+                <div className="w-full h-full flex flex-col justify-between p-8 sm:p-10 bg-white border border-[var(--color-border-subtle)]">
                   <div className="flex items-center justify-between">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#F7F6F2] border border-[#DCDCD7] text-[10px] font-mono uppercase tracking-widest text-[#E33B12]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#E33B12]" />
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[var(--color-bg-base)] border border-[var(--color-border-subtle)] text-[10px] font-mono uppercase tracking-widest text-[var(--color-cta)]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-cta)]" />
                       Executive Office
                     </div>
-                    <span className="text-xs font-mono text-[#62656B]">REF // TJS-01</span>
+                    <span className="text-xs font-mono text-[var(--color-text-secondary)]">REF // TJS-01</span>
                   </div>
 
                   {/* Monogram Graphic */}
                   <div className="my-auto text-center py-8">
                     <div
-                      className="text-8xl sm:text-9xl font-black tracking-tighter text-[#17181B]/15 select-none group-hover:text-[#17181B]/25 transition-colors duration-300"
+                      className="text-8xl sm:text-9xl font-black tracking-tighter text-[var(--color-text-primary)]/15 select-none group-hover:text-[var(--color-text-primary)]/25 transition-colors duration-300"
                       style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
                     >
                       TJS
                     </div>
-                    <div className="mt-2 text-xs font-mono uppercase tracking-[0.24em] text-[#62656B]">
+                    <div className="mt-2 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-text-secondary)]">
                       Managing Director
                     </div>
                   </div>
 
                   {/* Badge */}
-                  <div className="pt-4 border-t border-[#DCDCD7] flex items-center justify-between text-[11px] font-mono text-[#62656B]">
+                  <div className="pt-4 border-t border-[var(--color-border-subtle)] flex items-center justify-between text-[11px] font-mono text-[var(--color-text-secondary)]">
                     <span>Active Since 2018</span>
-                    <span className="text-[#E33B12]">Corporate Masthead</span>
+                    <span className="text-[var(--color-cta)]">Corporate Masthead</span>
                   </div>
                 </div>
               )}
 
               {/* Status indicator on portrait */}
-              <div className="absolute top-4 right-4 bg-[#17181B]/85 backdrop-blur-md px-3 py-1.5 rounded border border-white/20 text-[10px] font-mono uppercase tracking-wider text-white">
+              <div className="absolute top-4 right-4 bg-[var(--color-bg-alt)]/85 backdrop-blur-md px-3 py-1.5 rounded border border-white/20 text-[10px] font-mono uppercase tracking-wider text-white">
                 Current &middot; Verified
               </div>
             </div>
@@ -87,27 +87,27 @@ export function FeaturedLeader({ person, onSelect }: FeaturedLeaderProps) {
           {/* RIGHT: Detailed Profile (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-between">
             <div>
-              <div className="text-xs font-mono uppercase tracking-[0.24em] text-[#E33B12] mb-3 font-semibold">
+              <div className="text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] mb-3 font-semibold">
                 Managing Director &amp; Corporate Governance
               </div>
 
               <h2
-                className="text-[#17181B] font-black tracking-[-0.02em] leading-[0.95] uppercase text-4xl sm:text-5xl lg:text-6xl"
+                className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.95] uppercase text-4xl sm:text-5xl lg:text-6xl"
                 style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
               >
                 {person.displayName || person.name}
               </h2>
 
-              <div className="mt-3 text-xs sm:text-sm font-mono text-[#62656B]">
-                Full Legal Name: <span className="text-[#17181B] font-medium">{person.name}</span>
+              <div className="mt-3 text-xs sm:text-sm font-mono text-[var(--color-text-secondary)]">
+                Full Legal Name: <span className="text-[var(--color-text-primary)] font-medium">{person.name}</span>
               </div>
 
               {/* Verified Biography */}
-              <div className="mt-8 text-[#62656B] text-base sm:text-lg font-normal leading-relaxed space-y-4 max-w-2xl">
+              <div className="mt-8 text-[var(--color-text-secondary)] text-base sm:text-lg font-normal leading-relaxed space-y-4 max-w-2xl">
                 <p>
                   {person.bio}
                 </p>
-                <p className="text-sm text-[#62656B]">
+                <p className="text-sm text-[var(--color-text-secondary)]">
                   Directing enterprise growth across primary deep-water maritime ports, air cargo gateways, 
                   and inland container terminals with a focus on strict statutory governance and high-efficiency cargo movement.
                 </p>
@@ -115,28 +115,28 @@ export function FeaturedLeader({ person, onSelect }: FeaturedLeaderProps) {
 
               {/* Institutional Responsibilities Grid */}
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-                <div className="p-4 rounded-lg bg-white border border-[#DCDCD7]">
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#62656B] mb-1">
-                    <Building2 className="w-3.5 h-3.5 text-[#E33B12]" />
+                <div className="p-4 rounded-lg bg-white border border-[var(--color-border-subtle)]">
+                  <div className="flex items-center gap-2 text-xs font-mono text-[var(--color-text-secondary)] mb-1">
+                    <Building2 className="w-3.5 h-3.5 text-[var(--color-cta)]" />
                     Corporate Scope
                   </div>
-                  <div className="text-sm font-semibold text-[#17181B]">
+                  <div className="text-sm font-semibold text-[var(--color-text-primary)]">
                     Capital Allocation &amp; Network Scale
                   </div>
-                  <div className="text-xs font-mono text-[#62656B] mt-1">
+                  <div className="text-xs font-mono text-[var(--color-text-secondary)] mt-1">
                     10 Branch Stations across 8 Industrial Hubs
                   </div>
                 </div>
 
-                <div className="p-4 rounded-lg bg-white border border-[#DCDCD7]">
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#62656B] mb-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#E33B12]" />
+                <div className="p-4 rounded-lg bg-white border border-[var(--color-border-subtle)]">
+                  <div className="flex items-center gap-2 text-xs font-mono text-[var(--color-text-secondary)] mb-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[var(--color-cta)]" />
                     Statutory Alignment
                   </div>
-                  <div className="text-sm font-semibold text-[#17181B]">
+                  <div className="text-sm font-semibold text-[var(--color-text-primary)]">
                     AEO-LO &amp; IATA Agency
                   </div>
-                  <div className="text-xs font-mono text-[#62656B] mt-1">
+                  <div className="text-xs font-mono text-[var(--color-text-secondary)] mt-1">
                     Direct MCA &amp; CBIC Verified Authority
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export function FeaturedLeader({ person, onSelect }: FeaturedLeaderProps) {
             </div>
 
             {/* Action Bar */}
-            <div className="mt-10 pt-8 border-t border-[#DCDCD7] flex flex-wrap items-center gap-4">
+            <div className="mt-10 pt-8 border-t border-[var(--color-border-subtle)] flex flex-wrap items-center gap-4">
               <Button
                 type="button"
                 onClick={() => onSelect(person)}
@@ -162,7 +162,7 @@ export function FeaturedLeader({ person, onSelect }: FeaturedLeaderProps) {
                   size="md"
                   aria-label={`View ${person.displayName || person.name} on LinkedIn`}
                   icon={
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#62656B] shrink-0" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[var(--color-text-secondary)] shrink-0" />
                   }
                 >
                   <svg className="w-3.5 h-3.5 fill-current text-[#0077b5] shrink-0 mr-1.5" viewBox="0 0 24 24">

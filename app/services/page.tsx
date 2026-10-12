@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12] selection:text-white">
+    <div className="min-h-screen bg-[var(--color-bg-base)] text-[var(--color-text-primary)] selection:bg-[var(--color-cta)] selection:text-white">
       <Header />
       <main>
         <PageHeader
@@ -33,24 +33,24 @@ export default function ServicesPage() {
           ]}
         >
           {/* Quick Capability Jump Line */}
-          <nav aria-label="Capabilities Index" className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 border-t border-[#DCDCD7] text-xs font-mono text-[#62656B]">
-            <a href="#warehousing" className="hover:text-[#E33B12] transition-colors">01 &middot; Warehousing &amp; 3PL</a>
-            <span className="text-[#DCDCD7]">&middot;</span>
-            <a href="#project-cargo" className="hover:text-[#E33B12] transition-colors">02 &middot; Project Cargo</a>
-            <span className="text-[#DCDCD7]">&middot;</span>
-            <a href="#ocean-freight" className="hover:text-[#E33B12] transition-colors">03 &middot; Ocean Freight</a>
-            <span className="text-[#DCDCD7]">&middot;</span>
-            <a href="#air-freight" className="hover:text-[#E33B12] transition-colors">04 &middot; Air Freight</a>
-            <span className="text-[#DCDCD7]">&middot;</span>
-            <a href="#customs-brokerage" className="hover:text-[#E33B12] transition-colors">05 &middot; Customs Brokerage</a>
-            <span className="text-[#DCDCD7]">&middot;</span>
-            <a href="#risk-management" className="hover:text-[#E33B12] transition-colors">06 &middot; Risk Management</a>
+          <nav aria-label="Capabilities Index" className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 border-t border-[var(--color-border-subtle)] text-xs font-mono text-[var(--color-text-secondary)]">
+            <a href="#warehousing" className="hover:text-[var(--color-brand-blue)] transition-colors">01 &middot; Warehousing &amp; 3PL</a>
+            <span className="text-[var(--color-border-subtle)]">&middot;</span>
+            <a href="#project-cargo" className="hover:text-[var(--color-brand-blue)] transition-colors">02 &middot; Project Cargo</a>
+            <span className="text-[var(--color-border-subtle)]">&middot;</span>
+            <a href="#ocean-freight" className="hover:text-[var(--color-brand-blue)] transition-colors">03 &middot; Ocean Freight</a>
+            <span className="text-[var(--color-border-subtle)]">&middot;</span>
+            <a href="#air-freight" className="hover:text-[var(--color-brand-blue)] transition-colors">04 &middot; Air Freight</a>
+            <span className="text-[var(--color-border-subtle)]">&middot;</span>
+            <a href="#customs-brokerage" className="hover:text-[var(--color-brand-blue)] transition-colors">05 &middot; Customs Brokerage</a>
+            <span className="text-[var(--color-border-subtle)]">&middot;</span>
+            <a href="#risk-management" className="hover:text-[var(--color-brand-blue)] transition-colors">06 &middot; Risk Management</a>
           </nav>
         </PageHeader>
 
         <section className={`py-16 sm:py-24 max-w-[1560px] mx-auto ${THEME_TOKENS.layout.contentGutter}`}>
           <ServicesExplorer />
-          <div className="mt-24 pt-16 border-t border-[#DCDCD7]">
+          <div className="mt-24 pt-16 border-t border-[var(--color-border-subtle)]">
             <ServiceFAQ />
           </div>
         </section>
