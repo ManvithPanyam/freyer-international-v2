@@ -260,8 +260,8 @@ export function LTServices() {
                 className={[
                   "p-3.5 rounded-xl border text-left transition-all duration-150 flex flex-col justify-between gap-3 group",
                   isActive
-                    ? "bg-[var(--color-text-primary)] border-[var(--color-text-primary)] text-white shadow-lg"
-                    : "bg-[var(--color-bg-elevated)] border-[var(--color-border-subtle)] text-[var(--color-text-primary)] hover:border-[var(--color-brand-orange)] hover:text-[var(--color-cta)]",
+                    ? "bg-[var(--color-brand-blue)] border-[var(--color-brand-blue)] text-white shadow-lg"
+                    : "bg-[var(--color-bg-elevated)] border-[var(--color-border-subtle)] text-[var(--color-text-primary)] hover:border-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue)]",
                 ].join(" ")}
               >
                 <div className="flex items-center justify-between w-full">
@@ -362,14 +362,14 @@ export function LTServices() {
                   variant="primary"
                   size="lg"
                   icon
-                  className="bg-[var(--color-text-primary)] text-[var(--color-bg-alt)] hover:bg-[var(--color-brand-orange)]"
+                  className="bg-[var(--color-cta)] text-white hover:bg-[var(--color-cta-hover)] border-transparent"
                 >
                   Request {activeService.name.split(" ")[0]} Rate
                 </Button>
                 <TextLink
                   href={activeService.href}
-                  icon={<ChevronRight className="w-3.5 h-3.5 text-[var(--color-cta)]" />}
-                  className="text-[var(--color-cta)] hover:text-[var(--color-text-primary)]"
+                  icon={<ChevronRight className="w-3.5 h-3.5 text-[var(--color-brand-blue)]" />}
+                  className="text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)]"
                 >
                   Full Service Specifications
                 </TextLink>

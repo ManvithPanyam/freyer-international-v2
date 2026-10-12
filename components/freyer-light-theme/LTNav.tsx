@@ -50,7 +50,7 @@ export function LTNav() {
       <header
         className={[
           "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-          "bg-[var(--color-bg-overlay)] border-b border-[var(--color-border-subtle)] backdrop-blur-md shadow-sm py-3",
+          "bg-[var(--color-bg-base)] border-b border-[var(--color-border-subtle)] shadow-sm py-3",
         ].join(" ")}
       >
         <div className="max-w-[1560px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between gap-8">
@@ -202,8 +202,8 @@ export function LTNav() {
                 className={[
                   "inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
                   pathname === "/locations" || pathname === "/network-partners"
-                    ? "text-[var(--color-brand-orange)] font-semibold"
-                    : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]",
+                    ? "text-[var(--color-brand-blue)] font-bold"
+                    : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
                 ].join(" ")}
               >
                 <span>Network</span>
@@ -281,8 +281,8 @@ export function LTNav() {
                 className={[
                   "inline-flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-150 px-3 py-2 rounded",
                   pathname === "/about" || pathname === "/careers" || pathname === "/csr"
-                    ? "text-[var(--color-brand-orange)] font-semibold"
-                    : "text-[var(--color-text-primary)] hover:text-[var(--color-brand-orange)]",
+                    ? "text-[var(--color-brand-blue)] font-bold"
+                    : "text-[var(--color-brand-blue)] hover:text-[var(--color-brand-blue-hover)] font-medium",
                 ].join(" ")}
               >
                 <span>Company</span>

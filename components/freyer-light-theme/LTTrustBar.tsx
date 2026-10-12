@@ -86,7 +86,7 @@ export function LTTrustBar() {
                     <span className="text-xs font-mono font-bold text-[var(--color-text-primary)] tracking-wide">
                       {item.name}
                     </span>
-                    <span className="text-2xs font-mono px-1.5 py-0.2 rounded bg-[var(--color-cta)]/10 text-[var(--color-cta)] uppercase font-semibold">
+                    <span className="text-2xs font-mono px-1.5 py-0.2 rounded bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border border-[var(--color-tag-text)]/20 uppercase font-semibold">
                       {item.badge}
                     </span>
                   </div>

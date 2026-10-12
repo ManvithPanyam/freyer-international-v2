@@ -20,6 +20,11 @@
     --color-map-land: #E6E9EF;
     --color-dark-surface: #17181B;   /* hero and photo overlays ONLY */
 
+    /* Tag / Badge tokens for WCAG AA (small text >= 4.5:1) */
+    --color-tag-bg: #FBE9E4;
+    --color-tag-text: #A82A0B;
+    --color-tag-blue-bg: #E8EDF8;
+
     /* Focus ring standard */
     --focus-ring-color: #214495;
 

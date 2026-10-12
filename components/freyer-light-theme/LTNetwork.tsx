@@ -166,7 +166,7 @@ export function LTNetwork() {
                       : "bg-[var(--color-bg-alt)] border-[var(--color-border-subtle)] text-[var(--color-text-primary)] hover:text-[var(--color-brand-blue)] hover:border-[var(--color-brand-blue)]",
                   ].join(" ")}
                 >
-                  {st.isHQ && <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />}
+                  {st.isHQ && <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />}
                   <span>{st.short}</span>
                 </button>
               );
@@ -329,11 +329,11 @@ export function LTNetwork() {
                 {/* Station Title */}
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-2xs font-mono uppercase tracking-widest text-[var(--color-cta)] font-bold bg-[var(--color-brand-orange)]/10 border border-[var(--color-brand-orange)]/20 px-2 py-0.5 rounded">
+                    <span className="text-2xs font-mono uppercase tracking-widest text-[var(--color-tag-text)] font-bold bg-[var(--color-tag-bg)] border border-[var(--color-tag-text)]/20 px-2 py-0.5 rounded">
                       {meta.type}
                     </span>
                     {selected.isHQ && (
-                      <span className="px-2 py-0.5 rounded bg-amber-100 text-amber-700 text-2xs font-mono uppercase font-bold border border-amber-200">
+                      <span className="px-2 py-0.5 rounded bg-[var(--color-tag-blue-bg)] text-[var(--color-brand-blue)] text-2xs font-mono uppercase font-bold border border-[var(--color-brand-blue)]/20">
                         Corporate HQ
                       </span>
                     )}

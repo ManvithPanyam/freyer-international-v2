@@ -113,7 +113,7 @@ export function FTRCargoMonument() {
         {/* ── SECTION HEADER: ARCHITECTURAL RIGOR ── */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 border-b border-[var(--color-border-subtle)]">
           <div className="space-y-4 max-w-2xl">
-            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-text-secondary)] font-medium">
+            <div className="flex items-center gap-2.5 text-xs font-mono uppercase tracking-[0.24em] text-[var(--color-cta)] font-medium">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]" />
