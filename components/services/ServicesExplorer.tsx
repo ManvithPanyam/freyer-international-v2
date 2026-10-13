@@ -66,7 +66,7 @@ export function ServicesExplorer() {
           action={
             <div className="text-right">
               <div
-                className="text-3xl sm:text-4xl font-bold font-mono text-white tracking-tight"
+                className="text-3xl sm:text-4xl font-bold font-mono text-[var(--color-text-primary)] tracking-tight"
                 style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
               >
                 1,000,000+ SQ FT

@@ -35,7 +35,7 @@ export default function NetworkPartnersPage() {
 
         {/* Primary Interactive Cartographic Experience: World Movement Atlas */}
         <section aria-label="World Movement Atlas">
-          <GlobalMovementAtlas />
+          <GlobalMovementAtlas hideHeader />
         </section>
 
         {/* Global Forwarding Alliances & Accreditations */}

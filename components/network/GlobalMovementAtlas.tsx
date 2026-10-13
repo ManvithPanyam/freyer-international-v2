@@ -33,10 +33,12 @@ import {
 
 interface GlobalMovementAtlasProps {
   initialSelectedId?: string;
+  hideHeader?: boolean;
 }
 
 export default function GlobalMovementAtlas({
   initialSelectedId = "MV-01",
+  hideHeader = false,
 }: GlobalMovementAtlasProps) {
   const [selectedMovementId, setSelectedMovementId] = useState<string>(initialSelectedId);
   const [selectedLaneId, setSelectedLaneId] = useState<string | null>(null);
@@ -101,64 +103,66 @@ export default function GlobalMovementAtlas({
 
   return (
     <div className="w-full bg-[#F7F6F2] text-[#17181B] selection:bg-[#E33B12]/20">
-      {/* SECTION HEADER: Editorial Industrial Typography */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 pb-6 border-b border-[#DCDCD7]">
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#E33B12]" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#E33B12] font-semibold">
-              WHERE FREYER MOVES &bull; INTERNATIONAL PROJECT CARGO
-            </span>
-          </div>
-          
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#17181B] font-[family-name:var(--font-barlow-condensed)]">
-            World Movement Atlas
-          </h2>
+      {/* SECTION HEADER: Editorial Industrial Typography (Hidden when parent page provides PageHeader) */}
+      {!hideHeader && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 pb-6 border-b border-[#DCDCD7]">
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-[#E33B12]" />
+              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#E33B12] font-semibold">
+                WHERE FREYER MOVES &bull; INTERNATIONAL PROJECT CARGO
+              </span>
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#17181B] font-[family-name:var(--font-barlow-condensed)]">
+              World Movement Atlas
+            </h2>
 
-          <p className="text-[#62656B] max-w-3xl text-sm sm:text-base leading-relaxed font-sans">
-            Every movement charted is derived directly from original project documentation.
-            Verified heavy-lift, breakbulk, and out-of-gauge industrial consignments across 10 countries represented in documented project movements.
-          </p>
+            <p className="text-[#62656B] max-w-3xl text-sm sm:text-base leading-relaxed font-sans">
+              Every movement charted is derived directly from original project documentation.
+              Verified heavy-lift, breakbulk, and out-of-gauge industrial consignments across 10 countries represented in documented project movements.
+            </p>
+          </div>
+
+          {/* VERIFIED EMPIRICAL KPI BAR (Strictly Documented Facts — No Inferred Totals) */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 pt-6">
+            <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
+              <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Documented Evidence</div>
+              <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
+                11 <span className="text-xs font-mono font-normal text-[#62656B]">PROJECT MOVEMENTS</span>
+              </div>
+            </div>
+
+            <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
+              <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Largest Movement</div>
+              <div className="text-xl sm:text-2xl font-bold text-[#E33B12] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
+                1,156 <span className="text-xs font-mono font-normal text-[#62656B]">MT (17 × 68 MT)</span>
+              </div>
+            </div>
+
+            <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
+              <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Longest Cargo Consignment</div>
+              <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
+                2,700 <span className="text-xs font-mono font-normal text-[#62656B]">CM (27 M)</span>
+              </div>
+            </div>
+
+            <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
+              <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Project Countries</div>
+              <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
+                10 <span className="text-xs font-mono font-normal text-[#62656B]">COUNTRIES</span>
+              </div>
+            </div>
+
+            <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 col-span-2 sm:col-span-1 shadow-xs">
+              <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Customs License</div>
+              <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] flex items-center gap-1.5 mt-0.5">
+                AEO (LO) <ShieldCheck className="w-4 h-4 text-[#E33B12]" />
+              </div>
+            </div>
+          </div>
         </div>
-
-        {/* VERIFIED EMPIRICAL KPI BAR (Strictly Documented Facts — No Inferred Totals) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 pt-6">
-          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
-            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Documented Evidence</div>
-            <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
-              11 <span className="text-xs font-mono font-normal text-[#62656B]">PROJECT MOVEMENTS</span>
-            </div>
-          </div>
-
-          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
-            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Largest Movement</div>
-            <div className="text-xl sm:text-2xl font-bold text-[#E33B12] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
-              1,156 <span className="text-xs font-mono font-normal text-[#62656B]">MT (17 × 68 MT)</span>
-            </div>
-          </div>
-
-          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
-            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Longest Cargo Consignment</div>
-            <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
-              2,700 <span className="text-xs font-mono font-normal text-[#62656B]">CM (27 M)</span>
-            </div>
-          </div>
-
-          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 shadow-xs">
-            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Project Countries</div>
-            <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] mt-0.5">
-              10 <span className="text-xs font-mono font-normal text-[#62656B]">COUNTRIES</span>
-            </div>
-          </div>
-
-          <div className="bg-white border border-[#DCDCD7] rounded-lg p-3.5 col-span-2 sm:col-span-1 shadow-xs">
-            <div className="text-[10px] font-mono text-[#62656B] uppercase tracking-wider">Customs License</div>
-            <div className="text-xl sm:text-2xl font-bold text-[#17181B] font-[family-name:var(--font-barlow-condensed)] flex items-center gap-1.5 mt-0.5">
-              AEO (LO) <ShieldCheck className="w-4 h-4 text-[#E33B12]" />
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
 
       {/* FILTER & ROUTE SELECTOR RAIL */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 border-b border-[#DCDCD7]">

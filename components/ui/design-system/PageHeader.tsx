@@ -93,20 +93,23 @@ export function PageHeader({
 
         {/* Docked Stats Bar (Optional) */}
         {stats && stats.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-[var(--color-border-subtle)] grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 pt-8 border-t border-[var(--color-border-subtle)] grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((s) => (
-              <div key={s.label} className="group p-4 rounded-xl bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)]">
+              <div
+                key={s.label}
+                className="group p-5 rounded-xl bg-white border border-[var(--color-border-subtle)] shadow-[0_2px_8px_rgba(23,24,27,0.03)] hover:border-[var(--color-text-primary)]/20 hover:shadow-md transition-all duration-200"
+              >
                 <div
-                  className="font-bold text-[var(--color-text-primary)] tracking-tight leading-none text-2xl sm:text-3xl lg:text-4xl"
+                  className="font-black text-[var(--color-text-primary)] tracking-tight leading-none text-2xl sm:text-3xl lg:text-4xl"
                   style={{ fontFamily: THEME_TOKENS.typography.fontDisplay }}
                 >
                   {s.value}
                 </div>
-                <div className="mt-2 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-[var(--color-cta)] font-semibold">
+                <div className="mt-2.5 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.18em] text-[var(--color-cta)] font-bold">
                   {s.label}
                 </div>
                 {s.sub && (
-                  <div className="mt-0.5 text-[10px] font-mono text-[var(--color-text-secondary)] truncate">
+                  <div className="mt-1 text-[11px] font-mono text-[var(--color-text-secondary)] truncate">
                     {s.sub}
                   </div>
                 )}
