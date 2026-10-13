@@ -367,31 +367,95 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
                 )}
               </div>
 
-              {/* Modal Body */}
-              <div className="p-6 sm:p-8 space-y-6">
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-cta)] font-semibold">
-                    Case File #{selectedProject.id.toString().padStart(2, "0")} &middot; {selectedProject.date}
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-bold font-mono uppercase mt-1 text-[var(--color-text-primary)]">
-                    {selectedProject.title}
-                  </h3>
+              {/* Modal Body: Two-Column Archival Shipment Dossier */}
+              <div className="p-6 sm:p-10 space-y-8">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-6 border-b border-[var(--color-border-subtle)]">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2 h-2 rounded-full bg-[var(--color-cta)]" />
+                      <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--color-cta)] font-bold">
+                        DOCUMENTED SHIPMENT DOSSIER &bull; RECORD #{selectedProject.id.toString().padStart(2, "0")}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-black uppercase text-[var(--color-text-primary)] font-[family-name:var(--font-barlow-condensed)] tracking-tight">
+                      {selectedProject.title}
+                    </h3>
+                  </div>
+
+                  {selectedProject.date && (
+                    <span className="text-xs font-mono px-3 py-1 rounded bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)] text-[var(--color-text-secondary)] self-start shrink-0">
+                      {selectedProject.date}
+                    </span>
+                  )}
                 </div>
 
-                <div className="p-4 rounded border border-[var(--color-border-subtle)] bg-[var(--color-bg-base)] flex items-center gap-3 text-lg sm:text-xl font-mono text-[var(--color-text-primary)]">
+                {/* Corridor vector */}
+                <div className="p-4 rounded-xl bg-[var(--color-bg-base)] border border-[var(--color-border-subtle)] flex items-center gap-3 text-lg sm:text-xl font-black font-[family-name:var(--font-barlow-condensed)] text-[var(--color-text-primary)] uppercase tracking-tight">
                   <span>{selectedProject.route_origin}</span>
-                  <ArrowRight className="w-4 h-4 text-[var(--color-cta)]" />
-                  <span className="text-[var(--color-text-secondary)]">{selectedProject.route_destination}</span>
+                  <div className="flex items-center gap-1 text-[var(--color-cta)]">
+                    <span className="w-5 h-[2px] bg-[var(--color-cta)]" />
+                    <ArrowRight className="w-4 h-4 shrink-0" />
+                  </div>
+                  <span className="text-[var(--color-text-secondary)] font-light italic">{selectedProject.route_destination}</span>
                 </div>
 
-                <p className="text-sm sm:text-base text-[var(--color-text-secondary)] font-light leading-relaxed">
-                  {selectedProject.details}
-                </p>
+                {/* Technical Specifications Matrix */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+                  <div className="p-3.5 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)]">
+                    <span className="text-[10px] font-mono text-[var(--color-text-secondary)] uppercase tracking-wider block">
+                      Transport Mode
+                    </span>
+                    <span className="text-sm font-bold text-[var(--color-text-primary)] font-mono block mt-0.5">
+                      {selectedProject.transport_mode}
+                    </span>
+                  </div>
+
+                  <div className="p-3.5 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)]">
+                    <span className="text-[10px] font-mono text-[var(--color-text-secondary)] uppercase tracking-wider block">
+                      Weight / Mass
+                    </span>
+                    <span className="text-sm font-bold text-[var(--color-cta)] font-mono block mt-0.5">
+                      {selectedProject.weight_mt ? `${selectedProject.weight_mt} MT` : selectedProject.weight_kg ? `${selectedProject.weight_kg.toLocaleString()} KG` : "Documented"}
+                    </span>
+                  </div>
+
+                  <div className="p-3.5 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)]">
+                    <span className="text-[10px] font-mono text-[var(--color-text-secondary)] uppercase tracking-wider block">
+                      Dimensions
+                    </span>
+                    <span className="text-xs font-semibold text-[var(--color-text-primary)] font-mono block mt-1 truncate">
+                      {selectedProject.dimensions_cm ? `${selectedProject.dimensions_cm} cm` : "Manifest Stowed"}
+                    </span>
+                  </div>
+
+                  <div className="p-3.5 rounded-lg bg-[var(--color-bg-alt)] border border-[var(--color-border-subtle)]">
+                    <span className="text-[10px] font-mono text-[var(--color-text-secondary)] uppercase tracking-wider block">
+                      Packages / Volume
+                    </span>
+                    <span className="text-sm font-semibold text-[var(--color-text-primary)] font-mono block mt-0.5">
+                      {selectedProject.packages ? `${selectedProject.packages} PKG` : selectedProject.cbm ? `${selectedProject.cbm} CBM` : "Consignment"}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Archival Field Notes */}
+                <div className="space-y-2">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--color-text-secondary)] font-bold block">
+                    Verified Archival Field Manifest
+                  </span>
+                  <p className="text-sm sm:text-base text-[var(--color-text-secondary)] font-light leading-relaxed p-4 rounded-xl bg-white border border-[var(--color-border-subtle)] font-sans">
+                    {selectedProject.details}
+                  </p>
+                </div>
 
                 {selectedProject.special_handling && (
-                  <div className="p-4 rounded border border-[var(--color-brand-blue)]/20 bg-[var(--color-cta)]/5 text-xs font-mono text-[var(--color-text-primary)]">
-                    <span className="text-[var(--color-cta)] font-bold block mb-1">Special Operational Scope:</span>
-                    {selectedProject.special_handling}
+                  <div className="p-4 rounded-xl border border-[var(--color-cta)]/20 bg-[var(--color-cta)]/5 text-xs font-mono text-[var(--color-text-primary)] space-y-1">
+                    <span className="text-[var(--color-cta)] font-bold uppercase tracking-wider block">
+                      Documented Handling &amp; Vessel Stowage:
+                    </span>
+                    <p className="font-light text-[var(--color-text-secondary)] leading-relaxed">
+                      {selectedProject.special_handling}
+                    </p>
                   </div>
                 )}
               </div>
