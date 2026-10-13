@@ -13,6 +13,7 @@ interface PageHeaderProps {
   title: string;
   subtitle?: string;
   description: string;
+  visual?: React.ReactNode;
   stats?: Array<{
     value: string;
     label: string;
@@ -27,6 +28,7 @@ export function PageHeader({
   title,
   subtitle,
   description,
+  visual,
   stats,
   children,
 }: PageHeaderProps) {
@@ -63,31 +65,66 @@ export function PageHeader({
           </span>
         </div>
 
-        {/* Monumental Barlow Condensed Title with Controlled Responsive Hierarchy */}
-        <div className="max-w-4xl">
-          <h1
-            className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.98] uppercase text-balance break-words"
-            style={{
-              fontFamily: THEME_TOKENS.typography.fontDisplay,
-              fontSize: "clamp(2.4rem, 4.6vw, 4.4rem)",
-            }}
-          >
-            {title}
-            {subtitle && (
-              <>
-                <br />
-                <span className="text-[var(--color-brand-blue)] font-light italic text-[0.88em] leading-tight tracking-normal block mt-1.5 sm:mt-2">
-                  {subtitle}
-                </span>
-              </>
-            )}
-          </h1>
+        {/* Main Content: Single Column or Split Editorial Grid with Visual */}
+        {visual ? (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Headline Column */}
+            <div className="lg:col-span-7">
+              <h1
+                className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.98] uppercase text-balance break-words"
+                style={{
+                  fontFamily: THEME_TOKENS.typography.fontDisplay,
+                  fontSize: "clamp(2.4rem, 4.6vw, 4.4rem)",
+                }}
+              >
+                {title}
+                {subtitle && (
+                  <>
+                    <br />
+                    <span className="text-[var(--color-brand-blue)] font-light italic text-[0.88em] leading-tight tracking-normal block mt-1.5 sm:mt-2">
+                      {subtitle}
+                    </span>
+                  </>
+                )}
+              </h1>
 
-          {/* Business Lead Copy */}
-          <p className="mt-6 text-[var(--color-text-secondary)] text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
-            {description}
-          </p>
-        </div>
+              {/* Business Lead Copy */}
+              <p className="mt-6 text-[var(--color-text-secondary)] text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
+                {description}
+              </p>
+            </div>
+
+            {/* Right Visual Stage */}
+            <div className="lg:col-span-5">
+              {visual}
+            </div>
+          </div>
+        ) : (
+          <div className="max-w-4xl">
+            <h1
+              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.98] uppercase text-balance break-words"
+              style={{
+                fontFamily: THEME_TOKENS.typography.fontDisplay,
+                fontSize: "clamp(2.4rem, 4.6vw, 4.4rem)",
+              }}
+            >
+              {title}
+              {subtitle && (
+                <>
+                  <br />
+                  <span className="text-[var(--color-brand-blue)] font-light italic text-[0.88em] leading-tight tracking-normal block mt-1.5 sm:mt-2">
+                    {subtitle}
+                  </span>
+                </>
+              )}
+            </h1>
+
+            {/* Business Lead Copy */}
+            <p className="mt-6 text-[var(--color-text-secondary)] text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
+              {description}
+            </p>
+          </div>
+        )}
 
         {children && <div className="mt-8">{children}</div>}
 

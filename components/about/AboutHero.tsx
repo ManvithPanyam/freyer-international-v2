@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Users, ShieldCheck, Building2 } from "lucide-react";
 import { THEME_TOKENS } from "@/components/ui/design-system";
@@ -39,25 +37,50 @@ export function AboutHero() {
           </span>
         </div>
 
-        {/* Monumental Barlow Condensed Title with Controlled Responsive Hierarchy */}
-        <div className="max-w-4xl">
-          <h1
-            className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.98] uppercase text-balance break-words"
-            style={{
-              fontFamily: THEME_TOKENS.typography.fontDisplay,
-              fontSize: "clamp(2.4rem, 4.6vw, 4.4rem)",
-            }}
-          >
-            THE PEOPLE <br />
-            <span className="text-[var(--color-brand-blue)] font-light italic text-[0.88em] leading-tight tracking-normal block mt-1.5 sm:mt-2">
-              BEHIND THE MOVEMENT
-            </span>
-          </h1>
+        {/* Split Editorial Roster Layout: Left Headline / Right Authentic Team Visual */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="lg:col-span-7">
+            <h1
+              className="text-[var(--color-text-primary)] font-black tracking-[-0.02em] leading-[0.98] uppercase text-balance break-words"
+              style={{
+                fontFamily: THEME_TOKENS.typography.fontDisplay,
+                fontSize: "clamp(2.4rem, 4.6vw, 4.4rem)",
+              }}
+            >
+              THE PEOPLE <br />
+              <span className="text-[var(--color-brand-blue)] font-light italic text-[0.88em] leading-tight tracking-normal block mt-1.5 sm:mt-2">
+                BEHIND THE MOVEMENT
+              </span>
+            </h1>
 
-          <p className="mt-6 text-[var(--color-text-secondary)] text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
-            Logistics is not just heavy machinery and container vessels. It is the calculated decisions, 
-            statutory licenses, and operational vigilance of people who engineer movements under rigorous physical reality.
-          </p>
+            <p className="mt-6 text-[var(--color-text-secondary)] text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
+              Logistics is not just heavy machinery and container vessels. It is the calculated decisions, 
+              statutory licenses, and operational vigilance of people who engineer movements under rigorous physical reality.
+            </p>
+          </div>
+
+          {/* Right Column: Authentic Institutional Photography */}
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[16/11] w-full rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] bg-white shadow-lg group">
+              <Image
+                src="/images/About.jpg"
+                alt="Freyer International operational team and corporate headquarters directors"
+                fill
+                priority
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                sizes="(min-width: 1024px) 42vw, 100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#17181B]/80 via-[#17181B]/20 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-mono">
+                <span className="bg-[#17181B]/85 backdrop-blur-md px-3 py-1.5 rounded border border-white/20">
+                  Board &amp; Operational Leadership
+                </span>
+                <span className="text-[11px] text-white/80 hidden sm:inline-block">
+                  MCA Verified Governance
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Quick Jump Navigation */}
