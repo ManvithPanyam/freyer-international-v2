@@ -41,17 +41,27 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
 
   const filters = ["All", "Break Bulk", "Flat Rack", "RORO", "Door to Door"];
 
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
   const filteredProjects = curatedProjects.filter((p) => {
-    if (selectedFilter === "All") return true;
-    if (selectedFilter === "Break Bulk")
-      return p.transport_mode.toLowerCase().includes("break bulk") || p.transport_mode.toLowerCase().includes("bb");
-    if (selectedFilter === "Flat Rack")
-      return p.transport_mode.toLowerCase().includes("flat rack");
-    if (selectedFilter === "RORO")
-      return p.transport_mode.toLowerCase().includes("roro");
-    if (selectedFilter === "Door to Door")
-      return p.transport_mode.toLowerCase().includes("door");
-    return true;
+    const matchesFilter =
+      selectedFilter === "All" ||
+      (selectedFilter === "Break Bulk" &&
+        (p.transport_mode.toLowerCase().includes("break bulk") || p.transport_mode.toLowerCase().includes("bb"))) ||
+      (selectedFilter === "Flat Rack" && p.transport_mode.toLowerCase().includes("flat rack")) ||
+      (selectedFilter === "RORO" && p.transport_mode.toLowerCase().includes("roro")) ||
+      (selectedFilter === "Door to Door" && p.transport_mode.toLowerCase().includes("door"));
+
+    const query = searchQuery.trim().toLowerCase();
+    const matchesQuery =
+      !query ||
+      p.route_origin.toLowerCase().includes(query) ||
+      p.route_destination.toLowerCase().includes(query) ||
+      p.title.toLowerCase().includes(query) ||
+      p.transport_mode.toLowerCase().includes(query) ||
+      (p.details && p.details.toLowerCase().includes(query));
+
+    return matchesFilter && matchesQuery;
   });
 
   const openProjectDetail = (p: Project) => {
@@ -79,16 +89,17 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
 
   return (
     <div className="space-y-12">
-      {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[var(--color-border-subtle)]">
+      {/* Archive Search & Filter Bar */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[var(--color-border-subtle)]">
+        {/* Category Filters */}
         <div className="flex flex-wrap items-center gap-2">
           {filters.map((filter) => (
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-4 py-2 text-xs font-mono tracking-wider uppercase transition-all duration-150 rounded ${
+              className={`px-3.5 py-1.5 text-xs font-mono tracking-wider uppercase transition-all duration-150 rounded ${
                 selectedFilter === filter
-                  ? "bg-[var(--color-bg-alt)] text-[var(--color-text-primary)] font-bold"
+                  ? "bg-[var(--color-text-primary)] text-white font-bold shadow-xs"
                   : "bg-[#FFFFFF] hover:bg-[var(--color-bg-base)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] border border-[var(--color-border-subtle)]"
               }`}
             >
@@ -96,9 +107,32 @@ export function ProjectsExplorer({ initialProjects }: { initialProjects: Project
             </button>
           ))}
         </div>
-        <span className="hidden md:inline-block text-xs font-mono text-[var(--color-text-secondary)]">
-          Showing {filteredProjects.length} Verified Records
-        </span>
+
+        {/* Search input & counter */}
+        <div className="flex items-center gap-3">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search origin, destination, or mode..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-64 sm:w-72 px-3 py-1.5 text-xs font-mono bg-white border border-[var(--color-border-subtle)] rounded text-[var(--color-text-primary)] placeholder:text-[var(--color-text-secondary)] focus:outline-none focus:border-[var(--color-cta)] transition"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] text-xs font-mono"
+                title="Clear search"
+              >
+                &times;
+              </button>
+            )}
+          </div>
+
+          <span className="text-xs font-mono text-[var(--color-text-secondary)] whitespace-nowrap">
+            {filteredProjects.length} / {initialProjects.length} Records
+          </span>
+        </div>
       </div>
 
       {/* Case Study Archive List */}

@@ -49,7 +49,7 @@ export const FEATURED_MOVEMENTS: CinematicProjectItem[] = [
     dest_country: "UAE",
     transport_mode: "Break Bulk Shipment",
     primary_metric: "482 MT",
-    primary_label: "GROSS MASS DISPLACEMENT",
+    primary_label: "TOTAL SHIPMENT WEIGHT",
     secondary_metrics: [
       { label: "CUBIC VOLUME", value: "796 CBM" },
       { label: "PACKAGE UNITS", value: "29 PKG" },
@@ -61,6 +61,27 @@ export const FEATURED_MOVEMENTS: CinematicProjectItem[] = [
     transit_type: "ocean",
   },
   {
+    id: 7,
+    recordNumber: "RECORD #07",
+    title: "EX GENOA TO JEBEL ALI",
+    route_origin: "Genoa",
+    origin_country: "Italy",
+    route_destination: "Jebel Ali",
+    dest_country: "UAE",
+    transport_mode: "Door to Door Multimodal",
+    primary_metric: "17 UNITS",
+    primary_label: "68,000 KG EACH (DOOR TO DOOR)",
+    secondary_metrics: [
+      { label: "DIMENSIONS", value: "360 × 263 × 400 CM" },
+      { label: "PER UNIT WEIGHT", value: "68 MT Each" },
+      { label: "EXECUTION", value: "Multiple Ship Lots" },
+    ],
+    details: "17 heavy monolithic machinery units, each weighing 68,000 kg, transported door-to-door from Genoa to Jebel Ali in scheduled consecutive maritime lots.",
+    photo: "/images/7.1.jpg",
+    photo_caption: "Quayside hold hoist: 68-ton crated machinery unit lowered into hold cell guides.",
+    transit_type: "multimodal",
+  },
+  {
     id: 11,
     recordNumber: "RECORD #11",
     title: "VENICE TO MUNDRA",
@@ -70,58 +91,16 @@ export const FEATURED_MOVEMENTS: CinematicProjectItem[] = [
     dest_country: "India",
     transport_mode: "BBK on Container Vessel",
     primary_metric: "37.6 MT",
-    primary_label: "BOOM CRANE WT (37,600 KG)",
+    primary_label: "BOOM CRANE WEIGHT (37,600 KG)",
     secondary_metrics: [
       { label: "DIMENSIONS", value: "2700 × 400 × 455 CM" },
       { label: "TERMS", value: "Ex-Works (EXW)" },
-      { label: "PERMIT", value: "Road Special Transit" },
+      { label: "PERMIT", value: "Special Road Transit" },
     ],
     details: "27-meter out-of-gauge lattice boom crane assembly transported under special civil road permits through Italy and loaded as breakbulk onto a container vessel bound for Mundra.",
     photo: "/images/11.1.jpg",
     photo_caption: "Venice Quayside: 27-meter boom crane rigged with spreader beam on container vessel deck.",
     transit_type: "multimodal",
-  },
-  {
-    id: 2,
-    recordNumber: "RECORD #02",
-    title: "MASAN TO CHENNAI",
-    route_origin: "Masan",
-    origin_country: "South Korea",
-    route_destination: "Chennai",
-    dest_country: "India",
-    transport_mode: "Break Bulk Heavy Transit",
-    primary_metric: "200 MT",
-    primary_label: "TOTAL CHARTER TONNAGE",
-    secondary_metrics: [
-      { label: "CUBIC VOLUME", value: "837 CBM" },
-      { label: "UNITS", value: "22 Packages" },
-      { label: "CLEARANCE", value: "Direct Discharge" },
-    ],
-    details: "Full breakbulk consignment of heavy machinery modules loaded at Masan Port, South Korea, navigating the Bay of Bengal for direct under-hook discharge at Port of Chennai.",
-    photo: "/images/2.1.jpg",
-    photo_caption: "Vessel hold stowage: 200 MT machinery secured with heavy chains and timber wedges.",
-    transit_type: "ocean",
-  },
-  {
-    id: 1,
-    recordNumber: "RECORD #01",
-    title: "KOBE TO CHENNAI",
-    route_origin: "Kobe",
-    origin_country: "Japan",
-    route_destination: "Chennai",
-    dest_country: "India",
-    transport_mode: "Pure Car & Truck Carrier / RORO",
-    primary_metric: "37.1 MT",
-    primary_label: "ROLL-ON / ROLL-OFF MASS",
-    secondary_metrics: [
-      { label: "DIMENSIONS", value: "904 × 310 × 316 CM" },
-      { label: "METHOD", value: "Towed RoRo Ramp" },
-      { label: "TRANSIT DATE", value: "April 2023" },
-    ],
-    details: "Monolithic industrial equipment driven and lashed through stern ramps into specialized RoRo vessel decks across the Pacific and Indian Ocean sea lanes.",
-    photo: "/images/1.jpg",
-    photo_caption: "Port of Kobe: Heavy tracked unit staged at RoRo stern ramp berths.",
-    transit_type: "heavy_haul",
   },
 ];
 
@@ -198,7 +177,7 @@ export function ProjectsCargoHeroStage({ onSelectProject }: ProjectsCargoHeroSta
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--color-cta)]" />
           </span>
           <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[var(--color-cta)] font-bold">
-            CARGO IN MOTION &bull; KINETIC SHIPMENT RADAR
+            CARGO IN MOTION &bull; THREE DOCUMENTED MOVEMENTS
           </span>
           <span className="hidden md:inline text-white/30">&bull;</span>
           <span className="hidden md:inline text-xs font-mono text-white/50">
